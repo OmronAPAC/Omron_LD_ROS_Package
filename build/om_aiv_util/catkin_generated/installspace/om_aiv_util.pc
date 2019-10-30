@@ -1,0 +1,8 @@
+prefix=/home/tthmatt/ld_ROS/install
+
+Name: om_aiv_util
+Description: Description of om_aiv_util
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/tthmatt/ld_ROS/install/lib 
+Requires: 

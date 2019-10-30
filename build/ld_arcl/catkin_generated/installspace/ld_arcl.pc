@@ -1,0 +1,8 @@
+prefix=/home/tthmatt/ld_ROS/install
+
+Name: ld_arcl
+Description: Description of ld_arcl
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/tthmatt/ld_ROS/install/lib 
+Requires: 

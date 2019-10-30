@@ -1,0 +1,6 @@
+devel_space: /home/tthmatt/ld_ROS/devel
+install: false
+install_space: /home/tthmatt/ld_ROS/install
+profile: default
+source_space: /home/tthmatt/ld_ROS/src
+workspace: /home/tthmatt/ld_ROS
