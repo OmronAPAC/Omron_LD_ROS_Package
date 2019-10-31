@@ -29,6 +29,12 @@ def extended_status_for_humans():
     print "Getting extended_status_for_humans..." 
     data = s.recv(BUFFER_SIZE)
     rcv = data.decode("utf-8")
+    while not rospy.is_shutdown():
+        if "ExtendedStatusForHumans" in rcv:
+            break
+        else:
+            data = s.recv(BUFFER_SIZE)
+            rcv = data.decode("utf-8")
 
     for line in data.splitlines():
         if 'ExtendedStatusForHumans' in line:
@@ -46,28 +52,30 @@ def status():
     command = command.encode('ascii')
     s.send(command+b"\r\n")
     print(Style.RESET_ALL)
+    print(Fore.BLUE)
+    print(Style.BRIGHT)
     print "Getting status..." 
     data = s.recv(BUFFER_SIZE)
     rcv = data.decode("utf-8")
     while not rospy.is_shutdown():
-        if "Status" in rcv:
+        if "DockingState:" in rcv:
             break
         else:
             data = s.recv(BUFFER_SIZE)
             rcv = data.decode("utf-8")
 
     for line in data.splitlines():
-        if 'Status' in line:
+        if 'DockingState:' in line:
             Status = line.split()[-6], line.split()[-5]   
     rospy.loginfo(Status)
 
     for line in data.splitlines():
-        if 'Status' in line:
+        if 'ForcedState' in line:
             Status = line.split()[-4], line.split()[-3] 
     rospy.loginfo(Status)
 
     for line in data.splitlines():
-        if 'Status' in line:
+        if 'ChargeState' in line:
             Status = line.split()[-2], line.split()[-1] 
     rospy.loginfo(Status)
 
@@ -142,12 +150,17 @@ def localization_score():
     command = command.encode('ascii')
     s.send(command+b"\r\n")
     print(Style.RESET_ALL)
-    print "Getting robot status..." 
-    data = s.recv(BUFFER_SIZE)
-    data = s.recv(BUFFER_SIZE)
-
     print(Fore.BLUE)
     print(Style.BRIGHT)
+    print "Getting localization_score..." 
+    data = s.recv(BUFFER_SIZE)
+    rcv = data.decode("utf-8")
+    while not rospy.is_shutdown():
+        if "LocalizationScore" in rcv:
+            break
+        else:
+            data = s.recv(BUFFER_SIZE)
+            rcv = data.decode("utf-8")
 
     for line in data.splitlines():
         if 'LocalizationScore' in line:
@@ -166,11 +179,16 @@ def temperature():
     command = command.encode('ascii')
     s.send(command+b"\r\n")
     print(Style.RESET_ALL)
-    print "Getting robot status..." 
-    data = s.recv(BUFFER_SIZE)
-    data = s.recv(BUFFER_SIZE)
-
     print(Fore.GREEN)
+    print "Getting temperature..." 
+    data = s.recv(BUFFER_SIZE)
+    rcv = data.decode("utf-8")
+    while not rospy.is_shutdown():
+        if "Temperature" in rcv:
+            break
+        else:
+            data = s.recv(BUFFER_SIZE)
+            rcv = data.decode("utf-8")
 
     for line in data.splitlines():
         if 'Temperature' in line:
