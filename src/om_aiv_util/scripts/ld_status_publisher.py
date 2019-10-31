@@ -47,7 +47,7 @@ def extended_status_for_humans():
             extended_status_for_humans = line.split("ExtendedStatusForHumans:")
     rospy.loginfo(",ExtendedStatusForHumans:".join(extended_status_for_humans)[1:])
 
-    pub.publish(extended_status_for_humans)
+    pub.publish(''.join(extended_status_for_humans))
     rate.sleep()
 
 def status():
@@ -93,7 +93,7 @@ def status():
         if 'Status:' in line:
             status = line.split("Status:")
     rospy.loginfo(",Status:".join(status)[1:])
-
+    pub.publish(''.join(status))
     rate.sleep()
 
 def state_of_charge():
