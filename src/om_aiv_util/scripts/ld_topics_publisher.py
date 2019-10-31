@@ -19,14 +19,14 @@ def extended_status_for_humans():
     pub = rospy.Publisher('ldarcl_status_extended_status_for_humans', String, queue_size=10)
     rospy.init_node('ld_status', anonymous=True)
     rate = rospy.Rate(10) # 10hz
-    
+
     command = "status"
     command = command.encode('ascii')
     s.send(command+b"\r\n")
     print(Style.RESET_ALL)
     print(Fore.YELLOW)
     print(Style.BRIGHT)
-    print "Getting extended_status_for_humans..." 
+    print "Getting extended_status_for_humans..."
     data = s.recv(BUFFER_SIZE)
     rcv = data.decode("utf-8")
     while not rospy.is_shutdown():
@@ -39,7 +39,7 @@ def extended_status_for_humans():
     for line in data.splitlines():
         if 'ExtendedStatusForHumans' in line:
             extended_status_for_humans = line.split()[-1]
-    
+
     rospy.loginfo(extended_status_for_humans)
     pub.publish(extended_status_for_humans)
     rate.sleep()
@@ -54,30 +54,30 @@ def status():
     print(Style.RESET_ALL)
     print(Fore.BLUE)
     print(Style.BRIGHT)
-    print "Getting status..." 
+    print "Getting status..."
     data = s.recv(BUFFER_SIZE)
     rcv = data.decode("utf-8")
     while not rospy.is_shutdown():
-        if "DockingState:" in rcv:
+        if "Status:" in rcv:
             break
         else:
             data = s.recv(BUFFER_SIZE)
             rcv = data.decode("utf-8")
 
     for line in data.splitlines():
-        if 'DockingState:' in line:
-            Status = line.split()[-6], line.split()[-5]   
+        if 'Status:' in line:
+            Status = line.split()[-1], line.split()[-2]
     rospy.loginfo(Status)
 
-    for line in data.splitlines():
-        if 'ForcedState' in line:
-            Status = line.split()[-4], line.split()[-3] 
-    rospy.loginfo(Status)
-
-    for line in data.splitlines():
-        if 'ChargeState' in line:
-            Status = line.split()[-2], line.split()[-1] 
-    rospy.loginfo(Status)
+    # for line in data.splitlines():
+    #     if 'ForcedState' in line:
+    #         Status = line.split()[-4], line.split()[-3]
+    # rospy.loginfo(Status)
+    #
+    # for line in data.splitlines():
+    #     if 'ChargeState' in line:
+    #         Status = line.split()[-2], line.split()[-1]
+    # rospy.loginfo(Status)
 
     pub.publish(Status)
     rate.sleep()
@@ -86,14 +86,14 @@ def state_of_charge():
     pub = rospy.Publisher('ldarcl_status_state_of_charge', String, queue_size=10)
     rospy.init_node('ld_status', anonymous=True)
     rate = rospy.Rate(10) # 10hz
-    
+
     command = "status"
     command = command.encode('ascii')
     s.send(command+b"\r\n")
     print(Style.RESET_ALL)
     print(Fore.RED)
     print(Style.BRIGHT)
-    print "Getting state_of_charge..." 
+    print "Getting state_of_charge..."
     data = s.recv(BUFFER_SIZE)
     rcv = data.decode("utf-8")
     while not rospy.is_shutdown():
@@ -122,10 +122,10 @@ def location():
     print(Style.RESET_ALL)
     print(Fore.MAGENTA)
     print(Style.BRIGHT)
-    print "Getting location..." 
+    print "Getting location..."
     data = s.recv(BUFFER_SIZE)
     rcv = data.decode("utf-8")
-    
+
     while not rospy.is_shutdown():
         if "Location" in rcv:
             break
@@ -152,7 +152,7 @@ def localization_score():
     print(Style.RESET_ALL)
     print(Fore.BLUE)
     print(Style.BRIGHT)
-    print "Getting localization_score..." 
+    print "Getting localization_score..."
     data = s.recv(BUFFER_SIZE)
     rcv = data.decode("utf-8")
     while not rospy.is_shutdown():
@@ -174,13 +174,13 @@ def temperature():
     pub = rospy.Publisher('ldarcl_status_temperature', String, queue_size=10)
     rospy.init_node('ld_status', anonymous=True)
     rate = rospy.Rate(10) # 10hz
-    
+
     command = "status"
     command = command.encode('ascii')
     s.send(command+b"\r\n")
     print(Style.RESET_ALL)
     print(Fore.GREEN)
-    print "Getting temperature..." 
+    print "Getting temperature..."
     data = s.recv(BUFFER_SIZE)
     rcv = data.decode("utf-8")
     while not rospy.is_shutdown():
@@ -200,8 +200,8 @@ def temperature():
 
 if __name__ == '__main__':
     try:
-        # extended_status_for_humans() 
-        # status()  
+        # extended_status_for_humans()
+        # status()
         # state_of_charge()
         # location()
         # localization_score()
