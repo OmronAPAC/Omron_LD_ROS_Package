@@ -36,11 +36,17 @@ def extended_status_for_humans():
             data = s.recv(BUFFER_SIZE)
             rcv = data.decode("utf-8")
 
+    # for line in data.splitlines():
+    #     if 'ExtendedStatusForHumans' in line:
+    #         extended_status_for_humans = line.split()[-1]
+    #
+    # rospy.loginfo(extended_status_for_humans)
+
     for line in data.splitlines():
         if 'ExtendedStatusForHumans' in line:
-            extended_status_for_humans = line.split()[-1]
+            extended_status_for_humans = line.split("ExtendedStatusForHumans:")
+    rospy.loginfo(",ExtendedStatusForHumans:".join(extended_status_for_humans)[1:])
 
-    rospy.loginfo(extended_status_for_humans)
     pub.publish(extended_status_for_humans)
     rate.sleep()
 
@@ -58,30 +64,36 @@ def status():
     data = s.recv(BUFFER_SIZE)
     rcv = data.decode("utf-8")
     while not rospy.is_shutdown():
-        if "DockingState:" in rcv:
+        if "Status:" in rcv:
             break
         else:
             data = s.recv(BUFFER_SIZE)
             rcv = data.decode("utf-8")
 
-    for line in data.splitlines():
-        if 'DockingState:' in line:
-            Status1 = line.split()[-6], line.split()[-5]
-    rospy.loginfo(Status1)
+    # for line in data.splitlines():
+    #     if 'DockingState:' in line:
+    #         Status1 = line.split()[-6], line.split()[-5]
+    # rospy.loginfo(Status1)
+    #
+    # for line in data.splitlines():
+    #     if 'ForcedState' in line:
+    #         Status2 = line.split()[-4], line.split()[-3]
+    # rospy.loginfo(Status2)
+    #
+    # for line in data.splitlines():
+    #     if 'ChargeState' in line:
+    #         Status3 = line.split()[-2], line.split()[-1]
+    # rospy.loginfo(Status3)
+    #
+    # pub.publish(''.join(Status1))
+    # pub.publish(''.join(Status2))
+    # pub.publish(''.join(Status3))
 
     for line in data.splitlines():
-        if 'ForcedState' in line:
-            Status2 = line.split()[-4], line.split()[-3]
-    rospy.loginfo(Status2)
+        if 'Status:' in line:
+            status = line.split("Status:")
+    rospy.loginfo(",Status:".join(status)[1:])
 
-    for line in data.splitlines():
-        if 'ChargeState' in line:
-            Status3 = line.split()[-2], line.split()[-1]
-    rospy.loginfo(Status3)
-
-    pub.publish(''.join(Status1))
-    pub.publish(''.join(Status2))
-    pub.publish(''.join(Status3))
     rate.sleep()
 
 def state_of_charge():
