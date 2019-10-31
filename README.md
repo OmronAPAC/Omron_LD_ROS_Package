@@ -1,4 +1,4 @@
-# ld_ROS
+# om_aiv
 
 rosrun om_aiv_util ld_status_publisher.py
  
