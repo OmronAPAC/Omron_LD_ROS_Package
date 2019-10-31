@@ -140,7 +140,7 @@ def location():
             location = line.split()[-3], line.split()[-2], line.split()[-1]
 
     rospy.loginfo(location)
-    pub.publish(location)
+    pub.publish(''.join(location))
     rate.sleep()
 
 def localization_score():
