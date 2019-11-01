@@ -1,3 +1,18 @@
+Symlinking /home/tthmatt/ld_ROS/devel/lib/python2.7/dist-packages/om_aiv_util/__init__.py
+Symlinking /home/tthmatt/ld_ROS/devel/lib/python2.7/dist-packages/om_aiv_util/msg/__init__.py
+Symlinking /home/tthmatt/ld_ROS/devel/lib/python2.7/dist-packages/om_aiv_util/msg/_Point.py
 Linked: (/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/lib/pkgconfig/om_aiv_util.pc, /home/tthmatt/ld_ROS/devel/lib/pkgconfig/om_aiv_util.pc)
+Symlinking /home/tthmatt/ld_ROS/devel/share/om_aiv_util/cmake/om_aiv_util-msg-extras.cmake
 Linked: (/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/share/om_aiv_util/cmake/om_aiv_utilConfig-version.cmake, /home/tthmatt/ld_ROS/devel/share/om_aiv_util/cmake/om_aiv_utilConfig-version.cmake)
 Linked: (/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/share/om_aiv_util/cmake/om_aiv_utilConfig.cmake, /home/tthmatt/ld_ROS/devel/share/om_aiv_util/cmake/om_aiv_utilConfig.cmake)
+Symlinking /home/tthmatt/ld_ROS/devel/share/om_aiv_util/cmake/om_aiv_util-msg-paths.cmake
+Symlinking /home/tthmatt/ld_ROS/devel/share/common-lisp/ros/om_aiv_util/msg/_package.lisp
+Symlinking /home/tthmatt/ld_ROS/devel/share/common-lisp/ros/om_aiv_util/msg/_package_Point.lisp
+Symlinking /home/tthmatt/ld_ROS/devel/share/common-lisp/ros/om_aiv_util/msg/om_aiv_util-msg.asd
+Symlinking /home/tthmatt/ld_ROS/devel/share/common-lisp/ros/om_aiv_util/msg/Point.lisp
+Symlinking /home/tthmatt/ld_ROS/devel/share/gennodejs/ros/om_aiv_util/_index.js
+Symlinking /home/tthmatt/ld_ROS/devel/share/gennodejs/ros/om_aiv_util/msg/_index.js
+Symlinking /home/tthmatt/ld_ROS/devel/share/gennodejs/ros/om_aiv_util/msg/Point.js
+Symlinking /home/tthmatt/ld_ROS/devel/share/roseus/ros/om_aiv_util/manifest.l
+Symlinking /home/tthmatt/ld_ROS/devel/share/roseus/ros/om_aiv_util/msg/Point.l
+Symlinking /home/tthmatt/ld_ROS/devel/include/om_aiv_util/Point.h

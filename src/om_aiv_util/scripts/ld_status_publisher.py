@@ -6,6 +6,9 @@ init()
 from colorama import Fore, Back, Style
 import rospy
 from std_msgs.msg import String
+from geometry_msgs.msg import Pose
+from geometry_msgs.msg import Point
+from math import pow, atan2, sqrt
 import socket
 import threading
 import time
@@ -126,10 +129,10 @@ def state_of_charge():
     rate.sleep()
 
 def location():
-    pub = rospy.Publisher('ldarcl_status_location', String, queue_size=10)
+    pub = rospy.Publisher('ldarcl_status_location', Point, queue_size=10)
     rospy.init_node('ld_status', anonymous=True)
     rate = rospy.Rate(10) # 10hz
-
+    msg = Point()
     command = "status"
     command = command.encode('ascii')
     s.send(command+b"\r\n")
@@ -147,12 +150,25 @@ def location():
             data = s.recv(BUFFER_SIZE)
             rcv = data.decode("utf-8")
 
+    # for line in data.splitlines():
+    #     if 'Location' in line:
+    #         location = line.split()[-3], line.split()[-2], line.split()[-1]
+
     for line in data.splitlines():
         if 'Location' in line:
-            location = line.split()[-3], line.split()[-2], line.split()[-1]
+            locationx = line.split()[-3]
+            locationy = line.split()[-2]
+            locationz = line.split()[-1]
+    msg.x = float(locationx)
+    msg.y = float(locationy)
+    msg.z = float(locationz)
 
-    rospy.loginfo(location)
-    pub.publish(''.join(location))
+    rospy.loginfo(msg)
+    print type(locationx)
+    pub.publish(msg)
+    # pub.publish(''.join(locationx))
+    # pub.publish(''.join(locationy))
+    # pub.publish(''.join(locationz))
     rate.sleep()
 
 def localization_score():

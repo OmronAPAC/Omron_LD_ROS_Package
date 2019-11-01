@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-## listens to std_msgs/Strings published 
+## listens to std_msgs/Strings published
 ## to the 'ld_status' topics
 
 import rospy
@@ -20,7 +20,7 @@ def listener():
     rospy.Subscriber('ldarcl_status_extended_status_for_humans', String, callback)
     rospy.Subscriber('ldarcl_status_status', String, callback)
     rospy.Subscriber('ldarcl_status_state_of_charge', String, callback)
-    rospy.Subscriber('ldarcl_status_location', String, callback)
+    rospy.Subscriber('ldarcl_status_location', Point, callback)
     rospy.Subscriber('ldarcl_status_localization_score', String, callback)
     rospy.Subscriber('ldarcl_status_temperature', String, callback)
 
