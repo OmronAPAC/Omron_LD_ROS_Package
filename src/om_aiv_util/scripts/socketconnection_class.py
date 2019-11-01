@@ -59,8 +59,9 @@ class ConnectSocket(object):
 
 connecttcp = ConnectSocket()
 
-
-connecttcp.connect("172.21.5.123", 7171)
+# ip_address = rospy.get_param("ip_address")
+# # ip_address = "172.21.5.123"
+# connecttcp.connect(str(ip_address), 7171)
 # connecttcp.sendpassword("adept")
 
 

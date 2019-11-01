@@ -20,7 +20,10 @@ import sys
 BUFFER_SIZE = 1024
 from socketconnection_class import ConnectSocket, connecttcp
 s = connecttcp.sock
-
+ip_address = rospy.get_param("ip_address")
+# ip_address = "172.21.5.122"
+port = rospy.get_param("port")
+connecttcp.connect(str(ip_address), port)
 def extended_status_for_humans():
     pub = rospy.Publisher('ldarcl_status_extended_status_for_humans', String, queue_size=10)
     rospy.init_node('ld_status', anonymous=True)

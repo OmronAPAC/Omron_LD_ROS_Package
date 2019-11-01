@@ -8,13 +8,16 @@
 
   <!-- BEGIN ROBOT 1-->
   <group ns="robot1">
-    <param name="tf_prefix" value="robot1_tf" />
     <node name="ld_status_publisher" pkg="om_aiv_util" type="ld_status_publisher.py" output="screen" />
+      <param name="ip_address" value="172.21.5.122" />
+      <param name="port" value="7171" />
   </group>
 
   <!-- BEGIN ROBOT 2-->
   <group ns="robot2">
-    <param name="tf_prefix" value="robot2_tf" />
-    <node name="ld_status_publisher_2" pkg="om_aiv_util" type="ld_status_publisher_2.py" output="screen" />
+    <node name="ld_status_publisher" pkg="om_aiv_util" type="ld_status_publisher.py" output="screen" />
+      <param name="port" value="7171" />
+
   </group>
+
 </launch>
