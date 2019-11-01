@@ -6,6 +6,7 @@ init()
 from colorama import Fore, Back, Style
 import rospy
 from std_msgs.msg import String
+from std_msgs.msg import Float32
 from geometry_msgs.msg import Pose
 from geometry_msgs.msg import Point
 from om_aiv_util.msg import Location
@@ -74,7 +75,7 @@ def status():
 
 
 def state_of_charge():
-    pub = rospy.Publisher('ldarcl_status_state_of_charge', String, queue_size=10)
+    pub = rospy.Publisher('ldarcl_status_state_of_charge', Float32, queue_size=10)
     rospy.init_node('ld_status', anonymous=True)
     rate = rospy.Rate(10) # 10hz
 
@@ -86,8 +87,9 @@ def state_of_charge():
     for line in rcv.splitlines():
         if 'StateOfCharge' in line:
             state_of_charge = line.split()[-1]
+
             rospy.loginfo(state_of_charge)
-            pub.publish(state_of_charge)
+            pub.publish(float(state_of_charge))
             rate.sleep()
         else:
             pass
@@ -127,7 +129,7 @@ def location():
     rate.sleep()
 
 def localization_score():
-    pub = rospy.Publisher('ldarcl_status_localization_score', String, queue_size=10)
+    pub = rospy.Publisher('ldarcl_status_localization_score', Float32, queue_size=10)
     rospy.init_node('ld_status', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
@@ -138,7 +140,7 @@ def localization_score():
         if 'LocalizationScore' in line:
             localization_score = line.split()[-1]
             rospy.loginfo(localization_score)
-            pub.publish(localization_score)
+            pub.publish(float(localization_score))
             rate.sleep()
         else:
             pass
@@ -146,7 +148,7 @@ def localization_score():
 
 
 def temperature():
-    pub = rospy.Publisher('ldarcl_status_temperature', String, queue_size=10)
+    pub = rospy.Publisher('ldarcl_status_temperature', Float32, queue_size=10)
     rospy.init_node('ld_status', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
@@ -156,7 +158,7 @@ def temperature():
         if 'Temperature' in line:
             temperature = line.split()[-1]
             rospy.loginfo(temperature)
-            pub.publish(temperature)
+            pub.publish(float(temperature))
             rate.sleep()
         else:
             pass
