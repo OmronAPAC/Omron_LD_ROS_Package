@@ -17,9 +17,9 @@ add_custom_target(om_aiv_util_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Point.msg" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Location.msg" NAME_WE)
 add_custom_target(_om_aiv_util_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "om_aiv_util" "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Point.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "om_aiv_util" "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Location.msg" ""
 )
 
 #
@@ -29,7 +29,7 @@ add_custom_target(_om_aiv_util_generate_messages_check_deps_${_filename}
 ### Section generating for lang: gencpp
 ### Generating Messages
 _generate_msg_cpp(om_aiv_util
-  "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Point.msg"
+  "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Location.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/om_aiv_util
@@ -49,7 +49,7 @@ add_custom_target(om_aiv_util_generate_messages_cpp
 add_dependencies(om_aiv_util_generate_messages om_aiv_util_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Point.msg" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Location.msg" NAME_WE)
 add_dependencies(om_aiv_util_generate_messages_cpp _om_aiv_util_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -62,7 +62,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS om_aiv_util_generate_messages_cpp)
 ### Section generating for lang: geneus
 ### Generating Messages
 _generate_msg_eus(om_aiv_util
-  "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Point.msg"
+  "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Location.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/om_aiv_util
@@ -82,7 +82,7 @@ add_custom_target(om_aiv_util_generate_messages_eus
 add_dependencies(om_aiv_util_generate_messages om_aiv_util_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Point.msg" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Location.msg" NAME_WE)
 add_dependencies(om_aiv_util_generate_messages_eus _om_aiv_util_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -95,7 +95,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS om_aiv_util_generate_messages_eus)
 ### Section generating for lang: genlisp
 ### Generating Messages
 _generate_msg_lisp(om_aiv_util
-  "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Point.msg"
+  "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Location.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/om_aiv_util
@@ -115,7 +115,7 @@ add_custom_target(om_aiv_util_generate_messages_lisp
 add_dependencies(om_aiv_util_generate_messages om_aiv_util_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Point.msg" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Location.msg" NAME_WE)
 add_dependencies(om_aiv_util_generate_messages_lisp _om_aiv_util_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -128,7 +128,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS om_aiv_util_generate_messages_lisp)
 ### Section generating for lang: gennodejs
 ### Generating Messages
 _generate_msg_nodejs(om_aiv_util
-  "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Point.msg"
+  "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Location.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/om_aiv_util
@@ -148,7 +148,7 @@ add_custom_target(om_aiv_util_generate_messages_nodejs
 add_dependencies(om_aiv_util_generate_messages om_aiv_util_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Point.msg" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Location.msg" NAME_WE)
 add_dependencies(om_aiv_util_generate_messages_nodejs _om_aiv_util_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -161,7 +161,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS om_aiv_util_generate_messages_nodej
 ### Section generating for lang: genpy
 ### Generating Messages
 _generate_msg_py(om_aiv_util
-  "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Point.msg"
+  "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Location.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/om_aiv_util
@@ -181,7 +181,7 @@ add_custom_target(om_aiv_util_generate_messages_py
 add_dependencies(om_aiv_util_generate_messages om_aiv_util_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Point.msg" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Location.msg" NAME_WE)
 add_dependencies(om_aiv_util_generate_messages_py _om_aiv_util_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

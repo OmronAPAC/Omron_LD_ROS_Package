@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/om_aiv_util_generate_messages_py"
-  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/lib/python2.7/dist-packages/om_aiv_util/msg/_Point.py"
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/lib/python2.7/dist-packages/om_aiv_util/msg/_Location.py"
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/lib/python2.7/dist-packages/om_aiv_util/msg/__init__.py"
 )
 

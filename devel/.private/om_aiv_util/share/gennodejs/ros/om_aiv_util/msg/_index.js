@@ -1,8 +1,8 @@
 
 "use strict";
 
-let Point = require('./Point.js');
+let location = require('./location.js');
 
 module.exports = {
-  Point: Point,
+  location: location,
 };

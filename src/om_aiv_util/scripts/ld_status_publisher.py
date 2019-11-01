@@ -8,6 +8,7 @@ import rospy
 from std_msgs.msg import String
 from geometry_msgs.msg import Pose
 from geometry_msgs.msg import Point
+from om_aiv_util.msg import Location
 # from turtlesim.msg import Pose
 import math
 import numpy as np
@@ -131,10 +132,10 @@ def state_of_charge():
     rate.sleep()
 
 def location():
-    pub = rospy.Publisher('ldarcl_status_location', Pose, queue_size=10)
+    pub = rospy.Publisher('ldarcl_status_location', Location, queue_size=10)
     rospy.init_node('ld_status', anonymous=True)
     rate = rospy.Rate(10) # 10hz
-    msg = Pose()
+    msg = Location()
     command = "status"
     command = command.encode('ascii')
     s.send(command+b"\r\n")
@@ -160,13 +161,13 @@ def location():
         if 'Location' in line:
             locationx = line.split()[-3]
             locationy = line.split()[-2]
-            locationz = line.split()[-1]
+            locationtheta = line.split()[-1]
     PI = 3.1415926535897
-    relative_angle = float(locationz)*180/PI
+    relative_angle = float(locationtheta)*180/PI
     # print relative_angle
     msg.x = float(locationx)
     msg.y = float(locationy)
-    msg.z = float(relative_angle)
+    msg.theta = float(locationtheta)
     # print locationz
     # print np.rad2deg(-2)
 

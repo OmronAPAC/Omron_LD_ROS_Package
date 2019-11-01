@@ -129,7 +129,7 @@ file(INSTALL DESTINATION "/home/tthmatt/ld_ROS/install" TYPE FILE FILES "/home/t
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/om_aiv_util/msg" TYPE FILE FILES "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Point.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/om_aiv_util/msg" TYPE FILE FILES "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Location.msg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)

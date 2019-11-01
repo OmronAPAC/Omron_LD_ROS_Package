@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Point.msg"
+messages_str = "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Location.msg"
 services_str = ""
 pkg_name = "om_aiv_util"
 dependencies_str = "std_msgs"
