@@ -8,7 +8,9 @@ import rospy
 from std_msgs.msg import String
 from geometry_msgs.msg import Pose
 from geometry_msgs.msg import Point
-from math import pow, atan2, sqrt
+# from turtlesim.msg import Pose
+import math
+import numpy as np
 import socket
 import threading
 import time
@@ -159,9 +161,14 @@ def location():
             locationx = line.split()[-3]
             locationy = line.split()[-2]
             locationz = line.split()[-1]
+    PI = 3.1415926535897
+    relative_angle = float(locationz)*180/PI
+    # print relative_angle
     msg.x = float(locationx)
     msg.y = float(locationy)
-    msg.z = float(locationz)
+    msg.z = float(relative_angle)
+    # print locationz
+    # print np.rad2deg(-2)
 
     rospy.loginfo(msg)
     pub.publish(msg)
