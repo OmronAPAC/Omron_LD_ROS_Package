@@ -9,16 +9,12 @@
   <!-- BEGIN ROBOT 1-->
   <group ns="robot1">
     <param name="tf_prefix" value="robot1_tf" />
-    <include file="$(find om_aiv_util)/launch/robot1.launch" >
-      <arg name="robot_name"  value="Robot1" />
-    </include>
+    <node name="ld_status_publisher" pkg="om_aiv_util" type="ld_status_publisher.py" output="screen" />
   </group>
 
   <!-- BEGIN ROBOT 2-->
   <group ns="robot2">
     <param name="tf_prefix" value="robot2_tf" />
-    <include file="$(find om_aiv_util)/launch/robot2.launch" >
-      <arg name="robot_name"  value="Robot2" />
-    </include>
+    <node name="ld_status_publisher_2" pkg="om_aiv_util" type="ld_status_publisher_2.py" output="screen" />
   </group>
 </launch>

@@ -18,7 +18,7 @@ import time
 import re
 import sys
 BUFFER_SIZE = 1024
-from socketconnection_class import ConnectSocket, connecttcp
+from socketconnection_class2 import ConnectSocket, connecttcp
 s = connecttcp.sock
 
 def extended_status_for_humans():
