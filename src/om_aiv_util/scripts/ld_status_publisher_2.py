@@ -18,11 +18,11 @@ import time
 import re
 import sys
 BUFFER_SIZE = 1024
-from socketconnection_class2 import ConnectSocket, connecttcp
+from socketconnection_class import ConnectSocket, connecttcp
 s = connecttcp.sock
 
 def extended_status_for_humans():
-    pub = rospy.Publisher('robot2/ldarcl_status_extended_status_for_humans', String, queue_size=10)
+    pub = rospy.Publisher('ldarcl_status_extended_status_for_humans', String, queue_size=10)
     rospy.init_node('ld_status', anonymous=True)
     rate = rospy.Rate(10) # 10hz
 
@@ -57,7 +57,7 @@ def extended_status_for_humans():
     rate.sleep()
 
 def status():
-    pub = rospy.Publisher('robot2/ldarcl_status_status', String, queue_size=10)
+    pub = rospy.Publisher('ldarcl_status_status', String, queue_size=10)
     rospy.init_node('ld_status', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "status"
@@ -103,7 +103,7 @@ def status():
     rate.sleep()
 
 def state_of_charge():
-    pub = rospy.Publisher('robot2/ldarcl_status_state_of_charge', String, queue_size=10)
+    pub = rospy.Publisher('ldarcl_status_state_of_charge', String, queue_size=10)
     rospy.init_node('ld_status', anonymous=True)
     rate = rospy.Rate(10) # 10hz
 
@@ -132,7 +132,7 @@ def state_of_charge():
     rate.sleep()
 
 def location():
-    pub = rospy.Publisher('robot2/ldarcl_status_location', Location, queue_size=10)
+    pub = rospy.Publisher('ldarcl_status_location', Location, queue_size=10)
     rospy.init_node('ld_status', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     msg = Location()
@@ -179,7 +179,7 @@ def location():
     rate.sleep()
 
 def localization_score():
-    pub = rospy.Publisher('robot2/ldarcl_status_localization_score', String, queue_size=10)
+    pub = rospy.Publisher('ldarcl_status_localization_score', String, queue_size=10)
     rospy.init_node('ld_status', anonymous=True)
     rate = rospy.Rate(10) # 10hz
 
@@ -208,7 +208,7 @@ def localization_score():
     rate.sleep()
 
 def temperature():
-    pub = rospy.Publisher('robot2/ldarcl_status_temperature', String, queue_size=10)
+    pub = rospy.Publisher('ldarcl_status_temperature', String, queue_size=10)
     rospy.init_node('ld_status', anonymous=True)
     rate = rospy.Rate(10) # 10hz
 
