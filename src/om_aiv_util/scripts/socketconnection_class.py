@@ -60,7 +60,7 @@ class ConnectSocket(object):
 connecttcp = ConnectSocket()
 
 
-connecttcp.connect("172.21.5.122", 7171)
+connecttcp.connect("172.21.5.123", 7171)
 # connecttcp.sendpassword("adept")
 
 

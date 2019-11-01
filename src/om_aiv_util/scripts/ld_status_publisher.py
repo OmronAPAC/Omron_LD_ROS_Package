@@ -164,7 +164,6 @@ def location():
     msg.z = float(locationz)
 
     rospy.loginfo(msg)
-    print type(locationx)
     pub.publish(msg)
     # pub.publish(''.join(locationx))
     # pub.publish(''.join(locationy))
