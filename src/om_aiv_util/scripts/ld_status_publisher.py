@@ -131,10 +131,10 @@ def state_of_charge():
     rate.sleep()
 
 def location():
-    pub = rospy.Publisher('ldarcl_status_location', Point, queue_size=10)
+    pub = rospy.Publisher('ldarcl_status_location', Pose, queue_size=10)
     rospy.init_node('ld_status', anonymous=True)
     rate = rospy.Rate(10) # 10hz
-    msg = Point()
+    msg = Pose()
     command = "status"
     command = command.encode('ascii')
     s.send(command+b"\r\n")
