@@ -19,7 +19,10 @@ import time
 import re
 import sys
 BUFFER_SIZE = 2056
-from socketconnection_class import ConnectSocket, connecttcp
+#import socketconnection class to connect to robot
+#requires socketconnection_class.py file in the same folder
+from socketconnection_class import ConnectSocket
+connecttcp = ConnectSocket()
 s = connecttcp.sock
 ip_address = rospy.get_param("ip_address")
 port = rospy.get_param("port")
@@ -64,7 +67,7 @@ def applicationFaultQuery():
             rospy.loginfo("No faults")
             pub.publish("No faults")
             rate.sleep()
-            
+
 def faultsGet():
     pub = rospy.Publisher('ldarcl_faultsGet', String, queue_size=10)
     rospy.init_node('ld_topic_publisher', anonymous=True)
