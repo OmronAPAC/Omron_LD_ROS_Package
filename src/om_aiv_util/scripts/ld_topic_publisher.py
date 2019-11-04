@@ -28,12 +28,12 @@ port = rospy.get_param("port")
 connecttcp.connect(str(ip_address), port)
 
 def applicationFaultQuery():
-    pub = rospy.Publisher('ldarcl_status_extended_status_for_humans', String, queue_size=10)
-    rospy.init_node('ld_applicationFaultSet', anonymous=True)
+    pub = rospy.Publisher('ldarcl_applicationFaultQuery', String, queue_size=10)
+    rospy.init_node('ld_applicationFaultQuery', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
     print(Fore.GREEN)
-    print "Getting list of faults..."
+    print "Getting list of application faults..."
     command = "applicationFaultQuery"
     command = command.encode('ascii')
     s.send(command+b"\r\n")
@@ -45,78 +45,59 @@ def applicationFaultQuery():
     pub.publish(str(applicationFaultQuery.splitlines()))
     rate.sleep()
 
-def status():
-    pub = rospy.Publisher('ldarcl_status_status', String, queue_size=10)
-    rospy.init_node('ld_status', anonymous=True)
+def faultsGet():
+    pub = rospy.Publisher('ldarcl_faultsGet', String, queue_size=10)
+    rospy.init_node('ld_faultsGet', anonymous=True)
     rate = rospy.Rate(10) # 10hz
-
     print(Style.RESET_ALL)
-    print(Fore.BLUE)
-    print(Style.BRIGHT)
-    print "Getting status..."
+    print(Fore.GREEN)
+    print "Getting list of faults..."
+    command = "faultsGet"
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    global rcv
+    data = s.recv(BUFFER_SIZE)
+    time.sleep(1)
+    faultsGet = data.decode("utf-8")
+    rospy.loginfo(faultsGet)
+    pub.publish(str(faultsGet.splitlines()))
+    rate.sleep()
 
-    for line in rcv.splitlines():
-        if 'Status:' in line:
-            status = line.split()[-1]
-            rospy.loginfo(status)
-            pub.publish(status)
-            rate.sleep()
-        else:
-            pass
 
-
-def state_of_charge():
-    pub = rospy.Publisher('ldarcl_status_state_of_charge', Float32, queue_size=10)
-    rospy.init_node('ld_status', anonymous=True)
+def getDateTime():
+    pub = rospy.Publisher('ldarcl_getDateTime', String, queue_size=10)
+    rospy.init_node('ld_getDateTime', anonymous=True)
     rate = rospy.Rate(10) # 10hz
-
     print(Style.RESET_ALL)
-    print(Fore.RED)
-    print(Style.BRIGHT)
-    print "Getting state_of_charge..."
-
-    for line in rcv.splitlines():
-        if 'StateOfCharge' in line:
-            state_of_charge = line.split()[-1]
-
-            rospy.loginfo(state_of_charge)
-            pub.publish(float(state_of_charge))
-            rate.sleep()
-        else:
-            pass
+    print(Fore.GREEN)
+    print "Getting date and time..."
+    command = "getDateTime"
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    global rcv
+    data = s.recv(BUFFER_SIZE)
+    time.sleep(1)
+    getDateTime = data.decode("utf-8")
+    rospy.loginfo(getDateTime)
+    pub.publish(str(getDateTime.splitlines()))
+    rate.sleep()
 
 def location():
-    pub = rospy.Publisher('ldarcl_status_location', Location, queue_size=10)
-    rospy.init_node('ld_status', anonymous=True)
+    pub = rospy.Publisher('ldarcl_getDateTime', String, queue_size=10)
+    rospy.init_node('ld_getDateTime', anonymous=True)
     rate = rospy.Rate(10) # 10hz
-    msg = Location()
-
     print(Style.RESET_ALL)
-    print(Fore.MAGENTA)
-    print(Style.BRIGHT)
-    print "Getting location..."
-    for line in rcv.splitlines():
-        if 'Location' in line:
-            locationx = line.split()[-3]
-            locationy = line.split()[-2]
-            locationtheta = line.split()[-1]
-            PI = 3.1415926535897
-            relative_angle = float(locationtheta)*180/PI
-            # print relative_angle
-            msg.x = float(locationx)
-            msg.y = float(locationy)
-            msg.theta = float(locationtheta)
-            # print locationz
-            # print np.rad2deg(-2)
-        else:
-            pass
-
-
-    rospy.loginfo(msg)
-    pub.publish(msg)
-    # pub.publish(''.join(locationx))
-    # pub.publish(''.join(locationy))
-    # pub.publish(''.join(locationz))
+    print(Fore.GREEN)
+    print "Getting date and time..."
+    command = "getDateTime"
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    global rcv
+    data = s.recv(BUFFER_SIZE)
+    time.sleep(1)
+    getDateTime = data.decode("utf-8")
+    rospy.loginfo(getDateTime)
+    pub.publish(str(getDateTime.splitlines()))
     rate.sleep()
 
 def localization_score():
@@ -158,14 +139,10 @@ def temperature():
 
 if __name__ == '__main__':
     try:
-        # extended_status_for_humans()
-        # status()
-        # state_of_charge()
-        # location()
-        # localization_score()
-        # temperature()
         while not rospy.is_shutdown():
-            applicationFaultQuery()
+            # applicationFaultQuery()
+            # faultsGet()
+            getDateTime()
 
     except rospy.ROSInterruptException:
         pass
