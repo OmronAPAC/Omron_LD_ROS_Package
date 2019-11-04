@@ -18,7 +18,7 @@ import threading
 import time
 import re
 import sys
-BUFFER_SIZE = 1024
+BUFFER_SIZE = 2056
 from socketconnection_class import ConnectSocket, connecttcp
 s = connecttcp.sock
 ip_address = rospy.get_param("ip_address")
@@ -156,24 +156,59 @@ def getRoutes():
     pub.publish(str(getRoutes.splitlines()))
     rate.sleep()
 
-def geInputQuery():
-    pub = rospy.Publisher('ldarcl_getRoutes', String, queue_size=10)
-    rospy.init_node('ld_getRoutes', anonymous=True)
+# def geInputQuery():
+#     pub = rospy.Publisher('ldarcl_InputQuery', String, queue_size=10)
+#     rospy.init_node('ld_InputQuery', anonymous=True)
+#     rate = rospy.Rate(10) # 10hz
+#     print(Style.RESET_ALL)
+#     print(Fore.GREEN)
+#     print "Getting list of inputs..."
+#     command = "InputQuery"
+#     command = command.encode('ascii')
+#     s.send(command+b"\r\n")
+#     global rcv
+#     data = s.recv(BUFFER_SIZE)
+#     time.sleep(1)
+#     InputQuery = data.encode('ascii', 'ignore')
+#     rospy.loginfo(InputQuery)
+#     pub.publish(str(InputQuery.splitlines()))
+#     rate.sleep()
+
+def mapObjectTypeList():
+    pub = rospy.Publisher('ldarcl_mapObjectTypeList', String, queue_size=10)
+    rospy.init_node('ld_mapObjectTypeList', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
     print(Fore.GREEN)
-    print "Getting list of route names found in current map..."
-    command = "getRoutes"
+    print "Getting list of types of map objects in the map..."
+    command = "mapObjectTypeList"
     command = command.encode('ascii')
     s.send(command+b"\r\n")
     global rcv
     data = s.recv(BUFFER_SIZE)
     time.sleep(1)
-    getRoutes = data.encode('ascii', 'ignore')
-    rospy.loginfo(getRoutes)
-    pub.publish(str(getRoutes.splitlines()))
+    mapObjectTypeList = data.encode('ascii', 'ignore')
+    rospy.loginfo(mapObjectTypeList)
+    pub.publish(str(mapObjectTypeList.splitlines()))
     rate.sleep()
 
+def odometer():
+    pub = rospy.Publisher('ldarcl_odometer', String, queue_size=10)
+    rospy.init_node('ld_odometer', anonymous=True)
+    rate = rospy.Rate(10) # 10hz
+    print(Style.RESET_ALL)
+    print(Fore.GREEN)
+    print "Getting odometer readings..."
+    command = "odometer"
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    global rcv
+    data = s.recv(BUFFER_SIZE)
+    time.sleep(1)
+    odometer = data.encode('ascii', 'ignore')
+    rospy.loginfo(odometer)
+    pub.publish(str(odometer.splitlines()))
+    rate.sleep()
 
 
 if __name__ == '__main__':
@@ -184,7 +219,8 @@ if __name__ == '__main__':
             # getDateTime()
             # getGoals()
             # getMacros()
-            getRoutes()
-
+            # getRoutes()
+            # mapObjectTypeList()
+            odometer()
     except rospy.ROSInterruptException:
         pass
