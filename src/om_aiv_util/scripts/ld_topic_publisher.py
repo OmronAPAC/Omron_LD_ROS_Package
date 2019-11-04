@@ -18,40 +18,31 @@ import threading
 import time
 import re
 import sys
-BUFFER_SIZE = 2056
+BUFFER_SIZE = 1024
 from socketconnection_class import ConnectSocket, connecttcp
 s = connecttcp.sock
-# ip_address = rospy.get_param("ip_address")
-# port = rospy.get_param("port")
-ip_address = "172.21.5.122"
-port = 7171
+ip_address = rospy.get_param("ip_address")
+port = rospy.get_param("port")
+# ip_address = "172.21.5.123"
+# port = 7171
 connecttcp.connect(str(ip_address), port)
 
 def applicationFaultQuery():
+    pub = rospy.Publisher('ldarcl_status_extended_status_for_humans', String, queue_size=10)
+    rospy.init_node('ld_applicationFaultSet', anonymous=True)
+    rate = rospy.Rate(10) # 10hz
+    print(Style.RESET_ALL)
+    print(Fore.GREEN)
+    print "Getting list of faults..."
     command = "applicationFaultQuery"
     command = command.encode('ascii')
     s.send(command+b"\r\n")
     global rcv
     data = s.recv(BUFFER_SIZE)
     time.sleep(1)
-    rcv = data.decode("utf-8")
-
-    print rcv
-
-def extended_status_for_humans():
-    pub = rospy.Publisher('ldarcl_status_extended_status_for_humans', String, queue_size=10)
-    rospy.init_node('ld_status', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
-    print(Style.RESET_ALL)
-    print(Fore.GREEN)
-    print "Getting extended_status_for_humans..."
-
-    for line in rcv.splitlines():
-        if 'ExtendedStatusForHumans' in line:
-            extended_status_for_humans = line.split("ExtendedStatusForHumans:")
-    rospy.loginfo(",ExtendedStatusForHumans:".join(extended_status_for_humans)[1:])
-
-    pub.publish(''.join(extended_status_for_humans))
+    applicationFaultQuery = data.decode("utf-8")
+    rospy.loginfo(applicationFaultQuery)
+    pub.publish(str(applicationFaultQuery.splitlines()))
     rate.sleep()
 
 def status():
