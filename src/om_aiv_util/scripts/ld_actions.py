@@ -23,21 +23,21 @@ BUFFER_SIZE = 2056
 #requires socketconnection_class.py file in the same folder
 from socketconnection_class import ConnectSocket, connecttcp
 s = connecttcp.sock
-ip_address = rospy.get_param("ip_address")
-port = rospy.get_param("port")
-# ip_address = "172.21.5.123"
-# port = 7171
+# ip_address = rospy.get_param("ip_address")
+# port = rospy.get_param("port")
+ip_address = "172.21.5.123"
+port = 7171
 connecttcp.connect(str(ip_address), port)
 
-def applicationFaultQuery():
+def dock():
     pub = rospy.Publisher('ldarcl_applicationFaultQuery', String, queue_size=10)
     rospy.init_node('ld_topic_publisher', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
     print(Fore.GREEN)
-    print "Getting list of application faults..."
+    print "Docking..."
     #send command to arcl
-    command = "applicationFaultQuery"
+    command = "dock"
     command = command.encode('ascii')
     s.send(command+b"\r\n")
     try:
@@ -45,7 +45,7 @@ def applicationFaultQuery():
         rcv = data.encode('ascii', 'ignore')
         while not rospy.is_shutdown():
             #check for required data
-            if "End of ApplicationFaultQuery" in rcv:
+            if "DockingState:" in rcv:
                 break
             else:
                 data = s.recv(BUFFER_SIZE)
@@ -57,16 +57,14 @@ def applicationFaultQuery():
 
     for line in rcv.splitlines():
         #print required data
-        if 'ApplicationFaultQuery:' in line:
-            applicationFaultQuery = line.split("ApplicationFaultQuery:")
-            rospy.loginfo(",ApplicationFaultQuery:".join(applicationFaultQuery)[1:])
-            pub.publish(''.join(applicationFaultQuery))
+        if 'DockingState:' in line:
+            dock = line.split("DockingState:")
+            rospy.loginfo(",DockingState:".join(dock)[1:])
+            pub.publish(''.join(dock))
             rate.sleep()
             break
-        if 'ApplicationFaultQuery:' not in line:
-            rospy.loginfo("No faults")
-            pub.publish("No faults")
-            rate.sleep()
+        if 'Docked' in line:
+            exit(0)
 
 def faultsGet():
     pub = rospy.Publisher('ldarcl_faultsGet', String, queue_size=10)
@@ -420,18 +418,7 @@ def waitTaskState():
 if __name__ == '__main__':
     try:
         while not rospy.is_shutdown():
-            applicationFaultQuery()
-            faultsGet()
-            getDateTime()
-            getGoals()
-            getMacros()
-            getRoutes()
-            odometer()
-            oneLineStatus()
-            queryDockStatus()
-            queryMotors()
-            queueShowRobotLocal()
-            waitTaskState()
+            dock()
 
     except rospy.ROSInterruptException:
         pass

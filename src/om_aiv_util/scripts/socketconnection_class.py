@@ -28,6 +28,7 @@ class ConnectSocket(object):
         try:
             data = self.sock.recv(BUFFER_SIZE)
             rcv = data.decode("utf-8")
+            #wait until server prints out full list of commands
             while not rospy.is_shutdown():
                 if "End of commands" in rcv:
                     print("Connected")
@@ -43,14 +44,14 @@ class ConnectSocket(object):
 
     #host = ip address
     def connect(self, host, port):
-
+        #try to connect to server
         try:
             self.sock.connect((host, port))
 
         except socket.error as e:
             print("Connection  failed")
             return e
-
+        #send password if connection successful
         status = self.sendpassword()
         return status
 

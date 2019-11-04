@@ -19,14 +19,18 @@ import time
 import re
 import sys
 BUFFER_SIZE = 2056
+#import socketconnection class to connect to robot
+#requires socketconnection_class.py file in the same folder
 from socketconnection_class import ConnectSocket, connecttcp
 s = connecttcp.sock
+#get ip address and port from launch file
 ip_address = rospy.get_param("ip_address")
 # ip_address = "172.21.5.122"
 port = rospy.get_param("port")
 connecttcp.connect(str(ip_address), port)
 
 def sendcommand():
+    #send status command
     command = "status"
     command = command.encode('ascii')
     s.send(command+b"\r\n")
@@ -45,12 +49,13 @@ def extended_status_for_humans():
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     print "Getting extended_status_for_humans..."
-
+    #extract required status
     for line in rcv.splitlines():
         if 'ExtendedStatusForHumans' in line:
             extended_status_for_humans = line.split("ExtendedStatusForHumans:")
+    #print required status
     rospy.loginfo(",ExtendedStatusForHumans:".join(extended_status_for_humans)[1:])
-
+    #publish required status
     pub.publish(''.join(extended_status_for_humans))
     rate.sleep()
 

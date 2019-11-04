@@ -24,6 +24,7 @@ BUFFER_SIZE = 2056
 from socketconnection_class import ConnectSocket
 connecttcp = ConnectSocket()
 s = connecttcp.sock
+#get ip adress and port from launch file
 ip_address = rospy.get_param("ip_address")
 port = rospy.get_param("port")
 # ip_address = "172.21.5.123"
@@ -31,7 +32,9 @@ port = rospy.get_param("port")
 connecttcp.connect(str(ip_address), port)
 
 def applicationFaultQuery():
+    #specify topic name
     pub = rospy.Publisher('ldarcl_applicationFaultQuery', String, queue_size=10)
+    #specify node name
     rospy.init_node('ld_topic_publisher', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
@@ -45,7 +48,7 @@ def applicationFaultQuery():
         data = s.recv(BUFFER_SIZE)
         rcv = data.encode('ascii', 'ignore')
         while not rospy.is_shutdown():
-            #check for required data
+            #keep receiving data until require data is received
             if "End of ApplicationFaultQuery" in rcv:
                 break
             else:
@@ -55,14 +58,17 @@ def applicationFaultQuery():
     except socket.error as e:
         print("Connection  failed")
         return e
-
+    #check for required data
     for line in rcv.splitlines():
         if 'ApplicationFaultQuery:' in line:
             applicationFaultQuery = line.split("ApplicationFaultQuery:")
+            #print required data
             rospy.loginfo(",ApplicationFaultQuery:".join(applicationFaultQuery)[1:])
+            #publish data
             pub.publish(''.join(applicationFaultQuery))
             rate.sleep()
             break
+        #if there are no faults print "Np faults"
         if 'ApplicationFaultQuery:' not in line:
             rospy.loginfo("No faults")
             pub.publish("No faults")
