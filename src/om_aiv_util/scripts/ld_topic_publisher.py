@@ -135,18 +135,34 @@ def getGoals():
     rospy.init_node('ld_topic_publisher', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
-    print(Fore.GREEN)
+    print(Fore.BLUE)
     print "Getting list of goals found in current map..."
     command = "getGoals"
     command = command.encode('ascii')
     s.send(command+b"\r\n")
     global rcv
-    data = s.recv(BUFFER_SIZE)
-    time.sleep(1)
-    getGoals = data.encode('ascii', 'ignore')
-    rospy.loginfo(getGoals)
-    pub.publish(str(getGoals.splitlines()))
-    rate.sleep()
+    try:
+        data = s.recv(BUFFER_SIZE)
+        time.sleep(1)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            if "End of goals" in rcv:
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                time.sleep(1)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+
+    for line in rcv.splitlines():
+        if 'Goal:' in line:
+            getGoals = line.split("Goal:")
+            rospy.loginfo(",Goal:".join(getGoals)[1:])
+            pub.publish(''.join(getGoals))
+            rate.sleep()
 
 # def getInfoList():
 #     pub = rospy.Publisher('ldarcl_getIn', String, queue_size=10)
@@ -373,7 +389,7 @@ if __name__ == '__main__':
             applicationFaultQuery()
             faultsGet()
             getDateTime()
-            # getGoals()
+            getGoals()
             # getMacros()
             # getRoutes()
             # mapObjectTypeList()
