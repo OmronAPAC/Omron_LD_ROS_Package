@@ -29,7 +29,7 @@ connecttcp.connect(str(ip_address), port)
 
 def applicationFaultQuery():
     pub = rospy.Publisher('ldarcl_applicationFaultQuery', String, queue_size=10)
-    rospy.init_node('ld_applicationFaultQuery', anonymous=True)
+    rospy.init_node('ld_topic_publisher', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
     print(Fore.GREEN)
@@ -38,35 +38,67 @@ def applicationFaultQuery():
     command = command.encode('ascii')
     s.send(command+b"\r\n")
     global rcv
-    data = s.recv(BUFFER_SIZE)
-    time.sleep(1)
-    applicationFaultQuery = data.encode('ascii', 'ignore')
-    rospy.loginfo(applicationFaultQuery)
-    pub.publish(str(applicationFaultQuery.splitlines()))
-    rate.sleep()
+    try:
+        data = s.recv(BUFFER_SIZE)
+        time.sleep(1)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            if "ApplicationFaultQuery:" in rcv:
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                time.sleep(1)
+                rcv = data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+
+    for line in rcv.splitlines():
+        if 'ApplicationFaultQuery:' in line:
+            applicationFaultQuery = line.split("ApplicationFaultQuery:")
+            rospy.loginfo(",ApplicationFaultQuery:".join(applicationFaultQuery)[1:])
+            pub.publish(''.join(applicationFaultQuery))
+            rate.sleep()
+
 
 def faultsGet():
     pub = rospy.Publisher('ldarcl_faultsGet', String, queue_size=10)
-    rospy.init_node('ld_faultsGet', anonymous=True)
+    rospy.init_node('ld_topic_publisher', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
-    print(Fore.GREEN)
+    print(Fore.YELLOW)
     print "Getting list of faults..."
     command = "faultsGet"
     command = command.encode('ascii')
     s.send(command+b"\r\n")
     global rcv
-    data = s.recv(BUFFER_SIZE)
-    time.sleep(1)
-    faultsGet = data.encode('ascii', 'ignore')
-    rospy.loginfo(faultsGet)
-    pub.publish(str(faultsGet.splitlines()))
-    rate.sleep()
+    try:
+        data = s.recv(BUFFER_SIZE)
+        time.sleep(1)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            if "FaultList:" in rcv:
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                time.sleep(1)
+                rcv = data.encode('ascii', 'ignore')
 
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+
+    for line in rcv.splitlines():
+        if 'FaultList:' in line:
+            faultsGet = line.split("FaultList:")
+            rospy.loginfo(",FaultList:".join(faultsGet)[1:])
+            pub.publish(''.join(faultsGet))
+            rate.sleep()
 
 def getDateTime():
     pub = rospy.Publisher('ldarcl_getDateTime', String, queue_size=10)
-    rospy.init_node('ld_getDateTime', anonymous=True)
+    rospy.init_node('ld_topic_publisher', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
     print(Fore.GREEN)
@@ -75,16 +107,32 @@ def getDateTime():
     command = command.encode('ascii')
     s.send(command+b"\r\n")
     global rcv
-    data = s.recv(BUFFER_SIZE)
-    time.sleep(1)
-    getDateTime = data.encode('ascii', 'ignore')
-    rospy.loginfo(getDateTime)
-    pub.publish(str(getDateTime.splitlines()))
-    rate.sleep()
+    try:
+        data = s.recv(BUFFER_SIZE)
+        time.sleep(1)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            if "DateTime:" in rcv:
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                time.sleep(1)
+                rcv = data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+
+    for line in rcv.splitlines():
+        if 'DateTime:' in line:
+            getDateTime = line.split("DateTime:")
+            rospy.loginfo(",ApplicationFaultQuery:".join(getDateTime)[1:])
+            pub.publish(''.join(getDateTime))
+            rate.sleep()
 
 def getGoals():
     pub = rospy.Publisher('ldarcl_getGoals', String, queue_size=10)
-    rospy.init_node('ld_getGoals', anonymous=True)
+    rospy.init_node('ld_topic_publisher', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
     print(Fore.GREEN)
@@ -122,7 +170,7 @@ def getGoals():
 
 def getMacros():
     pub = rospy.Publisher('ldarcl_getMacros', String, queue_size=10)
-    rospy.init_node('ld_getMacros', anonymous=True)
+    rospy.init_node('ld_topic_publisher', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
     print(Fore.GREEN)
@@ -140,7 +188,7 @@ def getMacros():
 
 def getRoutes():
     pub = rospy.Publisher('ldarcl_getRoutes', String, queue_size=10)
-    rospy.init_node('ld_getRoutes', anonymous=True)
+    rospy.init_node('ld_topic_publisher', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
     print(Fore.GREEN)
@@ -176,7 +224,7 @@ def getRoutes():
 
 def mapObjectTypeList():
     pub = rospy.Publisher('ldarcl_mapObjectTypeList', String, queue_size=10)
-    rospy.init_node('ld_mapObjectTypeList', anonymous=True)
+    rospy.init_node('ld_topic_publisher', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
     print(Fore.GREEN)
@@ -194,7 +242,7 @@ def mapObjectTypeList():
 
 def odometer():
     pub = rospy.Publisher('ldarcl_odometer', String, queue_size=10)
-    rospy.init_node('ld_odometer', anonymous=True)
+    rospy.init_node('ld_topic_publisher', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
     print(Fore.GREEN)
@@ -210,17 +258,132 @@ def odometer():
     pub.publish(str(odometer.splitlines()))
     rate.sleep()
 
+def oneLineStatus():
+    pub = rospy.Publisher('ldarcl_oneLineStatus', String, queue_size=10)
+    rospy.init_node('ld_topic_publisher', anonymous=True)
+    rate = rospy.Rate(10) # 10hz
+    print(Style.RESET_ALL)
+    print(Fore.GREEN)
+    print "Getting one line status..."
+    command = "oneLineStatus"
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    global rcv
+    data = s.recv(BUFFER_SIZE)
+    time.sleep(1)
+    oneLineStatus = data.encode('ascii', 'ignore')
+    rospy.loginfo(oneLineStatus)
+    pub.publish(str(oneLineStatus.splitlines()))
+    rate.sleep()
+
+def queryDockStatus():
+    pub = rospy.Publisher('ldarcl_queryDockStatus', String, queue_size=10)
+    rospy.init_node('ld_topic_publisher', anonymous=True)
+    rate = rospy.Rate(10) # 10hz
+    print(Style.RESET_ALL)
+    print(Fore.GREEN)
+    print "Getting docking/charging status..."
+    command = "queryDockStatus"
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    global rcv
+    data = s.recv(BUFFER_SIZE)
+    time.sleep(1)
+    queryDockStatus = data.encode('ascii', 'ignore')
+    rospy.loginfo(queryDockStatus)
+    pub.publish(str(queryDockStatus.splitlines()))
+    rate.sleep()
+
+def queryMotors():
+    pub = rospy.Publisher('ldarcl_queryMotors', String, queue_size=10)
+    rospy.init_node('ld_topic_publisher', anonymous=True)
+    rate = rospy.Rate(10) # 10hz
+    print(Style.RESET_ALL)
+    print(Fore.GREEN)
+    print "Getting state of robot motors..."
+    command = "queryMotors"
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    global rcv
+    data = s.recv(BUFFER_SIZE)
+    time.sleep(1)
+    queryMotors = data.encode('ascii', 'ignore')
+    rospy.loginfo(queryMotors)
+    pub.publish(str(queryMotors.splitlines()))
+    rate.sleep()
+
+# def queueShow():
+#     pub = rospy.Publisher('ldarcl_queueShow', String, queue_size=10)
+#     rospy.init_node('ld_queueShow', anonymous=True)
+#     rate = rospy.Rate(10) # 10hz
+#     print(Style.RESET_ALL)
+#     print(Fore.GREEN)
+#     print "Getting status of last 11 jobs in queue..."
+#     command = "queueShow"
+#     command = command.encode('ascii')
+#     s.send(command+b"\r\n")
+#     global rcv
+#     data = s.recv(BUFFER_SIZE)
+#     time.sleep(1)
+#     queueShow = data.encode('ascii', 'ignore')
+#     rospy.loginfo(queueShow)
+#     pub.publish(str(queueShow.splitlines()))
+#     rate.sleep()
+
+def queueShowRobotLocal():
+    pub = rospy.Publisher('ldarcl_queueShowRobotLocal', String, queue_size=10)
+    rospy.init_node('ld_topic_publisher', anonymous=True)
+    rate = rospy.Rate(10) # 10hz
+    print(Style.RESET_ALL)
+    print(Fore.GREEN)
+    print "Getting status of robot..."
+    command = "queueShowRobotLocal"
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    global rcv
+    data = s.recv(BUFFER_SIZE)
+    time.sleep(1)
+    queueShowRobotLocal = data.encode('ascii', 'ignore')
+    rospy.loginfo(queueShowRobotLocal)
+    pub.publish(str(queueShowRobotLocal.splitlines()))
+    rate.sleep()
+
+def waitTaskState():
+    pub = rospy.Publisher('ldarcl_waitTaskState', String, queue_size=10)
+    rospy.init_node('ld_topic_publisher', anonymous=True)
+    rate = rospy.Rate(10) # 10hz
+    print(Style.RESET_ALL)
+    print(Fore.GREEN)
+    print "Getting status of wait task..."
+    command = "waitTaskState"
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    global rcv
+    data = s.recv(BUFFER_SIZE)
+    time.sleep(1)
+    waitTaskState = data.encode('ascii', 'ignore')
+    rospy.loginfo(waitTaskState)
+    pub.publish(str(waitTaskState.splitlines()))
+    rate.sleep()
+
 
 if __name__ == '__main__':
     try:
         while not rospy.is_shutdown():
-            # applicationFaultQuery()
-            # faultsGet()
+            applicationFaultQuery()
+            faultsGet()
             # getDateTime()
             # getGoals()
             # getMacros()
             # getRoutes()
             # mapObjectTypeList()
-            odometer()
+            # odometer()
+            # oneLineStatus()
+            # queryDockStatus()
+            # queryMotors()
+            # # queueShow()
+            # queueShowRobotLocal()
+            # waitTaskState()
+
     except rospy.ROSInterruptException:
         pass
