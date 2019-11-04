@@ -40,7 +40,7 @@ def applicationFaultQuery():
     global rcv
     data = s.recv(BUFFER_SIZE)
     time.sleep(1)
-    applicationFaultQuery = data.decode("utf-8")
+    applicationFaultQuery = data.encode('ascii', 'ignore')
     rospy.loginfo(applicationFaultQuery)
     pub.publish(str(applicationFaultQuery.splitlines()))
     rate.sleep()
@@ -58,7 +58,7 @@ def faultsGet():
     global rcv
     data = s.recv(BUFFER_SIZE)
     time.sleep(1)
-    faultsGet = data.decode("utf-8")
+    faultsGet = data.encode('ascii', 'ignore')
     rospy.loginfo(faultsGet)
     pub.publish(str(faultsGet.splitlines()))
     rate.sleep()
@@ -77,63 +77,102 @@ def getDateTime():
     global rcv
     data = s.recv(BUFFER_SIZE)
     time.sleep(1)
-    getDateTime = data.decode("utf-8")
+    getDateTime = data.encode('ascii', 'ignore')
     rospy.loginfo(getDateTime)
     pub.publish(str(getDateTime.splitlines()))
     rate.sleep()
 
-def location():
-    pub = rospy.Publisher('ldarcl_getDateTime', String, queue_size=10)
-    rospy.init_node('ld_getDateTime', anonymous=True)
+def getGoals():
+    pub = rospy.Publisher('ldarcl_getGoals', String, queue_size=10)
+    rospy.init_node('ld_getGoals', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
     print(Fore.GREEN)
-    print "Getting date and time..."
-    command = "getDateTime"
+    print "Getting list of goals found in current map..."
+    command = "getGoals"
     command = command.encode('ascii')
     s.send(command+b"\r\n")
     global rcv
     data = s.recv(BUFFER_SIZE)
     time.sleep(1)
-    getDateTime = data.decode("utf-8")
-    rospy.loginfo(getDateTime)
-    pub.publish(str(getDateTime.splitlines()))
+    getGoals = data.encode('ascii', 'ignore')
+    rospy.loginfo(getGoals)
+    pub.publish(str(getGoals.splitlines()))
     rate.sleep()
 
-def localization_score():
-    pub = rospy.Publisher('ldarcl_status_localization_score', Float32, queue_size=10)
-    rospy.init_node('ld_status', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
-    print(Style.RESET_ALL)
-    print(Fore.BLUE)
-    print(Style.BRIGHT)
-    print "Getting localization_score..."
-    for line in rcv.splitlines():
-        if 'LocalizationScore' in line:
-            localization_score = line.split()[-1]
-            rospy.loginfo(localization_score)
-            pub.publish(float(localization_score))
-            rate.sleep()
-        else:
-            pass
+# def getInfoList():
+#     pub = rospy.Publisher('ldarcl_getIn', String, queue_size=10)
+#     rospy.init_node('ld_getGoals', anonymous=True)
+#     rate = rospy.Rate(10) # 10hz
+#     print(Style.RESET_ALL)
+#     print(Fore.GREEN)
+#     print "Getting list infomation names..."
+#     command = "getInfoList"
+#     command = command.encode('ascii')
+#     s.send(command+b"\r\n")
+#     global rcv
+#     data = s.recv(BUFFER_SIZE)
+#     time.sleep(1)
+#     getGoals = data.encode('ascii', 'ignore')
+#     rospy.loginfo(getGoals)
+#     pub.publish(str(getGoals.splitlines()))
+#     rate.sleep()
 
 
 
-def temperature():
-    pub = rospy.Publisher('ldarcl_status_temperature', Float32, queue_size=10)
-    rospy.init_node('ld_status', anonymous=True)
+def getMacros():
+    pub = rospy.Publisher('ldarcl_getMacros', String, queue_size=10)
+    rospy.init_node('ld_getMacros', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
     print(Fore.GREEN)
-    print "Getting temperature..."
-    for line in rcv.splitlines():
-        if 'Temperature' in line:
-            temperature = line.split()[-1]
-            rospy.loginfo(temperature)
-            pub.publish(float(temperature))
-            rate.sleep()
-        else:
-            pass
+    print "Getting list of macros found in current map..."
+    command = "getMacros"
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    global rcv
+    data = s.recv(BUFFER_SIZE)
+    time.sleep(1)
+    getMacros = data.encode('ascii', 'ignore')
+    rospy.loginfo(getMacros)
+    pub.publish(str(getMacros.splitlines()))
+    rate.sleep()
+
+def getRoutes():
+    pub = rospy.Publisher('ldarcl_getRoutes', String, queue_size=10)
+    rospy.init_node('ld_getRoutes', anonymous=True)
+    rate = rospy.Rate(10) # 10hz
+    print(Style.RESET_ALL)
+    print(Fore.GREEN)
+    print "Getting list of route names found in current map..."
+    command = "getRoutes"
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    global rcv
+    data = s.recv(BUFFER_SIZE)
+    time.sleep(1)
+    getRoutes = data.encode('ascii', 'ignore')
+    rospy.loginfo(getRoutes)
+    pub.publish(str(getRoutes.splitlines()))
+    rate.sleep()
+
+def geInputQuery():
+    pub = rospy.Publisher('ldarcl_getRoutes', String, queue_size=10)
+    rospy.init_node('ld_getRoutes', anonymous=True)
+    rate = rospy.Rate(10) # 10hz
+    print(Style.RESET_ALL)
+    print(Fore.GREEN)
+    print "Getting list of route names found in current map..."
+    command = "getRoutes"
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    global rcv
+    data = s.recv(BUFFER_SIZE)
+    time.sleep(1)
+    getRoutes = data.encode('ascii', 'ignore')
+    rospy.loginfo(getRoutes)
+    pub.publish(str(getRoutes.splitlines()))
+    rate.sleep()
 
 
 
@@ -142,7 +181,10 @@ if __name__ == '__main__':
         while not rospy.is_shutdown():
             # applicationFaultQuery()
             # faultsGet()
-            getDateTime()
+            # getDateTime()
+            # getGoals()
+            # getMacros()
+            getRoutes()
 
     except rospy.ROSInterruptException:
         pass
