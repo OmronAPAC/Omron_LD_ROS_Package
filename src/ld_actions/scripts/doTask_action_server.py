@@ -58,10 +58,17 @@ class ActionServer():
         try:
             data = socket.recv(BUFFER_SIZE)
             rcv = data.encode('ascii', 'ignore')
+            feedback.received_data = rcv
+            self.a_server.publish_feedback(feedback)
             while not rospy.is_shutdown():
                 #check for required data
                 if "Completed" in rcv:
                     break
+                if "Failed" in rcv:
+                    print "Failed to do task"
+                    result.status = "Failed to do task"
+                    self.a_server.set_succeeded(result)
+                    return(0)
                 else:
                     data = socket.recv(BUFFER_SIZE)
                     rcv = rcv + data.encode('ascii', 'ignore')
@@ -74,16 +81,17 @@ class ActionServer():
                 #print required data
                 if 'Completed' in line:
                     i = 1
-                    dock = line.split("Completed")
-                    rospy.loginfo(",Completed".join(dock)[1:])
-                    pub.publish(''.join(dock))
+                    doTask = line.split("Completed")
+                    rospy.loginfo(",Completed".join(doTask)[1:])
+                    pub.publish(''.join(doTask))
                     rate.sleep()
                     success = True
-                    # result.status.append(rcv)
                     rcv = str(rcv.splitlines())
-                    result.status = rcv
+                    result.status = (",Completed".join(doTask)[1:])
                     self.a_server.set_succeeded(result)
                     return(0)
+
+
 
 
 
