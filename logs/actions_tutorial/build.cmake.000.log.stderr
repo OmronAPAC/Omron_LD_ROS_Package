@@ -1,5 +1,0 @@
-[31m[1mCMake Error[0m at /home/tthmatt/ld_ROS/src/actions_tutorial/CMakeLists.txt:56:
-  Parse error.  Expected a command name, got unquoted argument with text
-  "<div".
-
-
