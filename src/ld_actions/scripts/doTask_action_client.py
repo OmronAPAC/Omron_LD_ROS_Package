@@ -14,7 +14,7 @@ def call_server():
     client.wait_for_server()
 
     goal = DoTaskGoal()
-    goal.goaltask = "move 1056460"
+    goal.goaltask = "move 100"
 
     client.send_goal(goal, feedback_cb=feedback_cb)
 
