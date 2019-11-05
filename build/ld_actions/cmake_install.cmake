@@ -129,7 +129,10 @@ file(INSTALL DESTINATION "/home/tthmatt/ld_ROS/install" TYPE FILE FILES "/home/t
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ld_actions/action" TYPE FILE FILES "/home/tthmatt/ld_ROS/src/ld_actions/action/Dock.action")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ld_actions/action" TYPE FILE FILES
+    "/home/tthmatt/ld_ROS/src/ld_actions/action/Dock.action"
+    "/home/tthmatt/ld_ROS/src/ld_actions/action/DoTask.action"
+    )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -141,6 +144,18 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockGoal.msg"
     "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockResult.msg"
     "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockFeedback.msg"
+    )
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ld_actions/msg" TYPE FILE FILES
+    "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskAction.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionGoal.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionResult.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionFeedback.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskResult.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskFeedback.msg"
     )
 endif()
 

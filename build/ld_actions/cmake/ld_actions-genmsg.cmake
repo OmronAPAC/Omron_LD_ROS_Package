@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "ld_actions: 7 messages, 0 services")
+message(STATUS "ld_actions: 14 messages, 0 services")
 
 set(MSG_I_FLAGS "-Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg;-Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg;-Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg")
 
@@ -22,9 +22,19 @@ add_custom_target(_ld_actions_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ld_actions" "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockAction.msg" "actionlib_msgs/GoalID:ld_actions/DockGoal:actionlib_msgs/GoalStatus:ld_actions/DockActionFeedback:ld_actions/DockResult:std_msgs/Header:ld_actions/DockActionResult:ld_actions/DockActionGoal:ld_actions/DockFeedback"
 )
 
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskResult.msg" NAME_WE)
+add_custom_target(_ld_actions_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ld_actions" "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskResult.msg" ""
+)
+
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionResult.msg" NAME_WE)
 add_custom_target(_ld_actions_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ld_actions" "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionResult.msg" "ld_actions/DockResult:actionlib_msgs/GoalID:actionlib_msgs/GoalStatus:std_msgs/Header"
+)
+
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionFeedback.msg" NAME_WE)
+add_custom_target(_ld_actions_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ld_actions" "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionFeedback.msg" "ld_actions/DoTaskFeedback:actionlib_msgs/GoalID:actionlib_msgs/GoalStatus:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockResult.msg" NAME_WE)
@@ -32,14 +42,19 @@ add_custom_target(_ld_actions_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ld_actions" "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockResult.msg" ""
 )
 
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskFeedback.msg" NAME_WE)
+add_custom_target(_ld_actions_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ld_actions" "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskFeedback.msg" ""
+)
+
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockFeedback.msg" NAME_WE)
 add_custom_target(_ld_actions_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ld_actions" "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockFeedback.msg" ""
 )
 
-get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionResult.msg" NAME_WE)
 add_custom_target(_ld_actions_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ld_actions" "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionGoal.msg" "actionlib_msgs/GoalID:ld_actions/DockGoal:std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ld_actions" "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionResult.msg" "actionlib_msgs/GoalID:actionlib_msgs/GoalStatus:ld_actions/DoTaskResult:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionFeedback.msg" NAME_WE)
@@ -47,9 +62,29 @@ add_custom_target(_ld_actions_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ld_actions" "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionFeedback.msg" "ld_actions/DockFeedback:actionlib_msgs/GoalID:actionlib_msgs/GoalStatus:std_msgs/Header"
 )
 
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg" NAME_WE)
+add_custom_target(_ld_actions_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ld_actions" "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg" ""
+)
+
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskAction.msg" NAME_WE)
+add_custom_target(_ld_actions_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ld_actions" "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskAction.msg" "actionlib_msgs/GoalID:ld_actions/DoTaskActionResult:actionlib_msgs/GoalStatus:ld_actions/DoTaskFeedback:ld_actions/DoTaskActionGoal:ld_actions/DoTaskActionFeedback:std_msgs/Header:ld_actions/DoTaskGoal:ld_actions/DoTaskResult"
+)
+
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockGoal.msg" NAME_WE)
 add_custom_target(_ld_actions_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ld_actions" "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockGoal.msg" ""
+)
+
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionGoal.msg" NAME_WE)
+add_custom_target(_ld_actions_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ld_actions" "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionGoal.msg" "actionlib_msgs/GoalID:ld_actions/DockGoal:std_msgs/Header"
+)
+
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionGoal.msg" NAME_WE)
+add_custom_target(_ld_actions_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ld_actions" "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionGoal.msg" "actionlib_msgs/GoalID:ld_actions/DoTaskGoal:std_msgs/Header"
 )
 
 #
@@ -71,13 +106,31 @@ _generate_msg_cpp(ld_actions
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ld_actions
 )
 _generate_msg_cpp(ld_actions
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskResult.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ld_actions
+)
+_generate_msg_cpp(ld_actions
   "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionResult.msg"
   "${MSG_I_FLAGS}"
   "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockResult.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ld_actions
 )
 _generate_msg_cpp(ld_actions
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionFeedback.msg"
+  "${MSG_I_FLAGS}"
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskFeedback.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ld_actions
+)
+_generate_msg_cpp(ld_actions
   "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockResult.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ld_actions
+)
+_generate_msg_cpp(ld_actions
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskFeedback.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ld_actions
@@ -89,15 +142,39 @@ _generate_msg_cpp(ld_actions
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ld_actions
 )
 _generate_msg_cpp(ld_actions
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionResult.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskResult.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ld_actions
+)
+_generate_msg_cpp(ld_actions
   "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionGoal.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ld_actions
 )
 _generate_msg_cpp(ld_actions
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ld_actions
+)
+_generate_msg_cpp(ld_actions
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskAction.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionResult.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskFeedback.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionGoal.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionFeedback.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskResult.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ld_actions
+)
+_generate_msg_cpp(ld_actions
   "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockGoal.msg"
   "${MSG_I_FLAGS}"
   ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ld_actions
+)
+_generate_msg_cpp(ld_actions
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionGoal.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ld_actions
 )
 
@@ -117,17 +194,31 @@ add_dependencies(ld_actions_generate_messages ld_actions_generate_messages_cpp)
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockAction.msg" NAME_WE)
 add_dependencies(ld_actions_generate_messages_cpp _ld_actions_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskResult.msg" NAME_WE)
+add_dependencies(ld_actions_generate_messages_cpp _ld_actions_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionResult.msg" NAME_WE)
+add_dependencies(ld_actions_generate_messages_cpp _ld_actions_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionFeedback.msg" NAME_WE)
 add_dependencies(ld_actions_generate_messages_cpp _ld_actions_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockResult.msg" NAME_WE)
 add_dependencies(ld_actions_generate_messages_cpp _ld_actions_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskFeedback.msg" NAME_WE)
+add_dependencies(ld_actions_generate_messages_cpp _ld_actions_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockFeedback.msg" NAME_WE)
 add_dependencies(ld_actions_generate_messages_cpp _ld_actions_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionResult.msg" NAME_WE)
 add_dependencies(ld_actions_generate_messages_cpp _ld_actions_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionFeedback.msg" NAME_WE)
 add_dependencies(ld_actions_generate_messages_cpp _ld_actions_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg" NAME_WE)
+add_dependencies(ld_actions_generate_messages_cpp _ld_actions_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskAction.msg" NAME_WE)
+add_dependencies(ld_actions_generate_messages_cpp _ld_actions_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockGoal.msg" NAME_WE)
+add_dependencies(ld_actions_generate_messages_cpp _ld_actions_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionGoal.msg" NAME_WE)
+add_dependencies(ld_actions_generate_messages_cpp _ld_actions_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionGoal.msg" NAME_WE)
 add_dependencies(ld_actions_generate_messages_cpp _ld_actions_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -152,13 +243,31 @@ _generate_msg_eus(ld_actions
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ld_actions
 )
 _generate_msg_eus(ld_actions
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskResult.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ld_actions
+)
+_generate_msg_eus(ld_actions
   "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionResult.msg"
   "${MSG_I_FLAGS}"
   "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockResult.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ld_actions
 )
 _generate_msg_eus(ld_actions
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionFeedback.msg"
+  "${MSG_I_FLAGS}"
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskFeedback.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ld_actions
+)
+_generate_msg_eus(ld_actions
   "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockResult.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ld_actions
+)
+_generate_msg_eus(ld_actions
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskFeedback.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ld_actions
@@ -170,15 +279,39 @@ _generate_msg_eus(ld_actions
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ld_actions
 )
 _generate_msg_eus(ld_actions
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionResult.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskResult.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ld_actions
+)
+_generate_msg_eus(ld_actions
   "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionGoal.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ld_actions
 )
 _generate_msg_eus(ld_actions
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ld_actions
+)
+_generate_msg_eus(ld_actions
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskAction.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionResult.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskFeedback.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionGoal.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionFeedback.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskResult.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ld_actions
+)
+_generate_msg_eus(ld_actions
   "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockGoal.msg"
   "${MSG_I_FLAGS}"
   ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ld_actions
+)
+_generate_msg_eus(ld_actions
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionGoal.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ld_actions
 )
 
@@ -198,17 +331,31 @@ add_dependencies(ld_actions_generate_messages ld_actions_generate_messages_eus)
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockAction.msg" NAME_WE)
 add_dependencies(ld_actions_generate_messages_eus _ld_actions_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskResult.msg" NAME_WE)
+add_dependencies(ld_actions_generate_messages_eus _ld_actions_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionResult.msg" NAME_WE)
+add_dependencies(ld_actions_generate_messages_eus _ld_actions_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionFeedback.msg" NAME_WE)
 add_dependencies(ld_actions_generate_messages_eus _ld_actions_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockResult.msg" NAME_WE)
 add_dependencies(ld_actions_generate_messages_eus _ld_actions_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskFeedback.msg" NAME_WE)
+add_dependencies(ld_actions_generate_messages_eus _ld_actions_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockFeedback.msg" NAME_WE)
 add_dependencies(ld_actions_generate_messages_eus _ld_actions_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionResult.msg" NAME_WE)
 add_dependencies(ld_actions_generate_messages_eus _ld_actions_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionFeedback.msg" NAME_WE)
 add_dependencies(ld_actions_generate_messages_eus _ld_actions_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg" NAME_WE)
+add_dependencies(ld_actions_generate_messages_eus _ld_actions_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskAction.msg" NAME_WE)
+add_dependencies(ld_actions_generate_messages_eus _ld_actions_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockGoal.msg" NAME_WE)
+add_dependencies(ld_actions_generate_messages_eus _ld_actions_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionGoal.msg" NAME_WE)
+add_dependencies(ld_actions_generate_messages_eus _ld_actions_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionGoal.msg" NAME_WE)
 add_dependencies(ld_actions_generate_messages_eus _ld_actions_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -233,13 +380,31 @@ _generate_msg_lisp(ld_actions
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ld_actions
 )
 _generate_msg_lisp(ld_actions
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskResult.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ld_actions
+)
+_generate_msg_lisp(ld_actions
   "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionResult.msg"
   "${MSG_I_FLAGS}"
   "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockResult.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ld_actions
 )
 _generate_msg_lisp(ld_actions
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionFeedback.msg"
+  "${MSG_I_FLAGS}"
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskFeedback.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ld_actions
+)
+_generate_msg_lisp(ld_actions
   "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockResult.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ld_actions
+)
+_generate_msg_lisp(ld_actions
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskFeedback.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ld_actions
@@ -251,15 +416,39 @@ _generate_msg_lisp(ld_actions
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ld_actions
 )
 _generate_msg_lisp(ld_actions
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionResult.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskResult.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ld_actions
+)
+_generate_msg_lisp(ld_actions
   "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionGoal.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ld_actions
 )
 _generate_msg_lisp(ld_actions
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ld_actions
+)
+_generate_msg_lisp(ld_actions
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskAction.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionResult.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskFeedback.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionGoal.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionFeedback.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskResult.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ld_actions
+)
+_generate_msg_lisp(ld_actions
   "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockGoal.msg"
   "${MSG_I_FLAGS}"
   ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ld_actions
+)
+_generate_msg_lisp(ld_actions
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionGoal.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ld_actions
 )
 
@@ -279,17 +468,31 @@ add_dependencies(ld_actions_generate_messages ld_actions_generate_messages_lisp)
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockAction.msg" NAME_WE)
 add_dependencies(ld_actions_generate_messages_lisp _ld_actions_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskResult.msg" NAME_WE)
+add_dependencies(ld_actions_generate_messages_lisp _ld_actions_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionResult.msg" NAME_WE)
+add_dependencies(ld_actions_generate_messages_lisp _ld_actions_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionFeedback.msg" NAME_WE)
 add_dependencies(ld_actions_generate_messages_lisp _ld_actions_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockResult.msg" NAME_WE)
 add_dependencies(ld_actions_generate_messages_lisp _ld_actions_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskFeedback.msg" NAME_WE)
+add_dependencies(ld_actions_generate_messages_lisp _ld_actions_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockFeedback.msg" NAME_WE)
 add_dependencies(ld_actions_generate_messages_lisp _ld_actions_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionResult.msg" NAME_WE)
 add_dependencies(ld_actions_generate_messages_lisp _ld_actions_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionFeedback.msg" NAME_WE)
 add_dependencies(ld_actions_generate_messages_lisp _ld_actions_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg" NAME_WE)
+add_dependencies(ld_actions_generate_messages_lisp _ld_actions_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskAction.msg" NAME_WE)
+add_dependencies(ld_actions_generate_messages_lisp _ld_actions_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockGoal.msg" NAME_WE)
+add_dependencies(ld_actions_generate_messages_lisp _ld_actions_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionGoal.msg" NAME_WE)
+add_dependencies(ld_actions_generate_messages_lisp _ld_actions_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionGoal.msg" NAME_WE)
 add_dependencies(ld_actions_generate_messages_lisp _ld_actions_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -314,13 +517,31 @@ _generate_msg_nodejs(ld_actions
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ld_actions
 )
 _generate_msg_nodejs(ld_actions
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskResult.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ld_actions
+)
+_generate_msg_nodejs(ld_actions
   "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionResult.msg"
   "${MSG_I_FLAGS}"
   "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockResult.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ld_actions
 )
 _generate_msg_nodejs(ld_actions
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionFeedback.msg"
+  "${MSG_I_FLAGS}"
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskFeedback.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ld_actions
+)
+_generate_msg_nodejs(ld_actions
   "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockResult.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ld_actions
+)
+_generate_msg_nodejs(ld_actions
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskFeedback.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ld_actions
@@ -332,15 +553,39 @@ _generate_msg_nodejs(ld_actions
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ld_actions
 )
 _generate_msg_nodejs(ld_actions
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionResult.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskResult.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ld_actions
+)
+_generate_msg_nodejs(ld_actions
   "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionGoal.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ld_actions
 )
 _generate_msg_nodejs(ld_actions
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ld_actions
+)
+_generate_msg_nodejs(ld_actions
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskAction.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionResult.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskFeedback.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionGoal.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionFeedback.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskResult.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ld_actions
+)
+_generate_msg_nodejs(ld_actions
   "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockGoal.msg"
   "${MSG_I_FLAGS}"
   ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ld_actions
+)
+_generate_msg_nodejs(ld_actions
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionGoal.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ld_actions
 )
 
@@ -360,17 +605,31 @@ add_dependencies(ld_actions_generate_messages ld_actions_generate_messages_nodej
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockAction.msg" NAME_WE)
 add_dependencies(ld_actions_generate_messages_nodejs _ld_actions_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskResult.msg" NAME_WE)
+add_dependencies(ld_actions_generate_messages_nodejs _ld_actions_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionResult.msg" NAME_WE)
+add_dependencies(ld_actions_generate_messages_nodejs _ld_actions_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionFeedback.msg" NAME_WE)
 add_dependencies(ld_actions_generate_messages_nodejs _ld_actions_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockResult.msg" NAME_WE)
 add_dependencies(ld_actions_generate_messages_nodejs _ld_actions_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskFeedback.msg" NAME_WE)
+add_dependencies(ld_actions_generate_messages_nodejs _ld_actions_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockFeedback.msg" NAME_WE)
 add_dependencies(ld_actions_generate_messages_nodejs _ld_actions_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionResult.msg" NAME_WE)
 add_dependencies(ld_actions_generate_messages_nodejs _ld_actions_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionFeedback.msg" NAME_WE)
 add_dependencies(ld_actions_generate_messages_nodejs _ld_actions_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg" NAME_WE)
+add_dependencies(ld_actions_generate_messages_nodejs _ld_actions_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskAction.msg" NAME_WE)
+add_dependencies(ld_actions_generate_messages_nodejs _ld_actions_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockGoal.msg" NAME_WE)
+add_dependencies(ld_actions_generate_messages_nodejs _ld_actions_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionGoal.msg" NAME_WE)
+add_dependencies(ld_actions_generate_messages_nodejs _ld_actions_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionGoal.msg" NAME_WE)
 add_dependencies(ld_actions_generate_messages_nodejs _ld_actions_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -395,13 +654,31 @@ _generate_msg_py(ld_actions
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ld_actions
 )
 _generate_msg_py(ld_actions
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskResult.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ld_actions
+)
+_generate_msg_py(ld_actions
   "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionResult.msg"
   "${MSG_I_FLAGS}"
   "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockResult.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ld_actions
 )
 _generate_msg_py(ld_actions
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionFeedback.msg"
+  "${MSG_I_FLAGS}"
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskFeedback.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ld_actions
+)
+_generate_msg_py(ld_actions
   "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockResult.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ld_actions
+)
+_generate_msg_py(ld_actions
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskFeedback.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ld_actions
@@ -413,15 +690,39 @@ _generate_msg_py(ld_actions
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ld_actions
 )
 _generate_msg_py(ld_actions
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionResult.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskResult.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ld_actions
+)
+_generate_msg_py(ld_actions
   "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionGoal.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ld_actions
 )
 _generate_msg_py(ld_actions
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ld_actions
+)
+_generate_msg_py(ld_actions
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskAction.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionResult.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskFeedback.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionGoal.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionFeedback.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskResult.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ld_actions
+)
+_generate_msg_py(ld_actions
   "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockGoal.msg"
   "${MSG_I_FLAGS}"
   ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ld_actions
+)
+_generate_msg_py(ld_actions
+  "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionGoal.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ld_actions
 )
 
@@ -441,17 +742,31 @@ add_dependencies(ld_actions_generate_messages ld_actions_generate_messages_py)
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockAction.msg" NAME_WE)
 add_dependencies(ld_actions_generate_messages_py _ld_actions_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskResult.msg" NAME_WE)
+add_dependencies(ld_actions_generate_messages_py _ld_actions_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionResult.msg" NAME_WE)
+add_dependencies(ld_actions_generate_messages_py _ld_actions_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionFeedback.msg" NAME_WE)
 add_dependencies(ld_actions_generate_messages_py _ld_actions_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockResult.msg" NAME_WE)
 add_dependencies(ld_actions_generate_messages_py _ld_actions_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskFeedback.msg" NAME_WE)
+add_dependencies(ld_actions_generate_messages_py _ld_actions_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockFeedback.msg" NAME_WE)
 add_dependencies(ld_actions_generate_messages_py _ld_actions_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionResult.msg" NAME_WE)
 add_dependencies(ld_actions_generate_messages_py _ld_actions_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionFeedback.msg" NAME_WE)
 add_dependencies(ld_actions_generate_messages_py _ld_actions_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg" NAME_WE)
+add_dependencies(ld_actions_generate_messages_py _ld_actions_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskAction.msg" NAME_WE)
+add_dependencies(ld_actions_generate_messages_py _ld_actions_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockGoal.msg" NAME_WE)
+add_dependencies(ld_actions_generate_messages_py _ld_actions_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionGoal.msg" NAME_WE)
+add_dependencies(ld_actions_generate_messages_py _ld_actions_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionGoal.msg" NAME_WE)
 add_dependencies(ld_actions_generate_messages_py _ld_actions_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
