@@ -110,6 +110,6 @@ def dock():
                     break
 
 if __name__ == "__main__":
-    rospy.init_node("action_server")
+    rospy.init_node("dock_action_server")
     s = ActionServer()
     rospy.spin()

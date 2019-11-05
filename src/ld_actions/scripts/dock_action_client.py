@@ -27,7 +27,7 @@ def call_server():
 if __name__ == '__main__':
 
     try:
-        rospy.init_node('action_client')
+        rospy.init_node('dock_action_client')
         result = call_server()
         print 'The result is:', result
     except rospy.ROSInterruptException as e:

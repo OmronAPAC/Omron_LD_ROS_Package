@@ -107,6 +107,6 @@ class ActionServer():
 
 
 if __name__ == "__main__":
-    rospy.init_node("action_server")
+    rospy.init_node("doTask_action_server")
     s = ActionServer()
     rospy.spin()
