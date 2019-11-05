@@ -1,12 +1,12 @@
 file(REMOVE_RECURSE
   "CMakeFiles/actions_tutorial_generate_messages_py"
-  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/lib/python2.7/dist-packages/actions_tutorial/msg/_WashTheDishesActionResult.py"
-  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/lib/python2.7/dist-packages/actions_tutorial/msg/_WashTheDishesActionGoal.py"
-  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/lib/python2.7/dist-packages/actions_tutorial/msg/_WashTheDishesActionFeedback.py"
-  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/lib/python2.7/dist-packages/actions_tutorial/msg/_WashTheDishesFeedback.py"
-  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/lib/python2.7/dist-packages/actions_tutorial/msg/_WashTheDishesAction.py"
-  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/lib/python2.7/dist-packages/actions_tutorial/msg/_WashTheDishesResult.py"
-  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/lib/python2.7/dist-packages/actions_tutorial/msg/_WashTheDishesGoal.py"
+  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/lib/python2.7/dist-packages/actions_tutorial/msg/_DockActionGoal.py"
+  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/lib/python2.7/dist-packages/actions_tutorial/msg/_DockActionFeedback.py"
+  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/lib/python2.7/dist-packages/actions_tutorial/msg/_DockAction.py"
+  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/lib/python2.7/dist-packages/actions_tutorial/msg/_DockGoal.py"
+  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/lib/python2.7/dist-packages/actions_tutorial/msg/_DockFeedback.py"
+  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/lib/python2.7/dist-packages/actions_tutorial/msg/_DockActionResult.py"
+  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/lib/python2.7/dist-packages/actions_tutorial/msg/_DockResult.py"
   "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/lib/python2.7/dist-packages/actions_tutorial/msg/__init__.py"
 )
 

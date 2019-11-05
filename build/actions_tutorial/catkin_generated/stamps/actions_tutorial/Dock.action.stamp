@@ -1,0 +1,10 @@
+# Goal
+int32 isdocked
+
+---
+# Result
+string[] docking_status
+
+---
+# Feedback
+string received_data

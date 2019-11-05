@@ -129,18 +129,18 @@ file(INSTALL DESTINATION "/home/tthmatt/ld_ROS/install" TYPE FILE FILES "/home/t
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/actions_tutorial/action" TYPE FILE FILES "/home/tthmatt/ld_ROS/src/actions_tutorial/action/WashTheDishes.action")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/actions_tutorial/action" TYPE FILE FILES "/home/tthmatt/ld_ROS/src/actions_tutorial/action/Dock.action")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/actions_tutorial/msg" TYPE FILE FILES
-    "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/share/actions_tutorial/msg/WashTheDishesAction.msg"
-    "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/share/actions_tutorial/msg/WashTheDishesActionGoal.msg"
-    "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/share/actions_tutorial/msg/WashTheDishesActionResult.msg"
-    "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/share/actions_tutorial/msg/WashTheDishesActionFeedback.msg"
-    "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/share/actions_tutorial/msg/WashTheDishesGoal.msg"
-    "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/share/actions_tutorial/msg/WashTheDishesResult.msg"
-    "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/share/actions_tutorial/msg/WashTheDishesFeedback.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/share/actions_tutorial/msg/DockAction.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/share/actions_tutorial/msg/DockActionGoal.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/share/actions_tutorial/msg/DockActionResult.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/share/actions_tutorial/msg/DockActionFeedback.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/share/actions_tutorial/msg/DockGoal.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/share/actions_tutorial/msg/DockResult.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/share/actions_tutorial/msg/DockFeedback.msg"
     )
 endif()
 

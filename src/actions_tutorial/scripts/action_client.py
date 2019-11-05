@@ -2,19 +2,19 @@
 
 import rospy
 import actionlib
-from actions_tutorial.msg import WashTheDishesAction, WashTheDishesGoal
+from actions_tutorial.msg import DockAction, DockGoal
 
 def feedback_cb(msg):
  print 'Feedback received:', msg
 
 def call_server():
 
-    client = actionlib.SimpleActionClient('wash_dishes_as', WashTheDishesAction)
+    client = actionlib.SimpleActionClient('dock', DockAction)
 
     client.wait_for_server()
 
-    goal = WashTheDishesGoal()
-    goal.number_of_minutes = 7
+    goal = DockGoal()
+    goal.isdocked = 3
 
     client.send_goal(goal, feedback_cb=feedback_cb)
 

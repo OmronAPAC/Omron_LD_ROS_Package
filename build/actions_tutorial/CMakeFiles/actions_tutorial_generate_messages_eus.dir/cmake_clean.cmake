@@ -1,12 +1,12 @@
 file(REMOVE_RECURSE
   "CMakeFiles/actions_tutorial_generate_messages_eus"
-  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/share/roseus/ros/actions_tutorial/msg/WashTheDishesActionResult.l"
-  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/share/roseus/ros/actions_tutorial/msg/WashTheDishesActionGoal.l"
-  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/share/roseus/ros/actions_tutorial/msg/WashTheDishesActionFeedback.l"
-  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/share/roseus/ros/actions_tutorial/msg/WashTheDishesFeedback.l"
-  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/share/roseus/ros/actions_tutorial/msg/WashTheDishesAction.l"
-  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/share/roseus/ros/actions_tutorial/msg/WashTheDishesResult.l"
-  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/share/roseus/ros/actions_tutorial/msg/WashTheDishesGoal.l"
+  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/share/roseus/ros/actions_tutorial/msg/DockActionGoal.l"
+  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/share/roseus/ros/actions_tutorial/msg/DockActionFeedback.l"
+  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/share/roseus/ros/actions_tutorial/msg/DockAction.l"
+  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/share/roseus/ros/actions_tutorial/msg/DockGoal.l"
+  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/share/roseus/ros/actions_tutorial/msg/DockFeedback.l"
+  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/share/roseus/ros/actions_tutorial/msg/DockActionResult.l"
+  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/share/roseus/ros/actions_tutorial/msg/DockResult.l"
   "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/share/roseus/ros/actions_tutorial/manifest.l"
 )
 

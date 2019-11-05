@@ -1,12 +1,12 @@
 file(REMOVE_RECURSE
   "CMakeFiles/actions_tutorial_generate_messages_cpp"
-  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/include/actions_tutorial/WashTheDishesActionResult.h"
-  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/include/actions_tutorial/WashTheDishesActionGoal.h"
-  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/include/actions_tutorial/WashTheDishesActionFeedback.h"
-  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/include/actions_tutorial/WashTheDishesFeedback.h"
-  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/include/actions_tutorial/WashTheDishesAction.h"
-  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/include/actions_tutorial/WashTheDishesResult.h"
-  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/include/actions_tutorial/WashTheDishesGoal.h"
+  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/include/actions_tutorial/DockActionGoal.h"
+  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/include/actions_tutorial/DockActionFeedback.h"
+  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/include/actions_tutorial/DockAction.h"
+  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/include/actions_tutorial/DockGoal.h"
+  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/include/actions_tutorial/DockFeedback.h"
+  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/include/actions_tutorial/DockActionResult.h"
+  "/home/tthmatt/ld_ROS/devel/.private/actions_tutorial/include/actions_tutorial/DockResult.h"
 )
 
 # Per-language clean rules from dependency scanning.
