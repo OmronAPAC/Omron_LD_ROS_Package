@@ -1,0 +1,8 @@
+prefix=/home/tthmatt/ld_ROS/install
+
+Name: actions_tutorial
+Description: Description of actions_tutorial
+Version: 0.0.0
+Cflags: -I/home/tthmatt/ld_ROS/install/include
+Libs: -L/home/tthmatt/ld_ROS/install/lib -lactions_tutorial
+Requires: actionlib_msgs rospy std_msgs message_runtime

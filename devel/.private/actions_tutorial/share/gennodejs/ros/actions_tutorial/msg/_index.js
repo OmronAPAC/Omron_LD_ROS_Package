@@ -1,0 +1,34 @@
+
+"use strict";
+
+let WashTheDishesActionGoal = require('./WashTheDishesActionGoal.js');
+let WashTheDishesActionResult = require('./WashTheDishesActionResult.js');
+let dockAction = require('./dockAction.js');
+let WashTheDishesResult = require('./WashTheDishesResult.js');
+let WashTheDishesGoal = require('./WashTheDishesGoal.js');
+let dockActionGoal = require('./dockActionGoal.js');
+let dockActionResult = require('./dockActionResult.js');
+let dockFeedback = require('./dockFeedback.js');
+let dockResult = require('./dockResult.js');
+let dockGoal = require('./dockGoal.js');
+let WashTheDishesActionFeedback = require('./WashTheDishesActionFeedback.js');
+let dockActionFeedback = require('./dockActionFeedback.js');
+let WashTheDishesAction = require('./WashTheDishesAction.js');
+let WashTheDishesFeedback = require('./WashTheDishesFeedback.js');
+
+module.exports = {
+  WashTheDishesActionGoal: WashTheDishesActionGoal,
+  WashTheDishesActionResult: WashTheDishesActionResult,
+  dockAction: dockAction,
+  WashTheDishesResult: WashTheDishesResult,
+  WashTheDishesGoal: WashTheDishesGoal,
+  dockActionGoal: dockActionGoal,
+  dockActionResult: dockActionResult,
+  dockFeedback: dockFeedback,
+  dockResult: dockResult,
+  dockGoal: dockGoal,
+  WashTheDishesActionFeedback: WashTheDishesActionFeedback,
+  dockActionFeedback: dockActionFeedback,
+  WashTheDishesAction: WashTheDishesAction,
+  WashTheDishesFeedback: WashTheDishesFeedback,
+};
