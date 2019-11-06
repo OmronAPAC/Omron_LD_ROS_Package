@@ -66,6 +66,7 @@ add_action_files(
 FILES
 Dock.action
 DoTask.action
+ExecuteMacro.action
 )
 
 ## Generate added messages and services with any dependencies listed here

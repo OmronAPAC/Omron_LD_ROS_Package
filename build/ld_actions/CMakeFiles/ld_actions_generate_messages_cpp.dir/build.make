@@ -59,13 +59,20 @@ CMakeFiles/ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private
 CMakeFiles/ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DockActionResult.h
 CMakeFiles/ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DoTaskActionFeedback.h
 CMakeFiles/ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DockResult.h
+CMakeFiles/ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroResult.h
 CMakeFiles/ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DoTaskFeedback.h
 CMakeFiles/ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DockFeedback.h
+CMakeFiles/ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroActionFeedback.h
 CMakeFiles/ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DoTaskActionResult.h
 CMakeFiles/ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DockActionGoal.h
+CMakeFiles/ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroFeedback.h
 CMakeFiles/ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DoTaskGoal.h
+CMakeFiles/ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroActionResult.h
+CMakeFiles/ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroActionGoal.h
 CMakeFiles/ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DoTaskAction.h
 CMakeFiles/ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DockGoal.h
+CMakeFiles/ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroGoal.h
+CMakeFiles/ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroAction.h
 CMakeFiles/ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DoTaskActionGoal.h
 
 
@@ -126,17 +133,33 @@ CMakeFiles/ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating C++ code from ld_actions/DockResult.msg"
 	cd /home/tthmatt/ld_ROS/src/ld_actions && /home/tthmatt/ld_ROS/build/ld_actions/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions -e /opt/ros/melodic/share/gencpp/cmake/..
 
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroResult.h: /opt/ros/melodic/lib/gencpp/gen_cpp.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroResult.h: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroResult.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroResult.h: /opt/ros/melodic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating C++ code from ld_actions/ExecuteMacroResult.msg"
+	cd /home/tthmatt/ld_ROS/src/ld_actions && /home/tthmatt/ld_ROS/build/ld_actions/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions -e /opt/ros/melodic/share/gencpp/cmake/..
+
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DoTaskFeedback.h: /opt/ros/melodic/lib/gencpp/gen_cpp.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DoTaskFeedback.h: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskFeedback.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DoTaskFeedback.h: /opt/ros/melodic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating C++ code from ld_actions/DoTaskFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating C++ code from ld_actions/DoTaskFeedback.msg"
 	cd /home/tthmatt/ld_ROS/src/ld_actions && /home/tthmatt/ld_ROS/build/ld_actions/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions -e /opt/ros/melodic/share/gencpp/cmake/..
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DockFeedback.h: /opt/ros/melodic/lib/gencpp/gen_cpp.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DockFeedback.h: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockFeedback.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DockFeedback.h: /opt/ros/melodic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating C++ code from ld_actions/DockFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating C++ code from ld_actions/DockFeedback.msg"
 	cd /home/tthmatt/ld_ROS/src/ld_actions && /home/tthmatt/ld_ROS/build/ld_actions/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions -e /opt/ros/melodic/share/gencpp/cmake/..
+
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroActionFeedback.h: /opt/ros/melodic/lib/gencpp/gen_cpp.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroActionFeedback.h: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroActionFeedback.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroActionFeedback.h: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroActionFeedback.h: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroActionFeedback.h: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroFeedback.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroActionFeedback.h: /opt/ros/melodic/share/std_msgs/msg/Header.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroActionFeedback.h: /opt/ros/melodic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating C++ code from ld_actions/ExecuteMacroActionFeedback.msg"
+	cd /home/tthmatt/ld_ROS/src/ld_actions && /home/tthmatt/ld_ROS/build/ld_actions/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroActionFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions -e /opt/ros/melodic/share/gencpp/cmake/..
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DoTaskActionResult.h: /opt/ros/melodic/lib/gencpp/gen_cpp.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DoTaskActionResult.h: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionResult.msg
@@ -145,7 +168,7 @@ CMakeFiles/ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DoTaskActionResult.h: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DoTaskActionResult.h: /opt/ros/melodic/share/std_msgs/msg/Header.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DoTaskActionResult.h: /opt/ros/melodic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating C++ code from ld_actions/DoTaskActionResult.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating C++ code from ld_actions/DoTaskActionResult.msg"
 	cd /home/tthmatt/ld_ROS/src/ld_actions && /home/tthmatt/ld_ROS/build/ld_actions/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions -e /opt/ros/melodic/share/gencpp/cmake/..
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DockActionGoal.h: /opt/ros/melodic/lib/gencpp/gen_cpp.py
@@ -154,14 +177,39 @@ CMakeFiles/ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DockActionGoal.h: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockGoal.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DockActionGoal.h: /opt/ros/melodic/share/std_msgs/msg/Header.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DockActionGoal.h: /opt/ros/melodic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating C++ code from ld_actions/DockActionGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating C++ code from ld_actions/DockActionGoal.msg"
 	cd /home/tthmatt/ld_ROS/src/ld_actions && /home/tthmatt/ld_ROS/build/ld_actions/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions -e /opt/ros/melodic/share/gencpp/cmake/..
+
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroFeedback.h: /opt/ros/melodic/lib/gencpp/gen_cpp.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroFeedback.h: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroFeedback.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroFeedback.h: /opt/ros/melodic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating C++ code from ld_actions/ExecuteMacroFeedback.msg"
+	cd /home/tthmatt/ld_ROS/src/ld_actions && /home/tthmatt/ld_ROS/build/ld_actions/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions -e /opt/ros/melodic/share/gencpp/cmake/..
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DoTaskGoal.h: /opt/ros/melodic/lib/gencpp/gen_cpp.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DoTaskGoal.h: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DoTaskGoal.h: /opt/ros/melodic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating C++ code from ld_actions/DoTaskGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Generating C++ code from ld_actions/DoTaskGoal.msg"
 	cd /home/tthmatt/ld_ROS/src/ld_actions && /home/tthmatt/ld_ROS/build/ld_actions/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions -e /opt/ros/melodic/share/gencpp/cmake/..
+
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroActionResult.h: /opt/ros/melodic/lib/gencpp/gen_cpp.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroActionResult.h: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroActionResult.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroActionResult.h: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroActionResult.h: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroActionResult.h: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroResult.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroActionResult.h: /opt/ros/melodic/share/std_msgs/msg/Header.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroActionResult.h: /opt/ros/melodic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Generating C++ code from ld_actions/ExecuteMacroActionResult.msg"
+	cd /home/tthmatt/ld_ROS/src/ld_actions && /home/tthmatt/ld_ROS/build/ld_actions/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroActionResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions -e /opt/ros/melodic/share/gencpp/cmake/..
+
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroActionGoal.h: /opt/ros/melodic/lib/gencpp/gen_cpp.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroActionGoal.h: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroActionGoal.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroActionGoal.h: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroActionGoal.h: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroGoal.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroActionGoal.h: /opt/ros/melodic/share/std_msgs/msg/Header.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroActionGoal.h: /opt/ros/melodic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Generating C++ code from ld_actions/ExecuteMacroActionGoal.msg"
+	cd /home/tthmatt/ld_ROS/src/ld_actions && /home/tthmatt/ld_ROS/build/ld_actions/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroActionGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions -e /opt/ros/melodic/share/gencpp/cmake/..
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DoTaskAction.h: /opt/ros/melodic/lib/gencpp/gen_cpp.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DoTaskAction.h: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskAction.msg
@@ -175,14 +223,35 @@ CMakeFiles/ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DoTaskAction.h: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DoTaskAction.h: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DoTaskAction.h: /opt/ros/melodic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating C++ code from ld_actions/DoTaskAction.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Generating C++ code from ld_actions/DoTaskAction.msg"
 	cd /home/tthmatt/ld_ROS/src/ld_actions && /home/tthmatt/ld_ROS/build/ld_actions/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskAction.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions -e /opt/ros/melodic/share/gencpp/cmake/..
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DockGoal.h: /opt/ros/melodic/lib/gencpp/gen_cpp.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DockGoal.h: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockGoal.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DockGoal.h: /opt/ros/melodic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating C++ code from ld_actions/DockGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Generating C++ code from ld_actions/DockGoal.msg"
 	cd /home/tthmatt/ld_ROS/src/ld_actions && /home/tthmatt/ld_ROS/build/ld_actions/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions -e /opt/ros/melodic/share/gencpp/cmake/..
+
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroGoal.h: /opt/ros/melodic/lib/gencpp/gen_cpp.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroGoal.h: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroGoal.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroGoal.h: /opt/ros/melodic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Generating C++ code from ld_actions/ExecuteMacroGoal.msg"
+	cd /home/tthmatt/ld_ROS/src/ld_actions && /home/tthmatt/ld_ROS/build/ld_actions/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions -e /opt/ros/melodic/share/gencpp/cmake/..
+
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroAction.h: /opt/ros/melodic/lib/gencpp/gen_cpp.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroAction.h: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroAction.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroAction.h: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroAction.h: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroAction.h: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroActionGoal.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroAction.h: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroActionResult.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroAction.h: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroFeedback.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroAction.h: /opt/ros/melodic/share/std_msgs/msg/Header.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroAction.h: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroResult.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroAction.h: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroActionFeedback.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroAction.h: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroGoal.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroAction.h: /opt/ros/melodic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Generating C++ code from ld_actions/ExecuteMacroAction.msg"
+	cd /home/tthmatt/ld_ROS/src/ld_actions && /home/tthmatt/ld_ROS/build/ld_actions/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroAction.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions -e /opt/ros/melodic/share/gencpp/cmake/..
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DoTaskActionGoal.h: /opt/ros/melodic/lib/gencpp/gen_cpp.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DoTaskActionGoal.h: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionGoal.msg
@@ -190,7 +259,7 @@ CMakeFiles/ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DoTaskActionGoal.h: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DoTaskActionGoal.h: /opt/ros/melodic/share/std_msgs/msg/Header.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DoTaskActionGoal.h: /opt/ros/melodic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Generating C++ code from ld_actions/DoTaskActionGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Generating C++ code from ld_actions/DoTaskActionGoal.msg"
 	cd /home/tthmatt/ld_ROS/src/ld_actions && /home/tthmatt/ld_ROS/build/ld_actions/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions -e /opt/ros/melodic/share/gencpp/cmake/..
 
 ld_actions_generate_messages_cpp: CMakeFiles/ld_actions_generate_messages_cpp
@@ -200,13 +269,20 @@ ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions
 ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DockActionResult.h
 ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DoTaskActionFeedback.h
 ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DockResult.h
+ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroResult.h
 ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DoTaskFeedback.h
 ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DockFeedback.h
+ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroActionFeedback.h
 ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DoTaskActionResult.h
 ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DockActionGoal.h
+ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroFeedback.h
 ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DoTaskGoal.h
+ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroActionResult.h
+ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroActionGoal.h
 ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DoTaskAction.h
 ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DockGoal.h
+ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroGoal.h
+ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/ExecuteMacroAction.h
 ld_actions_generate_messages_cpp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/include/ld_actions/DoTaskActionGoal.h
 ld_actions_generate_messages_cpp: CMakeFiles/ld_actions_generate_messages_cpp.dir/build.make
 

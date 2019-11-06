@@ -132,6 +132,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ld_actions/action" TYPE FILE FILES
     "/home/tthmatt/ld_ROS/src/ld_actions/action/Dock.action"
     "/home/tthmatt/ld_ROS/src/ld_actions/action/DoTask.action"
+    "/home/tthmatt/ld_ROS/src/ld_actions/action/ExecuteMacro.action"
     )
 endif()
 
@@ -156,6 +157,18 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg"
     "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskResult.msg"
     "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskFeedback.msg"
+    )
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ld_actions/msg" TYPE FILE FILES
+    "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroAction.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroActionGoal.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroActionResult.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroActionFeedback.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroGoal.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroResult.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroFeedback.msg"
     )
 endif()
 

@@ -12,3 +12,10 @@ from ._DockActionResult import *
 from ._DockFeedback import *
 from ._DockGoal import *
 from ._DockResult import *
+from ._ExecuteMacroAction import *
+from ._ExecuteMacroActionFeedback import *
+from ._ExecuteMacroActionGoal import *
+from ._ExecuteMacroActionResult import *
+from ._ExecuteMacroFeedback import *
+from ._ExecuteMacroGoal import *
+from ._ExecuteMacroResult import *
