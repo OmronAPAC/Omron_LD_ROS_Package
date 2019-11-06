@@ -33,3 +33,10 @@ from ._PatrolOnceActionResult import *
 from ._PatrolOnceFeedback import *
 from ._PatrolOnceGoal import *
 from ._PatrolOnceResult import *
+from ._PatrolResumeAction import *
+from ._PatrolResumeActionFeedback import *
+from ._PatrolResumeActionGoal import *
+from ._PatrolResumeActionResult import *
+from ._PatrolResumeFeedback import *
+from ._PatrolResumeGoal import *
+from ._PatrolResumeResult import *

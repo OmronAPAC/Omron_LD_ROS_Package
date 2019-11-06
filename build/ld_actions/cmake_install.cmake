@@ -135,6 +135,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/home/tthmatt/ld_ROS/src/ld_actions/action/ExecuteMacro.action"
     "/home/tthmatt/ld_ROS/src/ld_actions/action/PatrolOnce.action"
     "/home/tthmatt/ld_ROS/src/ld_actions/action/GoTo.action"
+    "/home/tthmatt/ld_ROS/src/ld_actions/action/PatrolResume.action"
     )
 endif()
 
@@ -195,6 +196,18 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToGoal.msg"
     "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToResult.msg"
     "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToFeedback.msg"
+    )
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ld_actions/msg" TYPE FILE FILES
+    "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeAction.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeActionGoal.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeActionResult.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeActionFeedback.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeGoal.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeResult.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeFeedback.msg"
     )
 endif()
 

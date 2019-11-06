@@ -69,6 +69,7 @@ DoTask.action
 ExecuteMacro.action
 PatrolOnce.action
 GoTo.action
+PatrolResume.action
 )
 
 ## Generate added messages and services with any dependencies listed here

@@ -53,16 +53,19 @@ CMAKE_BINARY_DIR = /home/tthmatt/ld_ROS/build/ld_actions
 # Include the progress variables for this target.
 include CMakeFiles/ld_actions_generate_messages_lisp.dir/progress.make
 
+CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeActionFeedback.lisp
 CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DoTaskResult.lisp
 CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DockActionResult.lisp
 CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceActionGoal.lisp
 CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/GoToResult.lisp
+CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeActionGoal.lisp
 CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DoTaskFeedback.lisp
 CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/GoToActionGoal.lisp
 CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DoTaskActionResult.lisp
 CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DockActionFeedback.lisp
 CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/ExecuteMacroFeedback.lisp
 CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DoTaskGoal.lisp
+CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeResult.lisp
 CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/ExecuteMacroActionResult.lisp
 CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DoTaskActionGoal.lisp
 CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DockAction.lisp
@@ -75,24 +78,37 @@ CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.privat
 CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceGoal.lisp
 CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceFeedback.lisp
 CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DoTaskActionFeedback.lisp
+CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeAction.lisp
 CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/ExecuteMacroActionFeedback.lisp
 CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DockActionGoal.lisp
+CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeActionResult.lisp
 CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceActionFeedback.lisp
 CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DockGoal.lisp
 CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/ExecuteMacroGoal.lisp
+CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeFeedback.lisp
 CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceAction.lisp
 CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DockResult.lisp
 CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/GoToActionFeedback.lisp
 CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/GoToAction.lisp
+CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeGoal.lisp
 CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/GoToActionResult.lisp
 CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceActionResult.lisp
 CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/GoToFeedback.lisp
 CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/ExecuteMacroResult.lisp
 
 
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeActionFeedback.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeActionFeedback.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeActionFeedback.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeActionFeedback.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeFeedback.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeActionFeedback.lisp: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeActionFeedback.lisp: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeActionFeedback.lisp: /opt/ros/melodic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from ld_actions/PatrolResumeActionFeedback.msg"
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeActionFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
+
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DoTaskResult.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DoTaskResult.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskResult.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from ld_actions/DoTaskResult.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Lisp code from ld_actions/DoTaskResult.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DockActionResult.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
@@ -101,7 +117,7 @@ CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.privat
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DockActionResult.lisp: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DockActionResult.lisp: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DockActionResult.lisp: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Lisp code from ld_actions/DockActionResult.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Lisp code from ld_actions/DockActionResult.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceActionGoal.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
@@ -109,17 +125,25 @@ CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.privat
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceActionGoal.lisp: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceActionGoal.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceGoal.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceActionGoal.lisp: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Lisp code from ld_actions/PatrolOnceActionGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Lisp code from ld_actions/PatrolOnceActionGoal.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceActionGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/GoToResult.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/GoToResult.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToResult.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Lisp code from ld_actions/GoToResult.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Lisp code from ld_actions/GoToResult.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
+
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeActionGoal.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeActionGoal.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeActionGoal.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeActionGoal.lisp: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeActionGoal.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeGoal.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeActionGoal.lisp: /opt/ros/melodic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Lisp code from ld_actions/PatrolResumeActionGoal.msg"
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeActionGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DoTaskFeedback.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DoTaskFeedback.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskFeedback.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Lisp code from ld_actions/DoTaskFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Lisp code from ld_actions/DoTaskFeedback.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/GoToActionGoal.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
@@ -127,7 +151,7 @@ CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.privat
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/GoToActionGoal.lisp: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/GoToActionGoal.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToGoal.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/GoToActionGoal.lisp: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Lisp code from ld_actions/GoToActionGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Lisp code from ld_actions/GoToActionGoal.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToActionGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DoTaskActionResult.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
@@ -136,7 +160,7 @@ CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.privat
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DoTaskActionResult.lisp: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DoTaskActionResult.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DoTaskActionResult.lisp: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Lisp code from ld_actions/DoTaskActionResult.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating Lisp code from ld_actions/DoTaskActionResult.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DockActionFeedback.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
@@ -145,18 +169,23 @@ CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.privat
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DockActionFeedback.lisp: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DockActionFeedback.lisp: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DockActionFeedback.lisp: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Lisp code from ld_actions/DockActionFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating Lisp code from ld_actions/DockActionFeedback.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/ExecuteMacroFeedback.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/ExecuteMacroFeedback.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroFeedback.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating Lisp code from ld_actions/ExecuteMacroFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating Lisp code from ld_actions/ExecuteMacroFeedback.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DoTaskGoal.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DoTaskGoal.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating Lisp code from ld_actions/DoTaskGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating Lisp code from ld_actions/DoTaskGoal.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
+
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeResult.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeResult.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeResult.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating Lisp code from ld_actions/PatrolResumeResult.msg"
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/ExecuteMacroActionResult.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/ExecuteMacroActionResult.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroActionResult.msg
@@ -164,7 +193,7 @@ CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.privat
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/ExecuteMacroActionResult.lisp: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/ExecuteMacroActionResult.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/ExecuteMacroActionResult.lisp: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating Lisp code from ld_actions/ExecuteMacroActionResult.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Generating Lisp code from ld_actions/ExecuteMacroActionResult.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroActionResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DoTaskActionGoal.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
@@ -172,7 +201,7 @@ CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.privat
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DoTaskActionGoal.lisp: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DoTaskActionGoal.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DoTaskActionGoal.lisp: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating Lisp code from ld_actions/DoTaskActionGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Generating Lisp code from ld_actions/DoTaskActionGoal.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DockAction.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
@@ -186,12 +215,12 @@ CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.privat
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DockAction.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DockAction.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionGoal.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DockAction.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockFeedback.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating Lisp code from ld_actions/DockAction.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Generating Lisp code from ld_actions/DockAction.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockAction.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceResult.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceResult.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceResult.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Generating Lisp code from ld_actions/PatrolOnceResult.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Generating Lisp code from ld_actions/PatrolOnceResult.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/ExecuteMacroAction.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
@@ -205,12 +234,12 @@ CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.privat
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/ExecuteMacroAction.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/ExecuteMacroAction.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroActionFeedback.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/ExecuteMacroAction.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Generating Lisp code from ld_actions/ExecuteMacroAction.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Generating Lisp code from ld_actions/ExecuteMacroAction.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroAction.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DockFeedback.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DockFeedback.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockFeedback.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Generating Lisp code from ld_actions/DockFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Generating Lisp code from ld_actions/DockFeedback.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/ExecuteMacroActionGoal.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
@@ -218,12 +247,12 @@ CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.privat
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/ExecuteMacroActionGoal.lisp: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/ExecuteMacroActionGoal.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroGoal.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/ExecuteMacroActionGoal.lisp: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Generating Lisp code from ld_actions/ExecuteMacroActionGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Generating Lisp code from ld_actions/ExecuteMacroActionGoal.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroActionGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/GoToGoal.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/GoToGoal.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Generating Lisp code from ld_actions/GoToGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Generating Lisp code from ld_actions/GoToGoal.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DoTaskAction.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
@@ -237,17 +266,17 @@ CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.privat
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DoTaskAction.lisp: /opt/ros/melodic/share/std_msgs/msg/Header.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DoTaskAction.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DoTaskAction.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskResult.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Generating Lisp code from ld_actions/DoTaskAction.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Generating Lisp code from ld_actions/DoTaskAction.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskAction.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceGoal.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceGoal.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Generating Lisp code from ld_actions/PatrolOnceGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Generating Lisp code from ld_actions/PatrolOnceGoal.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceFeedback.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceFeedback.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceFeedback.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Generating Lisp code from ld_actions/PatrolOnceFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Generating Lisp code from ld_actions/PatrolOnceFeedback.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DoTaskActionFeedback.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
@@ -256,8 +285,22 @@ CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.privat
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DoTaskActionFeedback.lisp: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DoTaskActionFeedback.lisp: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DoTaskActionFeedback.lisp: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Generating Lisp code from ld_actions/DoTaskActionFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Generating Lisp code from ld_actions/DoTaskActionFeedback.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
+
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeAction.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeAction.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeAction.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeAction.lisp: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeAction.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeActionFeedback.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeAction.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeActionGoal.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeAction.lisp: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeAction.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeFeedback.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeAction.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeActionResult.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeAction.lisp: /opt/ros/melodic/share/std_msgs/msg/Header.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeAction.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeResult.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeAction.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeGoal.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Generating Lisp code from ld_actions/PatrolResumeAction.msg"
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeAction.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/ExecuteMacroActionFeedback.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/ExecuteMacroActionFeedback.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroActionFeedback.msg
@@ -265,7 +308,7 @@ CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.privat
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/ExecuteMacroActionFeedback.lisp: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/ExecuteMacroActionFeedback.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroFeedback.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/ExecuteMacroActionFeedback.lisp: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Generating Lisp code from ld_actions/ExecuteMacroActionFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Generating Lisp code from ld_actions/ExecuteMacroActionFeedback.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroActionFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DockActionGoal.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
@@ -273,8 +316,17 @@ CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.privat
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DockActionGoal.lisp: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DockActionGoal.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockGoal.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DockActionGoal.lisp: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Generating Lisp code from ld_actions/DockActionGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Generating Lisp code from ld_actions/DockActionGoal.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
+
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeActionResult.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeActionResult.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeActionResult.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeActionResult.lisp: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeActionResult.lisp: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeActionResult.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeResult.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeActionResult.lisp: /opt/ros/melodic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Generating Lisp code from ld_actions/PatrolResumeActionResult.msg"
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeActionResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceActionFeedback.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceActionFeedback.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceActionFeedback.msg
@@ -282,18 +334,23 @@ CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.privat
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceActionFeedback.lisp: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceActionFeedback.lisp: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceActionFeedback.lisp: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Generating Lisp code from ld_actions/PatrolOnceActionFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Generating Lisp code from ld_actions/PatrolOnceActionFeedback.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceActionFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DockGoal.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DockGoal.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Generating Lisp code from ld_actions/DockGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Generating Lisp code from ld_actions/DockGoal.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/ExecuteMacroGoal.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/ExecuteMacroGoal.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Generating Lisp code from ld_actions/ExecuteMacroGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Generating Lisp code from ld_actions/ExecuteMacroGoal.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
+
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeFeedback.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeFeedback.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeFeedback.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Generating Lisp code from ld_actions/PatrolResumeFeedback.msg"
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceAction.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceAction.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceAction.msg
@@ -306,12 +363,12 @@ CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.privat
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceAction.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceAction.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceActionFeedback.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceAction.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Generating Lisp code from ld_actions/PatrolOnceAction.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Generating Lisp code from ld_actions/PatrolOnceAction.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceAction.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DockResult.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DockResult.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockResult.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Generating Lisp code from ld_actions/DockResult.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Generating Lisp code from ld_actions/DockResult.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/GoToActionFeedback.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
@@ -320,7 +377,7 @@ CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.privat
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/GoToActionFeedback.lisp: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/GoToActionFeedback.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToFeedback.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/GoToActionFeedback.lisp: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Generating Lisp code from ld_actions/GoToActionFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Generating Lisp code from ld_actions/GoToActionFeedback.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToActionFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/GoToAction.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
@@ -334,8 +391,13 @@ CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.privat
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/GoToAction.lisp: /opt/ros/melodic/share/std_msgs/msg/Header.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/GoToAction.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToFeedback.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/GoToAction.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToActionFeedback.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Generating Lisp code from ld_actions/GoToAction.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Generating Lisp code from ld_actions/GoToAction.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToAction.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
+
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeGoal.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeGoal.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeGoal.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Generating Lisp code from ld_actions/PatrolResumeGoal.msg"
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/GoToActionResult.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/GoToActionResult.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToActionResult.msg
@@ -343,7 +405,7 @@ CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.privat
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/GoToActionResult.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/GoToActionResult.lisp: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/GoToActionResult.lisp: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Generating Lisp code from ld_actions/GoToActionResult.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Generating Lisp code from ld_actions/GoToActionResult.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToActionResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceActionResult.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
@@ -352,30 +414,33 @@ CMakeFiles/ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.privat
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceActionResult.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceActionResult.lisp: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceActionResult.lisp: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Generating Lisp code from ld_actions/PatrolOnceActionResult.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Generating Lisp code from ld_actions/PatrolOnceActionResult.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceActionResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/GoToFeedback.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/GoToFeedback.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToFeedback.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Generating Lisp code from ld_actions/GoToFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Generating Lisp code from ld_actions/GoToFeedback.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/ExecuteMacroResult.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/ExecuteMacroResult.lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroResult.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Generating Lisp code from ld_actions/ExecuteMacroResult.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Generating Lisp code from ld_actions/ExecuteMacroResult.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg
 
 ld_actions_generate_messages_lisp: CMakeFiles/ld_actions_generate_messages_lisp
+ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeActionFeedback.lisp
 ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DoTaskResult.lisp
 ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DockActionResult.lisp
 ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceActionGoal.lisp
 ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/GoToResult.lisp
+ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeActionGoal.lisp
 ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DoTaskFeedback.lisp
 ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/GoToActionGoal.lisp
 ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DoTaskActionResult.lisp
 ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DockActionFeedback.lisp
 ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/ExecuteMacroFeedback.lisp
 ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DoTaskGoal.lisp
+ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeResult.lisp
 ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/ExecuteMacroActionResult.lisp
 ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DoTaskActionGoal.lisp
 ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DockAction.lisp
@@ -388,15 +453,19 @@ ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_action
 ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceGoal.lisp
 ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceFeedback.lisp
 ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DoTaskActionFeedback.lisp
+ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeAction.lisp
 ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/ExecuteMacroActionFeedback.lisp
 ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DockActionGoal.lisp
+ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeActionResult.lisp
 ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceActionFeedback.lisp
 ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DockGoal.lisp
 ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/ExecuteMacroGoal.lisp
+ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeFeedback.lisp
 ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceAction.lisp
 ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/DockResult.lisp
 ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/GoToActionFeedback.lisp
 ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/GoToAction.lisp
+ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolResumeGoal.lisp
 ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/GoToActionResult.lisp
 ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/PatrolOnceActionResult.lisp
 ld_actions_generate_messages_lisp: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/common-lisp/ros/ld_actions/msg/GoToFeedback.lisp
