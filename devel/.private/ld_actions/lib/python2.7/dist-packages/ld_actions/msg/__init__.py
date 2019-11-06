@@ -54,3 +54,10 @@ from ._StopActionResult import *
 from ._StopFeedback import *
 from ._StopGoal import *
 from ._StopResult import *
+from ._UndockAction import *
+from ._UndockActionFeedback import *
+from ._UndockActionGoal import *
+from ._UndockActionResult import *
+from ._UndockFeedback import *
+from ._UndockGoal import *
+from ._UndockResult import *

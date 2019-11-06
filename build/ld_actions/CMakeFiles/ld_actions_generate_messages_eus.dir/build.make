@@ -67,10 +67,12 @@ CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private
 CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DoTaskGoal.l
 CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolResumeResult.l
 CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PlayFeedback.l
+CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockActionGoal.l
 CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/ExecuteMacroActionResult.l
 CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DoTaskActionGoal.l
 CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DockAction.l
 CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolOnceResult.l
+CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockAction.l
 CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/ExecuteMacroAction.l
 CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DockFeedback.l
 CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PlayAction.l
@@ -93,6 +95,8 @@ CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private
 CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PlayActionFeedback.l
 CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DockGoal.l
 CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/ExecuteMacroGoal.l
+CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockActionResult.l
+CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockActionFeedback.l
 CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolResumeFeedback.l
 CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/StopActionResult.l
 CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolOnceAction.l
@@ -103,11 +107,14 @@ CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private
 CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolResumeGoal.l
 CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PlayResult.l
 CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/GoToActionResult.l
+CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockResult.l
+CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockGoal.l
 CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolOnceActionResult.l
 CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PlayActionResult.l
 CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/GoToFeedback.l
 CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/StopActionFeedback.l
 CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/ExecuteMacroResult.l
+CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockFeedback.l
 CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PlayGoal.l
 CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/manifest.l
 
@@ -207,13 +214,21 @@ CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Generating EusLisp code from ld_actions/PlayFeedback.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockActionGoal.l: /opt/ros/melodic/lib/geneus/gen_eus.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockActionGoal.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/UndockActionGoal.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockActionGoal.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockActionGoal.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/UndockGoal.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockActionGoal.l: /opt/ros/melodic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Generating EusLisp code from ld_actions/UndockActionGoal.msg"
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/UndockActionGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
+
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/ExecuteMacroActionResult.l: /opt/ros/melodic/lib/geneus/gen_eus.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/ExecuteMacroActionResult.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroActionResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/ExecuteMacroActionResult.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/ExecuteMacroActionResult.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/ExecuteMacroActionResult.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/ExecuteMacroActionResult.l: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Generating EusLisp code from ld_actions/ExecuteMacroActionResult.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Generating EusLisp code from ld_actions/ExecuteMacroActionResult.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroActionResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DoTaskActionGoal.l: /opt/ros/melodic/lib/geneus/gen_eus.py
@@ -221,7 +236,7 @@ CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DoTaskActionGoal.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DoTaskActionGoal.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DoTaskActionGoal.l: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Generating EusLisp code from ld_actions/DoTaskActionGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Generating EusLisp code from ld_actions/DoTaskActionGoal.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DockAction.l: /opt/ros/melodic/lib/geneus/gen_eus.py
@@ -235,13 +250,27 @@ CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DockAction.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DockAction.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionGoal.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DockAction.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockFeedback.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Generating EusLisp code from ld_actions/DockAction.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Generating EusLisp code from ld_actions/DockAction.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockAction.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolOnceResult.l: /opt/ros/melodic/lib/geneus/gen_eus.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolOnceResult.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceResult.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Generating EusLisp code from ld_actions/PatrolOnceResult.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Generating EusLisp code from ld_actions/PatrolOnceResult.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
+
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockAction.l: /opt/ros/melodic/lib/geneus/gen_eus.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockAction.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/UndockAction.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockAction.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/UndockFeedback.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockAction.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockAction.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/UndockResult.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockAction.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockAction.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/UndockActionGoal.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockAction.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/UndockActionFeedback.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockAction.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/UndockActionResult.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockAction.l: /opt/ros/melodic/share/std_msgs/msg/Header.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockAction.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/UndockGoal.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Generating EusLisp code from ld_actions/UndockAction.msg"
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/UndockAction.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/ExecuteMacroAction.l: /opt/ros/melodic/lib/geneus/gen_eus.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/ExecuteMacroAction.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroAction.msg
@@ -254,12 +283,12 @@ CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/ExecuteMacroAction.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/ExecuteMacroAction.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroActionFeedback.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/ExecuteMacroAction.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Generating EusLisp code from ld_actions/ExecuteMacroAction.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Generating EusLisp code from ld_actions/ExecuteMacroAction.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroAction.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DockFeedback.l: /opt/ros/melodic/lib/geneus/gen_eus.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DockFeedback.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockFeedback.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Generating EusLisp code from ld_actions/DockFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Generating EusLisp code from ld_actions/DockFeedback.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PlayAction.l: /opt/ros/melodic/lib/geneus/gen_eus.py
@@ -273,7 +302,7 @@ CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PlayAction.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PlayAction.l: /opt/ros/melodic/share/std_msgs/msg/Header.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PlayAction.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayActionGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Generating EusLisp code from ld_actions/PlayAction.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Generating EusLisp code from ld_actions/PlayAction.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayAction.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/StopAction.l: /opt/ros/melodic/lib/geneus/gen_eus.py
@@ -287,7 +316,7 @@ CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/StopAction.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/StopAction.l: /opt/ros/melodic/share/std_msgs/msg/Header.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/StopAction.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopFeedback.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Generating EusLisp code from ld_actions/StopAction.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Generating EusLisp code from ld_actions/StopAction.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopAction.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/ExecuteMacroActionGoal.l: /opt/ros/melodic/lib/geneus/gen_eus.py
@@ -295,12 +324,12 @@ CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/ExecuteMacroActionGoal.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/ExecuteMacroActionGoal.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroGoal.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/ExecuteMacroActionGoal.l: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Generating EusLisp code from ld_actions/ExecuteMacroActionGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Generating EusLisp code from ld_actions/ExecuteMacroActionGoal.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroActionGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/GoToGoal.l: /opt/ros/melodic/lib/geneus/gen_eus.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/GoToGoal.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Generating EusLisp code from ld_actions/GoToGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Generating EusLisp code from ld_actions/GoToGoal.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DoTaskAction.l: /opt/ros/melodic/lib/geneus/gen_eus.py
@@ -314,17 +343,17 @@ CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DoTaskAction.l: /opt/ros/melodic/share/std_msgs/msg/Header.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DoTaskAction.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DoTaskAction.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskResult.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Generating EusLisp code from ld_actions/DoTaskAction.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Generating EusLisp code from ld_actions/DoTaskAction.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskAction.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/StopResult.l: /opt/ros/melodic/lib/geneus/gen_eus.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/StopResult.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopResult.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Generating EusLisp code from ld_actions/StopResult.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Generating EusLisp code from ld_actions/StopResult.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolOnceGoal.l: /opt/ros/melodic/lib/geneus/gen_eus.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolOnceGoal.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Generating EusLisp code from ld_actions/PatrolOnceGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Generating EusLisp code from ld_actions/PatrolOnceGoal.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PlayActionGoal.l: /opt/ros/melodic/lib/geneus/gen_eus.py
@@ -332,17 +361,17 @@ CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PlayActionGoal.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PlayActionGoal.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayGoal.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PlayActionGoal.l: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Generating EusLisp code from ld_actions/PlayActionGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Generating EusLisp code from ld_actions/PlayActionGoal.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayActionGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/StopFeedback.l: /opt/ros/melodic/lib/geneus/gen_eus.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/StopFeedback.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopFeedback.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Generating EusLisp code from ld_actions/StopFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Generating EusLisp code from ld_actions/StopFeedback.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolOnceFeedback.l: /opt/ros/melodic/lib/geneus/gen_eus.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolOnceFeedback.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceFeedback.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Generating EusLisp code from ld_actions/PatrolOnceFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Generating EusLisp code from ld_actions/PatrolOnceFeedback.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DoTaskActionFeedback.l: /opt/ros/melodic/lib/geneus/gen_eus.py
@@ -351,7 +380,7 @@ CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DoTaskActionFeedback.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DoTaskActionFeedback.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DoTaskActionFeedback.l: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Generating EusLisp code from ld_actions/DoTaskActionFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Generating EusLisp code from ld_actions/DoTaskActionFeedback.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolResumeAction.l: /opt/ros/melodic/lib/geneus/gen_eus.py
@@ -365,7 +394,7 @@ CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolResumeAction.l: /opt/ros/melodic/share/std_msgs/msg/Header.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolResumeAction.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolResumeAction.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Generating EusLisp code from ld_actions/PatrolResumeAction.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Generating EusLisp code from ld_actions/PatrolResumeAction.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeAction.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/ExecuteMacroActionFeedback.l: /opt/ros/melodic/lib/geneus/gen_eus.py
@@ -374,7 +403,7 @@ CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/ExecuteMacroActionFeedback.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/ExecuteMacroActionFeedback.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroFeedback.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/ExecuteMacroActionFeedback.l: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Generating EusLisp code from ld_actions/ExecuteMacroActionFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Generating EusLisp code from ld_actions/ExecuteMacroActionFeedback.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroActionFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DockActionGoal.l: /opt/ros/melodic/lib/geneus/gen_eus.py
@@ -382,7 +411,7 @@ CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DockActionGoal.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DockActionGoal.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockGoal.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DockActionGoal.l: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Generating EusLisp code from ld_actions/DockActionGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Generating EusLisp code from ld_actions/DockActionGoal.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolResumeActionResult.l: /opt/ros/melodic/lib/geneus/gen_eus.py
@@ -391,7 +420,7 @@ CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolResumeActionResult.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolResumeActionResult.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolResumeActionResult.l: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Generating EusLisp code from ld_actions/PatrolResumeActionResult.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Generating EusLisp code from ld_actions/PatrolResumeActionResult.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeActionResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolOnceActionFeedback.l: /opt/ros/melodic/lib/geneus/gen_eus.py
@@ -400,12 +429,12 @@ CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolOnceActionFeedback.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolOnceActionFeedback.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolOnceActionFeedback.l: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Generating EusLisp code from ld_actions/PatrolOnceActionFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Generating EusLisp code from ld_actions/PatrolOnceActionFeedback.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceActionFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/StopGoal.l: /opt/ros/melodic/lib/geneus/gen_eus.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/StopGoal.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Generating EusLisp code from ld_actions/StopGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Generating EusLisp code from ld_actions/StopGoal.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PlayActionFeedback.l: /opt/ros/melodic/lib/geneus/gen_eus.py
@@ -414,22 +443,40 @@ CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PlayActionFeedback.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PlayActionFeedback.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayFeedback.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PlayActionFeedback.l: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Generating EusLisp code from ld_actions/PlayActionFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Generating EusLisp code from ld_actions/PlayActionFeedback.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayActionFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DockGoal.l: /opt/ros/melodic/lib/geneus/gen_eus.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DockGoal.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Generating EusLisp code from ld_actions/DockGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Generating EusLisp code from ld_actions/DockGoal.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/ExecuteMacroGoal.l: /opt/ros/melodic/lib/geneus/gen_eus.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/ExecuteMacroGoal.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Generating EusLisp code from ld_actions/ExecuteMacroGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Generating EusLisp code from ld_actions/ExecuteMacroGoal.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
+
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockActionResult.l: /opt/ros/melodic/lib/geneus/gen_eus.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockActionResult.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/UndockActionResult.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockActionResult.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockActionResult.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockActionResult.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/UndockResult.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockActionResult.l: /opt/ros/melodic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Generating EusLisp code from ld_actions/UndockActionResult.msg"
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/UndockActionResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
+
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockActionFeedback.l: /opt/ros/melodic/lib/geneus/gen_eus.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockActionFeedback.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/UndockActionFeedback.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockActionFeedback.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockActionFeedback.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockActionFeedback.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/UndockFeedback.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockActionFeedback.l: /opt/ros/melodic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Generating EusLisp code from ld_actions/UndockActionFeedback.msg"
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/UndockActionFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolResumeFeedback.l: /opt/ros/melodic/lib/geneus/gen_eus.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolResumeFeedback.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeFeedback.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Generating EusLisp code from ld_actions/PatrolResumeFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Generating EusLisp code from ld_actions/PatrolResumeFeedback.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/StopActionResult.l: /opt/ros/melodic/lib/geneus/gen_eus.py
@@ -438,7 +485,7 @@ CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/StopActionResult.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/StopActionResult.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/StopActionResult.l: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Generating EusLisp code from ld_actions/StopActionResult.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Generating EusLisp code from ld_actions/StopActionResult.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopActionResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolOnceAction.l: /opt/ros/melodic/lib/geneus/gen_eus.py
@@ -452,12 +499,12 @@ CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolOnceAction.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolOnceAction.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceActionFeedback.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolOnceAction.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Generating EusLisp code from ld_actions/PatrolOnceAction.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Generating EusLisp code from ld_actions/PatrolOnceAction.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceAction.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DockResult.l: /opt/ros/melodic/lib/geneus/gen_eus.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DockResult.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockResult.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Generating EusLisp code from ld_actions/DockResult.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Generating EusLisp code from ld_actions/DockResult.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/StopActionGoal.l: /opt/ros/melodic/lib/geneus/gen_eus.py
@@ -465,7 +512,7 @@ CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/StopActionGoal.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/StopActionGoal.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopGoal.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/StopActionGoal.l: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Generating EusLisp code from ld_actions/StopActionGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Generating EusLisp code from ld_actions/StopActionGoal.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopActionGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/GoToActionFeedback.l: /opt/ros/melodic/lib/geneus/gen_eus.py
@@ -474,7 +521,7 @@ CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/GoToActionFeedback.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/GoToActionFeedback.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToFeedback.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/GoToActionFeedback.l: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Generating EusLisp code from ld_actions/GoToActionFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Generating EusLisp code from ld_actions/GoToActionFeedback.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToActionFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/GoToAction.l: /opt/ros/melodic/lib/geneus/gen_eus.py
@@ -488,17 +535,17 @@ CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/GoToAction.l: /opt/ros/melodic/share/std_msgs/msg/Header.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/GoToAction.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToFeedback.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/GoToAction.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToActionFeedback.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Generating EusLisp code from ld_actions/GoToAction.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Generating EusLisp code from ld_actions/GoToAction.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToAction.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolResumeGoal.l: /opt/ros/melodic/lib/geneus/gen_eus.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolResumeGoal.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Generating EusLisp code from ld_actions/PatrolResumeGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Generating EusLisp code from ld_actions/PatrolResumeGoal.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PlayResult.l: /opt/ros/melodic/lib/geneus/gen_eus.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PlayResult.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayResult.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Generating EusLisp code from ld_actions/PlayResult.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Generating EusLisp code from ld_actions/PlayResult.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/GoToActionResult.l: /opt/ros/melodic/lib/geneus/gen_eus.py
@@ -507,8 +554,18 @@ CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/GoToActionResult.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/GoToActionResult.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/GoToActionResult.l: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Generating EusLisp code from ld_actions/GoToActionResult.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Generating EusLisp code from ld_actions/GoToActionResult.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToActionResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
+
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockResult.l: /opt/ros/melodic/lib/geneus/gen_eus.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockResult.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/UndockResult.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Generating EusLisp code from ld_actions/UndockResult.msg"
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/UndockResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
+
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockGoal.l: /opt/ros/melodic/lib/geneus/gen_eus.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockGoal.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/UndockGoal.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Generating EusLisp code from ld_actions/UndockGoal.msg"
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/UndockGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolOnceActionResult.l: /opt/ros/melodic/lib/geneus/gen_eus.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolOnceActionResult.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceActionResult.msg
@@ -516,7 +573,7 @@ CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolOnceActionResult.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolOnceActionResult.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolOnceActionResult.l: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Generating EusLisp code from ld_actions/PatrolOnceActionResult.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Generating EusLisp code from ld_actions/PatrolOnceActionResult.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceActionResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PlayActionResult.l: /opt/ros/melodic/lib/geneus/gen_eus.py
@@ -525,12 +582,12 @@ CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PlayActionResult.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PlayActionResult.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PlayActionResult.l: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Generating EusLisp code from ld_actions/PlayActionResult.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Generating EusLisp code from ld_actions/PlayActionResult.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayActionResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/GoToFeedback.l: /opt/ros/melodic/lib/geneus/gen_eus.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/GoToFeedback.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToFeedback.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Generating EusLisp code from ld_actions/GoToFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Generating EusLisp code from ld_actions/GoToFeedback.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/StopActionFeedback.l: /opt/ros/melodic/lib/geneus/gen_eus.py
@@ -539,21 +596,26 @@ CMakeFiles/ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/StopActionFeedback.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/StopActionFeedback.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopFeedback.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/StopActionFeedback.l: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Generating EusLisp code from ld_actions/StopActionFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Generating EusLisp code from ld_actions/StopActionFeedback.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopActionFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/ExecuteMacroResult.l: /opt/ros/melodic/lib/geneus/gen_eus.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/ExecuteMacroResult.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroResult.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Generating EusLisp code from ld_actions/ExecuteMacroResult.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Generating EusLisp code from ld_actions/ExecuteMacroResult.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
+
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockFeedback.l: /opt/ros/melodic/lib/geneus/gen_eus.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockFeedback.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/UndockFeedback.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Generating EusLisp code from ld_actions/UndockFeedback.msg"
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/UndockFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PlayGoal.l: /opt/ros/melodic/lib/geneus/gen_eus.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PlayGoal.l: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Generating EusLisp code from ld_actions/PlayGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Generating EusLisp code from ld_actions/PlayGoal.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/manifest.l: /opt/ros/melodic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Generating EusLisp manifest code for ld_actions"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Generating EusLisp manifest code for ld_actions"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions ld_actions actionlib_msgs
 
 ld_actions_generate_messages_eus: CMakeFiles/ld_actions_generate_messages_eus
@@ -571,10 +633,12 @@ ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions
 ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DoTaskGoal.l
 ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolResumeResult.l
 ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PlayFeedback.l
+ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockActionGoal.l
 ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/ExecuteMacroActionResult.l
 ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DoTaskActionGoal.l
 ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DockAction.l
 ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolOnceResult.l
+ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockAction.l
 ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/ExecuteMacroAction.l
 ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DockFeedback.l
 ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PlayAction.l
@@ -597,6 +661,8 @@ ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions
 ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PlayActionFeedback.l
 ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/DockGoal.l
 ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/ExecuteMacroGoal.l
+ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockActionResult.l
+ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockActionFeedback.l
 ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolResumeFeedback.l
 ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/StopActionResult.l
 ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolOnceAction.l
@@ -607,11 +673,14 @@ ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions
 ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolResumeGoal.l
 ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PlayResult.l
 ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/GoToActionResult.l
+ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockResult.l
+ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockGoal.l
 ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PatrolOnceActionResult.l
 ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PlayActionResult.l
 ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/GoToFeedback.l
 ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/StopActionFeedback.l
 ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/ExecuteMacroResult.l
+ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/UndockFeedback.l
 ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/msg/PlayGoal.l
 ld_actions_generate_messages_eus: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/roseus/ros/ld_actions/manifest.l
 ld_actions_generate_messages_eus: CMakeFiles/ld_actions_generate_messages_eus.dir/build.make
