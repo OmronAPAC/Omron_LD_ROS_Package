@@ -14,7 +14,7 @@ def call_server():
     client.wait_for_server()
 
     goal = GoToGoal()
-    goal.goal_goto = "Goal 103"
+    goal.goal_goto = "goal103"
 
     client.send_goal(goal, feedback_cb=feedback_cb)
 
