@@ -15,7 +15,7 @@ import threading
 import time
 import re
 import sys
-BUFFER_SIZE = 2056
+BUFFER_SIZE = 1024
 #import socketconnection class to connect to robot
 #requires socketconnection_class.py file in the same folder
 from socketconnection_class import ConnectSocket, connecttcp
@@ -60,6 +60,13 @@ class ActionServer():
             self.a_server.publish_feedback(feedback)
             while not rospy.is_shutdown():
                 #check for required data
+                if "Executing" in rcv:
+                    time.sleep(3)
+                    data = socket.recv(BUFFER_SIZE)
+                    rcv = rcv + data.encode('ascii', 'ignore')
+                    feedback.received_data = rcv
+                    self.a_server.publish_feedback(feedback)
+                    break
                 if "Completed" in rcv:
                     break
                 if "Failed" in rcv:
@@ -70,21 +77,27 @@ class ActionServer():
                 else:
                     data = socket.recv(BUFFER_SIZE)
                     rcv = rcv + data.encode('ascii', 'ignore')
+                    feedback.received_data = rcv
+                    self.a_server.publish_feedback(feedback)
 
         except socket.error as e:
             print("Connection  failed")
             return e
+        data = socket.recv(BUFFER_SIZE)
+        data = socket.recv(BUFFER_SIZE)
+        rcv = rcv + data.encode('ascii', 'ignore')
+        print rcv
         while not rospy.is_shutdown():
             for line in rcv.splitlines():
                 #print required data
-                if 'Completed' in line:
-                    doTask = line.split("Completed")
-                    rospy.loginfo(",Completed".join(doTask)[1:])
-                    pub.publish(''.join(doTask))
+                if 'Completed macro' in line:
+                    executeMacro = line.split("Completed macro")
+                    rospy.loginfo(",Completed macro".join(executeMacro)[1:])
+                    pub.publish(''.join(executeMacro))
                     rate.sleep()
                     success = True
                     rcv = str(rcv.splitlines())
-                    result.status = (",Completed".join(doTask)[1:])
+                    result.status = (",Completed macro".join(executeMacro)[1:])
                     self.a_server.set_succeeded(result)
                     return(0)
 
