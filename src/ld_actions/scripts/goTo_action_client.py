@@ -14,7 +14,9 @@ def call_server():
     client.wait_for_server()
 
     goal = GoToGoal()
-    goal.goal_goto = "Goal6"
+    # goal.goal_goto = "Goal6"
+    goalname = rospy.get_param("goal")
+    goal.goal_goto = goalname
 
     client.send_goal(goal, feedback_cb=feedback_cb)
 
