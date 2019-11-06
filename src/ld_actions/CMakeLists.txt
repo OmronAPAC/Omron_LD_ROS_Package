@@ -71,6 +71,7 @@ PatrolOnce.action
 GoTo.action
 PatrolResume.action
 Play.action
+Stop.action
 )
 
 ## Generate added messages and services with any dependencies listed here

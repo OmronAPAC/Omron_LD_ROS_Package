@@ -74,11 +74,14 @@ CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.priv
 CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/ExecuteMacroAction.js
 CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/DockFeedback.js
 CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PlayAction.js
+CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopAction.js
 CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/ExecuteMacroActionGoal.js
 CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/GoToGoal.js
 CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/DoTaskAction.js
+CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopResult.js
 CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolOnceGoal.js
 CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PlayActionGoal.js
+CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopFeedback.js
 CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolOnceFeedback.js
 CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/DoTaskActionFeedback.js
 CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolResumeAction.js
@@ -86,12 +89,15 @@ CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.priv
 CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/DockActionGoal.js
 CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolResumeActionResult.js
 CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolOnceActionFeedback.js
+CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopGoal.js
 CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PlayActionFeedback.js
 CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/DockGoal.js
 CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/ExecuteMacroGoal.js
 CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolResumeFeedback.js
+CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopActionResult.js
 CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolOnceAction.js
 CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/DockResult.js
+CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopActionGoal.js
 CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/GoToActionFeedback.js
 CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/GoToAction.js
 CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolResumeGoal.js
@@ -100,6 +106,7 @@ CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.priv
 CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolOnceActionResult.js
 CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PlayActionResult.js
 CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/GoToFeedback.js
+CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopActionFeedback.js
 CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/ExecuteMacroResult.js
 CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PlayGoal.js
 
@@ -268,17 +275,31 @@ CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.priv
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Generating Javascript code from ld_actions/PlayAction.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayAction.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
 
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopAction.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopAction.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopAction.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopAction.js: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopAction.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopGoal.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopAction.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopActionFeedback.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopAction.js: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopAction.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopActionResult.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopAction.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopActionGoal.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopAction.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopResult.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopAction.js: /opt/ros/melodic/share/std_msgs/msg/Header.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopAction.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopFeedback.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Generating Javascript code from ld_actions/StopAction.msg"
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopAction.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
+
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/ExecuteMacroActionGoal.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/ExecuteMacroActionGoal.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroActionGoal.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/ExecuteMacroActionGoal.js: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/ExecuteMacroActionGoal.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroGoal.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/ExecuteMacroActionGoal.js: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Generating Javascript code from ld_actions/ExecuteMacroActionGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Generating Javascript code from ld_actions/ExecuteMacroActionGoal.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroActionGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/GoToGoal.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/GoToGoal.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Generating Javascript code from ld_actions/GoToGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Generating Javascript code from ld_actions/GoToGoal.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/DoTaskAction.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
@@ -292,12 +313,17 @@ CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.priv
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/DoTaskAction.js: /opt/ros/melodic/share/std_msgs/msg/Header.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/DoTaskAction.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/DoTaskAction.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskResult.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Generating Javascript code from ld_actions/DoTaskAction.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Generating Javascript code from ld_actions/DoTaskAction.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskAction.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
+
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopResult.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopResult.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopResult.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Generating Javascript code from ld_actions/StopResult.msg"
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolOnceGoal.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolOnceGoal.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Generating Javascript code from ld_actions/PatrolOnceGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Generating Javascript code from ld_actions/PatrolOnceGoal.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PlayActionGoal.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
@@ -305,12 +331,17 @@ CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.priv
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PlayActionGoal.js: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PlayActionGoal.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayGoal.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PlayActionGoal.js: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Generating Javascript code from ld_actions/PlayActionGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Generating Javascript code from ld_actions/PlayActionGoal.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayActionGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
+
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopFeedback.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopFeedback.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopFeedback.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Generating Javascript code from ld_actions/StopFeedback.msg"
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolOnceFeedback.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolOnceFeedback.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceFeedback.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Generating Javascript code from ld_actions/PatrolOnceFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Generating Javascript code from ld_actions/PatrolOnceFeedback.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/DoTaskActionFeedback.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
@@ -319,7 +350,7 @@ CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.priv
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/DoTaskActionFeedback.js: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/DoTaskActionFeedback.js: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/DoTaskActionFeedback.js: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Generating Javascript code from ld_actions/DoTaskActionFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Generating Javascript code from ld_actions/DoTaskActionFeedback.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolResumeAction.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
@@ -333,7 +364,7 @@ CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.priv
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolResumeAction.js: /opt/ros/melodic/share/std_msgs/msg/Header.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolResumeAction.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolResumeAction.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Generating Javascript code from ld_actions/PatrolResumeAction.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Generating Javascript code from ld_actions/PatrolResumeAction.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeAction.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/ExecuteMacroActionFeedback.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
@@ -342,7 +373,7 @@ CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.priv
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/ExecuteMacroActionFeedback.js: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/ExecuteMacroActionFeedback.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroFeedback.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/ExecuteMacroActionFeedback.js: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Generating Javascript code from ld_actions/ExecuteMacroActionFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Generating Javascript code from ld_actions/ExecuteMacroActionFeedback.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroActionFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/DockActionGoal.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
@@ -350,7 +381,7 @@ CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.priv
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/DockActionGoal.js: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/DockActionGoal.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockGoal.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/DockActionGoal.js: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Generating Javascript code from ld_actions/DockActionGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Generating Javascript code from ld_actions/DockActionGoal.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolResumeActionResult.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
@@ -359,7 +390,7 @@ CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.priv
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolResumeActionResult.js: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolResumeActionResult.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolResumeActionResult.js: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Generating Javascript code from ld_actions/PatrolResumeActionResult.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Generating Javascript code from ld_actions/PatrolResumeActionResult.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeActionResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolOnceActionFeedback.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
@@ -368,8 +399,13 @@ CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.priv
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolOnceActionFeedback.js: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolOnceActionFeedback.js: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolOnceActionFeedback.js: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Generating Javascript code from ld_actions/PatrolOnceActionFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Generating Javascript code from ld_actions/PatrolOnceActionFeedback.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceActionFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
+
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopGoal.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopGoal.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopGoal.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Generating Javascript code from ld_actions/StopGoal.msg"
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PlayActionFeedback.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PlayActionFeedback.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayActionFeedback.msg
@@ -377,23 +413,32 @@ CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.priv
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PlayActionFeedback.js: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PlayActionFeedback.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayFeedback.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PlayActionFeedback.js: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Generating Javascript code from ld_actions/PlayActionFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Generating Javascript code from ld_actions/PlayActionFeedback.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayActionFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/DockGoal.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/DockGoal.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Generating Javascript code from ld_actions/DockGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Generating Javascript code from ld_actions/DockGoal.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/ExecuteMacroGoal.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/ExecuteMacroGoal.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Generating Javascript code from ld_actions/ExecuteMacroGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Generating Javascript code from ld_actions/ExecuteMacroGoal.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolResumeFeedback.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolResumeFeedback.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeFeedback.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Generating Javascript code from ld_actions/PatrolResumeFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Generating Javascript code from ld_actions/PatrolResumeFeedback.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
+
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopActionResult.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopActionResult.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopActionResult.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopActionResult.js: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopActionResult.js: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopActionResult.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopResult.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopActionResult.js: /opt/ros/melodic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Generating Javascript code from ld_actions/StopActionResult.msg"
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopActionResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolOnceAction.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolOnceAction.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceAction.msg
@@ -406,13 +451,21 @@ CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.priv
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolOnceAction.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolOnceAction.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceActionFeedback.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolOnceAction.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Generating Javascript code from ld_actions/PatrolOnceAction.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Generating Javascript code from ld_actions/PatrolOnceAction.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceAction.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/DockResult.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/DockResult.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockResult.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Generating Javascript code from ld_actions/DockResult.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Generating Javascript code from ld_actions/DockResult.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
+
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopActionGoal.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopActionGoal.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopActionGoal.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopActionGoal.js: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopActionGoal.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopGoal.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopActionGoal.js: /opt/ros/melodic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Generating Javascript code from ld_actions/StopActionGoal.msg"
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopActionGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/GoToActionFeedback.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/GoToActionFeedback.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToActionFeedback.msg
@@ -420,7 +473,7 @@ CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.priv
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/GoToActionFeedback.js: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/GoToActionFeedback.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToFeedback.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/GoToActionFeedback.js: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Generating Javascript code from ld_actions/GoToActionFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Generating Javascript code from ld_actions/GoToActionFeedback.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToActionFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/GoToAction.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
@@ -434,17 +487,17 @@ CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.priv
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/GoToAction.js: /opt/ros/melodic/share/std_msgs/msg/Header.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/GoToAction.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToFeedback.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/GoToAction.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToActionFeedback.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Generating Javascript code from ld_actions/GoToAction.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Generating Javascript code from ld_actions/GoToAction.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToAction.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolResumeGoal.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolResumeGoal.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Generating Javascript code from ld_actions/PatrolResumeGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Generating Javascript code from ld_actions/PatrolResumeGoal.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PlayResult.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PlayResult.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayResult.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Generating Javascript code from ld_actions/PlayResult.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Generating Javascript code from ld_actions/PlayResult.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/GoToActionResult.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
@@ -453,7 +506,7 @@ CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.priv
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/GoToActionResult.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/GoToActionResult.js: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/GoToActionResult.js: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Generating Javascript code from ld_actions/GoToActionResult.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Generating Javascript code from ld_actions/GoToActionResult.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToActionResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolOnceActionResult.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
@@ -462,7 +515,7 @@ CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.priv
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolOnceActionResult.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolOnceActionResult.js: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolOnceActionResult.js: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Generating Javascript code from ld_actions/PatrolOnceActionResult.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Generating Javascript code from ld_actions/PatrolOnceActionResult.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceActionResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PlayActionResult.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
@@ -471,22 +524,31 @@ CMakeFiles/ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.priv
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PlayActionResult.js: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PlayActionResult.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PlayActionResult.js: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Generating Javascript code from ld_actions/PlayActionResult.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Generating Javascript code from ld_actions/PlayActionResult.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayActionResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/GoToFeedback.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/GoToFeedback.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToFeedback.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Generating Javascript code from ld_actions/GoToFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Generating Javascript code from ld_actions/GoToFeedback.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
+
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopActionFeedback.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopActionFeedback.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopActionFeedback.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopActionFeedback.js: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopActionFeedback.js: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopActionFeedback.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopFeedback.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopActionFeedback.js: /opt/ros/melodic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Generating Javascript code from ld_actions/StopActionFeedback.msg"
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/StopActionFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/ExecuteMacroResult.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/ExecuteMacroResult.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroResult.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Generating Javascript code from ld_actions/ExecuteMacroResult.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Generating Javascript code from ld_actions/ExecuteMacroResult.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PlayGoal.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PlayGoal.js: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Generating Javascript code from ld_actions/PlayGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Generating Javascript code from ld_actions/PlayGoal.msg"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg
 
 ld_actions_generate_messages_nodejs: CMakeFiles/ld_actions_generate_messages_nodejs
@@ -511,11 +573,14 @@ ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_acti
 ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/ExecuteMacroAction.js
 ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/DockFeedback.js
 ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PlayAction.js
+ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopAction.js
 ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/ExecuteMacroActionGoal.js
 ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/GoToGoal.js
 ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/DoTaskAction.js
+ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopResult.js
 ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolOnceGoal.js
 ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PlayActionGoal.js
+ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopFeedback.js
 ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolOnceFeedback.js
 ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/DoTaskActionFeedback.js
 ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolResumeAction.js
@@ -523,12 +588,15 @@ ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_acti
 ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/DockActionGoal.js
 ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolResumeActionResult.js
 ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolOnceActionFeedback.js
+ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopGoal.js
 ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PlayActionFeedback.js
 ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/DockGoal.js
 ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/ExecuteMacroGoal.js
 ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolResumeFeedback.js
+ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopActionResult.js
 ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolOnceAction.js
 ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/DockResult.js
+ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopActionGoal.js
 ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/GoToActionFeedback.js
 ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/GoToAction.js
 ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolResumeGoal.js
@@ -537,6 +605,7 @@ ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_acti
 ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PatrolOnceActionResult.js
 ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PlayActionResult.js
 ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/GoToFeedback.js
+ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/StopActionFeedback.js
 ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/ExecuteMacroResult.js
 ld_actions_generate_messages_nodejs: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/gennodejs/ros/ld_actions/msg/PlayGoal.js
 ld_actions_generate_messages_nodejs: CMakeFiles/ld_actions_generate_messages_nodejs.dir/build.make

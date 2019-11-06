@@ -47,3 +47,10 @@ from ._PlayActionResult import *
 from ._PlayFeedback import *
 from ._PlayGoal import *
 from ._PlayResult import *
+from ._StopAction import *
+from ._StopActionFeedback import *
+from ._StopActionGoal import *
+from ._StopActionResult import *
+from ._StopFeedback import *
+from ._StopGoal import *
+from ._StopResult import *
