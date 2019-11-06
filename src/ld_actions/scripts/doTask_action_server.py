@@ -32,7 +32,7 @@ class ActionServer():
 
     def __init__(self):
         self.a_server = actionlib.SimpleActionServer(
-            "dock", DoTaskAction, execute_cb=self.execute_cb, auto_start=False)
+            "doTask", DoTaskAction, execute_cb=self.execute_cb, auto_start=False)
         self.a_server.start()
 
     def execute_cb(self, goal):
@@ -42,7 +42,7 @@ class ActionServer():
         result = DoTaskResult()
         task = goal.goaltask
 
-        rate = rospy.Rate(10) 
+        rate = rospy.Rate(10)
         print(Style.RESET_ALL)
         print(Fore.GREEN)
 

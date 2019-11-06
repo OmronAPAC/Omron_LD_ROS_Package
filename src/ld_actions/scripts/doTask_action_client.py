@@ -9,7 +9,7 @@ def feedback_cb(msg):
 
 def call_server():
 
-    client = actionlib.SimpleActionClient('dock', DoTaskAction)
+    client = actionlib.SimpleActionClient('doTask', DoTaskAction)
 
     client.wait_for_server()
 
