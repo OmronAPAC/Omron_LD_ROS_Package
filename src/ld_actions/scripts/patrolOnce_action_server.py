@@ -80,13 +80,13 @@ class ActionServer():
                 #print required data
                 if 'Finished patrolling' in line:
                     i = 1
-                    doTask = line.split("Completed")
-                    rospy.loginfo(",Completed".join(doTask)[1:])
+                    doTask = line.split("Finished")
+                    rospy.loginfo(",Finished".join(doTask)[1:])
                     pub.publish(''.join(doTask))
                     rate.sleep()
                     success = True
                     rcv = str(rcv.splitlines())
-                    result.status = (",Completed".join(doTask)[1:])
+                    result.status = (",Finished".join(doTask)[1:])
                     self.a_server.set_succeeded(result)
                     return(0)
 

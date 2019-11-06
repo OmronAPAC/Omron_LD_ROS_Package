@@ -19,6 +19,13 @@ from ._ExecuteMacroActionResult import *
 from ._ExecuteMacroFeedback import *
 from ._ExecuteMacroGoal import *
 from ._ExecuteMacroResult import *
+from ._GoToAction import *
+from ._GoToActionFeedback import *
+from ._GoToActionGoal import *
+from ._GoToActionResult import *
+from ._GoToFeedback import *
+from ._GoToGoal import *
+from ._GoToResult import *
 from ._PatrolOnceAction import *
 from ._PatrolOnceActionFeedback import *
 from ._PatrolOnceActionGoal import *

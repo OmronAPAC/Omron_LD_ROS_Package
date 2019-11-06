@@ -36,18 +36,13 @@ class ActionServer():
         self.a_server.start()
 
     def execute_cb(self, goal):
-        global rcv
-        global task
         success = True
-        last_dish_washed = ''
+
         feedback = DoTaskFeedback()
         result = DoTaskResult()
-        rate = rospy.Rate(1)
         task = goal.goaltask
-        global rcv
-        global i
-        pub = rospy.Publisher('ldarcl_doTask', String, queue_size=10)
-        rate = rospy.Rate(10) # 10hz
+
+        rate = rospy.Rate(10) 
         print(Style.RESET_ALL)
         print(Fore.GREEN)
 
@@ -83,7 +78,7 @@ class ActionServer():
                     i = 1
                     doTask = line.split("Completed")
                     rospy.loginfo(",Completed".join(doTask)[1:])
-                    pub.publish(''.join(doTask))
+
                     rate.sleep()
                     success = True
                     rcv = str(rcv.splitlines())
@@ -97,13 +92,6 @@ class ActionServer():
 
         if success:
             self.a_server.set_succeeded(result)
-
-
-
-
-
-
-
 
 
 if __name__ == "__main__":
