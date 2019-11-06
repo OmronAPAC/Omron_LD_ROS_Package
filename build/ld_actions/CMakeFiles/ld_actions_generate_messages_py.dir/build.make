@@ -66,16 +66,19 @@ CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/
 CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroFeedback.py
 CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DoTaskGoal.py
 CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolResumeResult.py
+CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayFeedback.py
 CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroActionResult.py
 CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DoTaskActionGoal.py
 CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DockAction.py
 CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolOnceResult.py
 CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroAction.py
 CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DockFeedback.py
+CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayAction.py
 CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroActionGoal.py
 CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_GoToGoal.py
 CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DoTaskAction.py
 CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolOnceGoal.py
+CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayActionGoal.py
 CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolOnceFeedback.py
 CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DoTaskActionFeedback.py
 CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolResumeAction.py
@@ -83,6 +86,7 @@ CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/
 CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DockActionGoal.py
 CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolResumeActionResult.py
 CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolOnceActionFeedback.py
+CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayActionFeedback.py
 CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DockGoal.py
 CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroGoal.py
 CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolResumeFeedback.py
@@ -91,10 +95,13 @@ CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/
 CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_GoToActionFeedback.py
 CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_GoToAction.py
 CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolResumeGoal.py
+CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayResult.py
 CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_GoToActionResult.py
 CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolOnceActionResult.py
+CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayActionResult.py
 CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_GoToFeedback.py
 CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroResult.py
+CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayGoal.py
 CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py
 
 
@@ -188,13 +195,18 @@ CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating Python from MSG ld_actions/PatrolResumeResult"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
 
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayFeedback.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayFeedback.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayFeedback.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Generating Python from MSG ld_actions/PlayFeedback"
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
+
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroActionResult.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroActionResult.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroActionResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroActionResult.py: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroActionResult.py: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroActionResult.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroActionResult.py: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Generating Python from MSG ld_actions/ExecuteMacroActionResult"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Generating Python from MSG ld_actions/ExecuteMacroActionResult"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroActionResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DoTaskActionGoal.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
@@ -202,7 +214,7 @@ CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DoTaskActionGoal.py: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DoTaskActionGoal.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DoTaskActionGoal.py: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Generating Python from MSG ld_actions/DoTaskActionGoal"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Generating Python from MSG ld_actions/DoTaskActionGoal"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DockAction.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
@@ -216,12 +228,12 @@ CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DockAction.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DockAction.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionGoal.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DockAction.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockFeedback.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Generating Python from MSG ld_actions/DockAction"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Generating Python from MSG ld_actions/DockAction"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockAction.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolOnceResult.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolOnceResult.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceResult.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Generating Python from MSG ld_actions/PatrolOnceResult"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Generating Python from MSG ld_actions/PatrolOnceResult"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroAction.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
@@ -235,25 +247,39 @@ CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroAction.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroAction.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroActionFeedback.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroAction.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Generating Python from MSG ld_actions/ExecuteMacroAction"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Generating Python from MSG ld_actions/ExecuteMacroAction"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroAction.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DockFeedback.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DockFeedback.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockFeedback.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Generating Python from MSG ld_actions/DockFeedback"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Generating Python from MSG ld_actions/DockFeedback"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
+
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayAction.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayAction.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayAction.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayAction.py: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayAction.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayGoal.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayAction.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayActionFeedback.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayAction.py: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayAction.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayActionResult.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayAction.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayFeedback.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayAction.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayResult.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayAction.py: /opt/ros/melodic/share/std_msgs/msg/Header.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayAction.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayActionGoal.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Generating Python from MSG ld_actions/PlayAction"
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayAction.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroActionGoal.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroActionGoal.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroActionGoal.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroActionGoal.py: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroActionGoal.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroGoal.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroActionGoal.py: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Generating Python from MSG ld_actions/ExecuteMacroActionGoal"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Generating Python from MSG ld_actions/ExecuteMacroActionGoal"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroActionGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_GoToGoal.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_GoToGoal.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Generating Python from MSG ld_actions/GoToGoal"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Generating Python from MSG ld_actions/GoToGoal"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DoTaskAction.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
@@ -267,17 +293,25 @@ CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DoTaskAction.py: /opt/ros/melodic/share/std_msgs/msg/Header.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DoTaskAction.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskGoal.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DoTaskAction.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskResult.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Generating Python from MSG ld_actions/DoTaskAction"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Generating Python from MSG ld_actions/DoTaskAction"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskAction.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolOnceGoal.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolOnceGoal.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Generating Python from MSG ld_actions/PatrolOnceGoal"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Generating Python from MSG ld_actions/PatrolOnceGoal"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
+
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayActionGoal.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayActionGoal.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayActionGoal.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayActionGoal.py: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayActionGoal.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayGoal.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayActionGoal.py: /opt/ros/melodic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Generating Python from MSG ld_actions/PlayActionGoal"
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayActionGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolOnceFeedback.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolOnceFeedback.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceFeedback.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Generating Python from MSG ld_actions/PatrolOnceFeedback"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Generating Python from MSG ld_actions/PatrolOnceFeedback"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DoTaskActionFeedback.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
@@ -286,7 +320,7 @@ CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DoTaskActionFeedback.py: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DoTaskActionFeedback.py: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DoTaskActionFeedback.py: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Generating Python from MSG ld_actions/DoTaskActionFeedback"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Generating Python from MSG ld_actions/DoTaskActionFeedback"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DoTaskActionFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolResumeAction.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
@@ -300,7 +334,7 @@ CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolResumeAction.py: /opt/ros/melodic/share/std_msgs/msg/Header.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolResumeAction.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolResumeAction.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Generating Python from MSG ld_actions/PatrolResumeAction"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Generating Python from MSG ld_actions/PatrolResumeAction"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeAction.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroActionFeedback.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
@@ -309,7 +343,7 @@ CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroActionFeedback.py: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroActionFeedback.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroFeedback.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroActionFeedback.py: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Generating Python from MSG ld_actions/ExecuteMacroActionFeedback"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Generating Python from MSG ld_actions/ExecuteMacroActionFeedback"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroActionFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DockActionGoal.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
@@ -317,7 +351,7 @@ CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DockActionGoal.py: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DockActionGoal.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockGoal.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DockActionGoal.py: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Generating Python from MSG ld_actions/DockActionGoal"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Generating Python from MSG ld_actions/DockActionGoal"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockActionGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolResumeActionResult.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
@@ -326,7 +360,7 @@ CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolResumeActionResult.py: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolResumeActionResult.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolResumeActionResult.py: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Generating Python from MSG ld_actions/PatrolResumeActionResult"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Generating Python from MSG ld_actions/PatrolResumeActionResult"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeActionResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolOnceActionFeedback.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
@@ -335,22 +369,31 @@ CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolOnceActionFeedback.py: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolOnceActionFeedback.py: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolOnceActionFeedback.py: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Generating Python from MSG ld_actions/PatrolOnceActionFeedback"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Generating Python from MSG ld_actions/PatrolOnceActionFeedback"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceActionFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
+
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayActionFeedback.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayActionFeedback.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayActionFeedback.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayActionFeedback.py: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayActionFeedback.py: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayActionFeedback.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayFeedback.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayActionFeedback.py: /opt/ros/melodic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Generating Python from MSG ld_actions/PlayActionFeedback"
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayActionFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DockGoal.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DockGoal.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Generating Python from MSG ld_actions/DockGoal"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Generating Python from MSG ld_actions/DockGoal"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroGoal.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroGoal.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Generating Python from MSG ld_actions/ExecuteMacroGoal"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Generating Python from MSG ld_actions/ExecuteMacroGoal"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolResumeFeedback.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolResumeFeedback.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeFeedback.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Generating Python from MSG ld_actions/PatrolResumeFeedback"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Generating Python from MSG ld_actions/PatrolResumeFeedback"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolOnceAction.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
@@ -364,12 +407,12 @@ CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolOnceAction.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolOnceAction.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceActionFeedback.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolOnceAction.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Generating Python from MSG ld_actions/PatrolOnceAction"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Generating Python from MSG ld_actions/PatrolOnceAction"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceAction.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DockResult.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DockResult.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockResult.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Generating Python from MSG ld_actions/DockResult"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Generating Python from MSG ld_actions/DockResult"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/DockResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_GoToActionFeedback.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
@@ -378,7 +421,7 @@ CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_GoToActionFeedback.py: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_GoToActionFeedback.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToFeedback.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_GoToActionFeedback.py: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Generating Python from MSG ld_actions/GoToActionFeedback"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Generating Python from MSG ld_actions/GoToActionFeedback"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToActionFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_GoToAction.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
@@ -392,13 +435,18 @@ CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_GoToAction.py: /opt/ros/melodic/share/std_msgs/msg/Header.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_GoToAction.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToFeedback.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_GoToAction.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToActionFeedback.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Generating Python from MSG ld_actions/GoToAction"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Generating Python from MSG ld_actions/GoToAction"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToAction.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolResumeGoal.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolResumeGoal.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Generating Python from MSG ld_actions/PatrolResumeGoal"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Generating Python from MSG ld_actions/PatrolResumeGoal"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
+
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayResult.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayResult.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayResult.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Generating Python from MSG ld_actions/PlayResult"
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_GoToActionResult.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_GoToActionResult.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToActionResult.msg
@@ -406,7 +454,7 @@ CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_GoToActionResult.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_GoToActionResult.py: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_GoToActionResult.py: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Generating Python from MSG ld_actions/GoToActionResult"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Generating Python from MSG ld_actions/GoToActionResult"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToActionResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolOnceActionResult.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
@@ -415,18 +463,32 @@ CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolOnceActionResult.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceResult.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolOnceActionResult.py: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolOnceActionResult.py: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Generating Python from MSG ld_actions/PatrolOnceActionResult"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Generating Python from MSG ld_actions/PatrolOnceActionResult"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolOnceActionResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
+
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayActionResult.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayActionResult.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayActionResult.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayActionResult.py: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayActionResult.py: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayActionResult.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayResult.msg
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayActionResult.py: /opt/ros/melodic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Generating Python from MSG ld_actions/PlayActionResult"
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayActionResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_GoToFeedback.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_GoToFeedback.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToFeedback.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Generating Python from MSG ld_actions/GoToFeedback"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Generating Python from MSG ld_actions/GoToFeedback"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/GoToFeedback.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroResult.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroResult.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroResult.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Generating Python from MSG ld_actions/ExecuteMacroResult"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Generating Python from MSG ld_actions/ExecuteMacroResult"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/ExecuteMacroResult.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
+
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayGoal.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayGoal.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayGoal.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Generating Python from MSG ld_actions/PlayGoal"
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayGoal.msg -Ild_actions:/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p ld_actions -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg
 
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolResumeActionFeedback.py
@@ -442,16 +504,19 @@ CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroFeedback.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DoTaskGoal.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolResumeResult.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayFeedback.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroActionResult.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DoTaskActionGoal.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DockAction.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolOnceResult.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroAction.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DockFeedback.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayAction.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroActionGoal.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_GoToGoal.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DoTaskAction.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolOnceGoal.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayActionGoal.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolOnceFeedback.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DoTaskActionFeedback.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolResumeAction.py
@@ -459,6 +524,7 @@ CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DockActionGoal.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolResumeActionResult.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolOnceActionFeedback.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayActionFeedback.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DockGoal.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroGoal.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolResumeFeedback.py
@@ -467,11 +533,14 @@ CMakeFiles/ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_GoToActionFeedback.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_GoToAction.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolResumeGoal.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayResult.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_GoToActionResult.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolOnceActionResult.py
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayActionResult.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_GoToFeedback.py
 /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroResult.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Generating Python msg __init__.py for ld_actions"
+/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayGoal.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tthmatt/ld_ROS/build/ld_actions/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Generating Python msg __init__.py for ld_actions"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg --initpy
 
 ld_actions_generate_messages_py: CMakeFiles/ld_actions_generate_messages_py
@@ -488,16 +557,19 @@ ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/
 ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroFeedback.py
 ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DoTaskGoal.py
 ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolResumeResult.py
+ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayFeedback.py
 ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroActionResult.py
 ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DoTaskActionGoal.py
 ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DockAction.py
 ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolOnceResult.py
 ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroAction.py
 ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DockFeedback.py
+ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayAction.py
 ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroActionGoal.py
 ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_GoToGoal.py
 ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DoTaskAction.py
 ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolOnceGoal.py
+ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayActionGoal.py
 ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolOnceFeedback.py
 ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DoTaskActionFeedback.py
 ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolResumeAction.py
@@ -505,6 +577,7 @@ ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/
 ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DockActionGoal.py
 ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolResumeActionResult.py
 ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolOnceActionFeedback.py
+ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayActionFeedback.py
 ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_DockGoal.py
 ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroGoal.py
 ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolResumeFeedback.py
@@ -513,10 +586,13 @@ ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/
 ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_GoToActionFeedback.py
 ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_GoToAction.py
 ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolResumeGoal.py
+ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayResult.py
 ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_GoToActionResult.py
 ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PatrolOnceActionResult.py
+ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayActionResult.py
 ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_GoToFeedback.py
 ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_ExecuteMacroResult.py
+ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/_PlayGoal.py
 ld_actions_generate_messages_py: /home/tthmatt/ld_ROS/devel/.private/ld_actions/lib/python2.7/dist-packages/ld_actions/msg/__init__.py
 ld_actions_generate_messages_py: CMakeFiles/ld_actions_generate_messages_py.dir/build.make
 

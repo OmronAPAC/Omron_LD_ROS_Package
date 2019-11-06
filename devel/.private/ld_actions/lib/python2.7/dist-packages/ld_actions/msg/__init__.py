@@ -40,3 +40,10 @@ from ._PatrolResumeActionResult import *
 from ._PatrolResumeFeedback import *
 from ._PatrolResumeGoal import *
 from ._PatrolResumeResult import *
+from ._PlayAction import *
+from ._PlayActionFeedback import *
+from ._PlayActionGoal import *
+from ._PlayActionResult import *
+from ._PlayFeedback import *
+from ._PlayGoal import *
+from ._PlayResult import *

@@ -136,6 +136,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/home/tthmatt/ld_ROS/src/ld_actions/action/PatrolOnce.action"
     "/home/tthmatt/ld_ROS/src/ld_actions/action/GoTo.action"
     "/home/tthmatt/ld_ROS/src/ld_actions/action/PatrolResume.action"
+    "/home/tthmatt/ld_ROS/src/ld_actions/action/Play.action"
     )
 endif()
 
@@ -208,6 +209,18 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeGoal.msg"
     "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeResult.msg"
     "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PatrolResumeFeedback.msg"
+    )
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ld_actions/msg" TYPE FILE FILES
+    "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayAction.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayActionGoal.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayActionResult.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayActionFeedback.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayGoal.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayResult.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/ld_actions/share/ld_actions/msg/PlayFeedback.msg"
     )
 endif()
 
