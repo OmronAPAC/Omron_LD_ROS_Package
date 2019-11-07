@@ -22,7 +22,6 @@ class AddTwoIntsRequest {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.a = null;
-      this.b = null;
     }
     else {
       if (initObj.hasOwnProperty('a')) {
@@ -31,12 +30,6 @@ class AddTwoIntsRequest {
       else {
         this.a = 0;
       }
-      if (initObj.hasOwnProperty('b')) {
-        this.b = initObj.b
-      }
-      else {
-        this.b = 0;
-      }
     }
   }
 
@@ -44,8 +37,6 @@ class AddTwoIntsRequest {
     // Serializes a message object of type AddTwoIntsRequest
     // Serialize message field [a]
     bufferOffset = _serializer.int64(obj.a, buffer, bufferOffset);
-    // Serialize message field [b]
-    bufferOffset = _serializer.int64(obj.b, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -55,13 +46,11 @@ class AddTwoIntsRequest {
     let data = new AddTwoIntsRequest(null);
     // Deserialize message field [a]
     data.a = _deserializer.int64(buffer, bufferOffset);
-    // Deserialize message field [b]
-    data.b = _deserializer.int64(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 16;
+    return 8;
   }
 
   static datatype() {
@@ -71,14 +60,13 @@ class AddTwoIntsRequest {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '36d09b846be0b371c5f190354dd3153e';
+    return '019706110004b728d56d8baaa8e32797';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
     int64 a
-    int64 b
     
     `;
   }
@@ -96,13 +84,6 @@ class AddTwoIntsRequest {
       resolved.a = 0
     }
 
-    if (msg.b !== undefined) {
-      resolved.b = msg.b;
-    }
-    else {
-      resolved.b = 0
-    }
-
     return resolved;
     }
 };
@@ -111,22 +92,22 @@ class AddTwoIntsResponse {
   constructor(initObj={}) {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
-      this.sum = null;
+      this.device = null;
     }
     else {
-      if (initObj.hasOwnProperty('sum')) {
-        this.sum = initObj.sum
+      if (initObj.hasOwnProperty('device')) {
+        this.device = initObj.device
       }
       else {
-        this.sum = 0;
+        this.device = 0;
       }
     }
   }
 
   static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type AddTwoIntsResponse
-    // Serialize message field [sum]
-    bufferOffset = _serializer.int64(obj.sum, buffer, bufferOffset);
+    // Serialize message field [device]
+    bufferOffset = _serializer.int64(obj.device, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -134,8 +115,8 @@ class AddTwoIntsResponse {
     //deserializes a message object of type AddTwoIntsResponse
     let len;
     let data = new AddTwoIntsResponse(null);
-    // Deserialize message field [sum]
-    data.sum = _deserializer.int64(buffer, bufferOffset);
+    // Deserialize message field [device]
+    data.device = _deserializer.int64(buffer, bufferOffset);
     return data;
   }
 
@@ -150,13 +131,13 @@ class AddTwoIntsResponse {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'b88405221c77b1878a3cbbfff53428d7';
+    return '6a53c2e97a1feae7da032677c575d165';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    int64 sum
+    int64 device
     
     
     `;
@@ -168,11 +149,11 @@ class AddTwoIntsResponse {
       msg = {};
     }
     const resolved = new AddTwoIntsResponse(null);
-    if (msg.sum !== undefined) {
-      resolved.sum = msg.sum;
+    if (msg.device !== undefined) {
+      resolved.device = msg.device;
     }
     else {
-      resolved.sum = 0
+      resolved.device = 0
     }
 
     return resolved;
@@ -182,6 +163,6 @@ class AddTwoIntsResponse {
 module.exports = {
   Request: AddTwoIntsRequest,
   Response: AddTwoIntsResponse,
-  md5sum() { return '6a2e34150c00229791cc89ff309fff21'; },
+  md5sum() { return '04de0574add1d5e8526e6869cdd49c0c'; },
   datatype() { return 'om_aiv_util/AddTwoInts'; }
 };

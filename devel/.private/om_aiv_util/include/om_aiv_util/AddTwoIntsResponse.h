@@ -24,17 +24,17 @@ struct AddTwoIntsResponse_
   typedef AddTwoIntsResponse_<ContainerAllocator> Type;
 
   AddTwoIntsResponse_()
-    : sum(0)  {
+    : device(0)  {
     }
   AddTwoIntsResponse_(const ContainerAllocator& _alloc)
-    : sum(0)  {
+    : device(0)  {
   (void)_alloc;
     }
 
 
 
-   typedef int64_t _sum_type;
-  _sum_type sum;
+   typedef int64_t _device_type;
+  _device_type device;
 
 
 
@@ -114,12 +114,12 @@ struct MD5Sum< ::om_aiv_util::AddTwoIntsResponse_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "b88405221c77b1878a3cbbfff53428d7";
+    return "6a53c2e97a1feae7da032677c575d165";
   }
 
   static const char* value(const ::om_aiv_util::AddTwoIntsResponse_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xb88405221c77b187ULL;
-  static const uint64_t static_value2 = 0x8a3cbbfff53428d7ULL;
+  static const uint64_t static_value1 = 0x6a53c2e97a1feae7ULL;
+  static const uint64_t static_value2 = 0xda032677c575d165ULL;
 };
 
 template<class ContainerAllocator>
@@ -138,7 +138,7 @@ struct Definition< ::om_aiv_util::AddTwoIntsResponse_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "int64 sum\n"
+    return "int64 device\n"
 "\n"
 ;
   }
@@ -158,7 +158,7 @@ namespace serialization
   {
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
-      stream.next(m.sum);
+      stream.next(m.device);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -177,8 +177,8 @@ struct Printer< ::om_aiv_util::AddTwoIntsResponse_<ContainerAllocator> >
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::om_aiv_util::AddTwoIntsResponse_<ContainerAllocator>& v)
   {
-    s << indent << "sum: ";
-    Printer<int64_t>::stream(s, indent + "  ", v.sum);
+    s << indent << "device: ";
+    Printer<int64_t>::stream(s, indent + "  ", v.device);
   }
 };
 

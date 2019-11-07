@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 from socketconnection_class import ConnectSocket, connecttcp
-from test_client import device
 s = connecttcp.sock
 import socket
 import threading

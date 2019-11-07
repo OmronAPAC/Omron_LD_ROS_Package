@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/om_aiv_util_generate_messages_cpp"
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/include/om_aiv_util/Location.h"
-  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/include/om_aiv_util/AddTwoInts.h"
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/include/om_aiv_util/ServiceExample.h"
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/include/om_aiv_util/Service.h"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,0 +1,21 @@
+[  0%] Built target _om_aiv_util_generate_messages_check_deps_ServiceExample
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target _om_aiv_util_generate_messages_check_deps_AddTwoInts
+[  0%] Built target _om_aiv_util_generate_messages_check_deps_Location
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  5%] [34m[1mGenerating Python code from SRV om_aiv_util/AddTwoInts[0m
+[ 11%] [34m[1mGenerating Lisp code from om_aiv_util/AddTwoInts.srv[0m
+[ 22%] Built target om_aiv_util_generate_messages_lisp
+[ 27%] [34m[1mGenerating EusLisp code from om_aiv_util/AddTwoInts.srv[0m
+[ 33%] [34m[1mGenerating C++ code from om_aiv_util/AddTwoInts.srv[0m
+[ 38%] [34m[1mGenerating Python msg __init__.py for om_aiv_util[0m
+[ 55%] Built target om_aiv_util_generate_messages_eus
+[ 61%] [34m[1mGenerating Javascript code from om_aiv_util/AddTwoInts.srv[0m
+[ 72%] Built target om_aiv_util_generate_messages_nodejs
+[ 77%] [34m[1mGenerating Python srv __init__.py for om_aiv_util[0m
+[ 88%] Built target om_aiv_util_generate_messages_py
+[100%] Built target om_aiv_util_generate_messages_cpp
+[100%] Built target om_aiv_util_generate_messages
