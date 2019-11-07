@@ -1,7 +1,7 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
 messages_str = "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Location.msg"
-services_str = ""
+services_str = "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/ServiceExample.srv"
 pkg_name = "om_aiv_util"
 dependencies_str = "std_msgs"
 langs = "gencpp;geneus;genlisp;gennodejs;genpy"

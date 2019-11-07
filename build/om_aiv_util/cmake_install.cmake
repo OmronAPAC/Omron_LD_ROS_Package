@@ -133,6 +133,10 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/om_aiv_util/srv" TYPE FILE FILES "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/ServiceExample.srv")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/om_aiv_util/cmake" TYPE FILE FILES "/home/tthmatt/ld_ROS/build/om_aiv_util/catkin_generated/installspace/om_aiv_util-msg-paths.cmake")
 endif()
 
