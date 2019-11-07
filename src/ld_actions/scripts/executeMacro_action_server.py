@@ -23,7 +23,7 @@ global s
 socket = connecttcp.sock
 # ip_address = rospy.get_param("ip_address")
 # port = rospy.get_param("port")
-ip_address = "172.21.5.123"
+ip_address = "172.21.5.125"
 port = 7171
 connecttcp.connect(str(ip_address), port)
 
@@ -68,7 +68,18 @@ class ActionServer():
                     self.a_server.publish_feedback(feedback)
                     break
                 if "Completed" in rcv:
-                    break
+                    for line in rcv.splitlines():
+                        #print required data
+                        if 'Completed macro' in line:
+                            executeMacro = line.split("Completed macro")
+                            rospy.loginfo(",Completed macro".join(executeMacro)[1:])
+                            pub.publish(''.join(executeMacro))
+                            rate.sleep()
+                            success = True
+                            rcv = str(rcv.splitlines())
+                            result.status = (",Completed macro".join(executeMacro)[1:])
+                            self.a_server.set_succeeded(result)
+                            break
                 if "Failed" in rcv:
                     print "Failed to execute macro"
                     result.status = "Failed to execute macro"
@@ -80,26 +91,16 @@ class ActionServer():
                     feedback.received_data = rcv
                     self.a_server.publish_feedback(feedback)
 
-        except socket.error as e:
-            print("Connection  failed")
+        except Exception as e:
+            rospy.logerr(e)
+            result.status = str(e)
+            self.a_server.set_succeeded(result)
             return e
+
         data = socket.recv(BUFFER_SIZE)
         data = socket.recv(BUFFER_SIZE)
         rcv = rcv + data.encode('ascii', 'ignore')
         print rcv
-        while not rospy.is_shutdown():
-            for line in rcv.splitlines():
-                #print required data
-                if 'Completed macro' in line:
-                    executeMacro = line.split("Completed macro")
-                    rospy.loginfo(",Completed macro".join(executeMacro)[1:])
-                    pub.publish(''.join(executeMacro))
-                    rate.sleep()
-                    success = True
-                    rcv = str(rcv.splitlines())
-                    result.status = (",Completed macro".join(executeMacro)[1:])
-                    self.a_server.set_succeeded(result)
-                    return(0)
 
         if success:
             self.a_server.set_succeeded(result)
