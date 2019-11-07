@@ -56,32 +56,28 @@ class ActionServer():
             while not rospy.is_shutdown():
                 #check for required data
                 if "Stopped" in rcv:
-                    break
-                # if "SetupError:" in rcv:
-                #     print "Failed to play file ", task
-                #     result.status = "Failed to play file ", task
-                #     self.a_server.set_succeeded(result)
-                #     return(0)
+                    for line in rcv.splitlines():
+                        #print required data
+                        if 'Stopped' in line:
+                            doTask = line.split("Stopped")
+                            rospy.loginfo(",Stopped".join(doTask)[1:])
+                            rate.sleep()
+                            success = True
+                            rcv = str(rcv.splitlines())
+                            result.status = (",Stopped".join(doTask)[1:])
+                            self.a_server.set_succeeded(result)
+                            return(0)
+                            break
+
                 else:
                     data = socket.recv(BUFFER_SIZE)
                     rcv = rcv + data.encode('ascii', 'ignore')
 
-        except socket.error as e:
-            print("Connection  failed")
+        except Exception as e:
+            rospy.logerr(e)
+            result.status = str(e)
+            self.a_server.set_succeeded(result)
             return e
-        while not rospy.is_shutdown():
-            for line in rcv.splitlines():
-                #print required data
-                if 'Stopped' in line:
-                    i = 1
-                    doTask = line.split("Stopped")
-                    rospy.loginfo(",Stopped".join(doTask)[1:])
-                    rate.sleep()
-                    success = True
-                    rcv = str(rcv.splitlines())
-                    result.status = (",Stopped".join(doTask)[1:])
-                    self.a_server.set_succeeded(result)
-                    return(0)
 
         if success:
             self.a_server.set_succeeded(result)
