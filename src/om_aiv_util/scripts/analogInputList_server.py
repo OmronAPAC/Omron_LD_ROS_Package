@@ -18,14 +18,13 @@ from om_aiv_util.srv import Service,ServiceResponse
 import rospy
 
 def handle_analogInputList(req):
-    print "Returning", req.a
+    # print "Returning", req.a
     analogInputList()
     return ServiceResponse(req.a)
 
 def analogInputList_server():
     rospy.init_node('analogInputList_server')
     s = rospy.Service('analogInputList', Service, handle_analogInputList)
-    print "Ready to add two ints."
     rospy.spin()
 
 def analogInputList():
@@ -35,7 +34,6 @@ def analogInputList():
     rate = rospy.Rate(10) # 10hz
 
     command = "analogInputList {}".format("device")
-    print command
     command = command.encode('ascii')
     s.send(command+b"\r\n")
     try:
