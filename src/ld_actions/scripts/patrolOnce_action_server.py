@@ -62,7 +62,19 @@ class ActionServer():
             while not rospy.is_shutdown():
                 #check for required data
                 if "Finished patrolling" in rcv:
-                    break
+                    for line in rcv.splitlines():
+                        #print required data
+                        if 'Finished patrolling' in line:
+                            i = 1
+                            doTask = line.split("Finished")
+                            rospy.loginfo(",Finished".join(doTask)[1:])
+                            pub.publish(''.join(doTask))
+                            rate.sleep()
+                            success = True
+                            rcv = str(rcv.splitlines())
+                            result.status = (",Finished".join(doTask)[1:])
+                            self.a_server.set_succeeded(result)
+                            break
                 if "Failed" in rcv:
                     print "Failed to patrol ", task
                     result.status = "Failed to patrol ", task
@@ -72,38 +84,14 @@ class ActionServer():
                     data = socket.recv(BUFFER_SIZE)
                     rcv = rcv + data.encode('ascii', 'ignore')
 
-        except socket.error as e:
-            print("Connection  failed")
+        except Exception as e:
+            rospy.logerr(e)
+            result.status = str(e)
+            self.a_server.set_succeeded(result)
             return e
-        while not rospy.is_shutdown():
-            for line in rcv.splitlines():
-                #print required data
-                if 'Finished patrolling' in line:
-                    i = 1
-                    doTask = line.split("Finished")
-                    rospy.loginfo(",Finished".join(doTask)[1:])
-                    pub.publish(''.join(doTask))
-                    rate.sleep()
-                    success = True
-                    rcv = str(rcv.splitlines())
-                    result.status = (",Finished".join(doTask)[1:])
-                    self.a_server.set_succeeded(result)
-                    return(0)
-
-
-
-
 
         if success:
             self.a_server.set_succeeded(result)
-
-
-
-
-
-
-
-
 
 if __name__ == "__main__":
     rospy.init_node("patrolOnce_action_server")
