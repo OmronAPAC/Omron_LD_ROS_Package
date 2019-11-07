@@ -22,7 +22,8 @@ def handle_arclSendText(req):
     print "Returning", req.a
     text = req.a
     arclSendText()
-    return ServiceResponse(req.a)
+    # return ServiceResponse(req.a)
+    return rcv
 
 def arclSendText_server():
     rospy.init_node('arclSendText_server')
@@ -43,11 +44,7 @@ def arclSendText():
         rcv = data.encode('ascii', 'ignore')
         while not rospy.is_shutdown():
             #check for required data
-            if "arclSendText cleared" in rcv:
-                print rcv
-                return rcv
-                break
-            if "CommandErrorDescription" in rcv:
+            if text in rcv:
                 print rcv
                 return rcv
                 break

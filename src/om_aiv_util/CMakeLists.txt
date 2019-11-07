@@ -59,6 +59,7 @@ FILES
 ServiceExample.srv
 Service.srv
 Service5.srv
+AddTwoInts.srv
 )
 
 ## Generate actions in the 'action' folder

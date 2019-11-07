@@ -23,3 +23,4 @@ if __name__ == "__main__":
     print "running command"
     # print "Requesting", x
     arclSendText_client(x)
+    print arclSendText_client(x)

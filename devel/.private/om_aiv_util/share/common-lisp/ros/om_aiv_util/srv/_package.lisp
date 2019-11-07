@@ -1,6 +1,11 @@
 (cl:defpackage om_aiv_util-srv
   (:use )
   (:export
+   "ADDTWOINTS"
+   "<ADDTWOINTS-REQUEST>"
+   "ADDTWOINTS-REQUEST"
+   "<ADDTWOINTS-RESPONSE>"
+   "ADDTWOINTS-RESPONSE"
    "SERVICE"
    "<SERVICE-REQUEST>"
    "SERVICE-REQUEST"

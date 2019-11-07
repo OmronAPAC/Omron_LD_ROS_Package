@@ -89,6 +89,17 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -123,17 +134,6 @@ install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -480,6 +480,19 @@ om_aiv_util_generate_messages_eus/fast:
 .PHONY : om_aiv_util_generate_messages_eus/fast
 
 #=============================================================================
+# Target rules for targets named _om_aiv_util_generate_messages_check_deps_AddTwoInts
+
+# Build rule for target.
+_om_aiv_util_generate_messages_check_deps_AddTwoInts: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _om_aiv_util_generate_messages_check_deps_AddTwoInts
+.PHONY : _om_aiv_util_generate_messages_check_deps_AddTwoInts
+
+# fast build rule for target.
+_om_aiv_util_generate_messages_check_deps_AddTwoInts/fast:
+	$(MAKE) -f CMakeFiles/_om_aiv_util_generate_messages_check_deps_AddTwoInts.dir/build.make CMakeFiles/_om_aiv_util_generate_messages_check_deps_AddTwoInts.dir/build
+.PHONY : _om_aiv_util_generate_messages_check_deps_AddTwoInts/fast
+
+#=============================================================================
 # Target rules for targets named _om_aiv_util_generate_messages_check_deps_Service5
 
 # Build rule for target.
@@ -683,6 +696,7 @@ help:
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... edit_cache"
+	@echo "... test"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... std_msgs_generate_messages_eus"
@@ -709,6 +723,7 @@ help:
 	@echo "... doxygen"
 	@echo "... om_aiv_util_generate_messages"
 	@echo "... om_aiv_util_generate_messages_eus"
+	@echo "... _om_aiv_util_generate_messages_check_deps_AddTwoInts"
 	@echo "... _om_aiv_util_generate_messages_check_deps_Service5"
 	@echo "... om_aiv_util_genlisp"
 	@echo "... _om_aiv_util_generate_messages_check_deps_Service"
@@ -721,7 +736,6 @@ help:
 	@echo "... om_aiv_util_gennodejs"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... om_aiv_util_generate_messages_py"
-	@echo "... test"
 	@echo "... gmock_main"
 	@echo "... gmock"
 	@echo "... gtest_main"

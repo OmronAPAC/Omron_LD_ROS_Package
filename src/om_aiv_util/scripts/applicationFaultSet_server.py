@@ -25,7 +25,8 @@ def handle_applicationFaultClear(req):
     d = req.d
     e = req.e
     applicationFaultClear()
-    return Service5Response(req.a + req.b + req.c + req.d + req.e)
+    # return Service5Response(req.a + req.b + req.c + req.d + req.e)
+    return rcv
 
 def applicationFaultClear_server():
     rospy.init_node('applicationFaultClear_server')

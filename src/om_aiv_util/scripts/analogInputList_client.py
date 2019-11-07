@@ -24,4 +24,5 @@ if __name__ == "__main__":
         sys.exit(1)
     print "running command"
     # print "Requesting", x
-    analogInputList_client(x)
+    # analogInputList_client(x)
+    print analogInputList_client(x)

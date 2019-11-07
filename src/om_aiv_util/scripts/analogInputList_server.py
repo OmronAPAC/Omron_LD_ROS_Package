@@ -20,7 +20,8 @@ import rospy
 def handle_analogInputList(req):
     # print "Returning", req.a
     analogInputList()
-    return ServiceResponse(req.a)
+    # return ServiceResponse(req.a)
+    return rcv
 
 def analogInputList_server():
     rospy.init_node('analogInputList_server')

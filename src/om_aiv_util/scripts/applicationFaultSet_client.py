@@ -26,4 +26,5 @@ if __name__ == "__main__":
         sys.exit(1)
     print "running command"
     # print "Requesting", x
-    analogInputQueryRaw_client(a, b, c, d, e)
+    # analogInputQueryRaw_client(a, b, c, d, e)
+    print analogInputQueryRaw_client(a, b , c, d, e)
