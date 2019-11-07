@@ -1,8 +1,0 @@
-prefix=/home/tthmatt/ld_ROS/devel/.private/ld_navigation
-
-Name: ld_navigation
-Description: Description of ld_navigation
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/tthmatt/ld_ROS/devel/.private/ld_navigation/lib 
-Requires: 

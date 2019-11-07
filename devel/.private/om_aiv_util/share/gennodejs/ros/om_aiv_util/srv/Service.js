@@ -28,7 +28,7 @@ class ServiceRequest {
         this.a = initObj.a
       }
       else {
-        this.a = 0;
+        this.a = '';
       }
     }
   }
@@ -36,7 +36,7 @@ class ServiceRequest {
   static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type ServiceRequest
     // Serialize message field [a]
-    bufferOffset = _serializer.int64(obj.a, buffer, bufferOffset);
+    bufferOffset = _serializer.string(obj.a, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -45,12 +45,14 @@ class ServiceRequest {
     let len;
     let data = new ServiceRequest(null);
     // Deserialize message field [a]
-    data.a = _deserializer.int64(buffer, bufferOffset);
+    data.a = _deserializer.string(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 8;
+    let length = 0;
+    length += object.a.length;
+    return length + 4;
   }
 
   static datatype() {
@@ -60,13 +62,13 @@ class ServiceRequest {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '019706110004b728d56d8baaa8e32797';
+    return 'cec2f53f86620c7bb01476cbe41b2fae';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    int64 a
+    string a
     
     `;
   }
@@ -81,7 +83,7 @@ class ServiceRequest {
       resolved.a = msg.a;
     }
     else {
-      resolved.a = 0
+      resolved.a = ''
     }
 
     return resolved;
@@ -99,7 +101,7 @@ class ServiceResponse {
         this.device = initObj.device
       }
       else {
-        this.device = 0;
+        this.device = '';
       }
     }
   }
@@ -107,7 +109,7 @@ class ServiceResponse {
   static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type ServiceResponse
     // Serialize message field [device]
-    bufferOffset = _serializer.int64(obj.device, buffer, bufferOffset);
+    bufferOffset = _serializer.string(obj.device, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -116,12 +118,14 @@ class ServiceResponse {
     let len;
     let data = new ServiceResponse(null);
     // Deserialize message field [device]
-    data.device = _deserializer.int64(buffer, bufferOffset);
+    data.device = _deserializer.string(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 8;
+    let length = 0;
+    length += object.device.length;
+    return length + 4;
   }
 
   static datatype() {
@@ -131,13 +135,13 @@ class ServiceResponse {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '6a53c2e97a1feae7da032677c575d165';
+    return '25b143d1069c7861320973824c82b9d8';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    int64 device
+    string device
     
     
     `;
@@ -153,7 +157,7 @@ class ServiceResponse {
       resolved.device = msg.device;
     }
     else {
-      resolved.device = 0
+      resolved.device = ''
     }
 
     return resolved;
@@ -163,6 +167,6 @@ class ServiceResponse {
 module.exports = {
   Request: ServiceRequest,
   Response: ServiceResponse,
-  md5sum() { return '04de0574add1d5e8526e6869cdd49c0c'; },
+  md5sum() { return '9965534556d6f239219ba39e543ce36b'; },
   datatype() { return 'om_aiv_util/Service'; }
 };

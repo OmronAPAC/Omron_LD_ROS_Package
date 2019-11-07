@@ -24,16 +24,16 @@ struct ServiceResponse_
   typedef ServiceResponse_<ContainerAllocator> Type;
 
   ServiceResponse_()
-    : device(0)  {
+    : device()  {
     }
   ServiceResponse_(const ContainerAllocator& _alloc)
-    : device(0)  {
+    : device(_alloc)  {
   (void)_alloc;
     }
 
 
 
-   typedef int64_t _device_type;
+   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _device_type;
   _device_type device;
 
 
@@ -70,7 +70,7 @@ namespace message_traits
 
 
 
-// BOOLTRAITS {'IsFixedSize': True, 'IsMessage': True, 'HasHeader': False}
+// BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': False}
 // {'om_aiv_util': ['/home/tthmatt/ld_ROS/src/om_aiv_util/msg'], 'std_msgs': ['/opt/ros/melodic/share/std_msgs/cmake/../msg']}
 
 // !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
@@ -80,12 +80,12 @@ namespace message_traits
 
 template <class ContainerAllocator>
 struct IsFixedSize< ::om_aiv_util::ServiceResponse_<ContainerAllocator> >
-  : TrueType
+  : FalseType
   { };
 
 template <class ContainerAllocator>
 struct IsFixedSize< ::om_aiv_util::ServiceResponse_<ContainerAllocator> const>
-  : TrueType
+  : FalseType
   { };
 
 template <class ContainerAllocator>
@@ -114,12 +114,12 @@ struct MD5Sum< ::om_aiv_util::ServiceResponse_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "6a53c2e97a1feae7da032677c575d165";
+    return "25b143d1069c7861320973824c82b9d8";
   }
 
   static const char* value(const ::om_aiv_util::ServiceResponse_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x6a53c2e97a1feae7ULL;
-  static const uint64_t static_value2 = 0xda032677c575d165ULL;
+  static const uint64_t static_value1 = 0x25b143d1069c7861ULL;
+  static const uint64_t static_value2 = 0x320973824c82b9d8ULL;
 };
 
 template<class ContainerAllocator>
@@ -138,7 +138,7 @@ struct Definition< ::om_aiv_util::ServiceResponse_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "int64 device\n"
+    return "string device\n"
 "\n"
 ;
   }
@@ -178,7 +178,7 @@ struct Printer< ::om_aiv_util::ServiceResponse_<ContainerAllocator> >
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::om_aiv_util::ServiceResponse_<ContainerAllocator>& v)
   {
     s << indent << "device: ";
-    Printer<int64_t>::stream(s, indent + "  ", v.device);
+    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.device);
   }
 };
 

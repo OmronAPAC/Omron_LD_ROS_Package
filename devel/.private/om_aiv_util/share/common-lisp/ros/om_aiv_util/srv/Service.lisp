@@ -10,8 +10,8 @@
   ((a
     :reader a
     :initarg :a
-    :type cl:integer
-    :initform 0))
+    :type cl:string
+    :initform ""))
 )
 
 (cl:defclass Service-request (<Service-request>)
@@ -28,29 +28,23 @@
   (a m))
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <Service-request>) ostream)
   "Serializes a message object of type '<Service-request>"
-  (cl:let* ((signed (cl:slot-value msg 'a)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 18446744073709551616) signed)))
-    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 32) unsigned) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 40) unsigned) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 48) unsigned) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 56) unsigned) ostream)
-    )
+  (cl:let ((__ros_str_len (cl:length (cl:slot-value msg 'a))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_str_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_str_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_str_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_str_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (c) (cl:write-byte (cl:char-code c) ostream)) (cl:slot-value msg 'a))
 )
 (cl:defmethod roslisp-msg-protocol:deserialize ((msg <Service-request>) istream)
   "Deserializes a message object of type '<Service-request>"
-    (cl:let ((unsigned 0))
-      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 32) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 40) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 48) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 56) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:slot-value msg 'a) (cl:if (cl:< unsigned 9223372036854775808) unsigned (cl:- unsigned 18446744073709551616))))
+    (cl:let ((__ros_str_len 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'a) (cl:make-string __ros_str_len))
+      (cl:dotimes (__ros_str_idx __ros_str_len msg)
+        (cl:setf (cl:char (cl:slot-value msg 'a) __ros_str_idx) (cl:code-char (cl:read-byte istream)))))
   msg
 )
 (cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<Service-request>)))
@@ -61,19 +55,19 @@
   "om_aiv_util/ServiceRequest")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<Service-request>)))
   "Returns md5sum for a message object of type '<Service-request>"
-  "04de0574add1d5e8526e6869cdd49c0c")
+  "9965534556d6f239219ba39e543ce36b")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'Service-request)))
   "Returns md5sum for a message object of type 'Service-request"
-  "04de0574add1d5e8526e6869cdd49c0c")
+  "9965534556d6f239219ba39e543ce36b")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<Service-request>)))
   "Returns full string definition for message of type '<Service-request>"
-  (cl:format cl:nil "int64 a~%~%~%"))
+  (cl:format cl:nil "string a~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'Service-request)))
   "Returns full string definition for message of type 'Service-request"
-  (cl:format cl:nil "int64 a~%~%~%"))
+  (cl:format cl:nil "string a~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <Service-request>))
   (cl:+ 0
-     8
+     4 (cl:length (cl:slot-value msg 'a))
 ))
 (cl:defmethod roslisp-msg-protocol:ros-message-to-list ((msg <Service-request>))
   "Converts a ROS message object to a list"
@@ -86,8 +80,8 @@
   ((device
     :reader device
     :initarg :device
-    :type cl:integer
-    :initform 0))
+    :type cl:string
+    :initform ""))
 )
 
 (cl:defclass Service-response (<Service-response>)
@@ -104,29 +98,23 @@
   (device m))
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <Service-response>) ostream)
   "Serializes a message object of type '<Service-response>"
-  (cl:let* ((signed (cl:slot-value msg 'device)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 18446744073709551616) signed)))
-    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 32) unsigned) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 40) unsigned) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 48) unsigned) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 56) unsigned) ostream)
-    )
+  (cl:let ((__ros_str_len (cl:length (cl:slot-value msg 'device))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_str_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_str_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_str_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_str_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (c) (cl:write-byte (cl:char-code c) ostream)) (cl:slot-value msg 'device))
 )
 (cl:defmethod roslisp-msg-protocol:deserialize ((msg <Service-response>) istream)
   "Deserializes a message object of type '<Service-response>"
-    (cl:let ((unsigned 0))
-      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 32) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 40) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 48) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 56) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:slot-value msg 'device) (cl:if (cl:< unsigned 9223372036854775808) unsigned (cl:- unsigned 18446744073709551616))))
+    (cl:let ((__ros_str_len 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'device) (cl:make-string __ros_str_len))
+      (cl:dotimes (__ros_str_idx __ros_str_len msg)
+        (cl:setf (cl:char (cl:slot-value msg 'device) __ros_str_idx) (cl:code-char (cl:read-byte istream)))))
   msg
 )
 (cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<Service-response>)))
@@ -137,19 +125,19 @@
   "om_aiv_util/ServiceResponse")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<Service-response>)))
   "Returns md5sum for a message object of type '<Service-response>"
-  "04de0574add1d5e8526e6869cdd49c0c")
+  "9965534556d6f239219ba39e543ce36b")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'Service-response)))
   "Returns md5sum for a message object of type 'Service-response"
-  "04de0574add1d5e8526e6869cdd49c0c")
+  "9965534556d6f239219ba39e543ce36b")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<Service-response>)))
   "Returns full string definition for message of type '<Service-response>"
-  (cl:format cl:nil "int64 device~%~%~%~%"))
+  (cl:format cl:nil "string device~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'Service-response)))
   "Returns full string definition for message of type 'Service-response"
-  (cl:format cl:nil "int64 device~%~%~%~%"))
+  (cl:format cl:nil "string device~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <Service-response>))
   (cl:+ 0
-     8
+     4 (cl:length (cl:slot-value msg 'device))
 ))
 (cl:defmethod roslisp-msg-protocol:ros-message-to-list ((msg <Service-response>))
   "Converts a ROS message object to a list"

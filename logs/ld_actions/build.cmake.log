@@ -41,13 +41,29 @@ Not searching for unused variables given on the command line.
 [36m--[0m Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
 [36m--[0m Generating .msg files for action ld_actions/Dock /home/tthmatt/ld_ROS/src/ld_actions/action/Dock.action
 Generating for action Dock
-[36m--[0m ld_actions: 7 messages, 0 services
+[36m--[0m Generating .msg files for action ld_actions/DoTask /home/tthmatt/ld_ROS/src/ld_actions/action/DoTask.action
+Generating for action DoTask
+[36m--[0m Generating .msg files for action ld_actions/ExecuteMacro /home/tthmatt/ld_ROS/src/ld_actions/action/ExecuteMacro.action
+Generating for action ExecuteMacro
+[36m--[0m Generating .msg files for action ld_actions/PatrolOnce /home/tthmatt/ld_ROS/src/ld_actions/action/PatrolOnce.action
+Generating for action PatrolOnce
+[36m--[0m Generating .msg files for action ld_actions/GoTo /home/tthmatt/ld_ROS/src/ld_actions/action/GoTo.action
+Generating for action GoTo
+[36m--[0m Generating .msg files for action ld_actions/PatrolResume /home/tthmatt/ld_ROS/src/ld_actions/action/PatrolResume.action
+Generating for action PatrolResume
+[36m--[0m Generating .msg files for action ld_actions/Play /home/tthmatt/ld_ROS/src/ld_actions/action/Play.action
+Generating for action Play
+[36m--[0m Generating .msg files for action ld_actions/Stop /home/tthmatt/ld_ROS/src/ld_actions/action/Stop.action
+Generating for action Stop
+[36m--[0m Generating .msg files for action ld_actions/Undock /home/tthmatt/ld_ROS/src/ld_actions/action/Undock.action
+Generating for action Undock
+[36m--[0m ld_actions: 63 messages, 0 services
 [33m[1mCMake Warning[0m at /opt/ros/melodic/share/catkin/cmake/catkin_package.cmake:166 (message):
   catkin_package() DEPENDS on 'system_lib' but neither
   'system_lib_INCLUDE_DIRS' nor 'system_lib_LIBRARIES' is defined.
 [36mCall Stack (most recent call first):[0m
   /opt/ros/melodic/share/catkin/cmake/catkin_package.cmake:102 (_catkin_package)
-  CMakeLists.txt:105 (catkin_package)
+  CMakeLists.txt:113 (catkin_package)
 
 
 [36m--[0m Configuring done

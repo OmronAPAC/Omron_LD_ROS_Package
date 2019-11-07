@@ -14,17 +14,17 @@ ip_address = "172.21.5.125"
 port = 7171
 connecttcp.connect(str(ip_address), port)
 
-from om_aiv_util.srv import AddTwoInts,AddTwoIntsResponse
+from om_aiv_util.srv import Service,ServiceResponse
 import rospy
 
-def handle_add_two_ints(req):
+def handle_analogInputList(req):
     print "Returning", req.a
     analogInputList()
-    return AddTwoIntsResponse(req.a)
+    return ServiceResponse(req.a)
 
-def add_two_ints_server():
-    rospy.init_node('add_two_ints_server')
-    s = rospy.Service('add_two_ints', AddTwoInts, handle_add_two_ints)
+def analogInputList_server():
+    rospy.init_node('analogInputList_server')
+    s = rospy.Service('analogInputList', Service, handle_analogInputList)
     print "Ready to add two ints."
     rospy.spin()
 
@@ -58,8 +58,5 @@ def analogInputList():
         return e
 
 
-
-
-
 if __name__ == "__main__":
-    add_two_ints_server()
+    analogInputList_server()

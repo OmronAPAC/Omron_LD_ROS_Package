@@ -4,10 +4,10 @@ import sys
 import rospy
 from om_aiv_util.srv import *
 
-def add_two_ints_client(x):
-    rospy.wait_for_service('add_two_ints')
+def analogInputList_client(x):
+    rospy.wait_for_service('analogInputList')
     try:
-        add_two_ints = rospy.ServiceProxy('add_two_ints', Service)
+        add_two_ints = rospy.ServiceProxy('analogInputList', Service)
         resp1 = add_two_ints(x)
         return resp1.device
     except rospy.ServiceException, e:
@@ -18,9 +18,10 @@ def usage():
 
 if __name__ == "__main__":
     if len(sys.argv) == 2:
-        x = int(sys.argv[1])
+        x = str(sys.argv[1])
     else:
         print usage()
         sys.exit(1)
-    print "Requesting", x
-    add_two_ints_client(x)
+    print "running command"
+    # print "Requesting", x
+    analogInputList_client(x)
