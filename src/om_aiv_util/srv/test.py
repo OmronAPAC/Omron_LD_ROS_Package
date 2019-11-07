@@ -1,7 +1,6 @@
 #!/usr/bin/env python
-
 from socketconnection_class import ConnectSocket, connecttcp
-
+from test_client import device
 s = connecttcp.sock
 import socket
 import threading
@@ -20,6 +19,8 @@ connecttcp.connect(str(ip_address), port)
 from std_srvs.srv import Trigger, TriggerResponse
 
 def trigger_response(request):
+    device()
+    print device
     analogInputList()
     '''
     Callback function used by the service server to process
@@ -37,7 +38,8 @@ def analogInputList():
     # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
 
-    command = "analogInputList"
+    command = "analogInputList {}".format("device")
+    print command
     command = command.encode('ascii')
     s.send(command+b"\r\n")
     try:

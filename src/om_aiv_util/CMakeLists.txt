@@ -57,6 +57,7 @@ add_message_files(
 add_service_files(
 FILES
 ServiceExample.srv
+AddTwoInts.srv
 )
 
 ## Generate actions in the 'action' folder
