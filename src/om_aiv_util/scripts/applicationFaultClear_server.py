@@ -17,25 +17,25 @@ connecttcp.connect(str(ip_address), port)
 from om_aiv_util.srv import Service,ServiceResponse
 import rospy
 
-def handle_analogInputQueryRaw(req):
+def handle_applicationFaultClear(req):
+    global fault
     print "Returning", req.a
-    analogInputQueryRaw()
+    fault = req.a
+    applicationFaultClear()
     return ServiceResponse(req.a)
 
-def analogInputQueryRaw_server():
-    rospy.init_node('analogInputQueryRaw_server')
-    s = rospy.Service('analogInputQueryRaw', Service, handle_analogInputQueryRaw)
-    print "Ready to add two ints."
+def applicationFaultClear_server():
+    rospy.init_node('applicationFaultClear_server')
+    s = rospy.Service('applicationFaultClear', Service, handle_applicationFaultClear)
     rospy.spin()
 
-def analogInputQueryRaw():
+def applicationFaultClear():
     global rcv
-    pub = rospy.Publisher('arcl_analogInputQueryRaw', String, queue_size=10)
+    pub = rospy.Publisher('arcl_applicationFaultClear', String, queue_size=10)
     # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
-
-    command = "analogInputQueryRaw {}".format("device")
-    print command
+    command = "applicationFaultClear {}".format(fault)
+    print "Running command: ", command
     command = command.encode('ascii')
     s.send(command+b"\r\n")
     try:
@@ -43,12 +43,12 @@ def analogInputQueryRaw():
         rcv = data.encode('ascii', 'ignore')
         while not rospy.is_shutdown():
             #check for required data
-            if "End of AnalogInputQueryRaw" in rcv:
-
+            if "ApplicationFaultClear cleared" in rcv:
                 print rcv
-                rcv = str(rcv.splitlines())
                 break
-
+            if "CommandErrorDescription" in rcv:
+                print rcv
+                break
             else:
                 data = s.recv(BUFFER_SIZE)
                 rcv = rcv + data.encode('ascii', 'ignore')
@@ -57,6 +57,5 @@ def analogInputQueryRaw():
         print("Connection  failed")
         return e
 
-
 if __name__ == "__main__":
-    analogInputQueryRaw_server()
+    applicationFaultClear_server()
