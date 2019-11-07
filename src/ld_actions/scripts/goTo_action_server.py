@@ -22,10 +22,10 @@ BUFFER_SIZE = 2056
 from socketconnection_class import ConnectSocket, connecttcp
 global s
 socket = connecttcp.sock
-ip_address = rospy.get_param("ip_address")
-port = rospy.get_param("port")
-# ip_address = "172.21.5.125"
-# port = 7171
+# ip_address = rospy.get_param("ip_address")
+# port = rospy.get_param("port")
+ip_address = "172.21.5.125"
+port = 7171
 connecttcp.connect(str(ip_address), port)
 
 class ActionServer():
@@ -58,7 +58,19 @@ class ActionServer():
             while not rospy.is_shutdown():
                 #check for required data
                 if "Arrived" in rcv:
-                    break
+                    for line in rcv.splitlines():
+                        #print required data
+                        if 'Arrived' in line:
+                            i = 1
+                            doTask = line.split("Arrived")
+                            rospy.loginfo(",Arrived".join(doTask)[1:])
+
+                            rate.sleep()
+                            success = True
+                            rcv = str(rcv.splitlines())
+                            result.status = (",Arrived".join(doTask)[1:])
+                            self.a_server.set_succeeded(result)
+                            break
                 if "Failed" in rcv:
                     print "Failed to go to goal"
                     result.status = "Failed to go to goal"
@@ -68,31 +80,14 @@ class ActionServer():
                     data = socket.recv(BUFFER_SIZE)
                     rcv = rcv + data.encode('ascii', 'ignore')
 
-        except socket.error as e:
-            print("Connection  failed")
+        except Exception as e:
+            rospy.logerr(e)
+            result.status = str(e)
+            self.a_server.set_succeeded(result)
             return e
-        while not rospy.is_shutdown():
-            for line in rcv.splitlines():
-                #print required data
-                if 'Arrived' in line:
-                    i = 1
-                    doTask = line.split("Arrived")
-                    rospy.loginfo(",Arrived".join(doTask)[1:])
-
-                    rate.sleep()
-                    success = True
-                    rcv = str(rcv.splitlines())
-                    result.status = (",Arrived".join(doTask)[1:])
-                    self.a_server.set_succeeded(result)
-                    return(0)
-
-
-
-
 
         if success:
             self.a_server.set_succeeded(result)
-
 
 if __name__ == "__main__":
     rospy.init_node("goTo_action_server")
