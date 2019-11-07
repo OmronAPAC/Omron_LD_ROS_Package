@@ -57,11 +57,6 @@ class ActionServer():
                 #check for required data
                 if "Undocked" in rcv:
                     break
-                # if "SetupError:" in rcv:
-                #     print "Failed to play file ", task
-                #     result.status = "Failed to play file ", task
-                #     self.a_server.set_succeeded(result)
-                #     return(0)
                 else:
                     data = socket.recv(BUFFER_SIZE)
                     rcv = rcv + data.encode('ascii', 'ignore')
