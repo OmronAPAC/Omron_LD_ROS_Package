@@ -58,6 +58,7 @@ add_service_files(
 FILES
 ServiceExample.srv
 Service.srv
+Service5.srv
 )
 
 ## Generate actions in the 'action' folder

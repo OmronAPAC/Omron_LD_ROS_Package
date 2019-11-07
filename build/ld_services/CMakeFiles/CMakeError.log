@@ -1,22 +1,22 @@
 Determining if the pthread_create exist failed with the following output:
 Change Dir: /home/tthmatt/ld_ROS/build/ld_services/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_cc5ea/fast"
-/usr/bin/make -f CMakeFiles/cmTC_cc5ea.dir/build.make CMakeFiles/cmTC_cc5ea.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_a1941/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a1941.dir/build.make CMakeFiles/cmTC_a1941.dir/build
 make[1]: Entering directory '/home/tthmatt/ld_ROS/build/ld_services/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_cc5ea.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_cc5ea.dir/CheckSymbolExists.c.o   -c /home/tthmatt/ld_ROS/build/ld_services/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_cc5ea
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cc5ea.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_cc5ea.dir/CheckSymbolExists.c.o  -o cmTC_cc5ea 
-CMakeFiles/cmTC_cc5ea.dir/CheckSymbolExists.c.o: In function `main':
+Building C object CMakeFiles/cmTC_a1941.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_a1941.dir/CheckSymbolExists.c.o   -c /home/tthmatt/ld_ROS/build/ld_services/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_a1941
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a1941.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_a1941.dir/CheckSymbolExists.c.o  -o cmTC_a1941 
+CMakeFiles/cmTC_a1941.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_cc5ea.dir/build.make:97: recipe for target 'cmTC_cc5ea' failed
-make[1]: *** [cmTC_cc5ea] Error 1
+CMakeFiles/cmTC_a1941.dir/build.make:97: recipe for target 'cmTC_a1941' failed
+make[1]: *** [cmTC_a1941] Error 1
 make[1]: Leaving directory '/home/tthmatt/ld_ROS/build/ld_services/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_cc5ea/fast' failed
-make: *** [cmTC_cc5ea/fast] Error 2
+Makefile:126: recipe for target 'cmTC_a1941/fast' failed
+make: *** [cmTC_a1941/fast] Error 2
 
 File /home/tthmatt/ld_ROS/build/ld_services/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
@@ -36,20 +36,20 @@ int main(int argc, char** argv)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /home/tthmatt/ld_ROS/build/ld_services/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_65748/fast"
-/usr/bin/make -f CMakeFiles/cmTC_65748.dir/build.make CMakeFiles/cmTC_65748.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_f6331/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f6331.dir/build.make CMakeFiles/cmTC_f6331.dir/build
 make[1]: Entering directory '/home/tthmatt/ld_ROS/build/ld_services/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_65748.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_65748.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_65748
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_65748.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_65748.dir/CheckFunctionExists.c.o  -o cmTC_65748 -lpthreads 
+Building C object CMakeFiles/cmTC_f6331.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_f6331.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_f6331
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f6331.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_f6331.dir/CheckFunctionExists.c.o  -o cmTC_f6331 -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_65748.dir/build.make:97: recipe for target 'cmTC_65748' failed
-make[1]: *** [cmTC_65748] Error 1
+CMakeFiles/cmTC_f6331.dir/build.make:97: recipe for target 'cmTC_f6331' failed
+make[1]: *** [cmTC_f6331] Error 1
 make[1]: Leaving directory '/home/tthmatt/ld_ROS/build/ld_services/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_65748/fast' failed
-make: *** [cmTC_65748/fast] Error 2
+Makefile:126: recipe for target 'cmTC_f6331/fast' failed
+make: *** [cmTC_f6331/fast] Error 2
 
 
