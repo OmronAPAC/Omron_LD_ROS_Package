@@ -45,9 +45,11 @@ def applicationFaultClear():
             #check for required data
             if "ApplicationFaultClear cleared" in rcv:
                 print rcv
+                return rcv
                 break
             if "CommandErrorDescription" in rcv:
                 print rcv
+                return rcv
                 break
             else:
                 data = s.recv(BUFFER_SIZE)

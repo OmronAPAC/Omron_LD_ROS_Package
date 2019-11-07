@@ -1,9 +1,7 @@
 #!/usr/bin/env python
-
 import sys
 import rospy
 from om_aiv_util.srv import *
-
 def analogInputQueryRaw_client(x):
     rospy.wait_for_service('applicationFaultClear')
     try:
