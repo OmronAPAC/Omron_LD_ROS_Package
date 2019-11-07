@@ -17,33 +17,33 @@ connecttcp.connect(str(ip_address), port)
 from om_aiv_util.srv import Service,ServiceResponse
 import rospy
 
-def handle_applicationFaultClear(req):
-    global fault
+def handle_arclSendText(req):
+    global text
     print "Returning", req.a
-    fault = req.a
-    applicationFaultClear()
+    text = req.a
+    arclSendText()
     return ServiceResponse(req.a)
 
-def applicationFaultClear_server():
-    rospy.init_node('applicationFaultClear_server')
-    s = rospy.Service('applicationFaultClear', Service, handle_applicationFaultClear)
+def arclSendText_server():
+    rospy.init_node('arclSendText_server')
+    s = rospy.Service('arclSendText', Service, handle_arclSendText)
     rospy.spin()
 
-def applicationFaultClear():
+def arclSendText():
     global rcv
-    pub = rospy.Publisher('arcl_applicationFaultClear', String, queue_size=10)
+    pub = rospy.Publisher('arcl_arclSendText', String, queue_size=10)
     # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
-    command = "applicationFaultClear {}".format(fault)
-    print "Running command: ", command
+    command = "arclSendText {}".format(text)
     command = command.encode('ascii')
+    print "Running command: ", command
     s.send(command+b"\r\n")
     try:
         data = s.recv(BUFFER_SIZE)
         rcv = data.encode('ascii', 'ignore')
         while not rospy.is_shutdown():
             #check for required data
-            if "ApplicationFaultClear cleared" in rcv:
+            if "arclSendText cleared" in rcv:
                 print rcv
                 return rcv
                 break
@@ -60,4 +60,4 @@ def applicationFaultClear():
         return e
 
 if __name__ == "__main__":
-    applicationFaultClear_server()
+    arclSendText_server()
