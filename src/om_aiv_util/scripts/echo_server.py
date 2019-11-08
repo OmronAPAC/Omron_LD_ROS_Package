@@ -17,25 +17,25 @@ connecttcp.connect(str(ip_address), port)
 from om_aiv_util.srv import Service,ServiceResponse
 import rospy
 
-def handle_applicationFaultClear(req):
+def handle_echo(req):
     global fault
     print "Returning", req.a
     fault = req.a
-    applicationFaultClear()
+    echo()
     # return ServiceResponse(req.a)
     return rcv
 
-def applicationFaultClear_server():
-    rospy.init_node('applicationFaultClear_server')
-    s = rospy.Service('applicationFaultClear', Service, handle_applicationFaultClear)
+def echo_server():
+    rospy.init_node('echo_server')
+    s = rospy.Service('echo', Service, handle_echo)
     rospy.spin()
 
-def applicationFaultClear():
+def echo():
     global rcv
-    pub = rospy.Publisher('arcl_applicationFaultClear', String, queue_size=10)
+    pub = rospy.Publisher('arcl_echo', String, queue_size=10)
     # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
-    command = "applicationFaultClear {}".format(fault)
+    command = "echo {}".format(fault)
     print "Running command: ", command
     command = command.encode('ascii')
     s.send(command+b"\r\n")
@@ -44,11 +44,11 @@ def applicationFaultClear():
         rcv = data.encode('ascii', 'ignore')
         while not rospy.is_shutdown():
             #check for required data
-            if "ApplicationFaultClear cleared" in rcv:
+            if "Echo is" in rcv:
                 print rcv
                 return rcv
                 break
-            if "CommandErrorDescription" in rcv:
+            if "Echo turned" in rcv:
                 print rcv
                 return rcv
                 break
@@ -61,4 +61,4 @@ def applicationFaultClear():
         return e
 
 if __name__ == "__main__":
-    applicationFaultClear_server()
+    echo_server()

@@ -3,9 +3,9 @@ import sys
 import rospy
 from om_aiv_util.srv import *
 def analogInputQueryRaw_client(x):
-    rospy.wait_for_service('applicationFaultClear')
+    rospy.wait_for_service('echo')
     try:
-        add_two_ints = rospy.ServiceProxy('applicationFaultClear', Service)
+        add_two_ints = rospy.ServiceProxy('echo', Service)
         resp1 = add_two_ints(x)
         return resp1.device
     except rospy.ServiceException, e:
@@ -17,6 +17,8 @@ def usage():
 if __name__ == "__main__":
     if len(sys.argv) == 2:
         x = str(sys.argv[1])
+    if len(sys.argv) == 1:
+        x = ""
     else:
         print usage()
         sys.exit(1)
