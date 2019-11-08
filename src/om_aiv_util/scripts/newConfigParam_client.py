@@ -2,10 +2,10 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def analogInputQueryRaw_client(a, b , c, d, e, f, g, h, i):
-    rospy.wait_for_service('applicationFaultClear')
+def newConfigParam_client(a, b , c, d, e, f, g, h, i):
+    rospy.wait_for_service('newConfigParam')
     try:
-        add_two_ints = rospy.ServiceProxy('applicationFaultClear', Service9)
+        add_two_ints = rospy.ServiceProxy('newConfigParam', Service9)
         resp1 = add_two_ints(a, b, c, d, e, f, g, h, i)
         return resp1.device
     except rospy.ServiceException, error:
@@ -30,4 +30,4 @@ if __name__ == "__main__":
         print usage()
         sys.exit(1)
     print "running command"
-    print analogInputQueryRaw_client(a, b , c, d, e, f, g, h, i)
+    print newConfigParam_client(a, b , c, d, e, f, g, h, i)

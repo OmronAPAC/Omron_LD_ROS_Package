@@ -17,7 +17,7 @@ connecttcp.connect(str(ip_address), port)
 from om_aiv_util.srv import Service9,Service9Response
 import rospy
 
-def handle_applicationFaultClear(req):
+def handle_newConfigParam(req):
     global a, b, c, d, e, f, g, h, i
     a = req.a
     b = req.b
@@ -28,18 +28,18 @@ def handle_applicationFaultClear(req):
     g = req.g
     h = req.h
     i = req.i
-    applicationFaultClear()
+    newConfigParam()
     # return Service5Response(req.a + req.b + req.c + req.d + req.e)
     return rcv
 
-def applicationFaultClear_server():
-    rospy.init_node('applicationFaultClear_server')
-    s = rospy.Service('applicationFaultClear', Service9, handle_applicationFaultClear)
+def newConfigParam_server():
+    rospy.init_node('newConfigParam_server')
+    s = rospy.Service('newConfigParam', Service9, handle_newConfigParam)
     rospy.spin()
 
-def applicationFaultClear():
+def newConfigParam():
     global rcv
-    pub = rospy.Publisher('arcl_applicationFaultClear', String, queue_size=10)
+    pub = rospy.Publisher('arcl_newConfigParam', String, queue_size=10)
     # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "newConfigParam {}".format(a + " " + b + " \"" + c + "\" " + d + " " + e + " \"" + f + "\" " + g + " " + h + " \"" + i + "\"")
@@ -68,4 +68,4 @@ def applicationFaultClear():
         return errormsg
 
 if __name__ == "__main__":
-    applicationFaultClear_server()
+    newConfigParam_server()
