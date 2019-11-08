@@ -2,11 +2,11 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def outputOff_client(a, b):
+def outputOff_client(a):
     rospy.wait_for_service('outputOff')
     try:
         add_two_ints = rospy.ServiceProxy('outputOff', Service)
-        resp1 = add_two_ints(a, b)
+        resp1 = add_two_ints(a)
         return resp1.device
     except rospy.ServiceException, error:
         print "Service call failed: %s"%error
@@ -22,4 +22,4 @@ if __name__ == "__main__":
         sys.exit(1)
     print "running command"
     # print "Requesting", x
-    print outputOff_client(a, b)
+    print outputOff_client(a)
