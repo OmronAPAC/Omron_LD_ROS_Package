@@ -1,8 +1,9 @@
 # om_aiv - ROS Packages for Omron Mobile Robot
 
-<!-- rosrun om_aiv_util ld_status_publisher.py -->
+om_aiv_util
+om_aiv_navigation
 
-roslaunch om_aiv_util ldarcl_status.launch
+
 
 ### Prerequisites
 ```
@@ -15,6 +16,13 @@ ROS Melodic
 git clone https://github.com/tthmatt/Omron_LD_ROS_Package.git
 catkin build
 ```
+### Initial Configuration
+
+Specify ip address and port number in /ld_ROS/src/om_aiv_util/launch/robot1.launch
+
+
+
+
 ### Usage
 ```
 roslaunch om_aiv_util ldarcl_status.launch
