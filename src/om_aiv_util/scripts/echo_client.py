@@ -2,7 +2,7 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def analogInputQueryRaw_client(x):
+def echo_client(x):
     rospy.wait_for_service('echo')
     try:
         add_two_ints = rospy.ServiceProxy('echo', Service)
@@ -24,4 +24,4 @@ if __name__ == "__main__":
         sys.exit(1)
     print "running command"
     # print "Requesting", x
-    print analogInputQueryRaw_client(x)
+    print echo_client(x)
