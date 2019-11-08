@@ -18,7 +18,7 @@ from om_aiv_util.srv import Service,ServiceResponse
 import rospy
 
 def handle_payloadQueryLocal(req):
-    global fault
+    global slot_num
     print "Returning", req.a
     slot_num = req.a
     payloadQueryLocal()

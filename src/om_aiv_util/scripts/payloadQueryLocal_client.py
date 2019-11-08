@@ -12,12 +12,12 @@ def payloadQueryLocal_client(x):
         print "Service call failed: %s"%e
 
 def usage():
-    return "%s [fault]"%sys.argv[0]
+    return "%s [slotNumber or \"default\"]"%sys.argv[0]
 
 if __name__ == "__main__":
     if len(sys.argv) == 2:
         x = str(sys.argv[1])
-    if len(sys.argv) == 1:
+    elif len(sys.argv) == 1:
         x = ""
     else:
         print usage()
