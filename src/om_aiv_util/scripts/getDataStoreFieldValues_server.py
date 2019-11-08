@@ -17,25 +17,25 @@ connecttcp.connect(str(ip_address), port)
 from om_aiv_util.srv import Service,ServiceResponse
 import rospy
 
-def handle_getDataStoreFieldInfo(req):
+def handle_getDataStoreFieldvalues(req):
     global text
     print "Returning", req.a
     text = req.a
-    getDataStoreFieldInfo()
+    getDataStoreFieldvalues()
     # return ServiceResponse(req.a)
     return rcv
 
-def getDataStoreFieldInfo_server():
-    rospy.init_node('getDataStoreFieldInfo_server')
-    s = rospy.Service('getDataStoreFieldInfo', Service, handle_getDataStoreFieldInfo)
+def getDataStoreFieldvalues_server():
+    rospy.init_node('getDataStoreFieldvalues_server')
+    s = rospy.Service('getDataStoreFieldvalues', Service, handle_getDataStoreFieldvalues)
     rospy.spin()
 
-def getDataStoreFieldInfo():
+def getDataStoreFieldvalues():
     global rcv
-    pub = rospy.Publisher('arcl_getDataStoreFieldInfo', String, queue_size=10)
+    pub = rospy.Publisher('arcl_getDataStoreFieldvalues', String, queue_size=10)
     # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
-    command = "getDataStoreFieldInfo {}".format(text)
+    command = "getDataStoreFieldvalues {}".format(text)
     command = command.encode('ascii')
     print "Running command: ", command
     s.send(command+b"\r\n")
@@ -44,7 +44,7 @@ def getDataStoreFieldInfo():
         rcv = data.encode('ascii', 'ignore')
         while not rospy.is_shutdown():
             #check for required data
-            if "EndOfGetDataStoreFieldInfo" in rcv:
+            if "EndOfGetDataStoreFieldvalues" in rcv:
                 print rcv
                 return rcv
                 break
@@ -61,4 +61,4 @@ def getDataStoreFieldInfo():
         return e
 
 if __name__ == "__main__":
-    getDataStoreFieldInfo_server()
+    getDataStoreFieldvalues_server()

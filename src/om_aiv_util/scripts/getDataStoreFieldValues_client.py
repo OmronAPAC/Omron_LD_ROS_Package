@@ -2,10 +2,10 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def getDataStoreFieldInfo_client(x):
-    rospy.wait_for_service('getDataStoreFieldInfo')
+def getDataStoreFieldvalues_client(x):
+    rospy.wait_for_service('getDataStoreFieldvalues')
     try:
-        add_two_ints = rospy.ServiceProxy('getDataStoreFieldInfo', Service)
+        add_two_ints = rospy.ServiceProxy('getDataStoreFieldvalues', Service)
         resp1 = add_two_ints(x)
         return resp1.device
     except rospy.ServiceException, e:
@@ -22,4 +22,4 @@ if __name__ == "__main__":
         sys.exit(1)
     print "running command"
     # print "Requesting", x
-    print getDataStoreFieldInfo_client(x)
+    print getDataStoreFieldvalues_client(x)
