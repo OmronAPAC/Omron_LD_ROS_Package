@@ -12,7 +12,7 @@ def analogInputQueryRaw_client(a, b):
         print "Service call failed: %s"%error
 
 def usage():
-    return "%s <name> <short description> <long description> <bool:drivingFault> <bool:criticalFault>"%sys.argv[0]
+    return "%s <hostname> <port>"%sys.argv[0]
 
 if __name__ == "__main__":
     if len(sys.argv) == 3:

@@ -59,6 +59,7 @@ FILES
 ServiceExample.srv
 Service.srv
 Service2.srv
+Service3.srv
 Service5.srv
 AddTwoInts.srv
 )

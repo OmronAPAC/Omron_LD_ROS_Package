@@ -44,7 +44,7 @@ def connectOutgoing():
         rcv = data.encode('ascii', 'ignore')
         while not rospy.is_shutdown():
             #check for required data
-            if "Fault:" in rcv:
+            if "connected" in rcv:
                 print rcv
                 return rcv
                 break
