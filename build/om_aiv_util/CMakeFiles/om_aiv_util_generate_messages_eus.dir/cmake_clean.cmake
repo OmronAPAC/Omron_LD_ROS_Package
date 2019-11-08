@@ -7,6 +7,7 @@ file(REMOVE_RECURSE
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/share/roseus/ros/om_aiv_util/srv/Service2.l"
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/share/roseus/ros/om_aiv_util/srv/AddTwoInts.l"
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/share/roseus/ros/om_aiv_util/srv/Service.l"
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/share/roseus/ros/om_aiv_util/srv/Service9.l"
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/share/roseus/ros/om_aiv_util/manifest.l"
 )
 

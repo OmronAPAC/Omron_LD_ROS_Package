@@ -7,6 +7,7 @@ file(REMOVE_RECURSE
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/include/om_aiv_util/Service2.h"
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/include/om_aiv_util/AddTwoInts.h"
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/include/om_aiv_util/Service.h"
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/include/om_aiv_util/Service9.h"
 )
 
 # Per-language clean rules from dependency scanning.

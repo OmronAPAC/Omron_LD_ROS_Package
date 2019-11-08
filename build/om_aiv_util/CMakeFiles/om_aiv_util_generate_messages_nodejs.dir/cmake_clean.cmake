@@ -7,6 +7,7 @@ file(REMOVE_RECURSE
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/share/gennodejs/ros/om_aiv_util/srv/Service2.js"
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/share/gennodejs/ros/om_aiv_util/srv/AddTwoInts.js"
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/share/gennodejs/ros/om_aiv_util/srv/Service.js"
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/share/gennodejs/ros/om_aiv_util/srv/Service9.js"
 )
 
 # Per-language clean rules from dependency scanning.
