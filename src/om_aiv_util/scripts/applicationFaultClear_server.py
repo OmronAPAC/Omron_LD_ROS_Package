@@ -22,7 +22,8 @@ def handle_applicationFaultClear(req):
     print "Returning", req.a
     fault = req.a
     applicationFaultClear()
-    return ServiceResponse(req.a)
+    # return ServiceResponse(req.a)
+    return rcv
 
 def applicationFaultClear_server():
     rospy.init_node('applicationFaultClear_server')
