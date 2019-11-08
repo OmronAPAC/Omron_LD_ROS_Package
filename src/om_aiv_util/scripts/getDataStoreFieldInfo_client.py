@@ -2,17 +2,17 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def getConfigSectionValues_client(x):
-    rospy.wait_for_service('getConfigSectionValues')
+def getDataStoreFieldInfo_client(x):
+    rospy.wait_for_service('getDataStoreFieldInfo')
     try:
-        add_two_ints = rospy.ServiceProxy('getConfigSectionValues', Service)
+        add_two_ints = rospy.ServiceProxy('getDataStoreFieldInfo', Service)
         resp1 = add_two_ints(x)
         return resp1.device
     except rospy.ServiceException, e:
         print "Service call failed: %s"%e
 
 def usage():
-    return "%s <section>"%sys.argv[0]
+    return "%s <field>"%sys.argv[0]
 
 if __name__ == "__main__":
     if len(sys.argv) == 2:
@@ -22,4 +22,4 @@ if __name__ == "__main__":
         sys.exit(1)
     print "running command"
     # print "Requesting", x
-    print getConfigSectionValues_client(x)
+    print getDataStoreFieldInfo_client(x)

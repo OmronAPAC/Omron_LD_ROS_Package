@@ -17,25 +17,25 @@ connecttcp.connect(str(ip_address), port)
 from om_aiv_util.srv import Service,ServiceResponse
 import rospy
 
-def handle_getConfigSectionValues(req):
+def handle_getDataStoreFieldInfo(req):
     global text
     print "Returning", req.a
     text = req.a
-    getConfigSectionValues()
+    getDataStoreFieldInfo()
     # return ServiceResponse(req.a)
     return rcv
 
-def getConfigSectionValues_server():
-    rospy.init_node('getConfigSectionValues_server')
-    s = rospy.Service('getConfigSectionValues', Service, handle_getConfigSectionValues)
+def getDataStoreFieldInfo_server():
+    rospy.init_node('getDataStoreFieldInfo_server')
+    s = rospy.Service('getDataStoreFieldInfo', Service, handle_getDataStoreFieldInfo)
     rospy.spin()
 
-def getConfigSectionValues():
+def getDataStoreFieldInfo():
     global rcv
-    pub = rospy.Publisher('arcl_getConfigSectionValues', String, queue_size=10)
+    pub = rospy.Publisher('arcl_getDataStoreFieldInfo', String, queue_size=10)
     # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
-    command = "getConfigSectionValues {}".format(text)
+    command = "getDataStoreFieldInfo {}".format(text)
     command = command.encode('ascii')
     print "Running command: ", command
     s.send(command+b"\r\n")
@@ -44,7 +44,7 @@ def getConfigSectionValues():
         rcv = data.encode('ascii', 'ignore')
         while not rospy.is_shutdown():
             #check for required data
-            if "EndOfGetConfigSectionValues" in rcv:
+            if "EndOfGetDataStoreFieldInfo" in rcv:
                 print rcv
                 return rcv
                 break
@@ -61,4 +61,4 @@ def getConfigSectionValues():
         return e
 
 if __name__ == "__main__":
-    getConfigSectionValues_server()
+    getDataStoreFieldInfo_server()
