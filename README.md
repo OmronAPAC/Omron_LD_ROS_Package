@@ -16,7 +16,8 @@ ROS Melodic
 ### Installing
 
 ```
-git clone 
+git clone https://github.com/tthmatt/Omron_LD_ROS_Package.git
+catkin build
 ```
 
 And repeat
