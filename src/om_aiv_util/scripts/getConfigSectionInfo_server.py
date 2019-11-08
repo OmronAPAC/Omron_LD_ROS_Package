@@ -44,7 +44,7 @@ def getConfigSectionInfo():
         rcv = data.encode('ascii', 'ignore')
         while not rospy.is_shutdown():
             #check for required data
-            if "getConfigSectionInfo" in rcv:
+            if "EndOfGetConfigSectionInfo" in rcv:
                 print rcv
                 return rcv
                 break
