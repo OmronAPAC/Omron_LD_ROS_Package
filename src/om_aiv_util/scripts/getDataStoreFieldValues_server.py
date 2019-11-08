@@ -44,7 +44,7 @@ def getDataStoreFieldvalues():
         rcv = data.encode('ascii', 'ignore')
         while not rospy.is_shutdown():
             #check for required data
-            if "EndOfGetDataStoreFieldvalues" in rcv:
+            if "EndOfGetDataStoreFieldValues" in rcv:
                 print rcv
                 return rcv
                 break
