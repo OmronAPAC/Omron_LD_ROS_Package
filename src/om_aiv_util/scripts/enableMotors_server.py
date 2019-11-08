@@ -19,7 +19,6 @@ import rospy
 
 def handle_enableMotors(req):
     global fault
-    print "Returning", req.a
     fault = req.a
     enableMotors()
     # return ServiceResponse(req.a)

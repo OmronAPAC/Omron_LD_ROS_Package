@@ -17,25 +17,24 @@ connecttcp.connect(str(ip_address), port)
 from om_aiv_util.srv import Service,ServiceResponse
 import rospy
 
-def handle_getDataStoreGroupList(req):
+def handle_getDataStoreTripGroupList(req):
     global fault
-    print "Returning", req.a
     fault = req.a
-    getDataStoreGroupList()
+    getDataStoreTripGroupList()
     # return ServiceResponse(req.a)
     return rcv
 
-def getDataStoreGroupList_server():
-    rospy.init_node('getDataStoreGroupList_server')
-    s = rospy.Service('getDataStoreGroupList', Service, handle_getDataStoreGroupList)
+def getDataStoreTripGroupList_server():
+    rospy.init_node('getDataStoreTripGroupList_server')
+    s = rospy.Service('getDataStoreTripGroupList', Service, handle_getDataStoreTripGroupList)
     rospy.spin()
 
-def getDataStoreGroupList():
+def getDataStoreTripGroupList():
     global rcv
-    pub = rospy.Publisher('arcl_getDataStoreGroupList', String, queue_size=10)
+    pub = rospy.Publisher('arcl_getDataStoreTripGroupList', String, queue_size=10)
     # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
-    command = "getDataStoreGroupList"
+    command = "getDataStoreTripGroupList"
     print "Running command: ", command
     command = command.encode('ascii')
     s.send(command+b"\r\n")
@@ -44,7 +43,7 @@ def getDataStoreGroupList():
         rcv = data.encode('ascii', 'ignore')
         while not rospy.is_shutdown():
             #check for required data
-            if "EndOfGetDataStoreGroupList" in rcv:
+            if "EndOfGetDataStoreTripGroupList" in rcv:
                 print rcv
                 return rcv
                 break
@@ -57,4 +56,4 @@ def getDataStoreGroupList():
         return e
 
 if __name__ == "__main__":
-    getDataStoreGroupList_server()
+    getDataStoreTripGroupList_server()

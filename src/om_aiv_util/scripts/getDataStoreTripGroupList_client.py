@@ -2,10 +2,10 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def getDataStoreGroupList_client(x):
-    rospy.wait_for_service('getDataStoreGroupList')
+def getDataStoreTripGroupList_client(x):
+    rospy.wait_for_service('getDataStoreTripGroupList')
     try:
-        add_two_ints = rospy.ServiceProxy('getDataStoreGroupList', Service)
+        add_two_ints = rospy.ServiceProxy('getDataStoreTripGroupList', Service)
         resp1 = add_two_ints(x)
         return resp1.device
     except rospy.ServiceException, e:
@@ -22,4 +22,4 @@ if __name__ == "__main__":
         sys.exit(1)
     print "running command"
     # print "Requesting", x
-    print getDataStoreGroupList_client(x)
+    print getDataStoreTripGroupList_client(x)
