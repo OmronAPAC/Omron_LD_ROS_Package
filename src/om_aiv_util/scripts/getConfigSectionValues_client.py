@@ -2,10 +2,10 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def getConfigSectionInfo_client(x):
-    rospy.wait_for_service('getConfigSectionInfo')
+def getConfigSectionValues_client(x):
+    rospy.wait_for_service('getConfigSectionValues')
     try:
-        add_two_ints = rospy.ServiceProxy('getConfigSectionInfo', Service)
+        add_two_ints = rospy.ServiceProxy('getConfigSectionValues', Service)
         resp1 = add_two_ints(x)
         return resp1.device
     except rospy.ServiceException, e:
@@ -22,4 +22,4 @@ if __name__ == "__main__":
         sys.exit(1)
     print "running command"
     # print "Requesting", x
-    print getConfigSectionInfo_client(x)
+    print getConfigSectionValues_client(x)
