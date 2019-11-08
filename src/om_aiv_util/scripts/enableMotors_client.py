@@ -2,7 +2,7 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def analogInputQueryRaw_client(x):
+def enableMotors_client(x):
     rospy.wait_for_service('enableMotors')
     try:
         add_two_ints = rospy.ServiceProxy('enableMotors', Service)
@@ -22,4 +22,4 @@ if __name__ == "__main__":
         sys.exit(1)
     print "running command"
     # print "Requesting", x
-    print analogInputQueryRaw_client(x)
+    print enableMotors_client(x)
