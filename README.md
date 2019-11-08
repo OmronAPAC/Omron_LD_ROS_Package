@@ -9,17 +9,14 @@ roslaunch om_aiv_util ldarcl_status.launch
 What things you need to install the software and how to install them
 
 ```
-Give examples
+Ubuntu 18.04
+ROS Melodic 
 ```
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
 ```
-Give the example
+git clone 
 ```
 
 And repeat
