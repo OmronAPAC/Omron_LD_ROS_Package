@@ -12,7 +12,7 @@ def mapObjectList_client(x):
         print "Service call failed: %s"%e
 
 def usage():
-    return "%s <name>"%sys.argv[0]
+    return "%s <type>"%sys.argv[0]
 
 if __name__ == "__main__":
     if len(sys.argv) == 2:
