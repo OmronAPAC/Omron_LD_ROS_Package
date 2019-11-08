@@ -17,23 +17,23 @@ connecttcp.connect(str(ip_address), port)
 from om_aiv_util.srv import Service3,Service3Response
 import rospy
 
-def handle_applicationFaultClear(req):
+def handle_createInfo(req):
     global a, b, c
     a = req.a
     b = req.b
     c = req.c
-    applicationFaultClear()
+    createInfo()
     # return Service5Response(req.a + req.b + req.c + req.d + req.e)
     return rcv
 
-def applicationFaultClear_server():
-    rospy.init_node('applicationFaultClear_server')
-    s = rospy.Service('applicationFaultClear', Service3, handle_applicationFaultClear)
+def createInfo_server():
+    rospy.init_node('createInfo_server')
+    s = rospy.Service('createInfo', Service3, handle_createInfo)
     rospy.spin()
 
-def applicationFaultClear():
+def createInfo():
     global rcv
-    pub = rospy.Publisher('arcl_applicationFaultClear', String, queue_size=10)
+    pub = rospy.Publisher('arcl_createInfo', String, queue_size=10)
     # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "createInfo {}".format(a + " " + b + " " + c)
@@ -62,4 +62,4 @@ def applicationFaultClear():
         return errormsg
 
 if __name__ == "__main__":
-    applicationFaultClear_server()
+    createInfo_server()
