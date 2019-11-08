@@ -14,31 +14,28 @@ ip_address = "172.21.5.125"
 port = 7171
 connecttcp.connect(str(ip_address), port)
 
-from om_aiv_util.srv import Service5,Service5Response
+from om_aiv_util.srv import Service2,Service2Response
 import rospy
 
-def handle_applicationFaultClear(req):
-    global a, b, c, d, e
+def handle_connectOutgoing(req):
+    global a, b
     a = req.a
     b = req.b
-    c = req.c
-    d = req.d
-    e = req.e
-    applicationFaultClear()
+    connectOutgoing()
     # return Service5Response(req.a + req.b + req.c + req.d + req.e)
     return rcv
 
-def applicationFaultClear_server():
-    rospy.init_node('applicationFaultClear_server')
-    s = rospy.Service('applicationFaultClear', Service5, handle_applicationFaultClear)
+def connectOutgoing_server():
+    rospy.init_node('connectOutgoing_server')
+    s = rospy.Service('connectOutgoing', Service2, handle_connectOutgoing)
     rospy.spin()
 
-def applicationFaultClear():
+def connectOutgoing():
     global rcv
-    pub = rospy.Publisher('arcl_applicationFaultClear', String, queue_size=10)
+    pub = rospy.Publisher('arcl_connectOutgoing', String, queue_size=10)
     # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
-    command = "applicationFaultSet {}".format(a + " " + b + " " + c + " " + d + " " + e)
+    command = "connectOutgoing {}".format(a + " " + b)
     command = command.encode('ascii')
     print "Running command: ", command
     s.send(command+b"\r\n")
@@ -64,4 +61,4 @@ def applicationFaultClear():
         return errormsg
 
 if __name__ == "__main__":
-    applicationFaultClear_server()
+    connectOutgoing_server()

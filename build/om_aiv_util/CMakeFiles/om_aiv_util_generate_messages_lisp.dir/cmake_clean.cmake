@@ -5,6 +5,7 @@ file(REMOVE_RECURSE
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/share/common-lisp/ros/om_aiv_util/srv/Service5.lisp"
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/share/common-lisp/ros/om_aiv_util/srv/ServiceExample.lisp"
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/share/common-lisp/ros/om_aiv_util/srv/Service.lisp"
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/share/common-lisp/ros/om_aiv_util/srv/Service2.lisp"
 )
 
 # Per-language clean rules from dependency scanning.

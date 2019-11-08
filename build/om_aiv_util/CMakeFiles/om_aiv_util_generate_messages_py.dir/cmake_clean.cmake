@@ -5,6 +5,7 @@ file(REMOVE_RECURSE
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/lib/python2.7/dist-packages/om_aiv_util/srv/_Service5.py"
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/lib/python2.7/dist-packages/om_aiv_util/srv/_ServiceExample.py"
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/lib/python2.7/dist-packages/om_aiv_util/srv/_Service.py"
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/lib/python2.7/dist-packages/om_aiv_util/srv/_Service2.py"
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/lib/python2.7/dist-packages/om_aiv_util/msg/__init__.py"
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/lib/python2.7/dist-packages/om_aiv_util/srv/__init__.py"
 )

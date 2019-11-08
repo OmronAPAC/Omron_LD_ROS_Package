@@ -58,6 +58,7 @@ add_service_files(
 FILES
 ServiceExample.srv
 Service.srv
+Service2.srv
 Service5.srv
 AddTwoInts.srv
 )

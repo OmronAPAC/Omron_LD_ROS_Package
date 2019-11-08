@@ -5,6 +5,7 @@ file(REMOVE_RECURSE
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/include/om_aiv_util/Service5.h"
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/include/om_aiv_util/ServiceExample.h"
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/include/om_aiv_util/Service.h"
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/include/om_aiv_util/Service2.h"
 )
 
 # Per-language clean rules from dependency scanning.
