@@ -2,7 +2,7 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def analogInputQueryRaw_client(a, b):
+def doTaskInstant_client(a, b):
     rospy.wait_for_service('doTaskInstant')
     try:
         add_two_ints = rospy.ServiceProxy('doTaskInstant', Service2)
@@ -23,4 +23,4 @@ if __name__ == "__main__":
         sys.exit(1)
     print "running command"
     # print "Requesting", x
-    print analogInputQueryRaw_client(a, b)
+    print doTaskInstant_client(a, b)
