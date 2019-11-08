@@ -22,5 +22,4 @@ if __name__ == "__main__":
         sys.exit(1)
     print "running command"
     # print "Requesting", x
-    arclSendText_client(x)
     print arclSendText_client(x)
