@@ -12,7 +12,7 @@ def analogInputQueryRaw_client(x):
         print "Service call failed: %s"%e
 
 def usage():
-    return "%s [fault]"%sys.argv[0]
+    return "%s"%sys.argv[0]
 
 if __name__ == "__main__":
     if len(sys.argv) == 1:
