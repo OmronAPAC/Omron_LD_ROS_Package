@@ -17,27 +17,27 @@ connecttcp.connect(str(ip_address), port)
 from om_aiv_util.srv import Service4,Service4Response
 import rospy
 
-def handle_popupSimple(req):
+def handle_newConfigParam(req):
     global a, b, c, d
     a = req.a
     b = req.b
     c = req.c
     d = req.d
-    popupSimple()
+    newConfigParam()
     # return Service5Response(req.a + req.b + req.c + req.d + req.e)
     return rcv
 
-def popupSimple_server():
-    rospy.init_node('popupSimple_server')
-    s = rospy.Service('popupSimple', Service4, handle_popupSimple)
+def newConfigParam_server():
+    rospy.init_node('newConfigParam_server')
+    s = rospy.Service('newConfigParam', Service4, handle_newConfigParam)
     rospy.spin()
 
-def popupSimple():
+def newConfigParam():
     global rcv
-    pub = rospy.Publisher('arcl_popupSimple', String, queue_size=10)
+    pub = rospy.Publisher('arcl_newConfigParam', String, queue_size=10)
     # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
-    command = "popupSimple {}".format(" \"" + a + "\" " +" \"" + b +"\" "+ " \"" + c + "\" " + d)
+    command = "popupSimple {}".format(a + b + " \"" + c + "\" " + d)
     command = command.encode('ascii')
     print "Running command: ", command
     s.send(command+b"\r\n")
@@ -63,4 +63,4 @@ def popupSimple():
         return errormsg
 
 if __name__ == "__main__":
-    popupSimple_server()
+    newConfigParam_server()

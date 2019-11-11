@@ -2,17 +2,17 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def popupSimple_client(a, b , c, d):
-    rospy.wait_for_service('popupSimple')
+def newConfigParam_client(a, b , c, d):
+    rospy.wait_for_service('newConfigParam')
     try:
-        add_two_ints = rospy.ServiceProxy('popupSimple', Service4)
+        add_two_ints = rospy.ServiceProxy('newConfigParam', Service4)
         resp1 = add_two_ints(a, b, c, d)
         return resp1.device
     except rospy.ServiceException, error:
         print "Service call failed: %s"%error
 
 def usage():
-    return "%s <\"title\"> <\"message\"> <\"buttonLabel\"> <timeout>"%sys.argv[0]
+    return "%s <type> <value> [echoString] [reason]"%sys.argv[0]
 
 if __name__ == "__main__":
     if len(sys.argv) == 5:
@@ -25,4 +25,4 @@ if __name__ == "__main__":
         print usage()
         sys.exit(1)
     print "running command"
-    print popupSimple_client(a, b , c, d)
+    print newConfigParam_client(a, b , c, d)
