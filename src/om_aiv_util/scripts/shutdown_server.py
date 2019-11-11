@@ -38,6 +38,18 @@ def shutdown():
     print "Running command: ", command
     command = command.encode('ascii')
     s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "Shutting down" in rcv:
+                print rcv
+                return rcv
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
 
     except socket.error as e:
         print("Connection  failed")
