@@ -36,7 +36,7 @@ rostopic list
 ```
 View the topics published and do a rostopic echo (topic name) to view the data
 
-To run navigation commands do rosrun for example to move the robot 1000mm
+To run navigation commands example to move the robot 1000mm
 ```
 rosrun om_navigation doTask_action_client.py move 1000
 ```
