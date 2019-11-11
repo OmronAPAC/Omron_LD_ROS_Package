@@ -17,24 +17,24 @@ connecttcp.connect(str(ip_address), port)
 from om_aiv_util.srv import Service,ServiceResponse
 import rospy
 
-def handle_waitTaskCancel(req):
+def handle_getInfoList(req):
     global fault
     fault = req.a
-    waitTaskCancel()
+    getInfoList()
     # return ServiceResponse(req.a)
     return rcv
 
-def waitTaskCancel_server():
-    rospy.init_node('waitTaskCancel_server')
-    s = rospy.Service('waitTaskCancel', Service, handle_waitTaskCancel)
+def getInfoList_server():
+    rospy.init_node('getInfoList_server')
+    s = rospy.Service('getInfoList', Service, handle_getInfoList)
     rospy.spin()
 
-def waitTaskCancel():
+def getInfoList():
     global rcv
-    pub = rospy.Publisher('arcl_waitTaskCancel', String, queue_size=10)
+    pub = rospy.Publisher('arcl_getInfoList', String, queue_size=10)
     # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
-    command = "waitTaskCancel"
+    command = "getInfoList"
     print "Running command: ", command
     command = command.encode('ascii')
     s.send(command+b"\r\n")
@@ -43,7 +43,7 @@ def waitTaskCancel():
         rcv = data.encode('ascii', 'ignore')
         while not rospy.is_shutdown():
             #check for required data
-            if "WaitState" in rcv:
+            if "End of info list" in rcv:
                 print rcv
                 return rcv
                 break
@@ -56,4 +56,4 @@ def waitTaskCancel():
         return e
 
 if __name__ == "__main__":
-    waitTaskCancel_server()
+    getInfoList_server()

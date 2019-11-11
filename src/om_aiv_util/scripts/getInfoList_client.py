@@ -2,10 +2,10 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def waitTaskCancel_client(x):
-    rospy.wait_for_service('waitTaskCancel')
+def getInfoList_client(x):
+    rospy.wait_for_service('getInfoList')
     try:
-        add_two_ints = rospy.ServiceProxy('waitTaskCancel', Service)
+        add_two_ints = rospy.ServiceProxy('getInfoList', Service)
         resp1 = add_two_ints(x)
         return resp1.device
     except rospy.ServiceException, e:
@@ -22,4 +22,4 @@ if __name__ == "__main__":
         sys.exit(1)
     print "running command"
     # print "Requesting", x
-    print waitTaskCancel_client(x)
+    print getInfoList_client(x)
