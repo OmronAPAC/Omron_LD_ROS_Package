@@ -12,6 +12,8 @@ def analogInputQueryRaw_client(a, b , c):
         print "Service call failed: %s"%error
 
 def usage():
+    return "%s <goalName> [priority] [jobId]"%sys.argv[0]
+
 if __name__ == "__main__":
     if len(sys.argv) == 4:
         a = str(sys.argv[1])
