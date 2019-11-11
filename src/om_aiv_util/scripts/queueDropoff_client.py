@@ -3,9 +3,9 @@ import sys
 import rospy
 from om_aiv_util.srv import *
 def analogInputQueryRaw_client(a, b , c):
-    rospy.wait_for_service('createInfo')
+    rospy.wait_for_service('queueDropoff')
     try:
-        add_two_ints = rospy.ServiceProxy('createInfo', Service3)
+        add_two_ints = rospy.ServiceProxy('queueDropoff', Service3)
         resp1 = add_two_ints(a, b, c)
         return resp1.device
     except rospy.ServiceException, error:

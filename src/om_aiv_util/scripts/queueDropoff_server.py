@@ -17,23 +17,23 @@ connecttcp.connect(str(ip_address), port)
 from om_aiv_util.srv import Service3,Service3Response
 import rospy
 
-def handle_createInfo(req):
+def handle_queueDropoff(req):
     global a, b, c
     a = req.a
     b = req.b
     c = req.c
-    createInfo()
+    queueDropoff()
     # return Service5Response(req.a + req.b + req.c + req.d + req.e)
     return rcv
 
-def createInfo_server():
-    rospy.init_node('createInfo_server')
-    s = rospy.Service('createInfo', Service3, handle_createInfo)
+def queueDropoff_server():
+    rospy.init_node('queueDropoff_server')
+    s = rospy.Service('queueDropoff', Service3, handle_queueDropoff)
     rospy.spin()
 
-def createInfo():
+def queueDropoff():
     global rcv
-    pub = rospy.Publisher('arcl_createInfo', String, queue_size=10)
+    pub = rospy.Publisher('arcl_queueDropoff', String, queue_size=10)
     # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "queueDropoff {}".format(a + " " + b + " " + c)
@@ -62,4 +62,4 @@ def createInfo():
         return errormsg
 
 if __name__ == "__main__":
-    createInfo_server()
+    queueDropoff_server()
