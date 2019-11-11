@@ -17,44 +17,31 @@ connecttcp.connect(str(ip_address), port)
 from om_aiv_util.srv import Service,ServiceResponse
 import rospy
 
-def handle_say(req):
-    global text
-    print "Returning", req.a
-    text = req.a
-    say()
+def handle_shutdown(req):
+    global fault
+    fault = req.a
+    shutdown()
     # return ServiceResponse(req.a)
     return rcv
 
-def say_server():
-    rospy.init_node('say_server')
-    s = rospy.Service('say', Service, handle_say)
+def shutdown_server():
+    rospy.init_node('shutdown_server')
+    s = rospy.Service('shutdown', Service, handle_shutdown)
     rospy.spin()
 
-def say():
+def shutdown():
     global rcv
-    pub = rospy.Publisher('arcl_say', String, queue_size=10)
+    pub = rospy.Publisher('arcl_shutdown', String, queue_size=10)
     # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
-    command = "say {}".format(text)
-    command = command.encode('ascii')
+    command = "shutdown"
     print "Running command: ", command
+    command = command.encode('ascii')
     s.send(command+b"\r\n")
-    try:
-        data = s.recv(BUFFER_SIZE)
-        rcv = data.encode('ascii', 'ignore')
-        while not rospy.is_shutdown():
-            #check for required data
-            if "Saying" in rcv:
-                print rcv
-                return rcv
-                break
-            else:
-                data = s.recv(BUFFER_SIZE)
-                rcv = rcv + data.encode('ascii', 'ignore')
 
     except socket.error as e:
         print("Connection  failed")
         return e
 
 if __name__ == "__main__":
-    say_server()
+    shutdown_server()
