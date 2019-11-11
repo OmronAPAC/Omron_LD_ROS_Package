@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "om_aiv_util: 1 messages, 7 services")
+message(STATUS "om_aiv_util: 1 messages, 8 services")
 
 set(MSG_I_FLAGS "-Iom_aiv_util:/home/tthmatt/ld_ROS/src/om_aiv_util/msg;-Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg")
 
@@ -27,14 +27,19 @@ add_custom_target(_om_aiv_util_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "om_aiv_util" "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/ServiceExample.srv" ""
 )
 
+get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service4.srv" NAME_WE)
+add_custom_target(_om_aiv_util_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "om_aiv_util" "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service4.srv" ""
+)
+
 get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service3.srv" NAME_WE)
 add_custom_target(_om_aiv_util_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "om_aiv_util" "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service3.srv" ""
 )
 
-get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Location.msg" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service2.srv" NAME_WE)
 add_custom_target(_om_aiv_util_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "om_aiv_util" "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Location.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "om_aiv_util" "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service2.srv" ""
 )
 
 get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/AddTwoInts.srv" NAME_WE)
@@ -52,9 +57,9 @@ add_custom_target(_om_aiv_util_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "om_aiv_util" "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service9.srv" ""
 )
 
-get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service2.srv" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Location.msg" NAME_WE)
 add_custom_target(_om_aiv_util_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "om_aiv_util" "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service2.srv" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "om_aiv_util" "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Location.msg" ""
 )
 
 #
@@ -79,6 +84,12 @@ _generate_srv_cpp(om_aiv_util
 )
 _generate_srv_cpp(om_aiv_util
   "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/ServiceExample.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/om_aiv_util
+)
+_generate_srv_cpp(om_aiv_util
+  "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service4.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/om_aiv_util
@@ -130,9 +141,11 @@ get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Servi
 add_dependencies(om_aiv_util_generate_messages_cpp _om_aiv_util_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/ServiceExample.srv" NAME_WE)
 add_dependencies(om_aiv_util_generate_messages_cpp _om_aiv_util_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service4.srv" NAME_WE)
+add_dependencies(om_aiv_util_generate_messages_cpp _om_aiv_util_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service3.srv" NAME_WE)
 add_dependencies(om_aiv_util_generate_messages_cpp _om_aiv_util_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Location.msg" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service2.srv" NAME_WE)
 add_dependencies(om_aiv_util_generate_messages_cpp _om_aiv_util_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/AddTwoInts.srv" NAME_WE)
 add_dependencies(om_aiv_util_generate_messages_cpp _om_aiv_util_generate_messages_check_deps_${_filename})
@@ -140,7 +153,7 @@ get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Servi
 add_dependencies(om_aiv_util_generate_messages_cpp _om_aiv_util_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service9.srv" NAME_WE)
 add_dependencies(om_aiv_util_generate_messages_cpp _om_aiv_util_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service2.srv" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Location.msg" NAME_WE)
 add_dependencies(om_aiv_util_generate_messages_cpp _om_aiv_util_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -168,6 +181,12 @@ _generate_srv_eus(om_aiv_util
 )
 _generate_srv_eus(om_aiv_util
   "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/ServiceExample.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/om_aiv_util
+)
+_generate_srv_eus(om_aiv_util
+  "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service4.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/om_aiv_util
@@ -219,9 +238,11 @@ get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Servi
 add_dependencies(om_aiv_util_generate_messages_eus _om_aiv_util_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/ServiceExample.srv" NAME_WE)
 add_dependencies(om_aiv_util_generate_messages_eus _om_aiv_util_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service4.srv" NAME_WE)
+add_dependencies(om_aiv_util_generate_messages_eus _om_aiv_util_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service3.srv" NAME_WE)
 add_dependencies(om_aiv_util_generate_messages_eus _om_aiv_util_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Location.msg" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service2.srv" NAME_WE)
 add_dependencies(om_aiv_util_generate_messages_eus _om_aiv_util_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/AddTwoInts.srv" NAME_WE)
 add_dependencies(om_aiv_util_generate_messages_eus _om_aiv_util_generate_messages_check_deps_${_filename})
@@ -229,7 +250,7 @@ get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Servi
 add_dependencies(om_aiv_util_generate_messages_eus _om_aiv_util_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service9.srv" NAME_WE)
 add_dependencies(om_aiv_util_generate_messages_eus _om_aiv_util_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service2.srv" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Location.msg" NAME_WE)
 add_dependencies(om_aiv_util_generate_messages_eus _om_aiv_util_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -257,6 +278,12 @@ _generate_srv_lisp(om_aiv_util
 )
 _generate_srv_lisp(om_aiv_util
   "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/ServiceExample.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/om_aiv_util
+)
+_generate_srv_lisp(om_aiv_util
+  "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service4.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/om_aiv_util
@@ -308,9 +335,11 @@ get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Servi
 add_dependencies(om_aiv_util_generate_messages_lisp _om_aiv_util_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/ServiceExample.srv" NAME_WE)
 add_dependencies(om_aiv_util_generate_messages_lisp _om_aiv_util_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service4.srv" NAME_WE)
+add_dependencies(om_aiv_util_generate_messages_lisp _om_aiv_util_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service3.srv" NAME_WE)
 add_dependencies(om_aiv_util_generate_messages_lisp _om_aiv_util_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Location.msg" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service2.srv" NAME_WE)
 add_dependencies(om_aiv_util_generate_messages_lisp _om_aiv_util_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/AddTwoInts.srv" NAME_WE)
 add_dependencies(om_aiv_util_generate_messages_lisp _om_aiv_util_generate_messages_check_deps_${_filename})
@@ -318,7 +347,7 @@ get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Servi
 add_dependencies(om_aiv_util_generate_messages_lisp _om_aiv_util_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service9.srv" NAME_WE)
 add_dependencies(om_aiv_util_generate_messages_lisp _om_aiv_util_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service2.srv" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Location.msg" NAME_WE)
 add_dependencies(om_aiv_util_generate_messages_lisp _om_aiv_util_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -346,6 +375,12 @@ _generate_srv_nodejs(om_aiv_util
 )
 _generate_srv_nodejs(om_aiv_util
   "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/ServiceExample.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/om_aiv_util
+)
+_generate_srv_nodejs(om_aiv_util
+  "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service4.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/om_aiv_util
@@ -397,9 +432,11 @@ get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Servi
 add_dependencies(om_aiv_util_generate_messages_nodejs _om_aiv_util_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/ServiceExample.srv" NAME_WE)
 add_dependencies(om_aiv_util_generate_messages_nodejs _om_aiv_util_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service4.srv" NAME_WE)
+add_dependencies(om_aiv_util_generate_messages_nodejs _om_aiv_util_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service3.srv" NAME_WE)
 add_dependencies(om_aiv_util_generate_messages_nodejs _om_aiv_util_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Location.msg" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service2.srv" NAME_WE)
 add_dependencies(om_aiv_util_generate_messages_nodejs _om_aiv_util_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/AddTwoInts.srv" NAME_WE)
 add_dependencies(om_aiv_util_generate_messages_nodejs _om_aiv_util_generate_messages_check_deps_${_filename})
@@ -407,7 +444,7 @@ get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Servi
 add_dependencies(om_aiv_util_generate_messages_nodejs _om_aiv_util_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service9.srv" NAME_WE)
 add_dependencies(om_aiv_util_generate_messages_nodejs _om_aiv_util_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service2.srv" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Location.msg" NAME_WE)
 add_dependencies(om_aiv_util_generate_messages_nodejs _om_aiv_util_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -435,6 +472,12 @@ _generate_srv_py(om_aiv_util
 )
 _generate_srv_py(om_aiv_util
   "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/ServiceExample.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/om_aiv_util
+)
+_generate_srv_py(om_aiv_util
+  "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service4.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/om_aiv_util
@@ -486,9 +529,11 @@ get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Servi
 add_dependencies(om_aiv_util_generate_messages_py _om_aiv_util_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/ServiceExample.srv" NAME_WE)
 add_dependencies(om_aiv_util_generate_messages_py _om_aiv_util_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service4.srv" NAME_WE)
+add_dependencies(om_aiv_util_generate_messages_py _om_aiv_util_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service3.srv" NAME_WE)
 add_dependencies(om_aiv_util_generate_messages_py _om_aiv_util_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Location.msg" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service2.srv" NAME_WE)
 add_dependencies(om_aiv_util_generate_messages_py _om_aiv_util_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/AddTwoInts.srv" NAME_WE)
 add_dependencies(om_aiv_util_generate_messages_py _om_aiv_util_generate_messages_check_deps_${_filename})
@@ -496,7 +541,7 @@ get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Servi
 add_dependencies(om_aiv_util_generate_messages_py _om_aiv_util_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service9.srv" NAME_WE)
 add_dependencies(om_aiv_util_generate_messages_py _om_aiv_util_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service2.srv" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/src/om_aiv_util/msg/Location.msg" NAME_WE)
 add_dependencies(om_aiv_util_generate_messages_py _om_aiv_util_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

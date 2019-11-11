@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/share/common-lisp/ros/om_aiv_util/msg/Location.lisp"
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/share/common-lisp/ros/om_aiv_util/srv/Service5.lisp"
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/share/common-lisp/ros/om_aiv_util/srv/ServiceExample.lisp"
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/share/common-lisp/ros/om_aiv_util/srv/Service4.lisp"
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/share/common-lisp/ros/om_aiv_util/srv/Service3.lisp"
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/share/common-lisp/ros/om_aiv_util/srv/Service2.lisp"
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/share/common-lisp/ros/om_aiv_util/srv/AddTwoInts.lisp"
