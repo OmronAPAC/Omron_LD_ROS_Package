@@ -20,9 +20,13 @@ git clone https://github.com/tthmatt/Omron_LD_ROS_Package.git
 catkin build
 ```
 ### Initial Configuration
+For a single robot:
 
 Specify robot ip address and port number in /ld_ROS/src/om_aiv_util/launch/robot1.launch
 
+For 2 robots:
+
+For more than 2 robots:
 
 
 
