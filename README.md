@@ -31,3 +31,7 @@ Specify robot ip address and port number in /ld_ROS/src/om_aiv_util/launch/robot
 roslaunch om_aiv_util ldarcl_status.launch
 roslaunch om_aiv_navigation ld_navigation.launch
 ```
+```
+rostopic list
+```
+View the topics published and do a rostopic echo (topic name) to view the data
