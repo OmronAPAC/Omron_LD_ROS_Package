@@ -37,7 +37,7 @@ def newConfigParam():
     pub = rospy.Publisher('arcl_newConfigParam', String, queue_size=10)
     # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
-    command = "popupSimple {}".format(a + b + " \"" + c + "\" " + d)
+    command = "queueCancelLocal {}".format(a + " " + b + " \"" + c + "\" " + d)
     command = command.encode('ascii')
     print "Running command: ", command
     s.send(command+b"\r\n")
@@ -46,7 +46,7 @@ def newConfigParam():
         rcv = data.encode('ascii', 'ignore')
         while not rospy.is_shutdown():
             #check for required data
-            if "Creating simple popup" in rcv:
+            if "queuecancel" in rcv:
                 print rcv
                 return rcv
                 break

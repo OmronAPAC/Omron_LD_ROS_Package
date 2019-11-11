@@ -20,6 +20,16 @@ if __name__ == "__main__":
         b = str(sys.argv[2])
         c = str(sys.argv[3])
         d = str(sys.argv[4])
+    elif len(sys.argv) == 3:
+        a = str(sys.argv[1])
+        b = str(sys.argv[2])
+        c = ""
+        d = ""
+    elif len(sys.argv) == 2:
+        a = str(sys.argv[1])
+        b = ""
+        c = ""
+        d = ""
 
     else:
         print usage()
