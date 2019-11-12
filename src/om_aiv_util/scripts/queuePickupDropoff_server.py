@@ -25,7 +25,6 @@ def handle_queuePickupDropoff(req):
     d = req.d
     e = req.e
     queuePickupDropoff()
-    # return Service5Response(req.a + req.b + req.c + req.d + req.e)
     return rcv
 
 def queuePickupDropoff_server():
