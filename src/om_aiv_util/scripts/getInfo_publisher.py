@@ -7,6 +7,7 @@ from colorama import Fore, Back, Style
 import rospy
 from std_msgs.msg import String
 from std_msgs.msg import Float32
+from std_msgs.msg import Int32
 from geometry_msgs.msg import Pose
 from geometry_msgs.msg import Point
 from om_aiv_util.msg import Location
@@ -40,7 +41,7 @@ def getInfo_WirelessLink():
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
-    command = "getInfo Wirelesslink"
+    command = "getInfo WirelessLink"
     command = command.encode('ascii')
     s.send(command+b"\r\n")
     try:
@@ -117,7 +118,7 @@ def getInfo_WirelessQuality():
 
 def getInfo_Odometer():
     #specify topic name
-    pub = rospy.Publisher('ldarcl_getInfo_Odometer', String, queue_size=10)
+    pub = rospy.Publisher('ldarcl_getInfo_Odometer', Int32, queue_size=10)
     #specify node name
     rospy.init_node('getInfo_publisher', anonymous=True)
     rate = rospy.Rate(10) # 10hz
@@ -132,7 +133,7 @@ def getInfo_Odometer():
         rcv = data.encode('ascii', 'ignore')
         while not rospy.is_shutdown():
             #keep receiving data until require data is received
-            if "Info" in rcv:
+            if "Odometer(KM)" in rcv:
                 break
             else:
                 data = s.recv(BUFFER_SIZE)
@@ -143,12 +144,14 @@ def getInfo_Odometer():
         return e
     #check for required data
     for line in rcv.splitlines():
-        if 'Info:' in line:
-            info = line.split("Info:")
+        if 'Odometer(KM)' in line:
+            info = line.split("Odometer(KM)")
+            infonum = [int(i) for i in line.split() if i.isdigit()]
+            infonum = int("".join(map(str, infonum)))
             #print required data
-            rospy.loginfo(",Info:".join(info)[1:])
+            rospy.loginfo("Odometer(KM):".join(info))
             #publish data
-            pub.publish(''.join(info))
+            pub.publish(infonum)
             rate.sleep()
             break
 
@@ -159,7 +162,7 @@ def getInfo_Odometer():
 
 def getInfo_HourMeter():
     #specify topic name
-    pub = rospy.Publisher('ldarcl_getInfo_HourMeter', String, queue_size=10)
+    pub = rospy.Publisher('ldarcl_getInfo_HourMeter', Int32, queue_size=10)
     #specify node name
     rospy.init_node('getInfo_publisher', anonymous=True)
     rate = rospy.Rate(10) # 10hz
@@ -185,12 +188,14 @@ def getInfo_HourMeter():
         return e
     #check for required data
     for line in rcv.splitlines():
-        if 'Info:' in line:
-            info = line.split("Info:")
+        if 'HourMeter' in line:
+            info = line.split("Hourmeter")
+            infonum = [int(i) for i in line.split() if i.isdigit()]
+            infonum = int("".join(map(str, infonum)))
             #print required data
-            rospy.loginfo(",Info:".join(info)[1:])
+            rospy.loginfo("Hourmeter:".join(info))
             #publish data
-            pub.publish(''.join(info))
+            pub.publish(infonum)
             rate.sleep()
             break
 
@@ -201,7 +206,7 @@ def getInfo_HourMeter():
 
 def getInfo_Temperature():
     #specify topic name
-    pub = rospy.Publisher('ldarcl_getInfo_Temperature', String, queue_size=10)
+    pub = rospy.Publisher('ldarcl_getInfo_Temperature', Int32, queue_size=10)
     #specify node name
     rospy.init_node('getInfo_publisher', anonymous=True)
     rate = rospy.Rate(10) # 10hz
@@ -227,7 +232,7 @@ def getInfo_Temperature():
         return e
     #check for required data
     for line in rcv.splitlines():
-        if 'Info:' in line:
+        if 'Temperature(C)' in line:
             info = line.split("Info:")
             #print required data
             rospy.loginfo(",Info:".join(info)[1:])
@@ -243,7 +248,7 @@ def getInfo_Temperature():
 
 def getInfo_LaserScore():
     #specify topic name
-    pub = rospy.Publisher('ldarcl_getInfo_LaserScore', String, queue_size=10)
+    pub = rospy.Publisher('ldarcl_getInfo_LaserScore', Int32, queue_size=10)
     #specify node name
     rospy.init_node('getInfo_publisher', anonymous=True)
     rate = rospy.Rate(10) # 10hz
@@ -269,12 +274,14 @@ def getInfo_LaserScore():
         return e
     #check for required data
     for line in rcv.splitlines():
-        if 'Info:' in line:
-            info = line.split("Info:")
+        if 'LaserScore' in line:
+            info = line.split("LaserScore")
+            infonum = [int(i) for i in line.split() if i.isdigit()]
+            infonum = int("".join(map(str, infonum)))
             #print required data
-            rospy.loginfo(",Info:".join(info)[1:])
+            rospy.loginfo("LaserScore:".join(info))
             #publish data
-            pub.publish(''.join(info))
+            pub.publish(infonum)
             rate.sleep()
             break
 
@@ -285,7 +292,7 @@ def getInfo_LaserScore():
 
 def getInfo_LaserLock():
     #specify topic name
-    pub = rospy.Publisher('ldarcl_getInfo_LaserLock', String, queue_size=10)
+    pub = rospy.Publisher('ldarcl_getInfo_LaserLock', Int32, queue_size=10)
     #specify node name
     rospy.init_node('getInfo_publisher', anonymous=True)
     rate = rospy.Rate(10) # 10hz
@@ -311,12 +318,14 @@ def getInfo_LaserLock():
         return e
     #check for required data
     for line in rcv.splitlines():
-        if 'Info:' in line:
-            info = line.split("Info:")
+        if 'LaserLock' in line:
+            info = line.split("LaserLock")
+            infonum = [int(i) for i in line.split() if i.isdigit()]
+            infonum = int("".join(map(str, infonum)))
             #print required data
-            rospy.loginfo(",Info:".join(info)[1:])
+            rospy.loginfo("LaserLock:".join(info))
             #publish data
-            pub.publish(''.join(info))
+            pub.publish(infonum)
             rate.sleep()
             break
 
@@ -328,7 +337,7 @@ def getInfo_LaserLock():
 
 def getInfo_LaserNumSamples():
     #specify topic name
-    pub = rospy.Publisher('ldarcl_getInfo_LaserNumSamples', String, queue_size=10)
+    pub = rospy.Publisher('ldarcl_getInfo_LaserNumSamples', Int32, queue_size=10)
     #specify node name
     rospy.init_node('getInfo_publisher', anonymous=True)
     rate = rospy.Rate(10) # 10hz
@@ -354,12 +363,14 @@ def getInfo_LaserNumSamples():
         return e
     #check for required data
     for line in rcv.splitlines():
-        if 'Info:' in line:
-            info = line.split("Info:")
+        if 'LaserNumSamples' in line:
+            info = line.split("LaserNumSamples")
+            infonum = [int(i) for i in line.split() if i.isdigit()]
+            infonum = int("".join(map(str, infonum)))
             #print required data
-            rospy.loginfo(",Info:".join(info)[1:])
+            rospy.loginfo("LaserNumSamples:".join(info))
             #publish data
-            pub.publish(''.join(info))
+            pub.publish(infonum)
             rate.sleep()
             break
 
@@ -370,7 +381,7 @@ def getInfo_LaserNumSamples():
 
 def getInfo_LaserNumPeaks():
     #specify topic name
-    pub = rospy.Publisher('ldarcl_getInfo_LaserNumPeaks', String, queue_size=10)
+    pub = rospy.Publisher('ldarcl_getInfo_LaserNumPeaks', Int32, queue_size=10)
     #specify node name
     rospy.init_node('getInfo_publisher', anonymous=True)
     rate = rospy.Rate(10) # 10hz
@@ -396,12 +407,14 @@ def getInfo_LaserNumPeaks():
         return e
     #check for required data
     for line in rcv.splitlines():
-        if 'Info:' in line:
-            info = line.split("Info:")
+        if 'LaserNumPeaks' in line:
+            info = line.split("LaserNumPeaks")
+            infonum = [int(i) for i in line.split() if i.isdigit()]
+            infonum = int("".join(map(str, infonum)))
             #print required data
-            rospy.loginfo(",Info:".join(info)[1:])
+            rospy.loginfo("LaserNumPeaks:".join(info))
             #publish data
-            pub.publish(''.join(info))
+            pub.publish(infonum)
             rate.sleep()
             break
 
@@ -412,7 +425,7 @@ def getInfo_LaserNumPeaks():
 
 def getInfo_Mpacs():
     #specify topic name
-    pub = rospy.Publisher('ldarcl_getInfo_Mpacs', String, queue_size=10)
+    pub = rospy.Publisher('ldarcl_getInfo_Mpacs', Int32, queue_size=10)
     #specify node name
     rospy.init_node('getInfo_publisher', anonymous=True)
     rate = rospy.Rate(10) # 10hz
@@ -438,12 +451,14 @@ def getInfo_Mpacs():
         return e
     #check for required data
     for line in rcv.splitlines():
-        if 'Info:' in line:
-            info = line.split("Info:")
+        if 'MPacs' in line:
+            info = line.split("Mpacs")
+            infonum = [int(i) for i in line.split() if i.isdigit()]
+            infonum = int("".join(map(str, infonum)))
             #print required data
-            rospy.loginfo(",Info:".join(info)[1:])
+            rospy.loginfo("MPacs:".join(info))
             #publish data
-            pub.publish(''.join(info))
+            pub.publish(infonum)
             rate.sleep()
             break
 
@@ -454,7 +469,7 @@ def getInfo_Mpacs():
 
 def getInfo_Laser_1_Pacs():
     #specify topic name
-    pub = rospy.Publisher('ldarcl_getInfo_Laser_1_Pacs', String, queue_size=10)
+    pub = rospy.Publisher('ldarcl_getInfo_Laser_1_Pacs', Int32, queue_size=10)
     #specify node name
     rospy.init_node('getInfo_publisher', anonymous=True)
     rate = rospy.Rate(10) # 10hz
@@ -480,12 +495,14 @@ def getInfo_Laser_1_Pacs():
         return e
     #check for required data
     for line in rcv.splitlines():
-        if 'Info:' in line:
-            info = line.split("Info:")
+        if 'Laser_1 Pacs' in line:
+            info = line.split("Laser_1 Pacs")
+            infonum = [int(i) for i in line.split() if i.isdigit()]
+            infonum = int("".join(map(str, infonum)))
             #print required data
-            rospy.loginfo(",Info:".join(info)[1:])
+            rospy.loginfo("Laser_1 Pacs:".join(info))
             #publish data
-            pub.publish(''.join(info))
+            pub.publish(infonum)
             rate.sleep()
             break
 
@@ -496,7 +513,7 @@ def getInfo_Laser_1_Pacs():
 
 def getInfo_SBC_Uptime():
     #specify topic name
-    pub = rospy.Publisher('ldarcl_getInfo_SBC_Uptime', String, queue_size=10)
+    pub = rospy.Publisher('ldarcl_getInfo_SBC_Uptime', Int32, queue_size=10)
     #specify node name
     rospy.init_node('getInfo_publisher', anonymous=True)
     rate = rospy.Rate(10) # 10hz
@@ -504,6 +521,138 @@ def getInfo_SBC_Uptime():
     print(Fore.GREEN)
     #send command to arcl
     command = "getInfo SBC Uptime"
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #keep receiving data until require data is received
+            if "Info" in rcv:
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+    #check for required data
+    for line in rcv.splitlines():
+        if 'SBC Uptime' in line:
+            info = line.split("SBC Uptime")
+            infonum = [int(i) for i in line.split() if i.isdigit()]
+            infonum = int("".join(map(str, infonum)))
+            #print required data
+            rospy.loginfo("SBC Uptime:".join(info))
+            #publish data
+            pub.publish(infonum)
+            rate.sleep()
+            break
+
+        if 'Info:' not in line:
+            rospy.loginfo("No info")
+            pub.publish("No info")
+            rate.sleep()
+
+def getInfo_ARAM_Uptime():
+    #specify topic name
+    pub = rospy.Publisher('ldarcl_getInfo_ARAM_Uptime', Int32, queue_size=10)
+    #specify node name
+    rospy.init_node('getInfo_publisher', anonymous=True)
+    rate = rospy.Rate(10) # 10hz
+    print(Style.RESET_ALL)
+    print(Fore.GREEN)
+    #send command to arcl
+    command = "getInfo ARAM Uptime"
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #keep receiving data until require data is received
+            if "Info" in rcv:
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+    #check for required data
+    for line in rcv.splitlines():
+        if 'ARAM Uptime' in line:
+            info = line.split("ARAM Uptime")
+            infonum = [int(i) for i in line.split() if i.isdigit()]
+            infonum = int("".join(map(str, infonum)))
+            #print required data
+            rospy.loginfo("ARAM Uptime:".join(info))
+            #publish data
+            pub.publish(infonum)
+            rate.sleep()
+            break
+
+        if 'Info:' not in line:
+            rospy.loginfo("No info")
+            pub.publish("No info")
+            rate.sleep()
+
+def getInfo_Idle():
+    #specify topic name
+    pub = rospy.Publisher('ldarcl_getInfo_Idle', Int32, queue_size=10)
+    #specify node name
+    rospy.init_node('getInfo_publisher', anonymous=True)
+    rate = rospy.Rate(10) # 10hz
+    print(Style.RESET_ALL)
+    print(Fore.GREEN)
+    #send command to arcl
+    command = "getInfo Idle"
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #keep receiving data until require data is received
+            if "Info" in rcv:
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+    #check for required data
+    for line in rcv.splitlines():
+        if 'Idle' in line:
+            info = line.split("Idle")
+            infonum = [int(i) for i in line.split() if i.isdigit()]
+            infonum = int("".join(map(str, infonum)))
+            #print required data
+            rospy.loginfo("Idle:".join(info))
+            #publish data
+            pub.publish(infonum)
+            rate.sleep()
+            break
+
+        if 'Info:' not in line:
+            rospy.loginfo("No info")
+            pub.publish("No info")
+            rate.sleep()
+
+def getInfo_TipAngle():
+    #specify topic name
+    pub = rospy.Publisher('ldarcl_getInfo_TipAngle', String, queue_size=10)
+    #specify node name
+    rospy.init_node('getInfo_publisher', anonymous=True)
+    rate = rospy.Rate(10) # 10hz
+    print(Style.RESET_ALL)
+    print(Fore.GREEN)
+    #send command to arcl
+    command = "getInfo TipAngle"
     command = command.encode('ascii')
     s.send(command+b"\r\n")
     try:
@@ -536,6 +685,217 @@ def getInfo_SBC_Uptime():
             pub.publish("No info")
             rate.sleep()
 
+def getInfo_IsTipped():
+    #specify topic name
+    pub = rospy.Publisher('ldarcl_getInfo_IsTipped', String, queue_size=10)
+    #specify node name
+    rospy.init_node('getInfo_publisher', anonymous=True)
+    rate = rospy.Rate(10) # 10hz
+    print(Style.RESET_ALL)
+    print(Fore.GREEN)
+    #send command to arcl
+    command = "getInfo IsTipped"
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #keep receiving data until require data is received
+            if "Info" in rcv:
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+    #check for required data
+    for line in rcv.splitlines():
+        if 'Info:' in line:
+            info = line.split("Info:")
+            #print required data
+            rospy.loginfo(",Info:".join(info)[1:])
+            #publish data
+            pub.publish(''.join(info))
+            rate.sleep()
+            break
+
+        if 'Info:' not in line:
+            rospy.loginfo("No info")
+            pub.publish("No info")
+            rate.sleep()
+
+def getInfo_Queue_ID():
+    #specify topic name
+    pub = rospy.Publisher('ldarcl_getInfo_Queue_ID', String, queue_size=10)
+    #specify node name
+    rospy.init_node('getInfo_publisher', anonymous=True)
+    rate = rospy.Rate(10) # 10hz
+    print(Style.RESET_ALL)
+    print(Fore.GREEN)
+    #send command to arcl
+    command = "getInfo Queue ID"
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #keep receiving data until require data is received
+            if "Info" in rcv:
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+    #check for required data
+    for line in rcv.splitlines():
+        if 'Info:' in line:
+            info = line.split("Info:")
+            #print required data
+            rospy.loginfo(",Info:".join(info)[1:])
+            #publish data
+            pub.publish(''.join(info))
+            rate.sleep()
+            break
+
+        if 'Info:' not in line:
+            rospy.loginfo("No info")
+            pub.publish("No info")
+            rate.sleep()
+
+def getInfo_Queue_Job_ID():
+    #specify topic name
+    pub = rospy.Publisher('ldarcl_getInfo_Queue_Job_ID', String, queue_size=10)
+    #specify node name
+    rospy.init_node('getInfo_publisher', anonymous=True)
+    rate = rospy.Rate(10) # 10hz
+    print(Style.RESET_ALL)
+    print(Fore.GREEN)
+    #send command to arcl
+    command = "getInfo Queue Job ID"
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #keep receiving data until require data is received
+            if "Info" in rcv:
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+    #check for required data
+    for line in rcv.splitlines():
+        if 'Info:' in line:
+            info = line.split("Info:")
+            #print required data
+            rospy.loginfo(",Info:".join(info)[1:])
+            #publish data
+            pub.publish(''.join(info))
+            rate.sleep()
+            break
+
+        if 'Info:' not in line:
+            rospy.loginfo("No info")
+            pub.publish("No info")
+            rate.sleep()
+
+def getInfo_DebugLogState():
+    #specify topic name
+    pub = rospy.Publisher('ldarcl_getInfo_DebugLogState', String, queue_size=10)
+    #specify node name
+    rospy.init_node('getInfo_publisher', anonymous=True)
+    rate = rospy.Rate(10) # 10hz
+    print(Style.RESET_ALL)
+    print(Fore.GREEN)
+    #send command to arcl
+    command = "getInfo DebugLogState"
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #keep receiving data until require data is received
+            if "Info" in rcv:
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+    #check for required data
+    for line in rcv.splitlines():
+        if 'Info:' in line:
+            info = line.split("Info:")
+            #print required data
+            rospy.loginfo(",Info:".join(info)[1:])
+            #publish data
+            pub.publish(''.join(info))
+            rate.sleep()
+            break
+
+        if 'Info:' not in line:
+            rospy.loginfo("No info")
+            pub.publish("No info")
+            rate.sleep()
+
+def getInfo_DebugLogSeconds():
+    #specify topic name
+    pub = rospy.Publisher('ldarcl_getInfo_DebugLogSeconds', String, queue_size=10)
+    #specify node name
+    rospy.init_node('getInfo_publisher', anonymous=True)
+    rate = rospy.Rate(10) # 10hz
+    print(Style.RESET_ALL)
+    print(Fore.GREEN)
+    #send command to arcl
+    command = "getInfo DebugLogSeconds"
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #keep receiving data until require data is received
+            if "Info" in rcv:
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+    #check for required data
+    for line in rcv.splitlines():
+        if 'Info:' in line:
+            info = line.split("Info:")
+            #print required data
+            rospy.loginfo(",Info:".join(info)[1:])
+            #publish data
+            pub.publish(''.join(info))
+            rate.sleep()
+            break
+
+        if 'Info:' not in line:
+            rospy.loginfo("No info")
+            pub.publish("No info")
+            rate.sleep()
+
+
 if __name__ == '__main__':
     try:
         while not rospy.is_shutdown():
@@ -551,6 +911,14 @@ if __name__ == '__main__':
             getInfo_Mpacs()
             getInfo_Laser_1_Pacs()
             getInfo_SBC_Uptime()
+            getInfo_ARAM_Uptime()
+            getInfo_Idle()
+            getInfo_TipAngle()
+            getInfo_IsTipped()
+            getInfo_Queue_ID()
+            getInfo_Queue_Job_ID()
+            getInfo_DebugLogState()
+            getInfo_DebugLogSeconds()
 
     except rospy.ROSInterruptException:
         pass
