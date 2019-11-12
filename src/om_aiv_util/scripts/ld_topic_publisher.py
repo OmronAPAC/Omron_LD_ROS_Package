@@ -329,6 +329,37 @@ def queryDockStatus():
             pub.publish(''.join(queryDockStatus))
             rate.sleep()
 
+def queryFaults():
+    pub = rospy.Publisher('ldarcl_queryFaults', String, queue_size=10)
+    rospy.init_node('ld_topic_publisher', anonymous=True)
+    rate = rospy.Rate(10) # 10hz
+    print(Style.RESET_ALL)
+    print(Fore.GREEN)
+    print "Getting faults..."
+    command = "queryFaults"
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            if "EndQueryFaults" in rcv:
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+
+    for line in rcv.splitlines():
+        if 'RobotFaultQuery:' in line:
+            queryDockStatus = line.split("RobotFaultQuery:")
+            rospy.loginfo(",RobotFaultQuery:".join(queryDockStatus)[1:])
+            pub.publish(''.join(queryDockStatus))
+            rate.sleep()
+
 def queryMotors():
     pub = rospy.Publisher('ldarcl_queryMotors', String, queue_size=10)
     rospy.init_node('ld_topic_publisher', anonymous=True)
@@ -435,6 +466,7 @@ if __name__ == '__main__':
             odometer()
             oneLineStatus()
             queryDockStatus()
+            queryFaults()
             queryMotors()
             queueShowRobotLocal()
             waitTaskState()
