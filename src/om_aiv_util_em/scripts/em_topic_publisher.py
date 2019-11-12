@@ -32,7 +32,7 @@ port = rospy.get_param("port")
 connecttcp.connect(str(ip_address), port)
 
 def getDateTime():
-    pub = rospy.Publisher('ldarcl_getDateTime', String, queue_size=10)
+    pub = rospy.Publisher('ldarcl_em_getDateTime', String, queue_size=10)
     rospy.init_node('em_topic_publisher', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
@@ -63,7 +63,7 @@ def getDateTime():
             rate.sleep()
 
 def queryFaults():
-    pub = rospy.Publisher('ldarcl_queryFaults', String, queue_size=10)
+    pub = rospy.Publisher('ldarcl_em_queryFaults', String, queue_size=10)
     rospy.init_node('em_topic_publisher', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
@@ -94,7 +94,7 @@ def queryFaults():
             rate.sleep()
 
 def queueShow():
-    pub = rospy.Publisher('ldarcl_queueShow', String, queue_size=10)
+    pub = rospy.Publisher('ldarcl_em_queueShow', String, queue_size=10)
     rospy.init_node('em_topic_publisher', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
@@ -129,6 +129,37 @@ def queueShow():
             pub.publish(''.join(queryMotors))
             rate.sleep()
 
+def queueShowCompleted():
+    pub = rospy.Publisher('ldarcl_em_queueShowCompleted', String, queue_size=10)
+    rospy.init_node('em_topic_publisher', anonymous=True)
+    rate = rospy.Rate(10) # 10hz
+    print(Style.RESET_ALL)
+    print(Fore.GREEN)
+    print "Showing completed queues..."
+    command = "queueShowCompleted"
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            if "EndQueueShowCompleted" in rcv:
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+
+    for line in rcv.splitlines():
+        if 'QueueShowCompleted:' in line:
+            queryMotors = line.split("QueueShowCompleted:")
+            rospy.loginfo(",QueueShowCompleted:".join(queryMotors)[1:])
+            pub.publish(''.join(queryMotors))
+            rate.sleep()
+
 
 if __name__ == '__main__':
     try:
@@ -136,6 +167,7 @@ if __name__ == '__main__':
             getDateTime()
             queryFaults()
             queueShow()
+            queueShowCompleted()
 
     except rospy.ROSInterruptException:
         pass
