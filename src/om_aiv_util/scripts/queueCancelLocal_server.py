@@ -17,27 +17,27 @@ connecttcp.connect(str(ip_address), port)
 from om_aiv_util.srv import Service4,Service4Response
 import rospy
 
-def handle_queueCancel(req):
+def handle_queueCancelLocal(req):
     global a, b, c, d
     a = req.a
     b = req.b
     c = req.c
     d = req.d
-    queueCancel()
+    queueCancelLocal()
     # return Service5Response(req.a + req.b + req.c + req.d + req.e)
     return rcv
 
-def queueCancel_server():
-    rospy.init_node('queueCancel_server')
-    s = rospy.Service('queueCancel', Service4, handle_queueCancel)
+def queueCancelLocal_server():
+    rospy.init_node('queueCancelLocal_server')
+    s = rospy.Service('queueCancelLocal', Service4, handle_queueCancelLocal)
     rospy.spin()
 
-def queueCancel():
+def queueCancelLocal():
     global rcv
-    pub = rospy.Publisher('arcl_queueCancel', String, queue_size=10)
+    pub = rospy.Publisher('arcl_queueCancelLocal', String, queue_size=10)
     # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
-    command = "queueCancel {}".format(a + " " + b + " \"" + c + "\" " + d)
+    command = "queueCancelLocal {}".format(a + " " + b + " \"" + c + "\" " + d)
     command = command.encode('ascii')
     print "Running command: ", command
     s.send(command+b"\r\n")
@@ -63,4 +63,4 @@ def queueCancel():
         return errormsg
 
 if __name__ == "__main__":
-    queueCancel_server()
+    queueCancelLocal_server()

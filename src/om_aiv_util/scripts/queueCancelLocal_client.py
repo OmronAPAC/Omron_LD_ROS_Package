@@ -2,10 +2,10 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def newConfigParam_client(a, b , c, d):
-    rospy.wait_for_service('newConfigParam')
+def queueCancelLocal_client(a, b , c, d):
+    rospy.wait_for_service('queueCancelLocal')
     try:
-        add_two_ints = rospy.ServiceProxy('newConfigParam', Service4)
+        add_two_ints = rospy.ServiceProxy('queueCancelLocal', Service4)
         resp1 = add_two_ints(a, b, c, d)
         return resp1.device
     except rospy.ServiceException, error:
@@ -35,4 +35,4 @@ if __name__ == "__main__":
         print usage()
         sys.exit(1)
     print "running command"
-    print newConfigParam_client(a, b , c, d)
+    print queueCancelLocal_client(a, b , c, d)
