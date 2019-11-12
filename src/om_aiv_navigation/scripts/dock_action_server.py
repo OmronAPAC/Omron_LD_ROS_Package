@@ -8,7 +8,7 @@ from colorama import Fore, Back, Style
 import rospy
 from std_msgs.msg import String
 from std_msgs.msg import Float32
-from ld_actions.msg import UndockAction, UndockFeedback, UndockResult
+from ld_actions.msg import DockAction, DockFeedback, DockResult
 import math
 import numpy as np
 import socket
@@ -32,13 +32,13 @@ class ActionServer():
 
     def __init__(self):
         self.a_server = actionlib.SimpleActionServer(
-            "undock", UndockAction, execute_cb=self.execute_cb, auto_start=False)
+            "dock", DockAction, execute_cb=self.execute_cb, auto_start=False)
         self.a_server.start()
 
     def execute_cb(self, goal):
         success = True
-        feedback = UndockFeedback()
-        result = UndockResult()
+        feedback = DockFeedback()
+        result = DockResult()
         task = goal.goal_undock
         rate = rospy.Rate(10) # 10hz
         print(Style.RESET_ALL)
@@ -55,11 +55,13 @@ class ActionServer():
             self.a_server.publish_feedback(feedback)
             while not rospy.is_shutdown():
                 #check for required data
-                if "Undocked" in rcv:
+                if "Docked" in rcv:
                     break
                 else:
                     data = socket.recv(BUFFER_SIZE)
                     rcv = rcv + data.encode('ascii', 'ignore')
+                    feedback.received_data = rcv
+                    self.a_server.publish_feedback(feedback)
 
         except socket.error as e:
             print("Connection  failed")
@@ -67,14 +69,14 @@ class ActionServer():
         while not rospy.is_shutdown():
             for line in rcv.splitlines():
                 #print required data
-                if 'Undocked' in line:
+                if 'Docked' in line:
                     i = 1
-                    doTask = line.split("Undocked")
-                    rospy.loginfo(",Undocked".join(doTask)[1:])
+                    doTask = line.split("Docked")
+                    rospy.loginfo(",Docked".join(doTask)[1:])
                     rate.sleep()
                     success = True
                     rcv = str(rcv.splitlines())
-                    result.status = (",Undocked".join(doTask)[1:])
+                    result.status = (",Docked".join(doTask)[1:])
                     self.a_server.set_succeeded(result)
                     return(0)
 
@@ -82,6 +84,6 @@ class ActionServer():
             self.a_server.set_succeeded(result)
 
 if __name__ == "__main__":
-    rospy.init_node("undock_action_server")
+    rospy.init_node("dock_action_server")
     s = ActionServer()
     rospy.spin()

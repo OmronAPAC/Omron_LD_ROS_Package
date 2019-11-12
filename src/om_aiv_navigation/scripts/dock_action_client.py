@@ -2,19 +2,19 @@
 
 import rospy
 import actionlib
-from ld_actions.msg import UndockAction, UndockGoal
+from ld_actions.msg import DockAction, DockGoal
 
 def feedback_cb(msg):
  print 'Feedback received:', msg
 
 def call_server():
 
-    client = actionlib.SimpleActionClient('undock', UndockAction)
+    client = actionlib.SimpleActionClient('dock', DockAction)
 
     client.wait_for_server()
 
-    goal = UndockGoal()
-    goal.goal_undock = "dock"
+    goal = DockGoal()
+    goal.goal_dock = "dock"
 
     client.send_goal(goal, feedback_cb=feedback_cb)
 
@@ -27,7 +27,7 @@ def call_server():
 if __name__ == '__main__':
 
     try:
-        rospy.init_node('undock_action_client')
+        rospy.init_node('dock_action_client')
         result = call_server()
         print 'The result is:', result
     except rospy.ROSInterruptException as e:
