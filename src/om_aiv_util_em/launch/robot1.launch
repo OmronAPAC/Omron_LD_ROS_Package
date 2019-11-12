@@ -2,11 +2,13 @@
 
   <!-- BEGIN ROBOT 1-->
   <group ns="robot1">
-    <node name="em_topic_publisher" pkg="om_aiv_util_em" type="em_topic_publisher.py" output="screen" />
+    <!-- <node name="em_topic_publisher" pkg="om_aiv_util_em" type="em_topic_publisher.py" output="screen" /> -->
+    <node name="payloadQuery_server" pkg="om_aiv_util_em" type="payloadQuery_server.py" output="screen" />
 
 
       <param name="ip_address" value="172.21.5.120" />
       <param name="port" value="7171" />
+      <param name="robot" value="robot1" />
   </group>
 
 </launch>

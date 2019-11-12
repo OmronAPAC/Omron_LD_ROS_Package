@@ -3,9 +3,9 @@ import sys
 import rospy
 from om_aiv_util.srv import *
 def payloadQuery_client(a, b):
-    rospy.wait_for_service('payloadQuery')
+    rospy.wait_for_service('robot1/payloadQuery')
     try:
-        add_two_ints = rospy.ServiceProxy('payloadQuery', Service2)
+        add_two_ints = rospy.ServiceProxy('robot1/payloadQuery', Service2)
         resp1 = add_two_ints(a, b)
         return resp1.device
     except rospy.ServiceException, error:
