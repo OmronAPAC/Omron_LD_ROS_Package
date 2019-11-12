@@ -1,0 +1,24 @@
+<!-- <launch>
+<node name="ld_status_publisher" pkg="om_aiv_util" type="ld_status_publisher.py" />
+<node name="ld_status_publisher_2" pkg="om_aiv_util" type="ld_status_publisher_2.py" />
+</launch> -->
+
+<launch>
+
+  <!-- BEGIN ROBOT 1-->
+  <group ns="robot1">
+    <node name="ld_status_publisher" pkg="om_aiv_util" type="ld_status_publisher.py" output="screen" />
+    <node name="ld_topic_publisher" pkg="om_aiv_util" type="ld_topic_publisher.py" output="screen" />
+      <param name="ip_address" value="172.21.5.122" />
+      <param name="port" value="7171" />
+  </group>
+
+  <!-- BEGIN ROBOT 2-->
+  <group ns="robot2">
+    <node name="ld_status_publisher" pkg="om_aiv_util" type="ld_status_publisher.py" output="screen" />
+    <node name="ld_topic_publisher" pkg="om_aiv_util" type="ld_topic_publisher.py" output="screen" />
+      <param name="ip_address" value="172.21.5.123" />
+      <param name="port" value="7171" />
+  </group>
+
+</launch>
