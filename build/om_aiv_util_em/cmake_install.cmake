@@ -129,6 +129,10 @@ file(INSTALL DESTINATION "/home/tthmatt/ld_ROS/install" TYPE FILE FILES "/home/t
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/om_aiv_util_em/srv" TYPE FILE FILES "/home/tthmatt/ld_ROS/src/om_aiv_util_em/srv/Service.srv")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/tthmatt/ld_ROS/build/om_aiv_util_em/catkin_generated/installspace/om_aiv_util_em.pc")
 endif()
 

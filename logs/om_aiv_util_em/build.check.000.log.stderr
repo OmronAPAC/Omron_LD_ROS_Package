@@ -1,0 +1,5 @@
+[31m[1mCMake Error[0m at /home/tthmatt/ld_ROS/src/om_aiv_util_em/CMakeLists.txt:57 (add_service_files):
+  Unknown CMake command "add_service_files".
+
+
+make: *** [cmake_check_build_system] Error 1
