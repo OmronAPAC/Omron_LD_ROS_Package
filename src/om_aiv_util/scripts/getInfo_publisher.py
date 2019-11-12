@@ -67,13 +67,13 @@ def getInfo_WirelessLink():
             pub.publish(''.join(applicationFaultQuery))
             rate.sleep()
             break
-        #if there are no faults print "Np faults"
-        if 'ApplicationFaultQuery:' not in line:
+
+        if 'Info:' not in line:
             rospy.loginfo("No info")
             pub.publish("No info")
             rate.sleep()
 
-def getinfo_WirelessQuality():
+def getInfo_WirelessQuality():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_WirelessQuality', String, queue_size=10)
     #specify node name
@@ -109,13 +109,13 @@ def getinfo_WirelessQuality():
             pub.publish(''.join(applicationFaultQuery))
             rate.sleep()
             break
-        #if there are no faults print "Np faults"
-        if 'ApplicationFaultQuery:' not in line:
+
+        if 'Info:' not in line:
             rospy.loginfo("No info")
             pub.publish("No info")
             rate.sleep()
 
-def getinfo_Odometer():
+def getInfo_Odometer():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_Odometer', String, queue_size=10)
     #specify node name
@@ -151,18 +151,104 @@ def getinfo_Odometer():
             pub.publish(''.join(applicationFaultQuery))
             rate.sleep()
             break
-        #if there are no faults print "Np faults"
-        if 'ApplicationFaultQuery:' not in line:
+
+        if 'Info:' not in line:
             rospy.loginfo("No info")
             pub.publish("No info")
             rate.sleep()
 
+def getInfo_HourMeter():
+    #specify topic name
+    pub = rospy.Publisher('ldarcl_getInfo_HourMeter', String, queue_size=10)
+    #specify node name
+    rospy.init_node('getInfo_publisher', anonymous=True)
+    rate = rospy.Rate(10) # 10hz
+    print(Style.RESET_ALL)
+    print(Fore.GREEN)
+    #send command to arcl
+    command = "getInfo HourMeter"
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #keep receiving data until require data is received
+            if "Info" in rcv:
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+    #check for required data
+    for line in rcv.splitlines():
+        if 'Info:' in line:
+            applicationFaultQuery = line.split("Info:")
+            #print required data
+            rospy.loginfo(",Info:".join(applicationFaultQuery)[1:])
+            #publish data
+            pub.publish(''.join(applicationFaultQuery))
+            rate.sleep()
+            break
+
+        if 'Info:' not in line:
+            rospy.loginfo("No info")
+            pub.publish("No info")
+            rate.sleep()
+
+def getInfo_Temperature():
+    #specify topic name
+    pub = rospy.Publisher('ldarcl_getInfo_Temperature', String, queue_size=10)
+    #specify node name
+    rospy.init_node('getInfo_publisher', anonymous=True)
+    rate = rospy.Rate(10) # 10hz
+    print(Style.RESET_ALL)
+    print(Fore.GREEN)
+    #send command to arcl
+    command = "getInfo Temperature(C)"
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #keep receiving data until require data is received
+            if "Info" in rcv:
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+    #check for required data
+    for line in rcv.splitlines():
+        if 'Info:' in line:
+            applicationFaultQuery = line.split("Info:")
+            #print required data
+            rospy.loginfo(",Info:".join(applicationFaultQuery)[1:])
+            #publish data
+            pub.publish(''.join(applicationFaultQuery))
+            rate.sleep()
+            break
+
+        if 'Info:' not in line:
+            rospy.loginfo("No info")
+            pub.publish("No info")
+            rate.sleep()
 
 if __name__ == '__main__':
     try:
         while not rospy.is_shutdown():
             getInfo_WirelessLink()
-            getinfo_WirelessQuality()
+            getInfo_WirelessQuality()
+            getInfo_Odometer()
+            getInfo_HourMeter()
+            getInfo_Temperature()
 
     except rospy.ROSInterruptException:
         pass
