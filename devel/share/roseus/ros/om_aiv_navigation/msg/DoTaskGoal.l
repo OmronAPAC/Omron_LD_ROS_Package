@@ -1,0 +1,1 @@
+/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/roseus/ros/om_aiv_navigation/msg/DoTaskGoal.l

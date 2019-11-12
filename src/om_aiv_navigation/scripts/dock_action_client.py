@@ -2,7 +2,7 @@
 
 import rospy
 import actionlib
-from ld_actions.msg import DockAction, DockGoal
+from om_aiv_navigation.msg import DockAction, DockGoal
 
 def feedback_cb(msg):
  print 'Feedback received:', msg

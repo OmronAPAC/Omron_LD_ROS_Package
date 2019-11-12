@@ -8,7 +8,7 @@ from colorama import Fore, Back, Style
 import rospy
 from std_msgs.msg import String
 from std_msgs.msg import Float32
-from ld_actions.msg import DockAction, DockFeedback, DockResult
+from om_aiv_navigation.msg import DockAction, DockFeedback, DockResult
 import math
 import numpy as np
 import socket
@@ -39,7 +39,7 @@ class ActionServer():
         success = True
         feedback = DockFeedback()
         result = DockResult()
-        task = goal.goal_undock
+        task = goal.goal_dock
         rate = rospy.Rate(10) # 10hz
         print(Style.RESET_ALL)
         print(Fore.GREEN)

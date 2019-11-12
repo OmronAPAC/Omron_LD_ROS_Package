@@ -1,0 +1,20 @@
+[  0%] Built target _om_aiv_util_generate_messages_check_deps_ServiceExample
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target _om_aiv_util_generate_messages_check_deps_Service4
+[  0%] Built target _om_aiv_util_generate_messages_check_deps_Service2
+[  0%] Built target _om_aiv_util_generate_messages_check_deps_Service5
+[  0%] Built target _om_aiv_util_generate_messages_check_deps_Service9
+[  0%] Built target _om_aiv_util_generate_messages_check_deps_Service3
+[  0%] Built target _om_aiv_util_generate_messages_check_deps_AddTwoInts
+[  0%] Built target _om_aiv_util_generate_messages_check_deps_Service
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target _om_aiv_util_generate_messages_check_deps_Location
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_lisp
+[ 18%] Built target om_aiv_util_generate_messages_cpp
+[ 37%] Built target om_aiv_util_generate_messages_nodejs
+[ 60%] Built target om_aiv_util_generate_messages_py
+[ 79%] Built target om_aiv_util_generate_messages_lisp
+[100%] Built target om_aiv_util_generate_messages_eus
+[100%] Built target om_aiv_util_generate_messages

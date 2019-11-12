@@ -1,5 +1,5 @@
 # Goal
-int32 goal_dock
+string goal_dock
 
 ---
 # Result

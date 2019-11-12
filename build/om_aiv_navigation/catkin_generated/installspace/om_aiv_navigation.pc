@@ -3,6 +3,6 @@ prefix=/home/tthmatt/ld_ROS/install
 Name: om_aiv_navigation
 Description: Description of om_aiv_navigation
 Version: 0.0.0
-Cflags: 
-Libs: -L/home/tthmatt/ld_ROS/install/lib 
-Requires: 
+Cflags: -I/home/tthmatt/ld_ROS/install/include
+Libs: -L/home/tthmatt/ld_ROS/install/lib -lld_actions
+Requires: actionlib_msgs rospy std_msgs message_runtime
