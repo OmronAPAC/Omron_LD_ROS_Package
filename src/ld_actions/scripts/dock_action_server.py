@@ -55,11 +55,13 @@ class ActionServer():
             self.a_server.publish_feedback(feedback)
             while not rospy.is_shutdown():
                 #check for required data
-                if "Undocked" in rcv:
+                if "Docked" in rcv:
                     break
                 else:
                     data = socket.recv(BUFFER_SIZE)
                     rcv = rcv + data.encode('ascii', 'ignore')
+                    feedback.received_data = rcv
+                    self.a_server.publish_feedback(feedback)
 
         except socket.error as e:
             print("Connection  failed")
@@ -67,14 +69,14 @@ class ActionServer():
         while not rospy.is_shutdown():
             for line in rcv.splitlines():
                 #print required data
-                if 'Undocked' in line:
+                if 'Docked' in line:
                     i = 1
-                    doTask = line.split("Undocked")
-                    rospy.loginfo(",Undocked".join(doTask)[1:])
+                    doTask = line.split("Docked")
+                    rospy.loginfo(",Docked".join(doTask)[1:])
                     rate.sleep()
                     success = True
                     rcv = str(rcv.splitlines())
-                    result.status = (",Undocked".join(doTask)[1:])
+                    result.status = (",Docked".join(doTask)[1:])
                     self.a_server.set_succeeded(result)
                     return(0)
 

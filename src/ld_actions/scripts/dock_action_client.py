@@ -14,7 +14,7 @@ def call_server():
     client.wait_for_server()
 
     goal = UndockGoal()
-    goal.goal_undock = "undock"
+    goal.goal_undock = "dock"
 
     client.send_goal(goal, feedback_cb=feedback_cb)
 
