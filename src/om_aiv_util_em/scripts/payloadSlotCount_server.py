@@ -42,7 +42,7 @@ def queueShowRobot():
         rcv = data.encode('ascii', 'ignore')
         while not rospy.is_shutdown():
             #check for required data
-            if "EndQueueShowRobot" in rcv:
+            if "EndPayloadSlotCount" in rcv:
                 print rcv
                 return rcv
                 break

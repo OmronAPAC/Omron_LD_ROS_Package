@@ -14,26 +14,28 @@ ip_address = "172.21.5.120"
 port = 7171
 connecttcp.connect(str(ip_address), port)
 
-from om_aiv_util.srv import Service,ServiceResponse
+from om_aiv_util.srv import Service2,Service2Response
 import rospy
 
-def handle_queueShowRobot(req):
-    global text
-    text = req.a
-    queueShowRobot()
+def handle_payloadQuery(req):
+    global a, b
+    a = req.a
+    b = req.b
+    payloadQuery()
+    # return Service5Response(req.a + req.b + req.c + req.d + req.e)
     return rcv
 
-def queueShowRobot_server():
-    rospy.init_node('queueShowRobot_server')
-    s = rospy.Service('queueShowRobot', Service, handle_queueShowRobot)
+def payloadQuery_server():
+    rospy.init_node('payloadQuery_server')
+    s = rospy.Service('payloadQuery', Service2, handle_payloadQuery)
     rospy.spin()
 
-def queueShowRobot():
+def payloadQuery():
     global rcv
-    pub = rospy.Publisher('arcl_queueShowRobot', String, queue_size=10)
+    pub = rospy.Publisher('arcl_payloadQuery', String, queue_size=10)
     # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
-    command = "queueShowRobot {}".format(text)
+    command = "payloadQuery {}".format(a + " " + b)
     command = command.encode('ascii')
     print "Running command: ", command
     s.send(command+b"\r\n")
@@ -42,7 +44,11 @@ def queueShowRobot():
         rcv = data.encode('ascii', 'ignore')
         while not rospy.is_shutdown():
             #check for required data
-            if "EndQueueShowRobot" in rcv:
+            if "EndPayloadQuery" in rcv:
+                print rcv
+                return rcv
+                break
+            if "CommandErrorDescription" in rcv:
                 print rcv
                 return rcv
                 break
@@ -50,9 +56,9 @@ def queueShowRobot():
                 data = s.recv(BUFFER_SIZE)
                 rcv = rcv + data.encode('ascii', 'ignore')
 
-    except socket.error as e:
+    except socket.error as errormsg:
         print("Connection  failed")
-        return e
+        return errormsg
 
 if __name__ == "__main__":
-    queueShowRobot_server()
+    payloadQuery_server()
