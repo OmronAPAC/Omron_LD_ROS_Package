@@ -3,6 +3,9 @@
 #### om_aiv_util
 robot status commands 
 
+#### om_aiv_util_em
+enterprise manager commands 
+
 #### om_aiv_navigation
 navigation commands like dock, undock, dotask move , patrol
 
@@ -35,10 +38,11 @@ For more than 2 robots:
 roslaunch om_aiv_util ldarcl_status.launch
 roslaunch om_aiv_navigation ld_navigation.launch
 ```
+
+View the topics published and do a rostopic echo (topic name) to view the data
 ```
 rostopic list
 ```
-View the topics published and do a rostopic echo (topic name) to view the data
 
 To run navigation commands example to move the robot 1000mm
 ```
