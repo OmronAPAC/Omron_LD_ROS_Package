@@ -1,4 +1,4 @@
 (cl:in-package ld_actions-msg)
-(cl:export '(ISDOCKED-VAL
-          ISDOCKED
+(cl:export '(DOCK_GOAL-VAL
+          DOCK_GOAL
 ))

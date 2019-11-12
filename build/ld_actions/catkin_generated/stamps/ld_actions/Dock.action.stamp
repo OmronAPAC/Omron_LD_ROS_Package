@@ -1,9 +1,9 @@
 # Goal
-int32 isdocked
+int32 dock_goal
 
 ---
 # Result
-string[] docking_status
+string status
 
 ---
 # Feedback
