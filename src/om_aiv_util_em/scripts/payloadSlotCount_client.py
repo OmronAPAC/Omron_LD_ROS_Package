@@ -2,10 +2,10 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def queueShowRobot_client(x):
-    rospy.wait_for_service('queueShowRobot')
+def payloadSlotCount_client(x):
+    rospy.wait_for_service('payloadSlotCount')
     try:
-        add_two_ints = rospy.ServiceProxy('queueShowRobot', Service)
+        add_two_ints = rospy.ServiceProxy('payloadSlotCount', Service)
         resp1 = add_two_ints(x)
         return resp1.device
     except rospy.ServiceException, e:
@@ -23,4 +23,4 @@ if __name__ == "__main__":
         print usage()
         sys.exit(1)
     print "running command"
-    print queueShowRobot_client(x)
+    print payloadSlotCount_client(x)

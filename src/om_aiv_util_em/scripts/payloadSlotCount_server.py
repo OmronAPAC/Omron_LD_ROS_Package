@@ -17,23 +17,23 @@ connecttcp.connect(str(ip_address), port)
 from om_aiv_util.srv import Service,ServiceResponse
 import rospy
 
-def handle_queueShowRobot(req):
+def handle_payloadSlotCount(req):
     global text
     text = req.a
-    queueShowRobot()
+    payloadSlotCount()
     return rcv
 
-def queueShowRobot_server():
-    rospy.init_node('queueShowRobot_server')
-    s = rospy.Service('queueShowRobot', Service, handle_queueShowRobot)
+def payloadSlotCount_server():
+    rospy.init_node('payloadSlotCount_server')
+    s = rospy.Service('payloadSlotCount', Service, handle_payloadSlotCount)
     rospy.spin()
 
-def queueShowRobot():
+def payloadSlotCount():
     global rcv
-    pub = rospy.Publisher('arcl_queueShowRobot', String, queue_size=10)
+    pub = rospy.Publisher('arcl_payloadSlotCount', String, queue_size=10)
     # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
-    command = "queueShowRobot {}".format(text)
+    command = "payloadSlotCount {}".format(text)
     command = command.encode('ascii')
     print "Running command: ", command
     s.send(command+b"\r\n")
@@ -55,4 +55,4 @@ def queueShowRobot():
         return e
 
 if __name__ == "__main__":
-    queueShowRobot_server()
+    payloadSlotCount_server()
