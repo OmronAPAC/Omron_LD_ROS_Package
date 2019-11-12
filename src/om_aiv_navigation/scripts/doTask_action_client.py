@@ -2,7 +2,7 @@
 
 import rospy
 import actionlib
-from ld_actions.msg import DoTaskAction, DoTaskGoal
+from om_aiv_navigation.msg import DoTaskAction, DoTaskGoal
 
 def feedback_cb(msg):
  print 'Feedback received:', msg

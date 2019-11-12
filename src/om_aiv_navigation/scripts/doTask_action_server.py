@@ -8,7 +8,7 @@ from colorama import Fore, Back, Style
 import rospy
 from std_msgs.msg import String
 from std_msgs.msg import Float32
-from ld_actions.msg import DoTaskAction, DoTaskFeedback, DoTaskResult
+from om_aiv_navigation.msg import DoTaskAction, DoTaskFeedback, DoTaskResult
 import math
 import numpy as np
 import socket
