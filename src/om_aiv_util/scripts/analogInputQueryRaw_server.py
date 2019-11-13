@@ -10,32 +10,32 @@ from std_msgs.msg import String
 BUFFER_SIZE = 1024
 # ip_address = rospy.get_param("ip_address")
 # port = rospy.get_param("port")
-ip_address = "172.21.5.125"
+ip_address = "168.3.201.123"
 port = 7171
 connecttcp.connect(str(ip_address), port)
 
 from om_aiv_util.srv import Service,ServiceResponse
 import rospy
 
-def handle_arclSendText(req):
+def handle_analogInputQueryRaw(req):
     global text
     print "Returning", req.a
     text = req.a
-    arclSendText()
+    analogInputQueryRaw()
     # return ServiceResponse(req.a)
     return rcv
 
-def arclSendText_server():
-    rospy.init_node('arclSendText_server')
-    s = rospy.Service('arclSendText', Service, handle_arclSendText)
+def analogInputQueryRaw_server():
+    rospy.init_node('analogInputQueryRaw_server')
+    s = rospy.Service('analogInputQueryRaw', Service, handle_analogInputQueryRaw)
     rospy.spin()
 
-def arclSendText():
+def analogInputQueryRaw():
     global rcv
-    pub = rospy.Publisher('arcl_arclSendText', String, queue_size=10)
+    pub = rospy.Publisher('arcl_analogInputQueryRaw', String, queue_size=10)
     # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
-    command = "arclSendText {}".format(text)
+    command = "analogInputQueryRaw {}".format(text)
     command = command.encode('ascii')
     print "Running command: ", command
     s.send(command+b"\r\n")
@@ -44,7 +44,7 @@ def arclSendText():
         rcv = data.encode('ascii', 'ignore')
         while not rospy.is_shutdown():
             #check for required data
-            if text in rcv:
+            if "AnalogInputRaw:" in rcv:
                 print rcv
                 return rcv
                 break
@@ -61,4 +61,4 @@ def arclSendText():
         return e
 
 if __name__ == "__main__":
-    arclSendText_server()
+    analogInputQueryRaw_server()
