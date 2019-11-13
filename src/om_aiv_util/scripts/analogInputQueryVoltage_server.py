@@ -17,24 +17,23 @@ connecttcp.connect(str(ip_address), port)
 from om_aiv_util.srv import Service,ServiceResponse
 import rospy
 
-def handle_analogInputQueryRaw(req):
+def handle_analogInputQueryVoltage(req):
     global text
     text = req.a
-    analogInputQueryRaw()
+    analogInputQueryVoltage()
     # return ServiceResponse(req.a)
     return rcv
 
-def analogInputQueryRaw_server():
-    rospy.init_node('analogInputQueryRaw_server')
-    s = rospy.Service('analogInputQueryRaw', Service, handle_analogInputQueryRaw)
+def analogInputQueryVoltage_server():
+    rospy.init_node('analogInputQueryVoltage_server')
+    s = rospy.Service('analogInputQueryVoltage', Service, handle_analogInputQueryVoltage)
     rospy.spin()
 
-def analogInputQueryRaw():
+def analogInputQueryVoltage():
     global rcv
-    pub = rospy.Publisher('arcl_analogInputQueryRaw', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
+    pub = rospy.Publisher('arcl_analogInputQueryVoltage', String, queue_size=10)
     rate = rospy.Rate(10) # 10hz
-    command = "analogInputQueryRaw {}".format(text)
+    command = "analogInputQueryVoltage {}".format(text)
     command = command.encode('ascii')
     print "Running command: ", command
     s.send(command+b"\r\n")
@@ -43,7 +42,7 @@ def analogInputQueryRaw():
         rcv = data.encode('ascii', 'ignore')
         while not rospy.is_shutdown():
             #check for required data
-            if "AnalogInputRaw:" in rcv:
+            if "AnalogInputVoltage:" in rcv:
                 print rcv
                 return rcv
                 break
@@ -60,4 +59,4 @@ def analogInputQueryRaw():
         return e
 
 if __name__ == "__main__":
-    analogInputQueryRaw_server()
+    analogInputQueryVoltage_server()
