@@ -26,6 +26,12 @@ from ._GoToActionResult import *
 from ._GoToFeedback import *
 from ._GoToGoal import *
 from ._GoToResult import *
+from ._PatrolAction import *
+from ._PatrolActionFeedback import *
+from ._PatrolActionGoal import *
+from ._PatrolActionResult import *
+from ._PatrolFeedback import *
+from ._PatrolGoal import *
 from ._PatrolOnceAction import *
 from ._PatrolOnceActionFeedback import *
 from ._PatrolOnceActionGoal import *
@@ -33,6 +39,7 @@ from ._PatrolOnceActionResult import *
 from ._PatrolOnceFeedback import *
 from ._PatrolOnceGoal import *
 from ._PatrolOnceResult import *
+from ._PatrolResult import *
 from ._PatrolResumeAction import *
 from ._PatrolResumeActionFeedback import *
 from ._PatrolResumeActionGoal import *

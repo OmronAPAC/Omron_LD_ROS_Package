@@ -69,13 +69,15 @@ DoTask.action
 ExecuteMacro.action
 PatrolOnce.action
 GoTo.action
+PatrolOnce.action
+Patrol.action
 PatrolResume.action
 Play.action
 Stop.action
 Undock.action
 )
 
-## Generate added messages and services with any dependencies listed here 
+## Generate added messages and services with any dependencies listed here
 generate_messages(
 DEPENDENCIES
 actionlib_msgs#   std_msgs

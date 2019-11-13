@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "om_aiv_navigation: 63 messages, 0 services")
+message(STATUS "om_aiv_navigation: 77 messages, 0 services")
 
 set(MSG_I_FLAGS "-Iom_aiv_navigation:/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg;-Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg;-Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg")
 
@@ -162,6 +162,11 @@ add_custom_target(_om_aiv_navigation_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "om_aiv_navigation" "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/StopActionResult.msg" "actionlib_msgs/GoalID:om_aiv_navigation/StopResult:actionlib_msgs/GoalStatus:std_msgs/Header"
 )
 
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionGoal.msg" NAME_WE)
+add_custom_target(_om_aiv_navigation_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "om_aiv_navigation" "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionGoal.msg" "actionlib_msgs/GoalID:om_aiv_navigation/DoTaskGoal:std_msgs/Header"
+)
+
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/GoToActionGoal.msg" NAME_WE)
 add_custom_target(_om_aiv_navigation_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "om_aiv_navigation" "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/GoToActionGoal.msg" "actionlib_msgs/GoalID:om_aiv_navigation/GoToGoal:std_msgs/Header"
@@ -197,6 +202,11 @@ add_custom_target(_om_aiv_navigation_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "om_aiv_navigation" "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/ExecuteMacroAction.msg" "om_aiv_navigation/ExecuteMacroFeedback:actionlib_msgs/GoalID:om_aiv_navigation/ExecuteMacroActionResult:actionlib_msgs/GoalStatus:om_aiv_navigation/ExecuteMacroResult:om_aiv_navigation/ExecuteMacroActionFeedback:om_aiv_navigation/ExecuteMacroGoal:om_aiv_navigation/ExecuteMacroActionGoal:std_msgs/Header"
 )
 
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionResult.msg" NAME_WE)
+add_custom_target(_om_aiv_navigation_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "om_aiv_navigation" "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionResult.msg" "actionlib_msgs/GoalID:om_aiv_navigation/PatrolResult:actionlib_msgs/GoalStatus:std_msgs/Header"
+)
+
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResumeActionResult.msg" NAME_WE)
 add_custom_target(_om_aiv_navigation_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "om_aiv_navigation" "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResumeActionResult.msg" "om_aiv_navigation/PatrolResumeResult:actionlib_msgs/GoalID:actionlib_msgs/GoalStatus:std_msgs/Header"
@@ -222,14 +232,19 @@ add_custom_target(_om_aiv_navigation_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "om_aiv_navigation" "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskFeedback.msg" ""
 )
 
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResult.msg" NAME_WE)
+add_custom_target(_om_aiv_navigation_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "om_aiv_navigation" "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResult.msg" ""
+)
+
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PlayFeedback.msg" NAME_WE)
 add_custom_target(_om_aiv_navigation_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "om_aiv_navigation" "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PlayFeedback.msg" ""
 )
 
-get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionFeedback.msg" NAME_WE)
 add_custom_target(_om_aiv_navigation_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "om_aiv_navigation" "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionGoal.msg" "actionlib_msgs/GoalID:om_aiv_navigation/DoTaskGoal:std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "om_aiv_navigation" "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionFeedback.msg" "actionlib_msgs/GoalID:om_aiv_navigation/DoTaskFeedback:actionlib_msgs/GoalStatus:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PlayActionGoal.msg" NAME_WE)
@@ -287,9 +302,9 @@ add_custom_target(_om_aiv_navigation_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "om_aiv_navigation" "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DockAction.msg" "om_aiv_navigation/DockActionGoal:actionlib_msgs/GoalID:om_aiv_navigation/DockFeedback:actionlib_msgs/GoalStatus:om_aiv_navigation/DockResult:om_aiv_navigation/DockGoal:std_msgs/Header:om_aiv_navigation/DockActionResult:om_aiv_navigation/DockActionFeedback"
 )
 
-get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionFeedback.msg" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionGoal.msg" NAME_WE)
 add_custom_target(_om_aiv_navigation_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "om_aiv_navigation" "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionFeedback.msg" "actionlib_msgs/GoalID:om_aiv_navigation/DoTaskFeedback:actionlib_msgs/GoalStatus:std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "om_aiv_navigation" "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionGoal.msg" "actionlib_msgs/GoalID:om_aiv_navigation/PatrolGoal:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/GoToResult.msg" NAME_WE)
@@ -317,9 +332,19 @@ add_custom_target(_om_aiv_navigation_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "om_aiv_navigation" "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskAction.msg" "actionlib_msgs/GoalID:om_aiv_navigation/DoTaskFeedback:om_aiv_navigation/DoTaskActionFeedback:om_aiv_navigation/DoTaskActionResult:actionlib_msgs/GoalStatus:om_aiv_navigation/DoTaskGoal:om_aiv_navigation/DoTaskActionGoal:std_msgs/Header:om_aiv_navigation/DoTaskResult"
 )
 
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolAction.msg" NAME_WE)
+add_custom_target(_om_aiv_navigation_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "om_aiv_navigation" "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolAction.msg" "actionlib_msgs/GoalID:om_aiv_navigation/PatrolGoal:actionlib_msgs/GoalStatus:om_aiv_navigation/PatrolFeedback:om_aiv_navigation/PatrolActionFeedback:om_aiv_navigation/PatrolActionGoal:std_msgs/Header:om_aiv_navigation/PatrolResult:om_aiv_navigation/PatrolActionResult"
+)
+
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/StopResult.msg" NAME_WE)
 add_custom_target(_om_aiv_navigation_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "om_aiv_navigation" "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/StopResult.msg" ""
+)
+
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolGoal.msg" NAME_WE)
+add_custom_target(_om_aiv_navigation_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "om_aiv_navigation" "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolGoal.msg" ""
 )
 
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResumeActionGoal.msg" NAME_WE)
@@ -330,6 +355,16 @@ add_custom_target(_om_aiv_navigation_generate_messages_check_deps_${_filename}
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PlayResult.msg" NAME_WE)
 add_custom_target(_om_aiv_navigation_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "om_aiv_navigation" "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PlayResult.msg" ""
+)
+
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolFeedback.msg" NAME_WE)
+add_custom_target(_om_aiv_navigation_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "om_aiv_navigation" "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolFeedback.msg" ""
+)
+
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionFeedback.msg" NAME_WE)
+add_custom_target(_om_aiv_navigation_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "om_aiv_navigation" "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionFeedback.msg" "actionlib_msgs/GoalID:om_aiv_navigation/PatrolFeedback:actionlib_msgs/GoalStatus:std_msgs/Header"
 )
 
 #
@@ -360,6 +395,12 @@ _generate_msg_cpp(om_aiv_navigation
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResumeResult.msg"
   "${MSG_I_FLAGS}"
   ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/om_aiv_navigation
+)
+_generate_msg_cpp(om_aiv_navigation
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionResult.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResult.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/om_aiv_navigation
 )
 _generate_msg_cpp(om_aiv_navigation
@@ -531,6 +572,12 @@ _generate_msg_cpp(om_aiv_navigation
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/om_aiv_navigation
 )
 _generate_msg_cpp(om_aiv_navigation
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolGoal.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/om_aiv_navigation
+)
+_generate_msg_cpp(om_aiv_navigation
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/StopFeedback.msg"
   "${MSG_I_FLAGS}"
   ""
@@ -561,6 +608,12 @@ _generate_msg_cpp(om_aiv_navigation
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/om_aiv_navigation
 )
 _generate_msg_cpp(om_aiv_navigation
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionGoal.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/om_aiv_navigation
+)
+_generate_msg_cpp(om_aiv_navigation
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceActionFeedback.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceFeedback.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
@@ -588,6 +641,12 @@ _generate_msg_cpp(om_aiv_navigation
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionResult.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskResult.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/om_aiv_navigation
+)
+_generate_msg_cpp(om_aiv_navigation
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResult.msg"
+  "${MSG_I_FLAGS}"
+  ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/om_aiv_navigation
 )
 _generate_msg_cpp(om_aiv_navigation
@@ -693,6 +752,12 @@ _generate_msg_cpp(om_aiv_navigation
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/om_aiv_navigation
 )
 _generate_msg_cpp(om_aiv_navigation
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolAction.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolGoal.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolFeedback.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionFeedback.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResult.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionResult.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/om_aiv_navigation
+)
+_generate_msg_cpp(om_aiv_navigation
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/StopResult.msg"
   "${MSG_I_FLAGS}"
   ""
@@ -714,6 +779,18 @@ _generate_msg_cpp(om_aiv_navigation
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceAction.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceResult.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceActionFeedback.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceActionGoal.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceActionResult.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceFeedback.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/om_aiv_navigation
+)
+_generate_msg_cpp(om_aiv_navigation
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolFeedback.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/om_aiv_navigation
+)
+_generate_msg_cpp(om_aiv_navigation
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionFeedback.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolFeedback.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/om_aiv_navigation
 )
 
@@ -789,6 +866,8 @@ get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_nav
 add_dependencies(om_aiv_navigation_generate_messages_cpp _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/StopActionResult.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_cpp _om_aiv_navigation_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionGoal.msg" NAME_WE)
+add_dependencies(om_aiv_navigation_generate_messages_cpp _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/GoToActionGoal.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_cpp _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/StopActionFeedback.msg" NAME_WE)
@@ -803,6 +882,8 @@ get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_nav
 add_dependencies(om_aiv_navigation_generate_messages_cpp _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/ExecuteMacroAction.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_cpp _om_aiv_navigation_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionResult.msg" NAME_WE)
+add_dependencies(om_aiv_navigation_generate_messages_cpp _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResumeActionResult.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_cpp _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionResult.msg" NAME_WE)
@@ -813,9 +894,11 @@ get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_nav
 add_dependencies(om_aiv_navigation_generate_messages_cpp _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskFeedback.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_cpp _om_aiv_navigation_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResult.msg" NAME_WE)
+add_dependencies(om_aiv_navigation_generate_messages_cpp _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PlayFeedback.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_cpp _om_aiv_navigation_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionFeedback.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_cpp _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PlayActionGoal.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_cpp _om_aiv_navigation_generate_messages_check_deps_${_filename})
@@ -839,7 +922,7 @@ get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_nav
 add_dependencies(om_aiv_navigation_generate_messages_cpp _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DockAction.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_cpp _om_aiv_navigation_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionFeedback.msg" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionGoal.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_cpp _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/GoToResult.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_cpp _om_aiv_navigation_generate_messages_check_deps_${_filename})
@@ -851,11 +934,19 @@ get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_nav
 add_dependencies(om_aiv_navigation_generate_messages_cpp _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskAction.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_cpp _om_aiv_navigation_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolAction.msg" NAME_WE)
+add_dependencies(om_aiv_navigation_generate_messages_cpp _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/StopResult.msg" NAME_WE)
+add_dependencies(om_aiv_navigation_generate_messages_cpp _om_aiv_navigation_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolGoal.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_cpp _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResumeActionGoal.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_cpp _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PlayResult.msg" NAME_WE)
+add_dependencies(om_aiv_navigation_generate_messages_cpp _om_aiv_navigation_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolFeedback.msg" NAME_WE)
+add_dependencies(om_aiv_navigation_generate_messages_cpp _om_aiv_navigation_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionFeedback.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_cpp _om_aiv_navigation_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -889,6 +980,12 @@ _generate_msg_eus(om_aiv_navigation
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResumeResult.msg"
   "${MSG_I_FLAGS}"
   ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/om_aiv_navigation
+)
+_generate_msg_eus(om_aiv_navigation
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionResult.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResult.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/om_aiv_navigation
 )
 _generate_msg_eus(om_aiv_navigation
@@ -1060,6 +1157,12 @@ _generate_msg_eus(om_aiv_navigation
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/om_aiv_navigation
 )
 _generate_msg_eus(om_aiv_navigation
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolGoal.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/om_aiv_navigation
+)
+_generate_msg_eus(om_aiv_navigation
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/StopFeedback.msg"
   "${MSG_I_FLAGS}"
   ""
@@ -1090,6 +1193,12 @@ _generate_msg_eus(om_aiv_navigation
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/om_aiv_navigation
 )
 _generate_msg_eus(om_aiv_navigation
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionGoal.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/om_aiv_navigation
+)
+_generate_msg_eus(om_aiv_navigation
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceActionFeedback.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceFeedback.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
@@ -1117,6 +1226,12 @@ _generate_msg_eus(om_aiv_navigation
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionResult.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskResult.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/om_aiv_navigation
+)
+_generate_msg_eus(om_aiv_navigation
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResult.msg"
+  "${MSG_I_FLAGS}"
+  ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/om_aiv_navigation
 )
 _generate_msg_eus(om_aiv_navigation
@@ -1222,6 +1337,12 @@ _generate_msg_eus(om_aiv_navigation
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/om_aiv_navigation
 )
 _generate_msg_eus(om_aiv_navigation
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolAction.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolGoal.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolFeedback.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionFeedback.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResult.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionResult.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/om_aiv_navigation
+)
+_generate_msg_eus(om_aiv_navigation
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/StopResult.msg"
   "${MSG_I_FLAGS}"
   ""
@@ -1243,6 +1364,18 @@ _generate_msg_eus(om_aiv_navigation
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceAction.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceResult.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceActionFeedback.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceActionGoal.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceActionResult.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceFeedback.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/om_aiv_navigation
+)
+_generate_msg_eus(om_aiv_navigation
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolFeedback.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/om_aiv_navigation
+)
+_generate_msg_eus(om_aiv_navigation
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionFeedback.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolFeedback.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/om_aiv_navigation
 )
 
@@ -1318,6 +1451,8 @@ get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_nav
 add_dependencies(om_aiv_navigation_generate_messages_eus _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/StopActionResult.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_eus _om_aiv_navigation_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionGoal.msg" NAME_WE)
+add_dependencies(om_aiv_navigation_generate_messages_eus _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/GoToActionGoal.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_eus _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/StopActionFeedback.msg" NAME_WE)
@@ -1332,6 +1467,8 @@ get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_nav
 add_dependencies(om_aiv_navigation_generate_messages_eus _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/ExecuteMacroAction.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_eus _om_aiv_navigation_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionResult.msg" NAME_WE)
+add_dependencies(om_aiv_navigation_generate_messages_eus _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResumeActionResult.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_eus _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionResult.msg" NAME_WE)
@@ -1342,9 +1479,11 @@ get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_nav
 add_dependencies(om_aiv_navigation_generate_messages_eus _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskFeedback.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_eus _om_aiv_navigation_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResult.msg" NAME_WE)
+add_dependencies(om_aiv_navigation_generate_messages_eus _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PlayFeedback.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_eus _om_aiv_navigation_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionFeedback.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_eus _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PlayActionGoal.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_eus _om_aiv_navigation_generate_messages_check_deps_${_filename})
@@ -1368,7 +1507,7 @@ get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_nav
 add_dependencies(om_aiv_navigation_generate_messages_eus _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DockAction.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_eus _om_aiv_navigation_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionFeedback.msg" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionGoal.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_eus _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/GoToResult.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_eus _om_aiv_navigation_generate_messages_check_deps_${_filename})
@@ -1380,11 +1519,19 @@ get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_nav
 add_dependencies(om_aiv_navigation_generate_messages_eus _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskAction.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_eus _om_aiv_navigation_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolAction.msg" NAME_WE)
+add_dependencies(om_aiv_navigation_generate_messages_eus _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/StopResult.msg" NAME_WE)
+add_dependencies(om_aiv_navigation_generate_messages_eus _om_aiv_navigation_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolGoal.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_eus _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResumeActionGoal.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_eus _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PlayResult.msg" NAME_WE)
+add_dependencies(om_aiv_navigation_generate_messages_eus _om_aiv_navigation_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolFeedback.msg" NAME_WE)
+add_dependencies(om_aiv_navigation_generate_messages_eus _om_aiv_navigation_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionFeedback.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_eus _om_aiv_navigation_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -1418,6 +1565,12 @@ _generate_msg_lisp(om_aiv_navigation
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResumeResult.msg"
   "${MSG_I_FLAGS}"
   ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/om_aiv_navigation
+)
+_generate_msg_lisp(om_aiv_navigation
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionResult.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResult.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/om_aiv_navigation
 )
 _generate_msg_lisp(om_aiv_navigation
@@ -1589,6 +1742,12 @@ _generate_msg_lisp(om_aiv_navigation
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/om_aiv_navigation
 )
 _generate_msg_lisp(om_aiv_navigation
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolGoal.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/om_aiv_navigation
+)
+_generate_msg_lisp(om_aiv_navigation
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/StopFeedback.msg"
   "${MSG_I_FLAGS}"
   ""
@@ -1619,6 +1778,12 @@ _generate_msg_lisp(om_aiv_navigation
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/om_aiv_navigation
 )
 _generate_msg_lisp(om_aiv_navigation
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionGoal.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/om_aiv_navigation
+)
+_generate_msg_lisp(om_aiv_navigation
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceActionFeedback.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceFeedback.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
@@ -1646,6 +1811,12 @@ _generate_msg_lisp(om_aiv_navigation
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionResult.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskResult.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/om_aiv_navigation
+)
+_generate_msg_lisp(om_aiv_navigation
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResult.msg"
+  "${MSG_I_FLAGS}"
+  ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/om_aiv_navigation
 )
 _generate_msg_lisp(om_aiv_navigation
@@ -1751,6 +1922,12 @@ _generate_msg_lisp(om_aiv_navigation
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/om_aiv_navigation
 )
 _generate_msg_lisp(om_aiv_navigation
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolAction.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolGoal.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolFeedback.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionFeedback.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResult.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionResult.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/om_aiv_navigation
+)
+_generate_msg_lisp(om_aiv_navigation
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/StopResult.msg"
   "${MSG_I_FLAGS}"
   ""
@@ -1772,6 +1949,18 @@ _generate_msg_lisp(om_aiv_navigation
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceAction.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceResult.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceActionFeedback.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceActionGoal.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceActionResult.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceFeedback.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/om_aiv_navigation
+)
+_generate_msg_lisp(om_aiv_navigation
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolFeedback.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/om_aiv_navigation
+)
+_generate_msg_lisp(om_aiv_navigation
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionFeedback.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolFeedback.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/om_aiv_navigation
 )
 
@@ -1847,6 +2036,8 @@ get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_nav
 add_dependencies(om_aiv_navigation_generate_messages_lisp _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/StopActionResult.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_lisp _om_aiv_navigation_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionGoal.msg" NAME_WE)
+add_dependencies(om_aiv_navigation_generate_messages_lisp _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/GoToActionGoal.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_lisp _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/StopActionFeedback.msg" NAME_WE)
@@ -1861,6 +2052,8 @@ get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_nav
 add_dependencies(om_aiv_navigation_generate_messages_lisp _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/ExecuteMacroAction.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_lisp _om_aiv_navigation_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionResult.msg" NAME_WE)
+add_dependencies(om_aiv_navigation_generate_messages_lisp _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResumeActionResult.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_lisp _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionResult.msg" NAME_WE)
@@ -1871,9 +2064,11 @@ get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_nav
 add_dependencies(om_aiv_navigation_generate_messages_lisp _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskFeedback.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_lisp _om_aiv_navigation_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResult.msg" NAME_WE)
+add_dependencies(om_aiv_navigation_generate_messages_lisp _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PlayFeedback.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_lisp _om_aiv_navigation_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionFeedback.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_lisp _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PlayActionGoal.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_lisp _om_aiv_navigation_generate_messages_check_deps_${_filename})
@@ -1897,7 +2092,7 @@ get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_nav
 add_dependencies(om_aiv_navigation_generate_messages_lisp _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DockAction.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_lisp _om_aiv_navigation_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionFeedback.msg" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionGoal.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_lisp _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/GoToResult.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_lisp _om_aiv_navigation_generate_messages_check_deps_${_filename})
@@ -1909,11 +2104,19 @@ get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_nav
 add_dependencies(om_aiv_navigation_generate_messages_lisp _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskAction.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_lisp _om_aiv_navigation_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolAction.msg" NAME_WE)
+add_dependencies(om_aiv_navigation_generate_messages_lisp _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/StopResult.msg" NAME_WE)
+add_dependencies(om_aiv_navigation_generate_messages_lisp _om_aiv_navigation_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolGoal.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_lisp _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResumeActionGoal.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_lisp _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PlayResult.msg" NAME_WE)
+add_dependencies(om_aiv_navigation_generate_messages_lisp _om_aiv_navigation_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolFeedback.msg" NAME_WE)
+add_dependencies(om_aiv_navigation_generate_messages_lisp _om_aiv_navigation_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionFeedback.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_lisp _om_aiv_navigation_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -1947,6 +2150,12 @@ _generate_msg_nodejs(om_aiv_navigation
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResumeResult.msg"
   "${MSG_I_FLAGS}"
   ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/om_aiv_navigation
+)
+_generate_msg_nodejs(om_aiv_navigation
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionResult.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResult.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/om_aiv_navigation
 )
 _generate_msg_nodejs(om_aiv_navigation
@@ -2118,6 +2327,12 @@ _generate_msg_nodejs(om_aiv_navigation
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/om_aiv_navigation
 )
 _generate_msg_nodejs(om_aiv_navigation
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolGoal.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/om_aiv_navigation
+)
+_generate_msg_nodejs(om_aiv_navigation
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/StopFeedback.msg"
   "${MSG_I_FLAGS}"
   ""
@@ -2148,6 +2363,12 @@ _generate_msg_nodejs(om_aiv_navigation
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/om_aiv_navigation
 )
 _generate_msg_nodejs(om_aiv_navigation
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionGoal.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/om_aiv_navigation
+)
+_generate_msg_nodejs(om_aiv_navigation
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceActionFeedback.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceFeedback.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
@@ -2175,6 +2396,12 @@ _generate_msg_nodejs(om_aiv_navigation
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionResult.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskResult.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/om_aiv_navigation
+)
+_generate_msg_nodejs(om_aiv_navigation
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResult.msg"
+  "${MSG_I_FLAGS}"
+  ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/om_aiv_navigation
 )
 _generate_msg_nodejs(om_aiv_navigation
@@ -2280,6 +2507,12 @@ _generate_msg_nodejs(om_aiv_navigation
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/om_aiv_navigation
 )
 _generate_msg_nodejs(om_aiv_navigation
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolAction.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolGoal.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolFeedback.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionFeedback.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResult.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionResult.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/om_aiv_navigation
+)
+_generate_msg_nodejs(om_aiv_navigation
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/StopResult.msg"
   "${MSG_I_FLAGS}"
   ""
@@ -2301,6 +2534,18 @@ _generate_msg_nodejs(om_aiv_navigation
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceAction.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceResult.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceActionFeedback.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceActionGoal.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceActionResult.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceFeedback.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/om_aiv_navigation
+)
+_generate_msg_nodejs(om_aiv_navigation
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolFeedback.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/om_aiv_navigation
+)
+_generate_msg_nodejs(om_aiv_navigation
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionFeedback.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolFeedback.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/om_aiv_navigation
 )
 
@@ -2376,6 +2621,8 @@ get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_nav
 add_dependencies(om_aiv_navigation_generate_messages_nodejs _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/StopActionResult.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_nodejs _om_aiv_navigation_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionGoal.msg" NAME_WE)
+add_dependencies(om_aiv_navigation_generate_messages_nodejs _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/GoToActionGoal.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_nodejs _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/StopActionFeedback.msg" NAME_WE)
@@ -2390,6 +2637,8 @@ get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_nav
 add_dependencies(om_aiv_navigation_generate_messages_nodejs _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/ExecuteMacroAction.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_nodejs _om_aiv_navigation_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionResult.msg" NAME_WE)
+add_dependencies(om_aiv_navigation_generate_messages_nodejs _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResumeActionResult.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_nodejs _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionResult.msg" NAME_WE)
@@ -2400,9 +2649,11 @@ get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_nav
 add_dependencies(om_aiv_navigation_generate_messages_nodejs _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskFeedback.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_nodejs _om_aiv_navigation_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResult.msg" NAME_WE)
+add_dependencies(om_aiv_navigation_generate_messages_nodejs _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PlayFeedback.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_nodejs _om_aiv_navigation_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionFeedback.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_nodejs _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PlayActionGoal.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_nodejs _om_aiv_navigation_generate_messages_check_deps_${_filename})
@@ -2426,7 +2677,7 @@ get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_nav
 add_dependencies(om_aiv_navigation_generate_messages_nodejs _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DockAction.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_nodejs _om_aiv_navigation_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionFeedback.msg" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionGoal.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_nodejs _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/GoToResult.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_nodejs _om_aiv_navigation_generate_messages_check_deps_${_filename})
@@ -2438,11 +2689,19 @@ get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_nav
 add_dependencies(om_aiv_navigation_generate_messages_nodejs _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskAction.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_nodejs _om_aiv_navigation_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolAction.msg" NAME_WE)
+add_dependencies(om_aiv_navigation_generate_messages_nodejs _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/StopResult.msg" NAME_WE)
+add_dependencies(om_aiv_navigation_generate_messages_nodejs _om_aiv_navigation_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolGoal.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_nodejs _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResumeActionGoal.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_nodejs _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PlayResult.msg" NAME_WE)
+add_dependencies(om_aiv_navigation_generate_messages_nodejs _om_aiv_navigation_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolFeedback.msg" NAME_WE)
+add_dependencies(om_aiv_navigation_generate_messages_nodejs _om_aiv_navigation_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionFeedback.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_nodejs _om_aiv_navigation_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -2476,6 +2735,12 @@ _generate_msg_py(om_aiv_navigation
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResumeResult.msg"
   "${MSG_I_FLAGS}"
   ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/om_aiv_navigation
+)
+_generate_msg_py(om_aiv_navigation
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionResult.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResult.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/om_aiv_navigation
 )
 _generate_msg_py(om_aiv_navigation
@@ -2647,6 +2912,12 @@ _generate_msg_py(om_aiv_navigation
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/om_aiv_navigation
 )
 _generate_msg_py(om_aiv_navigation
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolGoal.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/om_aiv_navigation
+)
+_generate_msg_py(om_aiv_navigation
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/StopFeedback.msg"
   "${MSG_I_FLAGS}"
   ""
@@ -2677,6 +2948,12 @@ _generate_msg_py(om_aiv_navigation
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/om_aiv_navigation
 )
 _generate_msg_py(om_aiv_navigation
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionGoal.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/om_aiv_navigation
+)
+_generate_msg_py(om_aiv_navigation
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceActionFeedback.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceFeedback.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
@@ -2704,6 +2981,12 @@ _generate_msg_py(om_aiv_navigation
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionResult.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskResult.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/om_aiv_navigation
+)
+_generate_msg_py(om_aiv_navigation
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResult.msg"
+  "${MSG_I_FLAGS}"
+  ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/om_aiv_navigation
 )
 _generate_msg_py(om_aiv_navigation
@@ -2809,6 +3092,12 @@ _generate_msg_py(om_aiv_navigation
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/om_aiv_navigation
 )
 _generate_msg_py(om_aiv_navigation
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolAction.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolGoal.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolFeedback.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionFeedback.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResult.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionResult.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/om_aiv_navigation
+)
+_generate_msg_py(om_aiv_navigation
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/StopResult.msg"
   "${MSG_I_FLAGS}"
   ""
@@ -2830,6 +3119,18 @@ _generate_msg_py(om_aiv_navigation
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceAction.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceResult.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceActionFeedback.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceActionGoal.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceActionResult.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolOnceFeedback.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/om_aiv_navigation
+)
+_generate_msg_py(om_aiv_navigation
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolFeedback.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/om_aiv_navigation
+)
+_generate_msg_py(om_aiv_navigation
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionFeedback.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolFeedback.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/om_aiv_navigation
 )
 
@@ -2905,6 +3206,8 @@ get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_nav
 add_dependencies(om_aiv_navigation_generate_messages_py _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/StopActionResult.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_py _om_aiv_navigation_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionGoal.msg" NAME_WE)
+add_dependencies(om_aiv_navigation_generate_messages_py _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/GoToActionGoal.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_py _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/StopActionFeedback.msg" NAME_WE)
@@ -2919,6 +3222,8 @@ get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_nav
 add_dependencies(om_aiv_navigation_generate_messages_py _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/ExecuteMacroAction.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_py _om_aiv_navigation_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionResult.msg" NAME_WE)
+add_dependencies(om_aiv_navigation_generate_messages_py _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResumeActionResult.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_py _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionResult.msg" NAME_WE)
@@ -2929,9 +3234,11 @@ get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_nav
 add_dependencies(om_aiv_navigation_generate_messages_py _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskFeedback.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_py _om_aiv_navigation_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResult.msg" NAME_WE)
+add_dependencies(om_aiv_navigation_generate_messages_py _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PlayFeedback.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_py _om_aiv_navigation_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionFeedback.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_py _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PlayActionGoal.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_py _om_aiv_navigation_generate_messages_check_deps_${_filename})
@@ -2955,7 +3262,7 @@ get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_nav
 add_dependencies(om_aiv_navigation_generate_messages_py _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DockAction.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_py _om_aiv_navigation_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskActionFeedback.msg" NAME_WE)
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionGoal.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_py _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/GoToResult.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_py _om_aiv_navigation_generate_messages_check_deps_${_filename})
@@ -2967,11 +3274,19 @@ get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_nav
 add_dependencies(om_aiv_navigation_generate_messages_py _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/DoTaskAction.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_py _om_aiv_navigation_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolAction.msg" NAME_WE)
+add_dependencies(om_aiv_navigation_generate_messages_py _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/StopResult.msg" NAME_WE)
+add_dependencies(om_aiv_navigation_generate_messages_py _om_aiv_navigation_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolGoal.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_py _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolResumeActionGoal.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_py _om_aiv_navigation_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PlayResult.msg" NAME_WE)
+add_dependencies(om_aiv_navigation_generate_messages_py _om_aiv_navigation_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolFeedback.msg" NAME_WE)
+add_dependencies(om_aiv_navigation_generate_messages_py _om_aiv_navigation_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolActionFeedback.msg" NAME_WE)
 add_dependencies(om_aiv_navigation_generate_messages_py _om_aiv_navigation_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
