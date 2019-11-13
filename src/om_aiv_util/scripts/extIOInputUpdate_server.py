@@ -10,7 +10,7 @@ from std_msgs.msg import String
 BUFFER_SIZE = 1024
 # ip_address = rospy.get_param("ip_address")
 # port = rospy.get_param("port")
-ip_address = "172.21.5.125"
+ip_address = "168.3.201.123"
 port = 7171
 connecttcp.connect(str(ip_address), port)
 
@@ -44,7 +44,7 @@ def extIOInputUpdate():
         rcv = data.encode('ascii', 'ignore')
         while not rospy.is_shutdown():
             #check for required data
-            if "Completed doing " in rcv:
+            if "extIOInputUpdate:" in rcv:
                 print rcv
                 return rcv
                 break
