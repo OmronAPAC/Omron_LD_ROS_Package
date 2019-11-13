@@ -19,7 +19,6 @@ import rospy
 
 def handle_arclSendText(req):
     global text
-    print "Returning", req.a
     text = req.a
     arclSendText()
     # return ServiceResponse(req.a)
