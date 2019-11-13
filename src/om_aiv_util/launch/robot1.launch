@@ -8,7 +8,7 @@
     <!-- <node name="analogInputList_server" pkg="om_aiv_util" type="analogInputList_server.py" output="screen" /> -->
     <!-- <node name="analogInputQueryRaw_server" pkg="om_aiv_util" type="analogInputQueryRaw_server.py" output="screen" /> -->
     <!-- <node name="analogInputQueryVoltage_server" pkg="om_aiv_util" type="analogInputQueryVoltage_server.py" output="screen" /> -->
-    <node name="analogInputList_server" pkg="om_aiv_util" type="analogInputList_server.py" output="screen" />
+    <node name="applicationFaultClear_server" pkg="om_aiv_util" type="applicationFaultClear_server.py" output="screen" />
 
 
 
