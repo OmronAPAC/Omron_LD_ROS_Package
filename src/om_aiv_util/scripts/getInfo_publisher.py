@@ -233,11 +233,13 @@ def getInfo_Temperature():
     #check for required data
     for line in rcv.splitlines():
         if 'Temperature(C)' in line:
-            info = line.split("Info:")
+            info = line.split("Temperature(C)")
+            infonum = [int(i) for i in line.split() if i.isdigit()]
+            infonum = int("".join(map(str, infonum)))
             #print required data
             rospy.loginfo(",Info:".join(info)[1:])
             #publish data
-            pub.publish(''.join(info))
+            pub.publish(infonum)
             rate.sleep()
             break
 
@@ -645,7 +647,7 @@ def getInfo_Idle():
 
 def getInfo_TipAngle():
     #specify topic name
-    pub = rospy.Publisher('ldarcl_getInfo_TipAngle', String, queue_size=10)
+    pub = rospy.Publisher('ldarcl_getInfo_TipAngle', Float32, queue_size=10)
     #specify node name
     rospy.init_node('getInfo_publisher', anonymous=True)
     rate = rospy.Rate(10) # 10hz
@@ -671,12 +673,16 @@ def getInfo_TipAngle():
         return e
     #check for required data
     for line in rcv.splitlines():
-        if 'Info:' in line:
-            info = line.split("Info:")
-            #print required data
-            rospy.loginfo(",Info:".join(info)[1:])
+        if 'TipAngle' in line:
+            info = line.split("TipAngle")
+            line = line.strip("deg")
+            line2 = line.split("TipAngle")
+            line3 = line.strip(",")
+            line4 = line.strip("Info: TipAngle")
+            
+            rospy.loginfo("TipAngle:".join(info))
             #publish data
-            pub.publish(''.join(info))
+            pub.publish(float(line4))
             rate.sleep()
             break
 
