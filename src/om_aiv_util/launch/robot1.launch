@@ -7,7 +7,11 @@
     <!-- <node name="getInfo_publisher" pkg="om_aiv_util" type="getInfo_publisher.py" output="screen" /> -->
     <!-- <node name="analogInputList_server" pkg="om_aiv_util" type="analogInputList_server.py" output="screen" /> -->
     <!-- <node name="analogInputQueryRaw_server" pkg="om_aiv_util" type="analogInputQueryRaw_server.py" output="screen" /> -->
+    <!-- <node name="analogInputQueryVoltage_server" pkg="om_aiv_util" type="analogInputQueryVoltage_server.py" output="screen" /> -->
     <node name="analogInputList_server" pkg="om_aiv_util" type="analogInputList_server.py" output="screen" />
+
+
+
 
       <param name="ip_address" value="168.3.201.123" />
       <param name="port" value="7171" />
