@@ -18,7 +18,7 @@ def usage():
 
 if __name__ == "__main__":
     if len(sys.argv) == 1:
-        x = str(sys.argv[0])
+        x = ""
     else:
         print usage()
         sys.exit(1)

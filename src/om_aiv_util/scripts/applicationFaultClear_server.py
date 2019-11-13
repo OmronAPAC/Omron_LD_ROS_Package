@@ -19,7 +19,6 @@ import rospy
 
 def handle_applicationFaultClear(req):
     global fault
-    print "Returning", req.a
     fault = req.a
     applicationFaultClear()
     # return ServiceResponse(req.a)

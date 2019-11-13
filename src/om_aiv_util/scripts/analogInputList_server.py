@@ -34,7 +34,7 @@ def analogInputList():
     # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
 
-    command = "analogInputList {}".format("device")
+    command = "analogInputList"
     command = command.encode('ascii')
     s.send(command+b"\r\n")
     try:
