@@ -43,7 +43,26 @@
     <!-- <node name="help_server" pkg="om_aiv_util" type="help_server.py" output="screen" /> -->
     <!-- <node name="inputList_server" pkg="om_aiv_util" type="inputList_server.py" output="screen" /> -->
     <!-- <node name="inputQuery_server" pkg="om_aiv_util" type="inputQuery_server.py" output="screen" /> -->
-    <node name="log_server" pkg="om_aiv_util" type="log_server.py" output="screen" />
+    <!-- <node name="log_server" pkg="om_aiv_util" type="log_server.py" output="screen" /> -->
+    <!-- <node name="mapObjectInfo_server" pkg="om_aiv_util" type="mapObjectInfo_server.py" output="screen" /> -->
+    <!-- <node name="mapObjectList_server" pkg="om_aiv_util" type="mapObjectList_server.py" output="screen" /> -->
+    <!-- <node name="mapObjectTypeInfo_server" pkg="om_aiv_util" type="mapObjectTypeInfo_server.py" output="screen" /> -->
+    <!-- <node name="mapObjectTypeList_server" pkg="om_aiv_util" type="mapObjectTypeList_server.py" output="screen" /> -->
+    <!-- <node name="newConfigParam_server" pkg="om_aiv_util" type="newConfigParam_server.py" output="screen" /> -->
+    <!-- <node name="newConfigSectionComment_server" pkg="om_aiv_util" type="newConfigSectionComment_server.py" output="screen" /> -->
+    <!-- <node name="odometerReset_server" pkg="om_aiv_util" type="odometerReset_server.py" output="screen" /> -->
+    <!-- <node name="outputList_server" pkg="om_aiv_util" type="outputList_server.py" output="screen" /> -->
+    <!-- <node name="outputOff_server" pkg="om_aiv_util" type="outputOff_server.py" output="screen" /> -->
+    <!-- <node name="outputOn_server" pkg="om_aiv_util" type="outputOn_server.py" output="screen" /> -->
+    <!-- <node name="outputQuery_server" pkg="om_aiv_util" type="outputQuery_server.py" output="screen" /> -->
+    <!-- <node name="payloadQueryLocal_server" pkg="om_aiv_util" type="payloadQueryLocal_server.py" output="screen" /> -->
+    <!-- <node name="payloadRemove_server" pkg="om_aiv_util" type="payloadRemove_server.py" output="screen" /> -->
+    <!-- <node name="payloadSet_server" pkg="om_aiv_util" type="payloadSet_server.py" output="screen" /> -->
+    <node name="payloadSlotCountLocal_server" pkg="om_aiv_util" type="payloadSlotCountLocal_server.py" output="screen" />
+
+
+
+
 
 
 

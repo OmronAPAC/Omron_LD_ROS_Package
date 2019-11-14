@@ -6,16 +6,16 @@ import threading
 import time
 import re
 import sys
+import rospy
 from std_msgs.msg import String
 BUFFER_SIZE = 1024
-# ip_address = rospy.get_param("ip_address")
-# port = rospy.get_param("port")
-ip_address = "172.21.5.125"
-port = 7171
+ip_address = rospy.get_param("ip_address")
+port = rospy.get_param("port")
+# ip_address = "172.21.5.125"
+# port = 7171
 connecttcp.connect(str(ip_address), port)
 
 from om_aiv_util.srv import Service2,Service2Response
-import rospy
 
 def handle_payloadSet(req):
     global a, b

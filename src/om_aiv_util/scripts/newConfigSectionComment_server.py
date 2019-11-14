@@ -6,23 +6,22 @@ import threading
 import time
 import re
 import sys
+import rospy
 from std_msgs.msg import String
 BUFFER_SIZE = 1024
-# ip_address = rospy.get_param("ip_address")
-# port = rospy.get_param("port")
-ip_address = "172.21.5.125"
-port = 7171
+ip_address = rospy.get_param("ip_address")
+port = rospy.get_param("port")
+# ip_address = "172.21.5.125"
+# port = 7171
 connecttcp.connect(str(ip_address), port)
 
 from om_aiv_util.srv import Service2,Service2Response
-import rospy
 
 def handle_newConfigSectionComment(req):
     global a, b
     a = req.a
     b = req.b
     newConfigSectionComment()
-    # return Service5Response(req.a + req.b + req.c + req.d + req.e)
     return rcv
 
 def newConfigSectionComment_server():
@@ -33,7 +32,6 @@ def newConfigSectionComment_server():
 def newConfigSectionComment():
     global rcv
     pub = rospy.Publisher('arcl_newConfigSectionComment', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "newConfigSectionComment {}".format(a + " " + b)
     command = command.encode('ascii')
