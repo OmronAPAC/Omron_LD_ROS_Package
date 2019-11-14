@@ -58,10 +58,19 @@
     <!-- <node name="payloadQueryLocal_server" pkg="om_aiv_util" type="payloadQueryLocal_server.py" output="screen" /> -->
     <!-- <node name="payloadRemove_server" pkg="om_aiv_util" type="payloadRemove_server.py" output="screen" /> -->
     <!-- <node name="payloadSet_server" pkg="om_aiv_util" type="payloadSet_server.py" output="screen" /> -->
-    <node name="payloadSlotCountLocal_server" pkg="om_aiv_util" type="payloadSlotCountLocal_server.py" output="screen" />
-
-
-
+    <!-- <node name="payloadSlotCountLocal_server" pkg="om_aiv_util" type="payloadSlotCountLocal_server.py" output="screen" /> -->
+    <!-- <node name="popupSimple_server" pkg="om_aiv_util" type="popupSimple_server.py" output="screen" /> -->
+    <!-- <node name="queueCancelLocal_server" pkg="om_aiv_util" type="queueCancelLocal_server.py" output="screen" /> -->
+    <!-- <node name="queueDropoff_server" pkg="om_aiv_util" type="queueDropoff_server.py" output="screen" /> -->
+    <!-- <node name="queueDropoff_server" pkg="om_aiv_util" type="queueDropoff_server.py" output="screen" /> -->
+    <!-- <node name="queueModifyLocal_server" pkg="om_aiv_util" type="queueModifyLocal_server.py" output="screen" /> -->
+    <!-- <node name="queueQueryLocal_server" pkg="om_aiv_util" type="queueQueryLocal_server.py" output="screen" /> -->
+    <!-- <node name="quit_server" pkg="om_aiv_util" type="quit_server.py" output="screen" /> -->
+    <!-- <node name="say_server" pkg="om_aiv_util" type="say_server.py" output="screen" /> -->
+    <!-- <node name="shutdown_server" pkg="om_aiv_util" type="shutdown_server.py" output="screen" /> -->
+    <!-- <node name="tripReset_server" pkg="om_aiv_util" type="tripReset_server.py" output="screen" /> -->
+    <!-- <node name="updateInfo_server" pkg="om_aiv_util" type="updateInfo_server.py" output="screen" /> -->
+    <node name="waitTaskCancel_server" pkg="om_aiv_util" type="waitTaskCancel_server.py" output="screen" />
 
 
 

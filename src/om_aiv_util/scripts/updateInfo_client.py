@@ -12,7 +12,7 @@ def updateInfo_client(a, b):
         print "Service call failed: %s"%error
 
 def usage():
-    return "%s <task> <argument>"%sys.argv[0]
+    return "%s <infoName> <infoValue>"%sys.argv[0]
 
 if __name__ == "__main__":
     if len(sys.argv) == 3:
