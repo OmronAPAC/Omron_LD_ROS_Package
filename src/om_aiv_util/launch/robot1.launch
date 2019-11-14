@@ -35,15 +35,15 @@
     <!-- <node name="getDataStoreFieldList_server" pkg="om_aiv_util" type="getDataStoreFieldList_server.py" output="screen" /> -->
     <!-- <node name="getDataStoreFieldValues_server" pkg="om_aiv_util" type="getDataStoreFieldValues_server.py" output="screen" /> -->
     <!-- <node name="getDataStoreGroupInfo_server" pkg="om_aiv_util" type="getDataStoreGroupInfo_server.py" output="screen" /> -->
-    <node name="getDataStoreGroupList_server" pkg="om_aiv_util" type="getDataStoreGroupList_server.py" output="screen" />
-
-
-
-
-
-
-
-
+    <!-- <node name="getDataStoreGroupList_server" pkg="om_aiv_util" type="getDataStoreGroupList_server.py" output="screen" /> -->
+    <!-- <node name="getDataStoreGroupValues_server" pkg="om_aiv_util" type="getDataStoreGroupValues_server.py" output="screen" /> -->
+    <!-- <node name="getDataStoreTripGroupList_server" pkg="om_aiv_util" type="getDataStoreTripGroupList_server.py" output="screen" /> -->
+    <!-- <node name="getInfo_publisher" pkg="om_aiv_util" type="getInfo_publisher.py" output="screen" /> -->
+    <!-- <node name="getInfoList_server" pkg="om_aiv_util" type="getInfoList_server.py" output="screen" /> -->
+    <!-- <node name="help_server" pkg="om_aiv_util" type="help_server.py" output="screen" /> -->
+    <!-- <node name="inputList_server" pkg="om_aiv_util" type="inputList_server.py" output="screen" /> -->
+    <!-- <node name="inputQuery_server" pkg="om_aiv_util" type="inputQuery_server.py" output="screen" /> -->
+    <node name="log_server" pkg="om_aiv_util" type="log_server.py" output="screen" />
 
 
 

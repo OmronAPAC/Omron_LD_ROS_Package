@@ -12,12 +12,15 @@ def log_client(a, b):
         print "Service call failed: %s"%error
 
 def usage():
-    return "%s <task> <argument>"%sys.argv[0]
+    return "%s <message> [level]"%sys.argv[0]
 
 if __name__ == "__main__":
     if len(sys.argv) == 3:
         a = str(sys.argv[1])
         b = str(sys.argv[2])
+    elif len(sys.argv) == 2:
+        a = str(sys.argv[1])
+        b = ""
     else:
         print usage()
         sys.exit(1)
