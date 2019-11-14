@@ -7,11 +7,12 @@ import time
 import re
 import sys
 from std_msgs.msg import String
+import rospy
 BUFFER_SIZE = 1024
-# ip_address = rospy.get_param("ip_address")
-# port = rospy.get_param("port")
-ip_address = "172.21.5.125"
-port = 7171
+ip_address = rospy.get_param("ip_address")
+port = rospy.get_param("port")
+# ip_address = "172.21.5.125"
+# port = 7171
 connecttcp.connect(str(ip_address), port)
 
 from om_aiv_util.srv import Service,ServiceResponse

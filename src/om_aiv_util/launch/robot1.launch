@@ -25,7 +25,24 @@
     <!-- <node name="extIOInputUpdateBit_server" pkg="om_aiv_util" type="extIOInputUpdateBit_server.py" output="screen" /> -->
     <!-- <node name="extIOInputUpdateByte_server" pkg="om_aiv_util" type="extIOInputUpdateByte_server.py" output="screen" /> -->
     <!-- <node name="extIOOutputUpdate_server" pkg="om_aiv_util" type="extIOOutputUpdate_server.py" output="screen" /> -->
-    <node name="extIOOutputUpdateBit_server" pkg="om_aiv_util" type="extIOOutputUpdateBit_server.py" output="screen" />
+    <!-- <node name="extIOOutputUpdateBit_server" pkg="om_aiv_util" type="extIOOutputUpdateBit_server.py" output="screen" /> -->
+    <!-- <node name="extIOOutputUpdateByte_server" pkg="om_aiv_util" type="extIOOutputUpdateByte_server.py" output="screen" /> -->
+    <!-- <node name="extIORemove_server" pkg="om_aiv_util" type="extIORemove_server.py" output="screen" /> -->
+    <!-- <node name="getConfigSectionInfo_server" pkg="om_aiv_util" type="getConfigSectionInfo_server.py" output="screen" /> -->
+    <!-- <node name="getConfigSectionList_server" pkg="om_aiv_util" type="getConfigSectionList_server.py" output="screen" /> -->
+    <!-- <node name="getConfigSectionValues_server" pkg="om_aiv_util" type="getConfigSectionValues_server.py" output="screen" /> -->
+    <!-- <node name="getDataStoreFieldInfo_server" pkg="om_aiv_util" type="getDataStoreFieldInfo_server.py" output="screen" /> -->
+    <!-- <node name="getDataStoreFieldList_server" pkg="om_aiv_util" type="getDataStoreFieldList_server.py" output="screen" /> -->
+    <!-- <node name="getDataStoreFieldValues_server" pkg="om_aiv_util" type="getDataStoreFieldValues_server.py" output="screen" /> -->
+    <!-- <node name="getDataStoreGroupInfo_server" pkg="om_aiv_util" type="getDataStoreGroupInfo_server.py" output="screen" /> -->
+    <node name="getDataStoreGroupList_server" pkg="om_aiv_util" type="getDataStoreGroupList_server.py" output="screen" />
+
+
+
+
+
+
+
 
 
 
