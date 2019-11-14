@@ -13,7 +13,7 @@ def call_server():
     client.wait_for_server()
 
     goal = ExecuteMacroGoal()
-    goal.goal_macro = "macro1"
+    goal.goal_macro = "macro3"
 
     client.send_goal(goal, feedback_cb=feedback_cb)
 

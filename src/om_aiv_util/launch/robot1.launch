@@ -2,13 +2,31 @@
 
   <!-- BEGIN ROBOT 1-->
   <!-- <group ns="robot1"> -->
-    <!-- <node name="ld_status_publisher" pkg="om_aiv_util" type="ld_status_publisher.py" /> -->
-    <!-- <node name="getInfo_publisher" pkg="om_aiv_util" type="getInfo_publisher.py" output="screen" /> -->
+    <!-- <node name="ld_status_publisher" pkg="om_aiv_util" type="ld_status_publisher.py" output="screen" /> -->
     <!-- <node name="analogInputList_server" pkg="om_aiv_util" type="analogInputList_server.py" output="screen" /> -->
     <!-- <node name="analogInputQueryRaw_server" pkg="om_aiv_util" type="analogInputQueryRaw_server.py" output="screen" /> -->
     <!-- <node name="analogInputQueryVoltage_server" pkg="om_aiv_util" type="analogInputQueryVoltage_server.py" output="screen" /> -->
     <!-- <node name="applicationFaultClear_server" pkg="om_aiv_util" type="applicationFaultClear_server.py" output="screen" /> -->
-    <node name="ld_topic_publisher" pkg="om_aiv_util" type="ld_topic_publisher.py" output="screen" />
+    <!-- <node name="ld_topic_publisher" pkg="om_aiv_util" type="ld_topic_publisher.py" output="screen" /> -->
+    <!-- <node name="applicationFaultSet_server" pkg="om_aiv_util" type="applicationFaultSet_server.py" output="screen" /> -->
+    <!-- <node name="arclSendText_server" pkg="om_aiv_util" type="arclSendText_server.py" output="screen" /> -->
+    <!-- <node name="configAdd_server" pkg="om_aiv_util" type="configAdd_server.py" output="screen" /> -->
+    <!-- <node name="configParse_server" pkg="om_aiv_util" type="configParse_server.py" output="screen" /> -->
+    <!-- <node name="configStart_server" pkg="om_aiv_util" type="configStart_server.py" output="screen" /> -->
+    <!-- <node name="connectOutgoing_server" pkg="om_aiv_util" type="connectOutgoing_server.py" output="screen" /> -->
+    <!-- <node name="createInfo_server" pkg="om_aiv_util" type="createInfo_server.py" output="screen" /> -->
+    <!-- <node name="doTaskInstant_server" pkg="om_aiv_util" type="doTaskInstant_server.py" output="screen" /> -->
+    <!-- <node name="echo_server" pkg="om_aiv_util" type="echo_server.py" output="screen" /> -->
+    <!-- <node name="enableMotors_server" pkg="om_aiv_util" type="enableMotors_server.py" output="screen" /> -->
+    <!-- <node name="extIOAdd_server" pkg="om_aiv_util" type="extIOAdd_server.py" output="screen" /> -->
+    <!-- <node name="extIODump_server" pkg="om_aiv_util" type="extIODump_server.py" output="screen" /> -->
+    <!-- <node name="extIODumpLocal_server" pkg="om_aiv_util" type="extIODumpLocal_server.py" output="screen" /> -->
+    <!-- <node name="extIOInputUpdate_server" pkg="om_aiv_util" type="extIOInputUpdate_server.py" output="screen" /> -->
+    <!-- <node name="extIOInputUpdateBit_server" pkg="om_aiv_util" type="extIOInputUpdateBit_server.py" output="screen" /> -->
+    <!-- <node name="extIOInputUpdateByte_server" pkg="om_aiv_util" type="extIOInputUpdateByte_server.py" output="screen" /> -->
+    <!-- <node name="extIOOutputUpdate_server" pkg="om_aiv_util" type="extIOOutputUpdate_server.py" output="screen" /> -->
+    <node name="extIOOutputUpdateBit_server" pkg="om_aiv_util" type="extIOOutputUpdateBit_server.py" output="screen" />
+
 
 
 

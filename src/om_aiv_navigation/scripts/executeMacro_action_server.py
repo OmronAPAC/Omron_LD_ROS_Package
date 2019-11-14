@@ -23,7 +23,7 @@ global s
 socket = connecttcp.sock
 # ip_address = rospy.get_param("ip_address")
 # port = rospy.get_param("port")
-ip_address = "172.21.5.125"
+ip_address = "168.3.201.123"
 port = 7171
 connecttcp.connect(str(ip_address), port)
 
