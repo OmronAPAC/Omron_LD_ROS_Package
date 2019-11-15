@@ -35,8 +35,8 @@ For more than 2 robots:
 
 ### Usage
 ```
-roslaunch om_aiv_util ldarcl_status.launch
-roslaunch om_aiv_navigation ld_navigation.launch
+roslaunch om_aiv_util robot1.launch
+roslaunch om_aiv_navigation robot1.launch
 ```
 
 View the topics published and do a rostopic echo (topic name) to view the data:
