@@ -45,18 +45,17 @@ def queueDropoff():
         rcv = data.encode('ascii', 'ignore')
         while not rospy.is_shutdown():
             #check for required data
-            if "sucessfully " in rcv:
+            if "Completed" in rcv:
                 print rcv
-                return 1
                 break
-            if "QueueUpdate" in rcv:
-                print rcv
-                return rcv
-                break
-            if "CommandErrorDescription" in rcv:
-                print rcv
-                return rcv
-                break
+            # if "QueueUpdate" in rcv:
+            #     print rcv
+            #     return rcv
+            #     break
+            # if "CommandErrorDescription" in rcv:
+            #     print rcv
+            #     return rcv
+            #     break
             else:
                 data = s.recv(BUFFER_SIZE)
                 rcv = rcv + data.encode('ascii', 'ignore')

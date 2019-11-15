@@ -12,7 +12,7 @@ class ConnectSocket(object):
     def __init__(self, sock=None):
         if sock is None:
             self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            self.sock.settimeout(20)
+            self.sock.settimeout(60)
         else:
             self.sock = sock
 
