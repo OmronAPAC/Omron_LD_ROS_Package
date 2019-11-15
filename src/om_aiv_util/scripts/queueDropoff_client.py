@@ -2,7 +2,7 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def analogInputQueryRaw_client(a, b , c):
+def queueDropoff_client(a, b , c):
     rospy.wait_for_service('queueDropoff')
     try:
         service = rospy.ServiceProxy('queueDropoff', Service3)
@@ -28,4 +28,4 @@ if __name__ == "__main__":
         sys.exit(1)
     print "running command"
     # print "Requesting", x
-    print analogInputQueryRaw_client(a, b , c)
+    print queueDropoff_client(a, b , c)

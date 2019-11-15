@@ -4,7 +4,7 @@ import rospy
 from std_msgs.msg import Float32
 from std_msgs.msg import String
 from om_aiv_util.srv import *
-from queueDropoff_client import analogInputQueryRaw_client
+from queueDropoff_client import queueDropoff_client
 
 rospy.init_node('test')
 battery_level = rospy.wait_for_message('/ldarcl_status_state_of_charge', Float32)
@@ -19,9 +19,9 @@ if battery_level <= 50:
 a = "goal1"
 b = ""
 c = ""
-print analogInputQueryRaw_client(a, b , c)
+print queueDropoff_client(a, b , c)
 
 a = "goal4"
 b = ""
 c = ""
-print analogInputQueryRaw_client(a, b, c)
+print queueDropoff_client(a, b, c)
