@@ -20,7 +20,6 @@ import rospy
 
 def handle_configStart(req):
     configStart()
-    # return ServiceResponse(req.a)
     return rcv
 
 def configStart_server():
@@ -31,7 +30,6 @@ def configStart_server():
 def configStart():
     global rcv
     pub = rospy.Publisher('arcl_configStart', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "configStart"
     print "Running command: ", command
