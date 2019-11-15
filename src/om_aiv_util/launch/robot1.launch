@@ -1,82 +1,81 @@
 <launch>
 
-  <!-- BEGIN ROBOT 1-->
-  <!-- <group ns="robot1"> -->
-    <!-- <node name="ld_status_publisher" pkg="om_aiv_util" type="ld_status_publisher.py" output="screen" /> -->
-    <!-- <node name="analogInputList_server" pkg="om_aiv_util" type="analogInputList_server.py" output="screen" /> -->
-    <!-- <node name="analogInputQueryRaw_server" pkg="om_aiv_util" type="analogInputQueryRaw_server.py" output="screen" /> -->
-    <!-- <node name="analogInputQueryVoltage_server" pkg="om_aiv_util" type="analogInputQueryVoltage_server.py" output="screen" /> -->
-    <!-- <node name="applicationFaultClear_server" pkg="om_aiv_util" type="applicationFaultClear_server.py" output="screen" /> -->
-    <!-- <node name="ld_topic_publisher" pkg="om_aiv_util" type="ld_topic_publisher.py" output="screen" /> -->
-    <!-- <node name="applicationFaultSet_server" pkg="om_aiv_util" type="applicationFaultSet_server.py" output="screen" /> -->
-    <!-- <node name="arclSendText_server" pkg="om_aiv_util" type="arclSendText_server.py" output="screen" /> -->
-    <!-- <node name="configAdd_server" pkg="om_aiv_util" type="configAdd_server.py" output="screen" /> -->
-    <!-- <node name="configParse_server" pkg="om_aiv_util" type="configParse_server.py" output="screen" /> -->
-    <!-- <node name="configStart_server" pkg="om_aiv_util" type="configStart_server.py" output="screen" /> -->
-    <!-- <node name="connectOutgoing_server" pkg="om_aiv_util" type="connectOutgoing_server.py" output="screen" /> -->
-    <!-- <node name="createInfo_server" pkg="om_aiv_util" type="createInfo_server.py" output="screen" /> -->
-    <!-- <node name="doTaskInstant_server" pkg="om_aiv_util" type="doTaskInstant_server.py" output="screen" /> -->
-    <!-- <node name="echo_server" pkg="om_aiv_util" type="echo_server.py" output="screen" /> -->
-    <!-- <node name="enableMotors_server" pkg="om_aiv_util" type="enableMotors_server.py" output="screen" /> -->
-    <!-- <node name="extIOAdd_server" pkg="om_aiv_util" type="extIOAdd_server.py" output="screen" /> -->
-    <!-- <node name="extIODump_server" pkg="om_aiv_util" type="extIODump_server.py" output="screen" /> -->
-    <!-- <node name="extIODumpLocal_server" pkg="om_aiv_util" type="extIODumpLocal_server.py" output="screen" /> -->
-    <!-- <node name="extIOInputUpdate_server" pkg="om_aiv_util" type="extIOInputUpdate_server.py" output="screen" /> -->
-    <!-- <node name="extIOInputUpdateBit_server" pkg="om_aiv_util" type="extIOInputUpdateBit_server.py" output="screen" /> -->
-    <!-- <node name="extIOInputUpdateByte_server" pkg="om_aiv_util" type="extIOInputUpdateByte_server.py" output="screen" /> -->
-    <!-- <node name="extIOOutputUpdate_server" pkg="om_aiv_util" type="extIOOutputUpdate_server.py" output="screen" /> -->
-    <!-- <node name="extIOOutputUpdateBit_server" pkg="om_aiv_util" type="extIOOutputUpdateBit_server.py" output="screen" /> -->
-    <!-- <node name="extIOOutputUpdateByte_server" pkg="om_aiv_util" type="extIOOutputUpdateByte_server.py" output="screen" /> -->
-    <!-- <node name="extIORemove_server" pkg="om_aiv_util" type="extIORemove_server.py" output="screen" /> -->
-    <!-- <node name="getConfigSectionInfo_server" pkg="om_aiv_util" type="getConfigSectionInfo_server.py" output="screen" /> -->
-    <!-- <node name="getConfigSectionList_server" pkg="om_aiv_util" type="getConfigSectionList_server.py" output="screen" /> -->
-    <!-- <node name="getConfigSectionValues_server" pkg="om_aiv_util" type="getConfigSectionValues_server.py" output="screen" /> -->
-    <!-- <node name="getDataStoreFieldInfo_server" pkg="om_aiv_util" type="getDataStoreFieldInfo_server.py" output="screen" /> -->
-    <!-- <node name="getDataStoreFieldList_server" pkg="om_aiv_util" type="getDataStoreFieldList_server.py" output="screen" /> -->
-    <!-- <node name="getDataStoreFieldValues_server" pkg="om_aiv_util" type="getDataStoreFieldValues_server.py" output="screen" /> -->
-    <!-- <node name="getDataStoreGroupInfo_server" pkg="om_aiv_util" type="getDataStoreGroupInfo_server.py" output="screen" /> -->
-    <!-- <node name="getDataStoreGroupList_server" pkg="om_aiv_util" type="getDataStoreGroupList_server.py" output="screen" /> -->
-    <!-- <node name="getDataStoreGroupValues_server" pkg="om_aiv_util" type="getDataStoreGroupValues_server.py" output="screen" /> -->
-    <!-- <node name="getDataStoreTripGroupList_server" pkg="om_aiv_util" type="getDataStoreTripGroupList_server.py" output="screen" /> -->
-    <!-- <node name="getInfo_publisher" pkg="om_aiv_util" type="getInfo_publisher.py" output="screen" /> -->
-    <!-- <node name="getInfoList_server" pkg="om_aiv_util" type="getInfoList_server.py" output="screen" /> -->
-    <!-- <node name="help_server" pkg="om_aiv_util" type="help_server.py" output="screen" /> -->
-    <!-- <node name="inputList_server" pkg="om_aiv_util" type="inputList_server.py" output="screen" /> -->
-    <!-- <node name="inputQuery_server" pkg="om_aiv_util" type="inputQuery_server.py" output="screen" /> -->
-    <!-- <node name="log_server" pkg="om_aiv_util" type="log_server.py" output="screen" /> -->
-    <!-- <node name="mapObjectInfo_server" pkg="om_aiv_util" type="mapObjectInfo_server.py" output="screen" /> -->
-    <!-- <node name="mapObjectList_server" pkg="om_aiv_util" type="mapObjectList_server.py" output="screen" /> -->
-    <!-- <node name="mapObjectTypeInfo_server" pkg="om_aiv_util" type="mapObjectTypeInfo_server.py" output="screen" /> -->
-    <!-- <node name="mapObjectTypeList_server" pkg="om_aiv_util" type="mapObjectTypeList_server.py" output="screen" /> -->
-    <!-- <node name="newConfigParam_server" pkg="om_aiv_util" type="newConfigParam_server.py" output="screen" /> -->
-    <!-- <node name="newConfigSectionComment_server" pkg="om_aiv_util" type="newConfigSectionComment_server.py" output="screen" /> -->
-    <!-- <node name="odometerReset_server" pkg="om_aiv_util" type="odometerReset_server.py" output="screen" /> -->
-    <!-- <node name="outputList_server" pkg="om_aiv_util" type="outputList_server.py" output="screen" /> -->
-    <!-- <node name="outputOff_server" pkg="om_aiv_util" type="outputOff_server.py" output="screen" /> -->
-    <!-- <node name="outputOn_server" pkg="om_aiv_util" type="outputOn_server.py" output="screen" /> -->
-    <!-- <node name="outputQuery_server" pkg="om_aiv_util" type="outputQuery_server.py" output="screen" /> -->
-    <!-- <node name="payloadQueryLocal_server" pkg="om_aiv_util" type="payloadQueryLocal_server.py" output="screen" /> -->
-    <!-- <node name="payloadRemove_server" pkg="om_aiv_util" type="payloadRemove_server.py" output="screen" /> -->
-    <!-- <node name="payloadSet_server" pkg="om_aiv_util" type="payloadSet_server.py" output="screen" /> -->
-    <!-- <node name="payloadSlotCountLocal_server" pkg="om_aiv_util" type="payloadSlotCountLocal_server.py" output="screen" /> -->
-    <!-- <node name="popupSimple_server" pkg="om_aiv_util" type="popupSimple_server.py" output="screen" /> -->
-    <!-- <node name="queueCancelLocal_server" pkg="om_aiv_util" type="queueCancelLocal_server.py" output="screen" /> -->
-    <!-- <node name="queueDropoff_server" pkg="om_aiv_util" type="queueDropoff_server.py" output="screen" /> -->
-    <!-- <node name="queueDropoff_server" pkg="om_aiv_util" type="queueDropoff_server.py" output="screen" /> -->
-    <!-- <node name="queueModifyLocal_server" pkg="om_aiv_util" type="queueModifyLocal_server.py" output="screen" /> -->
-    <!-- <node name="queueQueryLocal_server" pkg="om_aiv_util" type="queueQueryLocal_server.py" output="screen" /> -->
-    <!-- <node name="quit_server" pkg="om_aiv_util" type="quit_server.py" output="screen" /> -->
-    <!-- <node name="say_server" pkg="om_aiv_util" type="say_server.py" output="screen" /> -->
-    <!-- <node name="shutdown_server" pkg="om_aiv_util" type="shutdown_server.py" output="screen" /> -->
-    <!-- <node name="tripReset_server" pkg="om_aiv_util" type="tripReset_server.py" output="screen" /> -->
-    <!-- <node name="updateInfo_server" pkg="om_aiv_util" type="updateInfo_server.py" output="screen" /> -->
+  <!-- BEGIN ROBOT 1
+  <group ns="robot1">  -->
+    <node name="ld_status_publisher" pkg="om_aiv_util" type="ld_status_publisher.py" output="screen" />
+    <node name="analogInputList_server" pkg="om_aiv_util" type="analogInputList_server.py" output="screen" />
+    <node name="analogInputQueryRaw_server" pkg="om_aiv_util" type="analogInputQueryRaw_server.py" output="screen" />
+    <node name="analogInputQueryVoltage_server" pkg="om_aiv_util" type="analogInputQueryVoltage_server.py" output="screen" />
+    <node name="applicationFaultClear_server" pkg="om_aiv_util" type="applicationFaultClear_server.py" output="screen" />
+    <node name="ld_topic_publisher" pkg="om_aiv_util" type="ld_topic_publisher.py" output="screen" />
+    <node name="applicationFaultSet_server" pkg="om_aiv_util" type="applicationFaultSet_server.py" output="screen" />
+    <node name="arclSendText_server" pkg="om_aiv_util" type="arclSendText_server.py" output="screen" />
+    <node name="configAdd_server" pkg="om_aiv_util" type="configAdd_server.py" output="screen" />
+    <node name="configParse_server" pkg="om_aiv_util" type="configParse_server.py" output="screen" />
+    <node name="configStart_server" pkg="om_aiv_util" type="configStart_server.py" output="screen" />
+    <node name="connectOutgoing_server" pkg="om_aiv_util" type="connectOutgoing_server.py" output="screen" />
+    <node name="createInfo_server" pkg="om_aiv_util" type="createInfo_server.py" output="screen" />
+    <node name="doTaskInstant_server" pkg="om_aiv_util" type="doTaskInstant_server.py" output="screen" />
+    <node name="echo_server" pkg="om_aiv_util" type="echo_server.py" output="screen" />
+    <node name="enableMotors_server" pkg="om_aiv_util" type="enableMotors_server.py" output="screen" />
+    <node name="extIOAdd_server" pkg="om_aiv_util" type="extIOAdd_server.py" output="screen" />
+    <node name="extIODump_server" pkg="om_aiv_util" type="extIODump_server.py" output="screen" />
+    <node name="extIODumpLocal_server" pkg="om_aiv_util" type="extIODumpLocal_server.py" output="screen" />
+    <node name="extIOInputUpdate_server" pkg="om_aiv_util" type="extIOInputUpdate_server.py" output="screen" />
+    <node name="extIOInputUpdateBit_server" pkg="om_aiv_util" type="extIOInputUpdateBit_server.py" output="screen" />
+    <node name="extIOInputUpdateByte_server" pkg="om_aiv_util" type="extIOInputUpdateByte_server.py" output="screen" />
+    <node name="extIOOutputUpdate_server" pkg="om_aiv_util" type="extIOOutputUpdate_server.py" output="screen" />
+    <node name="extIOOutputUpdateBit_server" pkg="om_aiv_util" type="extIOOutputUpdateBit_server.py" output="screen" />
+    <node name="extIOOutputUpdateByte_server" pkg="om_aiv_util" type="extIOOutputUpdateByte_server.py" output="screen" />
+    <node name="extIORemove_server" pkg="om_aiv_util" type="extIORemove_server.py" output="screen" />
+    <node name="getConfigSectionInfo_server" pkg="om_aiv_util" type="getConfigSectionInfo_server.py" output="screen" />
+    <node name="getConfigSectionList_server" pkg="om_aiv_util" type="getConfigSectionList_server.py" output="screen" />
+    <node name="getConfigSectionValues_server" pkg="om_aiv_util" type="getConfigSectionValues_server.py" output="screen" />
+    <node name="getDataStoreFieldInfo_server" pkg="om_aiv_util" type="getDataStoreFieldInfo_server.py" output="screen" />
+    <node name="getDataStoreFieldList_server" pkg="om_aiv_util" type="getDataStoreFieldList_server.py" output="screen" />
+    <node name="getDataStoreFieldValues_server" pkg="om_aiv_util" type="getDataStoreFieldValues_server.py" output="screen" />
+    <node name="getDataStoreGroupInfo_server" pkg="om_aiv_util" type="getDataStoreGroupInfo_server.py" output="screen" />
+    <node name="getDataStoreGroupList_server" pkg="om_aiv_util" type="getDataStoreGroupList_server.py" output="screen" />
+    <node name="getDataStoreGroupValues_server" pkg="om_aiv_util" type="getDataStoreGroupValues_server.py" output="screen" />
+    <node name="getDataStoreTripGroupList_server" pkg="om_aiv_util" type="getDataStoreTripGroupList_server.py" output="screen" />
+    <node name="getInfo_publisher" pkg="om_aiv_util" type="getInfo_publisher.py" output="screen" />
+    <node name="getInfoList_server" pkg="om_aiv_util" type="getInfoList_server.py" output="screen" />
+    <node name="help_server" pkg="om_aiv_util" type="help_server.py" output="screen" />
+    <node name="inputList_server" pkg="om_aiv_util" type="inputList_server.py" output="screen" />
+    <node name="inputQuery_server" pkg="om_aiv_util" type="inputQuery_server.py" output="screen" />
+    <node name="log_server" pkg="om_aiv_util" type="log_server.py" output="screen" />
+    <node name="mapObjectInfo_server" pkg="om_aiv_util" type="mapObjectInfo_server.py" output="screen" />
+    <node name="mapObjectList_server" pkg="om_aiv_util" type="mapObjectList_server.py" output="screen" />
+    <node name="mapObjectTypeInfo_server" pkg="om_aiv_util" type="mapObjectTypeInfo_server.py" output="screen" />
+    <node name="mapObjectTypeList_server" pkg="om_aiv_util" type="mapObjectTypeList_server.py" output="screen" />
+    <node name="newConfigParam_server" pkg="om_aiv_util" type="newConfigParam_server.py" output="screen" />
+    <node name="newConfigSectionComment_server" pkg="om_aiv_util" type="newConfigSectionComment_server.py" output="screen" />
+    <node name="odometerReset_server" pkg="om_aiv_util" type="odometerReset_server.py" output="screen" />
+    <node name="outputList_server" pkg="om_aiv_util" type="outputList_server.py" output="screen" />
+    <node name="outputOff_server" pkg="om_aiv_util" type="outputOff_server.py" output="screen" />
+    <node name="outputOn_server" pkg="om_aiv_util" type="outputOn_server.py" output="screen" />
+    <node name="outputQuery_server" pkg="om_aiv_util" type="outputQuery_server.py" output="screen" />
+    <node name="payloadQueryLocal_server" pkg="om_aiv_util" type="payloadQueryLocal_server.py" output="screen" />
+    <node name="payloadRemove_server" pkg="om_aiv_util" type="payloadRemove_server.py" output="screen" />
+    <node name="payloadSet_server" pkg="om_aiv_util" type="payloadSet_server.py" output="screen" />
+    <node name="payloadSlotCountLocal_server" pkg="om_aiv_util" type="payloadSlotCountLocal_server.py" output="screen" />
+    <node name="popupSimple_server" pkg="om_aiv_util" type="popupSimple_server.py" output="screen" />
+    <node name="queueCancelLocal_server" pkg="om_aiv_util" type="queueCancelLocal_server.py" output="screen" />
+    <node name="queueDropoff_server" pkg="om_aiv_util" type="queueDropoff_server.py" output="screen" />
+    <node name="queueModifyLocal_server" pkg="om_aiv_util" type="queueModifyLocal_server.py" output="screen" />
+    <node name="queueQueryLocal_server" pkg="om_aiv_util" type="queueQueryLocal_server.py" output="screen" />
+    <node name="quit_server" pkg="om_aiv_util" type="quit_server.py" output="screen" />
+    <node name="say_server" pkg="om_aiv_util" type="say_server.py" output="screen" />
+    <node name="shutdown_server" pkg="om_aiv_util" type="shutdown_server.py" output="screen" />
+    <node name="tripReset_server" pkg="om_aiv_util" type="tripReset_server.py" output="screen" />
     <node name="waitTaskCancel_server" pkg="om_aiv_util" type="waitTaskCancel_server.py" output="screen" />
+    <node name="updateInfo_server" pkg="om_aiv_util" type="updateInfo_server.py" output="screen" />
 
 
 
 
       <param name="ip_address" value="168.3.201.123" />
       <param name="port" value="7171" />
-  <!-- </group> -->
+  <!-- </group>  -->
 
 </launch>
