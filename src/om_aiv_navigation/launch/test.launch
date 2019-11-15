@@ -1,0 +1,13 @@
+<launch>
+
+  <!-- BEGIN ROBOT 1-->
+  <!-- <group ns="robot1"> -->
+    <node name="goTo_action_client" pkg="om_aiv_navigation" type="goTo_action_client.py" output="screen" />
+
+      <param name="goal" value="goal3" />
+      <param name="ip_address" value="168.3.201.123" />
+      <param name="port" value="7171" />
+
+  <!-- </group> -->
+
+</launch>
