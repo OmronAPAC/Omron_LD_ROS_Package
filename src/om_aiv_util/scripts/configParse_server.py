@@ -22,7 +22,6 @@ def handle_configParse(req):
     global fault
     fault = req.a
     configParse()
-    # return ServiceResponse(req.a)
     return rcv
 
 def configParse_server():
@@ -33,7 +32,6 @@ def configParse_server():
 def configParse():
     global rcv
     pub = rospy.Publisher('arcl_configParse', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "configParse"
     print "Running command: ", command

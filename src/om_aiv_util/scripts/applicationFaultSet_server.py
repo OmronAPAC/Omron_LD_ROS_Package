@@ -26,7 +26,6 @@ def handle_applicationFaultClear(req):
     d = req.d
     e = req.e
     applicationFaultClear()
-    # return Service5Response(req.a + req.b + req.c + req.d + req.e)
     return rcv
 
 def applicationFaultClear_server():
@@ -37,7 +36,6 @@ def applicationFaultClear_server():
 def applicationFaultClear():
     global rcv
     pub = rospy.Publisher('arcl_applicationFaultClear', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "applicationFaultSet {}".format(a + " " + b + " " + c + " " + d + " " + e)
     command = command.encode('ascii')

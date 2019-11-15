@@ -22,7 +22,6 @@ def handle_analogInputQueryRaw(req):
     global text
     text = req.a
     analogInputQueryRaw()
-    # return ServiceResponse(req.a)
     return rcv
 
 def analogInputQueryRaw_server():
@@ -33,7 +32,6 @@ def analogInputQueryRaw_server():
 def analogInputQueryRaw():
     global rcv
     pub = rospy.Publisher('arcl_analogInputQueryRaw', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "analogInputQueryRaw {}".format(text)
     command = command.encode('ascii')

@@ -19,9 +19,7 @@ from om_aiv_util.srv import Service,ServiceResponse
 import rospy
 
 def handle_analogInputList(req):
-    # print "Returning", req.a
     analogInputList()
-    # return ServiceResponse(req.a)
     return rcv
 
 def analogInputList_server():
@@ -32,7 +30,6 @@ def analogInputList_server():
 def analogInputList():
     global rcv
     pub = rospy.Publisher('arcl_analogInputList', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
 
     command = "analogInputList"

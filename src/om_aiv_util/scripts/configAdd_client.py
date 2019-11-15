@@ -25,5 +25,4 @@ if __name__ == "__main__":
         print usage()
         sys.exit(1)
     print "running command"
-    # print "Requesting", x
     print configAdd_client(a, b)

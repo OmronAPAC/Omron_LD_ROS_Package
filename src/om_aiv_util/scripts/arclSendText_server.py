@@ -33,7 +33,6 @@ def arclSendText_server():
 def arclSendText():
     global rcv
     pub = rospy.Publisher('arcl_arclSendText', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "arclSendText {}".format(text)
     command = command.encode('ascii')

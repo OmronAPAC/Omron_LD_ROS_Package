@@ -22,7 +22,6 @@ def handle_applicationFaultClear(req):
     global fault
     fault = req.a
     applicationFaultClear()
-    # return ServiceResponse(req.a)
     return rcv
 
 def applicationFaultClear_server():
@@ -33,7 +32,6 @@ def applicationFaultClear_server():
 def applicationFaultClear():
     global rcv
     pub = rospy.Publisher('arcl_applicationFaultClear', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "applicationFaultClear {}".format(fault)
     print "Running command: ", command

@@ -22,7 +22,6 @@ def handle_analogInputQueryVoltage(req):
     global text
     text = req.a
     analogInputQueryVoltage()
-    # return ServiceResponse(req.a)
     return rcv
 
 def analogInputQueryVoltage_server():

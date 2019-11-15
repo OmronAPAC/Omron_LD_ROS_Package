@@ -37,7 +37,7 @@ def configAdd():
     command = "configAdd {}".format(a + " " + b)
     command = command.encode('ascii')
     print "Running command: ", command
-    s.send(command+b"\r\n")# rospy.init_node('talker', anonymous=True)
+    s.send(command+b"\r\n")
     try:
         data = s.recv(BUFFER_SIZE)
         rcv = data.encode('ascii', 'ignore')
