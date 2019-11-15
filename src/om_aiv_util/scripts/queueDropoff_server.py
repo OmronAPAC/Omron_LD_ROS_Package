@@ -47,7 +47,7 @@ def queueDropoff():
             #check for required data
             if "sucessfully " in rcv:
                 print rcv
-                return rcv
+                return 1
                 break
             if "QueueUpdate" in rcv:
                 print rcv
