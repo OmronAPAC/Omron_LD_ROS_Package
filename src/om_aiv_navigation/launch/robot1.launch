@@ -3,7 +3,6 @@
   <!-- BEGIN ROBOT 1-->
   <!-- <group ns="robot1"> -->
     <node name="dock_action_server" pkg="om_aiv_navigation" type="dock_action_server.py" output="screen" />
-    <node name="undock_action_server" pkg="om_aiv_navigation" type="undock_action_server.py" output="screen" />
     <node name="doTask_action_server" pkg="om_aiv_navigation" type="doTask_action_server.py" output="screen" />
     <node name="executeMacro_action_server" pkg="om_aiv_navigation" type="executeMacro_action_server.py" output="screen" />
     <node name="goTo_action_server" pkg="om_aiv_navigation" type="goTo_action_server.py" output="screen" />
