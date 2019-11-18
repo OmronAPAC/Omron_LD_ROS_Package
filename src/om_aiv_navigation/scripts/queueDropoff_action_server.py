@@ -42,6 +42,7 @@ class ActionServer():
         goal = goal.goal_queueDropoff
         rate = rospy.Rate(10) # 10hz
         print(Style.RESET_ALL)
+        print(Style.BRIGHT)
         print(Fore.GREEN)
 
         #send command to arcl
