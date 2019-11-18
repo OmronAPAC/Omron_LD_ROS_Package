@@ -73,6 +73,7 @@ PatrolOnce.action
 Patrol.action
 PatrolResume.action
 Play.action
+QueueDropoff.action
 Stop.action
 Undock.action
 )

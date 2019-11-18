@@ -48,14 +48,10 @@ def queueDropoff():
             if "Completed" in rcv:
                 print rcv
                 break
-            # if "QueueUpdate" in rcv:
-            #     print rcv
-            #     return rcv
-            #     break
-            # if "CommandErrorDescription" in rcv:
-            #     print rcv
-            #     return rcv
-            #     break
+            if "CommandErrorDescription" in rcv:
+                print rcv
+                return rcv
+                break
             else:
                 data = s.recv(BUFFER_SIZE)
                 rcv = rcv + data.encode('ascii', 'ignore')

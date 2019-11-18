@@ -14,6 +14,7 @@ let GoToAction = require('./GoToAction.js');
 let PatrolResumeFeedback = require('./PatrolResumeFeedback.js');
 let GoToGoal = require('./GoToGoal.js');
 let UndockActionResult = require('./UndockActionResult.js');
+let QueueDropoffActionGoal = require('./QueueDropoffActionGoal.js');
 let PlayGoal = require('./PlayGoal.js');
 let ExecuteMacroActionFeedback = require('./ExecuteMacroActionFeedback.js');
 let GoToActionFeedback = require('./GoToActionFeedback.js');
@@ -24,9 +25,11 @@ let PatrolResumeActionGoal = require('./PatrolResumeActionGoal.js');
 let DockActionFeedback = require('./DockActionFeedback.js');
 let PatrolResumeActionResult = require('./PatrolResumeActionResult.js');
 let PatrolFeedback = require('./PatrolFeedback.js');
+let QueueDropoffAction = require('./QueueDropoffAction.js');
 let StopGoal = require('./StopGoal.js');
 let ExecuteMacroActionGoal = require('./ExecuteMacroActionGoal.js');
 let PlayActionGoal = require('./PlayActionGoal.js');
+let QueueDropoffGoal = require('./QueueDropoffGoal.js');
 let DoTaskActionResult = require('./DoTaskActionResult.js');
 let StopActionGoal = require('./StopActionGoal.js');
 let GoToActionResult = require('./GoToActionResult.js');
@@ -41,6 +44,7 @@ let UndockAction = require('./UndockAction.js');
 let PatrolResumeActionFeedback = require('./PatrolResumeActionFeedback.js');
 let PatrolOnceGoal = require('./PatrolOnceGoal.js');
 let UndockActionGoal = require('./UndockActionGoal.js');
+let QueueDropoffResult = require('./QueueDropoffResult.js');
 let StopActionFeedback = require('./StopActionFeedback.js');
 let PlayActionResult = require('./PlayActionResult.js');
 let DoTaskGoal = require('./DoTaskGoal.js');
@@ -60,6 +64,9 @@ let PlayResult = require('./PlayResult.js');
 let PatrolResumeAction = require('./PatrolResumeAction.js');
 let GoToActionGoal = require('./GoToActionGoal.js');
 let PatrolActionResult = require('./PatrolActionResult.js');
+let QueueDropoffFeedback = require('./QueueDropoffFeedback.js');
+let QueueDropoffActionResult = require('./QueueDropoffActionResult.js');
+let QueueDropoffActionFeedback = require('./QueueDropoffActionFeedback.js');
 let DockAction = require('./DockAction.js');
 let UndockResult = require('./UndockResult.js');
 let DockResult = require('./DockResult.js');
@@ -86,6 +93,7 @@ module.exports = {
   PatrolResumeFeedback: PatrolResumeFeedback,
   GoToGoal: GoToGoal,
   UndockActionResult: UndockActionResult,
+  QueueDropoffActionGoal: QueueDropoffActionGoal,
   PlayGoal: PlayGoal,
   ExecuteMacroActionFeedback: ExecuteMacroActionFeedback,
   GoToActionFeedback: GoToActionFeedback,
@@ -96,9 +104,11 @@ module.exports = {
   DockActionFeedback: DockActionFeedback,
   PatrolResumeActionResult: PatrolResumeActionResult,
   PatrolFeedback: PatrolFeedback,
+  QueueDropoffAction: QueueDropoffAction,
   StopGoal: StopGoal,
   ExecuteMacroActionGoal: ExecuteMacroActionGoal,
   PlayActionGoal: PlayActionGoal,
+  QueueDropoffGoal: QueueDropoffGoal,
   DoTaskActionResult: DoTaskActionResult,
   StopActionGoal: StopActionGoal,
   GoToActionResult: GoToActionResult,
@@ -113,6 +123,7 @@ module.exports = {
   PatrolResumeActionFeedback: PatrolResumeActionFeedback,
   PatrolOnceGoal: PatrolOnceGoal,
   UndockActionGoal: UndockActionGoal,
+  QueueDropoffResult: QueueDropoffResult,
   StopActionFeedback: StopActionFeedback,
   PlayActionResult: PlayActionResult,
   DoTaskGoal: DoTaskGoal,
@@ -132,6 +143,9 @@ module.exports = {
   PatrolResumeAction: PatrolResumeAction,
   GoToActionGoal: GoToActionGoal,
   PatrolActionResult: PatrolActionResult,
+  QueueDropoffFeedback: QueueDropoffFeedback,
+  QueueDropoffActionResult: QueueDropoffActionResult,
+  QueueDropoffActionFeedback: QueueDropoffActionFeedback,
   DockAction: DockAction,
   UndockResult: UndockResult,
   DockResult: DockResult,

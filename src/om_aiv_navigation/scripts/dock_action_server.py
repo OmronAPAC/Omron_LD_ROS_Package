@@ -70,7 +70,6 @@ class ActionServer():
             for line in rcv.splitlines():
                 #print required data
                 if 'Docked' in line:
-                    i = 1
                     doTask = line.split("Docked")
                     rospy.loginfo(",Docked".join(doTask)[1:])
                     rate.sleep()

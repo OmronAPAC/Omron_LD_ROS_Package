@@ -2,7 +2,7 @@
 
   <!-- BEGIN ROBOT 1-->
   <!-- <group ns="robot1"> -->
-    <node name="dock_action_server" pkg="om_aiv_navigation" type="dock_action_server.py" output="screen" />
+    <!-- <node name="dock_action_server" pkg="om_aiv_navigation" type="dock_action_server.py" output="screen" />
     <node name="doTask_action_server" pkg="om_aiv_navigation" type="doTask_action_server.py" output="screen" />
     <node name="executeMacro_action_server" pkg="om_aiv_navigation" type="executeMacro_action_server.py" output="screen" />
     <node name="goTo_action_server" pkg="om_aiv_navigation" type="goTo_action_server.py" output="screen" />
@@ -11,8 +11,8 @@
     <node name="patrolResume_action_server" pkg="om_aiv_navigation" type="patrolResume_action_server.py" output="screen" />
     <node name="play_action_server" pkg="om_aiv_navigation" type="play_action_server.py" output="screen" />
     <node name="stop_action_server" pkg="om_aiv_navigation" type="stop_action_server.py" output="screen" />
-    <node name="undock_action_server" pkg="om_aiv_navigation" type="undock_action_server.py" output="screen" />
-
+    <node name="undock_action_server" pkg="om_aiv_navigation" type="undock_action_server.py" output="screen" /> -->
+    <node name="queueDropoff_action_server" pkg="om_aiv_navigation" type="queueDropoff_action_server.py" output="screen" />
 
       <param name="ip_address" value="168.3.201.123" />
       <param name="port" value="7171" />

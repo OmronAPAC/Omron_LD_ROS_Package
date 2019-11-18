@@ -54,6 +54,13 @@ from ._PlayActionResult import *
 from ._PlayFeedback import *
 from ._PlayGoal import *
 from ._PlayResult import *
+from ._QueueDropoffAction import *
+from ._QueueDropoffActionFeedback import *
+from ._QueueDropoffActionGoal import *
+from ._QueueDropoffActionResult import *
+from ._QueueDropoffFeedback import *
+from ._QueueDropoffGoal import *
+from ._QueueDropoffResult import *
 from ._StopAction import *
 from ._StopActionFeedback import *
 from ._StopActionGoal import *
