@@ -24,7 +24,6 @@ def handle_createInfo(req):
     b = req.b
     c = req.c
     createInfo()
-    # return Service5Response(req.a + req.b + req.c + req.d + req.e)
     return rcv
 
 def createInfo_server():
@@ -35,7 +34,6 @@ def createInfo_server():
 def createInfo():
     global rcv
     pub = rospy.Publisher('arcl_createInfo', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "createInfo {}".format(a + " " + b + " " + c)
     command = command.encode('ascii')

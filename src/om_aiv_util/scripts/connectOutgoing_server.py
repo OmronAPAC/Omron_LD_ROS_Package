@@ -23,7 +23,6 @@ def handle_connectOutgoing(req):
     a = req.a
     b = req.b
     connectOutgoing()
-    # return Service5Response(req.a + req.b + req.c + req.d + req.e)
     return rcv
 
 def connectOutgoing_server():
@@ -34,7 +33,6 @@ def connectOutgoing_server():
 def connectOutgoing():
     global rcv
     pub = rospy.Publisher('arcl_connectOutgoing', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "connectOutgoing {}".format(a + " " + b)
     command = command.encode('ascii')

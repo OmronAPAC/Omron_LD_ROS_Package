@@ -22,5 +22,4 @@ if __name__ == "__main__":
         print usage()
         sys.exit(1)
     print "running command"
-    # print "Requesting", x
     print doTaskInstant_client(a, b)
