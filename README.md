@@ -17,9 +17,15 @@ Ubuntu 18.04
 ROS Melodic 
 ```
 
-### Installing
+### Installation
+
+First set up a catkin workspace.
+Then clone the repository into the src/ folder:
 ```
 git clone https://github.com/tthmatt/Omron_LD_ROS_Package.git
+```
+Make sure to source the correct setup file according to your workspace hierarchy, then use catkin build to compile:
+```
 catkin build
 ```
 ### Initial Configuration
