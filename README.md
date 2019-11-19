@@ -17,9 +17,15 @@ Ubuntu 18.04
 ROS Melodic 
 ```
 
-### Installing
+### Installation
+
+First set up a catkin workspace.
+Then clone the repository into the src/ folder:
 ```
 git clone https://github.com/tthmatt/Omron_LD_ROS_Package.git
+```
+Make sure to source the correct setup file according to your workspace hierarchy, then use catkin build to compile:
+```
 catkin build
 ```
 ### Initial Configuration
@@ -29,8 +35,7 @@ Specify robot ip address and port number in /ld_ROS/src/om_aiv_util/launch/robot
 
 For 2 robots:
 
-For more than 2 robots:
-
+Specify robot ip address and port number in /ld_ROS/src/om_aiv_util/launch/robot1.launch
 
 
 ### Usage
