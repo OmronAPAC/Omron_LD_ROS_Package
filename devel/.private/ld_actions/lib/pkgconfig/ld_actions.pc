@@ -1,8 +1,0 @@
-prefix=/home/tthmatt/ld_ROS/devel/.private/ld_actions
-
-Name: ld_actions
-Description: Description of ld_actions
-Version: 0.0.0
-Cflags: -I/home/tthmatt/ld_ROS/devel/.private/ld_actions/include
-Libs: -L/home/tthmatt/ld_ROS/devel/.private/ld_actions/lib -lld_actions
-Requires: actionlib_msgs rospy std_msgs message_runtime

@@ -1,1 +1,0 @@
-/home/tthmatt/ld_ROS/devel/.private/ld_services/share/common-lisp/ros/ld_services/srv/ld_services-srv.asd

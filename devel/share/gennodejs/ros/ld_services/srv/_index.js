@@ -1,1 +1,0 @@
-/home/tthmatt/ld_ROS/devel/.private/ld_services/share/gennodejs/ros/ld_services/srv/_index.js

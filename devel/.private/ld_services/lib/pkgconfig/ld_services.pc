@@ -1,8 +1,0 @@
-prefix=/home/tthmatt/ld_ROS/devel/.private/ld_services
-
-Name: ld_services
-Description: Description of ld_services
-Version: 0.0.0
-Cflags: -I/home/tthmatt/ld_ROS/devel/.private/ld_services/include
-Libs: -L/home/tthmatt/ld_ROS/devel/.private/ld_services/lib 
-Requires: 

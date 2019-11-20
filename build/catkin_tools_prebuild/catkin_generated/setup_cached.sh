@@ -12,5 +12,4 @@ export LD_LIBRARY_PATH="/home/tthmatt/ws/devel/lib:/home/tthmatt/catkin_ws/devel
 export PKG_CONFIG_PATH="/home/tthmatt/ws/devel/lib/pkgconfig:/home/tthmatt/catkin_ws/devel/lib/pkgconfig:/opt/ros/melodic/lib/pkgconfig"
 export PWD="/home/tthmatt/ld_ROS/build/catkin_tools_prebuild"
 export PYTHONPATH="/home/tthmatt/catkin_ws/devel/lib/python2.7/dist-packages:/opt/ros/melodic/lib/python2.7/dist-packages"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/tthmatt/ld_ROS/devel/.private/catkin_tools_prebuild/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
 export ROS_PACKAGE_PATH="/home/tthmatt/ld_ROS/build/catkin_tools_prebuild:$ROS_PACKAGE_PATH"
