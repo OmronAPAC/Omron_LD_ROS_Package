@@ -35,7 +35,7 @@ Specify robot ip address and port number in /ld_ROS/src/om_aiv_util/launch/robot
 
 For 2 robots:
 
-Specify robot ip address and port number in /ld_ROS/src/om_aiv_util/launch/robot1.launch
+Specify robot ip address and port number in /ld_ROS/src/om_aiv_util/launch/2robots.launch
 
 
 ### Usage
