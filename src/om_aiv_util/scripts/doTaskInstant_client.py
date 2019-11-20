@@ -5,14 +5,14 @@ from om_aiv_util.srv import *
 def doTaskInstant_client(a, b):
     rospy.wait_for_service('doTaskInstant')
     try:
-        add_two_ints = rospy.ServiceProxy('doTaskInstant', Service2)
-        resp1 = add_two_ints(a, b)
+        service = rospy.ServiceProxy('doTaskInstant', Service2)
+        resp1 = service(a, b)
         return resp1.device
     except rospy.ServiceException, error:
         print "Service call failed: %s"%error
 
 def usage():
-    return "%s <task> <argument>"%sys.argv[0]
+    return "%s <task> <argument> Must give task to do "%sys.argv[0]
 
 if __name__ == "__main__":
     if len(sys.argv) == 3:

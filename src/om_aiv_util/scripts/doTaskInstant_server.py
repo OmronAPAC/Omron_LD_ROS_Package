@@ -23,7 +23,6 @@ def handle_doTaskInstant(req):
     a = req.a
     b = req.b
     doTaskInstant()
-    # return Service5Response(req.a + req.b + req.c + req.d + req.e)
     return rcv
 
 def doTaskInstant_server():
@@ -34,7 +33,6 @@ def doTaskInstant_server():
 def doTaskInstant():
     global rcv
     pub = rospy.Publisher('arcl_doTaskInstant', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "doTaskInstant {}".format(a + " " + b)
     command = command.encode('ascii')

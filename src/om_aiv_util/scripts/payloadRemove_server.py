@@ -21,7 +21,6 @@ def handle_payloadRemove(req):
     global text
     text = req.a
     payloadRemove()
-    # return ServiceResponse(req.a)
     return rcv
 
 def payloadRemove_server():
@@ -32,7 +31,6 @@ def payloadRemove_server():
 def payloadRemove():
     global rcv
     pub = rospy.Publisher('arcl_payloadRemove', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "payloadRemove {}".format(text)
     command = command.encode('ascii')

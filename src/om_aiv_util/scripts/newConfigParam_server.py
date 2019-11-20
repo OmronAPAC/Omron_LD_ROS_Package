@@ -29,7 +29,6 @@ def handle_newConfigParam(req):
     h = req.h
     i = req.i
     newConfigParam()
-    # return Service5Response(req.a + req.b + req.c + req.d + req.e)
     return rcv
 
 def newConfigParam_server():
@@ -40,7 +39,6 @@ def newConfigParam_server():
 def newConfigParam():
     global rcv
     pub = rospy.Publisher('arcl_newConfigParam', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "newConfigParam {}".format(a + " " + b + " \"" + c + "\" " + d + " " + e + " \"" + f + "\" " + g + " " + h + " \"" + i + "\"")
     command = command.encode('ascii')

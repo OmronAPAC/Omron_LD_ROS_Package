@@ -22,7 +22,6 @@ def handle_updateInfo(req):
     a = req.a
     b = req.b
     updateInfo()
-    # return Service5Response(req.a + req.b + req.c + req.d + req.e)
     return rcv
 
 def updateInfo_server():
@@ -33,7 +32,6 @@ def updateInfo_server():
 def updateInfo():
     global rcv
     pub = rospy.Publisher('arcl_updateInfo', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "updateInfo {}".format(a + " " + b)
     command = command.encode('ascii')

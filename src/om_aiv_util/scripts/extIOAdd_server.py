@@ -34,7 +34,6 @@ def extIOAdd_server():
 def extIOAdd():
     global rcv
     pub = rospy.Publisher('arcl_extIOAdd', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "extIOAdd {}".format(a + " " + b + " " + c)
     command = command.encode('ascii')

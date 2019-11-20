@@ -5,8 +5,8 @@ from om_aiv_util.srv import *
 def payloadRemove_client(x):
     rospy.wait_for_service('payloadRemove')
     try:
-        add_two_ints = rospy.ServiceProxy('payloadRemove', Service)
-        resp1 = add_two_ints(x)
+        service = rospy.ServiceProxy('payloadRemove', Service)
+        resp1 = service(x)
         return resp1.device
     except rospy.ServiceException, e:
         print "Service call failed: %s"%e

@@ -48,9 +48,14 @@ def enableMotors():
                 print rcv
                 return rcv
                 break
+            if "EStop" in rcv:
+                print rcv
+                return rcv
+                break
             else:
                 data = s.recv(BUFFER_SIZE)
                 rcv = rcv + data.encode('ascii', 'ignore')
+
 
     except socket.error as e:
         print("Connection  failed")

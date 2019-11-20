@@ -21,7 +21,6 @@ def handle_odometerReset(req):
     global fault
     fault = req.a
     odometerReset()
-    # return ServiceResponse(req.a)
     return rcv
 
 def odometerReset_server():
@@ -32,7 +31,6 @@ def odometerReset_server():
 def odometerReset():
     global rcv
     pub = rospy.Publisher('arcl_odometerReset', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "odometerReset"
     print "Running command: ", command

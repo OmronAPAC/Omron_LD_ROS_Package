@@ -22,7 +22,6 @@ def handle_getDataStoreTripGroupList(req):
     global fault
     fault = req.a
     getDataStoreTripGroupList()
-    # return ServiceResponse(req.a)
     return rcv
 
 def getDataStoreTripGroupList_server():
@@ -33,7 +32,6 @@ def getDataStoreTripGroupList_server():
 def getDataStoreTripGroupList():
     global rcv
     pub = rospy.Publisher('arcl_getDataStoreTripGroupList', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "getDataStoreTripGroupList"
     print "Running command: ", command

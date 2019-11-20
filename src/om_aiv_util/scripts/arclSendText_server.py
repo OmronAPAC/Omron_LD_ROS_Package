@@ -22,7 +22,6 @@ def handle_arclSendText(req):
     global text
     text = req.a
     arclSendText()
-    # return ServiceResponse(req.a)
     return rcv
 
 def arclSendText_server():

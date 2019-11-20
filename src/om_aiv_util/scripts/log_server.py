@@ -23,7 +23,6 @@ def handle_log(req):
     a = req.a
     b = req.b
     log()
-    # return Service5Response(req.a + req.b + req.c + req.d + req.e)
     return rcv
 
 def log_server():
@@ -34,7 +33,6 @@ def log_server():
 def log():
     global rcv
     pub = rospy.Publisher('arcl_log', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "log {}".format(a + " " + b)
     command = command.encode('ascii')

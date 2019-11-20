@@ -22,7 +22,6 @@ def handle_say(req):
     print "Returning", req.a
     text = req.a
     say()
-    # return ServiceResponse(req.a)
     return rcv
 
 def say_server():
@@ -33,7 +32,6 @@ def say_server():
 def say():
     global rcv
     pub = rospy.Publisher('arcl_say', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "say {}".format(text)
     command = command.encode('ascii')

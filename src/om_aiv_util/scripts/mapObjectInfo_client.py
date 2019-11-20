@@ -5,8 +5,8 @@ from om_aiv_util.srv import *
 def mapObjectInfo_client(x):
     rospy.wait_for_service('mapObjectInfo')
     try:
-        add_two_ints = rospy.ServiceProxy('mapObjectInfo', Service)
-        resp1 = add_two_ints(x)
+        service = rospy.ServiceProxy('mapObjectInfo', Service)
+        resp1 = service(x)
         return resp1.device
     except rospy.ServiceException, e:
         print "Service call failed: %s"%e
@@ -21,5 +21,4 @@ if __name__ == "__main__":
         print usage()
         sys.exit(1)
     print "running command"
-    # print "Requesting", x
     print mapObjectInfo_client(x)

@@ -22,7 +22,6 @@ def handle_mapObjectInfo(req):
     global text
     text = req.a
     mapObjectInfo()
-    # return ServiceResponse(req.a)
     return rcv
 
 def mapObjectInfo_server():
@@ -33,7 +32,6 @@ def mapObjectInfo_server():
 def mapObjectInfo():
     global rcv
     pub = rospy.Publisher('arcl_mapObjectInfo', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "mapObjectInfo {}".format(text)
     command = command.encode('ascii')

@@ -30,7 +30,6 @@ def extIODumpLocal_server():
 def extIODumpLocal():
     global rcv
     pub = rospy.Publisher('arcl_extIODumpLocal', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "extIODumpLocal"
     print "Running command: ", command

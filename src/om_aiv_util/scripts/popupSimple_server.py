@@ -24,7 +24,6 @@ def handle_popupSimple(req):
     c = req.c
     d = req.d
     popupSimple()
-    # return Service5Response(req.a + req.b + req.c + req.d + req.e)
     return rcv
 
 def popupSimple_server():
@@ -35,7 +34,6 @@ def popupSimple_server():
 def popupSimple():
     global rcv
     pub = rospy.Publisher('arcl_popupSimple', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "popupSimple {}".format(" \"" + a + "\" " +" \"" + b +"\" "+ " \"" + c + "\" " + d)
     command = command.encode('ascii')

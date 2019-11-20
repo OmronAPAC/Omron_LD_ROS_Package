@@ -5,14 +5,14 @@ from om_aiv_util.srv import *
 def analogInputQueryRaw_client(x):
     rospy.wait_for_service('analogInputQueryRaw')
     try:
-        add_two_ints = rospy.ServiceProxy('analogInputQueryRaw', Service)
-        resp1 = add_two_ints(x)
+        service = rospy.ServiceProxy('analogInputQueryRaw', Service)
+        resp1 = service(x)
         return resp1.device
     except rospy.ServiceException, e:
         print "Service call failed: %s"%e
 
 def usage():
-    return "%s <name>"%sys.argv[0]
+    return "%s <name> Give device to query"%sys.argv[0]
 
 if __name__ == "__main__":
     if len(sys.argv) == 2:

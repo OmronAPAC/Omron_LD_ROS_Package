@@ -5,8 +5,8 @@ from om_aiv_util.srv import *
 def configParse_client(x):
     rospy.wait_for_service('configParse')
     try:
-        add_two_ints = rospy.ServiceProxy('configParse', Service)
-        resp1 = add_two_ints(x)
+        service = rospy.ServiceProxy('configParse', Service)
+        resp1 = service(x)
         return resp1.device
     except rospy.ServiceException, e:
         print "Service call failed: %s"%e

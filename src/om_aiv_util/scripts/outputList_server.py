@@ -18,10 +18,7 @@ connecttcp.connect(str(ip_address), port)
 from om_aiv_util.srv import Service,ServiceResponse
 
 def handle_outputList(req):
-    global fault
-    fault = req.a
     outputList()
-    # return ServiceResponse(req.a)
     return rcv
 
 def outputList_server():
@@ -32,7 +29,6 @@ def outputList_server():
 def outputList():
     global rcv
     pub = rospy.Publisher('arcl_outputList', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "outputList"
     print "Running command: ", command

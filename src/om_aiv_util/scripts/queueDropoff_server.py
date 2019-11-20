@@ -23,7 +23,6 @@ def handle_queueDropoff(req):
     b = req.b
     c = req.c
     queueDropoff()
-    # return Service5Response(req.a + req.b + req.c + req.d + req.e)
     return rcv
 
 def queueDropoff_server():
@@ -34,7 +33,6 @@ def queueDropoff_server():
 def queueDropoff():
     global rcv
     pub = rospy.Publisher('arcl_queueDropoff', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "queueDropoff {}".format(a + " " + b + " " + c)
     command = command.encode('ascii')

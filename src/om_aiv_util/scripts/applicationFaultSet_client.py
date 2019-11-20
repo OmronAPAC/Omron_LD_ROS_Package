@@ -5,8 +5,8 @@ from om_aiv_util.srv import *
 def analogInputQueryRaw_client(a, b , c, d, e):
     rospy.wait_for_service('applicationFaultClear')
     try:
-        add_two_ints = rospy.ServiceProxy('applicationFaultClear', Service5)
-        resp1 = add_two_ints(a, b, c, d, e)
+        service = rospy.ServiceProxy('applicationFaultClear', Service5)
+        resp1 = service(a, b, c, d, e)
         return resp1.device
     except rospy.ServiceException, error:
         print "Service call failed: %s"%error

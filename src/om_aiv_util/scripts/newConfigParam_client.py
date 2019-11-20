@@ -5,8 +5,8 @@ from om_aiv_util.srv import *
 def newConfigParam_client(a, b , c, d, e, f, g, h, i):
     rospy.wait_for_service('newConfigParam')
     try:
-        add_two_ints = rospy.ServiceProxy('newConfigParam', Service9)
-        resp1 = add_two_ints(a, b, c, d, e, f, g, h, i)
+        service = rospy.ServiceProxy('newConfigParam', Service9)
+        resp1 = service(a, b, c, d, e, f, g, h, i)
         return resp1.device
     except rospy.ServiceException, error:
         print "Service call failed: %s"%error

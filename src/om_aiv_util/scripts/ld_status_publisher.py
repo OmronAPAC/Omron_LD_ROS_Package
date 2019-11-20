@@ -1,6 +1,5 @@
 #!/usr/bin/env python
-## publishes std_msgs/Strings messages
-## to the 5 ld_status topics
+## publishes std_msgs messages to the 5 ld_status topics
 from colorama import init
 init()
 from colorama import Fore, Back, Style
@@ -10,7 +9,6 @@ from std_msgs.msg import Float32
 from geometry_msgs.msg import Pose
 from geometry_msgs.msg import Point
 from om_aiv_util.msg import Location
-# from turtlesim.msg import Pose
 import math
 import numpy as np
 import socket
@@ -70,10 +68,10 @@ def status():
     print "Getting status..."
 
     for line in rcv.splitlines():
-        if 'Status:' in line:
-            status = line.split()[-1]
+        if 'Status: DockingState:' in line:
+            status = line.split("Status:")
             rospy.loginfo(status)
-            pub.publish(status)
+            pub.publish(''.join(status))
             rate.sleep()
         else:
             pass
@@ -172,12 +170,6 @@ def temperature():
 
 if __name__ == '__main__':
     try:
-        # extended_status_for_humans()
-        # status()
-        # state_of_charge()
-        # location()
-        # localization_score()
-        # temperature()
         while not rospy.is_shutdown():
             sendcommand()
             extended_status_for_humans()

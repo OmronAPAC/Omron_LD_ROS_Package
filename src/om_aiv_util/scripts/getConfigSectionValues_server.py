@@ -20,10 +20,8 @@ import rospy
 
 def handle_getConfigSectionValues(req):
     global text
-    print "Returning", req.a
     text = req.a
     getConfigSectionValues()
-    # return ServiceResponse(req.a)
     return rcv
 
 def getConfigSectionValues_server():
@@ -34,7 +32,6 @@ def getConfigSectionValues_server():
 def getConfigSectionValues():
     global rcv
     pub = rospy.Publisher('arcl_getConfigSectionValues', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "getConfigSectionValues {}".format(text)
     command = command.encode('ascii')

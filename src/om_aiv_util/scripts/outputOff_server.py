@@ -31,7 +31,6 @@ def outputOff_server():
 def outputOff():
     global rcv
     pub = rospy.Publisher('arcl_outputOff', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "outputOff {}".format(a)
     command = command.encode('ascii')

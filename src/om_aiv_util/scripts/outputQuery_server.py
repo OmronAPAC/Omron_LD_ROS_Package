@@ -21,7 +21,6 @@ def handle_outputQuery(req):
     global text
     text = req.a
     outputQuery()
-    # return ServiceResponse(req.a)
     return rcv
 
 def outputQuery_server():
@@ -32,7 +31,6 @@ def outputQuery_server():
 def outputQuery():
     global rcv
     pub = rospy.Publisher('arcl_outputQuery', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "outputQuery {}".format(text)
     command = command.encode('ascii')

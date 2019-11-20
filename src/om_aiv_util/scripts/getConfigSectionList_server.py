@@ -23,7 +23,6 @@ def handle_getConfigSectionList(req):
     print "Returning", req.a
     fault = req.a
     getConfigSectionList()
-    # return ServiceResponse(req.a)
     return rcv
 
 def getConfigSectionList_server():
@@ -34,7 +33,6 @@ def getConfigSectionList_server():
 def getConfigSectionList():
     global rcv
     pub = rospy.Publisher('arcl_getConfigSectionList', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "getConfigSectionList"
     print "Running command: ", command

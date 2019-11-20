@@ -23,7 +23,6 @@ def handle_extIOOutputUpdate(req):
     a = req.a
     b = req.b
     extIOOutputUpdate()
-    # return Service5Response(req.a + req.b + req.c + req.d + req.e)
     return rcv
 
 def extIOOutputUpdate_server():
@@ -34,7 +33,6 @@ def extIOOutputUpdate_server():
 def extIOOutputUpdate():
     global rcv
     pub = rospy.Publisher('arcl_extIOOutputUpdate', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "extIOOutputUpdate {}".format(a + " " + b)
     command = command.encode('ascii')

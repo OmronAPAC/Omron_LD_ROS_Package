@@ -19,10 +19,7 @@ from om_aiv_util.srv import Service,ServiceResponse
 import rospy
 
 def handle_help(req):
-    global fault
-    fault = req.a
     help()
-    # return ServiceResponse(req.a)
     return rcv
 
 def help_server():
@@ -33,7 +30,6 @@ def help_server():
 def help():
     global rcv
     pub = rospy.Publisher('arcl_help', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "help"
     print "Running command: ", command

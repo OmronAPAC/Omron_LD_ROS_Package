@@ -5,8 +5,8 @@ from om_aiv_util.srv import *
 def configAdd_client(a, b):
     rospy.wait_for_service('configAdd')
     try:
-        add_two_ints = rospy.ServiceProxy('configAdd', Service2)
-        resp1 = add_two_ints(a, b)
+        service = rospy.ServiceProxy('configAdd', Service2)
+        resp1 = service(a, b)
         return resp1.device
     except rospy.ServiceException, error:
         print "Service call failed: %s"%error

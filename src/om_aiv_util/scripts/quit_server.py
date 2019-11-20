@@ -18,10 +18,7 @@ connecttcp.connect(str(ip_address), port)
 from om_aiv_util.srv import Service,ServiceResponse
 
 def handle_quit(req):
-    global fault
-    fault = req.a
     quit()
-    # return ServiceResponse(req.a)
     return rcv
 
 def quit_server():
@@ -32,7 +29,6 @@ def quit_server():
 def quit():
     global rcv
     pub = rospy.Publisher('arcl_quit', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "quit"
     print "Running command: ", command

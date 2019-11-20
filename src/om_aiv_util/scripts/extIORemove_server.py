@@ -22,7 +22,6 @@ def handle_extIORemove(req):
     global text
     text = req.a
     extIORemove()
-    # return ServiceResponse(req.a)
     return rcv
 
 def extIORemove_server():
@@ -33,7 +32,6 @@ def extIORemove_server():
 def extIORemove():
     global rcv
     pub = rospy.Publisher('arcl_extIORemove', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "extIORemove {}".format(text)
     command = command.encode('ascii')

@@ -23,7 +23,6 @@ def handle_getDataStoreFieldvalues(req):
     print "Returning", req.a
     text = req.a
     getDataStoreFieldvalues()
-    # return ServiceResponse(req.a)
     return rcv
 
 def getDataStoreFieldvalues_server():
@@ -34,7 +33,6 @@ def getDataStoreFieldvalues_server():
 def getDataStoreFieldvalues():
     global rcv
     pub = rospy.Publisher('arcl_getDataStoreFieldvalues', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "getDataStoreFieldvalues {}".format(text)
     command = command.encode('ascii')

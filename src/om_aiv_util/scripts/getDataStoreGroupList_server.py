@@ -23,7 +23,6 @@ def handle_getDataStoreGroupList(req):
     print "Returning", req.a
     fault = req.a
     getDataStoreGroupList()
-    # return ServiceResponse(req.a)
     return rcv
 
 def getDataStoreGroupList_server():
@@ -34,7 +33,6 @@ def getDataStoreGroupList_server():
 def getDataStoreGroupList():
     global rcv
     pub = rospy.Publisher('arcl_getDataStoreGroupList', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "getDataStoreGroupList"
     print "Running command: ", command

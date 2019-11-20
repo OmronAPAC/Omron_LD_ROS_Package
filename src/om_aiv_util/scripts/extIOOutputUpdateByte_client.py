@@ -5,14 +5,14 @@ from om_aiv_util.srv import *
 def extIOOutputUpdateByte_client(a, b , c):
     rospy.wait_for_service('extIOOutputUpdateByte')
     try:
-        add_two_ints = rospy.ServiceProxy('extIOOutputUpdateByte', Service3)
-        resp1 = add_two_ints(a, b, c)
+        service = rospy.ServiceProxy('extIOOutputUpdateByte', Service3)
+        resp1 = service(a, b, c)
         return resp1.device
     except rospy.ServiceException, error:
         print "Service call failed: %s"%error
 
 def usage():
-    return "%s <name> <byte position> <valueInHex>"%sys.argv[0]
+    return "%s <name> <byte position> <value>"%sys.argv[0]
 
 if __name__ == "__main__":
     if len(sys.argv) == 4:

@@ -1,6 +1,5 @@
 #!/usr/bin/env python
-## publishes std_msgs/Strings messages
-## to the 5 ld_status topics
+## publishes std_msgs messages to the 5 ld_status topics
 from colorama import init
 init()
 from colorama import Fore, Back, Style
@@ -11,7 +10,6 @@ from std_msgs.msg import Int32
 from geometry_msgs.msg import Pose
 from geometry_msgs.msg import Point
 from om_aiv_util.msg import Location
-# from turtlesim.msg import Pose
 import math
 import numpy as np
 import socket
@@ -679,7 +677,7 @@ def getInfo_TipAngle():
             line2 = line.split("TipAngle")
             line3 = line.strip(",")
             line4 = line.strip("Info: TipAngle")
-            
+
             rospy.loginfo("TipAngle:".join(info))
             #publish data
             pub.publish(float(line4))

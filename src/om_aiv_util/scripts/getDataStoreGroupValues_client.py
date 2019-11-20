@@ -5,8 +5,8 @@ from om_aiv_util.srv import *
 def getDataStoreGroupValues_client(x):
     rospy.wait_for_service('getDataStoreGroupValues')
     try:
-        add_two_ints = rospy.ServiceProxy('getDataStoreGroupValues', Service)
-        resp1 = add_two_ints(x)
+        service = rospy.ServiceProxy('getDataStoreGroupValues', Service)
+        resp1 = service(x)
         return resp1.device
     except rospy.ServiceException, e:
         print "Service call failed: %s"%e

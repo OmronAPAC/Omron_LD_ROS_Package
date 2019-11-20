@@ -22,7 +22,6 @@ def handle_payloadSet(req):
     a = req.a
     b = req.b
     payloadSet()
-    # return Service5Response(req.a + req.b + req.c + req.d + req.e)
     return rcv
 
 def payloadSet_server():
@@ -33,7 +32,6 @@ def payloadSet_server():
 def payloadSet():
     global rcv
     pub = rospy.Publisher('arcl_payloadSet', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "payloadSet {}".format(a + " " + b)
     command = command.encode('ascii')

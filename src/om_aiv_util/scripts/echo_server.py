@@ -23,7 +23,6 @@ def handle_echo(req):
     print "Returning", req.a
     fault = req.a
     echo()
-    # return ServiceResponse(req.a)
     return rcv
 
 def echo_server():
@@ -34,7 +33,6 @@ def echo_server():
 def echo():
     global rcv
     pub = rospy.Publisher('arcl_echo', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "echo {}".format(fault)
     print "Running command: ", command

@@ -18,10 +18,7 @@ connecttcp.connect(str(ip_address), port)
 from om_aiv_util.srv import Service,ServiceResponse
 
 def handle_payloadSlotCountLocal(req):
-    global fault
-    fault = req.a
     payloadSlotCountLocal()
-    # return ServiceResponse(req.a)
     return rcv
 
 def payloadSlotCountLocal_server():
@@ -32,7 +29,6 @@ def payloadSlotCountLocal_server():
 def payloadSlotCountLocal():
     global rcv
     pub = rospy.Publisher('arcl_payloadSlotCountLocal', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "payloadSlotCountLocal"
     print "Running command: ", command

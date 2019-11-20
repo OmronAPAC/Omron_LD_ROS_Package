@@ -24,7 +24,6 @@ def handle_queueCancelLocal(req):
     c = req.c
     d = req.d
     queueCancelLocal()
-    # return Service5Response(req.a + req.b + req.c + req.d + req.e)
     return rcv
 
 def queueCancelLocal_server():
@@ -35,7 +34,6 @@ def queueCancelLocal_server():
 def queueCancelLocal():
     global rcv
     pub = rospy.Publisher('arcl_queueCancelLocal', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "queueCancelLocal {}".format(a + " " + b + " \"" + c + "\" " + d)
     command = command.encode('ascii')

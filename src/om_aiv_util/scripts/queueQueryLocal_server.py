@@ -23,7 +23,6 @@ def handle_queueQueryLocal(req):
     b = req.b
     c = req.c
     queueQueryLocal()
-    # return Service5Response(req.a + req.b + req.c + req.d + req.e)
     return rcv
 
 def queueQueryLocal_server():
@@ -34,7 +33,6 @@ def queueQueryLocal_server():
 def queueQueryLocal():
     global rcv
     pub = rospy.Publisher('arcl_queueQueryLocal', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "queueQueryLocal {}".format(a + " " + b + " " + c)
     command = command.encode('ascii')

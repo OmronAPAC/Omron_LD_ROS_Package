@@ -23,7 +23,6 @@ def handle_getDataStoreGroupInfo(req):
     print "Returning", req.a
     text = req.a
     getDataStoreGroupInfo()
-    # return ServiceResponse(req.a)
     return rcv
 
 def getDataStoreGroupInfo_server():
@@ -34,7 +33,6 @@ def getDataStoreGroupInfo_server():
 def getDataStoreGroupInfo():
     global rcv
     pub = rospy.Publisher('arcl_getDataStoreGroupInfo', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "getDataStoreGroupInfo {}".format(text)
     command = command.encode('ascii')

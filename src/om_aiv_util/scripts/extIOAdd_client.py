@@ -5,8 +5,8 @@ from om_aiv_util.srv import *
 def extIOAdd_client(a, b , c):
     rospy.wait_for_service('extIOAdd')
     try:
-        add_two_ints = rospy.ServiceProxy('extIOAdd', Service3)
-        resp1 = add_two_ints(a, b, c)
+        service = rospy.ServiceProxy('extIOAdd', Service3)
+        resp1 = service(a, b, c)
         return resp1.device
     except rospy.ServiceException, error:
         print "Service call failed: %s"%error

@@ -19,10 +19,7 @@ from om_aiv_util.srv import Service,ServiceResponse
 import rospy
 
 def handle_inputList(req):
-    global fault
-    fault = req.a
     inputList()
-    # return ServiceResponse(req.a)
     return rcv
 
 def inputList_server():
@@ -33,7 +30,6 @@ def inputList_server():
 def inputList():
     global rcv
     pub = rospy.Publisher('arcl_inputList', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "inputList"
     print "Running command: ", command

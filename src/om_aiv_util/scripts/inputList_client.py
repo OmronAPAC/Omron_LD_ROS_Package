@@ -5,8 +5,8 @@ from om_aiv_util.srv import *
 def inputList_client(x):
     rospy.wait_for_service('inputList')
     try:
-        add_two_ints = rospy.ServiceProxy('inputList', Service)
-        resp1 = add_two_ints(x)
+        service = rospy.ServiceProxy('inputList', Service)
+        resp1 = service(x)
         return resp1.device
     except rospy.ServiceException, e:
         print "Service call failed: %s"%e
@@ -21,5 +21,4 @@ if __name__ == "__main__":
         print usage()
         sys.exit(1)
     print "running command"
-    # print "Requesting", x
     print inputList_client(x)

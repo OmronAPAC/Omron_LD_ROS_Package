@@ -5,8 +5,8 @@ from om_aiv_util.srv import *
 def queueModifyLocal_client(a, b , c):
     rospy.wait_for_service('queueModifyLocal')
     try:
-        add_two_ints = rospy.ServiceProxy('queueModifyLocal', Service3)
-        resp1 = add_two_ints(a, b, c)
+        service = rospy.ServiceProxy('queueModifyLocal', Service3)
+        resp1 = service(a, b, c)
         return resp1.device
     except rospy.ServiceException, error:
         print "Service call failed: %s"%error
@@ -23,5 +23,4 @@ if __name__ == "__main__":
         print usage()
         sys.exit(1)
     print "running command"
-    # print "Requesting", x
     print queueModifyLocal_client(a, b , c)

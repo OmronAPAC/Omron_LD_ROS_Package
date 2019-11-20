@@ -19,10 +19,7 @@ from om_aiv_util.srv import Service,ServiceResponse
 import rospy
 
 def handle_getInfoList(req):
-    global fault
-    fault = req.a
     getInfoList()
-    # return ServiceResponse(req.a)
     return rcv
 
 def getInfoList_server():
@@ -33,7 +30,6 @@ def getInfoList_server():
 def getInfoList():
     global rcv
     pub = rospy.Publisher('arcl_getInfoList', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "getInfoList"
     print "Running command: ", command

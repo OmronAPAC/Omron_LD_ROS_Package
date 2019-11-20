@@ -22,7 +22,6 @@ def handle_inputQuery(req):
     global text
     text = req.a
     inputQuery()
-    # return ServiceResponse(req.a)
     return rcv
 
 def inputQuery_server():
@@ -33,7 +32,6 @@ def inputQuery_server():
 def inputQuery():
     global rcv
     pub = rospy.Publisher('arcl_inputQuery', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "inputQuery {}".format(text)
     command = command.encode('ascii')

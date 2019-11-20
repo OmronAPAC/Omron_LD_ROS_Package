@@ -18,10 +18,7 @@ connecttcp.connect(str(ip_address), port)
 from om_aiv_util.srv import Service,ServiceResponse
 
 def handle_tripReset(req):
-    global fault
-    fault = req.a
     tripReset()
-    # return ServiceResponse(req.a)
     return rcv
 
 def tripReset_server():
@@ -32,7 +29,6 @@ def tripReset_server():
 def tripReset():
     global rcv
     pub = rospy.Publisher('arcl_tripReset', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "tripReset"
     print "Running command: ", command

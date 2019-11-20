@@ -5,8 +5,8 @@ from om_aiv_util.srv import *
 def updateInfo_client(a, b):
     rospy.wait_for_service('updateInfo')
     try:
-        add_two_ints = rospy.ServiceProxy('updateInfo', Service2)
-        resp1 = add_two_ints(a, b)
+        service = rospy.ServiceProxy('updateInfo', Service2)
+        resp1 = service(a, b)
         return resp1.device
     except rospy.ServiceException, error:
         print "Service call failed: %s"%error
@@ -22,5 +22,4 @@ if __name__ == "__main__":
         print usage()
         sys.exit(1)
     print "running command"
-    # print "Requesting", x
     print updateInfo_client(a, b)
