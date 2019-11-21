@@ -16,6 +16,9 @@ navigation commands like dock, undock, dotask move , patrol
 Ubuntu 18.04
 ROS Melodic 
 ```
+### Compatibility
+
+Tested on ARAM 4.9.27 and ARAM 5.0.12 to be fully compatible
 
 ### Installation
 
