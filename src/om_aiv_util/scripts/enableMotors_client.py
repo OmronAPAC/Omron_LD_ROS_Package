@@ -2,12 +2,11 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def enableMotors_client(x,y):
-    service_name = "/{}".format(y + "/enableMotors")
+def enableMotors_client(x):
+    service_name = "/{}".format(x + "/enableMotors")
     print service_name
-    print y
     # rospy.wait_for_service('enableMotors')
-    rospy.wait_for_service(service_name)
+    rospy.wait_for_service(service_name, timeout=30)
     # rospy.wait_for_service('/robot1/enableMotors')
     try:
         # service = rospy.ServiceProxy('robot1/enableMotors', Service)
@@ -22,11 +21,10 @@ def usage():
 
 if __name__ == "__main__":
     if len(sys.argv) == 2:
-        x = ""
-        y = str(sys.argv[1])
+        x = str(sys.argv[1])
 
     else:
         print usage()
         sys.exit(1)
     print "running command"
-    print enableMotors_client(x, y)
+    print enableMotors_client(x)
