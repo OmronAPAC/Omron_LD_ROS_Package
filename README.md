@@ -34,16 +34,17 @@ catkin build
 ### Initial Configuration
 For a single robot:
 
-Specify robot ip address and port number in /ld_ROS/src/om_aiv_util/launch/robot1.launch
+Specify robot ip address and name when running the launch file from the command line as a command line argment, for example:
+roslaunch om_aiv_util robot1.launch ip:=168.3.201.123 name:=robot1
 
 For 2 robots:
 
 WIP
 
-
 ### Usage
+For 1 robot:
 ```
-roslaunch om_aiv_util robot1.launch
+roslaunch om_aiv_util robot1.launch ip:=<ip address of robot> name:=<robot name>
 roslaunch om_aiv_navigation robot1.launch
 ```
 
@@ -59,3 +60,4 @@ To run navigation commands, example to move the robot 1000mm:
 ```
 rosrun om_navigation doTask_action_client.py move 1000
 ```
+### Known Issues and Bugs
