@@ -1,6 +1,8 @@
 <launch>
 
   <!-- BEGIN ROBOT 1-->
+  <!-- <arg name="name" />
+  <group ns="$(arg name)"> -->
   <!-- <group ns="robot1"> -->
     <!-- <node name="dock_action_server" pkg="om_aiv_navigation" type="dock_action_server.py" output="screen" />
     <node name="doTask_action_server" pkg="om_aiv_navigation" type="doTask_action_server.py" output="screen" />
@@ -14,7 +16,9 @@
     <node name="undock_action_server" pkg="om_aiv_navigation" type="undock_action_server.py" output="screen" /> -->
     <node name="queueDropoff_action_server" pkg="om_aiv_navigation" type="queueDropoff_action_server.py" output="screen" />
 
-      <param name="ip_address" value="168.3.201.123" />
+      <arg name="ip" />
+      <param name="ip_address" value="$(arg ip)" />
+      <!-- <param name="ip_address" value="168.3.201.123" /> -->
       <param name="port" value="7171" />
   <!-- </group> -->
 
