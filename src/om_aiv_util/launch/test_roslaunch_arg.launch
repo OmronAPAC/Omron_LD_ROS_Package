@@ -8,15 +8,12 @@
   <!-- BEGIN ROBOT 1-->
   <group ns="robot1">
     <node name="enableMotors_server" pkg="om_aiv_util" type="enableMotors_server.py" output="screen" />
-      <param name="ip_address" value="168.3.201.123" />
+      <!-- <param name="ip_address" value="168.3.201.123" />
+      <param name="port" value="7171" /> -->
+      <arg name="ip" />
+      <param name="ip_address" value="$(arg ip)" />
       <param name="port" value="7171" />
   </group>
 
-  <!-- BEGIN ROBOT 2-->
-  <group ns="robot2">
-    <node name="enableMotors_server" pkg="om_aiv_util" type="enableMotors_server.py" output="screen" />
-      <param name="ip_address" value="168.3.201.122" />
-      <param name="port" value="7171" />
-  </group>
 
 </launch>
