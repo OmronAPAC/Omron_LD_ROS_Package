@@ -39,7 +39,8 @@ Specify robot ip address and port number in /ld_ROS/src/om_aiv_util/launch/robot
 For 2 robots:
 
 WIP
-
+Specify robot1 ip address and port number in /ld_ROS/src/om_aiv_util/launch/robot1.launch
+Specify robot2 ip address and port number in /ld_ROS/src/om_aiv_util/launch/robot2.launch
 
 ### Usage
 ```
@@ -59,3 +60,4 @@ To run navigation commands, example to move the robot 1000mm:
 ```
 rosrun om_navigation doTask_action_client.py move 1000
 ```
+### Known Issues and Bugs
