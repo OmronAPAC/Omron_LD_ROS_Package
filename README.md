@@ -48,7 +48,7 @@ View the topics published and do a rostopic echo (topic name) to view the data:
 ```
 rostopic list
 ```
-``
+```
 rostopic echo /(rostopic name)
 ```
 
