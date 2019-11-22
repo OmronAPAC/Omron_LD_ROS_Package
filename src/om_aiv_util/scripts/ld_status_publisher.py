@@ -43,7 +43,7 @@ def sendcommand():
 
 def extended_status_for_humans():
     pub = rospy.Publisher('ldarcl_status_extended_status_for_humans', String, queue_size=10)
-    # rate = rospy.Rate(10) # 10hz
+    #  # 10hz
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     print "Getting extended_status_for_humans..."
@@ -55,11 +55,11 @@ def extended_status_for_humans():
     rospy.loginfo(",ExtendedStatusForHumans:".join(extended_status_for_humans)[1:])
     #publish required status
     pub.publish(''.join(extended_status_for_humans))
-    # rate.sleep()
+    #
 
 def status():
     pub = rospy.Publisher('ldarcl_status_status', String, queue_size=10)
-    rate = rospy.Rate(10) # 10hz
+     # 10hz
 
     print(Style.RESET_ALL)
     print(Fore.BLUE)
@@ -71,14 +71,14 @@ def status():
             status = line.split("Status:")
             rospy.loginfo(status)
             pub.publish(''.join(status))
-            rate.sleep()
+
         else:
             pass
 
 
 def state_of_charge():
     pub = rospy.Publisher('ldarcl_status_state_of_charge', Float32, queue_size=10)
-    rate = rospy.Rate(10) # 10hz
+     # 10hz
 
     print(Style.RESET_ALL)
     print(Fore.RED)
@@ -91,13 +91,13 @@ def state_of_charge():
 
             rospy.loginfo(state_of_charge)
             pub.publish(float(state_of_charge))
-            rate.sleep()
+
         else:
             pass
 
 def location():
     pub = rospy.Publisher('ldarcl_status_location', Location, queue_size=10)
-    rate = rospy.Rate(10) # 10hz
+     # 10hz
     msg = Location()
 
     print(Style.RESET_ALL)
@@ -126,11 +126,11 @@ def location():
     # pub.publish(''.join(locationx))
     # pub.publish(''.join(locationy))
     # pub.publish(''.join(locationz))
-    rate.sleep()
+
 
 def localization_score():
     pub = rospy.Publisher('ldarcl_status_localization_score', Float32, queue_size=10)
-    rate = rospy.Rate(10) # 10hz
+     # 10hz
     print(Style.RESET_ALL)
     print(Fore.BLUE)
     print(Style.BRIGHT)
@@ -140,7 +140,7 @@ def localization_score():
             localization_score = line.split()[-1]
             rospy.loginfo(localization_score)
             pub.publish(float(localization_score))
-            rate.sleep()
+
         else:
             pass
 
@@ -148,7 +148,7 @@ def localization_score():
 
 def temperature():
     pub = rospy.Publisher('ldarcl_status_temperature', Float32, queue_size=10)
-    rate = rospy.Rate(10) # 10hz
+     # 10hz
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     print "Getting temperature..."
@@ -157,7 +157,7 @@ def temperature():
             temperature = line.split()[-1]
             rospy.loginfo(temperature)
             pub.publish(float(temperature))
-            rate.sleep()
+
         else:
             pass
 
