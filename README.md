@@ -74,6 +74,10 @@ rostopic echo /(rostopic name)
 ```
 ![rostopic list](https://user-images.githubusercontent.com/8951670/69392258-68f8e000-0d10-11ea-8597-a2c577feb3b5.png)
 
+For example to view the battery level of the robot:
+
+![rostopic echo example](https://user-images.githubusercontent.com/8951670/69392375-cdb43a80-0d10-11ea-8da4-8e39f4f72525.png)
+
 To run navigation commands, example to move the robot 1000mm:
 ```
 rosrun om_navigation doTask_action_client.py move 1000
