@@ -24,7 +24,7 @@ Tested on ARAM 4.9.27 and ARAM 5.0.12 to be fully compatible
 
 ### Installation
 
-This tutorial assumes that you have installed catkin and sourced your environment. If you installed catkin via apt-get for ROS melodic, your command would look like this:
+This readme assumes that you have installed catkin and sourced your environment. If you installed catkin via apt-get for ROS melodic, your command would look like this:
 ```
 source /opt/ros/melodic/setup.bash
 ```
