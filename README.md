@@ -52,6 +52,7 @@ WIP
 For 1 robot:
 ```
 roslaunch om_aiv_util robot1.launch ip:=<ip address of robot> name:=<robot name>
+
 roslaunch om_aiv_navigation robot1.launch
 ```
 
