@@ -1,6 +1,6 @@
 # om_aiv - ROS Packages for Omron Mobile Robot
 
-![alt text](https://d2t1xqejof9utc.cloudfront.net/screenshots/pics/440c4d03c225fbe74adf238d73ed8f00/large.png "omron ld robot")
+![omron ld robot](https://d2t1xqejof9utc.cloudfront.net/screenshots/pics/440c4d03c225fbe74adf238d73ed8f00/large.png "omron ld robot")
 
 #### om_aiv_util
 robot status commands 
@@ -29,6 +29,8 @@ Then clone the repository into the src/ folder:
 ```
 git clone https://github.com/tthmatt/Omron_LD_ROS_Package.git
 ```
+Your workspace hierarchy should look like this:
+![ld_ROS workspace hierarchy](https://user-images.githubusercontent.com/8951670/69391247-2c77b500-0d0d-11ea-86ba-6e29d512abf4.png)
 Make sure to source the correct setup file according to your workspace hierarchy, then use catkin build to compile:
 ```
 catkin build
