@@ -24,7 +24,7 @@ Tested on ARAM 4.9.27 and ARAM 5.0.12 to be fully compatible
 
 ### Installation
 
-First set up a catkin workspace.
+First set up a catkin workspace and name it ld_ROS.
 Then clone the repository into the src/ folder:
 ```
 git clone https://github.com/tthmatt/Omron_LD_ROS_Package.git
