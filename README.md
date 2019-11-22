@@ -31,10 +31,11 @@ git clone https://github.com/tthmatt/Omron_LD_ROS_Package.git
 ```
 Your workspace hierarchy should look like this:
 
-![ld_ROS workspace hierarchy](https://user-images.githubusercontent.com/8951670/69391247-2c77b500-0d0d-11ea-86ba-6e29d512abf4.png).
+![ld_ROS workspace hierarchy](https://user-images.githubusercontent.com/8951670/69391247-2c77b500-0d0d-11ea-86ba-6e29d512abf4.png)
 
 Make sure to source the correct setup file according to your workspace hierarchy, then use catkin build to compile:
 ```
+source ~/ld_ROS/devel/setup.bash
 catkin build
 ```
 ### Initial Configuration
@@ -57,8 +58,7 @@ roslaunch om_aiv_navigation robot1.launch
 View the topics published and do a rostopic echo (topic name) to view the data:
 ```
 rostopic list
-```
-```
+
 rostopic echo /(rostopic name)
 ```
 
