@@ -72,6 +72,7 @@ rostopic list
 
 rostopic echo /(rostopic name)
 ```
+![rostopic list](https://user-images.githubusercontent.com/8951670/69392258-68f8e000-0d10-11ea-8597-a2c577feb3b5.png)
 
 To run navigation commands, example to move the robot 1000mm:
 ```
