@@ -1,5 +1,7 @@
 # om_aiv - ROS Packages for Omron Mobile Robot
 
+![alt text](https://d2t1xqejof9utc.cloudfront.net/screenshots/pics/440c4d03c225fbe74adf238d73ed8f00/large.png "omron ld robot")
+
 #### om_aiv_util
 robot status commands 
 
