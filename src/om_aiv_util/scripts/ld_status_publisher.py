@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-## publishes std_msgs messages to the 5 ld_status topics
+## publishes std_msgs messages to the 6 ld_status topics
 from colorama import init
 init()
 from colorama import Fore, Back, Style
@@ -9,8 +9,6 @@ from std_msgs.msg import Float32
 from geometry_msgs.msg import Pose
 from geometry_msgs.msg import Point
 from om_aiv_util.msg import Location
-import math
-import numpy as np
 import socket
 import threading
 import time
@@ -26,9 +24,10 @@ s = connecttcp.sock
 # port = rospy.get_param("port")
 
 ip_address = "168.3.201.123"
-port = "7171"
+port = 7171
 
 connecttcp.connect(str(ip_address), port)
+rospy.init_node('ld_status', anonymous=True)
 
 def sendcommand():
     #send status command
@@ -40,13 +39,11 @@ def sendcommand():
     data2 = s.recv(BUFFER_SIZE)
     time.sleep(1)
     rcv = data.decode("utf-8") + data2.decode("utf-8")
-
     print rcv
 
 def extended_status_for_humans():
     pub = rospy.Publisher('ldarcl_status_extended_status_for_humans', String, queue_size=10)
-    rospy.init_node('ld_status', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+    # rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     print "Getting extended_status_for_humans..."
@@ -58,11 +55,10 @@ def extended_status_for_humans():
     rospy.loginfo(",ExtendedStatusForHumans:".join(extended_status_for_humans)[1:])
     #publish required status
     pub.publish(''.join(extended_status_for_humans))
-    rate.sleep()
+    # rate.sleep()
 
 def status():
     pub = rospy.Publisher('ldarcl_status_status', String, queue_size=10)
-    rospy.init_node('ld_status', anonymous=True)
     rate = rospy.Rate(10) # 10hz
 
     print(Style.RESET_ALL)
@@ -71,7 +67,7 @@ def status():
     print "Getting status..."
 
     for line in rcv.splitlines():
-        if 'Status: DockingState:' in line:
+        if 'Status:' in line:
             status = line.split("Status:")
             rospy.loginfo(status)
             pub.publish(''.join(status))
@@ -82,7 +78,6 @@ def status():
 
 def state_of_charge():
     pub = rospy.Publisher('ldarcl_status_state_of_charge', Float32, queue_size=10)
-    rospy.init_node('ld_status', anonymous=True)
     rate = rospy.Rate(10) # 10hz
 
     print(Style.RESET_ALL)
@@ -102,7 +97,6 @@ def state_of_charge():
 
 def location():
     pub = rospy.Publisher('ldarcl_status_location', Location, queue_size=10)
-    rospy.init_node('ld_status', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     msg = Location()
 
@@ -122,7 +116,7 @@ def location():
             msg.y = float(locationy)
             msg.theta = float(locationtheta)
             # print locationz
-            # print np.rad2deg(-2)
+            # print .rad2deg(-2)
         else:
             pass
 
@@ -136,7 +130,6 @@ def location():
 
 def localization_score():
     pub = rospy.Publisher('ldarcl_status_localization_score', Float32, queue_size=10)
-    rospy.init_node('ld_status', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
     print(Fore.BLUE)
@@ -155,7 +148,6 @@ def localization_score():
 
 def temperature():
     pub = rospy.Publisher('ldarcl_status_temperature', Float32, queue_size=10)
-    rospy.init_node('ld_status', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
     print(Fore.GREEN)
