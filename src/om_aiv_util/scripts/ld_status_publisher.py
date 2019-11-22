@@ -20,14 +20,15 @@ BUFFER_SIZE = 2056
 from socketconnection_class import ConnectSocket, connecttcp
 s = connecttcp.sock
 #get ip address and port from launch file
-# ip_address = rospy.get_param("ip_address")
-# port = rospy.get_param("port")
+ip_address = rospy.get_param("ip_address")
+port = rospy.get_param("port")
 
-ip_address = "168.3.201.123"
-port = 7171
+# ip_address = "168.3.201.123"
+# port = 7171
 
 connecttcp.connect(str(ip_address), port)
 rospy.init_node('ld_status', anonymous=True)
+
 
 def sendcommand():
     #send status command
@@ -43,7 +44,6 @@ def sendcommand():
 
 def extended_status_for_humans():
     pub = rospy.Publisher('ldarcl_status_extended_status_for_humans', String, queue_size=10)
-    #  # 10hz
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     print "Getting extended_status_for_humans..."
@@ -55,12 +55,9 @@ def extended_status_for_humans():
     rospy.loginfo(",ExtendedStatusForHumans:".join(extended_status_for_humans)[1:])
     #publish required status
     pub.publish(''.join(extended_status_for_humans))
-    #
 
 def status():
     pub = rospy.Publisher('ldarcl_status_status', String, queue_size=10)
-     # 10hz
-
     print(Style.RESET_ALL)
     print(Fore.BLUE)
     print(Style.BRIGHT)
@@ -71,15 +68,11 @@ def status():
             status = line.split("Status:")
             rospy.loginfo(status)
             pub.publish(''.join(status))
-
         else:
             pass
 
-
 def state_of_charge():
     pub = rospy.Publisher('ldarcl_status_state_of_charge', Float32, queue_size=10)
-     # 10hz
-
     print(Style.RESET_ALL)
     print(Fore.RED)
     print(Style.BRIGHT)
@@ -91,15 +84,12 @@ def state_of_charge():
 
             rospy.loginfo(state_of_charge)
             pub.publish(float(state_of_charge))
-
         else:
             pass
 
 def location():
     pub = rospy.Publisher('ldarcl_status_location', Location, queue_size=10)
-     # 10hz
     msg = Location()
-
     print(Style.RESET_ALL)
     print(Fore.MAGENTA)
     print(Style.BRIGHT)
@@ -127,10 +117,8 @@ def location():
     # pub.publish(''.join(locationy))
     # pub.publish(''.join(locationz))
 
-
 def localization_score():
     pub = rospy.Publisher('ldarcl_status_localization_score', Float32, queue_size=10)
-     # 10hz
     print(Style.RESET_ALL)
     print(Fore.BLUE)
     print(Style.BRIGHT)
@@ -140,15 +128,11 @@ def localization_score():
             localization_score = line.split()[-1]
             rospy.loginfo(localization_score)
             pub.publish(float(localization_score))
-
         else:
             pass
 
-
-
 def temperature():
     pub = rospy.Publisher('ldarcl_status_temperature', Float32, queue_size=10)
-     # 10hz
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     print "Getting temperature..."
@@ -157,11 +141,8 @@ def temperature():
             temperature = line.split()[-1]
             rospy.loginfo(temperature)
             pub.publish(float(temperature))
-
         else:
             pass
-
-
 
 if __name__ == '__main__':
     try:
