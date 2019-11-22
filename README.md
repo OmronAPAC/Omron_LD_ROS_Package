@@ -24,7 +24,16 @@ Tested on ARAM 4.9.27 and ARAM 5.0.12 to be fully compatible
 
 ### Installation
 
-First set up a catkin workspace and name it ld_ROS.
+This tutorial assumes that you have installed catkin and sourced your environment. If you installed catkin via apt-get for ROS melodic, your command would look like this:
+```
+source /opt/ros/melodic/setup.bash
+```
+First create a catkin workspace and name it ld_ROS:
+```
+mkdir -p ~/ld_ROS/src
+
+cd ~/ld_ROS/
+```
 Then clone the repository into the src/ folder:
 ```
 git clone https://github.com/tthmatt/Omron_LD_ROS_Package.git
@@ -36,6 +45,7 @@ Your workspace hierarchy should look like this:
 Make sure to source the correct setup file according to your workspace hierarchy, then use catkin build to compile:
 ```
 source ~/ld_ROS/devel/setup.bash
+
 catkin build
 ```
 ### Initial Configuration
