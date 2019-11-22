@@ -83,3 +83,4 @@ To run navigation commands, example to move the robot 1000mm:
 rosrun om_navigation doTask_action_client.py move 1000
 ```
 ### Known Issues and Bugs
+Service call failed: unable to connect to service: remote error reported: request from \[/unnamed]:
