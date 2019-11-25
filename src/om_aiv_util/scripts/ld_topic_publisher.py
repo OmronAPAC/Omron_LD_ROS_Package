@@ -28,17 +28,18 @@ s = connecttcp.sock
 # ip_address = rospy.get_param("ip_address")
 # port = rospy.get_param("port")
 
-ip_address = "168.3.201.123"
+ip_address = "172.21.5.123"
 port = 7171
 
 connecttcp.connect(str(ip_address), port)
+rospy.init_node('ld_topic_publisher', anonymous=True)
 
 def applicationFaultQuery():
     #specify topic name
     pub = rospy.Publisher('ldarcl_applicationFaultQuery', String, queue_size=10)
     #specify node name
-    rospy.init_node('ld_topic_publisher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+    # rospy.init_node('ld_topic_publisher', anonymous=True)
+    # rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     print "Getting list of application faults..."
@@ -74,12 +75,12 @@ def applicationFaultQuery():
         if 'ApplicationFaultQuery:' not in line:
             rospy.loginfo("No faults")
             pub.publish("No faults")
-            rate.sleep()
+            # rate.sleep()
 
 def faultsGet():
     pub = rospy.Publisher('ldarcl_faultsGet', String, queue_size=10)
-    rospy.init_node('ld_topic_publisher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+    # rospy.init_node('ld_topic_publisher', anonymous=True)
+    # rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
     print(Fore.YELLOW)
     print "Getting list of faults..."
@@ -107,17 +108,17 @@ def faultsGet():
             faultsGet = line.split("FaultList:")
             rospy.loginfo(",FaultList:".join(faultsGet)[1:])
             pub.publish(''.join(faultsGet))
-            rate.sleep()
+            # rate.sleep()
             break
         if 'FaultList:' not in line:
             rospy.loginfo("No faults")
             pub.publish("No faults")
-            rate.sleep()
+            # rate.sleep()
 
 def getDateTime():
     pub = rospy.Publisher('ldarcl_getDateTime', String, queue_size=10)
-    rospy.init_node('ld_topic_publisher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+    # rospy.init_node('ld_topic_publisher', anonymous=True)
+    # rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     print "Getting date and time..."
@@ -143,12 +144,12 @@ def getDateTime():
             getDateTime = line.split("DateTime:")
             rospy.loginfo(",DateTime:".join(getDateTime)[1:])
             pub.publish(''.join(getDateTime))
-            rate.sleep()
+            # rate.sleep()
 
 def getGoals():
     pub = rospy.Publisher('ldarcl_getGoals', String, queue_size=10)
-    rospy.init_node('ld_topic_publisher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+    # rospy.init_node('ld_topic_publisher', anonymous=True)
+    # rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
     print(Fore.BLUE)
     print "Getting list of goals found in current map..."
@@ -174,12 +175,12 @@ def getGoals():
             getGoals = line.split("Goal:")
             rospy.loginfo(",Goal:".join(getGoals)[1:])
             pub.publish(''.join(getGoals))
-            rate.sleep()
+            # rate.sleep()
 
 def getMacros():
     pub = rospy.Publisher('ldarcl_getMacros', String, queue_size=10)
-    rospy.init_node('ld_topic_publisher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+    # rospy.init_node('ld_topic_publisher', anonymous=True)
+    # rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     print "Getting list of macros found in current map..."
@@ -205,12 +206,12 @@ def getMacros():
             getMacros = line.split("Macro:")
             rospy.loginfo(",Macro:".join(getMacros)[1:])
             pub.publish(''.join(getMacros))
-            rate.sleep()
+            # rate.sleep()
 
 def getRoutes():
     pub = rospy.Publisher('ldarcl_getRoutes', String, queue_size=10)
-    rospy.init_node('ld_topic_publisher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+    # rospy.init_node('ld_topic_publisher', anonymous=True)
+    # rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     print "Getting list of route names found in current map..."
@@ -236,12 +237,12 @@ def getRoutes():
             getRoutes = line.split("Route:")
             rospy.loginfo(",Route:".join(getRoutes)[1:])
             pub.publish(''.join(getRoutes))
-            rate.sleep()
+            # rate.sleep()
 
 def odometer():
     pub = rospy.Publisher('ldarcl_odometer', String, queue_size=10)
-    rospy.init_node('ld_topic_publisher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+    # rospy.init_node('ld_topic_publisher', anonymous=True)
+    # rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     print "Getting odometer readings..."
@@ -267,12 +268,12 @@ def odometer():
             odometer = line.split("Odometer:")
             rospy.loginfo(",Odometer:".join(odometer)[1:])
             pub.publish(''.join(odometer))
-            rate.sleep()
+            # rate.sleep()
 
 def oneLineStatus():
     pub = rospy.Publisher('ldarcl_oneLineStatus', String, queue_size=10)
-    rospy.init_node('ld_topic_publisher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+    # rospy.init_node('ld_topic_publisher', anonymous=True)
+    # rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     print "Getting one line status..."
@@ -298,12 +299,12 @@ def oneLineStatus():
             oneLineStatus = line.split("Status:")
             rospy.loginfo(",Status:".join(oneLineStatus)[1:])
             pub.publish(''.join(oneLineStatus))
-            rate.sleep()
+            # rate.sleep()
 
 def queryDockStatus():
     pub = rospy.Publisher('ldarcl_queryDockStatus', String, queue_size=10)
-    rospy.init_node('ld_topic_publisher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+    # rospy.init_node('ld_topic_publisher', anonymous=True)
+    # rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     print "Getting docking/charging status..."
@@ -329,12 +330,12 @@ def queryDockStatus():
             queryDockStatus = line.split("DockingState:")
             rospy.loginfo(",DockingState:".join(queryDockStatus)[1:])
             pub.publish(''.join(queryDockStatus))
-            rate.sleep()
+            # rate.sleep()
 
 def queryFaults():
     pub = rospy.Publisher('ldarcl_queryFaults', String, queue_size=10)
-    rospy.init_node('ld_topic_publisher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+    # rospy.init_node('ld_topic_publisher', anonymous=True)
+    # rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     print "Getting faults..."
@@ -347,9 +348,16 @@ def queryFaults():
         while not rospy.is_shutdown():
             if "EndQueryFaults" in rcv:
                 break
+            if "End of FaultList" in rcv:
+                break
+            if "Unknown command queryfaults" in rcv:
+                break
+                pass
             else:
                 data = s.recv(BUFFER_SIZE)
                 rcv = rcv + data.encode('ascii', 'ignore')
+                pass
+
 
     except socket.error as e:
         print("Connection  failed")
@@ -360,12 +368,14 @@ def queryFaults():
             queryDockStatus = line.split("RobotFaultQuery:")
             rospy.loginfo(",RobotFaultQuery:".join(queryDockStatus)[1:])
             pub.publish(''.join(queryDockStatus))
-            rate.sleep()
+            # rate.sleep()
+        else:
+            pass
 
 def queryMotors():
     pub = rospy.Publisher('ldarcl_queryMotors', String, queue_size=10)
-    rospy.init_node('ld_topic_publisher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+    # rospy.init_node('ld_topic_publisher', anonymous=True)
+    # rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     print "Getting state of robot motors..."
@@ -393,17 +403,17 @@ def queryMotors():
             queryMotors = line.split("Motors")
             rospy.loginfo(",Motors".join(queryMotors)[1:])
             pub.publish(''.join(queryMotors))
-            rate.sleep()
+            # rate.sleep()
         if 'EStop' in line:
             queryMotors = line.split("Estop")
             rospy.loginfo(",Estop".join(queryMotors)[1:])
             pub.publish(''.join(queryMotors))
-            rate.sleep()
+            # rate.sleep()
 
 def queueShowRobotLocal():
     pub = rospy.Publisher('ldarcl_queueShowRobotLocal', String, queue_size=10)
-    rospy.init_node('ld_topic_publisher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+    # rospy.init_node('ld_topic_publisher', anonymous=True)
+    # rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     print "Getting status of robot..."
@@ -429,12 +439,12 @@ def queueShowRobotLocal():
             queueShowRobotLocal = line.split("QueueRobot:")
             rospy.loginfo(",QueueRobot:".join(queueShowRobotLocal)[1:])
             pub.publish(''.join(queueShowRobotLocal))
-            rate.sleep()
+            # rate.sleep()
 
 def waitTaskState():
     pub = rospy.Publisher('ldarcl_waitTaskState', String, queue_size=10)
-    rospy.init_node('ld_topic_publisher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+    # rospy.init_node('ld_topic_publisher', anonymous=True)
+    # rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     print "Getting status of wait task..."
@@ -460,7 +470,7 @@ def waitTaskState():
             waitTaskState = line.split("WaitState:")
             rospy.loginfo(",WaitState:".join(waitTaskState)[1:])
             pub.publish(''.join(waitTaskState))
-            rate.sleep()
+            # rate.sleep()
 
 
 if __name__ == '__main__':
@@ -475,7 +485,7 @@ if __name__ == '__main__':
             odometer()
             oneLineStatus()
             queryDockStatus()
-            queryFaults()
+            # queryFaults()
             queryMotors()
             queueShowRobotLocal()
             waitTaskState()
