@@ -24,18 +24,19 @@ from socketconnection_class import ConnectSocket
 connecttcp = ConnectSocket()
 s = connecttcp.sock
 #get ip adress and port from launch file
-ip_address = rospy.get_param("ip_address")
-port = rospy.get_param("port")
-# ip_address = "172.21.5.125"
-# port = 7171
+# ip_address = rospy.get_param("ip_address")
+# port = rospy.get_param("port")
+ip_address = "172.21.5.123"
+port = 7171
 connecttcp.connect(str(ip_address), port)
+rospy.init_node('getInfo_publisher', anonymous=True)
 
 def getInfo_WirelessLink():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_WirelessLink', String, queue_size=10)
     #specify node name
-    rospy.init_node('getInfo_publisher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+
+
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -64,20 +65,20 @@ def getInfo_WirelessLink():
             rospy.loginfo(",Info:".join(info)[1:])
             #publish data
             pub.publish(''.join(info))
-            rate.sleep()
+
             break
 
         if 'Info:' not in line:
             rospy.loginfo("No info")
             pub.publish("No info")
-            rate.sleep()
+
 
 def getInfo_WirelessQuality():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_WirelessQuality', String, queue_size=10)
     #specify node name
-    rospy.init_node('getInfo_publisher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+
+
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -106,20 +107,20 @@ def getInfo_WirelessQuality():
             rospy.loginfo(",Info:".join(info)[1:])
             #publish data
             pub.publish(''.join(info))
-            rate.sleep()
+
             break
 
         if 'Info:' not in line:
             rospy.loginfo("No info")
             pub.publish("No info")
-            rate.sleep()
+
 
 def getInfo_Odometer():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_Odometer', Int32, queue_size=10)
     #specify node name
-    rospy.init_node('getInfo_publisher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+
+
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -150,20 +151,20 @@ def getInfo_Odometer():
             rospy.loginfo("Odometer(KM):".join(info))
             #publish data
             pub.publish(infonum)
-            rate.sleep()
+
             break
 
         if 'Info:' not in line:
             rospy.loginfo("No info")
             pub.publish("No info")
-            rate.sleep()
+
 
 def getInfo_HourMeter():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_HourMeter', Int32, queue_size=10)
     #specify node name
-    rospy.init_node('getInfo_publisher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+
+
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -194,20 +195,20 @@ def getInfo_HourMeter():
             rospy.loginfo("Hourmeter:".join(info))
             #publish data
             pub.publish(infonum)
-            rate.sleep()
+
             break
 
         if 'Info:' not in line:
             rospy.loginfo("No info")
             pub.publish("No info")
-            rate.sleep()
+
 
 def getInfo_Temperature():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_Temperature', Int32, queue_size=10)
     #specify node name
-    rospy.init_node('getInfo_publisher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+
+
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -231,27 +232,34 @@ def getInfo_Temperature():
     #check for required data
     for line in rcv.splitlines():
         if 'Temperature(C)' in line:
+            # info = line.split("Temperature(C)")
+            # infonum = [int(i) for i in line.split() if i.isdigit()]
+            # infonum = int("".join(map(str, infonum)))
+            # #print required data
+            # rospy.loginfo(",Info:".join(info)[1:])
+            # #publish data
+            # pub.publish(infonum)
             info = line.split("Temperature(C)")
-            infonum = [int(i) for i in line.split() if i.isdigit()]
-            infonum = int("".join(map(str, infonum)))
             #print required data
-            rospy.loginfo(",Info:".join(info)[1:])
+            rospy.loginfo("Temperature(C)".join(info))
             #publish data
-            pub.publish(infonum)
-            rate.sleep()
+            pub.publish(''.join(info))
+
+            break
+
             break
 
         if 'Info:' not in line:
             rospy.loginfo("No info")
             pub.publish("No info")
-            rate.sleep()
+
 
 def getInfo_LaserScore():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_LaserScore', Int32, queue_size=10)
     #specify node name
-    rospy.init_node('getInfo_publisher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+
+
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -282,20 +290,20 @@ def getInfo_LaserScore():
             rospy.loginfo("LaserScore:".join(info))
             #publish data
             pub.publish(infonum)
-            rate.sleep()
+
             break
 
         if 'Info:' not in line:
             rospy.loginfo("No info")
             pub.publish("No info")
-            rate.sleep()
+
 
 def getInfo_LaserLock():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_LaserLock', Int32, queue_size=10)
     #specify node name
-    rospy.init_node('getInfo_publisher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+
+
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -326,21 +334,21 @@ def getInfo_LaserLock():
             rospy.loginfo("LaserLock:".join(info))
             #publish data
             pub.publish(infonum)
-            rate.sleep()
+
             break
 
         if 'Info:' not in line:
             rospy.loginfo("No info")
             pub.publish("No info")
-            rate.sleep()
+
 
 
 def getInfo_LaserNumSamples():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_LaserNumSamples', Int32, queue_size=10)
     #specify node name
-    rospy.init_node('getInfo_publisher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+
+
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -371,20 +379,20 @@ def getInfo_LaserNumSamples():
             rospy.loginfo("LaserNumSamples:".join(info))
             #publish data
             pub.publish(infonum)
-            rate.sleep()
+
             break
 
         if 'Info:' not in line:
             rospy.loginfo("No info")
             pub.publish("No info")
-            rate.sleep()
+
 
 def getInfo_LaserNumPeaks():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_LaserNumPeaks', Int32, queue_size=10)
     #specify node name
-    rospy.init_node('getInfo_publisher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+
+
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -415,20 +423,20 @@ def getInfo_LaserNumPeaks():
             rospy.loginfo("LaserNumPeaks:".join(info))
             #publish data
             pub.publish(infonum)
-            rate.sleep()
+
             break
 
         if 'Info:' not in line:
             rospy.loginfo("No info")
             pub.publish("No info")
-            rate.sleep()
+
 
 def getInfo_Mpacs():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_Mpacs', Int32, queue_size=10)
     #specify node name
-    rospy.init_node('getInfo_publisher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+
+
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -459,20 +467,20 @@ def getInfo_Mpacs():
             rospy.loginfo("MPacs:".join(info))
             #publish data
             pub.publish(infonum)
-            rate.sleep()
+
             break
 
         if 'Info:' not in line:
             rospy.loginfo("No info")
             pub.publish("No info")
-            rate.sleep()
+
 
 def getInfo_Laser_1_Pacs():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_Laser_1_Pacs', Int32, queue_size=10)
     #specify node name
-    rospy.init_node('getInfo_publisher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+
+
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -503,20 +511,20 @@ def getInfo_Laser_1_Pacs():
             rospy.loginfo("Laser_1 Pacs:".join(info))
             #publish data
             pub.publish(infonum)
-            rate.sleep()
+
             break
 
         if 'Info:' not in line:
             rospy.loginfo("No info")
             pub.publish("No info")
-            rate.sleep()
+
 
 def getInfo_SBC_Uptime():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_SBC_Uptime', Int32, queue_size=10)
     #specify node name
-    rospy.init_node('getInfo_publisher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+
+
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -547,20 +555,20 @@ def getInfo_SBC_Uptime():
             rospy.loginfo("SBC Uptime:".join(info))
             #publish data
             pub.publish(infonum)
-            rate.sleep()
+
             break
 
         if 'Info:' not in line:
             rospy.loginfo("No info")
             pub.publish("No info")
-            rate.sleep()
+
 
 def getInfo_ARAM_Uptime():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_ARAM_Uptime', Int32, queue_size=10)
     #specify node name
-    rospy.init_node('getInfo_publisher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+
+
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -591,20 +599,20 @@ def getInfo_ARAM_Uptime():
             rospy.loginfo("ARAM Uptime:".join(info))
             #publish data
             pub.publish(infonum)
-            rate.sleep()
+
             break
 
         if 'Info:' not in line:
             rospy.loginfo("No info")
             pub.publish("No info")
-            rate.sleep()
+
 
 def getInfo_Idle():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_Idle', Int32, queue_size=10)
     #specify node name
-    rospy.init_node('getInfo_publisher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+
+
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -635,20 +643,20 @@ def getInfo_Idle():
             rospy.loginfo("Idle:".join(info))
             #publish data
             pub.publish(infonum)
-            rate.sleep()
+
             break
 
         if 'Info:' not in line:
             rospy.loginfo("No info")
             pub.publish("No info")
-            rate.sleep()
+
 
 def getInfo_TipAngle():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_TipAngle', Float32, queue_size=10)
     #specify node name
-    rospy.init_node('getInfo_publisher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+
+
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -681,20 +689,20 @@ def getInfo_TipAngle():
             rospy.loginfo("TipAngle:".join(info))
             #publish data
             pub.publish(float(line4))
-            rate.sleep()
+
             break
 
         if 'Info:' not in line:
             rospy.loginfo("No info")
             pub.publish("No info")
-            rate.sleep()
+
 
 def getInfo_IsTipped():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_IsTipped', String, queue_size=10)
     #specify node name
-    rospy.init_node('getInfo_publisher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+
+
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -723,20 +731,20 @@ def getInfo_IsTipped():
             rospy.loginfo(",Info:".join(info)[1:])
             #publish data
             pub.publish(''.join(info))
-            rate.sleep()
+
             break
 
         if 'Info:' not in line:
             rospy.loginfo("No info")
             pub.publish("No info")
-            rate.sleep()
+
 
 def getInfo_Queue_ID():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_Queue_ID', String, queue_size=10)
     #specify node name
-    rospy.init_node('getInfo_publisher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+
+
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -765,20 +773,20 @@ def getInfo_Queue_ID():
             rospy.loginfo(",Info:".join(info)[1:])
             #publish data
             pub.publish(''.join(info))
-            rate.sleep()
+
             break
 
         if 'Info:' not in line:
             rospy.loginfo("No info")
             pub.publish("No info")
-            rate.sleep()
+
 
 def getInfo_Queue_Job_ID():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_Queue_Job_ID', String, queue_size=10)
     #specify node name
-    rospy.init_node('getInfo_publisher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+
+
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -807,20 +815,20 @@ def getInfo_Queue_Job_ID():
             rospy.loginfo(",Info:".join(info)[1:])
             #publish data
             pub.publish(''.join(info))
-            rate.sleep()
+
             break
 
         if 'Info:' not in line:
             rospy.loginfo("No info")
             pub.publish("No info")
-            rate.sleep()
+
 
 def getInfo_DebugLogState():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_DebugLogState', String, queue_size=10)
     #specify node name
-    rospy.init_node('getInfo_publisher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+
+
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -849,20 +857,20 @@ def getInfo_DebugLogState():
             rospy.loginfo(",Info:".join(info)[1:])
             #publish data
             pub.publish(''.join(info))
-            rate.sleep()
+
             break
 
         if 'Info:' not in line:
             rospy.loginfo("No info")
             pub.publish("No info")
-            rate.sleep()
+
 
 def getInfo_DebugLogSeconds():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_DebugLogSeconds', String, queue_size=10)
     #specify node name
-    rospy.init_node('getInfo_publisher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+
+
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -891,13 +899,13 @@ def getInfo_DebugLogSeconds():
             rospy.loginfo(",Info:".join(info)[1:])
             #publish data
             pub.publish(''.join(info))
-            rate.sleep()
+
             break
 
         if 'Info:' not in line:
             rospy.loginfo("No info")
             pub.publish("No info")
-            rate.sleep()
+
 
 
 if __name__ == '__main__':
