@@ -906,8 +906,6 @@ def getInfo_DebugLogSeconds():
             rospy.loginfo("No info")
             pub.publish("No info")
 
-
-
 if __name__ == '__main__':
     try:
         while not rospy.is_shutdown():
