@@ -36,55 +36,55 @@ class Service9Request {
         this.a = initObj.a
       }
       else {
-        this.a = '';
+        this.a = [];
       }
       if (initObj.hasOwnProperty('b')) {
         this.b = initObj.b
       }
       else {
-        this.b = '';
+        this.b = [];
       }
       if (initObj.hasOwnProperty('c')) {
         this.c = initObj.c
       }
       else {
-        this.c = '';
+        this.c = [];
       }
       if (initObj.hasOwnProperty('d')) {
         this.d = initObj.d
       }
       else {
-        this.d = '';
+        this.d = [];
       }
       if (initObj.hasOwnProperty('e')) {
         this.e = initObj.e
       }
       else {
-        this.e = '';
+        this.e = [];
       }
       if (initObj.hasOwnProperty('f')) {
         this.f = initObj.f
       }
       else {
-        this.f = '';
+        this.f = [];
       }
       if (initObj.hasOwnProperty('g')) {
         this.g = initObj.g
       }
       else {
-        this.g = '';
+        this.g = [];
       }
       if (initObj.hasOwnProperty('h')) {
         this.h = initObj.h
       }
       else {
-        this.h = '';
+        this.h = [];
       }
       if (initObj.hasOwnProperty('i')) {
         this.i = initObj.i
       }
       else {
-        this.i = '';
+        this.i = [];
       }
     }
   }
@@ -92,23 +92,23 @@ class Service9Request {
   static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type Service9Request
     // Serialize message field [a]
-    bufferOffset = _serializer.string(obj.a, buffer, bufferOffset);
+    bufferOffset = _arraySerializer.string(obj.a, buffer, bufferOffset, null);
     // Serialize message field [b]
-    bufferOffset = _serializer.string(obj.b, buffer, bufferOffset);
+    bufferOffset = _arraySerializer.string(obj.b, buffer, bufferOffset, null);
     // Serialize message field [c]
-    bufferOffset = _serializer.string(obj.c, buffer, bufferOffset);
+    bufferOffset = _arraySerializer.string(obj.c, buffer, bufferOffset, null);
     // Serialize message field [d]
-    bufferOffset = _serializer.string(obj.d, buffer, bufferOffset);
+    bufferOffset = _arraySerializer.string(obj.d, buffer, bufferOffset, null);
     // Serialize message field [e]
-    bufferOffset = _serializer.string(obj.e, buffer, bufferOffset);
+    bufferOffset = _arraySerializer.string(obj.e, buffer, bufferOffset, null);
     // Serialize message field [f]
-    bufferOffset = _serializer.string(obj.f, buffer, bufferOffset);
+    bufferOffset = _arraySerializer.string(obj.f, buffer, bufferOffset, null);
     // Serialize message field [g]
-    bufferOffset = _serializer.string(obj.g, buffer, bufferOffset);
+    bufferOffset = _arraySerializer.string(obj.g, buffer, bufferOffset, null);
     // Serialize message field [h]
-    bufferOffset = _serializer.string(obj.h, buffer, bufferOffset);
+    bufferOffset = _arraySerializer.string(obj.h, buffer, bufferOffset, null);
     // Serialize message field [i]
-    bufferOffset = _serializer.string(obj.i, buffer, bufferOffset);
+    bufferOffset = _arraySerializer.string(obj.i, buffer, bufferOffset, null);
     return bufferOffset;
   }
 
@@ -117,37 +117,55 @@ class Service9Request {
     let len;
     let data = new Service9Request(null);
     // Deserialize message field [a]
-    data.a = _deserializer.string(buffer, bufferOffset);
+    data.a = _arrayDeserializer.string(buffer, bufferOffset, null)
     // Deserialize message field [b]
-    data.b = _deserializer.string(buffer, bufferOffset);
+    data.b = _arrayDeserializer.string(buffer, bufferOffset, null)
     // Deserialize message field [c]
-    data.c = _deserializer.string(buffer, bufferOffset);
+    data.c = _arrayDeserializer.string(buffer, bufferOffset, null)
     // Deserialize message field [d]
-    data.d = _deserializer.string(buffer, bufferOffset);
+    data.d = _arrayDeserializer.string(buffer, bufferOffset, null)
     // Deserialize message field [e]
-    data.e = _deserializer.string(buffer, bufferOffset);
+    data.e = _arrayDeserializer.string(buffer, bufferOffset, null)
     // Deserialize message field [f]
-    data.f = _deserializer.string(buffer, bufferOffset);
+    data.f = _arrayDeserializer.string(buffer, bufferOffset, null)
     // Deserialize message field [g]
-    data.g = _deserializer.string(buffer, bufferOffset);
+    data.g = _arrayDeserializer.string(buffer, bufferOffset, null)
     // Deserialize message field [h]
-    data.h = _deserializer.string(buffer, bufferOffset);
+    data.h = _arrayDeserializer.string(buffer, bufferOffset, null)
     // Deserialize message field [i]
-    data.i = _deserializer.string(buffer, bufferOffset);
+    data.i = _arrayDeserializer.string(buffer, bufferOffset, null)
     return data;
   }
 
   static getMessageSize(object) {
     let length = 0;
-    length += object.a.length;
-    length += object.b.length;
-    length += object.c.length;
-    length += object.d.length;
-    length += object.e.length;
-    length += object.f.length;
-    length += object.g.length;
-    length += object.h.length;
-    length += object.i.length;
+    object.a.forEach((val) => {
+      length += 4 + val.length;
+    });
+    object.b.forEach((val) => {
+      length += 4 + val.length;
+    });
+    object.c.forEach((val) => {
+      length += 4 + val.length;
+    });
+    object.d.forEach((val) => {
+      length += 4 + val.length;
+    });
+    object.e.forEach((val) => {
+      length += 4 + val.length;
+    });
+    object.f.forEach((val) => {
+      length += 4 + val.length;
+    });
+    object.g.forEach((val) => {
+      length += 4 + val.length;
+    });
+    object.h.forEach((val) => {
+      length += 4 + val.length;
+    });
+    object.i.forEach((val) => {
+      length += 4 + val.length;
+    });
     return length + 36;
   }
 
@@ -158,21 +176,21 @@ class Service9Request {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '8ec7237014e5197f8c86270f90f1d32a';
+    return '791159f7045e778035dcbcbaa1bb29ec';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    string a
-    string b
-    string c
-    string d
-    string e
-    string f
-    string g
-    string h
-    string i
+    string[] a
+    string[] b
+    string[] c
+    string[] d
+    string[] e
+    string[] f
+    string[] g
+    string[] h
+    string[] i
     
     `;
   }
@@ -187,63 +205,63 @@ class Service9Request {
       resolved.a = msg.a;
     }
     else {
-      resolved.a = ''
+      resolved.a = []
     }
 
     if (msg.b !== undefined) {
       resolved.b = msg.b;
     }
     else {
-      resolved.b = ''
+      resolved.b = []
     }
 
     if (msg.c !== undefined) {
       resolved.c = msg.c;
     }
     else {
-      resolved.c = ''
+      resolved.c = []
     }
 
     if (msg.d !== undefined) {
       resolved.d = msg.d;
     }
     else {
-      resolved.d = ''
+      resolved.d = []
     }
 
     if (msg.e !== undefined) {
       resolved.e = msg.e;
     }
     else {
-      resolved.e = ''
+      resolved.e = []
     }
 
     if (msg.f !== undefined) {
       resolved.f = msg.f;
     }
     else {
-      resolved.f = ''
+      resolved.f = []
     }
 
     if (msg.g !== undefined) {
       resolved.g = msg.g;
     }
     else {
-      resolved.g = ''
+      resolved.g = []
     }
 
     if (msg.h !== undefined) {
       resolved.h = msg.h;
     }
     else {
-      resolved.h = ''
+      resolved.h = []
     }
 
     if (msg.i !== undefined) {
       resolved.i = msg.i;
     }
     else {
-      resolved.i = ''
+      resolved.i = []
     }
 
     return resolved;
@@ -261,7 +279,7 @@ class Service9Response {
         this.device = initObj.device
       }
       else {
-        this.device = '';
+        this.device = [];
       }
     }
   }
@@ -269,7 +287,7 @@ class Service9Response {
   static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type Service9Response
     // Serialize message field [device]
-    bufferOffset = _serializer.string(obj.device, buffer, bufferOffset);
+    bufferOffset = _arraySerializer.string(obj.device, buffer, bufferOffset, null);
     return bufferOffset;
   }
 
@@ -278,13 +296,15 @@ class Service9Response {
     let len;
     let data = new Service9Response(null);
     // Deserialize message field [device]
-    data.device = _deserializer.string(buffer, bufferOffset);
+    data.device = _arrayDeserializer.string(buffer, bufferOffset, null)
     return data;
   }
 
   static getMessageSize(object) {
     let length = 0;
-    length += object.device.length;
+    object.device.forEach((val) => {
+      length += 4 + val.length;
+    });
     return length + 4;
   }
 
@@ -295,13 +315,13 @@ class Service9Response {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '25b143d1069c7861320973824c82b9d8';
+    return 'b91c71e89dd7ccb324fadf7f2ca2ad24';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    string device
+    string[] device
     
     
     `;
@@ -317,7 +337,7 @@ class Service9Response {
       resolved.device = msg.device;
     }
     else {
-      resolved.device = ''
+      resolved.device = []
     }
 
     return resolved;
@@ -327,6 +347,6 @@ class Service9Response {
 module.exports = {
   Request: Service9Request,
   Response: Service9Response,
-  md5sum() { return '4b23d66356efea8d732881ac3520af2b'; },
+  md5sum() { return '8f3b2965311f37d071bd387981e3ad17'; },
   datatype() { return 'om_aiv_util/Service9'; }
 };
