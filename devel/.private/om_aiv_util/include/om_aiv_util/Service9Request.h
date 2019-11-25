@@ -49,31 +49,31 @@ struct Service9Request_
 
 
 
-   typedef std::vector<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > , typename ContainerAllocator::template rebind<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::other >  _a_type;
+   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _a_type;
   _a_type a;
 
-   typedef std::vector<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > , typename ContainerAllocator::template rebind<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::other >  _b_type;
+   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _b_type;
   _b_type b;
 
-   typedef std::vector<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > , typename ContainerAllocator::template rebind<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::other >  _c_type;
+   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _c_type;
   _c_type c;
 
-   typedef std::vector<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > , typename ContainerAllocator::template rebind<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::other >  _d_type;
+   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _d_type;
   _d_type d;
 
-   typedef std::vector<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > , typename ContainerAllocator::template rebind<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::other >  _e_type;
+   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _e_type;
   _e_type e;
 
-   typedef std::vector<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > , typename ContainerAllocator::template rebind<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::other >  _f_type;
+   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _f_type;
   _f_type f;
 
-   typedef std::vector<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > , typename ContainerAllocator::template rebind<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::other >  _g_type;
+   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _g_type;
   _g_type g;
 
-   typedef std::vector<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > , typename ContainerAllocator::template rebind<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::other >  _h_type;
+   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _h_type;
   _h_type h;
 
-   typedef std::vector<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > , typename ContainerAllocator::template rebind<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::other >  _i_type;
+   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _i_type;
   _i_type i;
 
 
@@ -154,12 +154,12 @@ struct MD5Sum< ::om_aiv_util::Service9Request_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "791159f7045e778035dcbcbaa1bb29ec";
+    return "8ec7237014e5197f8c86270f90f1d32a";
   }
 
   static const char* value(const ::om_aiv_util::Service9Request_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x791159f7045e7780ULL;
-  static const uint64_t static_value2 = 0x35dcbcbaa1bb29ecULL;
+  static const uint64_t static_value1 = 0x8ec7237014e5197fULL;
+  static const uint64_t static_value2 = 0x8c86270f90f1d32aULL;
 };
 
 template<class ContainerAllocator>
@@ -178,15 +178,15 @@ struct Definition< ::om_aiv_util::Service9Request_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "string[] a\n"
-"string[] b\n"
-"string[] c\n"
-"string[] d\n"
-"string[] e\n"
-"string[] f\n"
-"string[] g\n"
-"string[] h\n"
-"string[] i\n"
+    return "string a\n"
+"string b\n"
+"string c\n"
+"string d\n"
+"string e\n"
+"string f\n"
+"string g\n"
+"string h\n"
+"string i\n"
 ;
   }
 
@@ -232,60 +232,24 @@ struct Printer< ::om_aiv_util::Service9Request_<ContainerAllocator> >
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::om_aiv_util::Service9Request_<ContainerAllocator>& v)
   {
-    s << indent << "a[]" << std::endl;
-    for (size_t i = 0; i < v.a.size(); ++i)
-    {
-      s << indent << "  a[" << i << "]: ";
-      Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.a[i]);
-    }
-    s << indent << "b[]" << std::endl;
-    for (size_t i = 0; i < v.b.size(); ++i)
-    {
-      s << indent << "  b[" << i << "]: ";
-      Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.b[i]);
-    }
-    s << indent << "c[]" << std::endl;
-    for (size_t i = 0; i < v.c.size(); ++i)
-    {
-      s << indent << "  c[" << i << "]: ";
-      Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.c[i]);
-    }
-    s << indent << "d[]" << std::endl;
-    for (size_t i = 0; i < v.d.size(); ++i)
-    {
-      s << indent << "  d[" << i << "]: ";
-      Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.d[i]);
-    }
-    s << indent << "e[]" << std::endl;
-    for (size_t i = 0; i < v.e.size(); ++i)
-    {
-      s << indent << "  e[" << i << "]: ";
-      Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.e[i]);
-    }
-    s << indent << "f[]" << std::endl;
-    for (size_t i = 0; i < v.f.size(); ++i)
-    {
-      s << indent << "  f[" << i << "]: ";
-      Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.f[i]);
-    }
-    s << indent << "g[]" << std::endl;
-    for (size_t i = 0; i < v.g.size(); ++i)
-    {
-      s << indent << "  g[" << i << "]: ";
-      Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.g[i]);
-    }
-    s << indent << "h[]" << std::endl;
-    for (size_t i = 0; i < v.h.size(); ++i)
-    {
-      s << indent << "  h[" << i << "]: ";
-      Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.h[i]);
-    }
-    s << indent << "i[]" << std::endl;
-    for (size_t i = 0; i < v.i.size(); ++i)
-    {
-      s << indent << "  i[" << i << "]: ";
-      Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.i[i]);
-    }
+    s << indent << "a: ";
+    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.a);
+    s << indent << "b: ";
+    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.b);
+    s << indent << "c: ";
+    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.c);
+    s << indent << "d: ";
+    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.d);
+    s << indent << "e: ";
+    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.e);
+    s << indent << "f: ";
+    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.f);
+    s << indent << "g: ";
+    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.g);
+    s << indent << "h: ";
+    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.h);
+    s << indent << "i: ";
+    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.i);
   }
 };
 

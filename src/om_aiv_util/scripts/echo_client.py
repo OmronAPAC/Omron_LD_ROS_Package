@@ -5,8 +5,9 @@ from om_aiv_util.srv import *
 def echo_client(x):
     rospy.wait_for_service('echo')
     try:
-        service = rospy.ServiceProxy('echo', Service)
-        resp1 = service(x)
+        a =  b = c = d = e = f = g = h = None
+        service = rospy.ServiceProxy('echo', Service9)
+        resp1 = service(x, a, b, c, d, e, f, g, h)
         return resp1.device
     except rospy.ServiceException, e:
         print "Service call failed: %s"%e

@@ -33,7 +33,7 @@ struct Service9Response_
 
 
 
-   typedef std::vector<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > , typename ContainerAllocator::template rebind<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::other >  _device_type;
+   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _device_type;
   _device_type device;
 
 
@@ -114,12 +114,12 @@ struct MD5Sum< ::om_aiv_util::Service9Response_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "b91c71e89dd7ccb324fadf7f2ca2ad24";
+    return "25b143d1069c7861320973824c82b9d8";
   }
 
   static const char* value(const ::om_aiv_util::Service9Response_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xb91c71e89dd7ccb3ULL;
-  static const uint64_t static_value2 = 0x24fadf7f2ca2ad24ULL;
+  static const uint64_t static_value1 = 0x25b143d1069c7861ULL;
+  static const uint64_t static_value2 = 0x320973824c82b9d8ULL;
 };
 
 template<class ContainerAllocator>
@@ -138,7 +138,7 @@ struct Definition< ::om_aiv_util::Service9Response_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "string[] device\n"
+    return "string device\n"
 "\n"
 ;
   }
@@ -177,12 +177,8 @@ struct Printer< ::om_aiv_util::Service9Response_<ContainerAllocator> >
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::om_aiv_util::Service9Response_<ContainerAllocator>& v)
   {
-    s << indent << "device[]" << std::endl;
-    for (size_t i = 0; i < v.device.size(); ++i)
-    {
-      s << indent << "  device[" << i << "]: ";
-      Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.device[i]);
-    }
+    s << indent << "device: ";
+    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.device);
   }
 };
 
