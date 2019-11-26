@@ -34,13 +34,13 @@ def handle_analogInputQueryVoltage(req):
 def analogInputList_servers(op):
     # print op
     if op == "List":
-        print "running List"
+        rospy.loginfo("running List")
         s1 = rospy.Service('analogInputList', Service, handle_analogInputList)
     elif op == "QueryRaw":
-        print "running QueryRaw"
+        rospy.loginfo("running QueryRaw")
         s2 = rospy.Service('analogInputQueryRaw', Service, handle_analogInputQueryRaw)
     elif op == "QueryVoltage":
-        print "running QueryVoltage"
+        rospy.loginfo("running QueryVoltage")
         s3 = rospy.Service('analogInputQueryVoltage', Service, handle_analogInputQueryVoltage)
 
 def analogInputList():
