@@ -45,6 +45,9 @@ def handle_doTaskInstant(req):
     b = req.a[1]
     doTaskInstant()
     return rcv
+def handle_enableMotors(req):
+    enableMotors()
+    return rcv
 
 def analogInputList_servers(op):
     # print op
@@ -66,6 +69,9 @@ def analogInputList_servers(op):
     elif op == "DoTaskInstant":
         rospy.loginfo("running DoTaskInstant")
         s5 = rospy.Service('doTaskInstant', OmAivService, handle_doTaskInstant)
+    elif op == "EnableMotors":
+        rospy.loginfo("running EnableMotors")
+        s6 = rospy.Service('enableMotors', OmAivService, handle_enableMotors)
 
 def analogInputList():
     global rcv
@@ -243,6 +249,37 @@ def doTaskInstant():
         print("Connection  failed")
         return errormsg
 
+def enableMotors():
+    global rcv
+    pub = rospy.Publisher('arcl_enableMotors', String, queue_size=10)
+    # rospy.init_node('talker', anonymous=True)
+    rate = rospy.Rate(10) # 10hz
+    command = "enableMotors"
+    print "Running command: ", command
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "Motors" in rcv:
+                print rcv
+                return rcv
+                break
+            if "EStop" in rcv:
+                print rcv
+                return rcv
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+
 if __name__ == "__main__":
     rospy.init_node('analogInput_servers')
     analogInputList_servers("List")
@@ -251,4 +288,5 @@ if __name__ == "__main__":
     analogInputList_servers("ConfigStart")
     analogInputList_servers("ConnectOutgoing")
     analogInputList_servers("DoTaskInstant")
+    analogInputList_servers("EnableMotors")
     rospy.spin()
