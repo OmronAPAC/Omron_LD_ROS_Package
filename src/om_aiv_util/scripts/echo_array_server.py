@@ -19,15 +19,12 @@ from om_aiv_util.srv import Service9,Service9Response
 import rospy
 
 def handle_echo(req):
-    global fault
-    print len(req.a)
+    global arg
+    # print len(req.a)
     if len(req.a) == 0:
-        fault = ""
+        arg = ""
     if len(req.a) == 1:
-        req.a[0]
-        fault = req.a[0]
-
-    print req.a[0]
+        arg = req.a[0]
     # print "Returning", req.a[1]
     echo()
     return rcv
@@ -41,7 +38,7 @@ def echo():
     global rcv
     pub = rospy.Publisher('arcl_echo', String, queue_size=10)
     rate = rospy.Rate(10) # 10hz
-    command = "echo {}".format(fault)
+    command = "echo {}".format(arg)
     print "Running command: ", command
     command = command.encode('ascii')
     s.send(command+b"\r\n")
