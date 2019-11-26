@@ -2,10 +2,10 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def analogInputQueryVoltage_client(x):
+def analogInputQueryVoltage_client(array):
     rospy.wait_for_service('analogInputQueryVoltage')
     try:
-        service = rospy.ServiceProxy('analogInputQueryVoltage', Service)
+        service = rospy.ServiceProxy('analogInputQueryVoltage', OmAivService)
         resp1 = service(x)
         return resp1.device
     except rospy.ServiceException, e:
@@ -17,8 +17,10 @@ def usage():
 if __name__ == "__main__":
     if len(sys.argv) == 2:
         x = str(sys.argv[1])
+        array = [ x ]
+        print array
     else:
         print usage()
         sys.exit(1)
     print "running command"
-    print analogInputQueryVoltage_client(x)
+    print analogInputQueryVoltage_client(array)

@@ -21,13 +21,13 @@ def handle_analogInputList(req):
     analogInputList()
     return rcv
 def handle_analogInputQueryRaw(req):
-    global text
-    text = req.a
+    global arg
+    arg = req.a[0]
     analogInputQueryRaw()
     return rcv
 def handle_analogInputQueryVoltage(req):
-    global text
-    text = req.a
+    global arg
+    arg = req.a[0]
     analogInputQueryVoltage()
     return rcv
 
@@ -74,7 +74,7 @@ def analogInputQueryRaw():
     global rcv
     pub = rospy.Publisher('arcl_analogInputQueryRaw', String, queue_size=10)
     rate = rospy.Rate(10) # 10hz
-    command = "analogInputQueryRaw {}".format(text)
+    command = "analogInputQueryRaw {}".format(arg)
     command = command.encode('ascii')
     print "Running command: ", command
     s.send(command+b"\r\n")
@@ -103,7 +103,7 @@ def analogInputQueryVoltage():
     global rcv
     pub = rospy.Publisher('arcl_analogInputQueryVoltage', String, queue_size=10)
     rate = rospy.Rate(10) # 10hz
-    command = "analogInputQueryVoltage {}".format(text)
+    command = "analogInputQueryVoltage {}".format(arg)
     command = command.encode('ascii')
     print "Running command: ", command
     s.send(command+b"\r\n")
