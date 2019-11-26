@@ -25,7 +25,7 @@
 (defmethod om_aiv_util::Service9Request
   (:init
    (&key
-    ((:a __a) "")
+    ((:a __a) (let (r) (dotimes (i 0) (push "" r)) r))
     ((:b __b) "")
     ((:c __c) "")
     ((:d __d) "")
@@ -36,7 +36,7 @@
     ((:i __i) "")
     )
    (send-super :init)
-   (setq _a (string __a))
+   (setq _a __a)
    (setq _b (string __b))
    (setq _c (string __c))
    (setq _d (string __d))
@@ -76,8 +76,8 @@
   (:serialization-length
    ()
    (+
-    ;; string _a
-    4 (length _a)
+    ;; string[] _a
+    (apply #'+ (mapcar #'(lambda (x) (+ 4 (length x))) _a)) 4
     ;; string _b
     4 (length _b)
     ;; string _c
@@ -99,8 +99,11 @@
    (&optional strm)
    (let ((s (if strm strm
               (make-string-output-stream (send self :serialization-length)))))
-     ;; string _a
-       (write-long (length _a) s) (princ _a s)
+     ;; string[] _a
+     (write-long (length _a) s)
+     (dolist (elem _a)
+       (write-long (length elem) s) (princ elem s)
+       )
      ;; string _b
        (write-long (length _b) s) (princ _b s)
      ;; string _c
@@ -121,8 +124,13 @@
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
    (buf &optional (ptr- 0))
-   ;; string _a
-     (let (n) (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4) (setq _a (subseq buf ptr- (+ ptr- n))) (incf ptr- n))
+   ;; string[] _a
+   (let (n)
+     (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4)
+     (setq _a (make-list n))
+     (dotimes (i n)
+     (let (n) (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4) (setf (elt _a i) (subseq buf ptr- (+ ptr- n))) (incf ptr- n))
+     ))
    ;; string _b
      (let (n) (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4) (setq _b (subseq buf ptr- (+ ptr- n))) (incf ptr- n))
    ;; string _c
@@ -184,7 +192,7 @@
   :super ros::object
   :slots ())
 
-(setf (get om_aiv_util::Service9 :md5sum-) "4b23d66356efea8d732881ac3520af2b")
+(setf (get om_aiv_util::Service9 :md5sum-) "f7a77e900f56696065fc1ed66c979125")
 (setf (get om_aiv_util::Service9 :datatype-) "om_aiv_util/Service9")
 (setf (get om_aiv_util::Service9 :request) om_aiv_util::Service9Request)
 (setf (get om_aiv_util::Service9 :response) om_aiv_util::Service9Response)
@@ -192,10 +200,10 @@
 (defmethod om_aiv_util::Service9Request
   (:response () (instance om_aiv_util::Service9Response :init)))
 
-(setf (get om_aiv_util::Service9Request :md5sum-) "4b23d66356efea8d732881ac3520af2b")
+(setf (get om_aiv_util::Service9Request :md5sum-) "f7a77e900f56696065fc1ed66c979125")
 (setf (get om_aiv_util::Service9Request :datatype-) "om_aiv_util/Service9Request")
 (setf (get om_aiv_util::Service9Request :definition-)
-      "string a
+      "string[] a
 string b
 string c
 string d
@@ -209,10 +217,10 @@ string device
 
 ")
 
-(setf (get om_aiv_util::Service9Response :md5sum-) "4b23d66356efea8d732881ac3520af2b")
+(setf (get om_aiv_util::Service9Response :md5sum-) "f7a77e900f56696065fc1ed66c979125")
 (setf (get om_aiv_util::Service9Response :datatype-) "om_aiv_util/Service9Response")
 (setf (get om_aiv_util::Service9Response :definition-)
-      "string a
+      "string[] a
 string b
 string c
 string d
@@ -228,6 +236,6 @@ string device
 
 
 
-(provide :om_aiv_util/Service9 "4b23d66356efea8d732881ac3520af2b")
+(provide :om_aiv_util/Service9 "f7a77e900f56696065fc1ed66c979125")
 
 

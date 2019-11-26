@@ -18,6 +18,8 @@
     (:file "_package_Service5" :depends-on ("_package"))
     (:file "Service9" :depends-on ("_package_Service9"))
     (:file "_package_Service9" :depends-on ("_package"))
+    (:file "Service9_backup" :depends-on ("_package_Service9_backup"))
+    (:file "_package_Service9_backup" :depends-on ("_package"))
     (:file "ServiceExample" :depends-on ("_package_ServiceExample"))
     (:file "_package_ServiceExample" :depends-on ("_package"))
   ))

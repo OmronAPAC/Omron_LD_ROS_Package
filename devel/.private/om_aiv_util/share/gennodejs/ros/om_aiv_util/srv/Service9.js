@@ -36,7 +36,7 @@ class Service9Request {
         this.a = initObj.a
       }
       else {
-        this.a = '';
+        this.a = [];
       }
       if (initObj.hasOwnProperty('b')) {
         this.b = initObj.b
@@ -92,7 +92,7 @@ class Service9Request {
   static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type Service9Request
     // Serialize message field [a]
-    bufferOffset = _serializer.string(obj.a, buffer, bufferOffset);
+    bufferOffset = _arraySerializer.string(obj.a, buffer, bufferOffset, null);
     // Serialize message field [b]
     bufferOffset = _serializer.string(obj.b, buffer, bufferOffset);
     // Serialize message field [c]
@@ -117,7 +117,7 @@ class Service9Request {
     let len;
     let data = new Service9Request(null);
     // Deserialize message field [a]
-    data.a = _deserializer.string(buffer, bufferOffset);
+    data.a = _arrayDeserializer.string(buffer, bufferOffset, null)
     // Deserialize message field [b]
     data.b = _deserializer.string(buffer, bufferOffset);
     // Deserialize message field [c]
@@ -139,7 +139,9 @@ class Service9Request {
 
   static getMessageSize(object) {
     let length = 0;
-    length += object.a.length;
+    object.a.forEach((val) => {
+      length += 4 + val.length;
+    });
     length += object.b.length;
     length += object.c.length;
     length += object.d.length;
@@ -158,13 +160,13 @@ class Service9Request {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '8ec7237014e5197f8c86270f90f1d32a';
+    return '7803b643a81fb2ac82d7377f398bdb7b';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    string a
+    string[] a
     string b
     string c
     string d
@@ -187,7 +189,7 @@ class Service9Request {
       resolved.a = msg.a;
     }
     else {
-      resolved.a = ''
+      resolved.a = []
     }
 
     if (msg.b !== undefined) {
@@ -327,6 +329,6 @@ class Service9Response {
 module.exports = {
   Request: Service9Request,
   Response: Service9Response,
-  md5sum() { return '4b23d66356efea8d732881ac3520af2b'; },
+  md5sum() { return 'f7a77e900f56696065fc1ed66c979125'; },
   datatype() { return 'om_aiv_util/Service9'; }
 };

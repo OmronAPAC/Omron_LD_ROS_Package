@@ -9,6 +9,7 @@ let Service2 = require('./Service2.js')
 let Service9 = require('./Service9.js')
 let AddTwoInts = require('./AddTwoInts.js')
 let Service4 = require('./Service4.js')
+let Service9_backup = require('./Service9_backup.js')
 
 module.exports = {
   Service5: Service5,
@@ -19,4 +20,5 @@ module.exports = {
   Service9: Service9,
   AddTwoInts: AddTwoInts,
   Service4: Service4,
+  Service9_backup: Service9_backup,
 };

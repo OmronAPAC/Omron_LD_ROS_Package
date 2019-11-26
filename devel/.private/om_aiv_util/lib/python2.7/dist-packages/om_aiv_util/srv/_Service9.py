@@ -7,10 +7,10 @@ import struct
 
 
 class Service9Request(genpy.Message):
-  _md5sum = "8ec7237014e5197f8c86270f90f1d32a"
+  _md5sum = "7803b643a81fb2ac82d7377f398bdb7b"
   _type = "om_aiv_util/Service9Request"
   _has_header = False #flag to mark the presence of a Header object
-  _full_text = """string a
+  _full_text = """string[] a
 string b
 string c
 string d
@@ -21,7 +21,7 @@ string h
 string i
 """
   __slots__ = ['a','b','c','d','e','f','g','h','i']
-  _slot_types = ['string','string','string','string','string','string','string','string','string']
+  _slot_types = ['string[]','string','string','string','string','string','string','string','string']
 
   def __init__(self, *args, **kwds):
     """
@@ -41,7 +41,7 @@ string i
       super(Service9Request, self).__init__(*args, **kwds)
       #message fields cannot be None, assign default values for those that are
       if self.a is None:
-        self.a = ''
+        self.a = []
       if self.b is None:
         self.b = ''
       if self.c is None:
@@ -59,7 +59,7 @@ string i
       if self.i is None:
         self.i = ''
     else:
-      self.a = ''
+      self.a = []
       self.b = ''
       self.c = ''
       self.d = ''
@@ -81,12 +81,14 @@ string i
     :param buff: buffer, ``StringIO``
     """
     try:
-      _x = self.a
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      buff.write(struct.pack('<I%ss'%length, length, _x))
+      length = len(self.a)
+      buff.write(_struct_I.pack(length))
+      for val1 in self.a:
+        length = len(val1)
+        if python3 or type(val1) == unicode:
+          val1 = val1.encode('utf-8')
+          length = len(val1)
+        buff.write(struct.pack('<I%ss'%length, length, val1))
       _x = self.b
       length = len(_x)
       if python3 or type(_x) == unicode:
@@ -148,12 +150,18 @@ string i
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.a = str[start:end].decode('utf-8')
-      else:
-        self.a = str[start:end]
+      self.a = []
+      for i in range(0, length):
+        start = end
+        end += 4
+        (length,) = _struct_I.unpack(str[start:end])
+        start = end
+        end += length
+        if python3:
+          val1 = str[start:end].decode('utf-8')
+        else:
+          val1 = str[start:end]
+        self.a.append(val1)
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
@@ -238,12 +246,14 @@ string i
     :param numpy: numpy python module
     """
     try:
-      _x = self.a
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      buff.write(struct.pack('<I%ss'%length, length, _x))
+      length = len(self.a)
+      buff.write(_struct_I.pack(length))
+      for val1 in self.a:
+        length = len(val1)
+        if python3 or type(val1) == unicode:
+          val1 = val1.encode('utf-8')
+          length = len(val1)
+        buff.write(struct.pack('<I%ss'%length, length, val1))
       _x = self.b
       length = len(_x)
       if python3 or type(_x) == unicode:
@@ -306,12 +316,18 @@ string i
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.a = str[start:end].decode('utf-8')
-      else:
-        self.a = str[start:end]
+      self.a = []
+      for i in range(0, length):
+        start = end
+        end += 4
+        (length,) = _struct_I.unpack(str[start:end])
+        start = end
+        end += length
+        if python3:
+          val1 = str[start:end].decode('utf-8')
+        else:
+          val1 = str[start:end]
+        self.a.append(val1)
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
@@ -517,6 +533,6 @@ def _get_struct_I():
     return _struct_I
 class Service9(object):
   _type          = 'om_aiv_util/Service9'
-  _md5sum = '4b23d66356efea8d732881ac3520af2b'
+  _md5sum = 'f7a77e900f56696065fc1ed66c979125'
   _request_class  = Service9Request
   _response_class = Service9Response
