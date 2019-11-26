@@ -20,8 +20,15 @@ import rospy
 
 def handle_echo(req):
     global fault
-    print "Returning", req.a
-    fault = req.a
+    print len(req.a)
+    if len(req.a) == 0:
+        fault = ""
+    if len(req.a) == 1:
+        req.a[0]
+        fault = req.a[0]
+
+    print req.a[0]
+    # print "Returning", req.a[1]
     echo()
     return rcv
 

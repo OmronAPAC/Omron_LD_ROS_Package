@@ -3,6 +3,6 @@
           A
           B-VAL
           B
-          SUM-VAL
-          SUM
+          RESULT-VAL
+          RESULT
 ))

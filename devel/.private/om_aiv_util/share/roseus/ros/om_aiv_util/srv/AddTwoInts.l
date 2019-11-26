@@ -108,50 +108,50 @@
 
 (defclass om_aiv_util::AddTwoIntsResponse
   :super ros::object
-  :slots (_sum ))
+  :slots (_result ))
 
 (defmethod om_aiv_util::AddTwoIntsResponse
   (:init
    (&key
-    ((:sum __sum) 0)
+    ((:result __result) 0)
     )
    (send-super :init)
-   (setq _sum (round __sum))
+   (setq _result (round __result))
    self)
-  (:sum
-   (&optional __sum)
-   (if __sum (setq _sum __sum)) _sum)
+  (:result
+   (&optional __result)
+   (if __result (setq _result __result)) _result)
   (:serialization-length
    ()
    (+
-    ;; int64 _sum
+    ;; int64 _result
     8
     ))
   (:serialize
    (&optional strm)
    (let ((s (if strm strm
               (make-string-output-stream (send self :serialization-length)))))
-     ;; int64 _sum
+     ;; int64 _result
 #+(or :alpha :irix6 :x86_64)
-       (progn (sys::poke _sum (send s :buffer) (send s :count) :long) (incf (stream-count s) 8))
+       (progn (sys::poke _result (send s :buffer) (send s :count) :long) (incf (stream-count s) 8))
 #-(or :alpha :irix6 :x86_64)
-       (cond ((and (class _sum) (= (length (_sum . bv)) 2)) ;; bignum
-              (write-long (ash (elt (_sum . bv) 0) 0) s)
-              (write-long (ash (elt (_sum . bv) 1) -1) s))
-             ((and (class _sum) (= (length (_sum . bv)) 1)) ;; big1
-              (write-long (elt (_sum . bv) 0) s)
-              (write-long (if (>= _sum 0) 0 #xffffffff) s))
+       (cond ((and (class _result) (= (length (_result . bv)) 2)) ;; bignum
+              (write-long (ash (elt (_result . bv) 0) 0) s)
+              (write-long (ash (elt (_result . bv) 1) -1) s))
+             ((and (class _result) (= (length (_result . bv)) 1)) ;; big1
+              (write-long (elt (_result . bv) 0) s)
+              (write-long (if (>= _result 0) 0 #xffffffff) s))
              (t                                         ;; integer
-              (write-long _sum s)(write-long (if (>= _sum 0) 0 #xffffffff) s)))
+              (write-long _result s)(write-long (if (>= _result 0) 0 #xffffffff) s)))
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
    (buf &optional (ptr- 0))
-   ;; int64 _sum
+   ;; int64 _result
 #+(or :alpha :irix6 :x86_64)
-      (setf _sum (prog1 (sys::peek buf ptr- :long) (incf ptr- 8)))
+      (setf _result (prog1 (sys::peek buf ptr- :long) (incf ptr- 8)))
 #-(or :alpha :irix6 :x86_64)
-      (setf _sum (let ((b0 (prog1 (sys::peek buf ptr- :integer) (incf ptr- 4)))
+      (setf _result (let ((b0 (prog1 (sys::peek buf ptr- :integer) (incf ptr- 4)))
                   (b1 (prog1 (sys::peek buf ptr- :integer) (incf ptr- 4))))
               (cond ((= b1 -1) b0)
                      ((and (= b1  0)
@@ -167,7 +167,7 @@
   :super ros::object
   :slots ())
 
-(setf (get om_aiv_util::AddTwoInts :md5sum-) "6a2e34150c00229791cc89ff309fff21")
+(setf (get om_aiv_util::AddTwoInts :md5sum-) "d431cae597499d244ef1c576e21358c8")
 (setf (get om_aiv_util::AddTwoInts :datatype-) "om_aiv_util/AddTwoInts")
 (setf (get om_aiv_util::AddTwoInts :request) om_aiv_util::AddTwoIntsRequest)
 (setf (get om_aiv_util::AddTwoInts :response) om_aiv_util::AddTwoIntsResponse)
@@ -175,28 +175,28 @@
 (defmethod om_aiv_util::AddTwoIntsRequest
   (:response () (instance om_aiv_util::AddTwoIntsResponse :init)))
 
-(setf (get om_aiv_util::AddTwoIntsRequest :md5sum-) "6a2e34150c00229791cc89ff309fff21")
+(setf (get om_aiv_util::AddTwoIntsRequest :md5sum-) "d431cae597499d244ef1c576e21358c8")
 (setf (get om_aiv_util::AddTwoIntsRequest :datatype-) "om_aiv_util/AddTwoIntsRequest")
 (setf (get om_aiv_util::AddTwoIntsRequest :definition-)
       "int64 a
 int64 b
 ---
-int64 sum
+int64 result
 
 ")
 
-(setf (get om_aiv_util::AddTwoIntsResponse :md5sum-) "6a2e34150c00229791cc89ff309fff21")
+(setf (get om_aiv_util::AddTwoIntsResponse :md5sum-) "d431cae597499d244ef1c576e21358c8")
 (setf (get om_aiv_util::AddTwoIntsResponse :datatype-) "om_aiv_util/AddTwoIntsResponse")
 (setf (get om_aiv_util::AddTwoIntsResponse :definition-)
       "int64 a
 int64 b
 ---
-int64 sum
+int64 result
 
 ")
 
 
 
-(provide :om_aiv_util/AddTwoInts "6a2e34150c00229791cc89ff309fff21")
+(provide :om_aiv_util/AddTwoInts "d431cae597499d244ef1c576e21358c8")
 
 

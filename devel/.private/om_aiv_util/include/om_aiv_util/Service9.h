@@ -40,7 +40,7 @@ template<>
 struct MD5Sum< ::om_aiv_util::Service9 > {
   static const char* value()
   {
-    return "f7a77e900f56696065fc1ed66c979125";
+    return "b2778cec932742b2c8b6d125219e8d85";
   }
 
   static const char* value(const ::om_aiv_util::Service9&) { return value(); }

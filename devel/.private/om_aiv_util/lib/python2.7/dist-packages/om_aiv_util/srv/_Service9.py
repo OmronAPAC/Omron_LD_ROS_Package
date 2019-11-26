@@ -7,21 +7,13 @@ import struct
 
 
 class Service9Request(genpy.Message):
-  _md5sum = "7803b643a81fb2ac82d7377f398bdb7b"
+  _md5sum = "4f6bc51cbf7510cc87897366558eca7b"
   _type = "om_aiv_util/Service9Request"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """string[] a
-string b
-string c
-string d
-string e
-string f
-string g
-string h
-string i
 """
-  __slots__ = ['a','b','c','d','e','f','g','h','i']
-  _slot_types = ['string[]','string','string','string','string','string','string','string','string']
+  __slots__ = ['a']
+  _slot_types = ['string[]']
 
   def __init__(self, *args, **kwds):
     """
@@ -31,7 +23,7 @@ string i
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       a,b,c,d,e,f,g,h,i
+       a
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -42,32 +34,8 @@ string i
       #message fields cannot be None, assign default values for those that are
       if self.a is None:
         self.a = []
-      if self.b is None:
-        self.b = ''
-      if self.c is None:
-        self.c = ''
-      if self.d is None:
-        self.d = ''
-      if self.e is None:
-        self.e = ''
-      if self.f is None:
-        self.f = ''
-      if self.g is None:
-        self.g = ''
-      if self.h is None:
-        self.h = ''
-      if self.i is None:
-        self.i = ''
     else:
       self.a = []
-      self.b = ''
-      self.c = ''
-      self.d = ''
-      self.e = ''
-      self.f = ''
-      self.g = ''
-      self.h = ''
-      self.i = ''
 
   def _get_types(self):
     """
@@ -89,54 +57,6 @@ string i
           val1 = val1.encode('utf-8')
           length = len(val1)
         buff.write(struct.pack('<I%ss'%length, length, val1))
-      _x = self.b
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      buff.write(struct.pack('<I%ss'%length, length, _x))
-      _x = self.c
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      buff.write(struct.pack('<I%ss'%length, length, _x))
-      _x = self.d
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      buff.write(struct.pack('<I%ss'%length, length, _x))
-      _x = self.e
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      buff.write(struct.pack('<I%ss'%length, length, _x))
-      _x = self.f
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      buff.write(struct.pack('<I%ss'%length, length, _x))
-      _x = self.g
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      buff.write(struct.pack('<I%ss'%length, length, _x))
-      _x = self.h
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      buff.write(struct.pack('<I%ss'%length, length, _x))
-      _x = self.i
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      buff.write(struct.pack('<I%ss'%length, length, _x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -162,78 +82,6 @@ string i
         else:
           val1 = str[start:end]
         self.a.append(val1)
-      start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.b = str[start:end].decode('utf-8')
-      else:
-        self.b = str[start:end]
-      start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.c = str[start:end].decode('utf-8')
-      else:
-        self.c = str[start:end]
-      start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.d = str[start:end].decode('utf-8')
-      else:
-        self.d = str[start:end]
-      start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.e = str[start:end].decode('utf-8')
-      else:
-        self.e = str[start:end]
-      start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.f = str[start:end].decode('utf-8')
-      else:
-        self.f = str[start:end]
-      start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.g = str[start:end].decode('utf-8')
-      else:
-        self.g = str[start:end]
-      start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.h = str[start:end].decode('utf-8')
-      else:
-        self.h = str[start:end]
-      start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.i = str[start:end].decode('utf-8')
-      else:
-        self.i = str[start:end]
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -254,54 +102,6 @@ string i
           val1 = val1.encode('utf-8')
           length = len(val1)
         buff.write(struct.pack('<I%ss'%length, length, val1))
-      _x = self.b
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      buff.write(struct.pack('<I%ss'%length, length, _x))
-      _x = self.c
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      buff.write(struct.pack('<I%ss'%length, length, _x))
-      _x = self.d
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      buff.write(struct.pack('<I%ss'%length, length, _x))
-      _x = self.e
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      buff.write(struct.pack('<I%ss'%length, length, _x))
-      _x = self.f
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      buff.write(struct.pack('<I%ss'%length, length, _x))
-      _x = self.g
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      buff.write(struct.pack('<I%ss'%length, length, _x))
-      _x = self.h
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      buff.write(struct.pack('<I%ss'%length, length, _x))
-      _x = self.i
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      buff.write(struct.pack('<I%ss'%length, length, _x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -328,78 +128,6 @@ string i
         else:
           val1 = str[start:end]
         self.a.append(val1)
-      start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.b = str[start:end].decode('utf-8')
-      else:
-        self.b = str[start:end]
-      start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.c = str[start:end].decode('utf-8')
-      else:
-        self.c = str[start:end]
-      start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.d = str[start:end].decode('utf-8')
-      else:
-        self.d = str[start:end]
-      start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.e = str[start:end].decode('utf-8')
-      else:
-        self.e = str[start:end]
-      start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.f = str[start:end].decode('utf-8')
-      else:
-        self.f = str[start:end]
-      start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.g = str[start:end].decode('utf-8')
-      else:
-        self.g = str[start:end]
-      start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.h = str[start:end].decode('utf-8')
-      else:
-        self.h = str[start:end]
-      start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.i = str[start:end].decode('utf-8')
-      else:
-        self.i = str[start:end]
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -533,6 +261,6 @@ def _get_struct_I():
     return _struct_I
 class Service9(object):
   _type          = 'om_aiv_util/Service9'
-  _md5sum = 'f7a77e900f56696065fc1ed66c979125'
+  _md5sum = 'b2778cec932742b2c8b6d125219e8d85'
   _request_class  = Service9Request
   _response_class = Service9Response

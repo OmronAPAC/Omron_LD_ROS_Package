@@ -91,10 +91,10 @@
   "om_aiv_util/AddTwoIntsRequest")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<AddTwoInts-request>)))
   "Returns md5sum for a message object of type '<AddTwoInts-request>"
-  "6a2e34150c00229791cc89ff309fff21")
+  "d431cae597499d244ef1c576e21358c8")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'AddTwoInts-request)))
   "Returns md5sum for a message object of type 'AddTwoInts-request"
-  "6a2e34150c00229791cc89ff309fff21")
+  "d431cae597499d244ef1c576e21358c8")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<AddTwoInts-request>)))
   "Returns full string definition for message of type '<AddTwoInts-request>"
   (cl:format cl:nil "int64 a~%int64 b~%~%~%"))
@@ -115,9 +115,9 @@
 ;//! \htmlinclude AddTwoInts-response.msg.html
 
 (cl:defclass <AddTwoInts-response> (roslisp-msg-protocol:ros-message)
-  ((sum
-    :reader sum
-    :initarg :sum
+  ((result
+    :reader result
+    :initarg :result
     :type cl:integer
     :initform 0))
 )
@@ -130,13 +130,13 @@
   (cl:unless (cl:typep m 'AddTwoInts-response)
     (roslisp-msg-protocol:msg-deprecation-warning "using old message class name om_aiv_util-srv:<AddTwoInts-response> is deprecated: use om_aiv_util-srv:AddTwoInts-response instead.")))
 
-(cl:ensure-generic-function 'sum-val :lambda-list '(m))
-(cl:defmethod sum-val ((m <AddTwoInts-response>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader om_aiv_util-srv:sum-val is deprecated.  Use om_aiv_util-srv:sum instead.")
-  (sum m))
+(cl:ensure-generic-function 'result-val :lambda-list '(m))
+(cl:defmethod result-val ((m <AddTwoInts-response>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader om_aiv_util-srv:result-val is deprecated.  Use om_aiv_util-srv:result instead.")
+  (result m))
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <AddTwoInts-response>) ostream)
   "Serializes a message object of type '<AddTwoInts-response>"
-  (cl:let* ((signed (cl:slot-value msg 'sum)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 18446744073709551616) signed)))
+  (cl:let* ((signed (cl:slot-value msg 'result)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 18446744073709551616) signed)))
     (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
@@ -158,7 +158,7 @@
       (cl:setf (cl:ldb (cl:byte 8 40) unsigned) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 48) unsigned) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 56) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:slot-value msg 'sum) (cl:if (cl:< unsigned 9223372036854775808) unsigned (cl:- unsigned 18446744073709551616))))
+      (cl:setf (cl:slot-value msg 'result) (cl:if (cl:< unsigned 9223372036854775808) unsigned (cl:- unsigned 18446744073709551616))))
   msg
 )
 (cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<AddTwoInts-response>)))
@@ -169,16 +169,16 @@
   "om_aiv_util/AddTwoIntsResponse")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<AddTwoInts-response>)))
   "Returns md5sum for a message object of type '<AddTwoInts-response>"
-  "6a2e34150c00229791cc89ff309fff21")
+  "d431cae597499d244ef1c576e21358c8")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'AddTwoInts-response)))
   "Returns md5sum for a message object of type 'AddTwoInts-response"
-  "6a2e34150c00229791cc89ff309fff21")
+  "d431cae597499d244ef1c576e21358c8")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<AddTwoInts-response>)))
   "Returns full string definition for message of type '<AddTwoInts-response>"
-  (cl:format cl:nil "int64 sum~%~%~%~%"))
+  (cl:format cl:nil "int64 result~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'AddTwoInts-response)))
   "Returns full string definition for message of type 'AddTwoInts-response"
-  (cl:format cl:nil "int64 sum~%~%~%~%"))
+  (cl:format cl:nil "int64 result~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <AddTwoInts-response>))
   (cl:+ 0
      8
@@ -186,7 +186,7 @@
 (cl:defmethod roslisp-msg-protocol:ros-message-to-list ((msg <AddTwoInts-response>))
   "Converts a ROS message object to a list"
   (cl:list 'AddTwoInts-response
-    (cl:cons ':sum (sum msg))
+    (cl:cons ':result (result msg))
 ))
 (cl:defmethod roslisp-msg-protocol:service-request-type ((msg (cl:eql 'AddTwoInts)))
   'AddTwoInts-request)
