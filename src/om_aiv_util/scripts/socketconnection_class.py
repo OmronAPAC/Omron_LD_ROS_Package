@@ -31,7 +31,7 @@ class ConnectSocket(object):
             #wait until server prints out full list of commands
             while not rospy.is_shutdown():
                 if "End of commands" in rcv:
-                    print("Connected")
+                    print("Connected to robot")
                     break
                 else:
                     data = self.sock.recv(BUFFER_SIZE)
@@ -39,7 +39,7 @@ class ConnectSocket(object):
             return 1
 
         except socket.error as e:
-            print("Connection  failed")
+            print("Connection to robot failed")
             return e
 
     #host = ip address

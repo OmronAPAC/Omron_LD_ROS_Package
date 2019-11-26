@@ -142,6 +142,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service9.srv"
     "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service4.srv"
     "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/AddTwoInts.srv"
+    "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/OmAivService.srv"
     )
 endif()
 

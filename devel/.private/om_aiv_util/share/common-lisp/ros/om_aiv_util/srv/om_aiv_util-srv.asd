@@ -6,6 +6,8 @@
   :components ((:file "_package")
     (:file "AddTwoInts" :depends-on ("_package_AddTwoInts"))
     (:file "_package_AddTwoInts" :depends-on ("_package"))
+    (:file "OmAivService" :depends-on ("_package_OmAivService"))
+    (:file "_package_OmAivService" :depends-on ("_package"))
     (:file "Service" :depends-on ("_package_Service"))
     (:file "_package_Service" :depends-on ("_package"))
     (:file "Service2" :depends-on ("_package_Service2"))

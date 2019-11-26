@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/om_aiv_util_generate_messages_eus"
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/share/roseus/ros/om_aiv_util/msg/Location.l"
+  "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/share/roseus/ros/om_aiv_util/srv/OmAivService.l"
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/share/roseus/ros/om_aiv_util/srv/Service5.l"
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/share/roseus/ros/om_aiv_util/srv/ServiceExample.l"
   "/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/share/roseus/ros/om_aiv_util/srv/Service4.l"

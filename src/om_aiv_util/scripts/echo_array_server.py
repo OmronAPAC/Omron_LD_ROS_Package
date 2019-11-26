@@ -15,7 +15,7 @@ ip_address = "172.21.5.123"
 port = 7171
 connecttcp.connect(str(ip_address), port)
 
-from om_aiv_util.srv import Service9,Service9Response
+from om_aiv_util.srv import OmAivService,OmAivServiceResponse
 import rospy
 
 def handle_echo(req):
@@ -30,7 +30,7 @@ def handle_echo(req):
 
 def echo_server():
     rospy.init_node('echo_server')
-    s = rospy.Service('echo', Service9, handle_echo)
+    s = rospy.Service('echo', OmAivService, handle_echo)
     rospy.spin()
 
 def echo():

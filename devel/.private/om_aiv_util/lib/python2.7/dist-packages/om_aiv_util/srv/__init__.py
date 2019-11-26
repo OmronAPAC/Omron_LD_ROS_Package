@@ -1,4 +1,5 @@
 from ._AddTwoInts import *
+from ._OmAivService import *
 from ._Service import *
 from ._Service2 import *
 from ._Service3 import *
