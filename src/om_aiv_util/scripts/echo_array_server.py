@@ -25,7 +25,6 @@ def handle_echo(req):
         arg = ""
     if len(req.a) == 1:
         arg = req.a[0]
-    # print "Returning", req.a[1]
     echo()
     return rcv
 
