@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from om_aiv_util.srv import Service,ServiceResponse
+from om_aiv_util.srv import OmAivService,OmAivServiceResponse
 import rospy
 from socketconnection_class import ConnectSocket, connecttcp
 s = connecttcp.sock
@@ -35,13 +35,13 @@ def analogInputList_servers(op):
     # print op
     if op == "List":
         rospy.loginfo("running List")
-        s1 = rospy.Service('analogInputList', Service, handle_analogInputList)
+        s1 = rospy.Service('analogInputList', OmAivService, handle_analogInputList)
     elif op == "QueryRaw":
         rospy.loginfo("running QueryRaw")
-        s2 = rospy.Service('analogInputQueryRaw', Service, handle_analogInputQueryRaw)
+        s2 = rospy.Service('analogInputQueryRaw', OmAivService, handle_analogInputQueryRaw)
     elif op == "QueryVoltage":
         rospy.loginfo("running QueryVoltage")
-        s3 = rospy.Service('analogInputQueryVoltage', Service, handle_analogInputQueryVoltage)
+        s3 = rospy.Service('analogInputQueryVoltage', OmAivService, handle_analogInputQueryVoltage)
 
 def analogInputList():
     global rcv

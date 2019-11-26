@@ -7,7 +7,7 @@ from om_aiv_util.srv import *
 def analogInputList_client(x):
     rospy.wait_for_service('analogInputList')
     try:
-        service = rospy.ServiceProxy('analogInputList', Service)
+        service = rospy.ServiceProxy('analogInputList', OmAivService)
         resp1 = service(x)
         return resp1.device
     except rospy.ServiceException, e:
