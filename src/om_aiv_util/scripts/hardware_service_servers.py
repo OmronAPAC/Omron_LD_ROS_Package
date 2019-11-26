@@ -33,6 +33,12 @@ def handle_analogInputQueryVoltage(req):
 def handle_configStart(req):
     configStart()
     return rcv
+def handle_connectOutgoing(req):
+    global a, b
+    a = req.a[0]
+    b = req.a[1]
+    connectOutgoing()
+    return rcv
 
 def analogInputList_servers(op):
     # print op
@@ -48,6 +54,9 @@ def analogInputList_servers(op):
     elif op == "ConfigStart":
         rospy.loginfo("running ConfigStart")
         s4 = rospy.Service('configStart', OmAivService, handle_configStart)
+    elif op == "ConnectOutgoing":
+        rospy.loginfo("running ConnectOutgoing")
+        s4 = rospy.Service('connectOutgoing', OmAivService, handle_connectOutgoing)
 
 def analogInputList():
     global rcv
@@ -167,10 +176,40 @@ def configStart():
         print("Connection  failed")
         return e
 
+def connectOutgoing():
+    global rcv
+    pub = rospy.Publisher('arcl_connectOutgoing', String, queue_size=10)
+    rate = rospy.Rate(10) # 10hz
+    command = "connectOutgoing {}".format(a + " " + b)
+    command = command.encode('ascii')
+    print "Running command: ", command
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "connected" in rcv:
+                print rcv
+                return rcv
+                break
+            if "CommandErrorDescription" in rcv:
+                print rcv
+                return rcv
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as errormsg:
+        print("Connection  failed")
+        return errormsg
+
 if __name__ == "__main__":
     rospy.init_node('analogInput_servers')
     analogInputList_servers("List")
     analogInputList_servers("QueryRaw")
     analogInputList_servers("QueryVoltage")
     analogInputList_servers("ConfigStart")
+    analogInputList_servers("ConnectOutgoing")
     rospy.spin()
