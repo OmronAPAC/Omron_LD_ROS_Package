@@ -39,6 +39,12 @@ def handle_connectOutgoing(req):
     b = req.a[1]
     connectOutgoing()
     return rcv
+def handle_doTaskInstant(req):
+    global a, b
+    a = req.a[0]
+    b = req.a[1]
+    doTaskInstant()
+    return rcv
 
 def analogInputList_servers(op):
     # print op
@@ -57,6 +63,9 @@ def analogInputList_servers(op):
     elif op == "ConnectOutgoing":
         rospy.loginfo("running ConnectOutgoing")
         s4 = rospy.Service('connectOutgoing', OmAivService, handle_connectOutgoing)
+    elif op == "DoTaskInstant":
+        rospy.loginfo("running DoTaskInstant")
+        s5 = rospy.Service('doTaskInstant', OmAivService, handle_doTaskInstant)
 
 def analogInputList():
     global rcv
@@ -205,6 +214,35 @@ def connectOutgoing():
         print("Connection  failed")
         return errormsg
 
+def doTaskInstant():
+    global rcv
+    pub = rospy.Publisher('arcl_doTaskInstant', String, queue_size=10)
+    rate = rospy.Rate(10) # 10hz
+    command = "doTaskInstant {}".format(a + " " + b)
+    command = command.encode('ascii')
+    print "Running command: ", command
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "Completed doing " in rcv:
+                print rcv
+                return rcv
+                break
+            if "CommandErrorDescription" in rcv:
+                print rcv
+                return rcv
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as errormsg:
+        print("Connection  failed")
+        return errormsg
+
 if __name__ == "__main__":
     rospy.init_node('analogInput_servers')
     analogInputList_servers("List")
@@ -212,4 +250,5 @@ if __name__ == "__main__":
     analogInputList_servers("QueryVoltage")
     analogInputList_servers("ConfigStart")
     analogInputList_servers("ConnectOutgoing")
+    analogInputList_servers("DoTaskInstant")
     rospy.spin()
