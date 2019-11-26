@@ -64,6 +64,7 @@ Service5.srv
 Service9.srv
 Service4.srv
 AddTwoInts.srv
+OmAivService.srv
 )
 
 ## Generate actions in the 'action' folder
