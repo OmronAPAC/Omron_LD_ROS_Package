@@ -16,7 +16,6 @@ port = 7171
 connecttcp.connect(str(ip_address), port)
 
 from om_aiv_util.srv import Service,ServiceResponse
-import rospy
 
 def handle_analogInputList(req):
     analogInputList()
