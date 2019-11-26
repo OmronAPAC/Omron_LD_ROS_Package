@@ -5,20 +5,18 @@ import rospy
 from om_aiv_util.srv import *
 
 def op_two_ints_client(x, y):
-    rospy.wait_for_service('analogInputList')
-    rospy.wait_for_service('analogInputQueryRaw')
-    rospy.wait_for_service('analogInputQueryVoltage')
+    rospy.wait_for_service('add_two_ints')
+    print "ok"
+    rospy.wait_for_service('minus_two_ints')
     try:
-        service1 = rospy.ServiceProxy('analogInputList', Service)
-        service2 = rospy.ServiceProxy('analogInputQueryRaw', Service)
-        service3 = rospy.ServiceProxy('analogInputQueryVoltage', Service)
-        resp1 = service1(x)
-        print "resp1", resp1
-        resp2 = service1(x)
-        print "resp2", resp2
-        resp3 = service1(x)
-        print "resp3", resp3
-
+        add_two_ints = rospy.ServiceProxy('add_two_ints', AddTwoInts)
+        minus_two_ints = rospy.ServiceProxy('minus_two_ints', AddTwoInts)
+        resp1 = add_two_ints(x, y)
+        print resp1
+        # return resp1.sum
+        resp2 = minus_two_ints(x, y)
+        print "rep2", resp2
+        # return resp1.sum
     except rospy.ServiceException, e:
         print "Service call failed: %s"%e
 
