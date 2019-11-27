@@ -118,6 +118,10 @@ def handle_odometerReset(req):
 def handle_outputList(req):
     rcv = outputList()
     return rcv
+def handle_outputOff(req):
+    name = req.a[0]
+    rcv = outputOff(name)
+    return rcv
 
 def hardware_servers(op):
     if op == "List":
@@ -192,6 +196,9 @@ def hardware_servers(op):
     elif op == "OutputList":
         rospy.loginfo("running OutputList")
         s24 = rospy.Service('outputList', OmAivService, handle_outputList)
+    elif op == "OutputOff":
+        rospy.loginfo("running OutputOff")
+        s25 = rospy.Service('outputOff', OmAivService, handle_outputOff)
 
 def analogInputList():
     command = "analogInputList"
@@ -809,7 +816,34 @@ def outputList():
         print("Connection  failed")
         return e
 
+def outputOff(name):
+    global rcv
+    pub = rospy.Publisher('arcl_outputOff', String, queue_size=10)
+    rate = rospy.Rate(10) # 10hz
+    command = "outputOff {}".format(name)
+    command = command.encode('ascii')
+    print "Running command: ", command
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "Output:" in rcv:
+                print rcv
+                return rcv
+                break
+            if "CommandErrorDescription" in rcv:
+                print rcv
+                return rcv
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
 
+    except socket.error as errormsg:
+        print("Connection  failed")
+        return errormsg
 
 if __name__ == "__main__":
     rospy.init_node('analogInput_servers')
@@ -837,4 +871,5 @@ if __name__ == "__main__":
     hardware_servers("InputQuery")
     hardware_servers("OdometerReset")
     hardware_servers("OutputList")
+    hardware_servers("OutputOff")
     rospy.spin()

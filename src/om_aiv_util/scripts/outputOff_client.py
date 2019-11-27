@@ -2,11 +2,11 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def outputOff_client(a):
+def outputOff_client(array):
     rospy.wait_for_service('outputOff')
     try:
-        service = rospy.ServiceProxy('outputOff', Service)
-        resp1 = service(a)
+        service = rospy.ServiceProxy('outputOff', OmAivService)
+        resp1 = service(array)
         return resp1.device
     except rospy.ServiceException, error:
         print "Service call failed: %s"%error
@@ -16,9 +16,10 @@ def usage():
 
 if __name__ == "__main__":
     if len(sys.argv) == 2:
-        a = str(sys.argv[1])
+        name = str(sys.argv[1])
+        array = [name]
     else:
         print usage()
         sys.exit(1)
     print "running command"
-    print outputOff_client(a)
+    print outputOff_client(array)
