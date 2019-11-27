@@ -64,7 +64,7 @@ def handle_extIOInputUpdate(req):
 def handle_extIOInputUpdateBit(req):
     name = req.a[0]
     bit_postition = req.a[1]
-    bit_value = req.c[2]
+    bit_value = req.a[2]
     extIOInputUpdateBit(name, bit_postition, bit_value)
     return rcv
 
