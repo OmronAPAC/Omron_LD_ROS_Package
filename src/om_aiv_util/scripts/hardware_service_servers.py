@@ -59,13 +59,13 @@ def handle_extIODumpLocal(req):
 def handle_extIOInputUpdate(req):
     name = req.a[0]
     value = req.a[1]
-    extIOInputUpdate(name, value)
+    rcv = extIOInputUpdate(name, value)
     return rcv
 def handle_extIOInputUpdateBit(req):
     name = req.a[0]
     bit_postition = req.a[1]
     bit_value = req.a[2]
-    extIOInputUpdateBit(name, bit_postition, bit_value)
+    rcv = extIOInputUpdateBit(name, bit_postition, bit_value)
     return rcv
 def handle_extIOInputUpdateByte(req):
     name = req.a[0]
@@ -426,9 +426,6 @@ def extIODumpLocal():
         return e
 
 def extIOInputUpdate(name, value):
-    global rcv
-    pub = rospy.Publisher('arcl_extIOInputUpdate', String, queue_size=10)
-    rate = rospy.Rate(10) # 10hz
     command = "extIOInputUpdate {}".format(name + " " + value)
     command = command.encode('ascii')
     print "Running command: ", command
@@ -455,9 +452,6 @@ def extIOInputUpdate(name, value):
         return errormsg
 
 def extIOInputUpdateBit(name, bit_postition, bit_value):
-    global rcv
-    pub = rospy.Publisher('arcl_extIOInputUpdateBit', String, queue_size=10)
-    rate = rospy.Rate(10) # 10hz
     command = "extIOInputUpdateBit {}".format(name + " " + bit_postition + " " + bit_value)
     command = command.encode('ascii')
     print "Running command: ", command
@@ -484,8 +478,8 @@ def extIOInputUpdateBit(name, bit_postition, bit_value):
         return errormsg
 
 def extIOInputUpdateByte(name, byte_position, byte_value):
-    pub = rospy.Publisher('arcl_extIOInputUpdateByte', String, queue_size=10)
-    rate = rospy.Rate(10) # 10hz
+    # pub = rospy.Publisher('arcl_extIOInputUpdateByte', String, queue_size=10)
+    # rate = rospy.Rate(10) # 10hz
     command = "extIOInputUpdateByte {}".format(name + " " + byte_position + " " + byte_value)
     command = command.encode('ascii')
     print "Running command: ", command
