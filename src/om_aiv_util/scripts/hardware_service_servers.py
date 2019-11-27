@@ -67,6 +67,12 @@ def handle_extIOInputUpdateBit(req):
     bit_value = req.a[2]
     extIOInputUpdateBit(name, bit_postition, bit_value)
     return rcv
+def handle_extIOInputUpdateByte(req):
+    name = req.a[0]
+    byte_position = req.a[1]
+    byte_value = req.a[2]
+    extIOInputUpdateByte(name, byte_position, byte_value)
+    return rcv
 
 def analogInputList_servers(op):
     if op == "List":
@@ -105,6 +111,10 @@ def analogInputList_servers(op):
     elif op == "ExtIOInputUpdateBit":
         rospy.loginfo("running ExtIOInputUpdateBit")
         s12 = rospy.Service('extIOInputUpdateBit', OmAivService, handle_extIOInputUpdateBit)
+    elif op == "ExtIOInputUpdateByte":
+        rospy.loginfo("running ExtIOInputUpdateByte")
+        s13 = rospy.Service('extIOInputUpdateByte', OmAivService, handle_extIOInputUpdateByte)
+
 
 def analogInputList():
     global rcv
@@ -455,6 +465,36 @@ def extIOInputUpdateBit(name, bit_postition, bit_value):
     except socket.error as errormsg:
         print("Connection  failed")
         return errormsg
+
+def extIOInputUpdateByte(name, byte_position, byte_value):
+    global rcv
+    pub = rospy.Publisher('arcl_extIOInputUpdateByte', String, queue_size=10)
+    rate = rospy.Rate(10) # 10hz
+    command = "extIOInputUpdateByte {}".format(a + " " + b + " " + c)
+    command = command.encode('ascii')
+    print "Running command: ", command
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "extIOInputUpdateByte:" in rcv:
+                print rcv
+                return rcv
+                break
+            if "CommandErrorDescription" in rcv:
+                print rcv
+                return rcv
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as errormsg:
+        print("Connection  failed")
+        return errormsg
+
 
 if __name__ == "__main__":
     rospy.init_node('analogInput_servers')
