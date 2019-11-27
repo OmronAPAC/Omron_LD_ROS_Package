@@ -5,8 +5,8 @@ from om_aiv_util.srv import *
 def extIOOutputUpdateByte_client(array):
     rospy.wait_for_service('extIOOutputUpdateByte')
     try:
-        service = rospy.ServiceProxy('extIOOutputUpdateByte', Service3)
-        resp1 = service(a, b, c)
+        service = rospy.ServiceProxy('extIOOutputUpdateByte', OmAivService)
+        resp1 = service(array)
         return resp1.device
     except rospy.ServiceException, error:
         print "Service call failed: %s"%error

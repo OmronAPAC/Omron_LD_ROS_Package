@@ -18,43 +18,43 @@ port = 7171
 connecttcp.connect(str(ip_address), port)
 
 def handle_analogInputList(req):
-    analogInputList()
+    rcv = analogInputList()
     return rcv
 def handle_analogInputQueryRaw(req):
     arg = req.a[0]
-    analogInputQueryRaw(arg)
+    rcv = analogInputQueryRaw(arg)
     return rcv
 def handle_analogInputQueryVoltage(req):
     arg = req.a[0]
-    analogInputQueryVoltage(arg)
+    rcv = analogInputQueryVoltage(arg)
     return rcv
 def handle_configStart(req):
-    configStart()
+    rcv = configStart()
     return rcv
 def handle_connectOutgoing(req):
     a = req.a[0]
     b = req.a[1]
-    connectOutgoing(a, b)
+    rcv = connectOutgoing(a, b)
     return rcv
 def handle_doTaskInstant(req):
     a = req.a[0]
     b = req.a[1]
-    doTaskInstant(a, b)
+    rcv =  doTaskInstant(a, b)
     return rcv
 def handle_enableMotors(req):
-    enableMotors()
+    rcv = enableMotors()
     return rcv
 def handle_extIOAdd(req):
     name = req.a[0]
     numInputs = req.a[1]
     numOutputs = req.a[2]
-    extIOAdd(name, numInputs, numOutputs)
+    rcv = extIOAdd(name, numInputs, numOutputs)
     return rcv
 def handle_extIODump(req):
-    extIODump()
+    rcv = extIODump()
     return rcv
 def handle_extIODumpLocal(req):
-    extIODumpLocal()
+    rcv = extIODumpLocal()
     return rcv
 def handle_extIOInputUpdate(req):
     name = req.a[0]
@@ -84,9 +84,14 @@ def handle_extIOOutputUpdateBit(req):
     bit_value = req.a[2]
     rcv = extIOOutputUpdateBit(name, bit_postition, bit_value)
     return rcv
+def handle_extIOOutputUpdateByte(req):
+    name = req.a[0]
+    byte_position = req.a[1]
+    byte_value = req.a[2]
+    rcv = extIOOutputUpdateByte(name, byte_position, byte_value)
+    return rcv
 
-
-def analogInputList_servers(op):
+def hardware_servers(op):
     if op == "List":
         rospy.loginfo("running List")
         s1 = rospy.Service('analogInputList', OmAivService, handle_analogInputList)
@@ -132,14 +137,14 @@ def analogInputList_servers(op):
     elif op == "ExtIOOuputUpdateBit":
         rospy.loginfo("running ExtIOOuputUpdateBit")
         s15 = rospy.Service('extIOOutputUpdateBit', OmAivService, handle_extIOOutputUpdateBit)
+    elif op == "ExtIOOuputUpdateByte":
+        rospy.loginfo("running ExtIOOuputUpdateByte")
+        s16 = rospy.Service('extIOOutputUpdateByte', OmAivService, handle_extIOOutputUpdateByte)
 
 def analogInputList():
-    global rcv
-    pub = rospy.Publisher('arcl_analogInputList', String, queue_size=10)
-    rate = rospy.Rate(10) # 10hz
-
     command = "analogInputList"
     command = command.encode('ascii')
+    print "Running command: ", command
     s.send(command+b"\r\n")
     try:
         data = s.recv(BUFFER_SIZE)
@@ -147,9 +152,9 @@ def analogInputList():
         while not rospy.is_shutdown():
             #check for required data
             if "End of AnalogInputList" in rcv:
-
                 print rcv
                 rcv = str(rcv.splitlines())
+                return rcv
                 break
 
             else:
@@ -161,9 +166,6 @@ def analogInputList():
         return e
 
 def analogInputQueryRaw(arg):
-    global rcv
-    pub = rospy.Publisher('arcl_analogInputQueryRaw', String, queue_size=10)
-    rate = rospy.Rate(10) # 10hz
     command = "analogInputQueryRaw {}".format(arg)
     command = command.encode('ascii')
     print "Running command: ", command
@@ -190,9 +192,6 @@ def analogInputQueryRaw(arg):
         return e
 
 def analogInputQueryVoltage(arg):
-    global rcv
-    pub = rospy.Publisher('arcl_analogInputQueryVoltage', String, queue_size=10)
-    rate = rospy.Rate(10) # 10hz
     command = "analogInputQueryVoltage {}".format(arg)
     command = command.encode('ascii')
     print "Running command: ", command
@@ -219,9 +218,6 @@ def analogInputQueryVoltage(arg):
         return e
 
 def configStart():
-    global rcv
-    pub = rospy.Publisher('arcl_configStart', String, queue_size=10)
-    rate = rospy.Rate(10) # 10hz
     command = "configStart"
     print "Running command: ", command
     command = command.encode('ascii')
@@ -252,9 +248,6 @@ def configStart():
         return e
 
 def connectOutgoing(a, b):
-    global rcv
-    pub = rospy.Publisher('arcl_connectOutgoing', String, queue_size=10)
-    rate = rospy.Rate(10) # 10hz
     command = "connectOutgoing {}".format(a + " " + b)
     command = command.encode('ascii')
     print "Running command: ", command
@@ -281,9 +274,6 @@ def connectOutgoing(a, b):
         return errormsg
 
 def doTaskInstant(a, b):
-    global rcv
-    pub = rospy.Publisher('arcl_doTaskInstant', String, queue_size=10)
-    rate = rospy.Rate(10) # 10hz
     command = "doTaskInstant {}".format(a + " " + b)
     command = command.encode('ascii')
     print "Running command: ", command
@@ -310,8 +300,6 @@ def doTaskInstant(a, b):
         return errormsg
 
 def enableMotors():
-    global rcv
-    rate = rospy.Rate(10) # 10hz
     command = "enableMotors"
     print "Running command: ", command
     command = command.encode('ascii')
@@ -333,15 +321,11 @@ def enableMotors():
                 data = s.recv(BUFFER_SIZE)
                 rcv = rcv + data.encode('ascii', 'ignore')
 
-
     except socket.error as e:
         print("Connection  failed")
         return e
 
 def extIOAdd(name, numInputs, numOutputs):
-    global rcv
-    pub = rospy.Publisher('arcl_extIOAdd', String, queue_size=10)
-    rate = rospy.Rate(10) # 10hz
     command = "extIOAdd {}".format(name + " " + numInputs + " " + numOutputs)
     command = command.encode('ascii')
     print "Running command: ", command
@@ -368,9 +352,6 @@ def extIOAdd(name, numInputs, numOutputs):
         return errormsg
 
 def extIODump():
-    global rcv
-    pub = rospy.Publisher('arcl_extIODump', String, queue_size=10)
-    rate = rospy.Rate(10) # 10hz
     command = "extIODump"
     print "Running command: ", command
     command = command.encode('ascii')
@@ -397,9 +378,6 @@ def extIODump():
         return e
 
 def extIODumpLocal():
-    global rcv
-    pub = rospy.Publisher('arcl_extIODumpLocal', String, queue_size=10)
-    rate = rospy.Rate(10) # 10hz
     command = "extIODumpLocal"
     print "Running command: ", command
     command = command.encode('ascii')
@@ -561,21 +539,49 @@ def extIOOutputUpdateBit(name, bit_postition, bit_value):
         print("Connection  failed")
         return errormsg
 
+def extIOOutputUpdateByte(name, byte_position, byte_value):
+    command = "extIOOutputUpdateByte {}".format(name + " " + byte_position + " " + byte_value)
+    command = command.encode('ascii')
+    print "Running command: ", command
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "extIOOutputUpdateByte:" in rcv:
+                print rcv
+                return rcv
+                break
+            if "CommandErrorDescription" in rcv:
+                print rcv
+                return rcv
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as errormsg:
+        print("Connection  failed")
+        return errormsg
+
+
 if __name__ == "__main__":
     rospy.init_node('analogInput_servers')
-    analogInputList_servers("List")
-    analogInputList_servers("QueryRaw")
-    analogInputList_servers("QueryVoltage")
-    analogInputList_servers("ConfigStart")
-    analogInputList_servers("ConnectOutgoing")
-    analogInputList_servers("DoTaskInstant")
-    analogInputList_servers("EnableMotors")
-    analogInputList_servers("ExtIOAdd")
-    analogInputList_servers("ExtIODump")
-    analogInputList_servers("ExtIODumpLocal")
-    analogInputList_servers("ExtIOInputUpdate")
-    analogInputList_servers("ExtIOInputUpdateBit")
-    analogInputList_servers("ExtIOInputUpdateByte")
-    analogInputList_servers("ExtIOOuputUpdate")
-    analogInputList_servers("ExtIOOuputUpdateBit")
+    hardware_servers("List")
+    hardware_servers("QueryRaw")
+    hardware_servers("QueryVoltage")
+    hardware_servers("ConfigStart")
+    hardware_servers("ConnectOutgoing")
+    hardware_servers("DoTaskInstant")
+    hardware_servers("EnableMotors")
+    hardware_servers("ExtIOAdd")
+    hardware_servers("ExtIODump")
+    hardware_servers("ExtIODumpLocal")
+    hardware_servers("ExtIOInputUpdate")
+    hardware_servers("ExtIOInputUpdateBit")
+    hardware_servers("ExtIOInputUpdateByte")
+    hardware_servers("ExtIOOuputUpdate")
+    hardware_servers("ExtIOOuputUpdateBit")
+    hardware_servers("ExtIOOuputUpdateByte")
     rospy.spin()
