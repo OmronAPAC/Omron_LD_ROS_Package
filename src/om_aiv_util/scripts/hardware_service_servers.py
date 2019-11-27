@@ -138,6 +138,11 @@ def handle_payloadRemove(req):
     slot_num = req.a[0]
     rcv = payloadRemove(slot_num)
     return rcv
+def handle_payloadSet(req):
+    slot_num = req.a[0]
+    slot_str = req.a[1]
+    rcv = payloadSet(slot_num, slot_str)
+    return rcv
 
 def hardware_servers(op):
     if op == "List":
@@ -227,6 +232,9 @@ def hardware_servers(op):
     elif op == "PayloadRemove":
         rospy.loginfo("running PayloadRemove")
         s28 = rospy.Service('payloadRemove', OmAivService, handle_payloadRemove)
+    elif op == "PayloadSet":
+        rospy.loginfo("running PayloadSet")
+        s29 = rospy.Service('payloadSet', OmAivService, handle_payloadSet)
 
 def analogInputList():
     command = "analogInputList"
@@ -988,6 +996,32 @@ def payloadRemove(slot_num):
         print("Connection  failed")
         return e
 
+def payloadSet(slot_num, slot_str):
+    command = "payloadSet {}".format(slot_num + " " + slot_str)
+    command = command.encode('ascii')
+    print "Running command: ", command
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "successfully set" in rcv:
+                print rcv
+                return rcv
+                break
+            if "CommandErrorDescription" in rcv:
+                print rcv
+                return rcv
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as errormsg:
+        print("Connection  failed")
+        return errormsg
+
 
 if __name__ == "__main__":
     rospy.init_node('hardware_servers')
@@ -1020,4 +1054,5 @@ if __name__ == "__main__":
     hardware_servers("OutputQuery")
     hardware_servers("PayloadQueryLocal")
     hardware_servers("PayloadRemove")
+    hardware_servers("PayloadSet")
     rospy.spin()

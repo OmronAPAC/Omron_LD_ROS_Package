@@ -2,11 +2,11 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def payloadSet_client(a, b):
+def payloadSet_client(array):
     rospy.wait_for_service('payloadSet')
     try:
-        service = rospy.ServiceProxy('payloadSet', Service2)
-        resp1 = service(a, b)
+        service = rospy.ServiceProxy('payloadSet', OmAivService)
+        resp1 = service(array)
         return resp1.device
     except rospy.ServiceException, error:
         print "Service call failed: %s"%error
@@ -16,10 +16,11 @@ def usage():
 
 if __name__ == "__main__":
     if len(sys.argv) == 3:
-        a = str(sys.argv[1])
-        b = str(sys.argv[2])
+        slot_num = str(sys.argv[1])
+        slot_str = str(sys.argv[2])
+        array = [slot_num, slot_str]
     else:
         print usage()
         sys.exit(1)
     print "running command"
-    print payloadSet_client(a, b)
+    print payloadSet_client(array)
