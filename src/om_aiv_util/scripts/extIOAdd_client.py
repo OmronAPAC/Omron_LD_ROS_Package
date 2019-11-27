@@ -2,11 +2,11 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def extIOAdd_client(a, b , c):
+def extIOAdd_client(array):
     rospy.wait_for_service('extIOAdd')
     try:
-        service = rospy.ServiceProxy('extIOAdd', Service3)
-        resp1 = service(a, b, c)
+        service = rospy.ServiceProxy('extIOAdd', OmAivService)
+        resp1 = service(array)
         return resp1.device
     except rospy.ServiceException, error:
         print "Service call failed: %s"%error
@@ -19,9 +19,10 @@ if __name__ == "__main__":
         a = str(sys.argv[1])
         b = str(sys.argv[2])
         c = str(sys.argv[3])
+        array = [a, b, c]
     else:
         print usage()
         sys.exit(1)
     print "running command"
     # print "Requesting", x
-    print extIOAdd_client(a, b , c)
+    print extIOAdd_client(array)

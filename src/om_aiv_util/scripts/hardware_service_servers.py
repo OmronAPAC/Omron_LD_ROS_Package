@@ -13,7 +13,7 @@ from std_msgs.msg import String
 BUFFER_SIZE = 1024
 # ip_address = rospy.get_param("ip_address")
 # port = rospy.get_param("port")
-ip_address = "172.21.5.123"
+ip_address = "172.21.5.122"
 port = 7171
 connecttcp.connect(str(ip_address), port)
 
@@ -52,7 +52,6 @@ def handle_extIOAdd(req):
     return rcv
 
 def analogInputList_servers(op):
-    # print op
     if op == "List":
         rospy.loginfo("running List")
         s1 = rospy.Service('analogInputList', OmAivService, handle_analogInputList)
@@ -74,6 +73,9 @@ def analogInputList_servers(op):
     elif op == "EnableMotors":
         rospy.loginfo("running EnableMotors")
         s6 = rospy.Service('enableMotors', OmAivService, handle_enableMotors)
+    elif op == "ExtIOAdd":
+        rospy.loginfo("running ExtIOAdd")
+        s6 = rospy.Service('extIOAdd', OmAivService, handle_extIOAdd)
 
 def analogInputList():
     global rcv
@@ -280,6 +282,35 @@ def enableMotors():
         print("Connection  failed")
         return e
 
+def extIOAdd(name, numInputs, numOutputs):
+    global rcv
+    pub = rospy.Publisher('arcl_extIOAdd', String, queue_size=10)
+    rate = rospy.Rate(10) # 10hz
+    command = "extIOAdd {}".format(name + " " + numInputs + " " + numOutputs)
+    command = command.encode('ascii')
+    print "Running command: ", command
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "extIOAdd:" in rcv:
+                print rcv
+                return rcv
+                break
+            if "CommandErrorDescription" in rcv:
+                print rcv
+                return rcv
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as errormsg:
+        print("Connection  failed")
+        return errormsg
+
 if __name__ == "__main__":
     rospy.init_node('analogInput_servers')
     analogInputList_servers("List")
@@ -289,4 +320,5 @@ if __name__ == "__main__":
     analogInputList_servers("ConnectOutgoing")
     analogInputList_servers("DoTaskInstant")
     analogInputList_servers("EnableMotors")
+    analogInputList_servers("ExtIOAdd")
     rospy.spin()
