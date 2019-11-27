@@ -251,8 +251,6 @@ def doTaskInstant():
 
 def enableMotors():
     global rcv
-    pub = rospy.Publisher('arcl_enableMotors', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     command = "enableMotors"
     print "Running command: ", command
