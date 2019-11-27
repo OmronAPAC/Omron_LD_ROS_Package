@@ -2,11 +2,11 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def getConfigSectionInfo_client(x):
+def getConfigSectionInfo_client(array):
     rospy.wait_for_service('getConfigSectionInfo')
     try:
-        service = rospy.ServiceProxy('getConfigSectionInfo', Service)
-        resp1 = service(x)
+        service = rospy.ServiceProxy('getConfigSectionInfo', OmAivService)
+        resp1 = service(array)
         return resp1.device
     except rospy.ServiceException, e:
         print "Service call failed: %s"%e
@@ -17,8 +17,9 @@ def usage():
 if __name__ == "__main__":
     if len(sys.argv) == 2:
         x = str(sys.argv[1])
+        array = [x]
     else:
         print usage()
         sys.exit(1)
     print "running command"
-    print getConfigSectionInfo_client(x)
+    print getConfigSectionInfo_client(array)

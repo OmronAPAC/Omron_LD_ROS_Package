@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from om_aiv_util.srv import OmAivService,OmAivServiceResponse
+from om_aiv_util.srv import OmAivService, OmAivServiceResponse
 import rospy
 from socketconnection_class import ConnectSocket, connecttcp
 s = connecttcp.sock
@@ -94,6 +94,10 @@ def handle_extIORemove(req):
     name = req.a[0]
     rcv = extIORemove(name)
     return rcv
+def handle_getConfigSectionInfo(req):
+    section = req.a[0]
+    rcv = getConfigSectionInfo(section)
+    return rcv
 
 def hardware_servers(op):
     if op == "List":
@@ -147,6 +151,9 @@ def hardware_servers(op):
     elif op == "ExtIORemove":
         rospy.loginfo("running ExtIORemove")
         s17 = rospy.Service('extIORemove', OmAivService, handle_extIORemove)
+    elif op == "GetConfigSectionInfo":
+        rospy.loginfo("running GetConfigSectionInfo")
+        s18 = rospy.Service('getConfigSectionInfo', OmAivService, handle_getConfigSectionInfo)
 
 def analogInputList():
     command = "analogInputList"
@@ -598,6 +605,32 @@ def extIORemove(name):
         print("Connection  failed")
         return e
 
+def getConfigSectionInfo(section):
+    command = "getConfigSectionInfo {}".format(section)
+    command = command.encode('ascii')
+    print "Running command: ", command
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "EndOfGetConfigSectionInfo" in rcv:
+                print rcv
+                return rcv
+                break
+            if "CommandErrorDescription" in rcv:
+                print rcv
+                return rcv
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+
 
 if __name__ == "__main__":
     rospy.init_node('analogInput_servers')
@@ -618,4 +651,5 @@ if __name__ == "__main__":
     hardware_servers("ExtIOOuputUpdateBit")
     hardware_servers("ExtIOOuputUpdateByte")
     hardware_servers("ExtIORemove")
+    hardware_servers("GetConfigSectionInfo")
     rospy.spin()
