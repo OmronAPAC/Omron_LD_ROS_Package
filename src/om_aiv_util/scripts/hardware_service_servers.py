@@ -21,29 +21,25 @@ def handle_analogInputList(req):
     analogInputList()
     return rcv
 def handle_analogInputQueryRaw(req):
-    global arg
     arg = req.a[0]
-    analogInputQueryRaw()
+    analogInputQueryRaw(arg)
     return rcv
 def handle_analogInputQueryVoltage(req):
-    global arg
     arg = req.a[0]
-    analogInputQueryVoltage()
+    analogInputQueryVoltage(arg)
     return rcv
 def handle_configStart(req):
     configStart()
     return rcv
 def handle_connectOutgoing(req):
-    global a, b
     a = req.a[0]
     b = req.a[1]
-    connectOutgoing()
+    connectOutgoing(a, b)
     return rcv
 def handle_doTaskInstant(req):
-    global a, b
     a = req.a[0]
     b = req.a[1]
-    doTaskInstant()
+    doTaskInstant(a, b)
     return rcv
 def handle_enableMotors(req):
     enableMotors()
@@ -100,7 +96,7 @@ def analogInputList():
         print("Connection  failed")
         return e
 
-def analogInputQueryRaw():
+def analogInputQueryRaw(arg):
     global rcv
     pub = rospy.Publisher('arcl_analogInputQueryRaw', String, queue_size=10)
     rate = rospy.Rate(10) # 10hz
@@ -129,7 +125,7 @@ def analogInputQueryRaw():
         print("Connection  failed")
         return e
 
-def analogInputQueryVoltage():
+def analogInputQueryVoltage(arg):
     global rcv
     pub = rospy.Publisher('arcl_analogInputQueryVoltage', String, queue_size=10)
     rate = rospy.Rate(10) # 10hz
@@ -191,7 +187,7 @@ def configStart():
         print("Connection  failed")
         return e
 
-def connectOutgoing():
+def connectOutgoing(a, b):
     global rcv
     pub = rospy.Publisher('arcl_connectOutgoing', String, queue_size=10)
     rate = rospy.Rate(10) # 10hz
@@ -220,7 +216,7 @@ def connectOutgoing():
         print("Connection  failed")
         return errormsg
 
-def doTaskInstant():
+def doTaskInstant(a, b):
     global rcv
     pub = rospy.Publisher('arcl_doTaskInstant', String, queue_size=10)
     rate = rospy.Rate(10) # 10hz
