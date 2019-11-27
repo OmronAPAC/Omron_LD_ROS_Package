@@ -115,6 +115,9 @@ def handle_inputQuery(req):
 def handle_odometerReset(req):
     rcv = odometerReset()
     return rcv
+def handle_outputList(req):
+    rcv = outputList()
+    return rcv
 
 def hardware_servers(op):
     if op == "List":
@@ -186,6 +189,9 @@ def hardware_servers(op):
     elif op == "OdometerReset":
         rospy.loginfo("running OdometerReset")
         s23 = rospy.Service('odometerReset', OmAivService, handle_odometerReset)
+    elif op == "OutputList":
+        rospy.loginfo("running OutputList")
+        s24 = rospy.Service('outputList', OmAivService, handle_outputList)
 
 def analogInputList():
     command = "analogInputList"
@@ -781,6 +787,30 @@ def odometerReset():
         print("Connection  failed")
         return e
 
+def outputList():
+    command = "outputList"
+    print "Running command: ", command
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "End of OutputList" in rcv:
+                print rcv
+                return rcv
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+
+
+
 if __name__ == "__main__":
     rospy.init_node('analogInput_servers')
     hardware_servers("List")
@@ -806,4 +836,5 @@ if __name__ == "__main__":
     hardware_servers("InputList")
     hardware_servers("InputQuery")
     hardware_servers("OdometerReset")
+    hardware_servers("OutputList")
     rospy.spin()
