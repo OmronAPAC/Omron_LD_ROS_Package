@@ -2,7 +2,7 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def extIOOutputUpdateByte_client(a, b , c):
+def extIOOutputUpdateByte_client(array):
     rospy.wait_for_service('extIOOutputUpdateByte')
     try:
         service = rospy.ServiceProxy('extIOOutputUpdateByte', Service3)
@@ -16,11 +16,13 @@ def usage():
 
 if __name__ == "__main__":
     if len(sys.argv) == 4:
-        a = str(sys.argv[1])
-        b = str(sys.argv[2])
-        c = str(sys.argv[3])
+        name = str(sys.argv[1])
+        byte_position = str(sys.argv[2])
+        byte_value = str(sys.argv[3])
+        array = [name, byte_position, byte_value]
+        print array
     else:
         print usage()
         sys.exit(1)
     print "running command"
-    print extIOOutputUpdateByte_client(a, b , c)
+    print extIOOutputUpdateByte_client(array)

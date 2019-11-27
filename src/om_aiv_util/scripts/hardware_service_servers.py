@@ -71,18 +71,18 @@ def handle_extIOInputUpdateByte(req):
     name = req.a[0]
     byte_position = req.a[1]
     byte_value = req.a[2]
-    extIOInputUpdateByte(name, byte_position, byte_value)
+    rcv = extIOInputUpdateByte(name, byte_position, byte_value)
     return rcv
 def handle_extIOOutputUpdate(req):
     name = req.a[0]
     value = req.a[1]
-    extIOOutputUpdate(name, value)
+    rcv = extIOOutputUpdate(name, value)
     return rcv
 def handle_extIOOutputUpdateBit(req):
     name = req.a[0]
     bit_postition = req.a[1]
     bit_value = req.a[2]
-    extIOOutputUpdateBit(name, bit_postition, bit_value)
+    rcv = extIOOutputUpdateBit(name, bit_postition, bit_value)
     return rcv
 
 
@@ -484,7 +484,6 @@ def extIOInputUpdateBit(name, bit_postition, bit_value):
         return errormsg
 
 def extIOInputUpdateByte(name, byte_position, byte_value):
-    global rcv
     pub = rospy.Publisher('arcl_extIOInputUpdateByte', String, queue_size=10)
     rate = rospy.Rate(10) # 10hz
     command = "extIOInputUpdateByte {}".format(name + " " + byte_position + " " + byte_value)
@@ -513,7 +512,6 @@ def extIOInputUpdateByte(name, byte_position, byte_value):
         return errormsg
 
 def extIOOutputUpdate(name, value):
-    global rcv
     pub = rospy.Publisher('arcl_extIOOutputUpdate', String, queue_size=10)
     rate = rospy.Rate(10) # 10hz
     command = "extIOOutputUpdate {}".format(name + " " + value)
@@ -542,7 +540,6 @@ def extIOOutputUpdate(name, value):
         return errormsg
 
 def extIOOutputUpdateBit(name, bit_postition, bit_value):
-    global rcv
     pub = rospy.Publisher('arcl_extIOOutputUpdateBit', String, queue_size=10)
     rate = rospy.Rate(10) # 10hz
     command = "extIOOutputUpdateBit {}".format(name + " " + bit_postition + " " + bit_value)
@@ -569,7 +566,6 @@ def extIOOutputUpdateBit(name, bit_postition, bit_value):
     except socket.error as errormsg:
         print("Connection  failed")
         return errormsg
-
 
 if __name__ == "__main__":
     rospy.init_node('analogInput_servers')
