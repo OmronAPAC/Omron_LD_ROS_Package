@@ -50,6 +50,9 @@ def handle_extIOAdd(req):
     numOutputs = req.a[2]
     extIOAdd(name, numInputs, numOutputs)
     return rcv
+def handle_extIODump(req):
+    extIODump()
+    return rcv
 
 def analogInputList_servers(op):
     if op == "List":
@@ -66,16 +69,19 @@ def analogInputList_servers(op):
         s4 = rospy.Service('configStart', OmAivService, handle_configStart)
     elif op == "ConnectOutgoing":
         rospy.loginfo("running ConnectOutgoing")
-        s4 = rospy.Service('connectOutgoing', OmAivService, handle_connectOutgoing)
+        s5 = rospy.Service('connectOutgoing', OmAivService, handle_connectOutgoing)
     elif op == "DoTaskInstant":
         rospy.loginfo("running DoTaskInstant")
-        s5 = rospy.Service('doTaskInstant', OmAivService, handle_doTaskInstant)
+        s6 = rospy.Service('doTaskInstant', OmAivService, handle_doTaskInstant)
     elif op == "EnableMotors":
         rospy.loginfo("running EnableMotors")
-        s6 = rospy.Service('enableMotors', OmAivService, handle_enableMotors)
+        s7 = rospy.Service('enableMotors', OmAivService, handle_enableMotors)
     elif op == "ExtIOAdd":
         rospy.loginfo("running ExtIOAdd")
-        s6 = rospy.Service('extIOAdd', OmAivService, handle_extIOAdd)
+        s8 = rospy.Service('extIOAdd', OmAivService, handle_extIOAdd)
+    elif op == "ExtIODump":
+        rospy.loginfo("running ExtIODump")
+        s9 = rospy.Service('extIODump', OmAivService, handle_extIODump)
 
 def analogInputList():
     global rcv
@@ -311,6 +317,35 @@ def extIOAdd(name, numInputs, numOutputs):
         print("Connection  failed")
         return errormsg
 
+def extIODump():
+    global rcv
+    pub = rospy.Publisher('arcl_extIODump', String, queue_size=10)
+    rate = rospy.Rate(10) # 10hz
+    command = "extIODump"
+    print "Running command: ", command
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "EndExtIODump" in rcv:
+                print rcv
+                return rcv
+                break
+            if "Unknown command extiodump" in rcv:
+                print rcv
+                return rcv
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+
 if __name__ == "__main__":
     rospy.init_node('analogInput_servers')
     analogInputList_servers("List")
@@ -321,4 +356,5 @@ if __name__ == "__main__":
     analogInputList_servers("DoTaskInstant")
     analogInputList_servers("EnableMotors")
     analogInputList_servers("ExtIOAdd")
+    analogInputList_servers("ExtIODump")
     rospy.spin()
