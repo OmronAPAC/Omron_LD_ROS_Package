@@ -105,6 +105,9 @@ def handle_getConfigSectionValues(req):
     section = req.a[0]
     rcv = getConfigSectionValues(section)
     return rcv
+def handle_inputList(req):
+    rcv = inputList()
+    return rcv
 
 def hardware_servers(op):
     if op == "List":
@@ -167,6 +170,9 @@ def hardware_servers(op):
     elif op == "GetConfigSectionValues":
         rospy.loginfo("running GetConfigSectionValues")
         s20 = rospy.Service('getConfigSectionValues', OmAivService, handle_getConfigSectionValues)
+    elif op == "InputList":
+        rospy.loginfo("running InputList")
+        s21 = rospy.Service('inputList', OmAivService, handle_inputList)
 
 def analogInputList():
     command = "analogInputList"
@@ -692,6 +698,28 @@ def getConfigSectionValues(section):
         print("Connection  failed")
         return e
 
+def inputList():
+    command = "inputList"
+    print "Running command: ", command
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "End of InputList" in rcv:
+                print rcv
+                return rcv
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+
 
 if __name__ == "__main__":
     rospy.init_node('analogInput_servers')
@@ -715,4 +743,5 @@ if __name__ == "__main__":
     hardware_servers("GetConfigSectionInfo")
     hardware_servers("GetConfigSectionList")
     hardware_servers("GetConfigSectionValues")
+    hardware_servers("InputList")
     rospy.spin()
