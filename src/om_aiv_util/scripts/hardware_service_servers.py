@@ -90,6 +90,10 @@ def handle_extIOOutputUpdateByte(req):
     byte_value = req.a[2]
     rcv = extIOOutputUpdateByte(name, byte_position, byte_value)
     return rcv
+def handle_extIORemove(req):
+    name = req.a[0]
+    rcv = extIORemove(name)
+    return rcv
 
 def hardware_servers(op):
     if op == "List":
@@ -140,6 +144,9 @@ def hardware_servers(op):
     elif op == "ExtIOOuputUpdateByte":
         rospy.loginfo("running ExtIOOuputUpdateByte")
         s16 = rospy.Service('extIOOutputUpdateByte', OmAivService, handle_extIOOutputUpdateByte)
+    elif op == "ExtIORemove":
+        rospy.loginfo("running ExtIORemove")
+        s17 = rospy.Service('extIORemove', OmAivService, handle_extIORemove)
 
 def analogInputList():
     command = "analogInputList"
@@ -565,6 +572,32 @@ def extIOOutputUpdateByte(name, byte_position, byte_value):
         print("Connection  failed")
         return errormsg
 
+def extIORemove(name):
+    command = "extIORemove {}".format(name)
+    command = command.encode('ascii')
+    print "Running command: ", command
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "extIORemove:" in rcv:
+                print rcv
+                return rcv
+                break
+            if "CommandErrorDescription" in rcv:
+                print rcv
+                return rcv
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+
 
 if __name__ == "__main__":
     rospy.init_node('analogInput_servers')
@@ -584,4 +617,5 @@ if __name__ == "__main__":
     hardware_servers("ExtIOOuputUpdate")
     hardware_servers("ExtIOOuputUpdateBit")
     hardware_servers("ExtIOOuputUpdateByte")
+    hardware_servers("ExtIORemove")
     rospy.spin()
