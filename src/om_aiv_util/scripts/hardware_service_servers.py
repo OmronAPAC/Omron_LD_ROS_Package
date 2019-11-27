@@ -126,6 +126,10 @@ def handle_outputOn(req):
     name = req.a[0]
     rcv = outputOn(name)
     return rcv
+def handle_outputQuery(req):
+    name = req.a[0]
+    rcv = outputQuery(name)
+    return rcv
 
 def hardware_servers(op):
     if op == "List":
@@ -206,6 +210,9 @@ def hardware_servers(op):
     elif op == "OutputOn":
         rospy.loginfo("running OutputOn")
         s25 = rospy.Service('outputOn', OmAivService, handle_outputOn)
+    elif op == "OutputQuery":
+        rospy.loginfo("running OutputQuery")
+        s26 = rospy.Service('outputQuery', OmAivService, handle_outputQuery)
 
 def analogInputList():
     command = "analogInputList"
@@ -881,8 +888,36 @@ def outputOn(name):
         print("Connection  failed")
         return errormsg
 
+def outputQuery(name):
+    command = "outputQuery {}".format(name)
+    command = command.encode('ascii')
+    print "Running command: ", command
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "Output:" in rcv:
+                print rcv
+                return rcv
+                break
+            if "CommandErrorDescription" in rcv:
+                print rcv
+                return rcv
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+
+
+
 if __name__ == "__main__":
-    rospy.init_node('analogInput_servers')
+    rospy.init_node('hardware_servers')
     hardware_servers("List")
     hardware_servers("QueryRaw")
     hardware_servers("QueryVoltage")
@@ -909,4 +944,5 @@ if __name__ == "__main__":
     hardware_servers("OutputList")
     hardware_servers("OutputOff")
     hardware_servers("OutputOn")
+    hardware_servers("OutputQuery")
     rospy.spin()
