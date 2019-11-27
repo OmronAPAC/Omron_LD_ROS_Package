@@ -2,11 +2,11 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def odometerReset_client(x):
+def odometerReset_client(array):
     rospy.wait_for_service('odometerReset')
     try:
-        service = rospy.ServiceProxy('odometerReset', Service)
-        resp1 = service(x)
+        service = rospy.ServiceProxy('odometerReset', OmAivService)
+        resp1 = service(array)
         return resp1.device
     except rospy.ServiceException, e:
         print "Service call failed: %s"%e
@@ -17,8 +17,9 @@ def usage():
 if __name__ == "__main__":
     if len(sys.argv) == 1:
         x = ""
+        array = [x]
     else:
         print usage()
         sys.exit(1)
     print "running command"
-    print odometerReset_client(x)
+    print odometerReset_client(array)
