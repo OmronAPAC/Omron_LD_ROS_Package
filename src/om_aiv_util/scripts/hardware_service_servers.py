@@ -134,6 +134,10 @@ def handle_payloadQueryLocal(req):
     slot_num = req.a[0]
     rcv = payloadQueryLocal(slot_num)
     return rcv
+def handle_payloadRemove(req):
+    slot_num = req.a[0]
+    rcv = payloadRemove(slot_num)
+    return rcv
 
 def hardware_servers(op):
     if op == "List":
@@ -220,6 +224,9 @@ def hardware_servers(op):
     elif op == "PayloadQueryLocal":
         rospy.loginfo("running PayloadQueryLocal")
         s27 = rospy.Service('payloadQueryLocal', OmAivService, handle_payloadQueryLocal)
+    elif op == "PayloadRemove":
+        rospy.loginfo("running PayloadRemove")
+        s28 = rospy.Service('payloadRemove', OmAivService, handle_payloadRemove)
 
 def analogInputList():
     command = "analogInputList"
@@ -922,9 +929,6 @@ def outputQuery(name):
         return e
 
 def payloadQueryLocal(slot_num):
-    global rcv
-    pub = rospy.Publisher('arcl_payloadQueryLocal', String, queue_size=10)
-    rate = rospy.Rate(10) # 10hz
     command = "payloadQueryLocal {}".format(slot_num)
     print "Running command: ", command
     command = command.encode('ascii')
@@ -943,6 +947,36 @@ def payloadQueryLocal(slot_num):
                 return rcv
                 break
             if "Unknown command" in rcv:
+                print rcv
+                return rcv
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+
+def payloadRemove(slot_num):
+    command = "payloadRemove {}".format(slot_num)
+    command = command.encode('ascii')
+    print "Running command: ", command
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "PayloadUpdate" in rcv:
+                print rcv
+                return rcv
+                break
+            if "failed" in rcv:
+                print rcv
+                return rcv
+                break
+            if "CommandErrorDescription" in rcv:
                 print rcv
                 return rcv
                 break
@@ -985,4 +1019,5 @@ if __name__ == "__main__":
     hardware_servers("OutputOn")
     hardware_servers("OutputQuery")
     hardware_servers("PayloadQueryLocal")
+    hardware_servers("PayloadRemove")
     rospy.spin()
