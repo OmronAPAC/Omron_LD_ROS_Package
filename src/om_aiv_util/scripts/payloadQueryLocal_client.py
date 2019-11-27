@@ -2,11 +2,11 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def payloadQueryLocal_client(x):
+def payloadQueryLocal_client(array):
     rospy.wait_for_service('payloadQueryLocal')
     try:
-        service = rospy.ServiceProxy('payloadQueryLocal', Service)
-        resp1 = service(x)
+        service = rospy.ServiceProxy('payloadQueryLocal', OmAivService)
+        resp1 = service(array)
         return resp1.device
     except rospy.ServiceException, e:
         print "Service call failed: %s"%e
@@ -16,11 +16,13 @@ def usage():
 
 if __name__ == "__main__":
     if len(sys.argv) == 2:
-        x = str(sys.argv[1])
+        slot_num = str(sys.argv[1])
+        array = [slot_num]
     elif len(sys.argv) == 1:
         x = ""
+        array = [x]
     else:
         print usage()
         sys.exit(1)
     print "running command"
-    print payloadQueryLocal_client(x)
+    print payloadQueryLocal_client(array)

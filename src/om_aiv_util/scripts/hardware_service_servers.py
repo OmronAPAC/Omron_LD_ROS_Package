@@ -11,10 +11,10 @@ import sys
 import rospy
 from std_msgs.msg import String
 BUFFER_SIZE = 1024
-# ip_address = rospy.get_param("ip_address")
-# port = rospy.get_param("port")
-ip_address = "172.21.5.122"
-port = 7171
+ip_address = rospy.get_param("ip_address")
+port = rospy.get_param("port")
+# ip_address = "172.21.5.122"
+# port = 7171
 connecttcp.connect(str(ip_address), port)
 
 def handle_analogInputList(req):
@@ -46,9 +46,9 @@ def handle_enableMotors(req):
     return rcv
 def handle_extIOAdd(req):
     name = req.a[0]
-    numInputs = req.a[1]
-    numOutputs = req.a[2]
-    rcv = extIOAdd(name, numInputs, numOutputs)
+    num_inputs = req.a[1]
+    num_outputs = req.a[2]
+    rcv = extIOAdd(name, num_inputs, num_outputs)
     return rcv
 def handle_extIODump(req):
     rcv = extIODump()
@@ -129,6 +129,10 @@ def handle_outputOn(req):
 def handle_outputQuery(req):
     name = req.a[0]
     rcv = outputQuery(name)
+    return rcv
+def handle_payloadQueryLocal(req):
+    slot_num = req.a[0]
+    rcv = payloadQueryLocal(slot_num)
     return rcv
 
 def hardware_servers(op):
@@ -213,6 +217,9 @@ def hardware_servers(op):
     elif op == "OutputQuery":
         rospy.loginfo("running OutputQuery")
         s26 = rospy.Service('outputQuery', OmAivService, handle_outputQuery)
+    elif op == "PayloadQueryLocal":
+        rospy.loginfo("running PayloadQueryLocal")
+        s27 = rospy.Service('payloadQueryLocal', OmAivService, handle_payloadQueryLocal)
 
 def analogInputList():
     command = "analogInputList"
@@ -398,8 +405,8 @@ def enableMotors():
         print("Connection  failed")
         return e
 
-def extIOAdd(name, numInputs, numOutputs):
-    command = "extIOAdd {}".format(name + " " + numInputs + " " + numOutputs)
+def extIOAdd(name, num_inputs, num_outputs):
+    command = "extIOAdd {}".format(name + " " + num_inputs + " " + num_outputs)
     command = command.encode('ascii')
     print "Running command: ", command
     s.send(command+b"\r\n")
@@ -914,6 +921,38 @@ def outputQuery(name):
         print("Connection  failed")
         return e
 
+def payloadQueryLocal(slot_num):
+    global rcv
+    pub = rospy.Publisher('arcl_payloadQueryLocal', String, queue_size=10)
+    rate = rospy.Rate(10) # 10hz
+    command = "payloadQueryLocal {}".format(slot_num)
+    print "Running command: ", command
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "EndPayloadQuery" in rcv:
+                print rcv
+                return rcv
+                break
+            if "CommandErrorDescription" in rcv:
+                print rcv
+                return rcv
+                break
+            if "Unknown command" in rcv:
+                print rcv
+                return rcv
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
 
 
 if __name__ == "__main__":
@@ -945,4 +984,5 @@ if __name__ == "__main__":
     hardware_servers("OutputOff")
     hardware_servers("OutputOn")
     hardware_servers("OutputQuery")
+    hardware_servers("PayloadQueryLocal")
     rospy.spin()
