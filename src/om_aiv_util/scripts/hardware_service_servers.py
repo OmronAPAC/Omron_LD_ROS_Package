@@ -98,6 +98,13 @@ def handle_getConfigSectionInfo(req):
     section = req.a[0]
     rcv = getConfigSectionInfo(section)
     return rcv
+def handle_getConfigSectionList(req):
+    rcv = getConfigSectionList()
+    return rcv
+def handle_getConfigSectionValues(req):
+    section = req.a[0]
+    rcv = getConfigSectionValues(section)
+    return rcv
 
 def hardware_servers(op):
     if op == "List":
@@ -154,6 +161,12 @@ def hardware_servers(op):
     elif op == "GetConfigSectionInfo":
         rospy.loginfo("running GetConfigSectionInfo")
         s18 = rospy.Service('getConfigSectionInfo', OmAivService, handle_getConfigSectionInfo)
+    elif op == "GetConfigSectionList":
+        rospy.loginfo("running GetConfigSectionList")
+        s19 = rospy.Service('getConfigSectionList', OmAivService, handle_getConfigSectionList)
+    elif op == "GetConfigSectionValues":
+        rospy.loginfo("running GetConfigSectionValues")
+        s20 = rospy.Service('getConfigSectionValues', OmAivService, handle_getConfigSectionValues)
 
 def analogInputList():
     command = "analogInputList"
@@ -631,6 +644,54 @@ def getConfigSectionInfo(section):
         print("Connection  failed")
         return e
 
+def getConfigSectionList():
+    command = "getConfigSectionList"
+    print "Running command: ", command
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "EndOfGetConfigSectionList" in rcv:
+                print rcv
+                return rcv
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+
+def getConfigSectionValues(section):
+    command = "getConfigSectionValues {}".format(section)
+    command = command.encode('ascii')
+    print "Running command: ", command
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "EndOfGetConfigSectionValues" in rcv:
+                print rcv
+                return rcv
+                break
+            if "CommandErrorDescription" in rcv:
+                print rcv
+                return rcv
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+
 
 if __name__ == "__main__":
     rospy.init_node('analogInput_servers')
@@ -652,4 +713,6 @@ if __name__ == "__main__":
     hardware_servers("ExtIOOuputUpdateByte")
     hardware_servers("ExtIORemove")
     hardware_servers("GetConfigSectionInfo")
+    hardware_servers("GetConfigSectionList")
+    hardware_servers("GetConfigSectionValues")
     rospy.spin()
