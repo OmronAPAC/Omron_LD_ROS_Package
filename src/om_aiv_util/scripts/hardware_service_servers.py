@@ -44,6 +44,12 @@ def handle_doTaskInstant(req):
 def handle_enableMotors(req):
     enableMotors()
     return rcv
+def handle_extIOAdd(req):
+    name = req.a[0]
+    numInputs = req.a[1]
+    numOutputs = req.a[2]
+    extIOAdd(name, numInputs, numOutputs)
+    return rcv
 
 def analogInputList_servers(op):
     # print op
