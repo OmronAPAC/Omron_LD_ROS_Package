@@ -78,6 +78,12 @@ def handle_extIOOutputUpdate(req):
     value = req.a[1]
     extIOOutputUpdate(name, value)
     return rcv
+def handle_extIOOutputUpdateBit(req):
+    name = req.a[0]
+    bit_postition = req.a[1]
+    bit_value = req.a[2]
+    extIOOutputUpdateBit(name, bit_postition, bit_value)
+    return rcv
 
 
 def analogInputList_servers(op):
@@ -123,6 +129,9 @@ def analogInputList_servers(op):
     elif op == "ExtIOOuputUpdate":
         rospy.loginfo("running ExtIOOuputUpdate")
         s14 = rospy.Service('extIOOutputUpdate', OmAivService, handle_extIOOutputUpdate)
+    elif op == "ExtIOOuputUpdateBit":
+        rospy.loginfo("running ExtIOOuputUpdateBit")
+        s15 = rospy.Service('extIOOutputUpdateBit', OmAivService, handle_extIOOutputUpdateBit)
 
 def analogInputList():
     global rcv
@@ -532,6 +541,36 @@ def extIOOutputUpdate(name, value):
         print("Connection  failed")
         return errormsg
 
+def extIOOutputUpdateBit(name, bit_postition, bit_value):
+    global rcv
+    pub = rospy.Publisher('arcl_extIOOutputUpdateBit', String, queue_size=10)
+    rate = rospy.Rate(10) # 10hz
+    command = "extIOOutputUpdateBit {}".format(name + " " + bit_postition + " " + bit_value)
+    command = command.encode('ascii')
+    print "Running command: ", command
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "extIOOutputUpdateBit:" in rcv:
+                print rcv
+                return rcv
+                break
+            if "CommandErrorDescription" in rcv:
+                print rcv
+                return rcv
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as errormsg:
+        print("Connection  failed")
+        return errormsg
+
+
 if __name__ == "__main__":
     rospy.init_node('analogInput_servers')
     analogInputList_servers("List")
@@ -548,4 +587,5 @@ if __name__ == "__main__":
     analogInputList_servers("ExtIOInputUpdateBit")
     analogInputList_servers("ExtIOInputUpdateByte")
     analogInputList_servers("ExtIOOuputUpdate")
+    analogInputList_servers("ExtIOOuputUpdateBit")
     rospy.spin()
