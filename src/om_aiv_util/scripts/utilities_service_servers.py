@@ -65,6 +65,9 @@ def handle_getDataStoreGroupInfo(req):
     group = req.a[0]
     rcv = getDataStoreGroupInfo(group)
     return rcv
+def handle_getDataStoreGroupList(req):
+    rcv = getDataStoreGroupList()
+    return rcv
 
 def utilities_servers(op):
     if op == "applicationFaultClear":
@@ -96,10 +99,13 @@ def utilities_servers(op):
         s9 = rospy.Service('getDataStoreFieldList', OmAivService, handle_getDataStoreFieldList)
     elif op == "getDataStoreFieldValues":
         rospy.loginfo("running getDataStoreFieldvalues")
-        s10 = rospy.Service('getDataStoreFieldValues', OmAivService, handle_getDataStoreFieldValues)
+        s11 = rospy.Service('getDataStoreFieldValues', OmAivService, handle_getDataStoreFieldValues)
     elif op == "getDataStoreGroupInfo":
         rospy.loginfo("running getDataStoreGroupInfo")
-        s10 = rospy.Service('getDataStoreGroupInfo', OmAivService, handle_getDataStoreGroupInfo)
+        s12 = rospy.Service('getDataStoreGroupInfo', OmAivService, handle_getDataStoreGroupInfo)
+    elif op == "getDataStoreGroupList":
+        rospy.loginfo("running getDataStoreGroupList")
+        s13 = rospy.Service('getDataStoreGroupList', OmAivService, handle_getDataStoreGroupList)
 
 def applicationFaultClear(name):
     command = "applicationFaultClear {}".format(name)
@@ -379,6 +385,27 @@ def getDataStoreGroupInfo(group):
         print("Connection  failed")
         return e
 
+def getDataStoreGroupList():
+    command = "getDataStoreGroupList"
+    print "Running command: ", command
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "EndOfGetDataStoreGroupList" in rcv:
+                print rcv
+                return rcv
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+
 
 if __name__ == "__main__":
     rospy.init_node('utilities_service_servers')
@@ -393,4 +420,5 @@ if __name__ == "__main__":
     utilities_servers("getDataStoreFieldList")
     utilities_servers("getDataStoreFieldValues")
     utilities_servers("getDataStoreGroupInfo")
+    utilities_servers("getDataStoreGroupList")
     rospy.spin()
