@@ -2,11 +2,11 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def analogInputQueryRaw_client(a, b , c):
+def createInfo_client(array):
     rospy.wait_for_service('createInfo')
     try:
-        service = rospy.ServiceProxy('createInfo', Service3)
-        resp1 = service(a, b, c)
+        service = rospy.ServiceProxy('createInfo', OmAivService)
+        resp1 = service(array)
         return resp1.device
     except rospy.ServiceException, error:
         print "Service call failed: %s"%error
@@ -16,11 +16,12 @@ def usage():
 
 if __name__ == "__main__":
     if len(sys.argv) == 4:
-        a = str(sys.argv[1])
-        b = str(sys.argv[2])
-        c = str(sys.argv[3])
+        info_name = str(sys.argv[1])
+        max_len = str(sys.argv[2])
+        info_value = str(sys.argv[3])
+        array = [info_name, max_len, info_value]
     else:
         print usage()
         sys.exit(1)
     print "running command"
-    print analogInputQueryRaw_client(a, b , c)
+    print createInfo_client(array)

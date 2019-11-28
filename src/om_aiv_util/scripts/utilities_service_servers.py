@@ -40,6 +40,13 @@ def handle_configAdd(req):
 def handle_configParse(req):
     rcv = configParse()
     return rcv
+def handle_createInfo(req):
+    info_name = req.a[0]
+    max_len = req.a[1]
+    info_value = req.a[2]
+    rcv = createInfo(info_name, max_len, info_value)
+    return rcv
+
 
 def hardware_servers(op):
     if op == "applicationFaultClear":
@@ -57,6 +64,9 @@ def hardware_servers(op):
     elif op == "configParse":
         rospy.loginfo("running configParse")
         s5 = rospy.Service('configParse', OmAivService, handle_configParse)
+    elif op == "createInfo":
+        rospy.loginfo("running createInfo")
+        s6 = rospy.Service('createInfo', OmAivService, handle_createInfo)
 
 def applicationFaultClear(name):
     command = "applicationFaultClear {}".format(name)
@@ -189,6 +199,30 @@ def configParse():
         print("Connection  failed")
         return e
 
+def createInfo(info_name, max_len, info_value):
+    command = "createInfo {}".format(info_name + " " + max_len + " " + info_value)
+    command = command.encode('ascii')
+    print "Running command: ", command
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "Created info" in rcv:
+                print rcv
+                return rcv
+            if "CommandErrorDescription" in rcv:
+                print rcv
+                return rcv
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as errormsg:
+        print("Connection  failed")
+        return errormsg
+
 
 if __name__ == "__main__":
     rospy.init_node('utilities_service_servers')
@@ -197,4 +231,5 @@ if __name__ == "__main__":
     hardware_servers("arclSendText")
     hardware_servers("configAdd")
     hardware_servers("configParse")
+    hardware_servers("createInfo")
     rospy.spin()
