@@ -2,11 +2,11 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def help_client(x):
+def help_client(array):
     rospy.wait_for_service('help')
     try:
-        service = rospy.ServiceProxy('help', Service)
-        resp1 = service(x)
+        service = rospy.ServiceProxy('help', OmAivService)
+        resp1 = service(array)
         return resp1.device
     except rospy.ServiceException, e:
         print "Service call failed: %s"%e
@@ -16,9 +16,10 @@ def usage():
 
 if __name__ == "__main__":
     if len(sys.argv) == 1:
-        x = ""
+        nil = ""
+        array = [nil]
     else:
         print usage()
         sys.exit(1)
     print "running command"
-    print help_client(x)
+    print help_client(array)
