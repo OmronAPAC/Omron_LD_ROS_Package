@@ -61,9 +61,12 @@ def handle_getDataStoreFieldValues(req):
     field = req.a[0]
     rcv = getDataStoreFieldValues(field)
     return rcv
+def handle_getDataStoreGroupInfo(req):
+    group = req.a[0]
+    rcv = getDataStoreGroupInfo(group)
+    return rcv
 
-
-def hardware_servers(op):
+def utilities_servers(op):
     if op == "applicationFaultClear":
         rospy.loginfo("running applicationFaultClear")
         s1 = rospy.Service('applicationFaultClear', OmAivService, handle_applicationFaultClear)
@@ -94,6 +97,9 @@ def hardware_servers(op):
     elif op == "getDataStoreFieldValues":
         rospy.loginfo("running getDataStoreFieldvalues")
         s10 = rospy.Service('getDataStoreFieldValues', OmAivService, handle_getDataStoreFieldValues)
+    elif op == "getDataStoreGroupInfo":
+        rospy.loginfo("running getDataStoreGroupInfo")
+        s10 = rospy.Service('getDataStoreGroupInfo', OmAivService, handle_getDataStoreGroupInfo)
 
 def applicationFaultClear(name):
     command = "applicationFaultClear {}".format(name)
@@ -349,17 +355,42 @@ def getDataStoreFieldValues(field):
         print("Connection  failed")
         return e
 
+def getDataStoreGroupInfo(group):
+    command = "getDataStoreGroupInfo {}".format(group)
+    command = command.encode('ascii')
+    print "Running command: ", command
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "EndOfGetDataStoreGroupInfo" in rcv:
+                print rcv
+                return rcv
+            if "CommandErrorDescription" in rcv:
+                print rcv
+                return rcv
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+
 
 if __name__ == "__main__":
     rospy.init_node('utilities_service_servers')
-    hardware_servers("applicationFaultClear")
-    hardware_servers("applicationFaultSet")
-    hardware_servers("arclSendText")
-    hardware_servers("configAdd")
-    hardware_servers("configParse")
-    hardware_servers("createInfo")
-    hardware_servers("echo")
-    hardware_servers("getDataStoreFieldInfo")
-    hardware_servers("getDataStoreFieldList")
-    hardware_servers("getDataStoreFieldValues")
+    utilities_servers("applicationFaultClear")
+    utilities_servers("applicationFaultSet")
+    utilities_servers("arclSendText")
+    utilities_servers("configAdd")
+    utilities_servers("configParse")
+    utilities_servers("createInfo")
+    utilities_servers("echo")
+    utilities_servers("getDataStoreFieldInfo")
+    utilities_servers("getDataStoreFieldList")
+    utilities_servers("getDataStoreFieldValues")
+    utilities_servers("getDataStoreGroupInfo")
     rospy.spin()
