@@ -94,6 +94,13 @@ def handle_mapObjectList(req):
     type = req.a[0]
     rcv = mapObjectList(type)
     return rcv
+def handle_mapObjectTypeInfo(req):
+    type = req.a[0]
+    rcv = mapObjectTypeInfo(type)
+    return rcv
+def handle_mapObjectTypeList(req):
+    rcv = mapObjectTypeList()
+    return rcv
 
 def utilities_servers(op):
     if op == "applicationFaultClear":
@@ -153,6 +160,12 @@ def utilities_servers(op):
     elif op == "mapObjectList":
         rospy.loginfo("running mapObjectList")
         s18 = rospy.Service('mapObjectList', OmAivService, handle_mapObjectList)
+    elif op == "mapObjectTypeInfo":
+        rospy.loginfo("running mapObjectTypeInfo")
+        s19 = rospy.Service('mapObjectTypeInfo', OmAivService, handle_mapObjectTypeInfo)
+    elif op == "mapObjectTypeList":
+        rospy.loginfo("running mapObjectTypeList")
+        s20 = rospy.Service('mapObjectTypeList', OmAivService, handle_mapObjectTypeList)
 
 
 def applicationFaultClear(name):
@@ -607,6 +620,51 @@ def mapObjectList(type):
         print("Connection  failed")
         return e
 
+def mapObjectTypeInfo(type):
+    command = "mapObjectTypeInfo {}".format(type)
+    command = command.encode('ascii')
+    print "Running command: ", command
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "End of MapObjectTypeInfo" in rcv:
+                print rcv
+                return rcv
+            if "CommandErrorDescription" in rcv:
+                print rcv
+                return rcv
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+
+def mapObjectTypeList():
+    command = "mapObjectTypeList"
+    print "Running command: ", command
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "End of MapObjectTypeList" in rcv:
+                print rcv
+                return rcv
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+
 if __name__ == "__main__":
     rospy.init_node('utilities_service_servers')
     utilities_servers("applicationFaultClear")
@@ -628,4 +686,6 @@ if __name__ == "__main__":
     utilities_servers("log")
     utilities_servers("mapObjectInfo")
     utilities_servers("mapObjectList")
+    utilities_servers("mapObjectTypeInfo")
+    utilities_servers("mapObjectTypeList")
     rospy.spin()
