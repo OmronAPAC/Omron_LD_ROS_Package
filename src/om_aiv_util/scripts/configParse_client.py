@@ -2,11 +2,11 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def configParse_client(x):
+def configParse_client(array):
     rospy.wait_for_service('configParse')
     try:
-        service = rospy.ServiceProxy('configParse', Service)
-        resp1 = service(x)
+        service = rospy.ServiceProxy('configParse', OmAivService)
+        resp1 = service(array)
         return resp1.device
     except rospy.ServiceException, e:
         print "Service call failed: %s"%e
@@ -16,9 +16,10 @@ def usage():
 
 if __name__ == "__main__":
     if len(sys.argv) == 1:
-        x = ""
+        nil = ""
+        array = [nil]
     else:
         print usage()
         sys.exit(1)
     print "running command"
-    print configParse_client(x)
+    print configParse_client(array)

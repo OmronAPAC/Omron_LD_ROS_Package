@@ -37,6 +37,9 @@ def handle_configAdd(req):
     value = req.a[1]
     rcv = configAdd(configuration_section, value)
     return rcv
+def handle_configParse(req):
+    rcv = configParse()
+    return rcv
 
 def hardware_servers(op):
     if op == "applicationFaultClear":
@@ -47,10 +50,13 @@ def hardware_servers(op):
         s2 = rospy.Service('applicationFaultSet', OmAivService, handle_applicationFaultSet)
     elif op == "arclSendText":
         rospy.loginfo("running arclSendText")
-        s2 = rospy.Service('arclSendText', OmAivService, handle_arclSendText)
+        s3 = rospy.Service('arclSendText', OmAivService, handle_arclSendText)
     elif op == "configAdd":
         rospy.loginfo("running configAdd")
-        s2 = rospy.Service('configAdd', OmAivService, handle_configAdd)
+        s4 = rospy.Service('configAdd', OmAivService, handle_configAdd)
+    elif op == "configParse":
+        rospy.loginfo("running configParse")
+        s5 = rospy.Service('configParse', OmAivService, handle_configParse)
 
 def applicationFaultClear(name):
     command = "applicationFaultClear {}".format(name)
@@ -157,6 +163,32 @@ def configAdd(configuration_section, value):
         print("Connection  failed")
         return errormsg
 
+def configParse():
+    command = "configParse"
+    print "Running command: ", command
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "Config parsed fine" in rcv:
+                print rcv
+                return rcv
+                break
+            if "CommandErrorDescription" in rcv:
+                print rcv
+                return rcv
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+
 
 if __name__ == "__main__":
     rospy.init_node('utilities_service_servers')
@@ -164,4 +196,5 @@ if __name__ == "__main__":
     hardware_servers("applicationFaultSet")
     hardware_servers("arclSendText")
     hardware_servers("configAdd")
+    hardware_servers("configParse")
     rospy.spin()
