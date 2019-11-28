@@ -20,7 +20,8 @@ if __name__ == "__main__":
         state = str(sys.argv[1])
         array = [state]
     elif len(sys.argv) == 1:
-        array = None
+        nil = ""
+        array = [nil]
     else:
         print usage()
         sys.exit(1)

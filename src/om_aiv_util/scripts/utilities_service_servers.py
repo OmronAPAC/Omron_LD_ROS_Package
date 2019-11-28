@@ -50,6 +50,10 @@ def handle_echo(req):
     state = req.a[0]
     rcv = echo(state)
     return rcv
+def handle_getDataStoreFieldInfo(req):
+    field = req.a[0]
+    rcv = getDataStoreFieldInfo(field)
+    return rcv
 
 
 def hardware_servers(op):
@@ -74,6 +78,9 @@ def hardware_servers(op):
     elif op == "echo":
         rospy.loginfo("running echo")
         s6 = rospy.Service('echo', OmAivService, handle_echo)
+    elif op == "getDataStoreFieldInfo":
+        rospy.loginfo("running getDataStoreFieldInfo")
+        s7= rospy.Service('getDataStoreFieldInfo', OmAivService, handle_getDataStoreFieldInfo)
 
 def applicationFaultClear(name):
     command = "applicationFaultClear {}".format(name)
@@ -246,6 +253,33 @@ def echo(state):
             if "Echo turned" in rcv:
                 print rcv
                 return rcv
+            if "usage" in rcv:
+                print rcv
+                return rcv
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+
+def getDataStoreFieldInfo(field):
+    command = "getDataStoreFieldInfo {}".format(field)
+    command = command.encode('ascii')
+    print "Running command: ", command
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "EndOfGetDataStoreFieldInfo" in rcv:
+                print rcv
+                return rcv
+            if "CommandErrorDescription" in rcv:
+                print rcv
+                return rcv
             else:
                 data = s.recv(BUFFER_SIZE)
                 rcv = rcv + data.encode('ascii', 'ignore')
@@ -264,4 +298,5 @@ if __name__ == "__main__":
     hardware_servers("configParse")
     hardware_servers("createInfo")
     hardware_servers("echo")
+    hardware_servers("getDataStoreFieldInfo")
     rospy.spin()
