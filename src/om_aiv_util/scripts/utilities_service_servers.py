@@ -136,6 +136,9 @@ def handle_say(req):
 def handle_shutdown(req):
     rcv = shutdown()
     return rcv
+def handle_tripReset(req):
+    rcv = tripReset()
+    return rcv
 
 def utilities_servers(op):
     if op == "applicationFaultClear":
@@ -219,6 +222,9 @@ def utilities_servers(op):
     elif op == "shutdown":
         rospy.loginfo("running shutdown")
         s26 = rospy.Service('shutdown', OmAivService, handle_shutdown)
+    elif op == "tripReset":
+        rospy.loginfo("running tripReset")
+        s27 = rospy.Service('tripReset', OmAivService, handle_tripReset)
 
 def applicationFaultClear(name):
     command = "applicationFaultClear {}".format(name)
@@ -854,6 +860,28 @@ def shutdown():
         print("Connection  failed")
         return e
 
+def tripReset():
+    command = "tripReset"
+    print "Running command: ", command
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "EndOfTripReset" in rcv:
+                print rcv
+                return rcv
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+
+
 
 if __name__ == "__main__":
     rospy.init_node('utilities_service_servers')
@@ -884,4 +912,5 @@ if __name__ == "__main__":
     utilities_servers("quit")
     utilities_servers("say")
     utilities_servers("shutdown")
+    utilities_servers("tripReset")
     rospy.spin()

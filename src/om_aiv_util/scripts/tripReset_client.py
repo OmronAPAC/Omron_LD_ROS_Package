@@ -2,11 +2,11 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def tripReset_client(x):
+def tripReset_client():
     rospy.wait_for_service('tripReset')
     try:
-        service = rospy.ServiceProxy('tripReset', Service)
-        resp1 = service(x)
+        service = rospy.ServiceProxy('tripReset', OmAivService)
+        resp1 = service()
         return resp1.device
     except rospy.ServiceException, e:
         print "Service call failed: %s"%e
@@ -16,9 +16,9 @@ def usage():
 
 if __name__ == "__main__":
     if len(sys.argv) == 1:
-        x = ""
+        pass
     else:
         print usage()
         sys.exit(1)
     print "running command"
-    print tripReset_client(x)
+    print tripReset_client()
