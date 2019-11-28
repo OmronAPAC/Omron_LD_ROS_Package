@@ -139,6 +139,11 @@ def handle_shutdown(req):
 def handle_tripReset(req):
     rcv = tripReset()
     return rcv
+def handle_updateInfo(req):
+    info_name = req.a[0]
+    info_value = req.a[1]
+    rcv = updateInfo(info_name, info_value)
+    return rcv
 
 def utilities_servers(op):
     if op == "applicationFaultClear":
@@ -225,6 +230,9 @@ def utilities_servers(op):
     elif op == "tripReset":
         rospy.loginfo("running tripReset")
         s27 = rospy.Service('tripReset', OmAivService, handle_tripReset)
+    elif op == "updateInfo":
+        rospy.loginfo("running updateInfo")
+        s28 = rospy.Service('updateInfo', OmAivService, handle_updateInfo)
 
 def applicationFaultClear(name):
     command = "applicationFaultClear {}".format(name)
@@ -881,6 +889,29 @@ def tripReset():
         print("Connection  failed")
         return e
 
+def updateInfo(info_name, info_value):
+    command = "updateInfo {}".format(info_name + " " + info_value)
+    command = command.encode('ascii')
+    print "Running command: ", command
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "Updated info" in rcv:
+                print rcv
+                return rcv
+            if "CommandErrorDescription" in rcv:
+                print rcv
+                return rcv
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as errormsg:
+        print("Connection  failed")
+        return errormsg
 
 
 if __name__ == "__main__":
@@ -913,4 +944,5 @@ if __name__ == "__main__":
     utilities_servers("say")
     utilities_servers("shutdown")
     utilities_servers("tripReset")
+    utilities_servers("updateInfo")
     rospy.spin()
