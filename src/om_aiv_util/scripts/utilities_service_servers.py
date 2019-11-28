@@ -118,6 +118,13 @@ def handle_newConfigSectionComment(req):
     section = req.a[0]
     comment = req.a[1]
     rcv = newConfigSectionComment(section, comment)
+    return rc
+def handle_popupSimple(req):
+    title = req.a[0]
+    message = req.a[1]
+    button_label = req.a[2]
+    timeout = req.a[3]
+    rcv = popupSimple(title, message, button_label, timeout)
     return rcv
 
 def utilities_servers(op):
@@ -190,6 +197,9 @@ def utilities_servers(op):
     elif op == "newConfigSectionComment":
         rospy.loginfo("running newConfigSectionComment")
         s22 = rospy.Service('newConfigSectionComment', OmAivService, handle_newConfigSectionComment)
+    elif op == "popupSimple":
+        rospy.loginfo("running popupSimple")
+        s23 = rospy.Service('popupSimple', OmAivService, handle_popupSimple)
 
 
 def applicationFaultClear(name):
@@ -738,6 +748,31 @@ def newConfigSectionComment(section, comment):
         print("Connection  failed")
         return errormsg
 
+def popupSimple(title, message, button_label, timeout):
+    command = "popupSimple {}".format(" \"" + title + "\" " +" \"" + message
+    +"\" "+ " \"" + button_label + "\" " + timeout)
+    command = command.encode('ascii')
+    print "Running command: ", command
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "Creating simple popup" in rcv:
+                print rcv
+                return rcv
+            if "CommandErrorDescription" in rcv:
+                print rcv
+                return rcv
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as errormsg:
+        print("Connection  failed")
+        return errormsg
+
 
 if __name__ == "__main__":
     rospy.init_node('utilities_service_servers')
@@ -764,4 +799,5 @@ if __name__ == "__main__":
     utilities_servers("mapObjectTypeList")
     utilities_servers("newConfigParam")
     utilities_servers("newConfigSectionComment")
+    utilities_servers("popupSimple")
     rospy.spin()
