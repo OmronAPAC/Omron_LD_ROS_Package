@@ -54,6 +54,9 @@ def handle_getDataStoreFieldInfo(req):
     field = req.a[0]
     rcv = getDataStoreFieldInfo(field)
     return rcv
+def handle_getDataStoreFieldList(req):
+    rcv = getDataStoreFieldList()
+    return rcv
 
 
 def hardware_servers(op):
@@ -77,10 +80,13 @@ def hardware_servers(op):
         s6 = rospy.Service('createInfo', OmAivService, handle_createInfo)
     elif op == "echo":
         rospy.loginfo("running echo")
-        s6 = rospy.Service('echo', OmAivService, handle_echo)
+        s7 = rospy.Service('echo', OmAivService, handle_echo)
     elif op == "getDataStoreFieldInfo":
         rospy.loginfo("running getDataStoreFieldInfo")
-        s7= rospy.Service('getDataStoreFieldInfo', OmAivService, handle_getDataStoreFieldInfo)
+        s8 = rospy.Service('getDataStoreFieldInfo', OmAivService, handle_getDataStoreFieldInfo)
+    elif op == "getDataStoreFieldList":
+        rospy.loginfo("running getDataStoreFieldList")
+        s9 = rospy.Service('getDataStoreFieldList', OmAivService, handle_getDataStoreFieldList)
 
 def applicationFaultClear(name):
     command = "applicationFaultClear {}".format(name)
@@ -288,6 +294,31 @@ def getDataStoreFieldInfo(field):
         print("Connection  failed")
         return e
 
+def getDataStoreFieldList():
+    command = "getDataStoreFieldList"
+    command = command.encode('ascii')
+    print "Running command: ", command
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "EndOfGetDataStoreFieldList" in rcv:
+                print rcv
+                return rcv
+            if "CommandErrorDescription" in rcv:
+                print rcv
+                return rcv
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+
+
 
 if __name__ == "__main__":
     rospy.init_node('utilities_service_servers')
@@ -299,4 +330,5 @@ if __name__ == "__main__":
     hardware_servers("createInfo")
     hardware_servers("echo")
     hardware_servers("getDataStoreFieldInfo")
+    hardware_servers("getDataStoreFieldList")
     rospy.spin()

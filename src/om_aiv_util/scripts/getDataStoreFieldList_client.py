@@ -2,11 +2,11 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def getDataStoreFieldList_client(x):
+def getDataStoreFieldList_client(array):
     rospy.wait_for_service('getDataStoreFieldList')
     try:
-        service = rospy.ServiceProxy('getDataStoreFieldList', Service)
-        resp1 = service(x)
+        service = rospy.ServiceProxy('getDataStoreFieldList', OmAivService)
+        resp1 = service(array)
         return resp1.device
     except rospy.ServiceException, e:
         print "Service call failed: %s"%e
@@ -16,9 +16,10 @@ def usage():
 
 if __name__ == "__main__":
     if len(sys.argv) == 1:
-        x = ""
+        nil = ""
+        array = [nil]
     else:
         print usage()
         sys.exit(1)
     print "running command"
-    print getDataStoreFieldList_client(x)
+    print getDataStoreFieldList_client(array)
