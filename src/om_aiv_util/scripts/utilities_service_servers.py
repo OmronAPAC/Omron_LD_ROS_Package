@@ -46,6 +46,10 @@ def handle_createInfo(req):
     info_value = req.a[2]
     rcv = createInfo(info_name, max_len, info_value)
     return rcv
+def handle_echo(req):
+    state = req.a[0]
+    rcv = echo(state)
+    return rcv
 
 
 def hardware_servers(op):
@@ -67,6 +71,9 @@ def hardware_servers(op):
     elif op == "createInfo":
         rospy.loginfo("running createInfo")
         s6 = rospy.Service('createInfo', OmAivService, handle_createInfo)
+    elif op == "echo":
+        rospy.loginfo("running echo")
+        s6 = rospy.Service('echo', OmAivService, handle_echo)
 
 def applicationFaultClear(name):
     command = "applicationFaultClear {}".format(name)
@@ -223,6 +230,30 @@ def createInfo(info_name, max_len, info_value):
         print("Connection  failed")
         return errormsg
 
+def echo(state):
+    command = "echo {}".format(state)
+    print "Running command: ", command
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "Echo is" in rcv:
+                print rcv
+                return rcv
+            if "Echo turned" in rcv:
+                print rcv
+                return rcv
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+
 
 if __name__ == "__main__":
     rospy.init_node('utilities_service_servers')
@@ -232,4 +263,5 @@ if __name__ == "__main__":
     hardware_servers("configAdd")
     hardware_servers("configParse")
     hardware_servers("createInfo")
+    hardware_servers("echo")
     rospy.spin()
