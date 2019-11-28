@@ -3,9 +3,9 @@ import sys
 import rospy
 from om_aiv_util.srv import *
 def analogInputQueryRaw_client(a, b , c, d, e):
-    rospy.wait_for_service('applicationFaultClear')
+    rospy.wait_for_service('applicationFaultSet')
     try:
-        service = rospy.ServiceProxy('applicationFaultClear', Service5)
+        service = rospy.ServiceProxy('applicationFaultSet', Service5)
         resp1 = service(a, b, c, d, e)
         return resp1.device
     except rospy.ServiceException, error:

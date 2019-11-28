@@ -18,24 +18,24 @@ connecttcp.connect(str(ip_address), port)
 from om_aiv_util.srv import Service5,Service5Response
 import rospy
 
-def handle_applicationFaultClear(req):
+def handle_applicationFaultSet(req):
     global a, b, c, d, e
     a = req.a
     b = req.b
     c = req.c
     d = req.d
     e = req.e
-    applicationFaultClear()
+    applicationFaultSet()
     return rcv
 
-def applicationFaultClear_server():
-    rospy.init_node('applicationFaultClear_server')
-    s = rospy.Service('applicationFaultClear', Service5, handle_applicationFaultClear)
+def applicationFaultSet_server():
+    rospy.init_node('applicationFaultSet_server')
+    s = rospy.Service('applicationFaultSet', Service5, handle_applicationFaultSet)
     rospy.spin()
 
-def applicationFaultClear():
+def applicationFaultSet():
     global rcv
-    pub = rospy.Publisher('arcl_applicationFaultClear', String, queue_size=10)
+    pub = rospy.Publisher('arcl_applicationFaultSet', String, queue_size=10)
     rate = rospy.Rate(10) # 10hz
     command = "applicationFaultSet {}".format(a + " " + b + " " + c + " " + d + " " + e)
     command = command.encode('ascii')
@@ -63,4 +63,4 @@ def applicationFaultClear():
         return errormsg
 
 if __name__ == "__main__":
-    applicationFaultClear_server()
+    applicationFaultSet_server()
