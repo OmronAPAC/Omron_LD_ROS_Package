@@ -2,11 +2,11 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def analogInputQueryRaw_client(x):
+def applicationFaultClear_client(array):
     rospy.wait_for_service('applicationFaultClear')
     try:
-        service = rospy.ServiceProxy('applicationFaultClear', Service)
-        resp1 = service(x)
+        service = rospy.ServiceProxy('applicationFaultClear', OmAivService)
+        resp1 = service(array)
         return resp1.device
     except rospy.ServiceException, e:
         print "Service call failed: %s"%e
@@ -22,4 +22,4 @@ if __name__ == "__main__":
         print usage()
         sys.exit(1)
     print "running command"
-    print analogInputQueryRaw_client(array)
+    print applicationFaultClear_client(array)
