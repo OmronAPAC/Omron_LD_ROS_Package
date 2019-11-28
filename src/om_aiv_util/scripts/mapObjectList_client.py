@@ -2,11 +2,11 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def mapObjectList_client(x):
+def mapObjectList_client(array):
     rospy.wait_for_service('mapObjectList')
     try:
-        service = rospy.ServiceProxy('mapObjectList', Service)
-        resp1 = service(x)
+        service = rospy.ServiceProxy('mapObjectList', OmAivService)
+        resp1 = service(array)
         return resp1.device
     except rospy.ServiceException, e:
         print "Service call failed: %s"%e
@@ -16,9 +16,10 @@ def usage():
 
 if __name__ == "__main__":
     if len(sys.argv) == 2:
-        x = str(sys.argv[1])
+        type = str(sys.argv[1])
+        array = [type]
     else:
         print usage()
         sys.exit(1)
     print "running command"
-    print mapObjectList_client(x)
+    print mapObjectList_client(array)

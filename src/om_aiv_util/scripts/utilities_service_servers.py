@@ -90,6 +90,10 @@ def handle_mapObjectInfo(req):
     name = req.a[0]
     rcv = mapObjectInfo(name)
     return rcv
+def handle_mapObjectList(req):
+    type = req.a[0]
+    rcv = mapObjectList(type)
+    return rcv
 
 def utilities_servers(op):
     if op == "applicationFaultClear":
@@ -146,6 +150,9 @@ def utilities_servers(op):
     elif op == "mapObjectInfo":
         rospy.loginfo("running mapObjectInfo")
         s17 = rospy.Service('mapObjectInfo', OmAivService, handle_mapObjectInfo)
+    elif op == "mapObjectList":
+        rospy.loginfo("running mapObjectList")
+        s18 = rospy.Service('mapObjectList', OmAivService, handle_mapObjectList)
 
 
 def applicationFaultClear(name):
@@ -579,6 +586,26 @@ def mapObjectInfo(name):
         print("Connection  failed")
         return e
 
+def mapObjectList(type):
+    command = "mapObjectList {}".format(type)
+    command = command.encode('ascii')
+    print "Running command: ", command
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "End of MapObjectList" in rcv:
+                print rcv
+                return rcv
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
 
 if __name__ == "__main__":
     rospy.init_node('utilities_service_servers')
@@ -600,4 +627,5 @@ if __name__ == "__main__":
     utilities_servers("help")
     utilities_servers("log")
     utilities_servers("mapObjectInfo")
+    utilities_servers("mapObjectList")
     rospy.spin()
