@@ -129,6 +129,13 @@ def handle_popupSimple(req):
 def handle_quit(req):
     rcv = quit()
     return rcv
+def handle_say(req):
+    text_str = req.a[0]
+    rcv = say(text_str)
+    return rcv
+def handle_shutdown(req):
+    rcv = shutdown()
+    return rcv
 
 def utilities_servers(op):
     if op == "applicationFaultClear":
@@ -206,6 +213,12 @@ def utilities_servers(op):
     elif op == "quit":
         rospy.loginfo("running quit")
         s24 = rospy.Service('quit', OmAivService, handle_quit)
+    elif op == "say":
+        rospy.loginfo("running say")
+        s25 = rospy.Service('say', OmAivService, handle_say)
+    elif op == "shutdown":
+        rospy.loginfo("running shutdown")
+        s26 = rospy.Service('shutdown', OmAivService, handle_shutdown)
 
 def applicationFaultClear(name):
     command = "applicationFaultClear {}".format(name)
@@ -799,6 +812,48 @@ def quit():
         print("Connection  failed")
         return e
 
+def say(text_str):
+    command = "say {}".format(text_str)
+    command = command.encode('ascii')
+    print "Running command: ", command
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "Saying" in rcv:
+                print rcv
+                return rcv
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+
+def shutdown():
+    command = "shutdown"
+    print "Running command: ", command
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "Shutting down" in rcv:
+                print rcv
+                return rcv
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+
 
 if __name__ == "__main__":
     rospy.init_node('utilities_service_servers')
@@ -827,4 +882,6 @@ if __name__ == "__main__":
     utilities_servers("newConfigSectionComment")
     utilities_servers("popupSimple")
     utilities_servers("quit")
+    utilities_servers("say")
+    utilities_servers("shutdown")
     rospy.spin()

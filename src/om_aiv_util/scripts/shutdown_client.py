@@ -2,11 +2,11 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def shutdown_client(x):
+def shutdown_client():
     rospy.wait_for_service('shutdown')
     try:
-        service = rospy.ServiceProxy('shutdown', Service)
-        resp1 = service(x)
+        service = rospy.ServiceProxy('shutdown', OmAivService)
+        resp1 = service()
         return resp1.device
     except rospy.ServiceException, e:
         print "Service call failed: %s"%e
@@ -16,9 +16,9 @@ def usage():
 
 if __name__ == "__main__":
     if len(sys.argv) == 1:
-        x = ""
+        pass
     else:
         print usage()
         sys.exit(1)
     print "running command"
-    print shutdown_client(x)
+    print shutdown_client()
