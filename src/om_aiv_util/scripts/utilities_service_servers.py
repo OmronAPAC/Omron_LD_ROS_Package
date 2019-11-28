@@ -81,6 +81,11 @@ def handle_getInfoList(req):
 def handle_help(req):
     rcv = help()
     return rcv
+def handle_log(req):
+    message = req.a[0]
+    level = req.a[1]
+    rcv = log(message, level)
+    return rcv
 
 def utilities_servers(op):
     if op == "applicationFaultClear":
@@ -131,6 +136,9 @@ def utilities_servers(op):
     elif op == "help":
         rospy.loginfo("running help")
         s15 = rospy.Service('help', OmAivService, handle_help)
+    elif op == "log":
+        rospy.loginfo("running log")
+        s16 = rospy.Service('log', OmAivService, handle_log)
 
 def applicationFaultClear(name):
     command = "applicationFaultClear {}".format(name)
@@ -518,6 +526,30 @@ def help():
         print("Connection  failed")
         return e
 
+def log(message, level):
+    command = "log {}".format(message + " " + level)
+    command = command.encode('ascii')
+    print "Running command: ", command
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "Logging" in rcv:
+                print rcv
+                return rcv
+            if "CommandErrorDescription" in rcv:
+                print rcv
+                return rcv
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as errormsg:
+        print("Connection  failed")
+        return errormsg
+
 
 if __name__ == "__main__":
     rospy.init_node('utilities_service_servers')
@@ -537,4 +569,5 @@ if __name__ == "__main__":
     utilities_servers("getDataStoreTripGroupList")
     utilities_servers("getInfoList")
     utilities_servers("help")
+    utilities_servers("log")
     rospy.spin()
