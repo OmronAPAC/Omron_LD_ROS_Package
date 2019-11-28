@@ -2,11 +2,11 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def newConfigSectionComment_client(a, b):
+def newConfigSectionComment_client(array):
     rospy.wait_for_service('newConfigSectionComment')
     try:
-        service = rospy.ServiceProxy('newConfigSectionComment', Service2)
-        resp1 = service(a, b)
+        service = rospy.ServiceProxy('newConfigSectionComment', OmAivService)
+        resp1 = service(array)
         return resp1.device
     except rospy.ServiceException, error:
         print "Service call failed: %s"%error
@@ -16,10 +16,11 @@ def usage():
 
 if __name__ == "__main__":
     if len(sys.argv) == 3:
-        a = str(sys.argv[1])
-        b = str(sys.argv[2])
+        section = str(sys.argv[1])
+        comment = str(sys.argv[2])
+        array = [section, comment]
     else:
         print usage()
         sys.exit(1)
     print "running command"
-    print newConfigSectionComment_client(a, b)
+    print newConfigSectionComment_client(array)

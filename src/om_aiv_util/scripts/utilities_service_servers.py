@@ -114,6 +114,11 @@ def handle_newConfigParam(req):
     rcv = newConfigParam(section, name, description, priority_level,
     type, default_value, min, max, display_hint)
     return rcv
+def handle_newConfigSectionComment(req):
+    section = req.a[0]
+    comment = req.a[1]
+    rcv = newConfigSectionComment(section, comment)
+    return rcv
 
 def utilities_servers(op):
     if op == "applicationFaultClear":
@@ -182,6 +187,9 @@ def utilities_servers(op):
     elif op == "newConfigParam":
         rospy.loginfo("running newConfigParam")
         s21 = rospy.Service('newConfigParam', OmAivService, handle_newConfigParam)
+    elif op == "newConfigSectionComment":
+        rospy.loginfo("running newConfigSectionComment")
+        s22 = rospy.Service('newConfigSectionComment', OmAivService, handle_newConfigSectionComment)
 
 
 def applicationFaultClear(name):
@@ -706,6 +714,30 @@ def newConfigParam(section, name, description, priority_level, type, default_val
         print("Connection  failed")
         return errormsg
 
+def newConfigSectionComment(section, comment):
+    command = "newConfigSectionComment {}".format(section + " " + comment)
+    command = command.encode('ascii')
+    print "Running command: ", command
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "Will add config comment" in rcv:
+                print rcv
+                return rcv
+            if "CommandErrorDescription" in rcv:
+                print rcv
+                return rcv
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as errormsg:
+        print("Connection  failed")
+        return errormsg
+
 
 if __name__ == "__main__":
     rospy.init_node('utilities_service_servers')
@@ -731,4 +763,5 @@ if __name__ == "__main__":
     utilities_servers("mapObjectTypeInfo")
     utilities_servers("mapObjectTypeList")
     utilities_servers("newConfigParam")
+    utilities_servers("newConfigSectionComment")
     rospy.spin()
