@@ -2,11 +2,11 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def newConfigParam_client(a, b , c, d, e, f, g, h, i):
+def newConfigParam_client(array):
     rospy.wait_for_service('newConfigParam')
     try:
-        service = rospy.ServiceProxy('newConfigParam', Service9)
-        resp1 = service(a, b, c, d, e, f, g, h, i)
+        service = rospy.ServiceProxy('newConfigParam', OmAivService)
+        resp1 = service(array)
         return resp1.device
     except rospy.ServiceException, error:
         print "Service call failed: %s"%error
@@ -16,18 +16,18 @@ def usage():
 
 if __name__ == "__main__":
     if len(sys.argv) == 10:
-        a = str(sys.argv[1])
-        b = str(sys.argv[2])
-        c = str(sys.argv[3])
-        d = str(sys.argv[4])
-        e = str(sys.argv[5])
-        f = str(sys.argv[6])
-        g = str(sys.argv[7])
-        h = str(sys.argv[8])
-        i = str(sys.argv[9])
-
+        section = str(sys.argv[1])
+        name = str(sys.argv[2])
+        description = str(sys.argv[3])
+        priority_level = str(sys.argv[4])
+        type = str(sys.argv[5])
+        default_value = str(sys.argv[6])
+        min = str(sys.argv[7])
+        max = str(sys.argv[8])
+        display_hint = str(sys.argv[9])
+        array = [section, name, description, priority_level, type, default_value, min, max, display_hint]
     else:
         print usage()
         sys.exit(1)
     print "running command"
-    print newConfigParam_client(a, b , c, d, e, f, g, h, i)
+    print newConfigParam_client(array)

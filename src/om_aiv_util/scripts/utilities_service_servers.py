@@ -101,6 +101,19 @@ def handle_mapObjectTypeInfo(req):
 def handle_mapObjectTypeList(req):
     rcv = mapObjectTypeList()
     return rcv
+def handle_newConfigParam(req):
+    section = req.a[0]
+    name = req.a[1]
+    description = req.a[2]
+    priority_level = req.a[3]
+    type = req.a[4]
+    default_value = req.a[5]
+    min = req.a[6]
+    max = req.a[7]
+    display_hint = req.a[8]
+    rcv = newConfigParam(section, name, description, priority_level,
+    type, default_value, min, max, display_hint)
+    return rcv
 
 def utilities_servers(op):
     if op == "applicationFaultClear":
@@ -166,6 +179,9 @@ def utilities_servers(op):
     elif op == "mapObjectTypeList":
         rospy.loginfo("running mapObjectTypeList")
         s20 = rospy.Service('mapObjectTypeList', OmAivService, handle_mapObjectTypeList)
+    elif op == "newConfigParam":
+        rospy.loginfo("running newConfigParam")
+        s21 = rospy.Service('newConfigParam', OmAivService, handle_newConfigParam)
 
 
 def applicationFaultClear(name):
@@ -665,6 +681,32 @@ def mapObjectTypeList():
         print("Connection  failed")
         return e
 
+def newConfigParam(section, name, description, priority_level, type, default_value, min, max, display_hint):
+    command = "newConfigParam {}".format(section + " " + name + " \"" + description + "\" " + priority_level
+     + " " + type + " \"" + default_value + "\" " + min + " " + max + " \"" + display_hint + "\"")
+    command = command.encode('ascii')
+    print "Running command: ", command
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "Will add new param" in rcv:
+                print rcv
+                return rcv
+            if "CommandErrorDescription" in rcv:
+                print rcv
+                return rcv
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as errormsg:
+        print("Connection  failed")
+        return errormsg
+
+
 if __name__ == "__main__":
     rospy.init_node('utilities_service_servers')
     utilities_servers("applicationFaultClear")
@@ -688,4 +730,5 @@ if __name__ == "__main__":
     utilities_servers("mapObjectList")
     utilities_servers("mapObjectTypeInfo")
     utilities_servers("mapObjectTypeList")
+    utilities_servers("newConfigParam")
     rospy.spin()
