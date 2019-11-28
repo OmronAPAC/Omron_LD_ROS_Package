@@ -26,7 +26,11 @@ def handle_applicationFaultSet(req):
     long_description = req.a[2]
     bool_driving = req.a[3]
     bool_critical = req.a[4]
-    applicationFaultSet(name, short_description, long_description, bool_driving, bool_critical)
+    rcv = applicationFaultSet(name, short_description, long_description, bool_driving, bool_critical)
+    return rcv
+def handle_arclSendText(req):
+    string = req.a[0]
+    rcv = arclSendText(string)
     return rcv
 
 def hardware_servers(op):
@@ -36,6 +40,9 @@ def hardware_servers(op):
     elif op == "applicationFaultSet":
         rospy.loginfo("running applicationFaultSet")
         s2 = rospy.Service('applicationFaultSet', OmAivService, handle_applicationFaultSet)
+    elif op == "arclSendText":
+        rospy.loginfo("running arclSendText")
+        s2 = rospy.Service('arclSendText', OmAivService, handle_arclSendText)
 
 def applicationFaultClear(name):
     command = "applicationFaultClear {}".format(name)
@@ -64,9 +71,6 @@ def applicationFaultClear(name):
         return e
 
 def applicationFaultSet(name, short_description, long_description, bool_driving, bool_critical):
-    global rcv
-    pub = rospy.Publisher('arcl_applicationFaultSet', String, queue_size=10)
-    rate = rospy.Rate(10) # 10hz
     command = "applicationFaultSet {}".format(name + " " + short_description
     + " " + long_description + " " + bool_driving + " " + bool_critical)
     command = command.encode('ascii')
@@ -93,9 +97,36 @@ def applicationFaultSet(name, short_description, long_description, bool_driving,
         print("Connection  failed")
         return errormsg
 
+def arclSendText(string):
+    command = "arclSendText {}".format(string)
+    command = command.encode('ascii')
+    print "Running command: ", command
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if string in rcv:
+                print rcv
+                return rcv
+                break
+            if "CommandErrorDescription" in rcv:
+                print rcv
+                return rcv
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+
 
 if __name__ == "__main__":
     rospy.init_node('utilities_service_servers')
     hardware_servers("applicationFaultClear")
     hardware_servers("applicationFaultSet")
+    hardware_servers("arclSendText")
     rospy.spin()
