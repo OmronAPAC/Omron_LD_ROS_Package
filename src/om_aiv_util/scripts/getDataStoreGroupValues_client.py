@@ -2,11 +2,11 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def getDataStoreGroupValues_client(x):
+def getDataStoreGroupValues_client(array):
     rospy.wait_for_service('getDataStoreGroupValues')
     try:
-        service = rospy.ServiceProxy('getDataStoreGroupValues', Service)
-        resp1 = service(x)
+        service = rospy.ServiceProxy('getDataStoreGroupValues', OmAivService)
+        resp1 = service(array)
         return resp1.device
     except rospy.ServiceException, e:
         print "Service call failed: %s"%e
@@ -16,10 +16,10 @@ def usage():
 
 if __name__ == "__main__":
     if len(sys.argv) == 2:
-        x = str(sys.argv[1])
+        group = str(sys.argv[1])
+        array = [group]
     else:
         print usage()
         sys.exit(1)
     print "running command"
-    # print "Requesting", x
-    print getDataStoreGroupValues_client(x)
+    print getDataStoreGroupValues_client(array)
