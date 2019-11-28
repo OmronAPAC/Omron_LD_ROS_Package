@@ -72,6 +72,9 @@ def handle_getDataStoreGroupValues(req):
     group = req.a[0]
     rcv = getDataStoreGroupValues(group)
     return rcv
+def handle_getDataStoreTripGroupList(req):
+    rcv = getDataStoreTripGroupList()
+    return rcv
 
 def utilities_servers(op):
     if op == "applicationFaultClear":
@@ -113,6 +116,9 @@ def utilities_servers(op):
     elif op == "getDataStoreGroupValues":
         rospy.loginfo("running getDataStoreGroupValues")
         s13 = rospy.Service('getDataStoreGroupValues', OmAivService, handle_getDataStoreGroupValues)
+    elif op == "getDataStoreTripGroupList":
+        rospy.loginfo("running getDataStoreTripGroupList")
+        s14 = rospy.Service('getDataStoreTripGroupList', OmAivService, handle_getDataStoreTripGroupList)
 
 def applicationFaultClear(name):
     command = "applicationFaultClear {}".format(name)
@@ -437,6 +443,28 @@ def getDataStoreGroupValues(group):
         print("Connection  failed")
         return e
 
+def getDataStoreTripGroupList():
+    command = "getDataStoreTripGroupList"
+    print "Running command: ", command
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "EndOfGetDataStoreTripGroupList" in rcv:
+                print rcv
+                return rcv
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+
+
 
 if __name__ == "__main__":
     rospy.init_node('utilities_service_servers')
@@ -453,4 +481,5 @@ if __name__ == "__main__":
     utilities_servers("getDataStoreGroupInfo")
     utilities_servers("getDataStoreGroupList")
     utilities_servers("getDataStoreGroupValues")
+    utilities_servers("getDataStoreTripGroupList")
     rospy.spin()
