@@ -32,6 +32,11 @@ def handle_arclSendText(req):
     string = req.a[0]
     rcv = arclSendText(string)
     return rcv
+def handle_configAdd(req):
+    configuration_section = req.a[0]
+    value = req.a[1]
+    rcv = configAdd(configuration_section, value)
+    return rcv
 
 def hardware_servers(op):
     if op == "applicationFaultClear":
@@ -43,6 +48,9 @@ def hardware_servers(op):
     elif op == "arclSendText":
         rospy.loginfo("running arclSendText")
         s2 = rospy.Service('arclSendText', OmAivService, handle_arclSendText)
+    elif op == "configAdd":
+        rospy.loginfo("running configAdd")
+        s2 = rospy.Service('configAdd', OmAivService, handle_configAdd)
 
 def applicationFaultClear(name):
     command = "applicationFaultClear {}".format(name)
@@ -123,10 +131,37 @@ def arclSendText(string):
         print("Connection  failed")
         return e
 
+def configAdd(configuration_section, value):
+    command = "configAdd {}".format(configuration_section + " " + value)
+    command = command.encode('ascii')
+    print "Running command: ", command
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "Added" in rcv:
+                print rcv
+                return rcv
+                break
+            if "CommandErrorDescription" in rcv:
+                print rcv
+                return rcv
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as errormsg:
+        print("Connection  failed")
+        return errormsg
+
 
 if __name__ == "__main__":
     rospy.init_node('utilities_service_servers')
     hardware_servers("applicationFaultClear")
     hardware_servers("applicationFaultSet")
     hardware_servers("arclSendText")
+    hardware_servers("configAdd")
     rospy.spin()

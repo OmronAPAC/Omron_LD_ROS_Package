@@ -12,7 +12,7 @@ def configAdd_client(array):
         print "Service call failed: %s"%error
 
 def usage():
-    return "%s <configuration> <value>"%sys.argv[0]
+    return "%s <configuration> <value> or <section>"%sys.argv[0]
 
 if __name__ == "__main__":
     if len(sys.argv) == 3:
@@ -21,8 +21,8 @@ if __name__ == "__main__":
         array = [configuration, value]
     elif len(sys.argv) == 2:
         section = str(sys.argv[1])
-        # b = ""
-        array = [section]
+        nil = ""
+        array = [section, nil]
     else:
         print usage()
         sys.exit(1)
