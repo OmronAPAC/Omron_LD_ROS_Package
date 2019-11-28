@@ -21,7 +21,6 @@ def handle_waitTaskCancel(req):
     global fault
     fault = req.a
     waitTaskCancel()
-    # return ServiceResponse(req.a)
     return rcv
 
 def waitTaskCancel_server():

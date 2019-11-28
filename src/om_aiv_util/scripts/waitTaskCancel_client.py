@@ -2,11 +2,11 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def waitTaskCancel_client(x):
+def waitTaskCancel_client():
     rospy.wait_for_service('waitTaskCancel')
     try:
-        add_two_ints = rospy.ServiceProxy('waitTaskCancel', Service)
-        resp1 = add_two_ints(x)
+        add_two_ints = rospy.ServiceProxy('waitTaskCancel', OmAivService)
+        resp1 = add_two_ints()
         return resp1.device
     except rospy.ServiceException, e:
         print "Service call failed: %s"%e
@@ -16,10 +16,9 @@ def usage():
 
 if __name__ == "__main__":
     if len(sys.argv) == 1:
-        x = ""
+        pass
     else:
         print usage()
         sys.exit(1)
     print "running command"
-    # print "Requesting", x
-    print waitTaskCancel_client(x)
+    print waitTaskCancel_client()
