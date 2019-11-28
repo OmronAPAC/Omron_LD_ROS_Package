@@ -57,6 +57,10 @@ def handle_getDataStoreFieldInfo(req):
 def handle_getDataStoreFieldList(req):
     rcv = getDataStoreFieldList()
     return rcv
+def handle_getDataStoreFieldValues(req):
+    field = req.a[0]
+    rcv = getDataStoreFieldValues(field)
+    return rcv
 
 
 def hardware_servers(op):
@@ -87,6 +91,9 @@ def hardware_servers(op):
     elif op == "getDataStoreFieldList":
         rospy.loginfo("running getDataStoreFieldList")
         s9 = rospy.Service('getDataStoreFieldList', OmAivService, handle_getDataStoreFieldList)
+    elif op == "getDataStoreFieldValues":
+        rospy.loginfo("running getDataStoreFieldvalues")
+        s10 = rospy.Service('getDataStoreFieldValues', OmAivService, handle_getDataStoreFieldValues)
 
 def applicationFaultClear(name):
     command = "applicationFaultClear {}".format(name)
@@ -318,6 +325,29 @@ def getDataStoreFieldList():
         print("Connection  failed")
         return e
 
+def getDataStoreFieldValues(field):
+    command = "getDataStoreFieldValues {}".format(field)
+    command = command.encode('ascii')
+    print "Running command: ", command
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "EndOfGetDataStoreFieldValues" in rcv:
+                print rcv
+                return rcv
+            if "CommandErrorDescription" in rcv:
+                print rcv
+                return rcv
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
 
 
 if __name__ == "__main__":
@@ -331,4 +361,5 @@ if __name__ == "__main__":
     hardware_servers("echo")
     hardware_servers("getDataStoreFieldInfo")
     hardware_servers("getDataStoreFieldList")
+    hardware_servers("getDataStoreFieldValues")
     rospy.spin()
