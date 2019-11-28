@@ -16,21 +16,15 @@ def usage():
 
 if __name__ == "__main__":
     if len(sys.argv) == 5:
-        a = str(sys.argv[1])
-        b = str(sys.argv[2])
-        c = str(sys.argv[3])
-        d = str(sys.argv[4])
+        type = str(sys.argv[1])
+        value = str(sys.argv[2])
+        echo_str = str(sys.argv[3])
+        reason = str(sys.argv[4])
     elif len(sys.argv) == 3:
-        a = str(sys.argv[1])
-        b = str(sys.argv[2])
-        c = ""
-        d = ""
-    elif len(sys.argv) == 2:
-        a = str(sys.argv[1])
-        b = ""
-        c = ""
-        d = ""
-
+        type = str(sys.argv[1])
+        value = str(sys.argv[2])
+        nil = ""
+        nil2 = ""
     else:
         print usage()
         sys.exit(1)

@@ -126,6 +126,9 @@ def handle_popupSimple(req):
     timeout = req.a[3]
     rcv = popupSimple(title, message, button_label, timeout)
     return rcv
+def handle_quit(req):
+    rcv = quit()
+    return rcv
 
 def utilities_servers(op):
     if op == "applicationFaultClear":
@@ -200,7 +203,9 @@ def utilities_servers(op):
     elif op == "popupSimple":
         rospy.loginfo("running popupSimple")
         s23 = rospy.Service('popupSimple', OmAivService, handle_popupSimple)
-
+    elif op == "quit":
+        rospy.loginfo("running quit")
+        s24 = rospy.Service('quit', OmAivService, handle_quit)
 
 def applicationFaultClear(name):
     command = "applicationFaultClear {}".format(name)
@@ -773,6 +778,27 @@ def popupSimple(title, message, button_label, timeout):
         print("Connection  failed")
         return errormsg
 
+def quit():
+    command = "quit"
+    print "Running command: ", command
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "Closing connection" in rcv:
+                print rcv
+                return rcv
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+
 
 if __name__ == "__main__":
     rospy.init_node('utilities_service_servers')
@@ -800,4 +826,5 @@ if __name__ == "__main__":
     utilities_servers("newConfigParam")
     utilities_servers("newConfigSectionComment")
     utilities_servers("popupSimple")
+    utilities_servers("quit")
     rospy.spin()
