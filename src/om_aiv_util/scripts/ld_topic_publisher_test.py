@@ -35,7 +35,6 @@ rospy.init_node('ld_topic_publisher', anonymous=True)
 
 def applicationFaultQuery(command):
     #specify topic name
-    # command = 'applicationFaultQuery'
     topic_name = "ldarcl_{}".format(command)
     pub = rospy.Publisher(topic_name, String, queue_size=10)
     #specify node name
@@ -43,7 +42,6 @@ def applicationFaultQuery(command):
     print(Fore.GREEN)
     print "Getting list of application faults..."
     #send command to arcl
-    command = "applicationFaultQuery"
     command = command.encode('ascii')
     s.send(command+b"\r\n")
     try:
@@ -51,24 +49,23 @@ def applicationFaultQuery(command):
         rcv = data.encode('ascii', 'ignore')
         while not rospy.is_shutdown():
             #keep receiving data until require data is received
-            if "End of ApplicationFaultQuery" in rcv:
+            if "End of ".format(command) in rcv:
+                print "{}:".format(command)
                 break
             else:
                 data = s.recv(BUFFER_SIZE)
                 rcv = rcv + data.encode('ascii', 'ignore')
-
     except socket.error as e:
         print("Connection  failed")
         return e
     #check for required data
     for line in rcv.splitlines():
-        if 'ApplicationFaultQuery:' in line:
+        if "{}:".format(command) in line:
             applicationFaultQuery = line.split("ApplicationFaultQuery:")
             #print required data
             rospy.loginfo(",ApplicationFaultQuery:".join(applicationFaultQuery)[1:])
             #publish data
             pub.publish(''.join(applicationFaultQuery))
-            rate.sleep()
             break
         #if there are no faults print "Np faults"
         if 'ApplicationFaultQuery:' not in line:
@@ -475,7 +472,7 @@ def waitTaskState():
 if __name__ == '__main__':
     try:
         while not rospy.is_shutdown():
-            applicationFaultQuery('applicationFaultQuery')
+            applicationFaultQuery('ApplicationFaultQuery')
             faultsGet()
             getDateTime()
             getGoals()
