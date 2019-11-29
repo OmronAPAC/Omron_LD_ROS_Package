@@ -29,54 +29,59 @@ port = rospy.get_param("port")
 
 # ip_address = "172.21.5.123"
 # port = 7171
-
 connecttcp.connect(str(ip_address), port)
 rospy.init_node('ld_topic_publisher', anonymous=True)
 
-def applicationFaultQuery(command):
+def applicationFaultQuery(command, command2, text):
     #specify topic name
     topic_name = "ldarcl_{}".format(command)
     pub = rospy.Publisher(topic_name, String, queue_size=10)
     #specify node name
     print(Style.RESET_ALL)
     print(Fore.GREEN)
-    print "Getting list of application faults..."
+    print "Running command: ", command
     #send command to arcl
     command = command.encode('ascii')
     s.send(command+b"\r\n")
     try:
         data = s.recv(BUFFER_SIZE)
         rcv = data.encode('ascii', 'ignore')
+        # currtime = time.time()   # 5 minutes from now
+        # print currtime
         while not rospy.is_shutdown():
             #keep receiving data until require data is received
-            if "End of ".format(command) in rcv:
-                print "{}:".format(command)
+            if "End of {}".format(command2) in rcv:
                 break
+            if "Unknown command {}".format(command) in rcv:
+                rospy.logerr(rcv)
+                return rcv
             else:
+                # print time.time()
+                # if time.time() - currtime > TIMEOUT:
+                #     break
                 data = s.recv(BUFFER_SIZE)
                 rcv = rcv + data.encode('ascii', 'ignore')
+                # print rcv
     except socket.error as e:
         print("Connection  failed")
         return e
     #check for required data
     for line in rcv.splitlines():
         if "{}:".format(command) in line:
-            applicationFaultQuery = line.split("ApplicationFaultQuery:")
+            cmd = line.split("{}:".format(command))
             #print required data
-            rospy.loginfo(",ApplicationFaultQuery:".join(applicationFaultQuery)[1:])
+            rospy.loginfo(",{}:".format(command).join(cmd)[1:])
             #publish data
-            pub.publish(''.join(applicationFaultQuery))
+            pub.publish(''.join(cmd))
             break
         #if there are no faults print "Np faults"
-        if 'ApplicationFaultQuery:' not in line:
-            rospy.loginfo("No faults")
-            pub.publish("No faults")
+        if "{}:".format(command) not in line:
+            rospy.loginfo(text)
+            pub.publish(text)
             # rate.sleep()
 
-def faultsGet():
+def faultsGet(command, command2, text):
     pub = rospy.Publisher('ldarcl_faultsGet', String, queue_size=10)
-    # rospy.init_node('ld_topic_publisher', anonymous=True)
-    # rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
     print(Fore.YELLOW)
     print "Getting list of faults..."
@@ -472,7 +477,7 @@ def waitTaskState():
 if __name__ == '__main__':
     try:
         while not rospy.is_shutdown():
-            applicationFaultQuery('ApplicationFaultQuery')
+            applicationFaultQuery('ApplicationFaultQuey', 'ApplicationFaultQuery: No Faults')
             faultsGet()
             getDateTime()
             getGoals()
