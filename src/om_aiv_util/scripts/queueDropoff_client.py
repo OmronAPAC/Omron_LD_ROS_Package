@@ -2,11 +2,11 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def queueDropoff_client(a, b , c):
+def queueDropoff_client(array):
     rospy.wait_for_service('queueDropoff')
     try:
-        service = rospy.ServiceProxy('queueDropoff', Service3)
-        resp1 = service(a, b, c)
+        service = rospy.ServiceProxy('queueDropoff', OmAivService)
+        resp1 = service(array)
         return resp1.device
     except rospy.ServiceException, error:
         print "Service call failed: %s"%error
@@ -16,15 +16,17 @@ def usage():
 
 if __name__ == "__main__":
     if len(sys.argv) == 4:
-        a = str(sys.argv[1])
-        b = str(sys.argv[2])
-        c = str(sys.argv[3])
+        goal_name = str(sys.argv[1])
+        priority = str(sys.argv[2])
+        job_id = str(sys.argv[3])
+        array = [goal_name, priority, job_id]
     elif len(sys.argv) == 2:
-        a = str(sys.argv[1])
-        b = ""
-        c = ""
+        goal_name = str(sys.argv[1])
+        nil = ""
+        nil2 = ""
+        array = [goal_name, nil, nil2]
     else:
         print usage()
         sys.exit(1)
     print "running command"
-    print queueDropoff_client(a, b , c)
+    print queueDropoff_client(array)
