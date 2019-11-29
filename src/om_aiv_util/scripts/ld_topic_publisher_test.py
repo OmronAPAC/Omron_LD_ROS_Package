@@ -33,9 +33,9 @@ port = rospy.get_param("port")
 connecttcp.connect(str(ip_address), port)
 rospy.init_node('ld_topic_publisher', anonymous=True)
 
-def applicationFaultQuery():
+def applicationFaultQuery(command):
     #specify topic name
-    command = 'applicationFaultQuery'
+    # command = 'applicationFaultQuery'
     topic_name = "ldarcl_{}".format(command)
     pub = rospy.Publisher(topic_name, String, queue_size=10)
     #specify node name
@@ -475,7 +475,7 @@ def waitTaskState():
 if __name__ == '__main__':
     try:
         while not rospy.is_shutdown():
-            applicationFaultQuery()
+            applicationFaultQuery('applicationFaultQuery')
             faultsGet()
             getDateTime()
             getGoals()
