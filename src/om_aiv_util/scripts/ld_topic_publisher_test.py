@@ -78,7 +78,6 @@ def applicationFaultQuery(command, command2, text):
         if "{}:".format(command) not in line:
             rospy.loginfo(text)
             pub.publish(text)
-            # rate.sleep()
 
 def faultsGet(command, command2, text):
     pub = rospy.Publisher('ldarcl_faultsGet', String, queue_size=10)
@@ -145,7 +144,6 @@ def getDateTime():
             getDateTime = line.split("DateTime:")
             rospy.loginfo(",DateTime:".join(getDateTime)[1:])
             pub.publish(''.join(getDateTime))
-            # rate.sleep()
 
 def getGoals():
     pub = rospy.Publisher('ldarcl_getGoals', String, queue_size=10)
@@ -480,9 +478,9 @@ if __name__ == '__main__':
             applicationFaultQuery('ApplicationFaultQuey', 'ApplicationFaultQuery: No Faults')
             faultsGet()
             getDateTime()
-            getGoals()
-            getMacros()
-            getRoutes()
+            # getGoals()
+            # getMacros()
+            # getRoutes()
             odometer()
             oneLineStatus()
             queryDockStatus()

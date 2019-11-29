@@ -75,6 +75,9 @@ def handle_getDataStoreGroupValues(req):
 def handle_getDataStoreTripGroupList(req):
     rcv = getDataStoreTripGroupList()
     return rcv
+def handle_getGoals(req):
+    rcv = getGoals()
+    return rcv
 def handle_getInfoList(req):
     rcv = getInfoList()
     return rcv
@@ -239,6 +242,9 @@ def utilities_servers(op):
     elif op == "waitTaskCancel":
         rospy.loginfo("running waitTaskCancel")
         s29 = rospy.Service('waitTaskCancel', OmAivService, handle_waitTaskCancel)
+    elif op == "getGoals":
+        rospy.loginfo("running getGoals")
+        s30 = rospy.Service('getGoals', OmAivService, handle_getGoals)
 
 def applicationFaultClear(name):
     command = "applicationFaultClear {}".format(name)
@@ -580,6 +586,25 @@ def getDataStoreTripGroupList():
                 data = s.recv(BUFFER_SIZE)
                 rcv = rcv + data.encode('ascii', 'ignore')
 
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+
+def getGoals():
+    command = "getGoals"
+    print "Running command: ", command
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "End of goals" in rcv:
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
     except socket.error as e:
         print("Connection  failed")
         return e
@@ -956,6 +981,7 @@ if __name__ == "__main__":
     utilities_servers("getDataStoreGroupList")
     utilities_servers("getDataStoreGroupValues")
     utilities_servers("getDataStoreTripGroupList")
+    utilities_servers("getGoals")
     utilities_servers("getInfoList")
     utilities_servers("help")
     utilities_servers("log")

@@ -32,7 +32,7 @@ port = rospy.get_param("port")
 connecttcp.connect(str(ip_address), port)
 rospy.init_node('ld_topic_publisher', anonymous=True)
 
-def runCommand(command, command2, text):
+def runCommand(command, command2, command3, text):
     #specify topic name
     topic_name = "ldarcl_{}".format(command)
     pub = rospy.Publisher(topic_name, String, queue_size=10)
@@ -48,7 +48,7 @@ def runCommand(command, command2, text):
         rcv = data.encode('ascii', 'ignore')
         while not rospy.is_shutdown():
             #keep receiving data until require data is received
-            if "End of {}".format(command2) in rcv:
+            if command2 in rcv:
                 break
             if "Unknown command {}".format(command) in rcv:
                 rospy.logerr(rcv)
@@ -61,65 +61,32 @@ def runCommand(command, command2, text):
         return e
     #check for required data
     for line in rcv.splitlines():
-        if "{}:".format(command2) in line:
-            cmd = line.split("{}:".format(command2))
-            #print required data
-            rospy.loginfo(",{}:".format(command2).join(cmd)[1:])
-            #publish data
-            pub.publish(''.join(cmd))
-            break
+        if command3 in line:
+            # cmd = line.split("{}:".format(command3))
+            # #print required data
+            # rospy.loginfo(",{}:".format(command3).join(cmd)[1:])
+            # #publish data
+            # pub.publish(''.join(cmd))
+            rospy.loginfo(line)
+            pub.publish(line)
+            if not command == "GetGoals":
+                print "test"
+                break
         #if there are no faults print "Np faults"
-        if "{}:".format(command2) not in line:
+        if command3 not in line:
             rospy.loginfo(text)
             pub.publish(text)
 
-def runCommand(command, command2, text):
-    #specify topic name
-    topic_name = "ldarcl_{}".format(command)
-    pub = rospy.Publisher(topic_name, String, queue_size=10)
-    #specify node name
-    print(Style.RESET_ALL)
-    print(Fore.GREEN)
-    print "Running command: ", command
-    #send command to arcl
-    command = command.encode('ascii')
-    s.send(command+b"\r\n")
-    try:
-        data = s.recv(BUFFER_SIZE)
-        rcv = data.encode('ascii', 'ignore')
-        while not rospy.is_shutdown():
-            #keep receiving data until require data is received
-            if "End of {}".format(command2) in rcv:
-                break
-            if "Unknown command {}".format(command) in rcv:
-                rospy.logerr(rcv)
-                return rcv
-            else:
-                data = s.recv(BUFFER_SIZE)
-                rcv = rcv + data.encode('ascii', 'ignore')
-    except socket.error as e:
-        print("Connection  failed")
-        return e
-    #check for required data
-    for line in rcv.splitlines():
-        if "{}:".format(command2) in line:
-            cmd = line.split("{}:".format(command2))
-            #print required data
-            rospy.loginfo(",{}:".format(command2).join(cmd)[1:])
-            #publish data
-            pub.publish(''.join(cmd))
-            break
-        #if there are no faults print "Np faults"
-        if "{}:".format(command2) not in line:
-            rospy.loginfo(text)
-            pub.publish(text)
 
 
 if __name__ == '__main__':
     try:
         while not rospy.is_shutdown():
-            runCommand('ApplicationFaultQuery', 'ApplicationFaultQuery', 'ApplicationFaultQuery: No Faults')
-            runCommand('FaultsGet', 'FaultList', 'FaultsGet: No Faults')
+            runCommand('ApplicationFaultQuery', 'End of ApplicationFaultQuery', 'ApplicationFaultQuery:', 'ApplicationFaultQuery: No Faults')
+            runCommand('FaultsGet', 'End of FaultList', 'FaultList:', 'FaultsGet: No faults')
+            runCommand('GetDateTime', 'DateTime:', 'DateTime', 'Error, unable to get date and time')
+            runCommand('GetGoals', 'End of goals', 'Goal:', 'No goals found')
+
 
 
     except rospy.ROSInterruptException:
