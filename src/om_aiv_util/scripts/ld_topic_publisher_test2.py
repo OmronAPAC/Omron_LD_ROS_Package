@@ -70,12 +70,10 @@ def runCommand(command, command2, command3, text):
             rospy.loginfo(line)
             pub.publish(line)
             break
-        #if there are no faults print "Np faults"
+        #if no info is returned"
         if command3 not in line:
             rospy.loginfo(text)
             pub.publish(text)
-
-
 
 if __name__ == '__main__':
     try:
@@ -85,7 +83,9 @@ if __name__ == '__main__':
             runCommand('GetDateTime', 'DateTime:', 'DateTime:', 'Error, unable to get date and time')
             runCommand('Odometer', 'Odometer:', 'Odometer:', 'Error, unable to Odometer value')
             runCommand('OneLineStatus', 'Status:', 'Status:', 'Error, unable to get status')
-
-
+            runCommand('QueryDockStatus', 'DockingState:', 'DockingState:', 'Error, unable to get dock status')
+            runCommand('QueryMotors', 'Motors', 'Motors', 'Error, unable to get motor status')
+            runCommand('QueueShowRobotLocal', 'EndQueueShowRobot', 'QueueRobot:', 'Error, unable to get queue status')
+            runCommand('WaitTaskState', 'WaitState:', 'WaitState:', 'Error, unable to get wait state')
     except rospy.ROSInterruptException:
         pass
