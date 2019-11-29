@@ -69,9 +69,7 @@ def runCommand(command, command2, command3, text):
             # pub.publish(''.join(cmd))
             rospy.loginfo(line)
             pub.publish(line)
-            if not command == "GetGoals":
-                print "test"
-                break
+            break
         #if there are no faults print "Np faults"
         if command3 not in line:
             rospy.loginfo(text)
@@ -84,8 +82,9 @@ if __name__ == '__main__':
         while not rospy.is_shutdown():
             runCommand('ApplicationFaultQuery', 'End of ApplicationFaultQuery', 'ApplicationFaultQuery:', 'ApplicationFaultQuery: No Faults')
             runCommand('FaultsGet', 'End of FaultList', 'FaultList:', 'FaultsGet: No faults')
-            runCommand('GetDateTime', 'DateTime:', 'DateTime', 'Error, unable to get date and time')
-
+            runCommand('GetDateTime', 'DateTime:', 'DateTime:', 'Error, unable to get date and time')
+            runCommand('Odometer', 'Odometer:', 'Odometer:', 'Error, unable to Odometer value')
+            runCommand('OneLineStatus', 'Status:', 'Status:', 'Error, unable to get status')
 
 
     except rospy.ROSInterruptException:
