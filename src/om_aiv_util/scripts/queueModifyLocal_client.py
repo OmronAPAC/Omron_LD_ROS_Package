@@ -2,11 +2,11 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def queueModifyLocal_client(a, b , c):
+def queueModifyLocal_client(array):
     rospy.wait_for_service('queueModifyLocal')
     try:
-        service = rospy.ServiceProxy('queueModifyLocal', Service3)
-        resp1 = service(a, b, c)
+        service = rospy.ServiceProxy('queueModifyLocal', OmAivService)
+        resp1 = service(array)
         return resp1.device
     except rospy.ServiceException, error:
         print "Service call failed: %s"%error
@@ -16,11 +16,12 @@ def usage():
 
 if __name__ == "__main__":
     if len(sys.argv) == 4:
-        a = str(sys.argv[1])
-        b = str(sys.argv[2])
-        c = str(sys.argv[3])
+        id = str(sys.argv[1])
+        type = str(sys.argv[2])
+        value = str(sys.argv[3])
+        array = [id, type, value]
     else:
         print usage()
         sys.exit(1)
     print "running command"
-    print queueModifyLocal_client(a, b , c)
+    print queueModifyLocal_client(array)

@@ -30,6 +30,12 @@ def handle_queueDropoff(req):
     job_id = req.a[2]
     rcv = queueDropoff(goal_name, priority, job_id)
     return rcv
+def handle_queueModifyLocal(req):
+    id = req.a[0]
+    type = req.a[1]
+    value = req.a[2]
+    rcv = queueModifyLocal(id, type, value)
+    return rcv
 
 def hardware_servers(op):
     if op == "queueCancelLocal":
@@ -38,6 +44,9 @@ def hardware_servers(op):
     elif op == "queueDropoff":
         rospy.loginfo("running queueDropoff")
         s2 = rospy.Service('queueDropoff', OmAivService, handle_queueDropoff)
+    elif op == "queueModifyLocal":
+        rospy.loginfo("running queueModifyLocal")
+        s3 = rospy.Service('queueModifyLocal', OmAivService, handle_queueModifyLocal)
 
 def queueCancelLocal(type, value, echo_str, reason):
     command = "queueCancelLocal {}".format(type + " " + value + " \"" + echo_str + "\" " + reason)
@@ -89,9 +98,34 @@ def queueDropoff(goal_name, priority, job_id):
         print("Connection  failed")
         return errormsg
 
+def queueModifyLocal(id, type, value):
+    command = "queueModifyLocal {}".format(id + " " + type + " " + value)
+    command = command.encode('ascii')
+    print "Running command: ", command
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "modiying" in rcv:
+                print rcv
+                return rcv
+            if "CommandErrorDescription" in rcv:
+                print rcv
+                return rcv
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as errormsg:
+        print("Connection  failed")
+        return errormsg
+
 
 if __name__ == "__main__":
     rospy.init_node('hardware_servers')
     hardware_servers("queueCancelLocal")
     hardware_servers("queueDropoff")
+    hardware_servers("queueModifyLocal")
     rospy.spin()
