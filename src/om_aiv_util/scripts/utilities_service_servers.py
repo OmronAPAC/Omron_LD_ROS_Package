@@ -601,6 +601,8 @@ def getGoals():
         while not rospy.is_shutdown():
             #check for required data
             if "End of goals" in rcv:
+                print rcv
+                return rcv
                 break
             else:
                 data = s.recv(BUFFER_SIZE)

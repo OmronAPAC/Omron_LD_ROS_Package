@@ -8,8 +8,8 @@ def getGoals_client():
         service = rospy.ServiceProxy('getGoals', OmAivService)
         resp1 = service()
         return resp1.device
-    except rospy.ServiceException, e:
-        print "Service call failed: %s"%e
+    except rospy.ServiceException, error:
+        print "Service call failed: %s"%error
 
 def usage():
     return "%s"%sys.argv[0]
