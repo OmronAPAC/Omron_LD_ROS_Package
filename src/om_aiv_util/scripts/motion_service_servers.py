@@ -36,6 +36,12 @@ def handle_queueModifyLocal(req):
     value = req.a[2]
     rcv = queueModifyLocal(id, type, value)
     return rcv
+def handle_queueQueryLocal(req):
+    type = req.a[0]
+    value = req.a[1]
+    echo_str = req.a[2]
+    rcv = queueQueryLocal(type, value, echo_str)
+    return rcv
 
 def hardware_servers(op):
     if op == "queueCancelLocal":
@@ -47,6 +53,9 @@ def hardware_servers(op):
     elif op == "queueModifyLocal":
         rospy.loginfo("running queueModifyLocal")
         s3 = rospy.Service('queueModifyLocal', OmAivService, handle_queueModifyLocal)
+    elif op == "queueQueryLocal":
+        rospy.loginfo("running queueQueryLocal")
+        s4 = rospy.Service('queueQueryLocal', OmAivService, handle_queueQueryLocal)
 
 def queueCancelLocal(type, value, echo_str, reason):
     command = "queueCancelLocal {}".format(type + " " + value + " \"" + echo_str + "\" " + reason)
@@ -122,10 +131,35 @@ def queueModifyLocal(id, type, value):
         print("Connection  failed")
         return errormsg
 
+def queueQueryLocal(type, value, echo_str):
+    command = "queueQueryLocal {}".format(type + " " + value + " " + echo_str)
+    command = command.encode('ascii')
+    print "Running command: ", command
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "EndQueueQuery" in rcv:
+                print rcv
+                return rcv
+            if "CommandErrorDescription" in rcv:
+                print rcv
+                return rcv
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+
+    except socket.error as errormsg:
+        print("Connection  failed")
+        return errormsg
+
 
 if __name__ == "__main__":
     rospy.init_node('hardware_servers')
     hardware_servers("queueCancelLocal")
     hardware_servers("queueDropoff")
     hardware_servers("queueModifyLocal")
+    hardware_servers("queueQueryLocal")
     rospy.spin()
