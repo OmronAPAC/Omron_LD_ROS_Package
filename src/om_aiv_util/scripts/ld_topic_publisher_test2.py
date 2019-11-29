@@ -85,7 +85,6 @@ if __name__ == '__main__':
             runCommand('ApplicationFaultQuery', 'End of ApplicationFaultQuery', 'ApplicationFaultQuery:', 'ApplicationFaultQuery: No Faults')
             runCommand('FaultsGet', 'End of FaultList', 'FaultList:', 'FaultsGet: No faults')
             runCommand('GetDateTime', 'DateTime:', 'DateTime', 'Error, unable to get date and time')
-            runCommand('GetGoals', 'End of goals', 'Goal:', 'No goals found')
 
 
 
