@@ -10,7 +10,6 @@ from std_msgs.msg import Float32
 from geometry_msgs.msg import Pose
 from geometry_msgs.msg import Point
 from om_aiv_util.msg import Location
-# from turtlesim.msg import Pose
 import math
 import numpy as np
 import socket
@@ -36,10 +35,10 @@ rospy.init_node('ld_topic_publisher', anonymous=True)
 
 def applicationFaultQuery():
     #specify topic name
-    pub = rospy.Publisher('ldarcl_applicationFaultQuery', String, queue_size=10)
+    command = 'applicationFaultQuery'
+    topic_name = "ldarcl_{}".format(command)
+    pub = rospy.Publisher(topic_name, String, queue_size=10)
     #specify node name
-    # rospy.init_node('ld_topic_publisher', anonymous=True)
-    # rate = rospy.Rate(10) # 10hz
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     print "Getting list of application faults..."
