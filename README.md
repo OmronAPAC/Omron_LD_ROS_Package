@@ -49,21 +49,12 @@ source ~/ld_ROS/devel/setup.bash
 catkin build
 ```
 ### Initial Configuration
-For a single robot:
-
 Specify robot ip address and name when running the launch file from the command line as a command line argment, for example:
 roslaunch om_aiv_util robot1.launch ip:=168.3.201.123 name:=robot1
 
-For 2 robots:
-
-WIP
-
 ### Usage
-For 1 robot:
 ```
 roslaunch om_aiv_util robot1.launch ip:=<ip address of robot> name:=<robot name>
-
-roslaunch om_aiv_navigation robot1.launch
 ```
 
 View the topics published and do a rostopic echo (topic name) to view the data:
