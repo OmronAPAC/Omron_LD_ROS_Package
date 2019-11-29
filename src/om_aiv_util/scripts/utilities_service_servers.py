@@ -81,6 +81,9 @@ def handle_getGoals(req):
 def handle_getInfoList(req):
     rcv = getInfoList()
     return rcv
+def handle_getMacros(req):
+    rcv = getMacros()
+    return rcv
 def handle_help(req):
     rcv = help()
     return rcv
@@ -245,6 +248,9 @@ def utilities_servers(op):
     elif op == "getGoals":
         rospy.loginfo("running getGoals")
         s30 = rospy.Service('getGoals', OmAivService, handle_getGoals)
+    elif op == "getMacros":
+        rospy.loginfo("running getMacros")
+        s31 = rospy.Service('getMacros', OmAivService, handle_getMacros)
 
 def applicationFaultClear(name):
     command = "applicationFaultClear {}".format(name)
@@ -632,6 +638,27 @@ def getInfoList():
         print("Connection  failed")
         return e
 
+def getMacros():
+    command = "getMacros"
+    print "Running command: ", command
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #check for required data
+            if "End of macros" in rcv:
+                print rcv
+                return rcv
+                break
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+
 def help():
     command = "help"
     print "Running command: ", command
@@ -985,6 +1012,7 @@ if __name__ == "__main__":
     utilities_servers("getDataStoreTripGroupList")
     utilities_servers("getGoals")
     utilities_servers("getInfoList")
+    utilities_servers("getMacros")
     utilities_servers("help")
     utilities_servers("log")
     utilities_servers("mapObjectInfo")
