@@ -311,6 +311,44 @@ class ActionServer():
         if success:
             self.a_server.set_succeeded(result)
 
+    def play(self, result, feedback):
+        try:
+            data = socket.recv(BUFFER_SIZE)
+            rcv = data.encode('ascii', 'ignore')
+            feedback.received_data = rcv
+            self.a_server.publish_feedback(feedback)
+            while not rospy.is_shutdown():
+                #check for required data
+                if "Playing" in rcv:
+                    for line in rcv.splitlines():
+                        #print required data
+                        if 'Playing' in line:
+                            doTask = line.split("Playing")
+                            rospy.loginfo(",Playing".join(doTask)[1:])
+                            rate.sleep()
+                            success = True
+                            rcv = str(rcv.splitlines())
+                            result.status = (",Playing".join(doTask)[1:])
+                            self.a_server.set_succeeded(result)
+                            break
+                if "SetupError:" in rcv:
+                    print "Failed to play file"
+                    result.status = "Failed to play file"
+                    self.a_server.set_succeeded(result)
+                    return(0)
+                else:
+                    data = socket.recv(BUFFER_SIZE)
+                    rcv = rcv + data.encode('ascii', 'ignore')
+
+        except Exception as e:
+            rospy.logerr(e)
+            result.status = str(e)
+            self.a_server.set_succeeded(result)
+            return e
+
+        if success:
+            self.a_server.set_succeeded(result)
+
     def __init__(self, action_name):
         self.action_command = action_name
         self.a_server = actionlib.SimpleActionServer(
@@ -344,6 +382,8 @@ class ActionServer():
             self.patrolOnce(result, feedback)
         if self.action_command == "patrolResume":
             self.patrolOnce(result, feedback)
+        if self.action_command == "play":
+            self.play(result, feedback)
 
 
 if __name__ == "__main__":
@@ -355,4 +395,5 @@ if __name__ == "__main__":
     s = ActionServer("patrol")
     s = ActionServer("patrolOnce")
     s = ActionServer("patrolResume")
+    s = ActionServer("play")
     rospy.spin()

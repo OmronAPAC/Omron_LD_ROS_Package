@@ -2,19 +2,19 @@
 
 import rospy
 import actionlib
-from ld_actions.msg import PlayAction, PlayGoal
+from om_aiv_navigation.msg import ActionAction, ActionGoal
 
 def feedback_cb(msg):
  print 'Feedback received:', msg
 
 def call_server():
 
-    client = actionlib.SimpleActionClient('play', PlayAction)
+    client = actionlib.SimpleActionClient('play', ActionAction)
 
     client.wait_for_server()
 
-    goal = PlayGoal()
-    goal.goal_play = "0000.wav"
+    goal = ActionGoal()
+    goal.goal_goal = "0000.wav"
 
     client.send_goal(goal, feedback_cb=feedback_cb)
 
