@@ -10,6 +10,7 @@ from std_msgs.msg import Float32
 from geometry_msgs.msg import Pose
 from geometry_msgs.msg import Point
 from om_aiv_util.msg import Location
+# from turtlesim.msg import Pose
 import math
 import numpy as np
 import socket
@@ -29,15 +30,11 @@ port = rospy.get_param("port")
 # ip_address = "172.21.5.123"
 # port = 7171
 connecttcp.connect(str(ip_address), port)
-rospy.init_node('ld_topic_publisher', anonymous=True)
+rospy.init_node('em_topic_publisher', anonymous=True)
 
-#command = actual command to be sent
-#command2 = end of required data that is sent back from arcl. Example: "End of End of ApplicationFaultQuery"
-#command3 = required data to be printed out. Example: "ApplicationFaultQuery:..............."
-#text = what to print if required data is not received. Example: "No Faults"
 def runCommand(command, command2, command3, text):
     #specify topic name
-    topic_name = "ldarcl_{}".format(command)
+    topic_name = "ldarcl_em_{}".format(command)
     pub = rospy.Publisher(topic_name, String, queue_size=10)
     #specify node name
     print(Style.RESET_ALL)
@@ -55,43 +52,36 @@ def runCommand(command, command2, command3, text):
                 break
             if "EStop pressed" in rcv:
                 rospy.logerr("Estop Pressed")
-                return rcv
             if "Unknown command {}".format(command) in rcv:
                 rospy.logerr(rcv)
                 return rcv
             else:
                 data = s.recv(BUFFER_SIZE)
                 rcv = rcv + data.encode('ascii', 'ignore')
+                time.sleep(1)
     except socket.error as e:
         print("Connection  failed")
         return e
     #check for required data
     for line in rcv.splitlines():
         if command3 in line:
-            # cmd = line.split("{}:".format(command3))
-            # #print required data
-            # rospy.loginfo(",{}:".format(command3).join(cmd)[1:])
-            # #publish data
-            # pub.publish(''.join(cmd))
             rospy.loginfo(line)
             pub.publish(line)
+            rospy.loginfo(rcv)
+            pub.publish(rcv)
             break
-        #if no info is returned"
-        if command3 not in line:
-            rospy.loginfo(text)
-            pub.publish(text)
+        # if command3 not in line:
+        #     rospy.loginfo(text)
+        #     pub.publish(text)
 
 if __name__ == '__main__':
     try:
         while not rospy.is_shutdown():
-            runCommand('ApplicationFaultQuery', 'End of ApplicationFaultQuery', 'ApplicationFaultQuery:', 'ApplicationFaultQuery: No Faults')
-            runCommand('FaultsGet', 'End of FaultList', 'FaultList:', 'FaultsGet: No faults')
-            runCommand('GetDateTime', 'DateTime:', 'DateTime:', 'Error, unable to get date and time')
-            runCommand('Odometer', 'Odometer:', 'Odometer:', 'Error, unable to Odometer value')
-            runCommand('OneLineStatus', 'Status:', 'Status:', 'Error, unable to get status')
-            runCommand('QueryDockStatus', 'DockingState:', 'DockingState:', 'Error, unable to get dock status')
-            runCommand('QueryMotors', 'Motors', 'Motors', 'Error, unable to get motor status')
-            runCommand('QueueShowRobotLocal', 'EndQueueShowRobot', 'QueueRobot:', 'Error, unable to get queue status')
-            runCommand('WaitTaskState', 'WaitState:', 'WaitState:', 'Error, unable to get wait state')
+            runCommand('GetDateTime', 'DateTime:', 'DateTime:', 'Error: Unable to get date and time')
+            runCommand('QueryFaults', 'EndQueryFaults', 'RobotFaultQuery:', 'Error: Unable to query faults')
+            runCommand('QueueShow', 'EndQueueShow', 'QueueShow:', 'Error: Unable to show queues')
+            runCommand('QueueShowCompleted', 'EndQueueShowCompleted', 'QueueShowCompleted:', 'Error: Unable to show queues')
+
+
     except rospy.ROSInterruptException:
         pass
