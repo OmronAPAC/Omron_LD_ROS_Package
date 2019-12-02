@@ -56,6 +56,9 @@ def runCommand(command, command2, command3, text):
             if "EStop pressed" in rcv:
                 rospy.logerr("Estop Pressed")
                 return rcv
+            if "EStop relieved but motors still disabled" in rcv:
+                rospy.logerr("EStop relieved but motors still disabled")
+                return rcv
             if "Unknown command {}".format(command) in rcv:
                 rospy.logerr(rcv)
                 return rcv
