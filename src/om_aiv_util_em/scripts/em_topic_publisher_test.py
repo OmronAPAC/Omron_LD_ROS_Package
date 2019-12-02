@@ -31,6 +31,51 @@ port = rospy.get_param("port")
 # port = 7171
 connecttcp.connect(str(ip_address), port)
 
+def runCommand(command, command2, command3, text):
+    #specify topic name
+    topic_name = "ldarcl_{}".format(command)
+    pub = rospy.Publisher(topic_name, String, queue_size=10)
+    #specify node name
+    print(Style.RESET_ALL)
+    print(Fore.GREEN)
+    print "Running command: ", command
+    #send command to arcl
+    command = command.encode('ascii')
+    s.send(command+b"\r\n")
+    try:
+        data = s.recv(BUFFER_SIZE)
+        rcv = data.encode('ascii', 'ignore')
+        while not rospy.is_shutdown():
+            #keep receiving data until require data is received
+            if command2 in rcv:
+                break
+            if "EStop pressed" in rcv:
+                rospy.logerr("Estop Pressed")
+            if "Unknown command {}".format(command) in rcv:
+                rospy.logerr(rcv)
+                return rcv
+            else:
+                data = s.recv(BUFFER_SIZE)
+                rcv = rcv + data.encode('ascii', 'ignore')
+    except socket.error as e:
+        print("Connection  failed")
+        return e
+    #check for required data
+    for line in rcv.splitlines():
+        if command3 in line:
+            # cmd = line.split("{}:".format(command3))
+            # #print required data
+            # rospy.loginfo(",{}:".format(command3).join(cmd)[1:])
+            # #publish data
+            # pub.publish(''.join(cmd))
+            rospy.loginfo(line)
+            pub.publish(line)
+            break
+        #if no info is returned"
+        if command3 not in line:
+            rospy.loginfo(text)
+            pub.publish(text)
+
 def getDateTime():
     pub = rospy.Publisher('ldarcl_em_getDateTime', String, queue_size=10)
     rospy.init_node('em_topic_publisher', anonymous=True)
@@ -160,14 +205,11 @@ def queueShowCompleted():
             pub.publish(''.join(queryMotors))
             rate.sleep()
 
-
 if __name__ == '__main__':
     try:
         while not rospy.is_shutdown():
-            getDateTime()
-            queryFaults()
-            queueShow()
-            queueShowCompleted()
+            runCommand('ApplicationFaultQuery', 'End of ApplicationFaultQuery', 'ApplicationFaultQuery:', 'ApplicationFaultQuery: No Faults')
+
 
     except rospy.ROSInterruptException:
         pass

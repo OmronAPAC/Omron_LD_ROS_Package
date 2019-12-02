@@ -1,0 +1,15 @@
+<launch>
+
+  <!-- BEGIN ROBOT 1-->
+  <!-- <arg name="name" />
+  <group ns="$(arg name)"> -->
+  <!-- <group ns="robot1"> -->
+    <node name="em_topic_publisher" pkg="om_aiv_navigation" type="em_topic_publisher.py" output="screen" />
+
+      <arg name="ip" />
+      <param name="ip_address" value="$(arg ip)" />
+      <!-- <param name="ip_address" value="168.3.201.123" /> -->
+      <param name="port" value="7171" />
+  <!-- </group> -->
+
+</launch>
