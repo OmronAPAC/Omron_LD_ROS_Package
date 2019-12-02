@@ -2,19 +2,19 @@
 
 import rospy
 import actionlib
-from ld_actions.msg import StopAction, StopGoal
+from om_aiv_navigation.msg import ActionAction, ActionGoal
 
 def feedback_cb(msg):
  print 'Feedback received:', msg
 
 def call_server():
 
-    client = actionlib.SimpleActionClient('stop', StopAction)
+    client = actionlib.SimpleActionClient('stop', ActionAction)
 
     client.wait_for_server()
 
-    goal = StopGoal()
-    goal.goal_stop = "stop"
+    goal = ActionGoal()
+    goal.goal_goal = "stop"
 
     client.send_goal(goal, feedback_cb=feedback_cb)
 
