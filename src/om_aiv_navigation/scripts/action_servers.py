@@ -191,6 +191,126 @@ class ActionServer():
         if success:
             self.a_server.set_succeeded(result)
 
+    def patrol(self, result, feedback):
+        try:
+            data = socket.recv(BUFFER_SIZE)
+            rcv = data.encode('ascii', 'ignore')
+            feedback.received_data = rcv
+            self.a_server.publish_feedback(feedback)
+            while not rospy.is_shutdown():
+                #check for required data
+                if "Finished patrolling" in rcv:
+                    for line in rcv.splitlines():
+                        #print required data
+                        if 'Finished patrolling' in line:
+                            i = 1
+                            doTask = line.split("Finished")
+                            rospy.loginfo(",Finished".join(doTask)[1:])
+                            pub.publish(''.join(doTask))
+                            rate.sleep()
+                            success = True
+                            rcv = str(rcv.splitlines())
+                            result.status = (",Finished".join(doTask)[1:])
+                            self.a_server.set_succeeded(result)
+                            break
+                if "Failed" in rcv:
+                    print "Failed to patrol"
+                    result.status = "Failed to patrol"
+                    self.a_server.set_succeeded(result)
+                    return(0)
+                else:
+                    data = socket.recv(BUFFER_SIZE)
+                    rcv = rcv + data.encode('ascii', 'ignore')
+                    feedback.received_data = rcv
+                    self.a_server.publish_feedback(feedback)
+
+        except Exception as e:
+            rospy.logerr(e)
+            result.status = str(e)
+            self.a_server.set_succeeded(result)
+            return e
+
+        if success:
+            self.a_server.set_succeeded(result)
+
+    def patrolOnce(self, result, feedback):
+        try:
+            data = socket.recv(BUFFER_SIZE)
+            rcv = data.encode('ascii', 'ignore')
+            feedback.received_data = rcv
+            self.a_server.publish_feedback(feedback)
+            while not rospy.is_shutdown():
+                #check for required data
+                if "Finished patrolling" in rcv:
+                    for line in rcv.splitlines():
+                        #print required data
+                        if 'Finished patrolling' in line:
+                            doTask = line.split("Finished")
+                            rospy.loginfo(",Finished".join(doTask)[1:])
+                            pub.publish(''.join(doTask))
+                            rate.sleep()
+                            success = True
+                            rcv = str(rcv.splitlines())
+                            result.status = (",Finished".join(doTask)[1:])
+                            self.a_server.set_succeeded(result)
+                            break
+                if "Failed" in rcv:
+                    print "Failed to patrol"
+                    result.status = "Failed to patrol"
+                    self.a_server.set_succeeded(result)
+                    return(0)
+                else:
+                    data = socket.recv(BUFFER_SIZE)
+                    rcv = rcv + data.encode('ascii', 'ignore')
+
+        except Exception as e:
+            rospy.logerr(e)
+            result.status = str(e)
+            self.a_server.set_succeeded(result)
+            return e
+
+        if success:
+            self.a_server.set_succeeded(result)
+
+    def patrolResume(self, result, feedback):
+        try:
+            data = socket.recv(BUFFER_SIZE)
+            rcv = data.encode('ascii', 'ignore')
+            feedback.received_data = rcv
+            self.a_server.publish_feedback(feedback)
+            while not rospy.is_shutdown():
+                #check for required data
+                if "Finished patrolling" in rcv:
+                    for line in rcv.splitlines():
+                        #print required data
+                        if 'Finished patrolling' in line:
+                            doTask = line.split("Finished")
+                            rospy.loginfo(",Finished".join(doTask)[1:])
+                            pub.publish(''.join(doTask))
+                            rate.sleep()
+                            success = True
+                            rcv = str(rcv.splitlines())
+                            result.status = (",Finished".join(doTask)[1:])
+                            self.a_server.set_succeeded(result)
+                            break
+                if "Failed" in rcv:
+                    print "Failed to patrol"
+                    result.status = "Failed to patrol"
+                    self.a_server.set_succeeded(result)
+                    return(0)
+                else:
+                    data = socket.recv(BUFFER_SIZE)
+                    rcv = rcv + data.encode('ascii', 'ignore')
+
+        except Exception as e:
+            rospy.logerr(e)
+            result.status = str(e)
+            self.a_server.set_succeeded(result)
+            return e
+
+        if success:
+            self.a_server.set_succeeded(result)
+
     def __init__(self, action_name):
         self.action_command = action_name
         self.a_server = actionlib.SimpleActionServer(
@@ -218,6 +338,12 @@ class ActionServer():
             self.executeMacro(result, feedback)
         if self.action_command == "goTo":
             self.goTo(result, feedback)
+        if self.action_command == "patrol":
+            self.patrol(result, feedback)
+        if self.action_command == "patrolOnce":
+            self.patrolOnce(result, feedback)
+        if self.action_command == "patrolResume":
+            self.patrolOnce(result, feedback)
 
 
 if __name__ == "__main__":
@@ -226,4 +352,7 @@ if __name__ == "__main__":
     s = ActionServer("dock")
     s = ActionServer("executeMacro")
     s = ActionServer("goTo")
+    s = ActionServer("patrol")
+    s = ActionServer("patrolOnce")
+    s = ActionServer("patrolResume")
     rospy.spin()

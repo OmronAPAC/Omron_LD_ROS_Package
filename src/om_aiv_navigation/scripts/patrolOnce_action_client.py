@@ -2,19 +2,19 @@
 
 import rospy
 import actionlib
-from ld_actions.msg import PatrolOnceAction, PatrolOnceGoal
+from om_aiv_navigation.msg import ActionAction, ActionGoal
 
 def feedback_cb(msg):
  print 'Feedback received:', msg
 
 def call_server():
 
-    client = actionlib.SimpleActionClient('patrolOnce', PatrolOnceAction)
+    client = actionlib.SimpleActionClient('patrolOnce', ActionAction)
 
     client.wait_for_server()
 
-    goal = PatrolOnceGoal()
-    goal.goal_patrol = "route1"
+    goal = ActionGoal()
+    goal.goal_goal = "Route1"
 
     client.send_goal(goal, feedback_cb=feedback_cb)
 
