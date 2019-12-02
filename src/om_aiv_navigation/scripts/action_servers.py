@@ -369,6 +369,12 @@ class ActionServer():
                     self.a_server.set_succeeded(result)
                     return(0)
                     break
+                if "Failed" in rcv:
+                    print rcv
+                    result.status = (rcv)
+                    self.a_server.set_succeeded(result)
+                    return(0)
+                    break
                 else:
                     data = socket.recv(BUFFER_SIZE)
                     rcv = rcv + data.encode('ascii', 'ignore')
@@ -379,8 +385,8 @@ class ActionServer():
             print("Connection  failed")
             return e
 
-        if success:
-            self.a_server.set_succeeded(result)
+        # if success:
+        #     self.a_server.set_succeeded(result)
 
     def __init__(self, action_name):
         self.action_command = action_name
