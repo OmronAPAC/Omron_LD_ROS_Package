@@ -32,8 +32,9 @@ connecttcp.connect(str(ip_address), port)
 rospy.init_node('ld_topic_publisher', anonymous=True)
 
 #command = actual command to be sent
-
-
+#command2 = end of required data that is sent back from arcl. Example: "End of End of ApplicationFaultQuery"
+#command3 = required data to be printed out. Example: "ApplicationFaultQuery:..............."
+#text = what to print if required data is not received. Example: "No Faults"
 def runCommand(command, command2, command3, text):
     #specify topic name
     topic_name = "ldarcl_{}".format(command)
