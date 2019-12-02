@@ -130,6 +130,7 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/om_aiv_navigation/action" TYPE FILE FILES
+    "/home/tthmatt/ld_ROS/src/om_aiv_navigation/action/Action.action"
     "/home/tthmatt/ld_ROS/src/om_aiv_navigation/action/Dock.action"
     "/home/tthmatt/ld_ROS/src/om_aiv_navigation/action/DoTask.action"
     "/home/tthmatt/ld_ROS/src/om_aiv_navigation/action/ExecuteMacro.action"
@@ -142,6 +143,18 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/home/tthmatt/ld_ROS/src/om_aiv_navigation/action/QueueDropoff.action"
     "/home/tthmatt/ld_ROS/src/om_aiv_navigation/action/Stop.action"
     "/home/tthmatt/ld_ROS/src/om_aiv_navigation/action/Undock.action"
+    )
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/om_aiv_navigation/msg" TYPE FILE FILES
+    "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/ActionAction.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/ActionActionGoal.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/ActionActionResult.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/ActionActionFeedback.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/ActionGoal.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/ActionResult.msg"
+    "/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/ActionFeedback.msg"
     )
 endif()
 

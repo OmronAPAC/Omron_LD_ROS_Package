@@ -1,0 +1,18 @@
+<launch>
+
+  <!-- BEGIN ROBOT 1 -->
+  <!-- <arg name="name" />
+  <group ns="$(arg name)"> -->
+  <!-- <group ns="robot1"> -->
+    <node name="ld_topic_publisher" pkg="om_aiv_util" type="ld_topic_publisher.py" output="screen" />
+    <node name="ld_status_publisher" pkg="om_aiv_util" type="ld_topic_publisher.py" output="screen" />
+    <node name="motion_service_servers" pkg="om_aiv_util" type="motion_service_servers.py" output="screen" />
+    <node name="utilities_service_servers" pkg="om_aiv_util" type="utilities_service_servers.py" output="screen" />
+    <node name="hardware_service_servers" pkg="om_aiv_util" type="hardware_service_servers.py" output="screen" />
+      <arg name="ip" />
+      <param name="ip_address" value="$(arg ip)" />
+      <!-- <param name="ip_address" value="168.3.201.122" /> -->
+      <param name="port" value="7171" />
+  <!-- </group> -->
+
+</launch>

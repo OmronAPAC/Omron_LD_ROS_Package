@@ -1,0 +1,43 @@
+[36m--[0m Using CATKIN_DEVEL_PREFIX: /home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation
+[36m--[0m Using CMAKE_PREFIX_PATH: /home/tthmatt/ld_ROS/devel;/home/tthmatt/ws/devel;/home/tthmatt/catkin_ws/devel;/opt/ros/melodic
+[36m--[0m This workspace overlays: /home/tthmatt/ld_ROS/devel;/home/tthmatt/ws/devel;/home/tthmatt/catkin_ws/devel;/opt/ros/melodic
+[36m--[0m Found PythonInterp: /usr/bin/python2 (found suitable version "2.7.15", minimum required is "2")
+[36m--[0m Using PYTHON_EXECUTABLE: /usr/bin/python2
+[36m--[0m Using Debian Python package layout
+[36m--[0m Using empy: /usr/bin/empy
+[36m--[0m Using CATKIN_ENABLE_TESTING: ON
+[36m--[0m Call enable_testing()
+[36m--[0m Using CATKIN_TEST_RESULTS_DIR: /home/tthmatt/ld_ROS/build/om_aiv_navigation/test_results
+[36m--[0m Found gtest sources under '/usr/src/googletest': gtests will be built
+[36m--[0m Found gmock sources under '/usr/src/googletest': gmock will be built
+[36m--[0m Found PythonInterp: /usr/bin/python2 (found version "2.7.15")
+[36m--[0m Using Python nosetests: /usr/bin/nosetests-2.7
+[36m--[0m catkin 0.7.19
+[36m--[0m BUILD_SHARED_LIBS is on
+[36m--[0m Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+[36m--[0m Generating .msg files for action om_aiv_navigation/Action /home/tthmatt/ld_ROS/src/om_aiv_navigation/action/Action.action
+Generating for action Action
+[36m--[0m Generating .msg files for action om_aiv_navigation/Dock /home/tthmatt/ld_ROS/src/om_aiv_navigation/action/Dock.action
+[36m--[0m Generating .msg files for action om_aiv_navigation/DoTask /home/tthmatt/ld_ROS/src/om_aiv_navigation/action/DoTask.action
+[36m--[0m Generating .msg files for action om_aiv_navigation/ExecuteMacro /home/tthmatt/ld_ROS/src/om_aiv_navigation/action/ExecuteMacro.action
+[36m--[0m Generating .msg files for action om_aiv_navigation/PatrolOnce /home/tthmatt/ld_ROS/src/om_aiv_navigation/action/PatrolOnce.action
+[36m--[0m Generating .msg files for action om_aiv_navigation/GoTo /home/tthmatt/ld_ROS/src/om_aiv_navigation/action/GoTo.action
+[36m--[0m Generating .msg files for action om_aiv_navigation/PatrolOnce /home/tthmatt/ld_ROS/src/om_aiv_navigation/action/PatrolOnce.action
+[36m--[0m Generating .msg files for action om_aiv_navigation/Patrol /home/tthmatt/ld_ROS/src/om_aiv_navigation/action/Patrol.action
+[36m--[0m Generating .msg files for action om_aiv_navigation/PatrolResume /home/tthmatt/ld_ROS/src/om_aiv_navigation/action/PatrolResume.action
+[36m--[0m Generating .msg files for action om_aiv_navigation/Play /home/tthmatt/ld_ROS/src/om_aiv_navigation/action/Play.action
+[36m--[0m Generating .msg files for action om_aiv_navigation/QueueDropoff /home/tthmatt/ld_ROS/src/om_aiv_navigation/action/QueueDropoff.action
+[36m--[0m Generating .msg files for action om_aiv_navigation/Stop /home/tthmatt/ld_ROS/src/om_aiv_navigation/action/Stop.action
+[36m--[0m Generating .msg files for action om_aiv_navigation/Undock /home/tthmatt/ld_ROS/src/om_aiv_navigation/action/Undock.action
+[36m--[0m om_aiv_navigation: 91 messages, 0 services
+[33m[1mCMake Warning[0m at /opt/ros/melodic/share/catkin/cmake/catkin_package.cmake:166 (message):
+  catkin_package() DEPENDS on 'system_lib' but neither
+  'system_lib_INCLUDE_DIRS' nor 'system_lib_LIBRARIES' is defined.
+[36mCall Stack (most recent call first):[0m
+  /opt/ros/melodic/share/catkin/cmake/catkin_package.cmake:102 (_catkin_package)
+  CMakeLists.txt:117 (catkin_package)
+
+
+[36m--[0m Configuring done
+[36m--[0m Generating done
+[36m--[0m Build files have been written to: /home/tthmatt/ld_ROS/build/om_aiv_navigation

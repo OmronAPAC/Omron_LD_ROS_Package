@@ -2,19 +2,19 @@
 
 import rospy
 import actionlib
-from om_aiv_navigation.msg import DockAction, DockGoal
+from om_aiv_navigation.msg import ActionAction, ActionGoal
 
 def feedback_cb(msg):
  print 'Feedback received:', msg
 
 def call_server():
 
-    client = actionlib.SimpleActionClient('dock', DockAction)
+    client = actionlib.SimpleActionClient('dock', ActionAction)
 
     client.wait_for_server()
 
-    goal = DockGoal()
-    goal.goal_dock = "dock"
+    goal = ActionGoal()
+    goal.goal_goal = " "
 
     client.send_goal(goal, feedback_cb=feedback_cb)
 

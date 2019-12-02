@@ -37,11 +37,9 @@ class ActionServer():
 
     def execute_cb(self, goal):
         success = True
-
         feedback = DoTaskFeedback()
         result = DoTaskResult()
         task = goal.goaltask
-
         rate = rospy.Rate(10)
         print(Style.RESET_ALL)
         print(Fore.GREEN)
@@ -61,7 +59,6 @@ class ActionServer():
                     for line in rcv.splitlines():
                         #print required data
                         if 'Completed' in line:
-                            i = 1
                             doTask = line.split("Completed")
                             rospy.loginfo(",Completed".join(doTask)[1:])
 

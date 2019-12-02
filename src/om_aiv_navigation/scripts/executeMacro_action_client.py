@@ -1,19 +1,19 @@
 #! /usr/bin/env python
 import rospy
 import actionlib
-from ld_actions.msg import ExecuteMacroAction, ExecuteMacroGoal
+from om_aiv_navigation.msg import ActionAction, ActionGoal
 
 def feedback_cb(msg):
  print 'Feedback received:', msg
 
 def call_server():
 
-    client = actionlib.SimpleActionClient('executeMacro', ExecuteMacroAction)
+    client = actionlib.SimpleActionClient('executeMacro', ActionAction)
 
     client.wait_for_server()
 
-    goal = ExecuteMacroGoal()
-    goal.goal_macro = "macro3"
+    goal = ActionGoal()
+    goal.goal_goal = "macro1"
 
     client.send_goal(goal, feedback_cb=feedback_cb)
 

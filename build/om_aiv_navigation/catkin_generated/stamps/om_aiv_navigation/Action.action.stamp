@@ -1,0 +1,10 @@
+# Goal
+string goal_goal
+
+---
+# Result
+string status
+
+---
+# Feedback
+string received_data

@@ -26,11 +26,13 @@ s = connecttcp.sock
 #get ip adress and port from launch file
 ip_address = rospy.get_param("ip_address")
 port = rospy.get_param("port")
-
 # ip_address = "172.21.5.123"
 # port = 7171
 connecttcp.connect(str(ip_address), port)
 rospy.init_node('ld_topic_publisher', anonymous=True)
+
+#command = actual command to be sent
+
 
 def runCommand(command, command2, command3, text):
     #specify topic name
@@ -50,6 +52,8 @@ def runCommand(command, command2, command3, text):
             #keep receiving data until require data is received
             if command2 in rcv:
                 break
+            if "EStop pressed" in rcv:
+                rospy.logerr("Estop Pressed")
             if "Unknown command {}".format(command) in rcv:
                 rospy.logerr(rcv)
                 return rcv

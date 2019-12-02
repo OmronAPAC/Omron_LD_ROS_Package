@@ -8,5 +8,8 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/tthmatt/ld_ROS/build/om_aiv_navigation"
+export PYTHONPATH="/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation/lib/python2.7/dist-packages:$PYTHONPATH"
 export ROS_PACKAGE_PATH="/home/tthmatt/ld_ROS/src/om_aiv_navigation:$ROS_PACKAGE_PATH"

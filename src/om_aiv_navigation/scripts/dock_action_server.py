@@ -79,8 +79,6 @@ class ActionServer():
                     self.a_server.set_succeeded(result)
                     return(0)
 
-        if success:
-            self.a_server.set_succeeded(result)
 
 if __name__ == "__main__":
     rospy.init_node("dock_action_server")
