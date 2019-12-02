@@ -2,19 +2,19 @@
 
 import rospy
 import actionlib
-from om_aiv_navigation.msg import QueueDropoffAction, QueueDropoffGoal
+from om_aiv_navigation.msg import ActionAction, ActionGoal
 
 def feedback_cb(msg):
  print 'Feedback received:', msg
 
 def call_server():
 
-    client = actionlib.SimpleActionClient('queueDropoff', QueueDropoffAction)
+    client = actionlib.SimpleActionClient('queueDropoff', ActionAction)
 
     client.wait_for_server()
 
-    goal = QueueDropoffGoal()
-    goal.goal_queueDropoff = "goal1"
+    goal = ActionGoal()
+    goal.goal_goal = "goal1"
 
     client.send_goal(goal, feedback_cb=feedback_cb)
 

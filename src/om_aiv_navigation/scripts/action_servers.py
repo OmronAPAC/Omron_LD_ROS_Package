@@ -349,6 +349,39 @@ class ActionServer():
         if success:
             self.a_server.set_succeeded(result)
 
+    def queueDropoff(self, result, feedback):
+        try:
+            data = socket.recv(BUFFER_SIZE)
+            rcv = data.encode('ascii', 'ignore')
+            feedback.received_data = rcv
+            self.a_server.publish_feedback(feedback)
+            while not rospy.is_shutdown():
+                #check for required data
+                if "Completed" in rcv:
+                    print rcv
+                    result.status = (rcv)
+                    self.a_server.set_succeeded(result)
+                    return(0)
+                    break
+                if "CommandErrorDescription" in rcv:
+                    print rcv
+                    result.status = (rcv)
+                    self.a_server.set_succeeded(result)
+                    return(0)
+                    break
+                else:
+                    data = socket.recv(BUFFER_SIZE)
+                    rcv = rcv + data.encode('ascii', 'ignore')
+                    feedback.received_data = rcv
+                    self.a_server.publish_feedback(feedback)
+
+        except socket.error as e:
+            print("Connection  failed")
+            return e
+
+        if success:
+            self.a_server.set_succeeded(result)
+
     def __init__(self, action_name):
         self.action_command = action_name
         self.a_server = actionlib.SimpleActionServer(
@@ -384,6 +417,8 @@ class ActionServer():
             self.patrolOnce(result, feedback)
         if self.action_command == "play":
             self.play(result, feedback)
+        if self.action_command == "queueDropoff":
+            self.queueDropoff(result, feedback)
 
 
 if __name__ == "__main__":
@@ -396,4 +431,5 @@ if __name__ == "__main__":
     s = ActionServer("patrolOnce")
     s = ActionServer("patrolResume")
     s = ActionServer("play")
+    s = ActionServer("queueDropoff")
     rospy.spin()
