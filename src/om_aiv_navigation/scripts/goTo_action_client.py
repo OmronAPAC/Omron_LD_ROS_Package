@@ -2,20 +2,19 @@
 
 import rospy
 import actionlib
-from ld_actions.msg import GoToAction, GoToGoal
+from om_aiv_navigation.msg import ActionAction, ActionGoal
 
 def feedback_cb(msg):
  print 'Feedback received:', msg
 
 def call_server():
 
-    client = actionlib.SimpleActionClient('goTo', GoToAction)
+    client = actionlib.SimpleActionClient('goTo', ActionAction)
 
     client.wait_for_server()
 
-    goal = GoToGoal()
-    goalname = rospy.get_param("goal")
-    goal.goal_goto = goalname
+    goal = ActionGoal()
+    goal.goal_goal = "Goal1"
 
 
     client.send_goal(goal, feedback_cb=feedback_cb)

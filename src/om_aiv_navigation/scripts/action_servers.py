@@ -152,6 +152,45 @@ class ActionServer():
         if success:
             self.a_server.set_succeeded(result)
 
+    def goTo(self, result, feedback):
+        try:
+            data = socket.recv(BUFFER_SIZE)
+            rcv = data.encode('ascii', 'ignore')
+            feedback.received_data = rcv
+            self.a_server.publish_feedback(feedback)
+            while not rospy.is_shutdown():
+                #check for required data
+                if "Arrived" in rcv:
+                    for line in rcv.splitlines():
+                        #print required data
+                        if 'Arrived' in line:
+                            doTask = line.split("Arrived")
+                            rospy.loginfo(",Arrived".join(doTask)[1:])
+
+                            rate.sleep()
+                            success = True
+                            rcv = str(rcv.splitlines())
+                            result.status = (",Arrived".join(doTask)[1:])
+                            self.a_server.set_succeeded(result)
+                            break
+                if "Failed" in rcv:
+                    print "Failed to go to goal"
+                    result.status = "Failed to go to goal"
+                    self.a_server.set_succeeded(result)
+                    return(0)
+                else:
+                    data = socket.recv(BUFFER_SIZE)
+                    rcv = rcv + data.encode('ascii', 'ignore')
+
+        except Exception as e:
+            rospy.logerr(e)
+            result.status = str(e)
+            self.a_server.set_succeeded(result)
+            return e
+
+        if success:
+            self.a_server.set_succeeded(result)
+
     def __init__(self, action_name):
         self.action_command = action_name
         self.a_server = actionlib.SimpleActionServer(
@@ -177,6 +216,8 @@ class ActionServer():
             self.dock(result, feedback)
         if self.action_command == "executeMacro":
             self.executeMacro(result, feedback)
+        if self.action_command == "goTo":
+            self.goTo(result, feedback)
 
 
 if __name__ == "__main__":
@@ -184,4 +225,5 @@ if __name__ == "__main__":
     s = ActionServer("doTask")
     s = ActionServer("dock")
     s = ActionServer("executeMacro")
+    s = ActionServer("goTo")
     rospy.spin()
