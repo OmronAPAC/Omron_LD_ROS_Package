@@ -55,7 +55,6 @@ class ActionServer():
                 if 'Docked' in line:
                     doTask = line.split("Docked")
                     rospy.loginfo(",Docked".join(doTask)[1:])
-                    rate.sleep()
                     success = True
                     rcv = str(rcv.splitlines())
                     result.status = (",Docked".join(doTask)[1:])
@@ -77,9 +76,6 @@ class ActionServer():
                         if 'Completed' in line:
                             doTask = line.split("Completed")
                             rospy.loginfo(",Completed".join(doTask)[1:])
-
-                            rate.sleep()
-                            # success = True
                             rcv = str(rcv.splitlines())
                             result.status = (",Completed".join(doTask)[1:])
                             self.a_server.set_succeeded(result)
@@ -120,8 +116,7 @@ class ActionServer():
                         if 'Completed macro' in line:
                             executeMacro = line.split("Completed macro")
                             rospy.loginfo(",Completed macro".join(executeMacro)[1:])
-                            pub.publish(''.join(executeMacro))
-                            rate.sleep()
+                            # pub.publish(''.join(executeMacro))
                             success = True
                             rcv = str(rcv.splitlines())
                             result.status = (",Completed macro".join(executeMacro)[1:])
@@ -166,8 +161,6 @@ class ActionServer():
                         if 'Arrived' in line:
                             doTask = line.split("Arrived")
                             rospy.loginfo(",Arrived".join(doTask)[1:])
-
-                            rate.sleep()
                             success = True
                             rcv = str(rcv.splitlines())
                             result.status = (",Arrived".join(doTask)[1:])
@@ -203,11 +196,8 @@ class ActionServer():
                     for line in rcv.splitlines():
                         #print required data
                         if 'Finished patrolling' in line:
-                            i = 1
                             doTask = line.split("Finished")
                             rospy.loginfo(",Finished".join(doTask)[1:])
-                            pub.publish(''.join(doTask))
-                            rate.sleep()
                             success = True
                             rcv = str(rcv.splitlines())
                             result.status = (",Finished".join(doTask)[1:])
@@ -247,8 +237,7 @@ class ActionServer():
                         if 'Finished patrolling' in line:
                             doTask = line.split("Finished")
                             rospy.loginfo(",Finished".join(doTask)[1:])
-                            pub.publish(''.join(doTask))
-                            rate.sleep()
+                            # pub.publish(''.join(doTask))
                             success = True
                             rcv = str(rcv.splitlines())
                             result.status = (",Finished".join(doTask)[1:])
@@ -286,8 +275,6 @@ class ActionServer():
                         if 'Finished patrolling' in line:
                             doTask = line.split("Finished")
                             rospy.loginfo(",Finished".join(doTask)[1:])
-                            pub.publish(''.join(doTask))
-                            rate.sleep()
                             success = True
                             rcv = str(rcv.splitlines())
                             result.status = (",Finished".join(doTask)[1:])
@@ -325,7 +312,6 @@ class ActionServer():
                         if 'Playing' in line:
                             doTask = line.split("Playing")
                             rospy.loginfo(",Playing".join(doTask)[1:])
-                            rate.sleep()
                             success = True
                             rcv = str(rcv.splitlines())
                             result.status = (",Playing".join(doTask)[1:])
@@ -385,8 +371,37 @@ class ActionServer():
             print("Connection  failed")
             return e
 
-        # if success:
-        #     self.a_server.set_succeeded(result)
+    def stop(self, result, feedback):
+        try:
+            data = socket.recv(BUFFER_SIZE)
+            rcv = data.encode('ascii', 'ignore')
+            feedback.received_data = rcv
+            self.a_server.publish_feedback(feedback)
+            while not rospy.is_shutdown():
+                #check for required data
+                if "Stopped" in rcv:
+                    for line in rcv.splitlines():
+                        #print required data
+                        if 'Stopped' in line:
+                            doTask = line.split("Stopped")
+                            rospy.loginfo(",Stopped".join(doTask)[1:])
+                            success = True
+                            rcv = str(rcv.splitlines())
+                            result.status = (",Stopped".join(doTask)[1:])
+                            self.a_server.set_succeeded(result)
+                            return(0)
+                            break
+
+                else:
+                    data = socket.recv(BUFFER_SIZE)
+                    rcv = rcv + data.encode('ascii', 'ignore')
+
+        except Exception as e:
+            rospy.logerr(e)
+            result.status = str(e)
+            self.a_server.set_succeeded(result)
+            return e
+
 
     def __init__(self, action_name):
         self.action_command = action_name
@@ -399,7 +414,6 @@ class ActionServer():
         feedback = ActionFeedback()
         result = ActionResult()
         task = goal.goal_goal
-        rate = rospy.Rate(10)
         print(Style.RESET_ALL)
         print(Fore.GREEN)
         #send command to arcl
@@ -425,7 +439,8 @@ class ActionServer():
             self.play(result, feedback)
         if self.action_command == "queueDropoff":
             self.queueDropoff(result, feedback)
-
+        if self.action_command == "stop":
+            self.stop(result, feedback)
 
 if __name__ == "__main__":
     rospy.init_node("doTask_action_server")
@@ -438,4 +453,5 @@ if __name__ == "__main__":
     s = ActionServer("patrolResume")
     s = ActionServer("play")
     s = ActionServer("queueDropoff")
+    s = ActionServer("stop")
     rospy.spin()
