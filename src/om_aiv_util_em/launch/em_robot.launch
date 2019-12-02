@@ -4,11 +4,12 @@
   <!-- <arg name="name" />
   <group ns="$(arg name)"> -->
   <!-- <group ns="robot1"> -->
-    <node name="em_topic_publisher" pkg="om_aiv_navigation" type="em_topic_publisher.py" output="screen" />
+    <node name="em_topic_publisher_test" pkg="om_aiv_util_em" type="em_topic_publisher_test.py" output="screen" />
 
       <arg name="ip" />
       <param name="ip_address" value="$(arg ip)" />
       <!-- <param name="ip_address" value="168.3.201.123" /> -->
+      <!-- 172.21.5.123 -->
       <param name="port" value="7171" />
   <!-- </group> -->
 

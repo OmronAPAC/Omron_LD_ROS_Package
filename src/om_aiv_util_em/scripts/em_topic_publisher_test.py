@@ -30,6 +30,7 @@ port = rospy.get_param("port")
 # ip_address = "172.21.5.123"
 # port = 7171
 connecttcp.connect(str(ip_address), port)
+rospy.init_node('em_topic_publisher', anonymous=True)
 
 def runCommand(command, command2, command3, text):
     #specify topic name
@@ -75,37 +76,6 @@ def runCommand(command, command2, command3, text):
         if command3 not in line:
             rospy.loginfo(text)
             pub.publish(text)
-
-def getDateTime():
-    pub = rospy.Publisher('ldarcl_em_getDateTime', String, queue_size=10)
-    rospy.init_node('em_topic_publisher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
-    print(Style.RESET_ALL)
-    print(Fore.GREEN)
-    print "Getting date and time..."
-    command = "getDateTime"
-    command = command.encode('ascii')
-    s.send(command+b"\r\n")
-    try:
-        data = s.recv(BUFFER_SIZE)
-        rcv = data.encode('ascii', 'ignore')
-        while not rospy.is_shutdown():
-            if "DateTime:" in rcv:
-                break
-            else:
-                data = s.recv(BUFFER_SIZE)
-                rcv = data.encode('ascii', 'ignore')
-
-    except socket.error as e:
-        print("Connection  failed")
-        return e
-
-    for line in rcv.splitlines():
-        if 'DateTime:' in line:
-            getDateTime = line.split("DateTime:")
-            rospy.loginfo(",DateTime:".join(getDateTime)[1:])
-            pub.publish(''.join(getDateTime))
-            rate.sleep()
 
 def queryFaults():
     pub = rospy.Publisher('ldarcl_em_queryFaults', String, queue_size=10)
@@ -208,7 +178,7 @@ def queueShowCompleted():
 if __name__ == '__main__':
     try:
         while not rospy.is_shutdown():
-            runCommand('ApplicationFaultQuery', 'End of ApplicationFaultQuery', 'ApplicationFaultQuery:', 'ApplicationFaultQuery: No Faults')
+            runCommand('GetDateTime', 'DateTime:', 'DateTime:', 'Error: Unable to get date and time')
 
 
     except rospy.ROSInterruptException:
