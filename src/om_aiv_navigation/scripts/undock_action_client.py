@@ -2,19 +2,19 @@
 
 import rospy
 import actionlib
-from ld_actions.msg import UndockAction, UndockGoal
+from om_aiv_navigation.msg import ActionAction, ActionGoal
 
 def feedback_cb(msg):
  print 'Feedback received:', msg
 
 def call_server():
 
-    client = actionlib.SimpleActionClient('undock', UndockAction)
+    client = actionlib.SimpleActionClient('undock', ActionAction)
 
     client.wait_for_server()
 
-    goal = UndockGoal()
-    goal.goal_undock = "undock"
+    goal = ActionGoal()
+    goal.goal_goal = ""
 
     client.send_goal(goal, feedback_cb=feedback_cb)
 

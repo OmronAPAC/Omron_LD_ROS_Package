@@ -402,6 +402,41 @@ class ActionServer():
             self.a_server.set_succeeded(result)
             return e
 
+    def undock(self, result, feedback):
+        try:
+            data = socket.recv(BUFFER_SIZE)
+            rcv = data.encode('ascii', 'ignore')
+            feedback.received_data = rcv
+            self.a_server.publish_feedback(feedback)
+            while not rospy.is_shutdown():
+                #check for required data
+                if "Undocked" in rcv:
+                    break
+                if "Undocking" in rcv:
+                    break
+                else:
+                    data = socket.recv(BUFFER_SIZE)
+                    rcv = rcv + data.encode('ascii', 'ignore')
+
+        except socket.error as e:
+            print("Connection  failed")
+            return e
+        while not rospy.is_shutdown():
+            for line in rcv.splitlines():
+                #print required data
+                if 'Undocked' in line:
+                    # doTask = line.split("Undocked")
+                    # rospy.loginfo(",Undocked".join(doTask)[1:])
+                    rospy.loginfo(rcv)
+                    success = True
+                    # rcv = str(rcv.splitlines())
+                    # result.status = (",Undocked".join(doTask)[1:])
+                    result.status = rcv
+                    self.a_server.set_succeeded(result)
+                    return(0)
+
+        if success:
+            self.a_server.set_succeeded(result)
 
     def __init__(self, action_name):
         self.action_command = action_name
@@ -441,6 +476,8 @@ class ActionServer():
             self.queueDropoff(result, feedback)
         if self.action_command == "stop":
             self.stop(result, feedback)
+        if self.action_command == "undock":
+            self.undock(result, feedback)
 
 if __name__ == "__main__":
     rospy.init_node("doTask_action_server")
@@ -454,4 +491,5 @@ if __name__ == "__main__":
     s = ActionServer("play")
     s = ActionServer("queueDropoff")
     s = ActionServer("stop")
+    s = ActionServer("undock")
     rospy.spin()
