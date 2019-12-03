@@ -6,7 +6,7 @@ def analogInputQueryVoltage_client(array):
     rospy.wait_for_service('analogInputQueryVoltage')
     try:
         service = rospy.ServiceProxy('analogInputQueryVoltage', OmAivService)
-        resp1 = service(x)
+        resp1 = service(array)
         return resp1.device
     except rospy.ServiceException, e:
         print "Service call failed: %s"%e
