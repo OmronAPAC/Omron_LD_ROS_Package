@@ -75,5 +75,17 @@ To run navigation commands, example to move the robot 1000mm:
 ```
 rosrun om_navigation doTask_action_client.py move 1000
 ```
+
+### Code Explanation
+ld_topic_publisher.py in ~/ld_ROS/src/om_aiv_util/scripts and em_topic_publisher.py in ~ld_ROS/src/om_aiv_util_em/scripts: 
+
+command = actual command to be sent
+
+command2 = end of required data that is sent back from arcl. Example: "End of End of ApplicationFaultQuery"
+
+command3 = required data to be printed out. Example: "ApplicationFaultQuery:......"
+
+text = what to print if required data is not received. Example: "No Faults"
+
 ### Known Issues and Bugs
 Service call failed: unable to connect to service: remote error reported: request from \[/unnamed]:
