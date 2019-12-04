@@ -17,8 +17,7 @@ def usage():
 if __name__ == "__main__":
     if len(sys.argv) == 1:
         x = ""
-        array = [ x ]
-        print array
+        array = [x]
     else:
         print usage()
         sys.exit(1)
