@@ -127,7 +127,7 @@ def handle_newConfigSectionComment(req):
     section = req.a[0]
     comment = req.a[1]
     rcv = newConfigSectionComment(section, comment)
-    return rc
+    return rcv
 def handle_popupSimple(req):
     title = req.a[0]
     message = req.a[1]
