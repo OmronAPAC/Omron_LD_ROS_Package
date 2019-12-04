@@ -123,6 +123,9 @@ def queueModifyLocal(id, type, value):
             if "CommandErrorDescription" in rcv:
                 print rcv
                 return rcv
+            if "QueueUpdate:" in rcv:
+                print rcv
+                return rcv
             else:
                 data = s.recv(BUFFER_SIZE)
                 rcv = rcv + data.encode('ascii', 'ignore')
