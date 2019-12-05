@@ -1,19 +1,20 @@
 #! /usr/bin/env python
+
 import rospy
 import actionlib
-from om_aiv_navigation.msg import ActionAction, ActionGoal
+from om_aiv_navigation.msg import DoTaskAction, DoTaskGoal
 
 def feedback_cb(msg):
  print 'Feedback received:', msg
 
 def call_server():
 
-    client = actionlib.SimpleActionClient('doTask', ActionAction)
+    client = actionlib.SimpleActionClient('doTask', DoTaskAction)
 
     client.wait_for_server()
 
-    goal = ActionGoal()
-    goal.goal_goal = "move 1000"
+    goal = DoTaskGoal()
+    goal.goaltask = "move 1000"
 
     client.send_goal(goal, feedback_cb=feedback_cb)
 
