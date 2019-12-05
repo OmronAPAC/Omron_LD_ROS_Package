@@ -104,3 +104,6 @@ text = what to print if required data is not received. Example: "No Faults"
 
 ### Known Issues and Bugs
 Service call failed: unable to connect to service: remote error reported: request from \[/unnamed]:
+
+### References
+ARCL Reference Guide, 18448-000 Rev A, Updated: 1/19/2017 is included in root directory
