@@ -54,7 +54,7 @@ Specify robot ip address, name(for multiple robots) and enterprise manager ip ad
 
 for one robot: roslaunch om_aiv_util 1robot.launch ip:=168.3.201.123 
 
-for multiple robots: roslaunch om_aiv_util multiple_robots.launch ip:=168.3.201.123 name:=robot1
+for multiple robots: roslaunch om_aiv_util multiple_robots.launch ip:=168.3.201.123 name:=robot1 (client files have to be modified with the correct service/action namespace)
 
 ### Usage
 For one robot:
