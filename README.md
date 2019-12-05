@@ -11,7 +11,8 @@ enterprise manager commands
 #### om_aiv_navigation
 navigation commands like dock, undock, dotask move , patrol
 
-
+### ROS Package Diagram
+![ROS Diagram](https://user-images.githubusercontent.com/8951670/70206708-5d230a00-1763-11ea-8130-cacf282a0965.png)
 
 ### Prerequisites
 ```
