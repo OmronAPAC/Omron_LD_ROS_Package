@@ -434,6 +434,16 @@ class ActionServer():
                     result.status = rcv
                     self.a_server.set_succeeded(result)
                     return(0)
+                if 'Undocking' in line:
+                    # doTask = line.split("Undocked")
+                    # rospy.loginfo(",Undocked".join(doTask)[1:])
+                    rospy.loginfo(rcv)
+                    success = True
+                    # rcv = str(rcv.splitlines())
+                    # result.status = (",Undocked".join(doTask)[1:])
+                    result.status = rcv
+                    self.a_server.set_succeeded(result)
+                    return(0)
 
         if success:
             self.a_server.set_succeeded(result)
