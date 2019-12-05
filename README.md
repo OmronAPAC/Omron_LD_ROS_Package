@@ -57,7 +57,7 @@ for multiple robots: roslaunch om_aiv_util 1robot.launch ip:=168.3.201.123 name:
 ### Usage
 For one robot:
 ```
-roslaunch om_aiv_util 1robot.launch ip:=<ip address of robot> name:=<robot name>
+roslaunch om_aiv_util 1robot.launch ip:=<ip address of robot>
 ```
 For multiple robots:
 ```
