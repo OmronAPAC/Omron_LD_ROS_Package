@@ -74,7 +74,7 @@ For example to view the battery level of the robot:
 
 To run navigation commands, example to move the robot 1000mm:
 ```
-rosrun om_navigation doTask_action_client.py move 1000
+rosrun om__aiv_navigation doTask_action_client.py move 1000
 ```
 
 ### Code Explanation
