@@ -139,7 +139,7 @@ class ActionServer():
             self.a_server.set_succeeded(result)
             return e
 
-        data = socket.recv(BUFFER_SIZE)
+        # data = socket.recv(BUFFER_SIZE)
         data = socket.recv(BUFFER_SIZE)
         rcv = rcv + data.encode('ascii', 'ignore')
         print rcv
