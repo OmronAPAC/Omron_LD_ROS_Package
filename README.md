@@ -86,6 +86,10 @@ To run navigation commands, example to move the robot 1000mm:
 ```
 rosrun om__aiv_navigation doTask_action_client.py move 1000
 ```
+To run service commands, example analogInputList
+```
+rosrun om_aiv_util analogInputList_client.py
+```
 
 ### Code Explanation
 ld_topic_publisher.py in ~/ld_ROS/src/om_aiv_util/scripts and em_topic_publisher.py in ~ld_ROS/src/om_aiv_util_em/scripts: 
