@@ -14,7 +14,7 @@ def call_server():
     client.wait_for_server()
 
     goal = ActionGoal()
-    goal.goal_goal = "route1"
+    goal.goal_goal = "Route1"
 
     client.send_goal(goal, feedback_cb=feedback_cb)
 
