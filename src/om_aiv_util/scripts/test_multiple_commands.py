@@ -29,7 +29,7 @@ def call_server(goal_name,command):
 
     client.send_goal(goal, feedback_cb=feedback_cb)
 
-    client.wait_for_result()
+    client.wait_for_result(timeout = rospy.Duration(60))
 
     result = client.get_result()
 
