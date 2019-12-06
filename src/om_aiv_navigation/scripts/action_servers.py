@@ -170,7 +170,8 @@ class ActionServer():
                             rcv = str(rcv.splitlines())
                             result.status = (",Arrived".join(doTask)[1:])
                             self.a_server.set_succeeded(result)
-                            break
+                            # break
+                            return(0)
                 if "Failed" in rcv:
                     print "Failed to go to goal"
                     result.status = "Failed to go to goal"
@@ -186,8 +187,8 @@ class ActionServer():
             self.a_server.set_succeeded(result)
             return e
 
-        if success:
-            self.a_server.set_succeeded(result)
+        # if success:
+        #     self.a_server.set_succeeded(result)
 
     def patrol(self, result, feedback):
         try:
