@@ -5,7 +5,6 @@ from om_aiv_navigation.msg import ActionAction, ActionGoal
 
 def feedback_cb(msg):
  print 'Feedback received:', msg
-
 def call_server():
 
     client = actionlib.SimpleActionClient('executeMacro', ActionAction)

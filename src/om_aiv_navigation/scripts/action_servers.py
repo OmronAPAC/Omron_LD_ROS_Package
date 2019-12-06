@@ -34,6 +34,7 @@ class ActionServer():
         try:
             data = socket.recv(BUFFER_SIZE)
             rcv = data.encode('ascii', 'ignore')
+            rcv = str(rcv.replace("\r\n",""))
             feedback.received_data = rcv
             self.a_server.publish_feedback(feedback)
             while not rospy.is_shutdown():
@@ -43,6 +44,7 @@ class ActionServer():
                 else:
                     data = socket.recv(BUFFER_SIZE)
                     rcv = rcv + data.encode('ascii', 'ignore')
+                    rcv = str(rcv.replace("\r\n",""))
                     feedback.received_data = rcv
                     self.a_server.publish_feedback(feedback)
 
@@ -99,6 +101,8 @@ class ActionServer():
         try:
             data = socket.recv(BUFFER_SIZE)
             rcv = data.encode('ascii', 'ignore')
+            # rcv = str(rcv.splitlines())
+            rcv = str(rcv.replace("\r\n",""))
             feedback.received_data = rcv
             self.a_server.publish_feedback(feedback)
             while not rospy.is_shutdown():
@@ -107,6 +111,7 @@ class ActionServer():
                     time.sleep(3)
                     data = socket.recv(BUFFER_SIZE)
                     rcv = rcv + data.encode('ascii', 'ignore')
+                    rcv = str(rcv.replace("\r\n",""))
                     feedback.received_data = rcv
                     self.a_server.publish_feedback(feedback)
                     break
@@ -227,6 +232,7 @@ class ActionServer():
         try:
             data = socket.recv(BUFFER_SIZE)
             rcv = data.encode('ascii', 'ignore')
+            rcv = str(rcv.replace("\r\n",""))
             feedback.received_data = rcv
             self.a_server.publish_feedback(feedback)
             while not rospy.is_shutdown():
@@ -265,6 +271,7 @@ class ActionServer():
         try:
             data = socket.recv(BUFFER_SIZE)
             rcv = data.encode('ascii', 'ignore')
+            rcv = str(rcv.replace("\r\n",""))
             feedback.received_data = rcv
             self.a_server.publish_feedback(feedback)
             while not rospy.is_shutdown():
@@ -288,6 +295,7 @@ class ActionServer():
                 else:
                     data = socket.recv(BUFFER_SIZE)
                     rcv = rcv + data.encode('ascii', 'ignore')
+                    rcv = str(rcv.replace("\r\n",""))
 
         except Exception as e:
             rospy.logerr(e)
@@ -302,6 +310,7 @@ class ActionServer():
         try:
             data = socket.recv(BUFFER_SIZE)
             rcv = data.encode('ascii', 'ignore')
+            rcv = str(rcv.replace("\r\n",""))
             feedback.received_data = rcv
             self.a_server.publish_feedback(feedback)
             while not rospy.is_shutdown():
@@ -339,6 +348,7 @@ class ActionServer():
         try:
             data = socket.recv(BUFFER_SIZE)
             rcv = data.encode('ascii', 'ignore')
+            rcv = str(rcv.replace("\r\n",""))
             feedback.received_data = rcv
             self.a_server.publish_feedback(feedback)
             while not rospy.is_shutdown():
@@ -406,6 +416,7 @@ class ActionServer():
         try:
             data = socket.recv(BUFFER_SIZE)
             rcv = data.encode('ascii', 'ignore')
+            rcv = str(rcv.replace("\r\n",""))
             feedback.received_data = rcv
             self.a_server.publish_feedback(feedback)
             while not rospy.is_shutdown():
