@@ -29,13 +29,7 @@ This readme assumes that you have installed catkin and sourced your environment.
 ```
 source /opt/ros/melodic/setup.bash
 ```
-First create a catkin workspace and name it ld_ROS:
-```
-mkdir -p ~/ld_ROS/src
-
-cd ~/ld_ROS/
-```
-Then clone the repository into the src/ folder:
+Clone the repository into the your home directory:
 ```
 git clone https://github.com/tthmatt/Omron_LD_ROS_Package.git
 ```
@@ -45,7 +39,7 @@ Your workspace hierarchy should look like this:
 
 Make sure to source the correct setup file according to your workspace hierarchy, then use catkin build to compile:
 ```
-source ~/ld_ROS/devel/setup.bash
+source ~/Omron_LD_ROS_Package/devel/setup.bash
 
 catkin build
 ```
@@ -55,7 +49,7 @@ Specify robot ip address, name(for multiple robots) and enterprise manager ip ad
 for one robot: roslaunch om_aiv_util 1robot.launch ip:=168.3.201.123 
 
 for multiple robots: roslaunch om_aiv_util multiple_robots.launch ip:=168.3.201.123 name:=robot1 
-(client files have to be modified with the correct service/action namespace. For an example looks at ~/ld_ROSsrc/om_aiv_util/scripts/multiple_robots_example_client.py)
+(client files have to be modified with the correct service/action namespace. For an example looks at ~/Omron_LD_ROS_Package/om_aiv_util/scripts/multiple_robots_example_client.py)
 
 ### Usage
 For one robot:
@@ -85,7 +79,7 @@ For example to view the battery level of the robot:
 
 To run navigation commands, example to move the robot 1000mm:
 
-In doTask_action_client.py in ~/ld_ROS/src/om_aiv_navigation/scripts set the goal.goal_goal = "move 1000". Then in a terminal window run:
+In doTask_action_client.py in ~/Omron_LD_ROS_Package/src/om_aiv_navigation/scripts set the goal.goal_goal = "move 1000". Then in a terminal window run:
 ```
 rosrun om__aiv_navigation doTask_action_client.py
 ```
@@ -95,7 +89,7 @@ rosrun om_aiv_util analogInputList_client.py
 ```
 
 ### Code Explanation
-ld_topic_publisher.py in ~/ld_ROS/src/om_aiv_util/scripts and em_topic_publisher.py in ~ld_ROS/src/om_aiv_util_em/scripts: 
+ld_topic_publisher.py in ~/Omron_LD_ROS_Package/src/om_aiv_util/scripts and em_topic_publisher.py in ~ld_ROS/src/om_aiv_util_em/scripts: 
 
 command = actual command to be sent
 
