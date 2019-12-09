@@ -23,9 +23,8 @@ def call_server(goal_name,command):
     client.wait_for_server()
 
     goal = ActionGoal()
-    # goal.goal_goal = "Goal1"
-    goal.goal_goal = goal_name
 
+    goal.goal_goal = goal_name
 
     client.send_goal(goal, feedback_cb=feedback_cb)
 
@@ -34,8 +33,6 @@ def call_server(goal_name,command):
     result = client.get_result()
 
     return result
-
-
 
 if __name__ == '__main__':
     text_str = "going to first goal"

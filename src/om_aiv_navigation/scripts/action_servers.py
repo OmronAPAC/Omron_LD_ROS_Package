@@ -81,6 +81,7 @@ class ActionServer():
                             rcv = str(rcv.splitlines())
                             result.status = (",Completed".join(doTask)[1:])
                             self.a_server.set_succeeded(result)
+                            return(0)
                             break
                 if "Failed" in rcv:
                     print "Failed to do task"
@@ -101,7 +102,6 @@ class ActionServer():
         try:
             data = socket.recv(BUFFER_SIZE)
             rcv = data.encode('ascii', 'ignore')
-            # rcv = str(rcv.splitlines())
             rcv = str(rcv.replace("\r\n",""))
             feedback.received_data = rcv
             self.a_server.publish_feedback(feedback)
@@ -126,6 +126,7 @@ class ActionServer():
                             rcv = str(rcv.splitlines())
                             result.status = (",Completed macro".join(executeMacro)[1:])
                             self.a_server.set_succeeded(result)
+                            return(0)
                             break
                 if "Failed" in rcv:
                     print "Failed to execute macro"
@@ -208,6 +209,7 @@ class ActionServer():
                             rcv = str(rcv.splitlines())
                             result.status = (",Finished".join(doTask)[1:])
                             self.a_server.set_succeeded(result)
+                            return(0)
                             break
                 if "Failed" in rcv:
                     print "Failed to patrol"
@@ -249,6 +251,7 @@ class ActionServer():
                             rcv = str(rcv.splitlines())
                             result.status = (",Finished".join(doTask)[1:])
                             self.a_server.set_succeeded(result)
+                            return(0)
                             break
                 if "Failed" in rcv:
                     print "Failed to patrol"
@@ -287,6 +290,7 @@ class ActionServer():
                             rcv = str(rcv.splitlines())
                             result.status = (",Finished".join(doTask)[1:])
                             self.a_server.set_succeeded(result)
+                            return(0)
                             break
                 if "Failed" in rcv:
                     print "Failed to patrol"
@@ -326,6 +330,7 @@ class ActionServer():
                             rcv = str(rcv.splitlines())
                             result.status = (",Playing".join(doTask)[1:])
                             self.a_server.set_succeeded(result)
+                            return(0)
                             break
                 if "SetupError:" in rcv:
                     print "Failed to play file"
@@ -401,7 +406,6 @@ class ActionServer():
                             result.status = (",Stopped".join(doTask)[1:])
                             self.a_server.set_succeeded(result)
                             return(0)
-                            break
 
                 else:
                     data = socket.recv(BUFFER_SIZE)
