@@ -16,10 +16,9 @@ def usage():
 
 if __name__ == "__main__":
     if len(sys.argv) == 3:
-        a = str(sys.argv[1])
-        b = str(sys.argv[2])
-        array = [a, b]
-        print array
+        task = str(sys.argv[1])
+        arg = str(sys.argv[2])
+        array = [task, arg]
     else:
         print usage()
         sys.exit(1)

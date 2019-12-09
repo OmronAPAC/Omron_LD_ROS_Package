@@ -19,7 +19,6 @@ if __name__ == "__main__":
         name = str(sys.argv[1])
         value = str(sys.argv[2])
         array = [name, value]
-        print array
     else:
         print usage()
         sys.exit(1)

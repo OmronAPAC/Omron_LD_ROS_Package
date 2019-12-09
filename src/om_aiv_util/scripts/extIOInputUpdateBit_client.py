@@ -20,7 +20,6 @@ if __name__ == "__main__":
         bit_postition = str(sys.argv[2])
         bit_value = str(sys.argv[3])
         array = [ name, bit_postition, bit_value]
-        print array
     else:
         print usage()
         sys.exit(1)

@@ -19,8 +19,8 @@ if __name__ == "__main__":
         slot_num = str(sys.argv[1])
         array = [slot_num]
     elif len(sys.argv) == 1:
-        x = ""
-        array = [x]
+        nil = ""
+        array = [nil]
     else:
         print usage()
         sys.exit(1)

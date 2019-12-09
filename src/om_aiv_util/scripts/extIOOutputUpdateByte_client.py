@@ -20,7 +20,6 @@ if __name__ == "__main__":
         byte_position = str(sys.argv[2])
         byte_value = str(sys.argv[3])
         array = [name, byte_position, byte_value]
-        print array
     else:
         print usage()
         sys.exit(1)
