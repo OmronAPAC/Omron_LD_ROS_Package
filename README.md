@@ -102,6 +102,9 @@ command3 = required data to be printed out. Example: "ApplicationFaultQuery:....
 
 text = what to print if required data is not received. Example: "No Faults"
 
+### Limitations
+ROS is not able to have access to robot hardware, therefore map creation and scanning is not possible. This ROS package makes use of ARCL to send commands and receive data from the robot. 
+
 ### Known Issues and Bugs
 Service call failed: unable to connect to service: remote error reported: request from \[/unnamed]:
 
