@@ -6,36 +6,31 @@ import threading
 import time
 import re
 import sys
+import rospy
 from std_msgs.msg import String
 BUFFER_SIZE = 1024
-# ip_address = rospy.get_param("ip_address")
-# port = rospy.get_param("port")
-ip_address = "172.21.5.120"
-port = 7171
+ip_address = rospy.get_param("ip_address")
+port = rospy.get_param("port")
+# ip_address = "172.21.5.120"
+# port = 7171
 connecttcp.connect(str(ip_address), port)
 
-from om_aiv_util.srv import Service,ServiceResponse
-import rospy
+from om_aiv_util.srv import OmAivService,OmAivServiceResponse
 
 def handle_queueShowRobot(req):
-    global text
-    text = req.a
-    queueShowRobot()
+    robot_name = req.a[0]
+    rcv = queueShowRobot(robot_name)
     return rcv
 
 def queueShowRobot_server():
     rospy.init_node('queueShowRobot_server')
-    s = rospy.Service('queueShowRobot', Service, handle_queueShowRobot)
+    s = rospy.Service('queueShowRobot', OmAivService, handle_queueShowRobot)
     rospy.spin()
 
-def queueShowRobot():
-    global rcv
-    pub = rospy.Publisher('arcl_queueShowRobot', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
-    command = "queueShowRobot {}".format(text)
+def queueShowRobot(robot_name):
+    command = "queueShowRobot {}".format(robot_name)
     command = command.encode('ascii')
-    print "Running command: ", command
+    print "Running command: queueShowRobot"
     s.send(command+b"\r\n")
     try:
         data = s.recv(BUFFER_SIZE)
@@ -43,6 +38,10 @@ def queueShowRobot():
         while not rospy.is_shutdown():
             #check for required data
             if "EndQueueShowRobot" in rcv:
+                print rcv
+                return rcv
+                break
+            if "CommandErrorDescription" in rcv:
                 print rcv
                 return rcv
                 break

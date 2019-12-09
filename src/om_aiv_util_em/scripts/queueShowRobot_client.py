@@ -2,11 +2,11 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def queueShowRobot_client(x):
+def queueShowRobot_client(array):
     rospy.wait_for_service('queueShowRobot')
     try:
-        add_two_ints = rospy.ServiceProxy('queueShowRobot', Service)
-        resp1 = add_two_ints(x)
+        service = rospy.ServiceProxy('queueShowRobot', OmAivService)
+        resp1 = service(array)
         return resp1.device
     except rospy.ServiceException, e:
         print "Service call failed: %s"%e
@@ -16,11 +16,13 @@ def usage():
 
 if __name__ == "__main__":
     if len(sys.argv) == 2:
-        x = str(sys.argv[1])
+        robot_name = str(sys.argv[1])
+        array = [robot_name]
     elif len(sys.argv) == 1:
-        x = ""
+        nil = ""
+        array = [nil]
     else:
         print usage()
         sys.exit(1)
     print "running command"
-    print queueShowRobot_client(x)
+    print queueShowRobot_client(array)
