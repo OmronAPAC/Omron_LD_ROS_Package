@@ -1,5 +1,4 @@
 # om_aiv - ROS Packages for Omron Mobile Robot
-![rsggsg](https://github.com/tthmatt/Omron_LD_ROS_Package/blob/master/diagram.png "rdghr")
 ![omron ld robot](https://d2t1xqejof9utc.cloudfront.net/screenshots/pics/440c4d03c225fbe74adf238d73ed8f00/large.png "omron ld robot")
 ### List of packages
 #### 1. om_aiv_util
