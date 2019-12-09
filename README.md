@@ -12,7 +12,8 @@ enterprise manager commands
 navigation commands like dock, undock, dotask move , patrol
 
 ### ROS Package Diagram
-![ROS Diagram](https://user-images.githubusercontent.com/8951670/70206708-5d230a00-1763-11ea-8130-cacf282a0965.png)
+![ROS Diagram](https://user-images.githubusercontent.com/8951670/70422919-83b8ac00-1aa7-11ea-82f9-acbde1137f7d.png)
+
 
 ### Prerequisites
 ```
