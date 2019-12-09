@@ -145,7 +145,6 @@ class ActionServer():
             self.a_server.set_succeeded(result)
             return e
 
-        # data = socket.recv(BUFFER_SIZE)
         data = socket.recv(BUFFER_SIZE)
         rcv = rcv + data.encode('ascii', 'ignore')
         print rcv
@@ -167,11 +166,9 @@ class ActionServer():
                         if 'Arrived' in line:
                             doTask = line.split("Arrived")
                             rospy.loginfo(",Arrived".join(doTask)[1:])
-                            success = True
                             rcv = str(rcv.splitlines())
                             result.status = (",Arrived".join(doTask)[1:])
                             self.a_server.set_succeeded(result)
-                            # break
                             return(0)
                 if "Failed" in rcv:
                     print "Failed to go to goal"
@@ -188,9 +185,6 @@ class ActionServer():
             self.a_server.set_succeeded(result)
             return e
 
-        # if success:
-        #     self.a_server.set_succeeded(result)
-
     def patrol(self, result, feedback):
         try:
             data = socket.recv(BUFFER_SIZE)
@@ -205,7 +199,6 @@ class ActionServer():
                         if 'Finished patrolling' in line:
                             doTask = line.split("Finished")
                             rospy.loginfo(",Finished".join(doTask)[1:])
-                            success = True
                             rcv = str(rcv.splitlines())
                             result.status = (",Finished".join(doTask)[1:])
                             self.a_server.set_succeeded(result)
@@ -228,9 +221,6 @@ class ActionServer():
             self.a_server.set_succeeded(result)
             return e
 
-        if success:
-            self.a_server.set_succeeded(result)
-
     def patrolOnce(self, result, feedback):
         try:
             data = socket.recv(BUFFER_SIZE)
@@ -246,8 +236,6 @@ class ActionServer():
                         if 'Finished patrolling' in line:
                             doTask = line.split("Finished")
                             rospy.loginfo(",Finished".join(doTask)[1:])
-                            # pub.publish(''.join(doTask))
-                            success = True
                             rcv = str(rcv.splitlines())
                             result.status = (",Finished".join(doTask)[1:])
                             self.a_server.set_succeeded(result)
@@ -268,9 +256,6 @@ class ActionServer():
             self.a_server.set_succeeded(result)
             return e
 
-        if success:
-            self.a_server.set_succeeded(result)
-
     def patrolResume(self, result, feedback):
         try:
             data = socket.recv(BUFFER_SIZE)
@@ -286,7 +271,6 @@ class ActionServer():
                         if 'Finished patrolling' in line:
                             doTask = line.split("Finished")
                             rospy.loginfo(",Finished".join(doTask)[1:])
-                            success = True
                             rcv = str(rcv.splitlines())
                             result.status = (",Finished".join(doTask)[1:])
                             self.a_server.set_succeeded(result)
@@ -308,9 +292,6 @@ class ActionServer():
             self.a_server.set_succeeded(result)
             return e
 
-        if success:
-            self.a_server.set_succeeded(result)
-
     def play(self, result, feedback):
         try:
             data = socket.recv(BUFFER_SIZE)
@@ -326,7 +307,6 @@ class ActionServer():
                         if 'Playing' in line:
                             doTask = line.split("Playing")
                             rospy.loginfo(",Playing".join(doTask)[1:])
-                            success = True
                             rcv = str(rcv.splitlines())
                             result.status = (",Playing".join(doTask)[1:])
                             self.a_server.set_succeeded(result)
@@ -346,9 +326,6 @@ class ActionServer():
             result.status = str(e)
             self.a_server.set_succeeded(result)
             return e
-
-        if success:
-            self.a_server.set_succeeded(result)
 
     def queueDropoff(self, result, feedback):
         try:
@@ -444,7 +421,6 @@ class ActionServer():
                     # doTask = line.split("Undocked")
                     # rospy.loginfo(",Undocked".join(doTask)[1:])
                     rospy.loginfo(rcv)
-                    success = True
                     # rcv = str(rcv.splitlines())
                     # result.status = (",Undocked".join(doTask)[1:])
                     result.status = rcv
@@ -454,15 +430,11 @@ class ActionServer():
                     # doTask = line.split("Undocked")
                     # rospy.loginfo(",Undocked".join(doTask)[1:])
                     rospy.loginfo(rcv)
-                    success = True
                     # rcv = str(rcv.splitlines())
                     # result.status = (",Undocked".join(doTask)[1:])
                     result.status = rcv
                     self.a_server.set_succeeded(result)
                     return(0)
-
-        if success:
-            self.a_server.set_succeeded(result)
 
     def __init__(self, action_name):
         self.action_command = action_name
