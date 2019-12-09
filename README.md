@@ -12,7 +12,8 @@ enterprise manager commands
 navigation commands like dock, undock, dotask move , patrol
 
 ### ROS Package Diagram
-![ROS Diagram](https://user-images.githubusercontent.com/8951670/70206708-5d230a00-1763-11ea-8130-cacf282a0965.png)
+![ROS Diagram](https://user-images.githubusercontent.com/8951670/70422919-83b8ac00-1aa7-11ea-82f9-acbde1137f7d.png)
+
 
 ### Prerequisites
 ```
@@ -101,6 +102,9 @@ command2 = end of required data that is sent back from arcl. Example: "End of En
 command3 = required data to be printed out. Example: "ApplicationFaultQuery:......"
 
 text = what to print if required data is not received. Example: "No Faults"
+
+### Limitations
+ROS is not able to have access to robot hardware, therefore map creation and scanning is not possible. This ROS package makes use of ARCL to send commands and receive data from the robot. 
 
 ### Known Issues and Bugs
 Service call failed: unable to connect to service: remote error reported: request from \[/unnamed]:
