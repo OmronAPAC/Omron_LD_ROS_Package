@@ -47,7 +47,7 @@ catkin build
 source ~/Omron_LD_ROS_Package/devel/setup.bash
 ```
 ### Initial Configuration
-Specify robot ip address, name(for multiple robots) and enterprise manager ip address when running the launch file from the command line as a command line argment, for example:
+Specify the robot ip address, name(for multiple robots) and enterprise manager ip address when running the launch file from the command line as a command line argument, for example:
 
 for one robot: roslaunch om_aiv_util 1robot.launch ip:=168.3.201.123 
 
