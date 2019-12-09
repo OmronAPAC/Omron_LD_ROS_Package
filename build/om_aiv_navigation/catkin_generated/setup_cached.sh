@@ -7,6 +7,6 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation:$CMAKE_PREFIX_PATH"
-export PWD="/home/tthmatt/ld_ROS/build/om_aiv_navigation"
-export ROS_PACKAGE_PATH="/home/tthmatt/ld_ROS/src/om_aiv_navigation:$ROS_PACKAGE_PATH"
+export CMAKE_PREFIX_PATH="/home/tthmatt/Omron_LD_ROS_Package/devel/.private/om_aiv_navigation:$CMAKE_PREFIX_PATH"
+export PWD="/home/tthmatt/Omron_LD_ROS_Package/build/om_aiv_navigation"
+export ROS_PACKAGE_PATH="/home/tthmatt/Omron_LD_ROS_Package/src/om_aiv_navigation:$ROS_PACKAGE_PATH"

@@ -3,7 +3,7 @@
 
 # since this file is sourced either use the provided _CATKIN_SETUP_DIR
 # or fall back to the destination set at configure time
-: ${_CATKIN_SETUP_DIR:=/home/tthmatt/ld_ROS/devel/.private/om_aiv_navigation}
+: ${_CATKIN_SETUP_DIR:=/home/tthmatt/Omron_LD_ROS_Package/devel/.private/om_aiv_navigation}
 CATKIN_SETUP_UTIL_ARGS="--extend --local"
 . "$_CATKIN_SETUP_DIR/setup.sh"
 unset CATKIN_SETUP_UTIL_ARGS

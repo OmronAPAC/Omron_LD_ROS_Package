@@ -1,1 +1,1 @@
-/home/tthmatt/ld_ROS/devel/.private/catkin_tools_prebuild/local_setup.zsh
+/home/tthmatt/Omron_LD_ROS_Package/devel/.private/catkin_tools_prebuild/local_setup.zsh

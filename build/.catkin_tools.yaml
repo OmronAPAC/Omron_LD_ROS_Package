@@ -1,6 +1,6 @@
-devel_space: /home/tthmatt/ld_ROS/devel
+devel_space: /home/tthmatt/Omron_LD_ROS_Package/devel
 install: false
-install_space: /home/tthmatt/ld_ROS/install
+install_space: /home/tthmatt/Omron_LD_ROS_Package/install
 profile: default
-source_space: /home/tthmatt/ld_ROS/src
-workspace: /home/tthmatt/ld_ROS
+source_space: /home/tthmatt/Omron_LD_ROS_Package/src
+workspace: /home/tthmatt/Omron_LD_ROS_Package

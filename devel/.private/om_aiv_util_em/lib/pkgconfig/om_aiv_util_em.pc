@@ -1,8 +1,8 @@
-prefix=/home/tthmatt/ld_ROS/devel/.private/om_aiv_util_em
+prefix=/home/tthmatt/Omron_LD_ROS_Package/devel/.private/om_aiv_util_em
 
 Name: om_aiv_util_em
 Description: Description of om_aiv_util_em
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/tthmatt/ld_ROS/devel/.private/om_aiv_util_em/lib 
+Libs: -L/home/tthmatt/Omron_LD_ROS_Package/devel/.private/om_aiv_util_em/lib 
 Requires: 

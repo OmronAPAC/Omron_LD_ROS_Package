@@ -1,8 +1,8 @@
-prefix=/home/tthmatt/ld_ROS/install
+prefix=/home/tthmatt/Omron_LD_ROS_Package/install
 
 Name: catkin_tools_prebuild
 Description: Description of catkin_tools_prebuild
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/tthmatt/ld_ROS/install/lib 
+Libs: -L/home/tthmatt/Omron_LD_ROS_Package/install/lib 
 Requires: 

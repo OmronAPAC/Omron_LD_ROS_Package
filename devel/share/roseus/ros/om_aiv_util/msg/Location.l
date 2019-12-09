@@ -1,1 +1,1 @@
-/home/tthmatt/ld_ROS/devel/.private/om_aiv_util/share/roseus/ros/om_aiv_util/msg/Location.l
+/home/tthmatt/Omron_LD_ROS_Package/devel/.private/om_aiv_util/share/roseus/ros/om_aiv_util/msg/Location.l

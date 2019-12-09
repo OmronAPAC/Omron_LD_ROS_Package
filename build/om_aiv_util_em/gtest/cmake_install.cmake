@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/tthmatt/ld_ROS/install")
+  set(CMAKE_INSTALL_PREFIX "/home/tthmatt/Omron_LD_ROS_Package/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/tthmatt/ld_ROS/build/om_aiv_util_em/gtest/googlemock/cmake_install.cmake")
+  include("/home/tthmatt/Omron_LD_ROS_Package/build/om_aiv_util_em/gtest/googlemock/cmake_install.cmake")
 
 endif()
 
