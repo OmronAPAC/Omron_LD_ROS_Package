@@ -38,11 +38,13 @@ Your workspace hierarchy should look like this:
 ![workspace hierarchy](https://user-images.githubusercontent.com/8951670/70413338-1d755e80-1a92-11ea-8640-88861fa8692b.png)
 
 
-Make sure to source the correct setup file according to your workspace hierarchy, then use catkin build to compile:
+Use catkin build to compile and make sure to source the workspace:
 ```
-source ~/Omron_LD_ROS_Package/devel/setup.bash
+cd ~/Omron_LD_ROS_Package
 
 catkin build
+
+source ~/Omron_LD_ROS_Package/devel/setup.bash
 ```
 ### Initial Configuration
 Specify robot ip address, name(for multiple robots) and enterprise manager ip address when running the launch file from the command line as a command line argment, for example:
