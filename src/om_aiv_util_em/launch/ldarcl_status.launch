@@ -1,5 +1,0 @@
-<launch>
-
-<node name="ld_status_publisher" pkg="om_aiv_util" type="ld_status_publisher.py" />
-
-</launch>

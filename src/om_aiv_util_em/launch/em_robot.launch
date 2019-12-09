@@ -5,6 +5,15 @@
   <group ns="$(arg name)"> -->
   <!-- <group ns="robot1"> -->
     <node name="em_topic_publisher" pkg="om_aiv_util_em" type="em_topic_publisher.py" output="screen" />
+    <node name="payloadQuery_server" pkg="om_aiv_util_em" type="payloadQuery_server.py" output="screen" />
+    <node name="payloadSlotCount_server" pkg="om_aiv_util_em" type="payloadSlotCount_server.py" output="screen" />
+    <node name="queueCancel_server" pkg="om_aiv_util_em" type="queueCancel_server.py" output="screen" />
+    <node name="queueModify_server" pkg="om_aiv_util_em" type="queueModify_server.py" output="screen" />
+    <node name="queueMulti_server" pkg="om_aiv_util_em" type="queueMulti_server.py" output="screen" />
+    <node name="queuePickup_server" pkg="om_aiv_util_em" type="queuePickup_server.py" output="screen" />
+    <node name="queuePickupDropoff_server" pkg="om_aiv_util_em" type="queuePickupDropoff_server.py" output="screen" />
+    <node name="queueQuery_server" pkg="om_aiv_util_em" type="queueQuery_server.py" output="screen" />
+    <node name="queueShowRobot_server" pkg="om_aiv_util_em" type="queueShowRobot_server.py" output="screen" />
 
       <arg name="ip" />
       <param name="ip_address" value="$(arg ip)" />
