@@ -2,11 +2,11 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def queueCancel_client(a, b , c, d):
+def queueCancel_client(array):
     rospy.wait_for_service('queueCancel')
     try:
-        add_two_ints = rospy.ServiceProxy('queueCancel', Service4)
-        resp1 = add_two_ints(a, b, c, d)
+        service = rospy.ServiceProxy('queueCancel', OmAivService)
+        resp1 = service(array)
         return resp1.device
     except rospy.ServiceException, error:
         print "Service call failed: %s"%error
@@ -16,18 +16,19 @@ def usage():
 
 if __name__ == "__main__":
     if len(sys.argv) == 5:
-        a = str(sys.argv[1])
-        b = str(sys.argv[2])
-        c = str(sys.argv[3])
-        d = str(sys.argv[4])
+        type = str(sys.argv[1])
+        value = str(sys.argv[2])
+        echo_str = str(sys.argv[3])
+        reason = str(sys.argv[4])
+        array = [type, value, echo_str, reason]
     elif len(sys.argv) == 3:
-        a = str(sys.argv[1])
-        b = str(sys.argv[2])
-        c = ""
-        d = ""
-
+        type = str(sys.argv[1])
+        value = str(sys.argv[2])
+        nil1 = ""
+        nil2 = ""
+        array = [type, value, nil1, nil2]
     else:
         print usage()
         sys.exit(1)
     print "running command"
-    print queueCancel_client(a, b , c, d)
+    print queueCancel_client(array)

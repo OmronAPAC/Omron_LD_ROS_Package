@@ -6,38 +6,34 @@ import threading
 import time
 import re
 import sys
+import rospy
 from std_msgs.msg import String
 BUFFER_SIZE = 1024
-# ip_address = rospy.get_param("ip_address")
-# port = rospy.get_param("port")
-ip_address = "172.21.5.120"
-port = 7171
+ip_address = rospy.get_param("ip_address")
+port = rospy.get_param("port")
+# ip_address = "172.21.5.120"
+# port = 7171
 connecttcp.connect(str(ip_address), port)
 
-from om_aiv_util.srv import Service5,Service5Response
-import rospy
+from om_aiv_util.srv import OmAivService,OmAivServiceResponse
 
 def handle_queuePickupDropoff(req):
-    global a, b, c, d, e
-    a = req.a
-    b = req.b
-    c = req.c
-    d = req.d
-    e = req.e
-    queuePickupDropoff()
+    goal1_name = req.a[0]
+    goal2_name = req.a[1]
+    priority1 = req.a[2]
+    priority2 = req.a[3]
+    job_id = req.a[4]
+    rcv = queuePickupDropoff(goal1_name, goal2_name, priority1, priority2, job_id)
     return rcv
 
 def queuePickupDropoff_server():
     rospy.init_node('queuePickupDropoff_server')
-    s = rospy.Service('queuePickupDropoff', Service5, handle_queuePickupDropoff)
+    s = rospy.Service('queuePickupDropoff', OmAivService, handle_queuePickupDropoff)
     rospy.spin()
 
-def queuePickupDropoff():
-    global rcv
-    pub = rospy.Publisher('arcl_queuePickupDropoff', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
-    command = "queuePickupDropoff {}".format(a + " " + b + " " + c + " " + d + " " + e)
+def queuePickupDropoff(goal1_name, goal2_name, priority1, priority2, job_id):
+    command = "queuePickupDropoff {}".format(goal1_name + " " + goal2_name + " "
+    + priority1 + " " + priority2 + " " + job_id)
     command = command.encode('ascii')
     print "Running command: ", command
     s.send(command+b"\r\n")

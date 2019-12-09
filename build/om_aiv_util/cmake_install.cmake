@@ -133,17 +133,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/om_aiv_util/srv" TYPE FILE FILES
-    "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/ServiceExample.srv"
-    "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service.srv"
-    "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service2.srv"
-    "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service3.srv"
-    "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service5.srv"
-    "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service9.srv"
-    "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/Service4.srv"
-    "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/AddTwoInts.srv"
-    "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/OmAivService.srv"
-    )
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/om_aiv_util/srv" TYPE FILE FILES "/home/tthmatt/ld_ROS/src/om_aiv_util/srv/OmAivService.srv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)

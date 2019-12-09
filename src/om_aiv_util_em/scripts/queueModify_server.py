@@ -6,37 +6,31 @@ import threading
 import time
 import re
 import sys
+import rospy
 from std_msgs.msg import String
 BUFFER_SIZE = 1024
-# ip_address = rospy.get_param("ip_address")
-# port = rospy.get_param("port")
-ip_address = "172.21.5.120"
-port = 7171
+ip_address = rospy.get_param("ip_address")
+port = rospy.get_param("port")
+# ip_address = "172.21.5.120"
+# port = 7171
 connecttcp.connect(str(ip_address), port)
 
-from om_aiv_util.srv import Service3,Service3Response
-import rospy
+from om_aiv_util.srv import OmAivService,OmAivServiceResponse
 
 def handle_queueModify(req):
-    global a, b, c
-    a = req.a
-    b = req.b
-    c = req.c
-    queueModify()
-    # return Service5Response(req.a + req.b + req.c + req.d + req.e)
+    id = req.a[0]
+    type = req.a[1]
+    value = req.a[2]
+    rcv = queueModify(id, type, value)
     return rcv
 
 def queueModify_server():
     rospy.init_node('queueModify_server')
-    s = rospy.Service('queueModify', Service3, handle_queueModify)
+    s = rospy.Service('queueModify', OmAivService, handle_queueModify)
     rospy.spin()
 
-def queueModify():
-    global rcv
-    pub = rospy.Publisher('arcl_queueModify', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
-    command = "queueModify {}".format(a + " " + b + " " + c)
+def queueModify(id, type, value):
+    command = "queueModify {}".format(id + " " + type + " " + value)
     command = command.encode('ascii')
     print "Running command: ", command
     s.send(command+b"\r\n")

@@ -15,30 +15,23 @@ port = rospy.get_param("port")
 # port = 7171
 connecttcp.connect(str(ip_address), port)
 
-from om_aiv_util.srv import Service2,Service2Response
-import rospy
+from om_aiv_util.srv import OmAivService,OmAivServiceResponse
 
 def handle_payloadQuery(req):
-    global a, b
-    a = req.a
-    b = req.b
-    payloadQuery()
-    # return Service5Response(req.a + req.b + req.c + req.d + req.e)
+    robot_name = req.a[0]
+    slot_num = req.a[1]
+    rcv = payloadQuery(robot_name, slot_num)
     return rcv
 
 def payloadQuery_server():
     rospy.init_node('payloadQuery_server')
-    s = rospy.Service('payloadQuery', Service2, handle_payloadQuery)
+    s = rospy.Service('payloadQuery', OmAivService, handle_payloadQuery)
     rospy.spin()
 
-def payloadQuery():
-    global rcv
-    pub = rospy.Publisher('arcl_payloadQuery', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
-    command = "payloadQuery {}".format(a + " " + b)
+def payloadQuery(robot_name, slot_num):
+    command = "payloadQuery {}".format(robot_name + " " + slot_num)
     command = command.encode('ascii')
-    print "Running command: ", command
+    print "Running command: payloadQuery"
     s.send(command+b"\r\n")
     try:
         data = s.recv(BUFFER_SIZE)

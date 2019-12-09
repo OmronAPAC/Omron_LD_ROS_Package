@@ -5,37 +5,35 @@ import socket
 import threading
 import time
 import re
-import sys
+import rospy
 from std_msgs.msg import String
 BUFFER_SIZE = 1024
-# ip_address = rospy.get_param("ip_address")
-# port = rospy.get_param("port")
-ip_address = "172.21.5.120"
-port = 7171
+ip_address = rospy.get_param("ip_address")
+port = rospy.get_param("port")
+# ip_address = "172.21.5.120"
+# port = 7171
 connecttcp.connect(str(ip_address), port)
 
-from om_aiv_util.srv import Service,ServiceResponse
-import rospy
+from om_aiv_util.srv import OmAivService,OmAivServiceResponse
 
 def handle_createInfo(req):
-    global a
-    a = req.a
-    createInfo()
+    arg = str(req.a)
+    rcv = createInfo(arg)
     return rcv
 
 def createInfo_server():
     rospy.init_node('createInfo_server')
-    s = rospy.Service('createInfo', Service, handle_createInfo)
+    s = rospy.Service('createInfo', OmAivService, handle_createInfo)
     rospy.spin()
 
-def createInfo():
-    global rcv
-    pub = rospy.Publisher('arcl_createInfo', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
-    command = "queueMulti {}".format(a)
+def createInfo(arg):
+    arg = arg.replace(',', '')
+    arg = arg.replace('[', '')
+    arg = arg.replace(']', '')
+    arg = arg.replace("'", '')
+    command = "queueMulti {}".format(arg)
     command = command.encode('ascii')
-    print "Running command: ", command
+    print "Running command: queueMulti"
     s.send(command+b"\r\n")
     try:
         data = s.recv(BUFFER_SIZE)

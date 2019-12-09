@@ -89,16 +89,28 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
 
-# Special rule for the target test
-test/fast: test
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
 
-.PHONY : test/fast
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -112,28 +124,16 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
 
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
+# Special rule for the target test
+test/fast: test
 
-.PHONY : rebuild_cache/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
+.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -166,58 +166,6 @@ preinstall/fast:
 depend:
 	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
-
-#=============================================================================
-# Target rules for targets named om_aiv_util_genpy
-
-# Build rule for target.
-om_aiv_util_genpy: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 om_aiv_util_genpy
-.PHONY : om_aiv_util_genpy
-
-# fast build rule for target.
-om_aiv_util_genpy/fast:
-	$(MAKE) -f CMakeFiles/om_aiv_util_genpy.dir/build.make CMakeFiles/om_aiv_util_genpy.dir/build
-.PHONY : om_aiv_util_genpy/fast
-
-#=============================================================================
-# Target rules for targets named om_aiv_util_gennodejs
-
-# Build rule for target.
-om_aiv_util_gennodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 om_aiv_util_gennodejs
-.PHONY : om_aiv_util_gennodejs
-
-# fast build rule for target.
-om_aiv_util_gennodejs/fast:
-	$(MAKE) -f CMakeFiles/om_aiv_util_gennodejs.dir/build.make CMakeFiles/om_aiv_util_gennodejs.dir/build
-.PHONY : om_aiv_util_gennodejs/fast
-
-#=============================================================================
-# Target rules for targets named om_aiv_util_generate_messages_nodejs
-
-# Build rule for target.
-om_aiv_util_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 om_aiv_util_generate_messages_nodejs
-.PHONY : om_aiv_util_generate_messages_nodejs
-
-# fast build rule for target.
-om_aiv_util_generate_messages_nodejs/fast:
-	$(MAKE) -f CMakeFiles/om_aiv_util_generate_messages_nodejs.dir/build.make CMakeFiles/om_aiv_util_generate_messages_nodejs.dir/build
-.PHONY : om_aiv_util_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named om_aiv_util_genlisp
-
-# Build rule for target.
-om_aiv_util_genlisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 om_aiv_util_genlisp
-.PHONY : om_aiv_util_genlisp
-
-# fast build rule for target.
-om_aiv_util_genlisp/fast:
-	$(MAKE) -f CMakeFiles/om_aiv_util_genlisp.dir/build.make CMakeFiles/om_aiv_util_genlisp.dir/build
-.PHONY : om_aiv_util_genlisp/fast
 
 #=============================================================================
 # Target rules for targets named rosgraph_msgs_generate_messages_nodejs
@@ -324,6 +272,19 @@ roscpp_generate_messages_py/fast:
 .PHONY : roscpp_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named om_aiv_util_genpy
+
+# Build rule for target.
+om_aiv_util_genpy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 om_aiv_util_genpy
+.PHONY : om_aiv_util_genpy
+
+# fast build rule for target.
+om_aiv_util_genpy/fast:
+	$(MAKE) -f CMakeFiles/om_aiv_util_genpy.dir/build.make CMakeFiles/om_aiv_util_genpy.dir/build
+.PHONY : om_aiv_util_genpy/fast
+
+#=============================================================================
 # Target rules for targets named std_msgs_generate_messages_py
 
 # Build rule for target.
@@ -363,32 +324,6 @@ roscpp_generate_messages_eus/fast:
 .PHONY : roscpp_generate_messages_eus/fast
 
 #=============================================================================
-# Target rules for targets named om_aiv_util_generate_messages_py
-
-# Build rule for target.
-om_aiv_util_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 om_aiv_util_generate_messages_py
-.PHONY : om_aiv_util_generate_messages_py
-
-# fast build rule for target.
-om_aiv_util_generate_messages_py/fast:
-	$(MAKE) -f CMakeFiles/om_aiv_util_generate_messages_py.dir/build.make CMakeFiles/om_aiv_util_generate_messages_py.dir/build
-.PHONY : om_aiv_util_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named roscpp_generate_messages_lisp
-
-# Build rule for target.
-roscpp_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_lisp
-.PHONY : roscpp_generate_messages_lisp
-
-# fast build rule for target.
-roscpp_generate_messages_lisp/fast:
-	$(MAKE) -f CMakeFiles/roscpp_generate_messages_lisp.dir/build.make CMakeFiles/roscpp_generate_messages_lisp.dir/build
-.PHONY : roscpp_generate_messages_lisp/fast
-
-#=============================================================================
 # Target rules for targets named tests
 
 # Build rule for target.
@@ -400,19 +335,6 @@ tests: cmake_check_build_system
 tests/fast:
 	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
 .PHONY : tests/fast
-
-#=============================================================================
-# Target rules for targets named roscpp_generate_messages_cpp
-
-# Build rule for target.
-roscpp_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_cpp
-.PHONY : roscpp_generate_messages_cpp
-
-# fast build rule for target.
-roscpp_generate_messages_cpp/fast:
-	$(MAKE) -f CMakeFiles/roscpp_generate_messages_cpp.dir/build.make CMakeFiles/roscpp_generate_messages_cpp.dir/build
-.PHONY : roscpp_generate_messages_cpp/fast
 
 #=============================================================================
 # Target rules for targets named download_extra_data
@@ -480,19 +402,6 @@ om_aiv_util_generate_messages_lisp/fast:
 .PHONY : om_aiv_util_generate_messages_lisp/fast
 
 #=============================================================================
-# Target rules for targets named _om_aiv_util_generate_messages_check_deps_Service4
-
-# Build rule for target.
-_om_aiv_util_generate_messages_check_deps_Service4: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _om_aiv_util_generate_messages_check_deps_Service4
-.PHONY : _om_aiv_util_generate_messages_check_deps_Service4
-
-# fast build rule for target.
-_om_aiv_util_generate_messages_check_deps_Service4/fast:
-	$(MAKE) -f CMakeFiles/_om_aiv_util_generate_messages_check_deps_Service4.dir/build.make CMakeFiles/_om_aiv_util_generate_messages_check_deps_Service4.dir/build
-.PHONY : _om_aiv_util_generate_messages_check_deps_Service4/fast
-
-#=============================================================================
 # Target rules for targets named std_msgs_generate_messages_lisp
 
 # Build rule for target.
@@ -504,19 +413,6 @@ std_msgs_generate_messages_lisp: cmake_check_build_system
 std_msgs_generate_messages_lisp/fast:
 	$(MAKE) -f CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make CMakeFiles/std_msgs_generate_messages_lisp.dir/build
 .PHONY : std_msgs_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named _om_aiv_util_generate_messages_check_deps_Service2
-
-# Build rule for target.
-_om_aiv_util_generate_messages_check_deps_Service2: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _om_aiv_util_generate_messages_check_deps_Service2
-.PHONY : _om_aiv_util_generate_messages_check_deps_Service2
-
-# fast build rule for target.
-_om_aiv_util_generate_messages_check_deps_Service2/fast:
-	$(MAKE) -f CMakeFiles/_om_aiv_util_generate_messages_check_deps_Service2.dir/build.make CMakeFiles/_om_aiv_util_generate_messages_check_deps_Service2.dir/build
-.PHONY : _om_aiv_util_generate_messages_check_deps_Service2/fast
 
 #=============================================================================
 # Target rules for targets named std_msgs_generate_messages_nodejs
@@ -571,17 +467,17 @@ om_aiv_util_generate_messages_eus/fast:
 .PHONY : om_aiv_util_generate_messages_eus/fast
 
 #=============================================================================
-# Target rules for targets named _om_aiv_util_generate_messages_check_deps_Service5
+# Target rules for targets named roscpp_generate_messages_cpp
 
 # Build rule for target.
-_om_aiv_util_generate_messages_check_deps_Service5: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _om_aiv_util_generate_messages_check_deps_Service5
-.PHONY : _om_aiv_util_generate_messages_check_deps_Service5
+roscpp_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_cpp
+.PHONY : roscpp_generate_messages_cpp
 
 # fast build rule for target.
-_om_aiv_util_generate_messages_check_deps_Service5/fast:
-	$(MAKE) -f CMakeFiles/_om_aiv_util_generate_messages_check_deps_Service5.dir/build.make CMakeFiles/_om_aiv_util_generate_messages_check_deps_Service5.dir/build
-.PHONY : _om_aiv_util_generate_messages_check_deps_Service5/fast
+roscpp_generate_messages_cpp/fast:
+	$(MAKE) -f CMakeFiles/roscpp_generate_messages_cpp.dir/build.make CMakeFiles/roscpp_generate_messages_cpp.dir/build
+.PHONY : roscpp_generate_messages_cpp/fast
 
 #=============================================================================
 # Target rules for targets named _om_aiv_util_generate_messages_check_deps_OmAivService
@@ -597,30 +493,30 @@ _om_aiv_util_generate_messages_check_deps_OmAivService/fast:
 .PHONY : _om_aiv_util_generate_messages_check_deps_OmAivService/fast
 
 #=============================================================================
-# Target rules for targets named _om_aiv_util_generate_messages_check_deps_Service9
+# Target rules for targets named roscpp_generate_messages_lisp
 
 # Build rule for target.
-_om_aiv_util_generate_messages_check_deps_Service9: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _om_aiv_util_generate_messages_check_deps_Service9
-.PHONY : _om_aiv_util_generate_messages_check_deps_Service9
+roscpp_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_lisp
+.PHONY : roscpp_generate_messages_lisp
 
 # fast build rule for target.
-_om_aiv_util_generate_messages_check_deps_Service9/fast:
-	$(MAKE) -f CMakeFiles/_om_aiv_util_generate_messages_check_deps_Service9.dir/build.make CMakeFiles/_om_aiv_util_generate_messages_check_deps_Service9.dir/build
-.PHONY : _om_aiv_util_generate_messages_check_deps_Service9/fast
+roscpp_generate_messages_lisp/fast:
+	$(MAKE) -f CMakeFiles/roscpp_generate_messages_lisp.dir/build.make CMakeFiles/roscpp_generate_messages_lisp.dir/build
+.PHONY : roscpp_generate_messages_lisp/fast
 
 #=============================================================================
-# Target rules for targets named _om_aiv_util_generate_messages_check_deps_Service3
+# Target rules for targets named om_aiv_util_generate_messages_py
 
 # Build rule for target.
-_om_aiv_util_generate_messages_check_deps_Service3: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _om_aiv_util_generate_messages_check_deps_Service3
-.PHONY : _om_aiv_util_generate_messages_check_deps_Service3
+om_aiv_util_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 om_aiv_util_generate_messages_py
+.PHONY : om_aiv_util_generate_messages_py
 
 # fast build rule for target.
-_om_aiv_util_generate_messages_check_deps_Service3/fast:
-	$(MAKE) -f CMakeFiles/_om_aiv_util_generate_messages_check_deps_Service3.dir/build.make CMakeFiles/_om_aiv_util_generate_messages_check_deps_Service3.dir/build
-.PHONY : _om_aiv_util_generate_messages_check_deps_Service3/fast
+om_aiv_util_generate_messages_py/fast:
+	$(MAKE) -f CMakeFiles/om_aiv_util_generate_messages_py.dir/build.make CMakeFiles/om_aiv_util_generate_messages_py.dir/build
+.PHONY : om_aiv_util_generate_messages_py/fast
 
 #=============================================================================
 # Target rules for targets named _om_aiv_util_generate_messages_check_deps_Location
@@ -636,32 +532,6 @@ _om_aiv_util_generate_messages_check_deps_Location/fast:
 .PHONY : _om_aiv_util_generate_messages_check_deps_Location/fast
 
 #=============================================================================
-# Target rules for targets named _om_aiv_util_generate_messages_check_deps_AddTwoInts
-
-# Build rule for target.
-_om_aiv_util_generate_messages_check_deps_AddTwoInts: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _om_aiv_util_generate_messages_check_deps_AddTwoInts
-.PHONY : _om_aiv_util_generate_messages_check_deps_AddTwoInts
-
-# fast build rule for target.
-_om_aiv_util_generate_messages_check_deps_AddTwoInts/fast:
-	$(MAKE) -f CMakeFiles/_om_aiv_util_generate_messages_check_deps_AddTwoInts.dir/build.make CMakeFiles/_om_aiv_util_generate_messages_check_deps_AddTwoInts.dir/build
-.PHONY : _om_aiv_util_generate_messages_check_deps_AddTwoInts/fast
-
-#=============================================================================
-# Target rules for targets named _om_aiv_util_generate_messages_check_deps_Service
-
-# Build rule for target.
-_om_aiv_util_generate_messages_check_deps_Service: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _om_aiv_util_generate_messages_check_deps_Service
-.PHONY : _om_aiv_util_generate_messages_check_deps_Service
-
-# fast build rule for target.
-_om_aiv_util_generate_messages_check_deps_Service/fast:
-	$(MAKE) -f CMakeFiles/_om_aiv_util_generate_messages_check_deps_Service.dir/build.make CMakeFiles/_om_aiv_util_generate_messages_check_deps_Service.dir/build
-.PHONY : _om_aiv_util_generate_messages_check_deps_Service/fast
-
-#=============================================================================
 # Target rules for targets named om_aiv_util_generate_messages_cpp
 
 # Build rule for target.
@@ -675,19 +545,6 @@ om_aiv_util_generate_messages_cpp/fast:
 .PHONY : om_aiv_util_generate_messages_cpp/fast
 
 #=============================================================================
-# Target rules for targets named _om_aiv_util_generate_messages_check_deps_ServiceExample
-
-# Build rule for target.
-_om_aiv_util_generate_messages_check_deps_ServiceExample: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _om_aiv_util_generate_messages_check_deps_ServiceExample
-.PHONY : _om_aiv_util_generate_messages_check_deps_ServiceExample
-
-# fast build rule for target.
-_om_aiv_util_generate_messages_check_deps_ServiceExample/fast:
-	$(MAKE) -f CMakeFiles/_om_aiv_util_generate_messages_check_deps_ServiceExample.dir/build.make CMakeFiles/_om_aiv_util_generate_messages_check_deps_ServiceExample.dir/build
-.PHONY : _om_aiv_util_generate_messages_check_deps_ServiceExample/fast
-
-#=============================================================================
 # Target rules for targets named om_aiv_util_gencpp
 
 # Build rule for target.
@@ -699,6 +556,45 @@ om_aiv_util_gencpp: cmake_check_build_system
 om_aiv_util_gencpp/fast:
 	$(MAKE) -f CMakeFiles/om_aiv_util_gencpp.dir/build.make CMakeFiles/om_aiv_util_gencpp.dir/build
 .PHONY : om_aiv_util_gencpp/fast
+
+#=============================================================================
+# Target rules for targets named om_aiv_util_genlisp
+
+# Build rule for target.
+om_aiv_util_genlisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 om_aiv_util_genlisp
+.PHONY : om_aiv_util_genlisp
+
+# fast build rule for target.
+om_aiv_util_genlisp/fast:
+	$(MAKE) -f CMakeFiles/om_aiv_util_genlisp.dir/build.make CMakeFiles/om_aiv_util_genlisp.dir/build
+.PHONY : om_aiv_util_genlisp/fast
+
+#=============================================================================
+# Target rules for targets named om_aiv_util_generate_messages_nodejs
+
+# Build rule for target.
+om_aiv_util_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 om_aiv_util_generate_messages_nodejs
+.PHONY : om_aiv_util_generate_messages_nodejs
+
+# fast build rule for target.
+om_aiv_util_generate_messages_nodejs/fast:
+	$(MAKE) -f CMakeFiles/om_aiv_util_generate_messages_nodejs.dir/build.make CMakeFiles/om_aiv_util_generate_messages_nodejs.dir/build
+.PHONY : om_aiv_util_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named om_aiv_util_gennodejs
+
+# Build rule for target.
+om_aiv_util_gennodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 om_aiv_util_gennodejs
+.PHONY : om_aiv_util_gennodejs
+
+# fast build rule for target.
+om_aiv_util_gennodejs/fast:
+	$(MAKE) -f CMakeFiles/om_aiv_util_gennodejs.dir/build.make CMakeFiles/om_aiv_util_gennodejs.dir/build
+.PHONY : om_aiv_util_gennodejs/fast
 
 #=============================================================================
 # Target rules for targets named gmock_main
@@ -760,13 +656,6 @@ help:
 	@echo "... depend"
 	@echo "... install"
 	@echo "... list_install_components"
-	@echo "... edit_cache"
-	@echo "... test"
-	@echo "... om_aiv_util_genpy"
-	@echo "... install/strip"
-	@echo "... om_aiv_util_gennodejs"
-	@echo "... om_aiv_util_generate_messages_nodejs"
-	@echo "... om_aiv_util_genlisp"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... std_msgs_generate_messages_eus"
@@ -775,37 +664,36 @@ help:
 	@echo "... om_aiv_util_geneus"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_py"
+	@echo "... om_aiv_util_genpy"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_eus"
-	@echo "... om_aiv_util_generate_messages_py"
-	@echo "... roscpp_generate_messages_lisp"
+	@echo "... edit_cache"
 	@echo "... tests"
-	@echo "... rebuild_cache"
-	@echo "... roscpp_generate_messages_cpp"
 	@echo "... download_extra_data"
 	@echo "... run_tests"
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... clean_test_results"
 	@echo "... om_aiv_util_generate_messages_lisp"
-	@echo "... _om_aiv_util_generate_messages_check_deps_Service4"
 	@echo "... std_msgs_generate_messages_lisp"
-	@echo "... _om_aiv_util_generate_messages_check_deps_Service2"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... install/local"
 	@echo "... doxygen"
 	@echo "... om_aiv_util_generate_messages"
 	@echo "... om_aiv_util_generate_messages_eus"
-	@echo "... _om_aiv_util_generate_messages_check_deps_Service5"
+	@echo "... roscpp_generate_messages_cpp"
+	@echo "... rebuild_cache"
 	@echo "... _om_aiv_util_generate_messages_check_deps_OmAivService"
-	@echo "... _om_aiv_util_generate_messages_check_deps_Service9"
-	@echo "... _om_aiv_util_generate_messages_check_deps_Service3"
+	@echo "... roscpp_generate_messages_lisp"
+	@echo "... om_aiv_util_generate_messages_py"
 	@echo "... _om_aiv_util_generate_messages_check_deps_Location"
-	@echo "... _om_aiv_util_generate_messages_check_deps_AddTwoInts"
-	@echo "... _om_aiv_util_generate_messages_check_deps_Service"
 	@echo "... om_aiv_util_generate_messages_cpp"
-	@echo "... _om_aiv_util_generate_messages_check_deps_ServiceExample"
 	@echo "... om_aiv_util_gencpp"
+	@echo "... om_aiv_util_genlisp"
+	@echo "... om_aiv_util_generate_messages_nodejs"
+	@echo "... install/strip"
+	@echo "... om_aiv_util_gennodejs"
+	@echo "... test"
 	@echo "... gmock_main"
 	@echo "... gmock"
 	@echo "... gtest_main"

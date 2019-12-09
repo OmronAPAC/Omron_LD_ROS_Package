@@ -6,46 +6,44 @@ import threading
 import time
 import re
 import sys
+import rospy
 from std_msgs.msg import String
 BUFFER_SIZE = 1024
-# ip_address = rospy.get_param("ip_address")
-# port = rospy.get_param("port")
-ip_address = "172.21.5.120"
-port = 7171
+ip_address = rospy.get_param("ip_address")
+port = rospy.get_param("port")
+# ip_address = "172.21.5.120"
+# port = 7171
 connecttcp.connect(str(ip_address), port)
 
-from om_aiv_util.srv import Service4,Service4Response
-import rospy
+from om_aiv_util.srv import OmAivService,OmAivServiceResponse
 
 def handle_queueCancel(req):
-    global a, b, c, d
-    a = req.a
-    b = req.b
-    c = req.c
-    d = req.d
-    queueCancel()
-    # return Service5Response(req.a + req.b + req.c + req.d + req.e)
+    type = req.a[0]
+    value = req.a[1]
+    echo_str = req.a[2]
+    reason = req.a[3]
+    rcv = queueCancel(type, value, echo_str, reason)
     return rcv
 
 def queueCancel_server():
     rospy.init_node('queueCancel_server')
-    s = rospy.Service('queueCancel', Service4, handle_queueCancel)
+    s = rospy.Service('queueCancel', OmAivService, handle_queueCancel)
     rospy.spin()
 
-def queueCancel():
-    global rcv
-    pub = rospy.Publisher('arcl_queueCancel', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
-    command = "queueCancel {}".format(a + " " + b + " \"" + c + "\" " + d)
+def queueCancel(type, value, echo_str, reason):
+    command = "queueCancel {}".format(type + " " + value + " \"" + echo_str + "\" " + reason)
     command = command.encode('ascii')
-    print "Running command: ", command
+    print "Running command: queueCancel"
     s.send(command+b"\r\n")
     try:
         data = s.recv(BUFFER_SIZE)
         rcv = data.encode('ascii', 'ignore')
         while not rospy.is_shutdown():
             #check for required data
+            if "failed" in rcv:
+                print rcv
+                return rcv
+                break
             if "queuecancel" in rcv:
                 print rcv
                 return rcv

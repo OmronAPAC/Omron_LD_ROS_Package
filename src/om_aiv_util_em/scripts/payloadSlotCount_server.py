@@ -6,36 +6,31 @@ import threading
 import time
 import re
 import sys
+import rospy
 from std_msgs.msg import String
 BUFFER_SIZE = 1024
-# ip_address = rospy.get_param("ip_address")
-# port = rospy.get_param("port")
-ip_address = "172.21.5.120"
-port = 7171
+ip_address = rospy.get_param("ip_address")
+port = rospy.get_param("port")
+# ip_address = "172.21.5.120"
+# port = 7171
 connecttcp.connect(str(ip_address), port)
 
-from om_aiv_util.srv import Service,ServiceResponse
-import rospy
+from om_aiv_util.srv import OmAivService,OmAivServiceResponse
 
 def handle_payloadSlotCount(req):
-    global text
-    text = req.a
-    payloadSlotCount()
+    robot_name = req.a[0]
+    rcv = payloadSlotCount(robot_name)
     return rcv
 
 def payloadSlotCount_server():
     rospy.init_node('payloadSlotCount_server')
-    s = rospy.Service('payloadSlotCount', Service, handle_payloadSlotCount)
+    s = rospy.Service('payloadSlotCount', OmAivService, handle_payloadSlotCount)
     rospy.spin()
 
-def payloadSlotCount():
-    global rcv
-    pub = rospy.Publisher('arcl_payloadSlotCount', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
-    command = "payloadSlotCount {}".format(text)
+def payloadSlotCount(robot_name):
+    command = "payloadSlotCount {}".format(robot_name)
     command = command.encode('ascii')
-    print "Running command: ", command
+    print "Running command: payloadSlotCount"
     s.send(command+b"\r\n")
     try:
         data = s.recv(BUFFER_SIZE)
@@ -43,6 +38,10 @@ def payloadSlotCount():
         while not rospy.is_shutdown():
             #check for required data
             if "EndPayloadSlotCount" in rcv:
+                print rcv
+                return rcv
+                break
+            if "CommandErrorDescription" in rcv:
                 print rcv
                 return rcv
                 break

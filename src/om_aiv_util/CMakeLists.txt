@@ -56,14 +56,6 @@ add_message_files(
 ## Generate services in the 'srv' folder
 add_service_files(
 FILES
-ServiceExample.srv
-Service.srv
-Service2.srv
-Service3.srv
-Service5.srv
-Service9.srv
-Service4.srv
-AddTwoInts.srv
 OmAivService.srv
 )
 

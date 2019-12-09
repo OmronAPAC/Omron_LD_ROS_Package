@@ -2,11 +2,11 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def analogInputQueryRaw_client(a):
+def analogInputQueryRaw_client(array):
     rospy.wait_for_service('createInfo')
     try:
-        add_two_ints = rospy.ServiceProxy('createInfo', Service)
-        resp1 = add_two_ints(a)
+        service = rospy.ServiceProxy('createInfo', OmAivService)
+        resp1 = service(array)
         return resp1.device
     except rospy.ServiceException, error:
         print "Service call failed: %s"%error
@@ -15,11 +15,11 @@ def usage():
     return "%s <number of goals> <number of fields per goal> <goal1> <goal1 args> <goal2> <goal2 args> ... <goalN> <goalN args> [jobid]"%sys.argv[0]
 
 if __name__ == "__main__":
-    a = str(sys.argv[1:])
+    arg = str(sys.argv[1:])
     print "running command"
-    a = a.replace(',', '')
-    a = a.replace('[', '')
-    a = a.replace(']', '')
-    a = a.replace("'", '')
-    # print "Requesting", x
-    print analogInputQueryRaw_client(a)
+    arg = arg.replace(',', '')
+    arg = arg.replace('[', '')
+    arg = arg.replace(']', '')
+    arg = arg.replace("'", '')
+    array = [arg]
+    print analogInputQueryRaw_client(array)

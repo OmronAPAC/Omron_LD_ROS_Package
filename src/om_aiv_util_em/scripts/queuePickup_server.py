@@ -6,39 +6,33 @@ import threading
 import time
 import re
 import sys
+import rospy
 from std_msgs.msg import String
 BUFFER_SIZE = 1024
-# ip_address = rospy.get_param("ip_address")
-# port = rospy.get_param("port")
-ip_address = "172.21.5.120"
-port = 7171
+ip_address = rospy.get_param("ip_address")
+port = rospy.get_param("port")
+# ip_address = "172.21.5.120"
+# port = 7171
 connecttcp.connect(str(ip_address), port)
 
-from om_aiv_util.srv import Service3,Service3Response
-import rospy
+from om_aiv_util.srv import OmAivService,OmAivServiceResponse
 
 def handle_queuePickup(req):
-    global a, b, c
-    a = req.a
-    b = req.b
-    c = req.c
-    queuePickup()
-    # return Service5Response(req.a + req.b + req.c + req.d + req.e)
+    goal_name = req.a[0]
+    priority = req.a[1]
+    job_id = req.a[2]
+    rcv = queuePickup(goal_name, priority, job_id)
     return rcv
 
 def queuePickup_server():
     rospy.init_node('queuePickup_server')
-    s = rospy.Service('queuePickup', Service3, handle_queuePickup)
+    s = rospy.Service('queuePickup', OmAivService, handle_queuePickup)
     rospy.spin()
 
-def queuePickup():
-    global rcv
-    pub = rospy.Publisher('arcl_queuePickup', String, queue_size=10)
-    # rospy.init_node('talker', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
-    command = "queuePickup {}".format(a + " " + b + " " + c)
+def queuePickup(goal_name, priority, job_id):
+    command = "queuePickup {}".format(goal_name + " " + priority + " " + job_id)
     command = command.encode('ascii')
-    print "Running command: ", command
+    print "Running command: queuePickup"
     s.send(command+b"\r\n")
     try:
         data = s.recv(BUFFER_SIZE)
