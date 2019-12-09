@@ -8,7 +8,7 @@ def feedback_cb(msg):
  print 'Feedback received:', msg
 
 def call_server():
-
+    #action name have to be defined correctly if using multiple robots
     client = actionlib.SimpleActionClient('dock', ActionAction)
 
     client.wait_for_server()

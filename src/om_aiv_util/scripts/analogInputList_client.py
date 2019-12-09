@@ -5,6 +5,7 @@ import rospy
 from om_aiv_util.srv import *
 
 def analogInputList_client(array):
+    #service name have to be defined correctly if using multiple robots
     rospy.wait_for_service('analogInputList')
     try:
         service = rospy.ServiceProxy('analogInputList', OmAivService)
