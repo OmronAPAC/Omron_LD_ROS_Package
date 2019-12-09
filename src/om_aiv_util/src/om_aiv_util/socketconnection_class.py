@@ -5,6 +5,7 @@ import time
 import re
 import sys
 import rospy
+import datetime
 from std_msgs.msg import String
 BUFFER_SIZE = 1024
 class ConnectSocket(object):
@@ -31,7 +32,7 @@ class ConnectSocket(object):
             #wait until server prints out full list of commands
             while not rospy.is_shutdown():
                 if "End of commands" in rcv:
-                    print("Connected")
+                    print("Connected to robot")
                     break
                 else:
                     data = self.sock.recv(BUFFER_SIZE)
@@ -39,7 +40,7 @@ class ConnectSocket(object):
             return 1
 
         except socket.error as e:
-            print("Connection  failed")
+            print("Connection to robot failed")
             return e
 
     #host = ip address
@@ -47,6 +48,7 @@ class ConnectSocket(object):
         #try to connect to server
         try:
             self.sock.connect((host, port))
+            print datetime.datetime.now(),"connecting to", host 
 
         except socket.error as e:
             print("Connection  failed")
@@ -59,44 +61,3 @@ class ConnectSocket(object):
 
 
 connecttcp = ConnectSocket()
-
-# ip_address = rospy.get_param("ip_address")
-# # ip_address = "172.21.5.123"
-# connecttcp.connect(str(ip_address), 7171)
-# connecttcp.sendpassword("adept")
-
-
-    # connecttcp.sendcommand("status")
-    # def sendcommand(self, command):
-    #     global rcv
-    #     BUFFER_SIZE = 1024
-    #     flag = 0
-    #     data = self.sock.recv(BUFFER_SIZE)
-    #     rcv = data.decode("utf-8")
-    #     while (flag == 0):
-    #         if "End of commands" in rcv:
-    #             flag == 1
-    #             while not rospy.is_shutdown():
-    #                 self.command = command
-    #                 command = command.encode('ascii')
-    #                 self.sock.send(command+b"\r\n")
-    #                 print "Running Command: ", command
-    #                 time.sleep(1)
-    #                 data = self.sock.recv(BUFFER_SIZE)
-    #                 rcv = data.decode("utf-8")
-    #                 time.sleep(1)
-    #                 print(rcv)
-
-
-    #                 # pubout = str(data.splitlines())
-    #                 # pub.publish(pubout)
-    #                 # time.sleep(1)
-    #                 # rospy.loginfo(rcv)
-
-    #                 # time.sleep(2)
-    #                 # exit(0)
-
-    #         else:
-    #             flag == 0
-    #             data = self.sock.recv(BUFFER_SIZE)
-    #             rcv = data.decode("utf-8")

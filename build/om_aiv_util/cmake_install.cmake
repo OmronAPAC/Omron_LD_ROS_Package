@@ -129,6 +129,10 @@ file(INSTALL DESTINATION "/home/tthmatt/Omron_LD_ROS_Package/install" TYPE FILE 
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  include("/home/tthmatt/Omron_LD_ROS_Package/build/om_aiv_util/catkin_generated/safe_execute_install.cmake")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/om_aiv_util/msg" TYPE FILE FILES "/home/tthmatt/Omron_LD_ROS_Package/src/om_aiv_util/msg/Location.msg")
 endif()
 
@@ -161,7 +165,11 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/tthmatt/Omron_LD_ROS_Package/devel/.private/om_aiv_util/lib/python2.7/dist-packages/om_aiv_util")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/tthmatt/Omron_LD_ROS_Package/devel/.private/om_aiv_util/lib/python2.7/dist-packages/om_aiv_util" REGEX "/\\_\\_init\\_\\_\\.py$" EXCLUDE REGEX "/\\_\\_init\\_\\_\\.pyc$" EXCLUDE)
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/tthmatt/Omron_LD_ROS_Package/devel/.private/om_aiv_util/lib/python2.7/dist-packages/om_aiv_util" FILES_MATCHING REGEX "/home/tthmatt/Omron_LD_ROS_Package/devel/.private/om_aiv_util/lib/python2.7/dist-packages/om_aiv_util/.+/__init__.pyc?$")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)

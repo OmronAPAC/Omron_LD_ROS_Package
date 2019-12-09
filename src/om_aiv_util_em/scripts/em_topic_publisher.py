@@ -21,8 +21,7 @@ import sys
 BUFFER_SIZE = 2056
 #import socketconnection class to connect to robot
 #requires socketconnection_class.py file in the same folder
-from socketconnection_class import ConnectSocket
-connecttcp = ConnectSocket()
+from om_aiv_util.socketconnection_class import ConnectSocket, connecttcp
 s = connecttcp.sock
 #get ip adress and port from launch file
 ip_address = rospy.get_param("ip_address")
