@@ -34,6 +34,7 @@ def call_server(goal_name,command):
 
     return result
 
+
 if __name__ == '__main__':
     text_str = "going to first goal"
     array = [text_str]
