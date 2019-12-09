@@ -70,9 +70,6 @@ def runCommand(command, command2, command3, text):
             rospy.loginfo(rcv)
             pub.publish(rcv)
             break
-        # if command3 not in line:
-        #     rospy.loginfo(text)
-        #     pub.publish(text)
 
 if __name__ == '__main__':
     try:

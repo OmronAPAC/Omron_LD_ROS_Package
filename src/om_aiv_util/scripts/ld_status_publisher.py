@@ -80,7 +80,6 @@ def state_of_charge():
     for line in rcv.splitlines():
         if 'StateOfCharge' in line:
             state_of_charge = line.split()[-1]
-
             rospy.loginfo(state_of_charge)
             pub.publish(float(state_of_charge))
         else:
@@ -100,21 +99,15 @@ def location():
             locationtheta = line.split()[-1]
             PI = 3.1415926535897
             relative_angle = float(locationtheta)*180/PI
-            # print relative_angle
             msg.x = float(locationx)
             msg.y = float(locationy)
             msg.theta = float(locationtheta)
-            # print locationz
-            # print .rad2deg(-2)
+
         else:
             pass
 
-
     rospy.loginfo(msg)
     pub.publish(msg)
-    # pub.publish(''.join(locationx))
-    # pub.publish(''.join(locationy))
-    # pub.publish(''.join(locationz))
 
 def localization_score():
     pub = rospy.Publisher('ldarcl_status_localization_score', Float32, queue_size=10)
