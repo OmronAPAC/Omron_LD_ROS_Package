@@ -34,9 +34,6 @@ rospy.init_node('getInfo_publisher', anonymous=True)
 def getInfo_WirelessLink():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_WirelessLink', String, queue_size=10)
-    #specify node name
-
-
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -65,20 +62,14 @@ def getInfo_WirelessLink():
             rospy.loginfo(",Info:".join(info)[1:])
             #publish data
             pub.publish(''.join(info))
-
             break
-
         if 'Info:' not in line:
             rospy.loginfo("No info")
             pub.publish("No info")
 
-
 def getInfo_WirelessQuality():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_WirelessQuality', String, queue_size=10)
-    #specify node name
-
-
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -107,7 +98,6 @@ def getInfo_WirelessQuality():
             rospy.loginfo(",Info:".join(info)[1:])
             #publish data
             pub.publish(''.join(info))
-
             break
 
         if 'Info:' not in line:
@@ -118,9 +108,6 @@ def getInfo_WirelessQuality():
 def getInfo_Odometer():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_Odometer', Int32, queue_size=10)
-    #specify node name
-
-
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -162,9 +149,6 @@ def getInfo_Odometer():
 def getInfo_HourMeter():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_HourMeter', Int32, queue_size=10)
-    #specify node name
-
-
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -195,7 +179,6 @@ def getInfo_HourMeter():
             rospy.loginfo("Hourmeter:".join(info))
             #publish data
             pub.publish(infonum)
-
             break
 
         if 'Info:' not in line:
@@ -206,9 +189,6 @@ def getInfo_HourMeter():
 def getInfo_Temperature():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_Temperature', Int32, queue_size=10)
-    #specify node name
-
-
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -257,9 +237,6 @@ def getInfo_Temperature():
 def getInfo_LaserScore():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_LaserScore', Int32, queue_size=10)
-    #specify node name
-
-
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -301,9 +278,6 @@ def getInfo_LaserScore():
 def getInfo_LaserLock():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_LaserLock', Int32, queue_size=10)
-    #specify node name
-
-
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -346,9 +320,6 @@ def getInfo_LaserLock():
 def getInfo_LaserNumSamples():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_LaserNumSamples', Int32, queue_size=10)
-    #specify node name
-
-
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -390,9 +361,6 @@ def getInfo_LaserNumSamples():
 def getInfo_LaserNumPeaks():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_LaserNumPeaks', Int32, queue_size=10)
-    #specify node name
-
-
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -434,9 +402,6 @@ def getInfo_LaserNumPeaks():
 def getInfo_Mpacs():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_Mpacs', Int32, queue_size=10)
-    #specify node name
-
-
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -478,9 +443,6 @@ def getInfo_Mpacs():
 def getInfo_Laser_1_Pacs():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_Laser_1_Pacs', Int32, queue_size=10)
-    #specify node name
-
-
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -522,9 +484,6 @@ def getInfo_Laser_1_Pacs():
 def getInfo_SBC_Uptime():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_SBC_Uptime', Int32, queue_size=10)
-    #specify node name
-
-
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -566,9 +525,6 @@ def getInfo_SBC_Uptime():
 def getInfo_ARAM_Uptime():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_ARAM_Uptime', Int32, queue_size=10)
-    #specify node name
-
-
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -610,9 +566,6 @@ def getInfo_ARAM_Uptime():
 def getInfo_Idle():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_Idle', Int32, queue_size=10)
-    #specify node name
-
-
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -654,9 +607,6 @@ def getInfo_Idle():
 def getInfo_TipAngle():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_TipAngle', Float32, queue_size=10)
-    #specify node name
-
-
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -700,9 +650,6 @@ def getInfo_TipAngle():
 def getInfo_IsTipped():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_IsTipped', String, queue_size=10)
-    #specify node name
-
-
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -742,9 +689,6 @@ def getInfo_IsTipped():
 def getInfo_Queue_ID():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_Queue_ID', String, queue_size=10)
-    #specify node name
-
-
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -784,9 +728,6 @@ def getInfo_Queue_ID():
 def getInfo_Queue_Job_ID():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_Queue_Job_ID', String, queue_size=10)
-    #specify node name
-
-
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -826,9 +767,6 @@ def getInfo_Queue_Job_ID():
 def getInfo_DebugLogState():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_DebugLogState', String, queue_size=10)
-    #specify node name
-
-
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -868,9 +806,6 @@ def getInfo_DebugLogState():
 def getInfo_DebugLogSeconds():
     #specify topic name
     pub = rospy.Publisher('ldarcl_getInfo_DebugLogSeconds', String, queue_size=10)
-    #specify node name
-
-
     print(Style.RESET_ALL)
     print(Fore.GREEN)
     #send command to arcl
@@ -899,7 +834,6 @@ def getInfo_DebugLogSeconds():
             rospy.loginfo(",Info:".join(info)[1:])
             #publish data
             pub.publish(''.join(info))
-
             break
 
         if 'Info:' not in line:

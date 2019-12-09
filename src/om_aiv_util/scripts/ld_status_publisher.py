@@ -29,7 +29,6 @@ port = rospy.get_param("port")
 connecttcp.connect(str(ip_address), port)
 rospy.init_node('ld_status', anonymous=True)
 
-
 def sendcommand():
     #send status command
     command = "status"

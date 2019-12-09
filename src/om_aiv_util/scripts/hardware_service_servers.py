@@ -32,14 +32,14 @@ def handle_configStart(req):
     rcv = configStart()
     return rcv
 def handle_connectOutgoing(req):
-    a = req.a[0]
-    b = req.a[1]
-    rcv = connectOutgoing(a, b)
+    ip_add = req.a[0]
+    port_num = req.a[1]
+    rcv = connectOutgoing(ip_add, port_num)
     return rcv
 def handle_doTaskInstant(req):
-    a = req.a[0]
-    b = req.a[1]
-    rcv =  doTaskInstant(a, b)
+    task = req.a[0]
+    arg = req.a[1]
+    rcv =  doTaskInstant(task, arg)
     return rcv
 def handle_enableMotors(req):
     rcv = enableMotors()
@@ -348,8 +348,8 @@ def configStart():
         print("Connection  failed")
         return e
 
-def connectOutgoing(a, b):
-    command = "connectOutgoing {}".format(a + " " + b)
+def connectOutgoing(ip_add, port_num):
+    command = "connectOutgoing {}".format(ip_add + " " + port_num)
     command = command.encode('ascii')
     print "Running command: ", command
     s.send(command+b"\r\n")
@@ -374,8 +374,8 @@ def connectOutgoing(a, b):
         print("Connection  failed")
         return errormsg
 
-def doTaskInstant(a, b):
-    command = "doTaskInstant {}".format(a + " " + b)
+def doTaskInstant(task, arg):
+    command = "doTaskInstant {}".format(task + " " + arg)
     command = command.encode('ascii')
     print "Running command: ", command
     s.send(command+b"\r\n")

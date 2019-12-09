@@ -18,9 +18,11 @@ def usage():
     return "%s [device]"%sys.argv[0]
 
 if __name__ == "__main__":
+    #take in command line arguents if required
     if len(sys.argv) == 1:
-        x = ""
-        array = [x]
+        nil = ""
+        array = [nil]
+    #check if correct number of command line arguments is entered
     else:
         print usage()
         sys.exit(1)
