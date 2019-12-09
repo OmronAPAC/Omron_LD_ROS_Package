@@ -83,10 +83,12 @@ For example to view the battery level of the robot:
 ![rostopic echo example](https://user-images.githubusercontent.com/8951670/69392375-cdb43a80-0d10-11ea-8da4-8e39f4f72525.png)
 
 To run navigation commands, example to move the robot 1000mm:
+
+In doTask_action_client.py in ~/ld_ROS/src/om_aiv_navigation/scripts set the goal.goal_goal = "move 1000". Then in a terminal window run:
 ```
-rosrun om__aiv_navigation doTask_action_client.py move 1000
+rosrun om__aiv_navigation doTask_action_client.py
 ```
-To run service commands, example analogInputList
+To run service commands, example analogInputList:
 ```
 rosrun om_aiv_util analogInputList_client.py
 ```
