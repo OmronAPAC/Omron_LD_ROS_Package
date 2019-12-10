@@ -39,6 +39,13 @@ Not searching for unused variables given on the command line.
 [36m--[0m catkin 0.7.19
 [36m--[0m BUILD_SHARED_LIBS is on
 [36m--[0m Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
-[36m--[0m Configuring done
-[36m--[0m Generating done
-[36m--[0m Build files have been written to: /home/tthmatt/Omron_LD_ROS_Package/build/om_aiv_util_em
+[31m[1mCMake Error[0m at /opt/ros/melodic/share/genmsg/cmake/genmsg-extras.cmake:151 (message):
+  add_service_files() directory not found:
+  /home/tthmatt/Omron_LD_ROS_Package/src/om_aiv_util_em/srv
+[36mCall Stack (most recent call first):[0m
+  CMakeLists.txt:58 (add_service_files)
+
+
+[36m--[0m Configuring incomplete, errors occurred!
+See also "/home/tthmatt/Omron_LD_ROS_Package/build/om_aiv_util_em/CMakeFiles/CMakeOutput.log".
+See also "/home/tthmatt/Omron_LD_ROS_Package/build/om_aiv_util_em/CMakeFiles/CMakeError.log".

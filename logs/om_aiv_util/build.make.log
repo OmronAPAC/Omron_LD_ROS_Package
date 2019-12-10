@@ -1,7 +1,7 @@
-[  0%] Built target std_msgs_generate_messages_nodejs
 [  0%] Built target _om_aiv_util_generate_messages_check_deps_Location
-[  0%] Built target _om_aiv_util_generate_messages_check_deps_OmAivService
+[  0%] Built target std_msgs_generate_messages_nodejs
 [  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target _om_aiv_util_generate_messages_check_deps_OmAivService
 [  0%] Built target std_msgs_generate_messages_eus
 [  0%] Built target std_msgs_generate_messages_py
 [  0%] Built target std_msgs_generate_messages_cpp
