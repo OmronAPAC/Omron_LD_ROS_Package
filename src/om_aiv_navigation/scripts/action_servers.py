@@ -338,6 +338,7 @@ class ActionServer():
                 #check for required data
                 if "Completed" in rcv:
                     print rcv
+                    rcv = str(rcv.replace("\r\n",""))
                     result.status = (rcv)
                     self.a_server.set_succeeded(result)
                     return(0)
@@ -357,6 +358,7 @@ class ActionServer():
                 else:
                     data = socket.recv(BUFFER_SIZE)
                     rcv = rcv + data.encode('ascii', 'ignore')
+                    rcv = str(rcv.replace("\r\n",""))
                     feedback.received_data = rcv
                     self.a_server.publish_feedback(feedback)
 
