@@ -92,6 +92,10 @@ To view services:
 ```
 rosservice list
 ```
+Command arguments are to be input as command line arguments. For example, command arclSendText:
+```
+rosrun om_aiv_util arclSendText_client.py text
+```
 To run service commands, example analogInputList:
 ```
 rosrun om_aiv_util analogInputList_client.py
