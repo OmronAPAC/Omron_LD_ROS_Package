@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from om_aiv_util.srv import OmAivService, OmAivServiceResponse
 import rospy
-from socketconnection_class import ConnectSocket, connecttcp
+from om_aiv_util.socketconnection_class import ConnectSocket, connecttcp
 s = connecttcp.sock
 import socket
 import time
