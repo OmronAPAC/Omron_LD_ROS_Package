@@ -45,6 +45,7 @@ def runCommand(command, command2, command3, text):
     try:
         data = s.recv(BUFFER_SIZE)
         rcv = data.encode('ascii', 'ignore')
+        rcv = str(rcv.replace("\r\n",""))
         while not rospy.is_shutdown():
             #keep receiving data until require data is received
             if command2 in rcv:
