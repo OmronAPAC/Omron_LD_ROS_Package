@@ -86,7 +86,7 @@ To run navigation commands, example to move the robot 1000mm:
 
 In doTask_action_client.py in ~/Omron_LD_ROS_Package/src/om_aiv_navigation/scripts set the goal.goal_goal = "move 1000". Then in a terminal window run:
 ```
-rosrun om__aiv_navigation doTask_action_client.py
+rosrun om_aiv_navigation doTask_action_client.py
 ```
 To run service commands, example analogInputList:
 ```
