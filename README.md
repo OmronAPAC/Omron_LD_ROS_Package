@@ -21,7 +21,7 @@ ROS Melodic
 ```
 ### Compatibility
 
-Tested on ARAM 4.9.27 and ARAM 5.0.12 to be fully compatible
+Tested on ARAM 4.9.27 and FLOW 1.0.16 to be fully compatible
 
 ### Installation
 
