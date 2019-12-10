@@ -42,7 +42,7 @@ if __name__ == '__main__':
     print say_client(array)
     try:
         rospy.init_node('goTo_action_client')
-        result = call_server("goal5", "goTo")
+        result = call_server("goal1", "goTo")
         print 'The result is:', result
     except rospy.ROSInterruptException as e:
         print 'Something went wrong:', e
@@ -52,7 +52,7 @@ if __name__ == '__main__':
     print say_client(array)
     try:
         rospy.init_node('goTo_action_client')
-        result = call_server("goal6", "goTo")
+        result = call_server("goal4", "goTo")
         print 'The result is:', result
     except rospy.ROSInterruptException as e:
         print 'Something went wrong:', e
