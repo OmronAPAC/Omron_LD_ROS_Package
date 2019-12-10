@@ -42,6 +42,8 @@ Use catkin build to compile and make sure to source the workspace:
 ```
 cd ~/Omron_LD_ROS_Package
 
+catkin clean
+
 catkin build
 
 source ~/Omron_LD_ROS_Package/devel/setup.bash
