@@ -4,7 +4,7 @@
   <!-- <arg name="name" />
   <group ns="$(arg name)"> -->
   <!-- <group ns="robot1"> -->
-    <!-- <node name="em_topic_publisher" pkg="om_aiv_util_em" type="em_topic_publisher.py" output="screen" /> -->
+    <node name="em_topic_publisher" pkg="om_aiv_util_em" type="em_topic_publisher.py" output="screen" />
     <node name="em_service_servers" pkg="om_aiv_util_em" type="em_service_servers.py" output="screen" />
       <arg name="ip" />
       <param name="ip_address" value="$(arg ip)" />
