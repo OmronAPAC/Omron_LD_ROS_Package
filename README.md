@@ -88,6 +88,10 @@ In doTask_action_client.py in ~/Omron_LD_ROS_Package/src/om_aiv_navigation/scrip
 ```
 rosrun om_aiv_navigation doTask_action_client.py
 ```
+To view services:
+```
+rosservice list
+```
 To run service commands, example analogInputList:
 ```
 rosrun om_aiv_util analogInputList_client.py
