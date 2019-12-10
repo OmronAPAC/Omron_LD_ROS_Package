@@ -96,7 +96,7 @@ Command arguments are to be input as command line arguments. For example, comman
 ```
 rosrun om_aiv_util arclSendText_client.py text
 ```
-To run service commands, example analogInputList:
+To run another service command, example analogInputList:
 ```
 rosrun om_aiv_util analogInputList_client.py
 ```
