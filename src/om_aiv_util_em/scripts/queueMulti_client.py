@@ -2,10 +2,10 @@
 import sys
 import rospy
 from om_aiv_util.srv import *
-def analogInputQueryRaw_client(array):
-    rospy.wait_for_service('createInfo')
+def queueMulti_client(array):
+    rospy.wait_for_service('queueMulti')
     try:
-        service = rospy.ServiceProxy('createInfo', OmAivService)
+        service = rospy.ServiceProxy('queueMulti', OmAivService)
         resp1 = service(array)
         return resp1.device
     except rospy.ServiceException, error:
@@ -22,4 +22,4 @@ if __name__ == "__main__":
     arg = arg.replace(']', '')
     arg = arg.replace("'", '')
     array = [arg]
-    print analogInputQueryRaw_client(array)
+    print queueMulti_client(array)

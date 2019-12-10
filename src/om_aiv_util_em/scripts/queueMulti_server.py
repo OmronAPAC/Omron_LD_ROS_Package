@@ -16,17 +16,17 @@ connecttcp.connect(str(ip_address), port)
 
 from om_aiv_util.srv import OmAivService,OmAivServiceResponse
 
-def handle_createInfo(req):
+def handle_queueMulti(req):
     arg = str(req.a)
-    rcv = createInfo(arg)
+    rcv = queueMulti(arg)
     return rcv
 
-def createInfo_server():
-    rospy.init_node('createInfo_server')
-    s = rospy.Service('createInfo', OmAivService, handle_createInfo)
+def queueMulti_server():
+    rospy.init_node('queueMulti_server')
+    s = rospy.Service('queueMulti', OmAivService, handle_queueMulti)
     rospy.spin()
 
-def createInfo(arg):
+def queueMulti(arg):
     arg = arg.replace(',', '')
     arg = arg.replace('[', '')
     arg = arg.replace(']', '')
@@ -57,4 +57,4 @@ def createInfo(arg):
         return errormsg
 
 if __name__ == "__main__":
-    createInfo_server()
+    queueMulti_server()
