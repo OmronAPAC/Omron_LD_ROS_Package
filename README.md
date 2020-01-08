@@ -61,9 +61,9 @@ For one robot:
 ```
 roslaunch om_aiv_util 1robot.launch ip:=<ip address of robot>
 ```
-For multiple robots:
+For multiple robots(run this command once for each robot):
 ```
-roslaunch om_aiv_util multiple_robots.launch ip:=<ip address of robot1> name:=<robot1 name> ip:=<ip address of robot2> name:=<robot name2> ...........
+roslaunch om_aiv_util multiple_robots.launch ip:=<ip address of robot> name:=<robot name> 
 ```
 For Enterprise Manager:
 ```
