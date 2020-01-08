@@ -63,11 +63,11 @@ roslaunch om_aiv_util 1robot.launch ip:=<ip address of robot>
 ```
 For multiple robots:
 ```
-roslaunch om_aiv_util multiple_robots.launch ip:=<ip address of robot> name:=<robot name>
+roslaunch om_aiv_util multiple_robots.launch ip:=<ip address of robot1> name:=<robot1 name> ip:=<ip address of robot2> name:=<robot name2> ...........
 ```
 For Enterprise Manager:
 ```
-roslaunch om_aiv_util_em em_robot.launch ip:=<ip address of robot>
+roslaunch om_aiv_util_em em_robot.launch ip:=<ip address of enterprise manager>
 ```
 
 View the topics published and do a rostopic echo (topic name) to view the data:
