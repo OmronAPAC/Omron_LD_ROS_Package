@@ -1,0 +1,10 @@
+# Goal
+string goal_queueDropoff
+
+---
+# Result
+string status
+
+---
+# Feedback
+string received_data
