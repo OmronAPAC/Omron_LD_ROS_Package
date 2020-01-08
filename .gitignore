@@ -3,3 +3,4 @@ logs/
 build/
 bin/
 .catkin_tools/
+*.pyc
