@@ -1,7 +1,0 @@
-[31m[1mCMake Error[0m at /opt/ros/melodic/share/genmsg/cmake/genmsg-extras.cmake:151 (message):
-  add_service_files() directory not found:
-  /home/tthmatt/Omron_LD_ROS_Package/src/om_aiv_util_em/srv
-[36mCall Stack (most recent call first):[0m
-  CMakeLists.txt:58 (add_service_files)
-
-

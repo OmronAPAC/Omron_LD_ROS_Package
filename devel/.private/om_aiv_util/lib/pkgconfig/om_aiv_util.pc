@@ -1,8 +1,0 @@
-prefix=/home/tthmatt/Omron_LD_ROS_Package/devel/.private/om_aiv_util
-
-Name: om_aiv_util
-Description: Description of om_aiv_util
-Version: 0.0.0
-Cflags: -I/home/tthmatt/Omron_LD_ROS_Package/devel/.private/om_aiv_util/include
-Libs: -L/home/tthmatt/Omron_LD_ROS_Package/devel/.private/om_aiv_util/lib 
-Requires: roscpp rospy std_msgs message_runtime

@@ -1,1 +1,0 @@
-/home/tthmatt/Omron_LD_ROS_Package/devel/.private/om_aiv_navigation/share/om_aiv_navigation/msg/PatrolAction.msg

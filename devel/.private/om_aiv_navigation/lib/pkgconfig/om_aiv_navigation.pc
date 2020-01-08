@@ -1,8 +1,0 @@
-prefix=/home/tthmatt/Omron_LD_ROS_Package/devel/.private/om_aiv_navigation
-
-Name: om_aiv_navigation
-Description: Description of om_aiv_navigation
-Version: 0.0.0
-Cflags: -I/home/tthmatt/Omron_LD_ROS_Package/devel/.private/om_aiv_navigation/include
-Libs: -L/home/tthmatt/Omron_LD_ROS_Package/devel/.private/om_aiv_navigation/lib -lld_actions
-Requires: actionlib_msgs rospy std_msgs message_runtime
