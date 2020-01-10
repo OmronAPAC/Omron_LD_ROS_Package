@@ -63,7 +63,7 @@ class ConnectSocket(object):
                 if PASSWD_PROMPT_STRING in ret:
                     break
         
-        self.sock.send(self.passwd)
+        self.sock.sendall(self.passwd)
 
         # Check for login success.
         while True:
