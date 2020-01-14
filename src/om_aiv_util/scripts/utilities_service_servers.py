@@ -14,7 +14,7 @@ ip_address = rospy.get_param("ip_address")
 port = rospy.get_param("port")
 # ip_address = "172.21.5.122"
 # port = 7171
-connecttcp.connect(str(ip_address), port)
+# connecttcp.connect(str(ip_address), port)
 
 def handle_applicationFaultClear(req):
     name = req.a[0]

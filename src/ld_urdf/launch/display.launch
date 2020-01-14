@@ -1,0 +1,18 @@
+<launch>
+
+  <arg name="model" default="$(find ld_urdf)/urdf/LD_Platform.urdf"/>
+  <arg name="gui" default="true" />
+  <arg name="rvizconfig" default="$(find ld_urdf)/config/ld_rviz_config.rviz" />
+
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model)" />
+  <param name="use_gui" value="$(arg gui)"/>
+
+  <node name="joints_publisher" pkg="ld_urdf" type="joints_publisher" output="screen"/>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+
+</launch>
+
+<!--
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+-->

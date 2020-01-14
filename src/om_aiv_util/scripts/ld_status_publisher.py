@@ -6,7 +6,6 @@ from colorama import Fore, Back, Style
 import rospy
 from std_msgs.msg import String
 from std_msgs.msg import Float32
-from geometry_msgs.msg import Pose
 from geometry_msgs.msg import Point
 from om_aiv_util.msg import Location
 import socket
@@ -27,7 +26,7 @@ port = rospy.get_param("port")
 # port = 7171
 
 connecttcp.connect(str(ip_address), port)
-rospy.init_node('ld_status', anonymous=True)
+
 
 def sendcommand():
     #send status command
@@ -37,7 +36,6 @@ def sendcommand():
     global rcv
     data = s.recv(BUFFER_SIZE)
     data2 = s.recv(BUFFER_SIZE)
-    time.sleep(1)
     rcv = data.decode("utf-8") + data2.decode("utf-8")
     print rcv
 
@@ -137,14 +135,16 @@ def temperature():
             pass
 
 if __name__ == '__main__':
+    rospy.init_node('ld_status', anonymous=True)
     try:
         while not rospy.is_shutdown():
+            print("test")
             sendcommand()
-            extended_status_for_humans()
-            status()
-            state_of_charge()
+            # extended_status_for_humans()
+            # status()
+            # state_of_charge()
             location()
-            localization_score()
-            temperature()
+            # localization_score()
+            # temperature()
     except rospy.ROSInterruptException:
         pass

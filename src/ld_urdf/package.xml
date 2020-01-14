@@ -1,0 +1,20 @@
+<package>
+  <name>ld_urdf</name>
+  <version>0.4.0</version>
+
+  <description>Package for LD URDF model.</description>
+  <author email="xavier.lee@omron.com">Xavier Lee Kok Teng</author>
+
+  <maintainer email="xavier.lee@omron.com">Xavier Lee Kok Teng</maintainer>
+
+  <license>BSD</license>
+  <url></url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roslaunch</build_depend>
+  <build_depend>om_aiv_util</build_depend>
+  <run_depend>robot_state_publisher</run_depend>
+  <run_depend>rviz</run_depend>
+  <run_depend>xacro</run_depend>
+
+</package>
