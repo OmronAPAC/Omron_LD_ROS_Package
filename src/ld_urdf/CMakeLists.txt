@@ -13,7 +13,13 @@ find_package(catkin REQUIRED COMPONENTS
   sensor_msgs
   std_msgs
   tf
+  xacro
   om_aiv_util
+)
+
+xacro_add_files(
+  urdf/LD_Platform.urdf.xacro
+  INORDER INSTALL DESTINATION urdf
 )
 
 ## System dependencies are found with CMake's conventions
