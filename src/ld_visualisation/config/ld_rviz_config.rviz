@@ -10,6 +10,7 @@ Panels:
         - /RobotModel1/Links1
         - /RobotModel1/Links1/main_body1
         - /TF1
+        - /Marker1
       Splitter Ratio: 0.5
     Tree Height: 351
   - Class: rviz/Selection
@@ -42,7 +43,7 @@ Visualization Manager:
       Cell Size: 1
       Class: rviz/Grid
       Color: 160; 160; 164
-      Enabled: true
+      Enabled: false
       Line Style:
         Line Width: 0.029999999329447746
         Value: Lines
@@ -55,7 +56,7 @@ Visualization Manager:
       Plane: XY
       Plane Cell Count: 10
       Reference Frame: <Fixed Frame>
-      Value: true
+      Value: false
     - Alpha: 1
       Class: rviz/RobotModel
       Collision Enabled: false
@@ -157,6 +158,15 @@ Visualization Manager:
                 {}
       Update Interval: 0
       Value: true
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: visualization_marker
+      Name: Marker
+      Namespaces:
+        lines: true
+        points: true
+      Queue Size: 100
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -185,25 +195,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 1.2958571910858154
+      Distance: 29.983806610107422
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.058871109038591385
-        Y: -0.015945473685860634
-        Z: 0.16086146235466003
+        X: -2.5437817573547363
+        Y: 0.26704198122024536
+        Z: 0.4558156132698059
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.26479795575141907
+      Pitch: 1.1997971534729004
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 3.4672181606292725
+      Yaw: 4.6622209548950195
     Saved: ~
 Window Geometry:
   Displays:

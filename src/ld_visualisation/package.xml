@@ -1,0 +1,32 @@
+<package>
+  <name>ld_visualisation</name>
+  <version>0.4.0</version>
+
+  <description>Package for visualising LD models in RVIZ.</description>
+  <author email="xavier.lee@omron.com">Xavier Lee Kok Teng</author>
+
+  <maintainer email="xavier.lee@omron.com">Xavier Lee Kok Teng</maintainer>
+
+  <license>BSD</license>
+  <url></url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roslaunch</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>tf</build_depend>
+  <build_depend>roslib</build_depend>
+  <build_depend>om_aiv_util</build_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>tf</run_depend>
+  <run_depend>roslib</run_depend>
+  <run_depend>robot_state_publisher</run_depend>
+  <run_depend>rviz</run_depend>
+  <run_depend>xacro</run_depend>
+
+</package>

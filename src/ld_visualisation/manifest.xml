@@ -1,5 +1,5 @@
 <package format="2">
-  <name>LD_Platform</name>
+  <name>ld_visualisation</name>
   <version>1.0.0</version>
   <description>
     <p>URDF Description package for LD_Platform</p>

@@ -1,17 +1,29 @@
-#include <string>
 #include <ros/ros.h>
 #include <sensor_msgs/JointState.h>
-#include <tf/transform_broadcaster.h>
 #include <geometry_msgs/PoseStamped.h>
 #include <geometry_msgs/Quaternion.h>
+#include <tf/transform_broadcaster.h>
 #include <om_aiv_util/Location.h>
+#include <string>
 
+// Global values
 double pos_x;
 double pos_y;
 double pos_z;
 geometry_msgs::Quaternion theta;
-const int JOINTS_SIZE = 7;
 
+const int JOINTS_SIZE = 7;
+const std::string HEAD_FRAME = "/pose";
+const std::string CHILD_FRAME = "/base_link";
+const std::string MAIN_BODY_JOINT = "main_body_to_base";
+const std::string RIGHT_WHEEL_JOINT = "right_wheel_joint";
+const std::string LEFT_WHEEL_JOINT = "left_wheel_joint";
+const std::string RIGHT_FR_WHEEL_JOINT = "right_front_small_wheel_joint";
+const std::string LEFT_FR_WHEEL_JOINT = "left_front_small_wheel_joint";
+const std::string RIGHT_BK_WHEEL_JOINT = "left_back_small_wheel_joint";
+const std::string LEFT_BK_WHEEL_JOINT = "right_back_small_wheel_joint";
+
+// Function prototypes
 void pose_cb(const om_aiv_util::LocationConstPtr& pose_msg);
 
 int main(int argc, char** argv) 
@@ -40,19 +52,20 @@ int main(int argc, char** argv)
     double angle = 0;
     double trans_x = 0;
 
+    // Messages to publish
     sensor_msgs::JointState joint_state;
     geometry_msgs::TransformStamped pose_trans;
-    pose_trans.header.frame_id = "pose";
-    pose_trans.child_frame_id = "base_link";
+    pose_trans.header.frame_id = HEAD_FRAME;
+    pose_trans.child_frame_id = CHILD_FRAME;
     joint_state.name.resize(JOINTS_SIZE);
     joint_state.position.resize(JOINTS_SIZE);
-    joint_state.name[0] = "main_body_to_base";
-    joint_state.name[1] = "right_wheel_joint";
-    joint_state.name[2] = "left_wheel_joint";
-    joint_state.name[3] = "right_front_small_wheel_joint";
-    joint_state.name[4] = "left_front_small_wheel_joint";
-    joint_state.name[5] = "left_back_small_wheel_joint";
-    joint_state.name[6] = "right_back_small_wheel_joint";
+    joint_state.name[0] = MAIN_BODY_JOINT;
+    joint_state.name[1] = RIGHT_WHEEL_JOINT;
+    joint_state.name[2] = LEFT_WHEEL_JOINT;
+    joint_state.name[3] = RIGHT_FR_WHEEL_JOINT;
+    joint_state.name[4] = LEFT_FR_WHEEL_JOINT;
+    joint_state.name[5] = RIGHT_BK_WHEEL_JOINT;
+    joint_state.name[6] = LEFT_BK_WHEEL_JOINT;
 
     while (ros::ok()) 
     {
@@ -67,7 +80,6 @@ int main(int argc, char** argv)
         joint_state.position[6] = right_back_small_wheel_joint_pos;
 
         // update transform
-        // (moving in a circle with radius=2)
         pose_trans.header.stamp = ros::Time::now();
         pose_trans.transform.translation.x = pos_x;
         pose_trans.transform.translation.y = pos_y;
@@ -75,17 +87,22 @@ int main(int argc, char** argv)
         pose_trans.transform.rotation = theta;
 
         // Update transforms
+        // NOTE: The joints states does not change at the moment.
+        // TODO: Calculate the next joint state.
         joint_pub.publish(joint_state);
         broadcaster.sendTransform(pose_trans);
 
         ros::spinOnce();
         loop_rate.sleep();
     }
-
     return 0;
 }
 
-
+/**
+ * @brief Callback function for receiving Location message.
+ * 
+ * @param pose_msg Location message data received.
+ */
 void pose_cb(const om_aiv_util::LocationConstPtr& pose_msg)
 {
     // The values are in millimeters, convert to meters.

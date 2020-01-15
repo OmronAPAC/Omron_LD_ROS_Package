@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(ld_urdf)
+project(ld_visualisation)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -15,6 +15,7 @@ find_package(catkin REQUIRED COMPONENTS
   tf
   xacro
   om_aiv_util
+  roslib
 )
 
 xacro_add_files(
@@ -114,7 +115,7 @@ xacro_add_files(
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES r2d2
-#  CATKIN_DEPENDS roscpp rospy sensor_msgs std_msgs tf
+  CATKIN_DEPENDS roscpp rospy sensor_msgs std_msgs tf roslib
 #  DEPENDS system_lib
 )
 
@@ -142,6 +143,7 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(joints_publisher src/joints_publisher.cpp)
+add_executable(data_points_marker src/data_points_marker.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -154,7 +156,8 @@ add_executable(joints_publisher src/joints_publisher.cpp)
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(joints_publisher ${catkin_LIBRARIES})
+target_link_libraries(joints_publisher ${catkin_LIBRARIES}) 
+target_link_libraries(data_points_marker ${catkin_LIBRARIES})
 
 #############
 ## Install ##

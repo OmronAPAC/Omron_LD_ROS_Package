@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="LD_Platform">
 
+  <xacro:property name="pkg_name" value="ld_visualisation" />
+  <xacro:property name="mesh_file" value="LD_Platform.STL" />
+
   <xacro:property name="PI" value="3.1415926535897" />
   <xacro:property name="PI_2" value="1.5707963267949" />
 
@@ -41,14 +44,14 @@
     <visual>
       <origin xyz="0 0 0" rpy="${PI_2} 0 ${PI_2}" />
       <geometry>
-        <mesh filename="package://ld_urdf/meshes/LD_Platform.STL" />
+        <mesh filename="package://${pkg_name}/meshes/${mesh_file}" />
       </geometry>
       <material name="white"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="${PI_2} 0 ${PI_2}" />
       <geometry>
-        <mesh filename="package://ld_urdf/meshes/LD_Platform.STL" />
+        <mesh filename="package://${pkg_name}/meshes/${mesh_file}" />
       </geometry>
     </collision>
     <inertial>
