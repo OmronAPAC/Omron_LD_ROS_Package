@@ -1,102 +1,101 @@
 #!/usr/bin/env python
-## publishes std_msgs/Strings messages
-## to the 5 ld_status topics
-from colorama import init
-init()
-from colorama import Fore, Back, Style
 import rospy
 from std_msgs.msg import String
-from std_msgs.msg import Float32
-from geometry_msgs.msg import Pose
-from geometry_msgs.msg import Point
-from om_aiv_util.msg import Location
-import math
-import numpy as np
 import socket
-import threading
-import time
-import re
-import sys
-BUFFER_SIZE = 2056
-#import socketconnection class to connect to robot
-#requires socketconnection_class.py file in the same folder
 from om_aiv_util.socketconnection_class import ConnectSocket
-connecttcp = ConnectSocket()
-s = connecttcp.sock
-#get ip adress and port from launch file
-ip_address = rospy.get_param("ip_address")
-port = rospy.get_param("port")
-# ip_address = "172.21.5.123"
-# port = 7171
-connecttcp.connect(str(ip_address), port)
-rospy.init_node('ld_topic_publisher', anonymous=True)
 
-#command = actual command to be sent
-#command2 = end of required data that is sent back from arcl. Example: "End of End of ApplicationFaultQuery"
-#command3 = required data to be printed out. Example: "ApplicationFaultQuery:..............."
-#text = what to print if required data is not received. Example: "No Faults"
-def runCommand(command, command2, command3, text):
-    #specify topic name
-    topic_name = "ldarcl_{}".format(command)
-    pub = rospy.Publisher(topic_name, String, queue_size=10)
-    #specify node name
-    print(Style.RESET_ALL)
-    print(Fore.GREEN)
-    print "Running command: ", command
+socket_conn = None
+# Topics are not published in order.
+topics_to_pub = {
+    "ApplicationFaultQuery": ("End of ApplicationFaultQuery", "ApplicationFaultQuery:"),    
+    "GetDateTime": ("DateTime:", "DateTime:"),
+    "OneLineStatus": ("Status:", "Status:"),
+    "QueryMotors": ("Motors", "Motors"),
+    "Odometer": ("Odometer:", "Odometer:")
+
+} # TODO: Put all commands to request in separate file.
+publishers = {}
+
+PUB_RATE = 10
+BUFFER_SIZE = 2048
+NODE_NAME_STRING = "ld_topic_publisher"
+FAIL_CONN_STRING = "Connection failed"
+ESTOP_PRESS_STRING = "EStop pressed"
+ESTOP_RELIEVE_STRING = "EStop relieved but motors still disabled"
+UNKNOWN_CMD_STRING = "Unknown command {}"
+
+# TODO: Instead of continuously sending requests to the ARCL server, configure the ARCL server to output
+# commands and then in here, we look for those output strings in that output socket. Then we parse those
+# output and publishes to respective topics accordingly.
+
+#Sends the given ARCL command to socket and retrieve response from ARCL server.
+#arcl_command = actual command to be sent
+#end_string = end of required data that is sent back from arcl. Example: "End of End of ApplicationFaultQuery"
+#reply_header = required data to be printed out. Example: "ApplicationFaultQuery:..............."
+def run_command(arcl_command, end_string, reply_header, pub):
     #send command to arcl
-    command = command.encode('ascii')
-    s.send(command+b"\r\n")
+    arcl_command = arcl_command.encode('ascii')
+    socket_conn.sock.send(arcl_command+b"\r\n")
     try:
-        data = s.recv(BUFFER_SIZE)
+        data = socket_conn.sock.recv(BUFFER_SIZE)
         rcv = data.encode('ascii', 'ignore')
         while not rospy.is_shutdown():
             #keep receiving data until require data is received
-            if command2 in rcv:
+            if end_string in rcv:
                 break
-            if "EStop pressed" in rcv:
-                rospy.logerr("Estop Pressed")
-                pub.publish("Estop Pressed")
+            if ESTOP_PRESS_STRING in rcv:
+                rospy.logerr(ESTOP_PRESS_STRING)
+                pub.publish(ESTOP_PRESS_STRING)
                 return rcv
-            if "EStop relieved but motors still disabled" in rcv:
-                rospy.logerr("EStop relieved but motors still disabled")
-                pub.publish("EStop relieved but motors still disabled")
+            if ESTOP_RELIEVE_STRING in rcv:
+                rospy.logerr(ESTOP_RELIEVE_STRING)
+                pub.publish(ESTOP_RELIEVE_STRING)
                 return rcv
-            if "Unknown command {}".format(command) in rcv:
+            if UNKNOWN_CMD_STRING.format(arcl_command) in rcv:
                 rospy.logerr(rcv)
                 return rcv
             else:
-                data = s.recv(BUFFER_SIZE)
+                data = socket_conn.sock.recv(BUFFER_SIZE)
                 rcv = rcv + data.encode('ascii', 'ignore')
     except socket.error as e:
-        print("Connection  failed")
+        print(FAIL_CONN_STRING)
         return e
     #check for required data
     for line in rcv.splitlines():
-        if command3 in line:
-            # cmd = line.split("{}:".format(command3))
-            # #print required data
-            # rospy.loginfo(",{}:".format(command3).join(cmd)[1:])
-            # #publish data
-            # pub.publish(''.join(cmd))
+        if reply_header in line:
             rospy.loginfo(line)
             pub.publish(line)
             break
-        #if no info is returned"
-        if command3 not in line:
-            rospy.loginfo(text)
-            pub.publish(text)
+
+# Initialises this node along with all the topics required for the commands to be sent (specified in topics_to_pub).
+# This continuously send requests for all the specified ARCL commands.
+def pub_topics():
+    for topic in topics_to_pub.keys():
+        pub = rospy.Publisher(topic, String, queue_size=10)
+        publishers[topic] = pub
+    rospy.init_node(NODE_NAME_STRING, log_level=rospy.DEBUG)
+    rate = rospy.Rate(PUB_RATE)
+
+    # Create a socket connection to ARCL
+    # TODO: somehow share the same connection with other nodes.
+    global socket_conn
+    try:
+        socket_conn = ConnectSocket()
+    except Exception as err:
+        rospy.logerr(err.message)
+        raise rospy.ROSInterruptException()
+    
+    while not rospy.is_shutdown():
+        for topic, pub in publishers.items():
+            # Request and publish the ARCL commands return values.
+            run_command(topic, topics_to_pub[topic][0], topics_to_pub[topic][1], pub)
+            pass
+
+        rate.sleep()
+
 
 if __name__ == '__main__':
     try:
-        while not rospy.is_shutdown():
-            runCommand('ApplicationFaultQuery', 'End of ApplicationFaultQuery', 'ApplicationFaultQuery:', 'ApplicationFaultQuery: No Faults')
-            runCommand('FaultsGet', 'End of FaultList', 'FaultList:', 'FaultsGet: No faults')
-            runCommand('GetDateTime', 'DateTime:', 'DateTime:', 'Error, unable to get date and time')
-            runCommand('Odometer', 'Odometer:', 'Odometer:', 'Error, unable to Odometer value')
-            runCommand('OneLineStatus', 'Status:', 'Status:', 'Error, unable to get status')
-            runCommand('QueryDockStatus', 'DockingState:', 'DockingState:', 'Error, unable to get dock status')
-            runCommand('QueryMotors', 'Motors', 'Motors', 'Error, unable to get motor status')
-            runCommand('QueueShowRobotLocal', 'EndQueueShowRobot', 'QueueRobot:', 'Error, unable to get queue status')
-            runCommand('WaitTaskState', 'WaitState:', 'WaitState:', 'Error, unable to get wait state')
+        pub_topics()
     except rospy.ROSInterruptException:
         pass

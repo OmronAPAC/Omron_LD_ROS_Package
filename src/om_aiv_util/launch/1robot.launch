@@ -17,6 +17,7 @@
       <arg name="ip" />
       <param name="ip_address" value="$(arg ip)" />
       <param name="port" value="7171" />
+      <param name="def_arcl_passwd" value="adept" />
   <!-- </group> -->
 
 
