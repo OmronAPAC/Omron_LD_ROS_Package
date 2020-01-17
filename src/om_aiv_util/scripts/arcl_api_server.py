@@ -5,15 +5,9 @@ from om_aiv_util.srv import ArclApi
 
 # Connect and log in.
 socket_driver = SocketDriver()
+# TODO: Add retrying of connection
 socket_driver.connect("168.3.201.123", 7171)
 req_id = socket_driver.login("adept\r\n")
-# while True:
-#     try:
-#         resp = socket_driver.get_response(req_id)
-#     except KeyError:
-#         pass
-#     else:
-#         print resp
 
 def custom_spin():
     """

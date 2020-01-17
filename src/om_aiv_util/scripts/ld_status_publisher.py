@@ -14,137 +14,56 @@ import threading
 import time
 import re
 import sys
-BUFFER_SIZE = 2056
-#import socketconnection class to connect to robot
-#requires socketconnection_class.py file in the same folder
-from om_aiv_util.socketconnection_class import ConnectSocket, connecttcp
-s = connecttcp.sock
-#get ip address and port from launch file
-ip_address = rospy.get_param("ip_address")
-port = rospy.get_param("port")
+from om_aiv_util.srv import ArclApi, ArclApiRequest, ArclApiResponse
 
-# ip_address = "168.3.201.123"
-# port = 7171
+def split_args(input):
+    out = input.strip("\r\n").splitlines()
+    f_out = []
+    for item in out:
+        f_out.append(item[item.find(":")+2:])
+    return (f_out[0], f_out[1], f_out[2], f_out[3], f_out[4], f_out[5])
 
-connecttcp.connect(str(ip_address), port)
-rospy.init_node('ld_status', anonymous=True)
+def req_status():
+    rospy.wait_for_service("arcl_api_service")
+    get_status = rospy.ServiceProxy("arcl_api_service", ArclApi)
+    request = ArclApiRequest("Status", "Temperature:")
+    resp = get_status(request)
+    return resp.response
 
-def sendcommand():
-    #send status command
-    command = "status"
-    command = command.encode('ascii')
-    s.send(command+b"\r\n")
-    global rcv
-    data = s.recv(BUFFER_SIZE)
-    data2 = s.recv(BUFFER_SIZE)
-    time.sleep(1)
-    rcv = data.decode("utf-8") + data2.decode("utf-8")
-    print rcv
-
-def extended_status_for_humans():
-    pub = rospy.Publisher('ldarcl_status_extended_status_for_humans', String, queue_size=10)
-    print(Style.RESET_ALL)
-    print(Fore.GREEN)
-    print "Getting extended_status_for_humans..."
-    #extract required status
-    for line in rcv.splitlines():
-        if 'ExtendedStatusForHumans' in line:
-            extended_status_for_humans = line.split("ExtendedStatusForHumans:")
-    #print required status
-    rospy.loginfo(",ExtendedStatusForHumans:".join(extended_status_for_humans)[1:])
-    #publish required status
-    pub.publish(''.join(extended_status_for_humans))
-
-def status():
-    pub = rospy.Publisher('ldarcl_status_status', String, queue_size=10)
-    print(Style.RESET_ALL)
-    print(Fore.BLUE)
-    print(Style.BRIGHT)
-    print "Getting status..."
-
-    for line in rcv.splitlines():
-        if 'Status:' in line:
-            status = line.split("Status:")
-            rospy.loginfo(status)
-            pub.publish(''.join(status))
+def pub_status():
+    ext_status_pub = rospy.Publisher("ldarcl_extended_human_status", String, queue_size=10)
+    status_pub = rospy.Publisher("ldarcl_status", String, queue_size=10)
+    battery_pub = rospy.Publisher("ldarcl_batteryvoltage", String, queue_size=10)
+    loc_pub = rospy.Publisher("ldarcl_location", Location, queue_size=10)
+    locscore_pub = rospy.Publisher("ldarcl_localizationscore", String, queue_size=10)
+    temp_pub = rospy.Publisher("ldarcl_temperature", String, queue_size=10)
+    rospy.init_node("ld_status_publisher", anonymous=True)
+    rate = rospy.Rate(50)
+    loc_msg = Location()
+    while not rospy.is_shutdown():
+        try:
+            resp = req_status()
+        except rospy.ServiceException, e:
+            print "Service call failed: %s"%e
         else:
-            pass
+            (ext_status, status, batt, loc, locscore, temp) = split_args(resp)
+            ext_status_pub.publish(ext_status)
+            status_pub.publish(status)
+            battery_pub.publish(batt)
+            loc_msg.x = float(loc.split()[0])
+            loc_msg.y = float(loc.split()[1])
+            loc_msg.theta = float(loc.split()[2])
+            loc_pub.publish(loc_msg)
+            locscore_pub.publish(locscore)
+            temp_pub.publish(temp)
+        finally:
+            rate.sleep()
 
-def state_of_charge():
-    pub = rospy.Publisher('ldarcl_status_state_of_charge', Float32, queue_size=10)
-    print(Style.RESET_ALL)
-    print(Fore.RED)
-    print(Style.BRIGHT)
-    print "Getting state_of_charge..."
 
-    for line in rcv.splitlines():
-        if 'StateOfCharge' in line:
-            state_of_charge = line.split()[-1]
-            rospy.loginfo(state_of_charge)
-            pub.publish(float(state_of_charge))
-        else:
-            pass
-
-def location():
-    pub = rospy.Publisher('ldarcl_status_location', Location, queue_size=10)
-    msg = Location()
-    print(Style.RESET_ALL)
-    print(Fore.MAGENTA)
-    print(Style.BRIGHT)
-    print "Getting location..."
-    for line in rcv.splitlines():
-        if 'Location' in line:
-            locationx = line.split()[-3]
-            locationy = line.split()[-2]
-            locationtheta = line.split()[-1]
-            PI = 3.1415926535897
-            relative_angle = float(locationtheta)*180/PI
-            msg.x = float(locationx)
-            msg.y = float(locationy)
-            msg.theta = float(locationtheta)
-
-        else:
-            pass
-
-    rospy.loginfo(msg)
-    pub.publish(msg)
-
-def localization_score():
-    pub = rospy.Publisher('ldarcl_status_localization_score', Float32, queue_size=10)
-    print(Style.RESET_ALL)
-    print(Fore.BLUE)
-    print(Style.BRIGHT)
-    print "Getting localization_score..."
-    for line in rcv.splitlines():
-        if 'LocalizationScore' in line:
-            localization_score = line.split()[-1]
-            rospy.loginfo(localization_score)
-            pub.publish(float(localization_score))
-        else:
-            pass
-
-def temperature():
-    pub = rospy.Publisher('ldarcl_status_temperature', Float32, queue_size=10)
-    print(Style.RESET_ALL)
-    print(Fore.GREEN)
-    print "Getting temperature..."
-    for line in rcv.splitlines():
-        if 'Temperature' in line:
-            temperature = line.split()[-1]
-            rospy.loginfo(temperature)
-            pub.publish(float(temperature))
-        else:
-            pass
 
 if __name__ == '__main__':
     try:
-        while not rospy.is_shutdown():
-            sendcommand()
-            extended_status_for_humans()
-            status()
-            state_of_charge()
-            location()
-            localization_score()
-            temperature()
+        pub_status()
+            
     except rospy.ROSInterruptException:
         pass
