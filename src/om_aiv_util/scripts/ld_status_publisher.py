@@ -15,21 +15,29 @@ import re
 import sys
 from om_aiv_util.srv import ArclApi, ArclApiRequest, ArclApiResponse
 
+# TODO: Do better than this!!
 def split_args(input):
-    out = input.strip("\r\n").splitlines()
+    out = input.splitlines()
     f_out = []
-    for item in out:
-        f_out.append(item[item.find(":")+2:])
+
+    print out
+    for idx, elem in enumerate(out):
+        if "Location:" in elem or "Status:" in elem or "StateOfCharge:" in elem or "LocalizationScore:" in elem or "Temperature:" in elem or "ExtendedStatusForHumans:":
+            f_out.append(elem[(elem.find(":")+2):])
+    print f_out
+    
     return (f_out[0], f_out[1], f_out[2], f_out[3], f_out[4], f_out[5])
 
 def req_status():
     rospy.wait_for_service("arcl_api_service")
     get_status = rospy.ServiceProxy("arcl_api_service", ArclApi)
     request = ArclApiRequest("Status", "Temperature:")
+    # TODO: Do a try except here.
     resp = get_status(request)
     return resp.response
 
 def pub_status():
+    # TODO: Combine all status values as one Status msg type in ROS
     ext_status_pub = rospy.Publisher("ldarcl_extended_human_status", String, queue_size=10)
     status_pub = rospy.Publisher("ldarcl_status", String, queue_size=10)
     battery_pub = rospy.Publisher("ldarcl_batteryvoltage", String, queue_size=10)
@@ -45,6 +53,7 @@ def pub_status():
         except rospy.ServiceException, e:
             print "Service call failed: %s"%e
         else:
+            print resp
             (ext_status, status, batt, loc, locscore, temp) = split_args(resp)
             ext_status_pub.publish(ext_status)
             status_pub.publish(status)
