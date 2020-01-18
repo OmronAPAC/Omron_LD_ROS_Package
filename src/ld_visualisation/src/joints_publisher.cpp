@@ -31,7 +31,7 @@ int main(int argc, char** argv)
     ros::init(argc, argv, "joints_publisher");
     ros::NodeHandle nh;
     ros::Publisher joint_pub = nh.advertise<sensor_msgs::JointState>("joint_states", 1);
-    ros::Subscriber pose_sub = nh.subscribe<om_aiv_util::Location>("ldarcl_status_location", 10, pose_cb);
+    ros::Subscriber pose_sub = nh.subscribe<om_aiv_util::Location>("ldarcl_location", 10, pose_cb);
     tf::TransformBroadcaster broadcaster;
     ros::Rate loop_rate(50);
 

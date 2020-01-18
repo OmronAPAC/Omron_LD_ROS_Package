@@ -12,6 +12,7 @@
   <param name="map_name" value="data.map" />
   <param name="head_frame" value="/pose" />
   <param name="vis_topic" value="visualization_marker" />
+  <param name="ls_topic" value="scan" />
   <param name="points_a_colour" value="1.0" />
   <param name="points_r_colour" value="1.0" />
   <param name="points_g_colour" value="0" />
