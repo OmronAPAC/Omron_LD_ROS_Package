@@ -15,6 +15,7 @@ std::string MAP_NAME;
 std::string HEAD_FRAME;
 std::string VIS_TOPIC;
 std::string LS_TOPIC;
+std::string rng_device;
 float POINTS_A_CLR;
 float POINTS_R_CLR;
 float POINTS_G_CLR;
@@ -44,6 +45,7 @@ const std::string MAP_NAME_PARAM = "map_name";
 const std::string HEAD_FRAME_PARAM = "head_frame";
 const std::string VIS_TOPIC_PARAM = "vis_topic";
 const std::string LS_TOPIC_PARAM = "ls_topic";
+const std::string RNG_DEVICE_PARAM = "range_device";
 const std::string POINTS_A_CLR_PARAM = "points_a_colour";
 const std::string POINTS_R_CLR_PARAM = "points_r_colour";
 const std::string POINTS_G_CLR_PARAM = "points_g_colour";
@@ -57,7 +59,7 @@ const std::string LINES_B_CLR_PARAM = "lines_b_colour";
 bool get_map_data(std::string filename, 
     std::vector<geometry_msgs::Point>& points, 
     std::vector<geometry_msgs::Point>& lines);
-void req_range_scan(ros::ServiceClient& service, std::vector<float>& ranges);
+void req_range_scan(ros::ServiceClient& service, om_aiv_util::ArclApi& srv, std::vector<float>& ranges);
 
 int main(int argc, char** argv)
 {
@@ -71,6 +73,7 @@ int main(int argc, char** argv)
     nh.param<std::string>(HEAD_FRAME_PARAM, HEAD_FRAME, "/pose");
     nh.param<std::string>(VIS_TOPIC_PARAM, VIS_TOPIC, "visualization_marker");
     nh.param<std::string>(LS_TOPIC_PARAM, LS_TOPIC, "scan");
+    nh.param<std::string>(RNG_DEVICE_PARAM, rng_device, "Laser_1");
     nh.param<float>(POINTS_A_CLR_PARAM, POINTS_A_CLR, 1.0);
     nh.param<float>(POINTS_R_CLR_PARAM, POINTS_R_CLR, 0);
     nh.param<float>(POINTS_G_CLR_PARAM, POINTS_G_CLR, 0);
@@ -150,12 +153,19 @@ int main(int argc, char** argv)
     laser_msg.scan_time = scan_time;
     laser_msg.time_increment = time_increment;
     
+    // Create the service request message to get laser scan data.
+    om_aiv_util::ArclApi srv;
+    std::string cmd = "RangeDeviceGetCurrent ";
+    cmd.append(rng_device);
+    srv.request.command = cmd;
+    srv.request.line_identifier = "RangeDeviceGetCurrent:";
+
     while (ros::ok())
     {
         points_pub.publish(points_arr);
         points_pub.publish(lines_list);
 
-        req_range_scan(arcl_api_client, laser_msg.ranges);
+        req_range_scan(arcl_api_client, srv, laser_msg.ranges);
         laser_msg.header.stamp = ros::Time::now();
         laser_scan_pub.publish(laser_msg);
         
@@ -253,25 +263,21 @@ bool get_map_data(std::string filename,
  * @brief Requests for laser scan data from ARCL server and return as a vector of values. 
  * 
  * @param service Reference to ros::ServiceClient object to request from.
+ * @param srv Reference to service message object that will be used.
  * @param ranges Reference to vector<float> to store laser scan values.
  */
-void req_range_scan(ros::ServiceClient& service, std::vector<float>& ranges)
+void req_range_scan(ros::ServiceClient& service, om_aiv_util::ArclApi& srv, std::vector<float>& ranges)
 {
-    om_aiv_util::ArclApi srv;
-    srv.request.command = "RangeDeviceGetCurrent Laser_1";
-    srv.request.line_identifier = "RangeDeviceGetCurrent:";
     if (service.call(srv))
     {
         std::string raw_resp = srv.response.response;
-        std::string::size_type pos = raw_resp.find("Laser_1");
+        std::string::size_type pos = raw_resp.find(rng_device);
         if (pos != std::string::npos)
         {
-            // 7 is the length of "Laser_1" and +1 to exclude the following space.
-            // TODO: Replace "Laser_1" as a variable that can be assigned.
             std::string vals_str;
             try
             {
-                vals_str = raw_resp.substr(pos + 7 + 1);
+                vals_str = raw_resp.substr(pos + rng_device.length() + 1); // +1 to exclude the following space.
             }
             catch(const std::out_of_range& e)
             {
