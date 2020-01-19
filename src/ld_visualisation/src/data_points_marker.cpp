@@ -281,6 +281,7 @@ void req_range_scan(ros::ServiceClient& service, std::vector<float>& ranges)
             
             std::istringstream iss(vals_str);
             float value = 0;
+            ranges.clear();
             while (iss >> value)
             {
                 ranges.push_back(value / 1000.0); // Values are in mm, convert to metre.
