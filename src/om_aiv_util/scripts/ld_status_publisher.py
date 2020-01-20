@@ -19,16 +19,11 @@ from om_aiv_util.srv import ArclApi, ArclApiRequest, ArclApiResponse
 def split_args(input):
     out = input.strip("\r\n").splitlines()
     f_out = []
-<<<<<<< Updated upstream
-    for item in out:
-        f_out.append(item[item.find(":")+2:])
-=======
 
     for idx, elem in enumerate(out):
         if "Location:" in elem or "Status:" in elem or "StateOfCharge:" in elem or "LocalizationScore:" in elem or "Temperature:" in elem or "ExtendedStatusForHumans:":
             f_out.append(elem[(elem.find(":")+2):])
     
->>>>>>> Stashed changes
     return (f_out[0], f_out[1], f_out[2], f_out[3], f_out[4], f_out[5])
 
 def req_status():
