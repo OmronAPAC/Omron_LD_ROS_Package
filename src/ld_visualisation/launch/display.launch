@@ -12,7 +12,6 @@
   <param name="map_name" value="data.map" />
   <param name="head_frame" value="/pose" />
   <param name="vis_topic" value="visualization_marker" />
-  <param name="ls_topic" value="scan" />
   <param name="range_device" value="Laser_1" />
   <param name="points_a_colour" value="1.0" />
   <param name="points_r_colour" value="1.0" />
@@ -22,6 +21,10 @@
   <param name="lines_r_colour" value="1.0" />
   <param name="lines_g_colour" value="0" />
   <param name="lines_b_colour" value="0" />
+  <param name="ls_points_a_colour" value="1.0" />
+  <param name="ls_points_r_colour" value="0" />
+  <param name="ls_points_g_colour" value="1.0" />
+  <param name="ls_points_b_colour" value="1.0" />
 
   <node name="joints_publisher" pkg="ld_visualisation" type="joints_publisher" output="screen"/>
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />

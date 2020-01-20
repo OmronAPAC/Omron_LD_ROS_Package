@@ -14,7 +14,6 @@ std::string PACK_NAME;
 std::string MAP_NAME;
 std::string HEAD_FRAME;
 std::string VIS_TOPIC;
-std::string LS_TOPIC;
 std::string rng_device;
 float POINTS_A_CLR;
 float POINTS_R_CLR;
@@ -24,6 +23,10 @@ float LINES_A_CLR;
 float LINES_R_CLR;
 float LINES_G_CLR;
 float LINES_B_CLR;
+float LS_POINTS_A_CLR;
+float LS_POINTS_R_CLR;
+float LS_POINTS_G_CLR;
+float LS_POINTS_B_CLR;
 
 // Non configurable values.
 const std::string MAP_FOLDER = "/map";
@@ -33,18 +36,21 @@ const std::string POINTS_H = "DATA";
 const std::string LINES_H = "LINES";
 const std::string POINTS_NS = "points";
 const std::string LINES_NS = "lines";
+const std::string LS_POINTS_NS = "ls_points";
 const int32_t POINTS_M_ID = 0;
 const int32_t LINES_M_ID = 1;
+const int32_t LS_POINTS_M_ID = 2;
 const double POINTS_X_SCALE = 0.045;
 const double POINTS_Y_SCALE = 0.045;
 const double LINES_X_SCALE = 0.045;
+const double LS_POINTS_X_SCALE = 0.045;
+const double LS_POINTS_Y_SCALE = 0.045;
 
 // Names for all config parameters.
 const std::string PACK_NAME_PARAM = "pkg_name";
 const std::string MAP_NAME_PARAM = "map_name";
 const std::string HEAD_FRAME_PARAM = "head_frame";
 const std::string VIS_TOPIC_PARAM = "vis_topic";
-const std::string LS_TOPIC_PARAM = "ls_topic";
 const std::string RNG_DEVICE_PARAM = "range_device";
 const std::string POINTS_A_CLR_PARAM = "points_a_colour";
 const std::string POINTS_R_CLR_PARAM = "points_r_colour";
@@ -54,12 +60,16 @@ const std::string LINES_A_CLR_PARAM = "lines_a_colour";
 const std::string LINES_R_CLR_PARAM = "lines_r_colour";
 const std::string LINES_G_CLR_PARAM = "lines_g_colour";
 const std::string LINES_B_CLR_PARAM = "lines_b_colour";
+const std::string LS_POINTS_A_CLR_PARAM = "ls_points_a_colour";
+const std::string LS_POINTS_R_CLR_PARAM = "ls_points_r_colour";
+const std::string LS_POINTS_G_CLR_PARAM = "ls_points_g_colour";
+const std::string LS_POINTS_B_CLR_PARAM = "ls_points_b_colour";
 
 // Function prototypes
 bool get_map_data(std::string filename, 
     std::vector<geometry_msgs::Point>& points, 
     std::vector<geometry_msgs::Point>& lines);
-void req_range_scan(ros::ServiceClient& service, om_aiv_util::ArclApi& srv, std::vector<float>& ranges);
+void req_range_scan(ros::ServiceClient& service, om_aiv_util::ArclApi& srv, std::vector<geometry_msgs::Point>& points);
 
 int main(int argc, char** argv)
 {
@@ -72,7 +82,6 @@ int main(int argc, char** argv)
     nh.param<std::string>(MAP_NAME_PARAM, MAP_NAME, "data.map");
     nh.param<std::string>(HEAD_FRAME_PARAM, HEAD_FRAME, "/pose");
     nh.param<std::string>(VIS_TOPIC_PARAM, VIS_TOPIC, "visualization_marker");
-    nh.param<std::string>(LS_TOPIC_PARAM, LS_TOPIC, "scan");
     nh.param<std::string>(RNG_DEVICE_PARAM, rng_device, "Laser_1");
     nh.param<float>(POINTS_A_CLR_PARAM, POINTS_A_CLR, 1.0);
     nh.param<float>(POINTS_R_CLR_PARAM, POINTS_R_CLR, 0);
@@ -82,9 +91,13 @@ int main(int argc, char** argv)
     nh.param<float>(LINES_R_CLR_PARAM, LINES_R_CLR, 0);
     nh.param<float>(LINES_G_CLR_PARAM, LINES_G_CLR, 0);
     nh.param<float>(LINES_B_CLR_PARAM, LINES_B_CLR, 0);
+    nh.param<float>(LS_POINTS_A_CLR_PARAM, LS_POINTS_A_CLR, 1.0);
+    nh.param<float>(LS_POINTS_R_CLR_PARAM, LS_POINTS_R_CLR, 0);
+    nh.param<float>(LS_POINTS_G_CLR_PARAM, LS_POINTS_G_CLR, 0);
+    nh.param<float>(LS_POINTS_B_CLR_PARAM, LS_POINTS_B_CLR, 0);
 
     ros::Publisher points_pub = nh.advertise<visualization_msgs::Marker>(VIS_TOPIC, 10);
-    ros::Publisher laser_scan_pub = nh.advertise<sensor_msgs::LaserScan>(LS_TOPIC, 10);
+    ros::Publisher laser_scan_pub = nh.advertise<visualization_msgs::Marker>(VIS_TOPIC, 10);
     ros::ServiceClient arcl_api_client = nh.serviceClient<om_aiv_util::ArclApi>("arcl_api_service");
 
     //// Begin drawing points and line on RVIZ ////
@@ -133,25 +146,19 @@ int main(int argc, char** argv)
     
     /// Draw laser scan data ///
     
-    // TODO: User arcl api server to request for the following config values.
-    // Maybe put these config as a struct and pass into a function to submit the request.
-    // Or just pass the laser_msg as reference and fill it.
-    float angle_increment = 0;
-    float angle_max = 0;
-    float angle_min = 0;
-    float range_max = 0;
-    float range_min = 0;
-    float scan_time = 0;
-    float time_increment = 0;
-    sensor_msgs::LaserScan laser_msg;
-    laser_msg.header.frame_id = HEAD_FRAME;
-    laser_msg.angle_increment = angle_increment;
-    laser_msg.angle_max = angle_max;
-    laser_msg.angle_min = angle_min;
-    laser_msg.range_max = range_max;
-    laser_msg.range_min = range_min;
-    laser_msg.scan_time = scan_time;
-    laser_msg.time_increment = time_increment;
+    visualization_msgs::Marker laser_points;
+    laser_points.header.frame_id = HEAD_FRAME;
+    laser_points.action = visualization_msgs::Marker::ADD;
+    laser_points.ns = LS_POINTS_NS;
+    laser_points.pose.orientation.w = 1.0;
+    laser_points.type = visualization_msgs::Marker::POINTS;
+    laser_points.id = LS_POINTS_M_ID;
+    laser_points.scale.x = LS_POINTS_X_SCALE;
+    laser_points.scale.y = LS_POINTS_Y_SCALE;
+    laser_points.color.a = LS_POINTS_A_CLR;
+    laser_points.color.r = LS_POINTS_R_CLR;
+    laser_points.color.g = LS_POINTS_G_CLR;
+    laser_points.color.b = LS_POINTS_B_CLR;
     
     // Create the service request message to get laser scan data.
     om_aiv_util::ArclApi srv;
@@ -165,9 +172,9 @@ int main(int argc, char** argv)
         points_pub.publish(points_arr);
         points_pub.publish(lines_list);
 
-        req_range_scan(arcl_api_client, srv, laser_msg.ranges);
-        laser_msg.header.stamp = ros::Time::now();
-        laser_scan_pub.publish(laser_msg);
+        req_range_scan(arcl_api_client, srv, laser_points.points);
+        laser_points.header.stamp = ros::Time::now();
+        laser_scan_pub.publish(laser_points);
         
         rate.sleep();
     }
@@ -266,7 +273,7 @@ bool get_map_data(std::string filename,
  * @param srv Reference to service message object that will be used.
  * @param ranges Reference to vector<float> to store laser scan values.
  */
-void req_range_scan(ros::ServiceClient& service, om_aiv_util::ArclApi& srv, std::vector<float>& ranges)
+void req_range_scan(ros::ServiceClient& service, om_aiv_util::ArclApi& srv, std::vector<geometry_msgs::Point>& points)
 {
     if (service.call(srv))
     {
@@ -286,11 +293,15 @@ void req_range_scan(ros::ServiceClient& service, om_aiv_util::ArclApi& srv, std:
             }
             
             std::istringstream iss(vals_str);
-            float value = 0;
-            ranges.clear();
-            while (iss >> value)
+            double x, y = 0.0;
+            points.clear();
+            while (iss >> x >> y)
             {
-                ranges.push_back(value / 1000.0); // Values are in mm, convert to metre.
+                geometry_msgs::Point p;
+                p.x = x / 1000.0;
+                p.y = y / 1000.0;
+                p.z = 0;
+                points.push_back(p);
             }
         }
     }
