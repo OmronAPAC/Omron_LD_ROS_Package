@@ -24,24 +24,19 @@ class SocketDriver(object):
         self.curr_id = -1 # Valid IDs are from 0 to inf.
         self._find_str = None
 
-    
-    """Given the event mask from selectors, do read or write accordingly.
-
-    param mask:
-    The mask to use to decide which event can be executed.
-    
-    """
+    ### Given the event mask from selectors, do read or write accordingly. 
+    #
+    # @param mask The mask to use to decide which event can be executed. 
+    ###
     def process_events(self, mask):
         if mask & selectors.EVENT_READ:
             self.read()
         if mask & selectors.EVENT_WRITE:
             self.write()
 
-    """
-    Read incoming bytes from the socket and save into receive buffer.
-    If there are data received, append into the receiver buffer.
-    
-    """
+    ### Read incoming bytes from the socket and save into receive buffer. 
+    #
+    ###
     def _read(self):
         try:
             recv_data = self.sock.recv(RECV_BUFFER)
@@ -51,11 +46,10 @@ class SocketDriver(object):
             if recv_data:
                 self._recv_buffer += recv_data
 
-    """
-    Push bytes from the send buffer to the socket buffer.
-    If not all the bytes are pushed, keep the remaining bytes in the send buffer.
-    
-    """
+    ### Push bytes from the send buffer to the socket buffer.
+    # If not all the bytes are pushed, keep the remaining bytes in the send buffer.
+    #
+    ###
     def _write(self):
         if self._send_buffer:
             try:
