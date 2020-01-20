@@ -75,7 +75,7 @@ int main(int argc, char** argv)
 {
     ros::init(argc, argv, "data_points_marker");
     ros::NodeHandle nh;
-    ros::Rate rate(10);
+    ros::Rate rate(5);
 
     // Get all parameters.
     nh.param<std::string>(PACK_NAME_PARAM, PACK_NAME, "pkg");

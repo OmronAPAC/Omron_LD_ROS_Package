@@ -2,8 +2,9 @@ import io
 import selectors2 as selectors
 import socket
 import traceback
-from collections import deque
 import time
+import threading
+from collections import deque
 
 RECV_BUFFER = 4096
 
@@ -15,14 +16,15 @@ class SocketDriver(object):
         self.selector = None
         self.sock = None
         self.addr = None
-        self.commands = deque()
+        self.commands = deque() # shared
         self.responses = dict()
         self._recv_buffer = b""
         self._send_buffer = b""
         self._command_queued = False
-        self.id_tracker = list() # Sorted list of IDs assigned at current moment.
+        self.id_tracker = list() # Sorted list of IDs assigned at current moment. #
         self.curr_id = -1 # Valid IDs are from 0 to inf.
         self._find_str = None
+        self.lock = threading.Lock()
 
     
     """Given the event mask from selectors, do read or write accordingly.
@@ -81,7 +83,7 @@ class SocketDriver(object):
             else:
                 self._find_str = None
                 self.responses[self.curr_id] = resp
-                self.clr_id(self.curr_id)
+                self.selector.modify(self.sock, selectors.EVENT_READ | selectors.EVENT_WRITE, data=self)
 
     # 
     """
@@ -122,10 +124,7 @@ class SocketDriver(object):
         int -- The identifier integer generated.
     """
     def gen_id(self):
-        if not self.id_tracker:
-            self.id_tracker.append(0)
-            return 0
-        
+        self.lock.acquire()
         cnt = 0
         for val in self.id_tracker:
             if val == cnt:
@@ -135,6 +134,7 @@ class SocketDriver(object):
                 break
         self.id_tracker.append(cnt)
         self.id_tracker.sort()
+        self.lock.release()
         return cnt
     
     """
@@ -146,10 +146,12 @@ class SocketDriver(object):
     
     """
     def clr_id(self, identifier):
+        self.lock.acquire()
         try:
             self.id_tracker.remove(identifier)
         except ValueError:
             pass
+        self.lock.release()
 
     """
     Put the oldest command in the list queue to send buffer.
@@ -161,6 +163,7 @@ class SocketDriver(object):
         self._send_buffer += cmd[1]
         self._find_str = cmd[2]
         self._command_queued = True
+        self.selector.modify(self.sock, selectors.EVENT_READ, data=self)
         
     """
     Put a command into the command list.
@@ -201,7 +204,9 @@ class SocketDriver(object):
         str -- The response string associated with the identifier integer.
     """
     def get_response(self, identifier):
-        return self.responses.pop(identifier)
+        ret = self.responses.pop(identifier)
+        self.clr_id(identifier)
+        return ret
 
     """
     # TODO: Add check for failed connection

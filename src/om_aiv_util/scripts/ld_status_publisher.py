@@ -20,11 +20,9 @@ def split_args(input):
     out = input.splitlines()
     f_out = []
 
-    print out
     for idx, elem in enumerate(out):
         if "Location:" in elem or "Status:" in elem or "StateOfCharge:" in elem or "LocalizationScore:" in elem or "Temperature:" in elem or "ExtendedStatusForHumans:":
             f_out.append(elem[(elem.find(":")+2):])
-    print f_out
     
     return (f_out[0], f_out[1], f_out[2], f_out[3], f_out[4], f_out[5])
 
@@ -45,7 +43,7 @@ def pub_status():
     locscore_pub = rospy.Publisher("ldarcl_localizationscore", String, queue_size=10)
     temp_pub = rospy.Publisher("ldarcl_temperature", String, queue_size=10)
     rospy.init_node("ld_status_publisher", anonymous=True)
-    rate = rospy.Rate(50)
+    rate = rospy.Rate(1)
     loc_msg = Location()
     while not rospy.is_shutdown():
         try:
@@ -53,7 +51,6 @@ def pub_status():
         except rospy.ServiceException, e:
             print "Service call failed: %s"%e
         else:
-            print resp
             (ext_status, status, batt, loc, locscore, temp) = split_args(resp)
             ext_status_pub.publish(ext_status)
             status_pub.publish(status)
