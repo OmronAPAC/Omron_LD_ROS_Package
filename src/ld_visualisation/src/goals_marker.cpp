@@ -58,7 +58,7 @@ int main(int argc, char** argv)
 {
     ros::init(argc, argv, "goals_marker");
     ros::NodeHandle nh;
-    ros::Rate rate(1);
+    ros::Rate rate(0.1);
 
     nh.param<std::string>(HEAD_FRAME_PARAM, head_frame, "/pose");
     nh.param<std::string>(GOALS_VIS_TOPIC, goals_vis_topic, "visualization_marker_array");
@@ -186,6 +186,8 @@ void req_goals_coord(
                     one_goal.pose.position.x = x; // Convert from mm to metre.
                     one_goal.pose.position.y = y;
                     one_goal.pose.position.z = 0;
+                    if (theta < 0) theta += 360.0;
+                    theta = theta * 0.01745329252; // Convert to radian
                     one_goal.pose.orientation = tf::createQuaternionMsgFromYaw(theta);
                     one_goal.id = goals_id++;
                     goals.markers.push_back(one_goal);
