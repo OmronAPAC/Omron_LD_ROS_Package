@@ -58,6 +58,7 @@ add_service_files(
 FILES
 OmAivService.srv
 ArclApi.srv
+ArclListen.srv
 )
 
 ## Generate actions in the 'action' folder

@@ -8,6 +8,7 @@
     <node name="getInfo_publisher" pkg="om_aiv_util" type="getInfo_publisher.py" output="screen" /> -->
     <node name="ld_status_publisher" pkg="om_aiv_util" type="ld_status_publisher.py" output="screen" />
     <node name="arcl_api_server" pkg="om_aiv_util" type="arcl_api_server.py" output="screen" />
+    <node name="arcl_listen_server" pkg="om_aiv_util" type="arcl_listen_server.py" output="screen" />
     <!-- <node name="hardware_service_servers" pkg="om_aiv_util" type="hardware_service_servers.py" output="screen" /> -->
     <!-- <node name="utilities_service_servers" pkg="om_aiv_util" type="utilities_service_servers.py" output="screen" /> -->
     <!-- <node name="motion_service_servers" pkg="om_aiv_util" type="motion_service_servers.py" output="screen" />

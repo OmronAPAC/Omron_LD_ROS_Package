@@ -4,7 +4,7 @@ import socket
 import traceback
 import time
 import threading
-from collections import deque
+from collections import deque, defaultdict
 
 RECV_BUFFER = 4096
 
@@ -17,9 +17,11 @@ class SocketListener(object):
         self.sock = None
         self.addr = str(addr)
         self.port = int(port)
-        self.responses = dict()
+        self.responses = defaultdict(list)
         self._recv_buffer = b""
         self.lock = threading.Lock()
+
+        self.goal_f = False
 
     
     """Given the event mask from selectors, do read or write accordingly.
@@ -31,6 +33,8 @@ class SocketListener(object):
     def process_events(self, mask):
         if mask & selectors.EVENT_READ:
             self.read()
+        
+        self.sort_data()
 
     """
     Read incoming bytes from the socket and save into receive buffer.
@@ -43,9 +47,7 @@ class SocketListener(object):
         except io.BlockingIOError:
             pass
         else:
-            if recv_data:
-                print recv_data
-                # self._recv_buffer += recv_data
+            self._recv_buffer += recv_data
 
     """
     Read incoming bytes and generate the correct responses.
@@ -60,14 +62,40 @@ class SocketListener(object):
     Returns:
         str -- The extracted string.
     """
-    def extract_resp(self):
-        line_s = self._recv_buffer.index(self._find_str)
-        resp_e = self._recv_buffer.index("\r\n", line_s) + 1 # Add one to get the index of \n.
-        ret = self._recv_buffer[:resp_e+1] # We want the \n char.
-        self._recv_buffer = self._recv_buffer[resp_e+1:]
-        return ret
+    def sort_data(self):
+        while True:
+            try:
+                newline_char = self._recv_buffer.index("\r\n")
+            except ValueError:
+                return # There is no complete line anymore in buffer, return from here.
 
-
+            # Extract interested line from receive buffer.
+            line = self._recv_buffer[:newline_char]
+            self._recv_buffer = self._recv_buffer[newline_char+2:]
+            
+            try:
+                colon = line.index(":")
+            except ValueError:
+                key = line
+                value = None
+                self.store(key, value)
+            else:
+                key = line[:colon]
+                value = line[colon+1:].strip()
+                self.store(key, value)
+    def store(self, key, value):
+            
+        if key == "Goal":
+            if self.goal_f:
+                self.responses[key].append(value)
+            else:
+                self.responses[key] = [value]
+                self.goal_f = True
+        elif key == "End of goals":
+            self.goal_f = False
+        else:
+            self.responses[key] = [value]
+            
     """
     Retrieve the response associated with the given identifier integer.
 
@@ -77,10 +105,8 @@ class SocketListener(object):
     Returns:
         str -- The response string associated with the identifier integer.
     """
-    def get_response(self, identifier):
-        ret = self.responses.pop(identifier)
-        self.clr_id(identifier)
-        return ret
+    def get_response(self, key):
+        return self.responses[key]
 
     """
     # TODO: Add check for failed connection
@@ -93,15 +119,26 @@ class SocketListener(object):
     Port number to connect to.
 
     """
-    def begin(self, addr, port):
-        print "Listening on", self.addr, "at port", self.port
+    def begin(self):
+        print "Attempt to listen for incoming on", self.addr, "at port", self.port
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         incoming = (self.addr, self.port)
         sock.bind(incoming)
-        sock.listen(5)
+        sock.listen(1)
         (connection, address) = sock.accept()
+        sock.shutdown(socket.SHUT_RDWR)
+        sock.close() # Close the initial socket.
+        print "Listening to new socket on", address[0], "at port", address[1]
         self.sock = connection
+        self.sock.setblocking(False)
         events = selectors.EVENT_READ
         self.selector = selectors.DefaultSelector()
-        self.selector.register(sock, events, data=self)
+        self.selector.register(self.sock, events, data=self)
+
+    def close(self):
+        self.selector.unregister(self.sock)
+        self.sock.shutdown(socket.SHUT_RDWR)
+        self.sock.close()
+
 
