@@ -229,7 +229,8 @@ bool get_map_data(std::string filename,
             {
                 std::getline(map_file, line);
                 std::istringstream iss(line);
-                if (!(iss >> x >> y)) ROS_ERROR("Error reading points from file.");
+                if (!(iss >> x >> y)) 
+                    ROS_ERROR("%s - Error reading points from file.", ros::this_node::getName().c_str());
                 geometry_msgs::Point p;
                 p.x = (double)x / 1000.0; // Values are in millimeter.
                 p.y = (double)y / 1000.0;
@@ -246,7 +247,8 @@ bool get_map_data(std::string filename,
             {
                 std::getline(map_file, line);
                 std::istringstream iss(line);
-                if(!(iss >> x1 >> y1 >> x2 >> y2)) ROS_ERROR("Error reading points from file.");
+                if(!(iss >> x1 >> y1 >> x2 >> y2)) 
+                    ROS_ERROR("%s - Error reading points from file.", ros::this_node::getName().c_str());
                 geometry_msgs::Point p1;
                 geometry_msgs::Point p2;
                 p1.x = (double)x1 / 1000.0; // Values are in millimeter.
@@ -286,7 +288,8 @@ void req_range_scan(ros::ServiceClient& service, om_aiv_util::ArclListen& srv, s
             }
             catch(const std::out_of_range& e)
             {
-                ROS_ERROR("%s: No laser scan values in incoming response.", e.what());
+                ROS_ERROR("%s - %s: No laser scan values in incoming response.", ros::this_node::getName().c_str(),
+                     e.what());
                 vals_str.clear();
             }
             
@@ -305,6 +308,6 @@ void req_range_scan(ros::ServiceClient& service, om_aiv_util::ArclListen& srv, s
     }
     else
     {
-        ROS_ERROR("Failed to call %s service", LS_SRV_NAME.c_str());
+        ROS_ERROR("%s - Failed to call %s service", ros::this_node::getName().c_str(), LS_SRV_NAME.c_str());
     }
 }

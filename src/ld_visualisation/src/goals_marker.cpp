@@ -201,12 +201,14 @@ void req_goals_coord(
             }
             else
             {
-                ROS_ERROR("Failed to call %s service for goal info.", API_SRV_NAME.c_str());
+                ROS_ERROR("%s - Failed to call %s service for goal info.", 
+                    ros::this_node::getName().c_str(), API_SRV_NAME.c_str());
             }
         }
     }
     else
     {
-        ROS_ERROR("Failed to call %s service for list of goals.", LISTEN_SRV_NAME.c_str());
+        ROS_ERROR("%s - Failed to call %s service for list of goals.", 
+            ros::this_node::getName().c_str(), LISTEN_SRV_NAME.c_str());
     }
 }

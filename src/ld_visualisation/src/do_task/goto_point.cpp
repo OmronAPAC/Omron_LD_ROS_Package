@@ -19,7 +19,7 @@ int main(int argc, char** argv)
     ros::init(argc, argv, "goto_point");
     ros::NodeHandle nh;
     ros::Rate rate(10);
-    
+
     ros::Subscriber point_sub = nh.subscribe<geometry_msgs::PoseStamped>(POINT_TOPIC, 10, point_cb);
     arcl_api_client = nh.serviceClient<om_aiv_util::ArclApi>(API_SRV_NAME);
 
@@ -58,15 +58,17 @@ void point_cb(const geometry_msgs::PoseStampedConstPtr& point_msg)
     {
         if (req_msg.response.response.find(LINE_ID) != std::string::npos)
         {
-            ROS_INFO("Executing %s", req_msg.request.command.c_str());
+            ROS_INFO("%s - Executing %s", ros::this_node::getName().c_str(), req_msg.request.command.c_str());
         }
         else
         {
-            ROS_ERROR("gotoPoint task failed, response: %s", req_msg.response.response.c_str());
+            ROS_ERROR("%s - gotoPoint task failed, response: %s", 
+                ros::this_node::getName().c_str(), req_msg.response.response.c_str());
         }
     }
     else
     {
-        ROS_ERROR("Failed to call %s service for gotoPoint task", API_SRV_NAME);
+        ROS_ERROR("%s - Failed to call %s service for gotoPoint task", 
+            ros::this_node::getName().c_str(), API_SRV_NAME.c_str());
     }
 }
