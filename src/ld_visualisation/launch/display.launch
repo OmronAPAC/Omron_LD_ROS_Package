@@ -40,6 +40,7 @@
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
   <node name="data_points_marker" pkg="ld_visualisation" type="data_points_marker" output="screen"/>
   <node name="goals_marker" pkg="ld_visualisation" type="goals_marker" output="screen"/>
+  <node name="goto_point" pkg="ld_visualisation" type="goto_point" output="screen"/>
 
 </launch>
 

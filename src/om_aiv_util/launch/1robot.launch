@@ -16,10 +16,12 @@
       <!-- <param name="ip_address" value="168.3.201.123" />
       <param name="ip_address" value="172.21.5.123" />
       <param name="port" value="7171" /> -->
-      <arg name="ip" />
-      <param name="ip_address" value="$(arg ip)" />
-      <param name="port" value="7171" />
-      <param name="def_arcl_passwd" value="adept" />
+    <arg name="ip" />
+    <param name="ip_address" value="$(arg ip)" />
+    <param name="port" value="7171" />
+    <param name="def_arcl_passwd" value="adept" />
+
+    <include file="$(find ld_visualisation)/launch/display.launch"/>
   <!-- </group> -->
 
 
