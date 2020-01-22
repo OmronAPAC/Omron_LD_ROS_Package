@@ -3,7 +3,7 @@
 #include <geometry_msgs/PoseStamped.h>
 #include <geometry_msgs/Quaternion.h>
 #include <tf/transform_broadcaster.h>
-#include <om_aiv_util/Location.h>
+#include <om_aiv_util/Status.h>
 #include <string>
 
 // Global values
@@ -24,14 +24,14 @@ const std::string RIGHT_BK_WHEEL_JOINT = "left_back_small_wheel_joint";
 const std::string LEFT_BK_WHEEL_JOINT = "right_back_small_wheel_joint";
 
 // Function prototypes
-void pose_cb(const om_aiv_util::LocationConstPtr& pose_msg);
+void pose_cb(const om_aiv_util::StatusConstPtr& pose_msg);
 
 int main(int argc, char** argv) 
 {
     ros::init(argc, argv, "joints_publisher");
     ros::NodeHandle nh;
     ros::Publisher joint_pub = nh.advertise<sensor_msgs::JointState>("joint_states", 1);
-    ros::Subscriber pose_sub = nh.subscribe<om_aiv_util::Location>("ldarcl_location", 10, pose_cb);
+    ros::Subscriber pose_sub = nh.subscribe<om_aiv_util::Status>("ldarcl_status", 10, pose_cb);
     tf::TransformBroadcaster broadcaster;
     ros::Rate loop_rate(50);
 
@@ -101,17 +101,17 @@ int main(int argc, char** argv)
 /**
  * @brief Callback function for receiving Location message.
  * 
- * @param pose_msg Location message data received.
+ * @param pose_msg Status message data received.
  */
-void pose_cb(const om_aiv_util::LocationConstPtr& pose_msg)
+void pose_cb(const om_aiv_util::StatusConstPtr& pose_msg)
 {
     // The values are in millimeters, convert to meters.
-    pos_x = pose_msg->x / 1000.0; 
-    pos_y = pose_msg->y / 1000.0; 
+    pos_x = pose_msg->location.x / 1000.0; 
+    pos_y = pose_msg->location.y / 1000.0; 
     pos_z = 0;
 
     // Angle is in degree, convert to radians.
-    double rad = pose_msg->theta;
+    double rad = pose_msg->location.theta;
     rad = rad * M_PI / 180;
     if (rad < 0) rad += (2 * M_PI);
     theta = tf::createQuaternionMsgFromYaw(rad);
