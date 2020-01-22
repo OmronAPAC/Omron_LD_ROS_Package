@@ -51,6 +51,7 @@ catkin_python_setup()
 add_message_files(
    FILES
    Location.msg
+   Status.msg
 )
 
 ## Generate services in the 'srv' folder
@@ -72,6 +73,7 @@ ArclListen.srv
  generate_messages(
    DEPENDENCIES
    std_msgs
+   om_aiv_util
  )
 
 ################################################

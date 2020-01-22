@@ -1,66 +1,81 @@
 #!/usr/bin/env python
 ## publishes std_msgs messages to the 6 ld_status topics
-from colorama import init
-init()
-from colorama import Fore, Back, Style
 import rospy
-from std_msgs.msg import String
-from std_msgs.msg import Float32
-from geometry_msgs.msg import Point
-from om_aiv_util.msg import Location
-import socket
-import threading
-import time
-import re
-import sys
 from om_aiv_util.srv import ArclApi, ArclApiRequest, ArclApiResponse
+from om_aiv_util.srv import ArclListen, ArclListenRequest, ArclListenResponse
+from om_aiv_util.msg import Status, Location
 
-# TODO: Do better than this!!
-def split_args(input):
-    out = input.splitlines()
-    f_out = []
-
-    for idx, elem in enumerate(out):
-        if "Location:" in elem or "Status:" in elem or "StateOfCharge:" in elem or "LocalizationScore:" in elem or "Temperature:" in elem or "ExtendedStatusForHumans:":
-            f_out.append(elem[(elem.find(":")+2):])
-    
-    return (f_out[0], f_out[1], f_out[2], f_out[3], f_out[4], f_out[5])
+headers = ["Location", "Status", "StateOfCharge", "LocalizationScore", "Temperature", "ExtendedStatusForHumans"]
+responses = {}
 
 def req_status():
-    rospy.wait_for_service("arcl_api_service")
-    get_status = rospy.ServiceProxy("arcl_api_service", ArclApi)
-    request = ArclApiRequest("Status", "Temperature:")
-    # TODO: Do a try except here.
-    resp = get_status(request)
-    return resp.response
+    responses.clear()
+
+    # Request for the responses we are interested in, specified in the headers list.
+    for i in range(0, len(headers)):
+        resp_header = headers[i]
+        
+        rospy.wait_for_service("arcl_listen_service")
+        get_status = rospy.ServiceProxy("arcl_listen_service", ArclListen)
+        request = ArclListenRequest(resp_header)
+        resp = get_status(request)
+        
+        if len(resp.resp_text) == 0:
+            rospy.logdebug("No \"%s\" header from ARCL outgoing commands", resp_header)
+            responses[resp_header] = ""
+        else:
+            responses[resp_header] = resp.resp_text
 
 def pub_status():
     # TODO: Combine all status values as one Status msg type in ROS
-    ext_status_pub = rospy.Publisher("ldarcl_extended_human_status", String, queue_size=10)
-    status_pub = rospy.Publisher("ldarcl_status", String, queue_size=10)
-    battery_pub = rospy.Publisher("ldarcl_batteryvoltage", String, queue_size=10)
-    loc_pub = rospy.Publisher("ldarcl_location", Location, queue_size=10)
-    locscore_pub = rospy.Publisher("ldarcl_localizationscore", String, queue_size=10)
-    temp_pub = rospy.Publisher("ldarcl_temperature", String, queue_size=10)
-    rospy.init_node("ld_status_publisher", anonymous=True)
-    rate = rospy.Rate(1)
+    rospy.init_node("ld_status_publisher", anonymous=True, log_level=rospy.DEBUG)
+    status_pub = rospy.Publisher("ldarcl_status", Status, queue_size=10)
+    rate = rospy.Rate(10)
+
+    status_msg = Status()
     loc_msg = Location()
+    
     while not rospy.is_shutdown():
         try:
-            resp = req_status()
+            req_status()
         except rospy.ServiceException, e:
             print "Service call failed: %s"%e
         else:
-            (ext_status, status, batt, loc, locscore, temp) = split_args(resp)
-            ext_status_pub.publish(ext_status)
-            status_pub.publish(status)
-            battery_pub.publish(batt)
-            loc_msg.x = float(loc.split()[0])
-            loc_msg.y = float(loc.split()[1])
-            loc_msg.theta = float(loc.split()[2])
-            loc_pub.publish(loc_msg)
-            locscore_pub.publish(locscore)
-            temp_pub.publish(temp)
+            # The order specified in the headers list must be followed here.
+            values = responses[headers[0]].split()
+            if len(values) is 3:
+                try:
+                    loc_msg.x = float(values[0])
+                    loc_msg.y = float(values[1])
+                    loc_msg.theta = float(values[2])
+                except ValueError:
+                    loc_msg.x = 0
+                    loc_msg.y = 0
+                    loc_msg.theta = 0
+                    pass
+                else:
+                    status_msg.location = loc_msg 
+
+            status_msg.status = responses[headers[1]]
+            status_msg.extended_status = responses[headers[5]]
+
+            try:
+                status_msg.state_of_charge = float(responses[headers[2]])
+            except ValueError:
+                status_msg.state_of_charge = 0
+
+            try:
+                status_msg.localization_score = float(responses[headers[3]])
+            except ValueError:
+                status_msg.localization_score = 0
+
+            try:
+                status_msg.temperature = float(responses[headers[4]])
+            except ValueError:
+                status_msg.temperature = 0
+
+            status_pub.publish(status_msg)
+            
         finally:
             rate.sleep()
 
