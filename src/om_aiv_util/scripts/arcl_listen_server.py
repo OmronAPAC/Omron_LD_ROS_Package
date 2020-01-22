@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import rospy
 from om_aiv_util.socket_listener import *
-from om_aiv_util.srv import ArclListen
+from om_aiv_util.srv import ArclListen, ArclListenResponse
 
 listener = SocketListener("168.3.201.114", 7179)
 listener.begin()
@@ -28,7 +28,7 @@ def req_handler(req):
     except KeyError:
       return None
     else:
-      return resp
+      return ArclListenResponse(" ".join(resp))
     
 def arcl_listen():
   rospy.init_node("arcl_listen_server", anonymous=True)
