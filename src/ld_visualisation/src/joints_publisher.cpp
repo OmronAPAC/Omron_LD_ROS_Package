@@ -115,13 +115,4 @@ void pose_cb(const om_aiv_util::StatusConstPtr& pose_msg)
     rad = rad * M_PI / 180;
     if (rad < 0) rad += (2 * M_PI);
     theta = tf::createQuaternionMsgFromYaw(rad);
-
-    ROS_INFO("pos_x: %lf", pos_x);
-    ROS_INFO("pos_y: %lf", pos_y);
-    ROS_INFO("pos_z: %lf", pos_z);
-    ROS_INFO("rad  : %lf", rad);
-    ROS_INFO("q_x  : %lf", theta.x);
-    ROS_INFO("q_y  : %lf", theta.y);
-    ROS_INFO("q_z  : %lf", theta.z);
-    ROS_INFO("q_w  : %lf", theta.w);
 }
