@@ -145,6 +145,7 @@ include_directories(
 add_executable(joints_publisher src/joints_publisher.cpp)
 add_executable(data_points_marker src/data_points_marker.cpp)
 add_executable(goals_marker src/goals_marker.cpp)
+add_executable(goto_point src/do_task/goto_point.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -160,6 +161,7 @@ add_executable(goals_marker src/goals_marker.cpp)
 target_link_libraries(joints_publisher ${catkin_LIBRARIES}) 
 target_link_libraries(data_points_marker ${catkin_LIBRARIES})
 target_link_libraries(goals_marker ${catkin_LIBRARIES})
+target_link_libraries(goto_point ${catkin_LIBRARIES})
 
 #############
 ## Install ##
