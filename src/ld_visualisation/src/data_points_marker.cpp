@@ -1,8 +1,7 @@
 #include <ros/ros.h>
 #include <ros/package.h>
 #include <visualization_msgs/Marker.h>
-#include <sensor_msgs/LaserScan.h>
-#include <om_aiv_util/ArclApi.h>
+#include <om_aiv_util/ArclListen.h>
 #include <fstream>
 #include <sstream>
 #include <string>
@@ -37,6 +36,8 @@ const std::string LINES_H = "LINES";
 const std::string POINTS_NS = "points";
 const std::string LINES_NS = "lines";
 const std::string LS_POINTS_NS = "ls_points";
+const std::string LS_REQ_HEADER = "RangeDeviceGetCurrent";
+const std::string LS_SRV_NAME = "arcl_listen_service";
 const int32_t POINTS_M_ID = 0;
 const int32_t LINES_M_ID = 1;
 const int32_t LS_POINTS_M_ID = 2;
@@ -69,7 +70,7 @@ const std::string LS_POINTS_B_CLR_PARAM = "ls_points_b_colour";
 bool get_map_data(std::string filename, 
     std::vector<geometry_msgs::Point>& points, 
     std::vector<geometry_msgs::Point>& lines);
-void req_range_scan(ros::ServiceClient& service, om_aiv_util::ArclApi& srv, std::vector<geometry_msgs::Point>& points);
+void req_range_scan(ros::ServiceClient& service, om_aiv_util::ArclListen& srv, std::vector<geometry_msgs::Point>& points);
 
 int main(int argc, char** argv)
 {
@@ -98,7 +99,7 @@ int main(int argc, char** argv)
 
     ros::Publisher points_pub = nh.advertise<visualization_msgs::Marker>(VIS_TOPIC, 10);
     ros::Publisher laser_scan_pub = nh.advertise<visualization_msgs::Marker>(VIS_TOPIC, 10);
-    ros::ServiceClient arcl_api_client = nh.serviceClient<om_aiv_util::ArclApi>("arcl_api_service");
+    ros::ServiceClient arcl_api_client = nh.serviceClient<om_aiv_util::ArclListen>(LS_SRV_NAME);
 
     //// Begin drawing points and line on RVIZ ////
 
@@ -161,11 +162,8 @@ int main(int argc, char** argv)
     laser_points.color.b = LS_POINTS_B_CLR;
     
     // Create the service request message to get laser scan data.
-    om_aiv_util::ArclApi srv;
-    std::string cmd = "RangeDeviceGetCurrent ";
-    cmd.append(rng_device);
-    srv.request.command = cmd;
-    srv.request.line_identifier = "RangeDeviceGetCurrent:";
+    om_aiv_util::ArclListen srv;
+    srv.request.resp_header = LS_REQ_HEADER;
 
     while (ros::ok())
     {
@@ -267,17 +265,17 @@ bool get_map_data(std::string filename,
 }
 
 /**
- * @brief Requests for laser scan data from ARCL server and return as a vector of values. 
+ * @brief Requests for laser scan data from ARCL listening server. 
  * 
  * @param service Reference to ros::ServiceClient object to request from.
  * @param srv Reference to service message object that will be used.
- * @param ranges Reference to vector<float> to store laser scan values.
+ * @param ranges Reference to vector<geometry_msgs::Point> to store laser scan values.
  */
-void req_range_scan(ros::ServiceClient& service, om_aiv_util::ArclApi& srv, std::vector<geometry_msgs::Point>& points)
+void req_range_scan(ros::ServiceClient& service, om_aiv_util::ArclListen& srv, std::vector<geometry_msgs::Point>& points)
 {
     if (service.call(srv))
     {
-        std::string raw_resp = srv.response.response;
+        std::string raw_resp = srv.response.resp_text;
         std::string::size_type pos = raw_resp.find(rng_device);
         if (pos != std::string::npos)
         {
@@ -307,6 +305,6 @@ void req_range_scan(ros::ServiceClient& service, om_aiv_util::ArclApi& srv, std:
     }
     else
     {
-        ROS_ERROR("Failed to call %s service", "arcl_api_service");
+        ROS_ERROR("Failed to call %s service", LS_SRV_NAME.c_str());
     }
 }
