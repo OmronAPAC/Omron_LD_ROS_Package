@@ -10,7 +10,7 @@ ros::ServiceClient arcl_api_client;
 const std::string API_SRV_NAME = "arcl_api_service";
 const std::string GOTO_CMD = "doTask gotoPoint ";
 const std::string LINE_ID = "Doing task gotoPoint ";
-const std::string POINT_TOPIC = "/move_base_simple/goal";
+const std::string POINT_TOPIC = "/goto_point_goal";
 
 void point_cb(const geometry_msgs::PoseStampedConstPtr& point_msg);
 
