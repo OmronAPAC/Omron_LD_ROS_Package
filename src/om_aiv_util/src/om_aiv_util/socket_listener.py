@@ -121,10 +121,21 @@ class SocketListener(object):
     """
     def begin(self):
         print "Attempt to listen for incoming on", self.addr, "at port", self.port
-        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-        incoming = (self.addr, self.port)
-        sock.bind(incoming)
+        
+        while True:
+            try:
+                sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+                incoming = (self.addr, self.port)
+                sock.bind(incoming)
+            except socket.error as e:
+                print "Socket listener connection failed", e
+                print "Retrying"
+            else:
+                break
+            finally:
+                time.sleep(3)
+
         sock.listen(1)
         (connection, address) = sock.accept()
         sock.shutdown(socket.SHUT_RDWR)
