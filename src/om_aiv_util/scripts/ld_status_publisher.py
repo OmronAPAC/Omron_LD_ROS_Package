@@ -27,7 +27,6 @@ def req_status():
             responses[resp_header] = resp.resp_text
 
 def pub_status():
-    # TODO: Combine all status values as one Status msg type in ROS
     rospy.init_node("ld_status_publisher", anonymous=True)
     status_pub = rospy.Publisher("ldarcl_status", Status, queue_size=10)
     rate = rospy.Rate(10)
