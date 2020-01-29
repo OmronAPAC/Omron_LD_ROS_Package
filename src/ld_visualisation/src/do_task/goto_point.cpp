@@ -1,5 +1,5 @@
 #include <ros/ros.h>
-#include <geometry_msgs/PoseStamped.h>
+#include <geometry_msgs/PoseWithCovarianceStamped.h>
 #include <geometry_msgs/Quaternion.h>
 #include <tf/transform_datatypes.h>
 #include <om_aiv_util/ArclApi.h>
@@ -12,7 +12,7 @@ const std::string GOTO_CMD = "doTask gotoPoint ";
 const std::string LINE_ID = "Doing task gotoPoint ";
 const std::string POINT_TOPIC = "/goto_point_goal";
 
-void point_cb(const geometry_msgs::PoseStampedConstPtr& point_msg);
+void point_cb(const geometry_msgs::PoseWithCovarianceStampedConstPtr& point_msg);
 
 int main(int argc, char** argv)
 {
@@ -20,7 +20,7 @@ int main(int argc, char** argv)
     ros::NodeHandle nh;
     ros::Rate rate(10);
 
-    ros::Subscriber point_sub = nh.subscribe<geometry_msgs::PoseStamped>(POINT_TOPIC, 10, point_cb);
+    ros::Subscriber point_sub = nh.subscribe<geometry_msgs::PoseWithCovarianceStamped>(POINT_TOPIC, 10, point_cb);
     arcl_api_client = nh.serviceClient<om_aiv_util::ArclApi>(API_SRV_NAME);
 
     ros::spin();
@@ -33,16 +33,16 @@ int main(int argc, char** argv)
  * 
  * @param point_msg Message containing the x, y and theta of the goto point.
  */
-void point_cb(const geometry_msgs::PoseStampedConstPtr& point_msg)
+void point_cb(const geometry_msgs::PoseWithCovarianceStampedConstPtr& point_msg)
 {
     // Get the pose published.
     double dummy_roll;
     double dummy_pitch;
     double theta;
-    int x = point_msg->pose.position.x * 1000;
-    int y = point_msg->pose.position.y * 1000;
+    int x = point_msg->pose.pose.position.x * 1000;
+    int y = point_msg->pose.pose.position.y * 1000;
     tf::Quaternion tf_quat;
-    tf::quaternionMsgToTF(point_msg->pose.orientation, tf_quat);
+    tf::quaternionMsgToTF(point_msg->pose.pose.orientation, tf_quat);
     tf::Matrix3x3(tf_quat).getRPY(dummy_roll, dummy_pitch, theta);
     theta *= 57.29577951; // Convert to degree
     if (theta > 180) theta -= 360;

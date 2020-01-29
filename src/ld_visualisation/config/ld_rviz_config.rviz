@@ -11,6 +11,7 @@ Panels:
         - /RobotModel1/Links1/main_body1
         - /TF1
         - /Marker1
+        - /MarkerArray1
       Splitter Ratio: 0.5
     Tree Height: 182
   - Class: rviz/Selection
@@ -170,6 +171,14 @@ Visualization Manager:
         points: true
       Queue Size: 100
       Value: true
+    - Class: rviz/MarkerArray
+      Enabled: false
+      Marker Topic: /f_areas
+      Name: MarkerArray
+      Namespaces:
+        {}
+      Queue Size: 100
+      Value: false
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -186,11 +195,11 @@ Visualization Manager:
     - Class: rviz/Measure
     - Class: rviz/SetInitialPose
       Theta std deviation: 0.2617993950843811
-      Topic: /initialpose
+      Topic: /goto_point_goal
       X std deviation: 0.5
       Y std deviation: 0.5
     - Class: rviz/SetGoal
-      Topic: /goto_point_goal
+      Topic: /set_goal
     - Class: rviz/PublishPoint
       Single click: true
       Topic: /clicked_point
@@ -198,7 +207,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 8.606576919555664
+      Distance: 17.64752769470215
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -213,10 +222,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.3497965335845947
+      Pitch: 1.5697963237762451
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 4.712221622467041
+      Yaw: 4.727221965789795
     Saved: ~
 Window Geometry:
   Displays:

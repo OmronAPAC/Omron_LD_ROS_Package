@@ -1,6 +1,7 @@
 #include <ros/ros.h>
 #include <ros/package.h>
 #include <visualization_msgs/Marker.h>
+#include <visualization_msgs/MarkerArray.h>
 #include <om_aiv_util/ArclListen.h>
 #include <fstream>
 #include <sstream>
@@ -33,6 +34,7 @@ const std::string POINTS_NUM_H = "NumPoints";
 const std::string LINES_NUM_H = "NumLines";
 const std::string POINTS_H = "DATA";
 const std::string LINES_H = "LINES";
+const std::string FA_H = "Cairn: ForbiddenArea";
 const std::string POINTS_NS = "points";
 const std::string LINES_NS = "lines";
 const std::string LS_POINTS_NS = "ls_points";
@@ -69,7 +71,9 @@ const std::string LS_POINTS_B_CLR_PARAM = "ls_points_b_colour";
 // Function prototypes
 bool get_map_data(std::string filename, 
     std::vector<geometry_msgs::Point>& points, 
-    std::vector<geometry_msgs::Point>& lines);
+    std::vector<geometry_msgs::Point>& lines,
+    visualization_msgs::Marker& fa,
+    visualization_msgs::MarkerArray& f_areas);
 void req_range_scan(ros::ServiceClient& service, om_aiv_util::ArclListen& srv, std::vector<geometry_msgs::Point>& points);
 
 int main(int argc, char** argv)
@@ -98,6 +102,7 @@ int main(int argc, char** argv)
     nh.param<float>(LS_POINTS_B_CLR_PARAM, LS_POINTS_B_CLR, 0);
 
     ros::Publisher points_pub = nh.advertise<visualization_msgs::Marker>(VIS_TOPIC, 10);
+    ros::Publisher fa_pub = nh.advertise<visualization_msgs::MarkerArray>("f_areas", 10);
     ros::Publisher laser_scan_pub = nh.advertise<visualization_msgs::Marker>(VIS_TOPIC, 10);
     ros::ServiceClient arcl_api_client = nh.serviceClient<om_aiv_util::ArclListen>(LS_SRV_NAME);
 
@@ -105,7 +110,24 @@ int main(int argc, char** argv)
 
     std::vector<geometry_msgs::Point> points;
     std::vector<geometry_msgs::Point> lines;
-    if (!get_map_data(MAP_NAME, points, lines)) ROS_ERROR("Reading map failed");
+    visualization_msgs::MarkerArray f_areas;
+    visualization_msgs::Marker fa;
+    fa.header.frame_id = HEAD_FRAME;
+    fa.action = visualization_msgs::Marker::ADD;
+    fa.ns = "f_areas";
+    fa.pose.orientation.w = 1.0;
+    fa.pose.position.z = 0;
+    fa.type = visualization_msgs::Marker::CUBE;
+    fa.id = 0;
+    fa.scale.x = 1.0;
+    fa.scale.y = 1.0;
+    fa.scale.z = 0.25;
+    fa.color.a = 0.5;
+    fa.color.r = 1.0;
+    fa.color.g = 1.0;
+    fa.color.b = 1.0;
+    
+    if (!get_map_data(MAP_NAME, points, lines, fa, f_areas)) ROS_ERROR("Reading map failed");
     ROS_INFO("%s: Waiting for RVIZ", ros::this_node::getName().c_str());
 
     // Configure the messages to publish.
@@ -167,8 +189,10 @@ int main(int argc, char** argv)
 
     while (ros::ok())
     {
+        
         points_pub.publish(points_arr);
         points_pub.publish(lines_list);
+        fa_pub.publish(f_areas);
 
         req_range_scan(arcl_api_client, srv, laser_points.points);
         laser_points.header.stamp = ros::Time::now();
@@ -190,7 +214,9 @@ int main(int argc, char** argv)
  */
 bool get_map_data(std::string filename, 
     std::vector<geometry_msgs::Point>& points,
-    std::vector<geometry_msgs::Point>& lines)
+    std::vector<geometry_msgs::Point>& lines,
+    visualization_msgs::Marker& fa,
+    visualization_msgs::MarkerArray& f_areas)
 {
     // Read map file
     std::string path = ros::package::getPath(PACK_NAME);
@@ -261,6 +287,29 @@ bool get_map_data(std::string filename,
                 lines.push_back(p1);
                 lines.push_back(p2);
             }
+        }
+
+        // This line contains forbidden area information, collect them.
+        // TODO: Implementation on hold.
+        if (line.find(FA_H) != std::string::npos)
+        {
+            double x1, y1, x2, y2;
+            std::istringstream iss(line);
+            std::string dummy;
+            for (int i = 0; i < 8; i++) iss >> dummy; // The first 8 pieces of that line are irrelevant.
+            if (!(iss >> y1 >> x1 >> y2 >> x2)) 
+                ROS_ERROR("%s - Error reading forbidden area from file: %s", 
+                    ros::this_node::getName().c_str(), line.c_str());
+            y1 = -y1;
+            y2 = -y2; // The y values are in the opposite sign, reason unclear.
+            std::cout << x1 << " " << y1 << " " << x2 << " " << y2 << std::endl;
+            fa.pose.position.x = (x1 + x2) / 2000.0; // Half and then convert to metre.
+            fa.pose.position.y = (y1 + y2) / 2000.0; // Half and then convert to metre.
+            fa.scale.x = fabs(x2 - x1) / 1000.0;
+            fa.scale.y = fabs(y2 - y1) / 1000.0;
+            std::cout << fa.pose.position.x << " " << fa.pose.position.y << " " << fa.scale.x << " " << fa.scale.y << std::endl;
+            f_areas.markers.push_back(fa);
+            fa.id += 1;
         }
     }
     return true;
