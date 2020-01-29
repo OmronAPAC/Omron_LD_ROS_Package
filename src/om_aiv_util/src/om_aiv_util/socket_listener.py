@@ -22,6 +22,9 @@ class SocketListener(object):
         self.lock = threading.Lock()
 
         self.goal_f = False
+        self.app_fault_f = False
+        self.faults_get_f = False
+        self.query_faults_f = False
 
     
     """Given the event mask from selectors, do read or write accordingly.
@@ -72,7 +75,7 @@ class SocketListener(object):
             # Extract interested line from receive buffer.
             line = self._recv_buffer[:newline_char]
             self._recv_buffer = self._recv_buffer[newline_char+2:]
-            
+
             try:
                 colon = line.index(":")
             except ValueError:
@@ -93,6 +96,33 @@ class SocketListener(object):
                 self.goal_f = True
         elif key == "End of goals":
             self.goal_f = False
+        elif key == "ApplicationFaultQuery":
+            # TODO: Account for values which contains spaces
+            if self.app_fault_f:
+                self.responses[key].append(value)
+            else:
+                self.responses[key] = [value]
+                self.app_fault_f = True
+        elif key == "End of ApplicationFaultQuery":
+            self.app_fault_f = False
+        elif key == "FaultList":
+            # TODO: Account for values which contains spaces
+            if self.faults_get_f:
+                self.responses[key].append(value)
+            else:
+                self.responses[key] = [value]
+                self.faults_get_f = True
+        elif key == "End of FaultList":
+            self.faults_get_f = False
+        elif key == "RobotFaultQuery":
+            # TODO: Account for values which contains spaces
+            if self.query_faults_f:
+                self.responses[key].append(value)
+            else:
+                self.responses[key] = [value]
+                self.query_faults_f = True
+        elif key == "EndQueryFaults":
+            self.query_faults_f = False
         else:
             self.responses[key] = [value]
             
@@ -106,7 +136,15 @@ class SocketListener(object):
         str -- The response string associated with the identifier integer.
     """
     def get_response(self, key):
-        return self.responses[key]
+        try:
+            val = self.responses[key]
+        except KeyError:
+            raise
+        else:
+            if len(val) == 0:
+                raise KeyError
+            else:
+                return self.responses[key]
 
     """
     # TODO: Add check for failed connection

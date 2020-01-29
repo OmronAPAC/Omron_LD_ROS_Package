@@ -2,6 +2,7 @@
 #include <visualization_msgs/Marker.h>
 #include <visualization_msgs/MarkerArray.h>
 #include <geometry_msgs/Quaternion.h>
+#include <std_msgs/String.h>
 #include <tf/transform_broadcaster.h>
 #include <om_aiv_util/ArclApi.h>
 #include <om_aiv_util/ArclListen.h>
@@ -28,7 +29,7 @@ const std::string COORD_H = "MapObjectInfoCoord: ";
 const std::string GOAL_CMD = "MapObjectInfo ";
 const std::string GOALS_LIST_END = "End of MapObjectInfo";
 const std::string API_SRV_NAME = "arcl_api_service";
-const std::string LISTEN_SRV_NAME = "arcl_listen_service";
+const std::string ALL_GOALS_TOPIC = "ldarcl_all_goals";
 const double GOALS_X_SCALE = 0.5;
 const double GOALS_Y_SCALE = 0.1;
 const double GOALS_Z_SCALE = 0.07;
@@ -49,15 +50,19 @@ const std::string GOAL_TEXTS_R_CLR_PARAM = "goal_texts_r_colour";
 const std::string GOAL_TEXTS_G_CLR_PARAM = "goal_texts_g_colour";
 const std::string GOAL_TEXTS_B_CLR_PARAM = "goal_texts_b_colour";
 
+// Global variables
+std::vector<std::string> goals_list;
+
+// Function prototypes
 void req_goals_coord(
     ros::ServiceClient& arcl_api_client, 
-    ros::ServiceClient& arcl_listen_client, 
-    om_aiv_util::ArclListen& goals_list_req, 
     om_aiv_util::ArclApi& goals_info_req, 
     visualization_msgs::MarkerArray& goals,
     visualization_msgs::MarkerArray& goals_text,
     visualization_msgs::Marker one_goal,
     visualization_msgs::Marker one_goal_text);
+
+void all_goals_cb(const std_msgs::StringConstPtr& msg);
 
 int main(int argc, char** argv)
 {
@@ -78,7 +83,7 @@ int main(int argc, char** argv)
 
     ros::Publisher goals_pub = nh.advertise<visualization_msgs::MarkerArray>(goals_vis_topic, 10);
     ros::ServiceClient arcl_api_client = nh.serviceClient<om_aiv_util::ArclApi>(API_SRV_NAME);
-    ros::ServiceClient arcl_listen_client = nh.serviceClient<om_aiv_util::ArclListen>(LISTEN_SRV_NAME);
+    ros::Subscriber all_goals_sub = nh.subscribe<std_msgs::String>(ALL_GOALS_TOPIC, 10, all_goals_cb);
 
     // TODO: ARROW is used wrongly, read the documentation!
     // Create MarkerArray for all goals Markers. Each goal is one Marker object that is of ARROW type.
@@ -122,7 +127,7 @@ int main(int argc, char** argv)
 
     while (ros::ok())
     {
-        req_goals_coord(arcl_api_client, arcl_listen_client, goals_list_req, goals_info_req, goals, goals_text, one_goal, one_goal_text);
+        req_goals_coord(arcl_api_client, goals_info_req, goals, goals_text, one_goal, one_goal_text);
         for (int i = 0; i < goals.markers.size(); i++)
         {
             goals.markers[i].header.stamp = ros::Time::now();
@@ -131,6 +136,7 @@ int main(int argc, char** argv)
         goals_pub.publish(goals);
         goals_pub.publish(goals_text);
         
+        ros::spinOnce();
         rate.sleep();
     }
 
@@ -139,76 +145,74 @@ int main(int argc, char** argv)
 
 void req_goals_coord(
     ros::ServiceClient& arcl_api_client, 
-    ros::ServiceClient& arcl_listen_client, 
-    om_aiv_util::ArclListen& goals_list_req, 
     om_aiv_util::ArclApi& goals_info_req, 
     visualization_msgs::MarkerArray& goals,
     visualization_msgs::MarkerArray& goals_text,
     visualization_msgs::Marker one_goal,
     visualization_msgs::Marker one_goal_text)
 {
-    // Request for the list of goals first.
-    if (arcl_listen_client.call(goals_list_req))
+    // Request for every known goal's coordinates.
+    goals.markers.clear();
+    goals_id = 0;
+    goal_texts_id = 0;
+    std::string cmd = GOAL_CMD;
+    for (int i = 0; i < goals_list.size(); i++)
     {
-        std::vector<std::string> goals_list;
-        std::string raw_resp = goals_list_req.response.resp_text;
-        std::istringstream iss(raw_resp);
-        // Retrieve all goals' name.
-        std::string name;
-        while (iss >> name)
-        {
-            goals_list.push_back(name);
-        }
-        // Request for every known goal's coordinates.
-        goals.markers.clear();
-        goals_id = 0;
-        goal_texts_id = 0;
-        std::string cmd = GOAL_CMD;
-        for (int i = 0; i < goals_list.size(); i++)
-        {
-            goals_info_req.request.command = cmd + goals_list[i];
+        goals_info_req.request.command = cmd + goals_list[i];
 
-            // Send request to ROS service.
-            if (arcl_api_client.call(goals_info_req))
+        // Send request to ROS service.
+        if (arcl_api_client.call(goals_info_req))
+        {
+            std::string info_resp = goals_info_req.response.response;
+            std::string::size_type pos = info_resp.find(COORD_H);
+            if (pos != std::string::npos)
             {
-                std::string info_resp = goals_info_req.response.response;
-                std::string::size_type pos = info_resp.find(COORD_H);
-                if (pos != std::string::npos)
-                {
-                    // We have found the line containing the coordinates, collect them.
-                    std::string::size_type end = info_resp.find("\r\n", pos);
-                    std::string val_str = info_resp.substr(pos+COORD_H.size(), end);
-                    std::istringstream val_iss(val_str);
-                    std::string dummy;
-                    double x, y, theta;
-                    if (!(val_iss >> dummy >> x >> y >> theta)) ROS_ERROR("Error reading goal coordinates");
-                    x /= 1000.0;
-                    y /= 1000.0;
-                    one_goal.pose.position.x = x; // Convert from mm to metre.
-                    one_goal.pose.position.y = y;
-                    one_goal.pose.position.z = 0;
-                    if (theta < 0) theta += 360.0;
-                    theta = theta * 0.01745329252; // Convert lineto radian
-                    one_goal.pose.orientation = tf::createQuaternionMsgFromYaw(theta);
-                    one_goal.id = goals_id++;
-                    goals.markers.push_back(one_goal);
-                    one_goal_text.pose.position.x = x;
-                    one_goal_text.pose.position.y = y;
-                    one_goal_text.text = goals_list[i];
-                    one_goal_text.id = goal_texts_id++;
-                    goals_text.markers.push_back(one_goal_text);
-                }
+                // We have found the line containing the coordinates, collect them.
+                std::string::size_type end = info_resp.find("\r\n", pos);
+                std::string val_str = info_resp.substr(pos+COORD_H.size(), end);
+                std::istringstream val_iss(val_str);
+                std::string dummy;
+                double x, y, theta;
+                if (!(val_iss >> dummy >> x >> y >> theta)) ROS_ERROR("Error reading goal coordinates");
+                x /= 1000.0;
+                y /= 1000.0;
+                one_goal.pose.position.x = x; // Convert from mm to metre.
+                one_goal.pose.position.y = y;
+                one_goal.pose.position.z = 0;
+                if (theta < 0) theta += 360.0;
+                theta = theta * 0.01745329252; // Convert lineto radian
+                one_goal.pose.orientation = tf::createQuaternionMsgFromYaw(theta);
+                one_goal.id = goals_id++;
+                goals.markers.push_back(one_goal);
+                one_goal_text.pose.position.x = x;
+                one_goal_text.pose.position.y = y;
+                one_goal_text.text = goals_list[i];
+                one_goal_text.id = goal_texts_id++;
+                goals_text.markers.push_back(one_goal_text);
             }
-            else
-            {
-                ROS_ERROR("%s - Failed to call %s service for goal info.", 
-                    ros::this_node::getName().c_str(), API_SRV_NAME.c_str());
-            }
+        }
+        else
+        {
+            ROS_ERROR("%s - Failed to call %s service for goal info.", 
+                ros::this_node::getName().c_str(), API_SRV_NAME.c_str());
         }
     }
-    else
+}
+
+/**
+ * @brief Callback function for subscribing to list of goals.
+ * 
+ * @param msg Message containing the string of list of goals.
+ */
+void all_goals_cb(const std_msgs::StringConstPtr& msg)
+{
+    goals_list.clear();
+    std::string raw_resp = msg->data;
+    std::istringstream iss(raw_resp);
+    // Retrieve all goals' name.
+    std::string name;
+    while (iss >> name)
     {
-        ROS_ERROR("%s - Failed to call %s service for list of goals.", 
-            ros::this_node::getName().c_str(), LISTEN_SRV_NAME.c_str());
+        goals_list.push_back(name);
     }
 }

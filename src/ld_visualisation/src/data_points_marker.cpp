@@ -2,7 +2,8 @@
 #include <ros/package.h>
 #include <visualization_msgs/Marker.h>
 #include <visualization_msgs/MarkerArray.h>
-#include <om_aiv_util/ArclListen.h>
+#include <std_msgs/String.h>
+#include <om_aiv_util/ArclApi.h>
 #include <fstream>
 #include <sstream>
 #include <string>
@@ -38,8 +39,7 @@ const std::string FA_H = "Cairn: ForbiddenArea";
 const std::string POINTS_NS = "points";
 const std::string LINES_NS = "lines";
 const std::string LS_POINTS_NS = "ls_points";
-const std::string LS_REQ_HEADER = "RangeDeviceGetCurrent";
-const std::string LS_SRV_NAME = "arcl_listen_service";
+const std::string LS_SUB_TOPIC = "ldarcl_laser";
 const int32_t POINTS_M_ID = 0;
 const int32_t LINES_M_ID = 1;
 const int32_t LS_POINTS_M_ID = 2;
@@ -68,13 +68,16 @@ const std::string LS_POINTS_R_CLR_PARAM = "ls_points_r_colour";
 const std::string LS_POINTS_G_CLR_PARAM = "ls_points_g_colour";
 const std::string LS_POINTS_B_CLR_PARAM = "ls_points_b_colour";
 
+// Global variables
+visualization_msgs::Marker laser_points;
+
 // Function prototypes
 bool get_map_data(std::string filename, 
     std::vector<geometry_msgs::Point>& points, 
     std::vector<geometry_msgs::Point>& lines,
     visualization_msgs::Marker& fa,
     visualization_msgs::MarkerArray& f_areas);
-void req_range_scan(ros::ServiceClient& service, om_aiv_util::ArclListen& srv, std::vector<geometry_msgs::Point>& points);
+void laser_sub_cb(const std_msgs::StringConstPtr& msg);
 
 int main(int argc, char** argv)
 {
@@ -104,7 +107,7 @@ int main(int argc, char** argv)
     ros::Publisher points_pub = nh.advertise<visualization_msgs::Marker>(VIS_TOPIC, 10);
     ros::Publisher fa_pub = nh.advertise<visualization_msgs::MarkerArray>("f_areas", 10);
     ros::Publisher laser_scan_pub = nh.advertise<visualization_msgs::Marker>(VIS_TOPIC, 10);
-    ros::ServiceClient arcl_api_client = nh.serviceClient<om_aiv_util::ArclListen>(LS_SRV_NAME);
+    ros::Subscriber laser_data_sub = nh.subscribe<std_msgs::String>(LS_SUB_TOPIC, 10, laser_sub_cb);
 
     //// Begin drawing points and line on RVIZ ////
 
@@ -169,7 +172,6 @@ int main(int argc, char** argv)
     
     /// Draw laser scan data ///
     
-    visualization_msgs::Marker laser_points;
     laser_points.header.frame_id = HEAD_FRAME;
     laser_points.action = visualization_msgs::Marker::ADD;
     laser_points.ns = LS_POINTS_NS;
@@ -183,10 +185,6 @@ int main(int argc, char** argv)
     laser_points.color.g = LS_POINTS_G_CLR;
     laser_points.color.b = LS_POINTS_B_CLR;
     
-    // Create the service request message to get laser scan data.
-    om_aiv_util::ArclListen srv;
-    srv.request.resp_header = LS_REQ_HEADER;
-
     while (ros::ok())
     {
         
@@ -194,10 +192,10 @@ int main(int argc, char** argv)
         points_pub.publish(lines_list);
         fa_pub.publish(f_areas);
 
-        req_range_scan(arcl_api_client, srv, laser_points.points);
         laser_points.header.stamp = ros::Time::now();
         laser_scan_pub.publish(laser_points);
         
+        ros::spinOnce();
         rate.sleep();
     }
     return 0;
@@ -316,47 +314,39 @@ bool get_map_data(std::string filename,
 }
 
 /**
- * @brief Requests for laser scan data from ARCL listening server. 
+ * @brief Callback function for subscribing to laser scan values topic.
  * 
- * @param service Reference to ros::ServiceClient object to request from.
- * @param srv Reference to service message object that will be used.
- * @param ranges Reference to vector<geometry_msgs::Point> to store laser scan values.
+ * @param msg Message containing a string of values.
  */
-void req_range_scan(ros::ServiceClient& service, om_aiv_util::ArclListen& srv, std::vector<geometry_msgs::Point>& points)
+void laser_sub_cb(const std_msgs::StringConstPtr& msg)
 {
-    if (service.call(srv))
+    std::string raw_resp = msg->data;
+    std::string::size_type pos = raw_resp.find(rng_device);
+    if (pos != std::string::npos)
     {
-        std::string raw_resp = srv.response.resp_text;
-        std::string::size_type pos = raw_resp.find(rng_device);
-        if (pos != std::string::npos)
+        laser_points.points.clear();
+        std::string vals_str;
+        try
         {
-            std::string vals_str;
-            try
-            {
-                vals_str = raw_resp.substr(pos + rng_device.length() + 1); // +1 to exclude the following space.
-            }
-            catch(const std::out_of_range& e)
-            {
-                ROS_ERROR("%s - %s: No laser scan values in incoming response.", ros::this_node::getName().c_str(),
-                     e.what());
-                vals_str.clear();
-            }
-            
-            std::istringstream iss(vals_str);
-            double x, y = 0.0;
-            points.clear();
-            while (iss >> x >> y)
-            {
-                geometry_msgs::Point p;
-                p.x = x / 1000.0;
-                p.y = y / 1000.0;
-                p.z = 0;
-                points.push_back(p);
-            }
+            vals_str = raw_resp.substr(pos + rng_device.length() + 1); // +1 to exclude the following space.
         }
-    }
-    else
-    {
-        ROS_ERROR("%s - Failed to call %s service", ros::this_node::getName().c_str(), LS_SRV_NAME.c_str());
+        catch(const std::out_of_range& e)
+        {
+            ROS_ERROR("%s - %s: No laser scan values in incoming response.", ros::this_node::getName().c_str(),
+                    e.what());
+            vals_str.clear();
+        }
+        
+        std::istringstream iss(vals_str);
+        double x, y = 0.0;
+        laser_points.points.clear();
+        while (iss >> x >> y)
+        {
+            geometry_msgs::Point p;
+            p.x = x / 1000.0;
+            p.y = y / 1000.0;
+            p.z = 0;
+            laser_points.points.push_back(p);
+        }
     }
 }
