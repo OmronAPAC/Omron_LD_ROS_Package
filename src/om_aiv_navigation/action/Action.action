@@ -1,10 +1,11 @@
 # Goal
-string goal_goal
+string command
+string[] identifier
 
 ---
 # Result
-string status
+string res_msg
 
 ---
 # Feedback
-string received_data
+string feed_msg
