@@ -2,7 +2,7 @@
 import rospy
 from om_aiv_util.srv import ArclApi, ArclApiRequest
 
-def getRoutes_client():
+def getInfo_client():
     rospy.wait_for_service('arcl_api_service')
 
     """
@@ -18,19 +18,19 @@ def getRoutes_client():
             --- Example --- 
     
             Correct line_identifier choice, will return correct response:
-            ARCL server = "End of routes"
-            line_identifier = "of routes" (unique substring is OK) OR "End of routes"
+            ARCL server = "Info: WirelessQuality 90%"
+            line_identifier = "Info: WirelessQuality" (unique substring is OK)
     
             Incorrect, will NOT return correct response:
-            ARCL server = "End of routes"
-            line_identifier = "End routes"
+            ARCL server = "Info: WirelessQuality 90%"
+            line_identifier = "Info: WirelessQuality 90%" => percentage can change, not reliable.
             OR
-            "End" => does not uniquely identify, there are other commands that returns messages 
-            with "End of something" similar syntax. 
+            "Info:" => does not uniquely identify, there are other commands that returns messages 
+            with "Info: something" similar syntax. 
     """
     req_msg = ArclApiRequest()
-    req_msg.command = "getRoutes"
-    req_msg.line_identifier = "End of routes"
+    req_msg.command = "getInfo WirelessQuality"
+    req_msg.line_identifier = "Info: WirelessQuality"
     
     try:
         # Request as ROS service client
@@ -45,7 +45,7 @@ def getRoutes_client():
 
 if __name__ == "__main__":
     try:
-        getRoutes_client()
+        getInfo_client()
     except rospy.ROSInterruptException:
-        rospy.signal_shutdown("Shutting down getRoutes client")
+        rospy.signal_shutdown("Shutting down getInfo client")
     
