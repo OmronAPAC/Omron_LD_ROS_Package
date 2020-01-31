@@ -39,10 +39,14 @@ class ActionServer(object):
             r.sleep()
         
 if __name__ == "__main__":
+    ip_address = rospy.get_param("ip_address")
+    port = rospy.get_param("port")
+    passwd = rospy.get_param("def_arcl_passwd")
+    
     socket_taskmaster = SocketTaskmaster()
     # TODO: Add retrying of connection
-    socket_taskmaster.connect("168.3.201.123", 7171)
-    req_id = socket_taskmaster.login("adept\r\n")
+    socket_taskmaster.connect(str(ip_address), int(port))
+    req_id = socket_taskmaster.login(passwd)
 
     rospy.init_node("action_server")
     server = ActionServer(rospy.get_name(), socket_taskmaster)

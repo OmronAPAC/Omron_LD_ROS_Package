@@ -214,7 +214,7 @@ class SocketTaskmaster(object):
         int -- The identifier integer associated with the response after login.
     """
     def login(self, passwd):
-        self.push_command(passwd, end_lines=["End of commands"])
+        self.push_command(passwd, newline=True, end_lines=["End of commands"])
         self.wait_until_login()
 
     # TODO: find a better way to do this!!!

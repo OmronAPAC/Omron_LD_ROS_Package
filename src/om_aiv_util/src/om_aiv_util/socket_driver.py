@@ -243,7 +243,7 @@ class SocketDriver(object):
         int -- The identifier integer associated with the response after login.
     """
     def login(self, passwd):
-        _id = self.queue_command(passwd, last_line="End of commands")
+        _id = self.queue_command(passwd, newline=True, last_line="End of commands")
         self.wait_until_login(_id)
 
     # TODO: find a better way to do this!!!

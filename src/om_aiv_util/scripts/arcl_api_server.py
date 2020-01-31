@@ -4,10 +4,13 @@ from om_aiv_util.socket_driver import *
 from om_aiv_util.srv import ArclApi
 
 # Connect and log in.
+ip_address = rospy.get_param("ip_address")
+port = rospy.get_param("port")
+passwd = rospy.get_param("def_arcl_passwd")
 socket_driver = SocketDriver()
 # TODO: Add retrying of connection
-socket_driver.connect("168.3.201.123", 7171)
-req_id = socket_driver.login("adept\r\n")
+socket_driver.connect(str(ip_address), int(port))
+req_id = socket_driver.login(passwd)
 
 def custom_spin():
     """

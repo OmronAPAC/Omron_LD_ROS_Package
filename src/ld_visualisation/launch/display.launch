@@ -8,32 +8,7 @@
   <param name="use_gui" value="$(arg gui)"/>
 
   <!-- Params for visualisation in RVIZ -->
-  <param name="pkg_name" value="ld_visualisation" />
-  <param name="map_name" value="data.map" />
-  <param name="head_frame" value="/pose" />
-  <param name="vis_topic" value="visualization_marker" />
-  <param name="goals_vis_topic" value="visualization_marker_array" />
-  <param name="range_device" value="Laser_1" />
-  <param name="points_a_colour" value="1.0" />
-  <param name="points_r_colour" value="1.0" />
-  <param name="points_g_colour" value="0" />
-  <param name="points_b_colour" value="0" />
-  <param name="lines_a_colour" value="1.0" />
-  <param name="lines_r_colour" value="1.0" />
-  <param name="lines_g_colour" value="0" />
-  <param name="lines_b_colour" value="0" />
-  <param name="ls_points_a_colour" value="1.0" />
-  <param name="ls_points_r_colour" value="0" />
-  <param name="ls_points_g_colour" value="1.0" />
-  <param name="ls_points_b_colour" value="1.0" />
-  <param name="goals_a_colour" value="1.0" />
-  <param name="goals_r_colour" value="0" />
-  <param name="goals_g_colour" value="1.0" />
-  <param name="goals_b_colour" value="0" />
-  <param name="goal_texts_a_colour" value="1.0" />
-  <param name="goal_texts_r_colour" value="0" />
-  <param name="goal_texts_g_colour" value="1.0" />
-  <param name="goal_texts_b_colour" value="0" />
+  <rosparam command="load" file="$(find ld_visualisation)/param/vis_param.yaml" />
 
   <node name="joints_publisher" pkg="ld_visualisation" type="joints_publisher" output="screen"/>
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
@@ -43,7 +18,3 @@
   <node name="goto_point" pkg="ld_visualisation" type="goto_point" output="screen"/>
 
 </launch>
-
-<!--
-  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
--->

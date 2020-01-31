@@ -130,8 +130,10 @@ def pub_states(listener):
         rospy.signal_shutdown("Shutting down ARCL states publisher")
     
 if __name__ == "__main__":
-
-    listener = SocketListener("168.3.201.114", 7179)
+    ip_address = rospy.get_param("local_ip")
+    port = rospy.get_param("local_port")
+    
+    listener = SocketListener(str(ip_address), int(port))
     listener.begin()
 
     pub_states(listener)
