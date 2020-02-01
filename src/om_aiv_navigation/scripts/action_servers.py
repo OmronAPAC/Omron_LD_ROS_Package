@@ -152,7 +152,7 @@ class ActionServer():
         if success:
             self.a_server.set_succeeded(result)
 
-    def goTo(self, result, feedback):
+    def goTo(self, result, feedback, timeout=None):
         try:
             data = socket.recv(BUFFER_SIZE)
             rcv = data.encode('ascii', 'ignore')
