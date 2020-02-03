@@ -152,7 +152,7 @@ class ActionServer():
         if success:
             self.a_server.set_succeeded(result)
 
-    def goTo(self, result, feedback, timeout=None):
+    def goTo(self, result, feedback):
         try:
             data = socket.recv(BUFFER_SIZE)
             rcv = data.encode('ascii', 'ignore')
@@ -160,7 +160,7 @@ class ActionServer():
             self.a_server.publish_feedback(feedback)
             while not rospy.is_shutdown():
                 #check for required data
-                if "Arrived" in rcv:
+                if "Arrived at" and goalname in rcv:
                     for line in rcv.splitlines():
                         #print required data
                         if 'Arrived' in line:
@@ -449,6 +449,8 @@ class ActionServer():
         feedback = ActionFeedback()
         result = ActionResult()
         task = goal.goal_goal
+        global goalname
+        goalname = goal.goal_goal
         print(Style.RESET_ALL)
         print(Fore.GREEN)
         #send command to arcl
