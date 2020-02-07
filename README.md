@@ -84,10 +84,12 @@ For example to view the battery level of the robot:
 
 To run navigation commands, example to move the robot 1000mm:
 
-In doTask_action_client.py in ~/Omron_LD_ROS_Package/src/om_aiv_navigation/scripts set the goal.goal_goal = "move 1000". Then in a terminal window run:
+In doTask_action_client.py in ~/Omron_LD_ROS_Package/src/om_aiv_navigation/scripts set the goal.goal_goal = "move 1000". Then in a terminal window run(goal set in client program):
 ```
 rosrun om_aiv_navigation doTask_action_client.py
 ```
+![example_action](https://user-images.githubusercontent.com/8951670/73995595-184e6600-4994-11ea-8de1-998a87545194.png)
+
 To view services:
 ```
 rosservice list
