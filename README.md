@@ -100,6 +100,11 @@ To run another service command, example analogInputList:
 ```
 rosrun om_aiv_util analogInputList_client.py
 ```
+To clear an application fault with fault name as the argument which in this case is "fault":
+```
+rosrun om_aiv_util applicationFaultClear_client.py <fault name> 
+```
+![example_ros_service_command](https://user-images.githubusercontent.com/8951670/73994608-1f27a980-4991-11ea-8582-019bdad564fa.png)
 
 ### Code Explanation
 ld_topic_publisher.py in ~/Omron_LD_ROS_Package/src/om_aiv_util/scripts and em_topic_publisher.py in ~ld_ROS/src/om_aiv_util_em/scripts: 
