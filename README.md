@@ -10,6 +10,31 @@ enterprise manager commands
 #### 3. om_aiv_navigation
 navigation commands like dock, undock, dotask move , patrol
 
+### Supported Features
+1. Capture LD status information
+    * General status of LD
+    * Laser scan values
+    * Odometer values
+    * Map goals
+    * Application fault messages
+2. Visualize LD via RVIZ tool
+    * Display loaded map
+    * Display live laser scans
+    * Display forbidden areas
+    * Display map goals
+3. Navigate LD via RVIZ tool
+    * Go to specified point
+
+ARCL Commands in use:
+* Status
+* RangeDeviceGetCurrent
+* Goal
+* Odometer
+* ApplicationFaultQuery
+* FaultList
+* RobotFaultQuery
+
+
 ### ROS Package Diagram
 ![ROS Diagram](https://user-images.githubusercontent.com/8951670/70422919-83b8ac00-1aa7-11ea-82f9-acbde1137f7d.png)
 
