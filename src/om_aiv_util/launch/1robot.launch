@@ -6,7 +6,4 @@
     <node name="action_servers" pkg="om_aiv_navigation" type="action_servers.py" output="screen" />
 
     <rosparam command="load" file="$(find om_aiv_util)/param/main_param.yaml" />
-    
-    <include file="$(find ld_visualisation)/launch/display.launch"/>
-
 </launch>
