@@ -23,4 +23,8 @@ goals_b_colour: 0
 goal_texts_a_colour: 1.0
 goal_texts_r_colour: 0
 goal_texts_g_colour: 1.0
-goal_texts_b_colour: 0
+goal_texts_b_colour: 1.0
+fa_a_colour: 0.5
+fa_r_colour: 1.0
+fa_g_colour: 0
+fa_b_colour: 0

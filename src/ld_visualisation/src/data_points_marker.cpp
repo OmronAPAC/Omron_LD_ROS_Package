@@ -1,5 +1,7 @@
 #include <ros/ros.h>
 #include <ros/package.h>
+#include <geometry_msgs/Quaternion.h>
+#include <tf/tf.h>
 #include <visualization_msgs/Marker.h>
 #include <visualization_msgs/MarkerArray.h>
 #include <std_msgs/String.h>
@@ -28,6 +30,10 @@ float LS_POINTS_A_CLR;
 float LS_POINTS_R_CLR;
 float LS_POINTS_G_CLR;
 float LS_POINTS_B_CLR;
+float FA_A_CLR;
+float FA_R_CLR;
+float FA_G_CLR;
+float FA_B_CLR;
 
 // Non configurable values.
 const std::string MAP_FOLDER = "/map";
@@ -40,6 +46,7 @@ const std::string POINTS_NS = "points";
 const std::string LINES_NS = "lines";
 const std::string LS_POINTS_NS = "ls_points";
 const std::string LS_SUB_TOPIC = "ldarcl_laser";
+const std::string FA_NS = "f_areas";
 const int32_t POINTS_M_ID = 0;
 const int32_t LINES_M_ID = 1;
 const int32_t LS_POINTS_M_ID = 2;
@@ -67,6 +74,10 @@ const std::string LS_POINTS_A_CLR_PARAM = "ls_points_a_colour";
 const std::string LS_POINTS_R_CLR_PARAM = "ls_points_r_colour";
 const std::string LS_POINTS_G_CLR_PARAM = "ls_points_g_colour";
 const std::string LS_POINTS_B_CLR_PARAM = "ls_points_b_colour";
+const std::string FA_A_CLR_PARAM = "fa_a_colour";
+const std::string FA_R_CLR_PARAM = "fa_r_colour";
+const std::string FA_G_CLR_PARAM = "fa_g_colour";
+const std::string FA_B_CLR_PARAM = "fa_b_colour";
 
 // Global variables
 visualization_msgs::Marker laser_points;
@@ -103,12 +114,16 @@ int main(int argc, char** argv)
     nh.param<float>(LS_POINTS_R_CLR_PARAM, LS_POINTS_R_CLR, 0);
     nh.param<float>(LS_POINTS_G_CLR_PARAM, LS_POINTS_G_CLR, 0);
     nh.param<float>(LS_POINTS_B_CLR_PARAM, LS_POINTS_B_CLR, 0);
+    nh.param<float>(FA_A_CLR_PARAM, FA_A_CLR, 0.5);
+    nh.param<float>(FA_R_CLR_PARAM, FA_R_CLR, 1.0);
+    nh.param<float>(FA_G_CLR_PARAM, FA_G_CLR, 0);
+    nh.param<float>(FA_B_CLR_PARAM, FA_B_CLR, 0);
 
     ros::Publisher points_pub = nh.advertise<visualization_msgs::Marker>(VIS_TOPIC, 10);
     ros::Publisher fa_pub = nh.advertise<visualization_msgs::MarkerArray>("f_areas", 10);
     ros::Publisher laser_scan_pub = nh.advertise<visualization_msgs::Marker>(VIS_TOPIC, 10);
     ros::Subscriber laser_data_sub = nh.subscribe<std_msgs::String>(LS_SUB_TOPIC, 10, laser_sub_cb);
-
+std::cout << "test" << std::endl;
     //// Begin drawing points and line on RVIZ ////
 
     std::vector<geometry_msgs::Point> points;
@@ -117,18 +132,16 @@ int main(int argc, char** argv)
     visualization_msgs::Marker fa;
     fa.header.frame_id = HEAD_FRAME;
     fa.action = visualization_msgs::Marker::ADD;
-    fa.ns = "f_areas";
+    fa.ns = FA_NS;
     fa.pose.orientation.w = 1.0;
     fa.pose.position.z = 0;
     fa.type = visualization_msgs::Marker::CUBE;
     fa.id = 0;
-    fa.scale.x = 1.0;
-    fa.scale.y = 1.0;
     fa.scale.z = 0.25;
-    fa.color.a = 0.5;
-    fa.color.r = 1.0;
-    fa.color.g = 1.0;
-    fa.color.b = 1.0;
+    fa.color.a = FA_A_CLR;
+    fa.color.r = FA_R_CLR;
+    fa.color.g = FA_G_CLR;
+    fa.color.b = FA_B_CLR;
     
     if (!get_map_data(MAP_NAME, points, lines, fa, f_areas)) ROS_ERROR("Reading map failed");
     ROS_INFO("%s: Waiting for RVIZ", ros::this_node::getName().c_str());
@@ -187,7 +200,6 @@ int main(int argc, char** argv)
     
     while (ros::ok())
     {
-        
         points_pub.publish(points_arr);
         points_pub.publish(lines_list);
         fa_pub.publish(f_areas);
@@ -288,24 +300,54 @@ bool get_map_data(std::string filename,
         }
 
         // This line contains forbidden area information, collect them.
-        // TODO: Implementation on hold.
         if (line.find(FA_H) != std::string::npos)
         {
-            double x1, y1, x2, y2;
+            // Read the raw info
+            double x1, y1, x2, y2, dt_theta;
             std::istringstream iss(line);
             std::string dummy;
-            for (int i = 0; i < 8; i++) iss >> dummy; // The first 8 pieces of that line are irrelevant.
+            for (int i = 0; i < 8; i++)
+            {
+                // The first 8 pieces of that line are irrelevant except for the 5th piece which is the angle/orientation of the forbidden area.
+                if (i == 4)
+                {
+                    iss >> dt_theta;
+                    dt_theta = dt_theta * 0.01745329;
+                }
+                else
+                {
+                    iss >> dummy;
+                }
+            }
             if (!(iss >> y1 >> x1 >> y2 >> x2)) 
                 ROS_ERROR("%s - Error reading forbidden area from file: %s", 
                     ros::this_node::getName().c_str(), line.c_str());
-            y1 = -y1;
-            y2 = -y2; // The y values are in the opposite sign, reason unclear.
-            std::cout << x1 << " " << y1 << " " << x2 << " " << y2 << std::endl;
-            fa.pose.position.x = (x1 + x2) / 2000.0; // Half and then convert to metre.
-            fa.pose.position.y = (y1 + y2) / 2000.0; // Half and then convert to metre.
-            fa.scale.x = fabs(x2 - x1) / 1000.0;
-            fa.scale.y = fabs(y2 - y1) / 1000.0;
-            std::cout << fa.pose.position.x << " " << fa.pose.position.y << " " << fa.scale.x << " " << fa.scale.y << std::endl;
+
+            // Compute the actual forbidden area from the transformed area.
+            // The raw info in the map file is a transformed coordinates of the actual forbidden area.
+            // We transform back to the actual area.
+            double cx = (x1 + x2) / 2000.0; // Centre of transformed X coord.
+            double cy = (y1 + y2) / 2000.0; // Centre of transformed Y coord.
+            double r = sqrt((cx * cx) + (cy * cy)); // Distance from centre of transformed area to origin. Polar coordinates, r component.
+            double theta = atan2(cy, cx); // Polar coordinates, theta component.
+
+            // Get back the centre point of actual forbidden area.
+            double o_theta = theta - dt_theta; 
+            double ocx = r * sin(o_theta);
+            double ocy = r * cos(o_theta);
+            dt_theta -= M_PI_2;
+            
+            // Convert to quaternion
+            tf::Quaternion quat = tf::createQuaternionFromRPY(0, 0, dt_theta);
+            geometry_msgs::Quaternion q;
+            tf::quaternionTFToMsg(quat, q);
+
+            // Push to vector that will be published.
+            fa.pose.position.x = ocx;
+            fa.pose.position.y = ocy;
+            fa.pose.orientation = q;
+            fa.scale.x = (x2 - x1) / 1000.0;
+            fa.scale.y = (y2 - y1) / 1000.0;
             f_areas.markers.push_back(fa);
             fa.id += 1;
         }
