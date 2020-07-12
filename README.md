@@ -1,5 +1,8 @@
 # om_aiv - ROS Packages for Omron Mobile Robot
 ![omron ld robot](https://assets.omron.com/m/438d82ed579472a4/Portrait_M-Mobile_Robot_Product-News-jpg.jpg "omron ld robot")
+
+**Some of the following information are outdated. For latest details, see the [Developer's Guide](https://github.com/lekoook/Omron_LD_ROS_Package/blob/master/docs/DeveloperGuide.adoc).**
+
 ### List of packages
 #### 1. om_aiv_util
 robot status commands 
