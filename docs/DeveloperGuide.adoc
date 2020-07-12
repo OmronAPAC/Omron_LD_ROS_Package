@@ -1,0 +1,433 @@
+= LD-ROS - Developer Guide
+:site-section: DeveloperGuide
+:toc:
+:toc-title: Table of Contents
+:toc-placement: preamble
+:icons: font
+:sectnums:
+:imagesDir: dg-images
+:librariesDir: ../libraries
+:stylesDir: stylesheets
+:xrefstyle: full
+:experimental:
+:linkattrs:
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:warning-caption: :warning:
+endif::[]
+
+:url-repo: https://github.com/zach-goh/OmronRepos/tree/master
+:url-ug: https://github.com/zach-goh/OmronRepos/blob/master/docs/UserGuide.adoc
+
+Last updated: `12 JULY 2020` By: `Xavier`
+
+== Authors
+
+* Xavier, Lee Kok Teng (link:https://github.com/lekoook[lekoook])
+
+== Getting Started
+[[prerequisites]]
+=== Prerequisites
+
+. **Git**
++
+* Download link:https://git-scm.com/downloads[Git]. 
++
+* If you are a beginner to `Git` version-control system, you are suggested to download GUI clients to assist you. Some examples can be found link:https://git-scm.com/downloads/guis/[here].
++
+* There are many resources to learn how to use `Git`, see link:https://git-scm.com/doc[here], link:https://try.github.io/[here], link:https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners[here]. Google for more.
+
+. **Ubuntu 18.04 LTS (Bionic Beaver)**
++
+See link:https://ubuntu.com/[Ubuntu] webpage for installation instructions. Look for 18.04 release.
++
+Although ROS is officially supported on multiple platforms include Windows OS (experimental), Ubuntu OS is preferred since support for packages on Ubuntu platform is more matured. Additionally, this package is tested to be working on Ubuntu platform.
+
+. **Robot Operating System (ROS) Melodic Release**
++
+Download and installation instructions can be found link:http://wiki.ros.org/melodic/Installation[here].
++
+__LD-ROS__ is currently supported on ROS 1 Melodic only.
++
+
+. **How to use ROS**
++
+This guide assumes you know the basics of using the ROS environment. If you are new to ROS, please follow their series of link:http://wiki.ros.org/ROS/Tutorials[tutorials] to get started with using ROS.
++
+You will need to complete the `Beginner Level` tutorials at the minimum. As well as the entries, `Running ROS across multiple machines` and `Defining Custom Messages` in the `Intermediate Level` tutorials.
+
+. **'selector2' Python2 module**
++
+__LD-ROS__ uses Python low-level socket to communicate with the LD robot. __selector2__ is used to assist in managing the reading/writing process through these sockets.
++
+See link:https://pypi.org/project/selectors2/[selectors2].
+
+. **Telnet**
++
+Telnet application. This is only used for directly communicating with LD's ARCL interface via a command line interface.
+
+=== Hardware Communications Requirements
+This package assumes a specific hardware configuration in order to work correctly.
+
+. LD-60
++
+This will be the LD robot you will be controlling via this package.
+
+. Host machine running ROS Master.
++
+This is a machine that communicates with LD, either via ethernet or wireless connection using the ARCL interface. In our use case, we use the Intel NUC8i5BEH mini PC to run ROS and communicate with LD via ethernet connection.
+
+. User remote machines running ROS nodes.
++
+This can be a single or multiple machines that is used to run ROS nodes that communicates with the host machine running ROS Master. This can either be connected to the host machine via wired or wireless connection. Although a wireless connection will be preferred for user mobility and convenience.
+
+The diagram below gives an overview of how these hardware will be configured:
+
+.Overview of communication
+image::comms_overview.png[]
+
+=== Set Up LD
+In order to use this package, your LD must be configured correctly to communicate with the host machine running this ROS package. This configuration will be done via `MobilePlanner` hence, this guide assumes you have basic knowledge on using the `MobilePlanner` software.
+
+==== Set Up User Ethernet
+For reliable communication with the LD, the user ethernet port is preferred. Hence, the user ethernet port along with it's IP needs to be configured via `SetNetGo`. You can find instructions on using `SetNetGo` in LD's User Manual or MobilePlanner User Manual.
+
+In short, you need to configure the LD's user ethernet port to use `192.168.1.10` as it's address. This address is set in ROS param files found in this package to be used as the remote socket address. If you decide to use another address, you will need to change those ROS params.
+
+Additionally, the host machine should be configured with the `192.168.1.50` address since this is also set in the ROS params in this package. If you decide to use another address, you will need to change those ROS params as well.
+
+==== Set Up ARCL
+The primary communication interface between the LD and host machine is the `ARCL` interface. `ARCL` which stands for 'Advanced Robotics Command Language' is a communication interface that allows operators to control the LD through a network connection. See the ARCL Reference Manual to understand it's usage.
+
+The LD's ARCL configuration parameters must be set correctly for this package to work. First, connect to LD with `MobilePlanner` and open up the configuration page for your LD.
+
+Within the `Robot Interface` tab, under the `ARCL server setup` section, ensure the following is set as such:
+
+* `OpenTextServer`: `True`
++
+This will enable ARCL. **Setting to 'True' is important and required.**
+* `PortNumber`: `7171`
++ 
+This is the port number that remote clients (like this ROS package) needs to connect to for ARCL. Default is `7171`. The ROS params is set to use this port. If you change this port here, you will need to change those ROS params as well.
+* `Password`: `adept`
++
+This is the password for ARCL server. **This is required.** The ROS parameter for this password in this package is set to `adept`. If you set this to something else other than `adept` in this field, you will need to change those ROS params as well.
+
+.Example for `ARCL server setup`
+image::arcl_server_setup.png[]
+
+Within the `Robot Interface` tab, under the `Outgoing ARCL connection setup` section, ensure the following is set as such:
+
+* `OutgoingHostname`: `192.168.1.50`
++
+This is the address of your host machine. If you have set up your host machine to have a different address, this field must reflect that.
+* `OutgoingPort`: `7179`
++
+This is the port used in LD for ARCL communication. Default is `7179`.
+* `SendStatusInterval`: `0`
++
+This is the frequency of sending ARCL single line status command. We are the multiple lines status command and not this single line. So set this to `0`.
+* `OutgoingSocketTimeoutInMins`: `-1.0`
++
+This value indicates the duration in minutes before LD closes a ARCL connection when no data is received. Since we may not send data to ARCL all the time and we do not want the connection to close prematurely, set this to `-1.0` which keeps the connection open indefinitely until we close it.
+* `RequireConnectionToPathPlan`: `True`
++
+Setting this 'True' incates that an ARCL connection is required for the robot to drive autonomously. For extra safety, this is set to 'True' so in the case that a connection between host machine and LD it lost, it would stop driving autonomously.
+
+.Example for `Outgoing ARCL connection setup`
+image::outgoing_arcl_connection_setup.png[]
+
+Within the `Robot Interface` tab, under the `Outgoing ARCL commands` section, ensure the following is set as such:
+
+* `OutgoingCommands1`: `Status`
++
+This will get LD to send out the `Status` ARCL command repeatedly on it's own.
+* `OutgoingCommands1Seconds`: `0.1`
++
+This is the interval for `OutgoingCommands1` configuration.
+* `OutgoingCommands2`: `RangeDeviceGetCurrent Laser_1`
++
+This will get LD to send out the XY coordinates from it's main LIDAR scan repeatedly on it's own.
+* `OutgoingCommands2Seconds`: `0.5`
++
+This is the interval for `OutgoingCommands2` configuration.
+* `OutgoingCommands3`: `GetGoals | Odometer | ApplicationFaultQuery`
++
+This will get LD to send out the `GetGoals`, `Odometer` and `ApplicationFaultQuery` ARCL command repeatedly on it's own.
+* `OutgoingCommands3Seconds`: `0.6`
++
+This is the interval for `OutgoingCommands3` configuration.
+
+The above interval values tested to be working. You can modify them if you find a need to (ie. faster laser scan updates).
+
+.Example for `Outgoing ARCL commands`
+image::outgoing_arcl_commands.png[]
+
+[[set-up-host-remote-machine]]
+=== Set Up Host/Remote Machine
+The host machine is used to run the ROS Master and communicates with LD via the ARCL interface in order to retrieve vital information about the LD that is used for this package to work.
+
+In our use case, we use the Intel NUC8i5BEH mini PC as host machine connected to LD's user ethernet port. Make sure your host machine meets the requirements in <<prerequisites>>.
+
+As for remote machine(s), you can use your personal computer to run ROS nodes. Make sure your machine meets the requirements in <<prerequisites>>.
+
+==== IP Address
+Since we have set the `OutgoingHostname` to `192.168.1.50`, you need to set the ethernet network interface of your host machine to have an address of `192.168.1.50` as well. Look online on how to do this for Ubuntu.
+
+==== ROS Multiple Machines
+In order to run ROS on mulitple machines, you need to configure your host machine as well as your user remote machine(s) to talk to each other correctly.
+
+ROS has provided a link:http://wiki.ros.org/ROS/NetworkSetup[guide] for doing this. Please follow it to understand how to set up correctly.
+
+They have also provided a simple link:http://wiki.ros.org/ROS/Tutorials/MultipleMachines[tutorial] to run simple ROS nodes that will test if you have configured correctly. You can follow these instructions to test your configurations.
+
+==== Host Machine ROS Package Set Up
+Once you have your network set up correctly, you need to set up our ROS package to work correctly in your host machine.
+
+First, make sure you have installed ROS as described in <<prerequisites>>.
+
+. Clone this repository to a directory of your choice with: 
++
+....
+cd /to/desired/path
+git clone https://github.com/zach-goh/Omron_LD_ROS_Package
+....
+. Navigate to that directory with:
++
+....
+cd Omron_LD_ROS_Package
+....
+. Build this package with:
++
+....
+catkin build
+....
++
+Depending on your machine, this can take a while to build.
+. After it has built successfully, ensure you source this workspace with:
++
+....
+source /devel/setup.bash
+....
+. Run the `om_aiv_util` package with:
++
+....
+roslaunch om_aiv_util 1robot.launch
+....
++
+This will launch the core nodes that communicates this host machine with LD via the ARCL interface.
+
+[NOTE]
+You may notice a mismatch of map and laser scans. In this case, you need to make sure the local copy of the map file in the host machine is the same as the one used internally by LD. To understand this, see <<map-loading-reading>>
+
+=== Intel NUC8i5BEH Host Machine
+As mentioned in this guide, we use `Intel NUC8i5BEH` mini PC as our host machine. This machine has met the requirements in <<prerequisites>> and has it's ROS set up to work with multiple machines as described in <<set-up-host-remote-machine>>.
+
+Additionally, the machine has been configured to run this package automatically when it has booted into Ubuntu. This allows us to run ROS nodes on our own remote machines with this host machine as the ROS Master, in headless mode. The idea is that we do not need to fiddle with the host machine each time we want to use ROS with our LD. Press the power button on `Intel NUC8i5BEH`, waits for a minute or so to boot, then run ROS nodes on our remote machine(s).
+
+This is achieved with help of several external programs and bash scripts:
+
+. tmux and tmuxinator
++
+`link:https://github.com/tmux/tmux/wiki[tmux]` is a terminal multiplexer for Unix-like operating systems. It allows multiple terminal sessions to be accessed simultaneously in a single window. This is useful for when we need to link:https://www.ssh.com/[ssh] into our host machine and needs to display multiple command line windows within a single window.
++
+`link:https://github.com/tmuxinator/tmuxinator[tmuxinator]` allows us to create and manage tmux sessions easily. This is used by us to launch multiple command line windows including the ROS Master within a single `tmux` window. The configuration file for our tmuxinator set up can be found at `/home/omron/.tmuxinator/ld-ros.yaml` in our host machine.
+
+. Custom bash script
++
+In order to help automate the running of the ROS at boot, we have written a simple bash script to do this. This bash script can be found at `/home/omron/workspace/run-ld-ros.bash`. 
++
+In short, it waits for ethernet connection to LD to be alive and then launch our ROS package using tmuxinator. See the contents of the file for details.
+
+. `cron`
++
+The custom bash script we have will automate the launching of several things for us. However, we need to get the machine to run that script at boot. To do this, we use `cron` job scheduling utility to help us. To configure, input `crontab -e` in a bash terminal. Please look online for usage of `cron`.
+
+=== Running on Remote Machine
+The instructions here assumes you have basic knowledge of using Git, Ubuntu, Bash terminal and ROS environment.
+
+Follow these steps to run this package:
+
+. Prepare a remote machine that meets the requirements in <<prerequisites>>. 
+. Clone this repository to a directory of your choice with: 
++
+....
+cd /to/desired/path
+git clone https://github.com/zach-goh/Omron_LD_ROS_Package
+....
+. Navigate to that directory with:
++
+....
+cd Omron_LD_ROS_Package
+....
+. Build this package with:
++
+....
+`catkin build`
+....
++
+Depending on your machine, this can take a while to build.
+. After it has built successfully, ensure you source this workspace with:
++
+....
+source /devel/setup.bash
+....
+. Try running the `ld_visualisation` package with: 
++
+....
+roslaunch ld_visualisation display.launch
+....
+. If you have set up the host machine and ROS multiple machines correctly, you should see RVIZ opened with a map along with the laser scans of your LD.
+
+== Software Design
+[[architecture]]
+=== Architecture
+An overview of this package architecture is summarised in the diagram below:
+
+.Overview of package
+image::overview.png[]
+
+External devices can communicate with the LD via the ARCL interface. The LD hosts an ARCL server that remote clients can communicate with. This is indicated by the blue `ARCL Server` block in the diagram.
+
+In this case, the host machine will communicate via this ARCL interface. The host machine has three python modules, `Socket Driver`, `Socket Listener` and `Socket Taskmaster`. Each module opens a socket connection to the ARCL server. There are three ROS nodes that the host machines will run, `ARCL API Server`, `LD States Publisher` and `Action Server`. Their relationship with the python modules are illustrated in the diagram. These nodes and sockets will run on the host machine that is directly connected to the LD. These are indicated by the red blocks in the diagram.
+
+`ARCL API Server` and `LD States Publisher` nodes are implemented in the `om_aiv_util` package. `Action Server` node is implemented in the `om_aiv_navigation` package.
+
+With the three ROS nodes, the host machine will provide a ROS interface to allow remote machines to retrieve information from, as well as controlling the LD.
+
+The remote machines are then able to leverage these nodes to communicate with the LD to retrieve information or to control it. These are indicated by the green blocks in the diagram. See <<ld-visualisation-package>> for how this can be implemented.
+
+=== LD States Publisher
+This ROS node is named `ld_states_publisher` during ROS runtime. The code can be found in `om_aiv_util/scripts/ld_states_publisher.py`.
+
+The purpose of this node is to listen for a few standard information that is published by the ARCL server about the LD. It then publishes these information on dedicated topics in the ROS environment.
+
+These information are summarised below:
+
+* `Status`: General message on robot's operations and actions.
+* `StateOfCharge`: Battery percentage
+* `Location`: XY coordinates of LD's position
+* `LocalizationScore`: The health of LD's localization accuracy.
+* `Temperature`: Operation temperature of LD.
+* `ExtendedStatusForHumans`: Additional message to `Status` message
+
+=== ARCL API Server
+This ROS service node is named `arcl_api_server` during ROS runtime. The code can be found in `om_aiv_util/scripts/arcl_api_server.py`.
+
+The purpose of this service node is to allow other ROS nodes to requests for information of a ARCL command and waits for the response. Essentially this allows any ROS nodes to post a ARCL command to the ARCL server and retrieves the response via this service node without having to have access to LD directly.
+
+This service node supports every single ARCL commands.
+
+=== Action Server
+This is a ROS action node, named `action_servers` during ROS runtime.
+The code can be found in `om_aiv_navigation/scripts/action_servers.py`.
+
+The purpose of this action node is similar to `ARCL API Server`. However, the key difference here is that is supports the publishing of feedback during the execution of a ARCL command. This is useful in instances where you need to execute a ARCL command that will last for a significant duration. 
+
+For example, executing a `goto` ARCL command to move the LD to a specified location. The LD will take time to reach the goal. During this time ARCL server will continuously post messages regarding the status of this command. `Action Server` leverages this and informs callers of this action server about these status messages.
+
+[[ld-visualisation-package]]
+=== LD Visualisation Package
+The `LD Visualisation` package illustrates how a remote machine can communicate with the host machine's ROS master in order to talk to the LD to retrieve information from it or control it.
+
+`LD Visualisation` serves as an example as to how you can leverage the `ARCL API Server`, `LD States Publisher` and `Action Server` nodes to have basic interaction with the LD through ROS. 
+
+To understand how `LD Visualisation` is structured with the entire ROS package and communicates with LD, see <<architecture>>.
+
+`LD Visualisation` has four nodes, they are summarised as below:
+
+[cols="1,1a", options="header"]
+.LD Visualisation nodes
+|===
+|**Node name**
+|**Description**
+
+|joints_publisher
+|
+This node is responsible for subscribing to the topic that publishes current location of the LD.
+
+Using this information, it updates the position of LD shown on RVIZ.
+
+|goals_marker
+|
+This node is responsible for subscribing to the topic that publishes the name of goals that LD is tracking.
+
+Using these goal names, it then requests for the coordinates of these goal points using `ARCL API Server`. These coordinates are used to visualise these goals on RVIZ.
+
+|data_points_marker
+|
+This node is responsible for subscribing to the topic that publishes the coordinate of laser scan points.
+
+Using these information, it publishes marker points on RVIZ to visualise every single scanned points.
+
+Additionally, it also reads a `.map` created by the `MobilePlanner` software. This `.map` file contains all static map laser scan data points as well as forbidden areas. These information are all read by this node to be visualised on RVIZ. This is what makes the displaying of the map possible.
+
+**This map file should exist on the remote machine running `LD Visualisation`.**
+
+See <<map-loading-reading>> to understand how to load a map onto the remote machine.
+
+|goto_point
+|
+This node is responsible for subscribing to the topic that publishes the position of the `2D Estimate Pose` tool in RVIZ.
+
+Using this information, it sends an appropriate request to `Action Server` to request the LD to move to the specified position. During this motion, any feedback and result by the ARCL server is then published on the `Action Server` sub-topics.
+
+This node essentially allows users to move the LD using RVIZ to any valid location on the RVIZ map.
+
+|===
+
+== Implementation
+[[map-loading-reading]]
+=== Map Loading and Reading
+ARCL unfortunately does not provide an interface to retrieve every single map data point as well as other map objects information from the LD.
+
+These information are stored in the `.map` file when you use `MobilePlanner` to scan a new map environment. The `ld_visualisation` package leverages this `.map` file to read these information display on RVIZ accordingly.
+
+As it currently stands, a copy of the `.map` file must be retrieved from LD via `MobilePlanner`, placed in the `ld_visualisation/map` directory and renamed to `data.map`. This `.map` file is read by `data_points_marker` node during ROS runtime to display map information on RVIZ.
+
+Any other `.map` files in this directory will be ignored.
+
+The name of this `.map` file can be configured as a ROS param. `LD Visualisation` ROS params can be found in `ld_visualisation/param/vis_param.yaml`
+
+With this implementation it means that any changes to the `.map` file on LD can be reflected in RVIZ only by transferring the entire new `.map` file to our package and restarting the `LD Visualisation` nodes. **This is a hard restriction from LD software.** Additional support has to be provided by the LD software team before a more user friendly and convenient solution can be reached.
+
+=== Forbidden Areas Information Format
+This section concerns how the forbidden areas information are stored in the `.map` file. The format is not so straightforward and hence I feel the need to include this section.
+
+In the `.map` file, a forbidden area's information is encapsulated as a single line like so:
+
+....
+Cairn: ForbiddenArea 0 0 180.000000 "" ICON "FA1" -18561 -13725 -15055 -7739
+....
+
+* `ForbiddenArea` indicates that this line is information about a forbidden area.
+* `180.000000` indicates the heading of this forbidden area.
+* `FA1` indicates the name given to this forbidden area during creation.
+* All other fields except for the last 4 numbers are irrelevant (As far as I know, except maybe the description field).
+
+Now this is where it gets interesting.
+
+Intuitively, a rectangle can be represented with two sets of XY coordinates that are two opposing corners of the said rectangle. This is also how it works in `MobilePlanner`. You give the coordinates of two opposing corners when drawing in `MobilePlanner`.
+
+So, `-18561 -13725 -15055 -7739` must represent `X1 Y1 X2 Y2` which are the two opposing corners right?
+
+**Wrong!**
+
+In fact, if you compare the values here with the values you used to create the forbbiden area in `MobilePlanner`, they can be entirely different once you give a heading that is > 0.
+
+**Turns out, the coordinates in the `.map` file are the polar coordinates transformation from the actual forbidden area.**
+
+I'll illustrate with an example. Suppose you have an area defined with heading `90` degree and location denoted by two corners with the coordinates `6 0` and `4 2`, in the form of `X Y`. The centre of this area is thus `5 1`.
+
+The `.map` file (transformed area) is polar coordinate transformation of the above coordinates. That means that the centre of the transformed area (radial coordinate), joined to the pole, known as pole axis is rotated by `90` degrees in the counter clockwise direction. The centre of this new transformed area is thus `-1 5`
+
+As a result, the new coordinates of the respective corners will be `0 4` and `-2 6`. The line in `.map` file should be shown as:
+
+....
+Cairn: ForbiddenArea 0 0 90.000000 "" ICON "FA1" 0 4 -2 6
+....
+
+You may wish to experiment by drawing some simple forbidden areas on `MobilePlanner` and then drawing the coordinates on a 2D grid to understand what is going on here.
+
+I'm not exactly sure why the `MobilePlanner` software team decided to do this way instead of __using Cartesian coordinates throughout__. It could be for calculation optimisation or to work with some other areas of their code. I hope this is the case...
