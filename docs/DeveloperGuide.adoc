@@ -264,7 +264,7 @@ cd Omron_LD_ROS_Package
 . Build this package with:
 +
 ....
-`catkin build`
+catkin build
 ....
 +
 Depending on your machine, this can take a while to build.
