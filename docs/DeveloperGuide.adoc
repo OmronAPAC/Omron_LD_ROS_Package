@@ -20,7 +20,7 @@ endif::[]
 :url-repo: https://github.com/zach-goh/OmronRepos/tree/master
 :url-ug: https://github.com/zach-goh/OmronRepos/blob/master/docs/UserGuide.adoc
 
-Last updated: `12 JULY 2020` By: `Xavier`
+Last updated: `13 JULY 2020` By: `Xavier`
 
 == Authors
 
@@ -431,3 +431,40 @@ Cairn: ForbiddenArea 0 0 90.000000 "" ICON "FA1" 0 4 -2 6
 You may wish to experiment by drawing some simple forbidden areas on `MobilePlanner` and then drawing the coordinates on a 2D grid to understand what is going on here.
 
 I'm not exactly sure why the `MobilePlanner` software team decided to do this way instead of __using Cartesian coordinates throughout__. It could be for calculation optimisation or to work with some other areas of their code. I hope this is the case...
+
+== Examples
+=== ROS Action: goto Goal
+There are two example codes, `om_aiv_navigation/scripts/goto_goal2_action.py` and `om_aiv_navigation/scripts/goto_goal3_action.py`.
+
+These code files serves as an example as to how you can leverage the ROS Action servers that came with this package.
+
+The example code simply performs the `goto` ARCL command with `Goal2` and `Goal3` as the arguments. This is get the LD to move to `Goal2` and `Goal3` on the map respectively. During these operations, the feedback and result messages will be published in ROS topics.
+
+[NOTE]
+You need to have two goals named `Goal2` and `Goal3` in your LD map for these examples to work.
+
+. First, ensure your host machine, ROS master is up and running.
+. Run `ld_visualisation` package to see the movement of your LD. To do this:
++
+....
+roslaunch ld_visualisation display.launch
+....
+. In 2 separate terminal with the workspace sourced, run the following commands, each command in each terminal:
++
+....
+rostopic echo /action_servers/feedback
+rostopic echo /action_servers/result
+....
+This will show you the feedback message during the operation and the result message when the operation has completed.
+. In a separate terminal with the workspace sourced, run:
++
+....
+rosrun om_aiv_navigation goto_goal2_action.py 
+....
+This will move your LD to `Goal2` on your map. At the same time you should see the `/action_servers/feedback` topic containing messages about this operation. Once the operation has completed, you should see  the result message in `/action_servers/result` topic.
+. Next, try moving LD to `Goal3` with:
++
+.... 
+rosrun om_aiv_navigation goto_goal3_action.py 
+.... 
+You should see similar messages just like `Goal2`.
