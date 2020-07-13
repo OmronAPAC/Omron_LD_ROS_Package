@@ -65,18 +65,6 @@ message_generation
 add_action_files(
 FILES
 Action.action
-Dock.action
-DoTask.action
-ExecuteMacro.action
-PatrolOnce.action
-GoTo.action
-PatrolOnce.action
-Patrol.action
-PatrolResume.action
-Play.action
-QueueDropoff.action
-Stop.action
-Undock.action
 )
 
 ## Generate added messages and services with any dependencies listed here

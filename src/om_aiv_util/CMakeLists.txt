@@ -57,7 +57,6 @@ add_message_files(
 ## Generate services in the 'srv' folder
 add_service_files(
 FILES
-OmAivService.srv
 ArclApi.srv
 ArclListen.srv
 )
