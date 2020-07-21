@@ -1,6 +1,7 @@
 = LD-ROS - Developer Guide
 :site-section: DeveloperGuide
 :toc:
+:toclevels: 3
 :toc-title: Table of Contents
 :toc-placement: preamble
 :icons: font
@@ -67,7 +68,13 @@ See link:https://pypi.org/project/selectors2/[selectors2].
 +
 Telnet application. This is only used for directly communicating with LD's ARCL interface via a command line interface.
 
-=== Hardware Communications Requirements
+. **MobilePlanner 4.7.7 / ARAM**
++
+The LD set up instructions found here assumes you are using `MobilePlanner 4.7.7` to configure your LD. For maximum compatibility, try to use this version of MobilePlanner.
++
+The `ARAM` version should be `(4.7.7.2)`. You can check this via `MobilePlanner` softwatr.
+
+=== Hardware Requirements
 This package assumes a specific hardware configuration in order to work correctly.
 
 . LD-60
@@ -82,10 +89,22 @@ This is a machine that communicates with LD, either via ethernet or wireless con
 +
 This can be a single or multiple machines that is used to run ROS nodes that communicates with the host machine running ROS Master. This can either be connected to the host machine via wired or wireless connection. Although a wireless connection will be preferred for user mobility and convenience.
 
-The diagram below gives an overview of how these hardware will be configured:
+==== Coomunications Overview
+
+The diagram below gives an overview of how the communications will be configured:
 
 .Overview of communication
 image::comms_overview.png[]
+
+==== Hardware Wiring
+The diagram below gives an overview of how the various machines needs to be wired with the LD.
+
+.Machines Wiring Diagram
+image::wiring_diagram.png[]
+
+The buck converter (or any other stepdown/buck converter you will use) steps the 24V-26V voltage provided by the LD's User Power port down to a 12V-19V voltage range. The host machine used in this package is `Intel NUC8i5BEH` which accepts a 12V-19V range as input. If you use any other host machines, you will need to ensure the voltage  is stepped down or up from the LD User Power port.
+
+For information on what pins on LD User Power port can be used, please see your LD's User Manual to understand which pins to use as it may differ.
 
 === Set Up LD
 In order to use this package, your LD must be configured correctly to communicate with the host machine running this ROS package. This configuration will be done via `MobilePlanner` hence, this guide assumes you have basic knowledge on using the `MobilePlanner` software.
@@ -138,6 +157,7 @@ Setting this 'True' incates that an ARCL connection is required for the robot to
 .Example for `Outgoing ARCL connection setup`
 image::outgoing_arcl_connection_setup.png[]
 
+[[outgoing-arcl]]
 Within the `Robot Interface` tab, under the `Outgoing ARCL commands` section, ensure the following is set as such:
 
 * `OutgoingCommands1`: `Status`
@@ -311,6 +331,34 @@ These information are summarised below:
 * `LocalizationScore`: The health of LD's localization accuracy.
 * `Temperature`: Operation temperature of LD.
 * `ExtendedStatusForHumans`: Additional message to `Status` message
+
+==== ARCL Commands Used
+The publishing of the information above is made possible by a set of ARCL commands. These commands are automatically executed by the ARCL server during operation. This is made possible by configuring the ARCL server to do this. See <<outgoing-arcl, Section 2.3.2, “Set Up ARCL">> on an example of how this can be done.
+
+The ARCL commands configured in ARCL server are:
+
+. Status
+. RangeDeviceGetCurrent
+. GetGoals
+. Odometer
+. ApplicationFaultQuery
+
+For information on what each of these commands do and how it works, please see the ARCL Reference Guide for detailed explanation.
+
+[NOTE]
+====
+__RangeDeviceGetCurrent__ is not documented in the ARCL Reference Guide. This command outputs the laser scan data of the specified laser device. 
+
+This command works in the following format: `RangeDeviceGetCurrent [laser-device-name]`
+
+Where you should substitute [laser-device-name] field, including the `[]`, with the idetifying name of the laser device you want the data from. The output data are pairs of X-Y coordinates that represents the scan points in the world coordinate frame of the LD.
+
+So an output with 5 laser points will look like this: `X1 Y1 X2 Y2 X3 Y3 X4 Y4 X5 Y5`
+
+For example in this package, __RangeDeviceGetCurrent Laser_1__ is used. The __Laser_1__ refers to the primary laser device used for mapping by LD. Specifying another laser device name will show the data for that device instead (eg. Laser_2).
+
+Use `MobilePlanner` software to see what laser devices are installed in the LD and what their names are.
+====
 
 === ARCL API Server
 This ROS service node is named `arcl_api_server` during ROS runtime. The code can be found in `om_aiv_util/scripts/arcl_api_server.py`.
